@@ -83,7 +83,7 @@ AuraLite is built from the ground up for maximum FPS using OpenGL 4.6 native har
 
 ## 📥 Installation
 
-1. Download **`AuraLite_ShaderPack.zip`** from the [Releases]([https://github.com/](https://github.com/AlexanderNyr/AuraLite-Shaders/releases/tag/v0.1.0-beta)).
+1. Download **`AuraLite_ShaderPack.zip`** from the [Releases]([https://github.com/](https://github.com/AlexanderNyr/AuraLite-Shaders/releases/tag/v0.1.0-beta)) page.
 2. Open your Minecraft directory (e.g. `%appdata%/.minecraft` on Windows).
 3. Place the downloaded `.zip` file inside the **`shaderpacks`** folder (Do **not** unzip it!).
 4. Launch Minecraft **1.20.1** using a profile with **Sodium + Iris** installed.
