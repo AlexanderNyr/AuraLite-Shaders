@@ -1,0 +1,100 @@
+# ==============================================================================
+# AuraLite Shader Pack - English Language Translations
+# ==============================================================================
+
+# Screens
+screen.LIGHTING=Lighting Settings
+screen.LIGHTING.comment=Configure shadows, light colors, and brightness.
+
+screen.FOLIAGE=Foliage Settings
+screen.FOLIAGE.comment=Configure waving animations for grass and leaves.
+
+screen.WATER=Water Settings
+screen.WATER.comment=Configure waves, transparency, and water styling.
+
+screen.CLOUDS_MENU=3D Clouds Settings
+screen.CLOUDS_MENU.comment=Configure the physical altitude, thickness, and style of 3D clouds.
+
+screen.POST_PROCESS=Post-Processing & Fog
+screen.POST_PROCESS.comment=Configure exposure, fog, and cinematic effects.
+
+# Options
+option.SHADOWS=Dynamic Shadows
+option.SHADOWS.comment=Enable or disable soft dynamic shadows from the sun and moon.
+
+option.SHADOW_RES=Shadow Resolution
+option.SHADOW_RES.comment=Change the shadow map quality. Higher values may lower performance.
+
+option.PBR_LIGHTING=PBR Lighting (LabPBR)
+option.PBR_LIGHTING.comment=Enable physically-based rendering for metals, roughness, and 3D normal maps (PBR resource pack required).
+
+option.PBR_STRENGTH=PBR Intensity
+option.PBR_STRENGTH.comment=Control the reflectivity and glossiness of PBR metallic surfaces.
+
+value.PBR_STRENGTH.1=Subtle
+value.PBR_STRENGTH.2=Standard
+value.PBR_STRENGTH.3=Mirror
+
+option.LIGHTMAP_WARMTH=Torch Warmth
+option.LIGHTMAP_WARMTH.comment=Adjust the warmth and color of block/torch light.
+
+value.LIGHTMAP_WARMTH.1=Cozy
+value.LIGHTMAP_WARMTH.2=Warm
+value.LIGHTMAP_WARMTH.3=Intense
+
+option.WAVING_LEAVES=Waving Leaves
+option.WAVING_LEAVES.comment=Enable gentle waving animations for tree leaves.
+
+option.WAVING_GRASS=Waving Foliage
+option.WAVING_GRASS.comment=Enable waving animations for grass, flowers, and crops.
+
+option.WIND_SPEED=Wind Speed
+option.WIND_SPEED.comment=Control the waving speed of leaves, plants, and water waves.
+
+value.WIND_SPEED.1=Gentle
+value.WIND_SPEED.2=Breeze
+value.WIND_SPEED.3=Gale
+
+option.WATER_WAVES=Water Waves
+option.WATER_WAVES.comment=Enable 3D geometric waves on the water surface.
+
+option.WATER_TRANSPARENCY=Water Density
+option.WATER_TRANSPARENCY.comment=Control the transparency and opacity of the water.
+
+value.WATER_TRANSPARENCY.1=Clear
+value.WATER_TRANSPARENCY.2=Balanced
+value.WATER_TRANSPARENCY.3=Deep
+
+option.PROCEDURAL_CLOUDS=Volumetric 3D Clouds
+option.PROCEDURAL_CLOUDS.comment=Enable physically flyable 3D clouds that can be reached and flown through.
+
+option.CLOUD_HEIGHT=Cloud Altitude
+option.CLOUD_HEIGHT.comment=Set the physical altitude (Y-level) of the cloud deck in the world (in meters).
+
+value.CLOUD_HEIGHT.1=Low (~110m)
+value.CLOUD_HEIGHT.2=Standard (~160m)
+value.CLOUD_HEIGHT.3=High (~240m)
+
+option.CLOUD_THICKNESS=Cloud Thickness
+option.CLOUD_THICKNESS.comment=Configure the vertical thickness and volume of the clouds.
+
+value.CLOUD_THICKNESS.1=Thin (Cirrus)
+value.CLOUD_THICKNESS.2=Standard (Cumulus)
+value.CLOUD_THICKNESS.3=Dense (Stormy)
+
+option.FOG_DENSITY_LEVEL=Fog Density
+option.FOG_DENSITY_LEVEL.comment=Control the strength of atmospheric horizon fog.
+
+value.FOG_DENSITY_LEVEL.1=Low
+value.FOG_DENSITY_LEVEL.2=Medium
+value.FOG_DENSITY_LEVEL.3=High
+
+option.EXPOSURE=Exposure Brightness
+option.EXPOSURE.comment=Control the overall brightness of the image.
+
+value.EXPOSURE.1=Muted
+value.EXPOSURE.2=Balanced
+value.EXPOSURE.3=Vibrant
+
+option.VIGNETTE=Vignette Effect
+option.VIGNETTE.comment=Enable subtle darkening at screen edges for improved focus.
