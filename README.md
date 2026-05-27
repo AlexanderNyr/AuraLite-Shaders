@@ -6,7 +6,7 @@
 [![Materials Standard](https://img.shields.io/badge/PBR-LabPBR%201.3-cyan)](https://github.com/rre36/lab-pbr)
 [![License](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-**AuraLite** is a modern, lightweight, and highly optimized shader pack built on top of the **OpenGL 4.6 / GLSL 460** standard. It is specifically designed and **exclusively tested for Minecraft 1.20.1 with Sodium + Iris**. 
+**AuraLite** is a modern, lightweight, and highly optimized shader pack built on top of the **OpenGL 4.6 / GLSL 460** standard. It is specifically designed and **exclusively tested for Minecraft 1.20.1 with Sodium + Iris** (and compatible with **OptiFine 1.20.1**). 
 
 AuraLite delivers a breathtaking, realistic visual experience without overcomplicating the screen with bloated post-processing effects (such as aggressive motion blur, heavy bloom, or screen-space reflections), ensuring **maximum FPS and smooth frametimes** on modern GPUs.
 
@@ -21,29 +21,37 @@ AuraLite features a fully physical, flyable 3D cloud system driven by **10-step 
 * **Mie Scattering (Silver Lining):** Looking towards the sun produces a glowing golden halo around the cloud edges.
 * **Overcast Storms:** When raining (`/weather rain`), the fluffy cumulus clouds automatically expand, darken, and merge into an ominous, heavy **Nimbostratus/Cumulonimbus** storm deck.
 
-### 👥 2. Soft Shadows & Dynamic Golden Hour
+### ☀️ 2. Analytical Kelvin Temperature & Beer-Lambert Sunlight
+* **Analytical Kelvin Temperature Color Model:** Sunlight color temperature is dynamically calculated in real-time based on the sun's elevation angle $\alpha$ using the scientific curve:  
+  $K(\alpha) = 1800 + 4000 \cdot \sin(\alpha)^{0.5}$  
+  This provides photorealistic sunset/sunrise colors (**1800K - 2200K**), warm golden hours (**2800K**), and clean crisp white noon light (**5700K - 5800K**).
+* **Beer-Lambert Atmospheric Extinction:** Sunlight intensity dynamically drops as the sun approaches the horizon due to scattering in thick atmospheric masses:  
+  $airMass = \frac{1}{\sin(\alpha) + 0.15 \cdot (\alpha_{deg} + 3.885)^{-1.253}}$  
+  This yields incredibly soft, rich, and breathtaking sunset and sunrise golden hour transitions!
+* **Crispy Circular Sun & Moon Disks:** Custom procedural, perfectly round, anti-aliased sun and moon disks are drawn onto the sky dome with glowing coronas and soft halo scattering.
+
+### 👥 3. Soft Shadows & Immersive Dark Nights
 * **Soft PCF Shadows:** Beautifully smoothed shadows utilizing a **3x3 PCF (Percentage-Closer Filtering)** kernel on a high-resolution shadow map (2048x2048).
-* **Golden Hour (Sunset Glow):** During sunset and sunrise, sunlight transitions into a rich, warm orange-gold tone casting long, atmospheric shadows.
-* **Moonlight Shading:** Nighttime lighting is cool and dim, casting soft, cinematic blue-grey moonlight shadows.
+* **Deep Dark Nights (2x Darker):** Night ambient light, moonlight intensity, and fog have been reduced by 2x to create an incredibly atmospheric, immersive, and dark night. Caves and forests are pitch dark, requiring torches for exploration.
 * **Warm Block Lights:** Torches, lanterns, and lava emit a cozy golden-amber glow with physically accurate quadratic falloff.
 
-### 🌊 3. Physical Fresnel Water
+### 🌊 4. Physical Fresnel Water & Silver Moonlight Path
 * **Fresnel Effect:** Water reflectivity is mathematically calculated based on your viewing angle. Looking straight down provides crystal transparency, while looking towards the horizon transitions water into a highly reflective, glossy sheet reflecting the sky dome.
+* **Silver Moonlight Path:** Moonlight specular reflection on water ripples has been increased by **4.5x**. At midnight, a brilliant silver lunar reflection path shimmers across the waving ocean.
 * **3D Geometric Waves:** Vertex shader waves physically displace the water mesh in real-time.
-* **Glinting Speculars:** Sparkling sun/moon reflections react dynamically to water ripples.
 * **Zero Feedback Glitches:** Designed to be extremely stable, utilizing no feedback-loop depth buffer reads to guarantee bug-free solid rendering on all GPUs.
 
-### 🌿 4. Lively Foliage
+### 🌿 5. Lively Foliage
 * Waving animations for oak/spruce/birch leaves, tall grass, flowers, vines, lily pads, and crops.
 * Gently animated using hardware-optimized sine waves and time constants.
 
-### 💎 5. Full LabPBR 1.3 Material Support
+### 💎 6. Full LabPBR 1.3 Material Support
 * **3D Normal Maps:** Real-time **TBN (Tangent-Binormal-Normal)** matrices generate true three-dimensional depth on blocks (stone crevices, brick joints) reacting dynamically to light angles.
 * **Specular Reflection (GGX Microfacet):** Polished surfaces give sharp glossy glints, while metallic surfaces (gold, copper, iron) tint the specular reflection with the block's native albedo.
 * *Seamless Fallback:* Falls back automatically to gorgeous flat vanilla textures if no PBR resource pack is active.
 
-### 🎬 6. Cinematic Post-Processing
-* **ACES Filmic Tonemapping:** The industry-standard color grading algorithm (used in modern cinema and AAA games) preventing overexposure on bright blocks (sand, snow) while retaining rich shadow details.
+### 🎬 7. Cinematic Post-Processing
+* **ACES Filmic Tonemapping:** The industry-standard color grading algorithm prevents overexposure on bright blocks (sand, snow) while retaining rich shadow details.
 * **Subtle Vignette:** Gentle lens-darkening at screen edges for improved depth and immersion.
 
 ---
@@ -83,10 +91,10 @@ AuraLite is built from the ground up for maximum FPS using OpenGL 4.6 native har
 
 ## 📥 Installation
 
-1. Download **`AuraLite_ShaderPack.zip`** from the [Releases]([https://github.com/](https://github.com/AlexanderNyr/AuraLite-Shaders/releases/tag/v0.1.0-beta)) page.
+1. Download **`AuraLite_ShaderPack.zip`** from the [Releases]() section on the right.
 2. Open your Minecraft directory (e.g. `%appdata%/.minecraft` on Windows).
 3. Place the downloaded `.zip` file inside the **`shaderpacks`** folder (Do **not** unzip it!).
-4. Launch Minecraft **1.20.1** using a profile with **Sodium + Iris** installed.
+4. Launch Minecraft **1.20.1** using a profile with **Sodium + Iris** or **OptiFine** installed.
 5. In-game, go to **Options -> Video Settings -> Shader Packs**, select **AuraLite**, and click **Apply**.
 
 ---
@@ -121,5 +129,5 @@ AuraLite includes a fully translated Russian & English in-game configuration men
 ## 📄 License & Compatibility
 
 * **AuraLite** is open-source and licensed under the [MIT License](LICENSE).
-* **Officially Supported Platform:** Minecraft **1.20.1** with **Sodium + Iris** loader.
-* *Note: OptiFine and other Minecraft versions are not officially tested or supported at this stage.*
+* **Officially Supported Platform:** Minecraft **1.20.1** with **Sodium + Iris** or **OptiFine** loader.
+* *Note: Other Minecraft versions are not officially tested at this stage.*
