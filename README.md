@@ -4,8 +4,10 @@
 [![Shader Loader](https://img.shields.io/badge/Loader-Iris%20%2F%20Sodium-green)](https://modrinth.com/)
 [![API Standard](https://img.shields.io/badge/API-OpenGL%204.6%20%2F%20GLSL%20460-orange)](https://khronos.org/)
 [![Materials Standard](https://img.shields.io/badge/PBR-LabPBR%201.3-cyan)](https://github.com/rre36/lab-pbr)
-[![Version](https://img.shields.io/badge/Release-v0.2.0-purple)](https://github.com/AlexanderNyr/AuraLite-Shaders)
+[![Version](https://img.shields.io/badge/Release-v0.2.2-purple)](https://github.com/AlexanderNyr/AuraLite-Shaders)
 [![License](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
+> 🌐 **Languages:** **English** · [Русский](README_RU.md)
 
 **AuraLite** is a modern, lightweight, and highly optimized shader pack built on top of the **OpenGL 4.6 / GLSL 460** standard. It is specifically designed and **exclusively tested for Minecraft 1.20.1 with Sodium + Iris** (and compatible with **OptiFine 1.20.1**).
 
@@ -13,9 +15,37 @@ AuraLite delivers a breathtaking, realistic visual experience without overcompli
 
 ---
 
-## 🆕 What's New in v0.2.0
+## 🆕 What's New in v0.2.2 — *Enhanced Lighting Edition*
 
-Version **0.2.0** is a major content update that nearly doubles the pack's visual feature set (≈ +900 lines of shader code) while keeping the same lightweight philosophy:
+Version **0.2.2** is a major lighting overhaul that introduces a brand-new **`[Sun & Moon]`** configuration screen and deeply expands the shadow / ambient pipeline. The composite pass grew to ~922 lines of GLSL while keeping the same lightweight philosophy and FPS targets.
+
+### ☀️ New `[Sun & Moon]` configuration screen
+* **Sun Intensity** — 4 levels (*Dim / Standard / Bright / Blazing*) — master brightness of direct sunlight.
+* **Moon Intensity** — 4 levels (*Pitch Night / Standard / Bright Moon / Full Night*) — master brightness of moonlight.
+* **Sun Colour Temperature** — *Cool / Neutral · Realistic · Warm Golden* — based on the scientific **Tanner Helland blackbody** Kelvin curve.
+* **Moon Colour Temperature** — *Icy Blue · Silver (realistic 4100K) · Warm Cream (harvest moon)*.
+* **Sun Halo (Mie Scatter)** — soft warm forward-scattering glow on terrain when looking near the sun.
+* **Enhanced Sunrise/Sunset Glow** — stronger warm back-scatter that wraps around surfaces facing away from the low sun.
+
+### 🌑 Expanded shadow & ambient pipeline
+* **Shadow Softness** — *Sharp / Soft / Ultra Soft* — uses a **rotated Poisson disk** filter for smooth, natural penumbra (replaces the old fixed 3×3 PCF).
+* **Shadow Distance** — 4 levels (*60m / 80m / 120m / 160m*) — controls how far dynamic shadows render before fading out.
+* **Shadow Tint** — *Neutral Gray · Cool Blue (realistic) · Warm* — physically-accurate blue tint for daytime shadows under an open sky.
+* **Shadow Lift / Ambient** — *Dark / Standard / Lifted* — controls how dark shadowed areas appear at night and in caves.
+* **Light Wrap (Terminator Softness)** — *Realistic (Lambert) · Soft · Stylized* — softens the boundary between lit and shadowed faces.
+
+### 🛠️ Other refinements in v0.2.2
+* Sky shader (`gbuffers_skybasic`) tuned for the new sun/moon temperature pipeline.
+* Updated profile tables — `MED`, `HIGH` and `ULTRA` now ship sensible defaults for every new toggle.
+* Russian & English localization fully updated for all new options.
+
+> All v0.2.0 features (auroras, Milky Way, POM, cosmic portal, wet reflections, ground mist, cozy lights, etc.) remain fully present — see the section below.
+
+---
+
+## 🆕 Recap — What landed in v0.2.0
+
+Version **0.2.0** was the original content update that nearly doubled the pack's visual feature set (≈ +900 lines of shader code):
 
 * 🌠 **Night Sky Overhaul** — flowing **Aurora Borealis**, a diagonal **Milky Way nebula**, configurable **stars density & brightness**, and an animated **post-rain rainbow** that lingers as wetness decays.
 * 🌧️ **Dynamic Weather Surfaces** — **Wet Reflections** on solid ground during rain, support for `thunderStrength` to separate thunderstorms from light showers.
@@ -23,12 +53,12 @@ Version **0.2.0** is a major content update that nearly doubles the pack's visua
 * 🕯️ **Cozy Light Flickering** — real-time warm flicker animations for torches, campfires, and lanterns. Held-item light is also taken into account.
 * 🧱 **Parallax Occlusion Mapping (POM)** — true 3D block relief on LabPBR resource packs, with configurable depth and step count.
 * 🌊 **Granular Water Tuning** — separate sliders for **ripple strength** (`WATER_RIFFLES`) and **specular glow** (`WATER_SPECULAR_STRENGTH`).
-* 🎨 **New Post-Processing Pipeline** — 4-step **Color Vibrancy** saturation and 3 tone-mapping curves (**Soft / Filmic ACES / Intense**).
+* 🎨 **Color Vibrancy + Tone-Mapping Curves** — 4-step saturation and 3 tone-mapping curves (**Soft / Filmic ACES / Intense**).
 * 🌀 **Cosmic Nether Portal** — vanilla portal texture is replaced by a swirling 3D plasma vortex.
 * 🧊 **Ice Glitch Fix** — dedicated block ID disables waving/refraction on ice variants to eliminate visual artifacts.
 * 🌙 **Moon-Phase Aware Sky** — sky shading reacts to `moonPhase` and `dimension` for nether/end correctness.
 
-> See the [Configuration Options](#%EF%B8%8F-in-game-configuration-options) section below for the full list of new toggles, or jump straight into [`shaders v0.2.0/`](shaders%20v0.2.0) for the source files.
+> Source for every version is shipped in this repo under [`shaders v0.2.0/`](shaders%20v0.2.0), [`shaders v0.2.1/`](shaders%20v0.2.1) and [`shaders v0.2.2/`](shaders%20v0.2.2). End users should grab the packaged release ZIP from [Releases](https://github.com/AlexanderNyr/AuraLite-Shaders/releases).
 
 ---
 
@@ -41,36 +71,41 @@ AuraLite features a fully physical, flyable 3D cloud system driven by **10-step 
 * **Mie Scattering (Silver Lining):** Looking towards the sun produces a glowing golden halo around the cloud edges.
 * **Overcast Storms:** When raining (`/weather rain`), the fluffy cumulus clouds automatically expand, darken, and merge into an ominous, heavy **Nimbostratus/Cumulonimbus** storm deck.
 
-### 🌠 2. Living Night Sky *(new in v0.2.0)*
+### 🌠 2. Living Night Sky *(since v0.2.0)*
 The night sky is no longer just a static starfield — it's a fully procedural cosmos:
 * **Aurora Borealis:** Realistic, flowing northern lights that ripple across the upper sky. Modes: *Disabled / Only in Cold Biomes / Always Enabled*, with independent **speed** and **brightness** controls.
 * **Milky Way Nebula:** A subtle diagonal brownish galactic band glows softly above the horizon, with adjustable brightness.
 * **Procedural Stars:** Independent **brightness** and **density** sliders let you choose between a few crisp pinpricks or a brilliantly dense Hubble-style sky. Stars sparkle and twinkle in real time.
 * **Persistent Rainbow:** After rain stops, a soft rainbow arcs across the sky and gently fades out as the `wetness` uniform decays. Brightness and saturation are configurable.
 
-### ☀️ 3. Analytical Kelvin Temperature & Beer-Lambert Sunlight
-* **Analytical Kelvin Temperature Color Model:** Sunlight color temperature is dynamically calculated in real-time based on the sun's elevation angle $\alpha$ using the scientific curve:  
-  $K(\alpha) = 1800 + 4000 \cdot \sin(\alpha)^{0.5}$  
-  This provides photorealistic sunset/sunrise colors (**1800K - 2200K**), warm golden hours (**2800K**), and clean crisp white noon light (**5700K - 5800K**).
-* **Beer-Lambert Atmospheric Extinction:** Sunlight intensity dynamically drops as the sun approaches the horizon due to scattering in thick atmospheric masses:  
-  $airMass = \frac{1}{\sin(\alpha) + 0.15 \cdot (\alpha_{deg} + 3.885)^{-1.253}}$  
+### ☀️ 3. Analytical Kelvin Sun & Moon — *Enhanced in v0.2.2*
+* **Tanner Helland Blackbody Sun:** Sunlight color temperature is dynamically calculated in real time based on the sun's elevation angle using a physically-correct **blackbody Kelvin curve** (selectable: *Cool / Realistic / Warm Golden*). This yields photoreal sunrise/sunset colors (~1800K–2200K), warm golden hours (~2800K), and clean crisp white noon light (~5700K–5800K).
+* **Beer-Lambert Atmospheric Extinction:** Sunlight intensity dynamically drops as the sun approaches the horizon due to scattering in thick atmospheric masses:
+  $airMass = \frac{1}{\sin(\alpha) + 0.15 \cdot (\alpha_{deg} + 3.885)^{-1.253}}$
   This yields incredibly soft, rich, and breathtaking sunset and sunrise golden hour transitions!
+* 🆕 **Independent Sun & Moon Intensity** *(v0.2.2)*: 4-step master sliders let you push the day brighter (*Blazing*) or sink nights into total darkness (*Pitch Night*).
+* 🆕 **Moon Color Temperature** *(v0.2.2)*: choose between *Icy Blue* (cold), *Silver* (physically accurate 4100K), or *Warm Cream* (harvest-moon).
+* 🆕 **Sun Halo (Mie forward-scatter)** & **Enhanced Sunrise/Sunset Glow** *(v0.2.2)* — warm scattering effects on terrain when looking near the low sun.
 * **Crispy Circular Sun & Moon Disks:** Custom procedural, perfectly round, anti-aliased sun and moon disks are drawn onto the sky dome with glowing coronas and soft halo scattering.
 
-### 👥 4. Soft Shadows, Immersive Dark Nights & Cozy Lights
-* **Soft PCF Shadows:** Beautifully smoothed shadows utilizing a **3x3 PCF (Percentage-Closer Filtering)** kernel on a high-resolution shadow map (up to 4096x4096).
-* **Deep Dark Nights (2x Darker):** Night ambient light, moonlight intensity, and fog have been reduced by 2x to create an incredibly atmospheric, immersive, and dark night. Caves and forests are pitch dark, requiring torches for exploration.
+### 👥 4. Soft Shadows, Immersive Dark Nights & Cozy Lights — *Enhanced in v0.2.2*
+* 🆕 **Rotated Poisson Disk Soft Shadows** *(v0.2.2)*: replaces the old fixed 3×3 PCF kernel. Three quality steps — *Sharp / Soft / Ultra Soft* — give natural-looking penumbra on shadow maps up to 4096×4096.
+* 🆕 **Shadow Distance Control** *(v0.2.2)*: cap dynamic shadow rendering at *60m / 80m / 120m / 160m* for performance or quality tuning.
+* 🆕 **Shadow Tint** *(v0.2.2)*: realistic cool-blue tint for daytime shadows under an open sky (or neutral / warm if you prefer).
+* 🆕 **Ambient Lift** *(v0.2.2)*: control how dark shadowed areas appear at night and in caves.
+* 🆕 **Light Wrap (Terminator Softness)** *(v0.2.2)*: choose physical Lambert, a soft photographic wrap, or a stylized look.
+* **Deep Dark Nights (2× darker):** Night ambient light, moonlight intensity, and fog are reduced by 2× by default to create incredibly atmospheric, immersive nights. Caves and forests are pitch dark, requiring torches for exploration (combine with the new *Pitch Night* moon preset for extra spice).
 * **Warm Block Lights:** Torches, lanterns, and lava emit a cozy golden-amber glow with physically accurate quadratic falloff.
-* 🕯️ **Cozy Torch Flickering** *(new in v0.2.0)*: Real-time flickering animations for torches, campfires, and lanterns add a living, warm atmosphere to your shelters. Held-item light contribution (`heldBlockLightValue`) is also accounted for.
+* 🕯️ **Cozy Torch Flickering** *(since v0.2.0)*: Real-time flickering animations for torches, campfires, and lanterns add a living, warm atmosphere to your shelters. Held-item light contribution (`heldBlockLightValue`) is also accounted for.
 
 ### 🌊 5. Physical Fresnel Water & Silver Moonlight Path
 * **Fresnel Effect:** Water reflectivity is mathematically calculated based on your viewing angle. Looking straight down provides crystal transparency, while looking towards the horizon transitions water into a highly reflective, glossy sheet reflecting the sky dome.
-* **Silver Moonlight Path:** Moonlight specular reflection on water ripples has been increased by **4.5x**. At midnight, a brilliant silver lunar reflection path shimmers across the waving ocean.
-* **3D Geometric Waves:** Vertex shader waves physically displace the water mesh in real-time, and now react to `rainStrength` / `thunderStrength` for choppier seas during storms.
-* 🌊 **Independent Ripple & Specular Controls** *(new in v0.2.0)*: `WATER_RIFFLES` (Calm / Standard / Choppy) and `WATER_SPECULAR_STRENGTH` (Soft / Standard / Glinting) can now be tuned separately for the perfect water mood.
+* **Silver Moonlight Path:** Moonlight specular reflection on water ripples has been increased by **4.5×**. At midnight, a brilliant silver lunar reflection path shimmers across the waving ocean.
+* **3D Geometric Waves:** Vertex shader waves physically displace the water mesh in real-time, and react to `rainStrength` / `thunderStrength` for choppier seas during storms.
+* 🌊 **Independent Ripple & Specular Controls** *(since v0.2.0)*: `WATER_RIFFLES` (Calm / Standard / Choppy) and `WATER_SPECULAR_STRENGTH` (Soft / Standard / Glinting) can be tuned separately for the perfect water mood.
 * **Zero Feedback Glitches:** Designed to be extremely stable, utilizing no feedback-loop depth buffer reads to guarantee bug-free solid rendering on all GPUs.
 
-### 🌧️ 6. Dynamic Weather Surfaces *(new in v0.2.0)*
+### 🌧️ 6. Dynamic Weather Surfaces *(since v0.2.0)*
 * **Wet Reflections:** During rain, solid blocks like grass, dirt, and stone darken and become glossy, picking up sky reflections under open weather. Disables itself under roofs.
 * **Low Ground Mist (Y = 62–66):** Soft, golden-white fog sheets drift across water and ice surfaces at dawn and dusk — perfect for cinematic sunrise screenshots.
 * **Thunderstorm Awareness:** Shaders distinguish between regular rain and full thunderstorms via the `thunderStrength` uniform, intensifying cloud darkness and wave chop accordingly.
@@ -78,20 +113,20 @@ The night sky is no longer just a static starfield — it's a fully procedural c
 ### 🌿 7. Lively Foliage
 * Waving animations for oak/spruce/birch leaves, tall grass, flowers, vines, lily pads, and crops.
 * Gently animated using hardware-optimized sine waves and time constants.
-* 🧊 **Ice fix** *(new in v0.2.0)*: ice / packed ice / blue ice / frosted ice are tagged with a dedicated block ID to disable waving and refraction, eliminating long-standing visual glitches.
+* 🧊 **Ice fix** *(since v0.2.0)*: ice / packed ice / blue ice / frosted ice are tagged with a dedicated block ID to disable waving and refraction, eliminating long-standing visual glitches.
 
 ### 💎 8. Full LabPBR 1.3 Material Support + POM
 * **3D Normal Maps:** Real-time **TBN (Tangent-Binormal-Normal)** matrices generate true three-dimensional depth on blocks (stone crevices, brick joints) reacting dynamically to light angles.
 * **Specular Reflection (GGX Microfacet):** Polished surfaces give sharp glossy glints, while metallic surfaces (gold, copper, iron) tint the specular reflection with the block's native albedo.
-* 🧱 **Parallax Occlusion Mapping (POM)** *(new in v0.2.0)*: True per-pixel block relief that pops out of the surface. Configurable `POM_DEPTH` (1–3) and `POM_STEPS` (1–4). Disabled in the LOW/MED/HIGH profiles by default; enabled in ULTRA. Recommended to keep off on incompatible resource packs.
+* 🧱 **Parallax Occlusion Mapping (POM)** *(since v0.2.0)*: True per-pixel block relief that pops out of the surface. Configurable `POM_DEPTH` (1–3) and `POM_STEPS` (1–4). Disabled in the LOW/MED/HIGH profiles by default; enabled in ULTRA. Recommended to keep off on incompatible resource packs.
 * *Seamless Fallback:* Falls back automatically to gorgeous flat vanilla textures if no PBR resource pack is active.
 
-### 🌀 9. Cosmic Nether Portal *(new in v0.2.0)*
+### 🌀 9. Cosmic Nether Portal *(since v0.2.0)*
 The vanilla Nether portal texture is procedurally transformed into a **swirling 3D plasma vortex** — animated purple/magenta cosmic energy that pulses with hypnotic depth. Mapped via dedicated block ID `10006` in `block.properties`.
 
 ### 🎬 10. Cinematic Post-Processing
-* **Multiple Tone Mapping Curves** *(new in v0.2.0)*: Pick from **Soft**, **Filmic (ACES)**, or **Intense (High Contrast)** to match your preferred mood.
-* **Color Vibrancy** *(new in v0.2.0)*: 4-step non-linear saturation control (*Muted / Balanced / Colorful / Vivid*) that makes foliage glow emerald and skies look lush, without crushing skin tones.
+* **Multiple Tone Mapping Curves** *(since v0.2.0)*: Pick from **Soft**, **Filmic (ACES)**, or **Intense (High Contrast)** to match your preferred mood.
+* **Color Vibrancy** *(since v0.2.0)*: 4-step non-linear saturation control (*Muted / Balanced / Colorful / Vivid*) that makes foliage glow emerald and skies look lush, without crushing skin tones.
 * **Exposure Brightness:** Muted / Balanced / Vibrant — global brightness lift.
 * **Subtle Vignette:** Gentle lens-darkening at screen edges for improved depth and immersion.
 
@@ -127,7 +162,7 @@ AuraLite is built from the ground up for maximum FPS using OpenGL 4.6 native har
 * **Bitwise Noise Generation:** Replacing slow transcendental float functions (`fract(sin(dot(...)))`) with ultra-fast **Integer Bitwise PCG-style hashes** utilizing `floatBitsToUint` and `uintBitsToFloat`.
 * **Early-Ray Termination:** Volumetric raymarching terminates instantly once cloud transmittance falls below 2%, saving rendering power.
 * **No Hand Transparency Glitches:** Handheld items, particles, and mobs are rendered in a separate stable path without tangent matrix overhead, eliminating "translucent hand" bugs.
-* **Profile-Based Scaling:** New v0.2.0 features (POM, Auroras, Cozy Lights, Wet Reflections, Ground Mist) are intelligently distributed across the **LOW / MED / HIGH / ULTRA** profiles so low-end systems don't pay for effects they can't afford.
+* **Profile-Based Scaling:** Every feature (POM, Auroras, Cozy Lights, Wet Reflections, Ground Mist, Shadow Distance, Sun Halo, etc.) is intelligently distributed across the **LOW / MED / HIGH / ULTRA** profiles so low-end systems don't pay for effects they can't afford.
 
 ---
 
@@ -137,9 +172,9 @@ AuraLite is built from the ground up for maximum FPS using OpenGL 4.6 native har
 2. Open your Minecraft directory (e.g. `%appdata%/.minecraft` on Windows).
 3. Place the downloaded `.zip` file inside the **`shaderpacks`** folder (Do **not** unzip it!).
 4. Launch Minecraft **1.20.1** using a profile with **Sodium + Iris** or **OptiFine** installed.
-5. In-game, go to **Options -> Video Settings -> Shader Packs**, select **AuraLite**, and click **Apply**.
+5. In-game, go to **Options → Video Settings → Shader Packs**, select **AuraLite**, and click **Apply**.
 
-> 💡 The repository ships two source folders: the legacy `shaders/` (v0.1) and the current `shaders v0.2.0/`. End users should grab the packaged release ZIP; developers can browse either folder directly.
+> 💡 The repository ships four source folders: the legacy `shaders/` (v0.1) and the three release snapshots `shaders v0.2.0/`, `shaders v0.2.1/`, and the current `shaders v0.2.2/`. End users should grab the packaged release ZIP; developers can browse any folder directly.
 
 ---
 
@@ -150,11 +185,24 @@ AuraLite includes a fully translated **Russian & English** in-game configuration
 ### `[Lighting Settings]`
 * **Dynamic Shadows** — Toggle sun/moon shadows.
 * **Shadow Resolution** — `1024 / 2048 / 4096`
+* 🆕 **Shadow Softness** *(v0.2.2)* — `Sharp / Soft / Ultra Soft` — rotated Poisson disk filtering.
+* 🆕 **Shadow Distance** *(v0.2.2)* — `Near (60m) / Standard (80m) / Far (120m) / Ultra (160m)`.
+* 🆕 **Shadow Tint** *(v0.2.2)* — `Neutral Gray / Cool Blue (Realistic) / Warm`.
+* 🆕 **Shadow Lift / Ambient** *(v0.2.2)* — `Dark / Standard / Lifted (Bright)`.
+* 🆕 **Light Wrap (Terminator)** *(v0.2.2)* — `Realistic (Lambert) / Soft / Stylized`.
 * **Torch Warmth** — `Cozy / Warm / Intense` — Customize block light warmth.
-* 🆕 **Torch Flickering (`COZY_LIGHTS`)** — Real-time flicker animations for torches, campfires, and lanterns.
+* **Torch Flickering (`COZY_LIGHTS`)** — Real-time flicker animations for torches, campfires, and lanterns.
 * **PBR Lighting** — Toggle PBR specular reflections and normal mapping.
-* 🆕 **3D Block Relief (POM)** — Enable Parallax Occlusion Mapping for true 3D block textures (LabPBR resource pack required).
+* **3D Block Relief (POM)** — Enable Parallax Occlusion Mapping for true 3D block textures (LabPBR resource pack required).
 * **PBR Intensity** — `Subtle / Standard / Mirror`
+
+### 🆕 `[Sun & Moon]` *(new screen in v0.2.2)*
+* **Sun Intensity** — `Dim / Standard / Bright / Blazing`
+* **Sun Colour Temperature** — `Cool / Neutral · Realistic (Tanner Helland) · Warm Golden`
+* **Sun Halo (Mie Scatter)** — toggle the warm forward-scatter glow when looking near the sun.
+* **Enhanced Sunrise/Sunset Glow** — toggle stronger warm back-scatter at low sun angles.
+* **Moon Intensity** — `Pitch Night / Standard / Bright Moon / Full Night`
+* **Moon Colour Temperature** — `Icy Blue / Silver (Realistic 4100K) / Warm Cream`
 
 ### `[Foliage Settings]`
 * **Waving Leaves** — Toggle leaves animation.
@@ -164,38 +212,38 @@ AuraLite includes a fully translated **Russian & English** in-game configuration
 ### `[Water Settings]`
 * **Water Waves** — Toggle 3D vertex water waves.
 * **Water Density** — `Clear / Balanced / Deep` — Adjust water transparency.
-* 🆕 **Water Ripple Strength (`WATER_RIFFLES`)** — `Calm / Standard / Choppy` — Fine normal-map ripples.
-* 🆕 **Water Specular Glow (`WATER_SPECULAR_STRENGTH`)** — `Soft / Standard / Glinting` — Brightness of sun/moon highlights on the ripples.
+* **Water Ripple Strength (`WATER_RIFFLES`)** — `Calm / Standard / Choppy` — Fine normal-map ripples.
+* **Water Specular Glow (`WATER_SPECULAR_STRENGTH`)** — `Soft / Standard / Glinting` — Brightness of sun/moon highlights on the ripples.
 
-### `[Sky & Clouds]` *(renamed from "3D Clouds Settings")*
+### `[Sky & Clouds]`
 * **Volumetric 3D Clouds** — Toggle raymarched clouds.
 * **Cloud Altitude** — `Low (~110m) / Standard (~160m) / High (~240m)`
 * **Cloud Thickness** — `Thin (Cirrus) / Standard (Cumulus) / Dense (Stormy)`
-* 🆕 **Aurora Borealis** — `Disabled / Only in Cold Biomes / Always Enabled`
-* 🆕 **Aurora Speed** — `Slow / Standard / Fast`
-* 🆕 **Aurora Brightness** — `Soft / Standard / Glowing`
-* 🆕 **Milky Way Brightness** — `Dim / Standard / Bright`
-* 🆕 **Stars Brightness** — `Faint / Standard / Brilliant`
-* 🆕 **Stars Density** — `Few / Standard / Dense`
-* 🆕 **Rainbow Intensity** — `Subtle / Balanced / Vivid` — Post-rain rainbow arc.
+* **Aurora Borealis** — `Disabled / Only in Cold Biomes / Always Enabled`
+* **Aurora Speed** — `Slow / Standard / Fast`
+* **Aurora Brightness** — `Soft / Standard / Glowing`
+* **Milky Way Brightness** — `Dim / Standard / Bright`
+* **Stars Brightness** — `Faint / Standard / Brilliant`
+* **Stars Density** — `Few / Standard / Dense`
+* **Rainbow Intensity** — `Subtle / Balanced / Vivid` — Post-rain rainbow arc.
 
 ### `[Post-Processing & Fog]`
 * **Fog Density** — `Low / Medium / High` — Atmospheric horizon mist.
-* 🆕 **Low Ground Mist (`GROUND_MIST`)** — Golden-white fog sheets at Y = 62–66 during dawn/dusk.
+* **Low Ground Mist (`GROUND_MIST`)** — Golden-white fog sheets at Y = 62–66 during dawn/dusk.
 * **Exposure Brightness** — `Muted / Balanced / Vibrant`
-* 🆕 **Color Vibrancy (`COLOR_SATURATION`)** — `Muted / Balanced / Colorful / Vivid`
-* 🆕 **Image Contrast (`CONTRAST`)** — `Soft / Filmic (ACES) / Intense (High Contrast)` — Choose the tone mapping curve.
+* **Color Vibrancy (`COLOR_SATURATION`)** — `Muted / Balanced / Colorful / Vivid`
+* **Image Contrast (`CONTRAST`)** — `Soft / Filmic (ACES) / Intense (High Contrast)` — Choose the tone mapping curve.
 * **Vignette** — Toggle cinematic corner darkening.
-* (Hidden) 🆕 **Rain Wetness Reflections (`WET_REFLECTIONS`)** — Wet glossy ground during rain (enabled by default in MED+ profiles).
+* (Hidden) **Rain Wetness Reflections (`WET_REFLECTIONS`)** — Wet glossy ground during rain (enabled by default in MED+ profiles).
 
-### 🎚️ Quality Profiles
+### 🎚️ Quality Profiles (v0.2.2)
 
-| Profile | Shadows | Clouds | PBR | POM | Cozy Lights | Wet | Aurora | Stars / Milky Way | Tone Map |
-|---|---|---|---|---|---|---|---|---|---|
-| **LOW**   | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | Off | — | Soft |
-| **MED**   | ✅ 2048 | ✅ | ✅ | ❌ | ✅ | ✅ | Cold biomes | Standard | ACES |
-| **HIGH**  | ✅ 4096 | ✅ | ✅ | ❌ | ✅ | ✅ | Cold biomes | Standard | ACES |
-| **ULTRA** | ✅ 4096 | ✅ | ✅ | ✅ | ✅ | ✅ | Always   | Dense / Bright | Intense |
+| Profile | Shadows | Shadow Dist. | Softness | Clouds | PBR | POM | Cozy / Wet / Mist | Sun Halo / Sunrise | Aurora | Tone Map |
+|---|---|---|---|---|---|---|---|---|---|---|
+| **LOW**   | ❌ | — | Sharp | ❌ | ❌ | ❌ | ❌ ❌ ❌ | ❌ ❌ | Off | Soft |
+| **MED**   | ✅ 2048 | 80m | Soft | ✅ | ✅ | ❌ | ✅ ✅ ✅ | ✅ ✅ | Cold biomes | ACES |
+| **HIGH**  | ✅ 4096 | 120m | Soft | ✅ | ✅ | ❌ | ✅ ✅ ✅ | ✅ ✅ | Cold biomes | ACES |
+| **ULTRA** | ✅ 4096 | 160m | Ultra Soft | ✅ | ✅ | ✅ | ✅ ✅ ✅ | ✅ ✅ | Always | Intense |
 
 ---
 
