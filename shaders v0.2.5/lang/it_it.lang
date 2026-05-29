@@ -1,0 +1,301 @@
+# ==============================================================================
+# AuraLite Shader Pack - Italian Language Translations
+# ==============================================================================
+# NOTA: Questa è una traduzione assistita da IA. Le correzioni della community
+# sono benvenute! Apri una PR su:
+# https://github.com/AlexanderNyr/AuraLite-Shaders
+# ==============================================================================
+
+# ==============================================================================
+# Quality Profiles
+# ==============================================================================
+profile.LOW=Basso
+profile.MED=Medio
+profile.HIGH=Alto
+profile.ULTRA=Ultra
+profile.EXTREME=Extreme
+profile.EXTREME.comment=Qualità sperimentale massima. Aggiunge occlusione ambientale di contatto SSAO/SAO. POM rimane disabilitato per stabilità.
+profile.CUSTOM=Personalizzato
+profile.CUSTOM.comment=Impostazioni personalizzate.
+profile.HIGH.comment=Alta qualità con ombre più lontane e illuminazione più brillante.
+profile.LOW.comment=Preset più veloce per GPU deboli. Disabilita gli effetti pesanti.
+profile.MED.comment=Preset bilanciato con ombre, nuvole, PBR ed effetti atmosferici.
+profile.ULTRA.comment=Massima qualità visiva. POM rimane disabilitato per stabilità.
+
+screen.TRANSLATION_NOTICE=⚠ Le traduzioni potrebbero contenere errori
+screen.TRANSLATION_NOTICE.comment=Alcune stringhe di localizzazione potrebbero essere imprecise. Se qualcosa sembra strano, confronta con l'originale inglese.
+
+# Screens
+screen.LIGHTING=Impostazioni di Illuminazione
+screen.LIGHTING.comment=Configura ombre, colori della luce e luminosità.
+
+screen.FOLIAGE=Impostazioni Vegetazione
+screen.FOLIAGE.comment=Configura le animazioni di ondeggiamento per erba e foglie.
+
+screen.WATER=Impostazioni Acqua
+screen.WATER.comment=Configura onde, trasparenza e stile dell'acqua.
+
+screen.CLOUDS_MENU=Cielo e Nuvole
+screen.CLOUDS_MENU.comment=Configura altitudine fisica, spessore e stile delle nuvole 3D ed effetti del cielo.
+
+screen.POST_PROCESS=Post-elaborazione e Nebbia
+screen.POST_PROCESS.comment=Configura esposizione, nebbia ed effetti cinematografici.
+
+# Options
+option.SHADOWS=Ombre Dinamiche
+option.SHADOWS.comment=Attiva o disattiva le ombre dinamiche morbide del sole e della luna.
+
+option.SHADOW_RES=Risoluzione Ombre
+option.SHADOW_RES.comment=Cambia la qualità della mappa delle ombre. Valori più alti riducono le prestazioni.
+
+option.PBR_LIGHTING=Illuminazione PBR (LabPBR)
+option.PBR_LIGHTING.comment=Attiva il rendering fisico per metalli, rugosità e mappe di normali 3D (richiede pack PBR).
+
+option.PBR_POM=Rilievo 3D dei Blocchi (POM)
+option.PBR_POM.comment=Attiva il Parallax Occlusion Mapping per vere texture 3D. Da disattivare su pack incompatibili.
+
+option.PBR_STRENGTH=Intensità PBR
+option.PBR_STRENGTH.comment=Controlla la riflettività e brillantezza delle superfici metalliche PBR.
+
+value.PBR_STRENGTH.1=Sottile
+value.PBR_STRENGTH.2=Standard
+value.PBR_STRENGTH.3=Specchio
+
+option.SSAO=SSAO / SAO Occlusion
+option.SSAO.comment=Profilo Estremo: screen-space ambient occlusion per ombre di contatto negli angoli, sotto i blocchi e attorno alle intersezioni geometriche.
+option.SSAO_STRENGTH=Forza SSAO
+option.SSAO_STRENGTH.comment=Controlla la profondità dell'occlusione ambientale in screen-space. Attiva solo quando SSAO è abilitato.
+value.SSAO_STRENGTH.1=Sottile
+value.SSAO_STRENGTH.2=Bilanciata
+value.SSAO_STRENGTH.3=Profonda
+
+option.LIGHTMAP_WARMTH=Calore delle Torce
+option.LIGHTMAP_WARMTH.comment=Regola il calore e il colore della luce dei blocchi e delle torce.
+
+value.LIGHTMAP_WARMTH.1=Accogliente
+value.LIGHTMAP_WARMTH.2=Calda
+value.LIGHTMAP_WARMTH.3=Intensa
+
+option.WAVING_LEAVES=Foglie Ondulanti
+option.WAVING_LEAVES.comment=Attiva animazioni di leggero ondeggiamento per le foglie degli alberi.
+
+option.WAVING_GRASS=Vegetazione Ondulante
+option.WAVING_GRASS.comment=Attiva animazioni di ondeggiamento per erba, fiori e colture.
+
+option.WIND_SPEED=Velocità del Vento
+option.WIND_SPEED.comment=Controlla la velocità di ondeggiamento di foglie, piante e onde dell'acqua.
+
+value.WIND_SPEED.1=Lieve
+value.WIND_SPEED.2=Brezza
+value.WIND_SPEED.3=Burrasca
+
+option.WATER_WAVES=Onde dell'Acqua
+option.WATER_WAVES.comment=Attiva onde geometriche 3D sulla superficie dell'acqua.
+
+option.WATER_TRANSPARENCY=Densità dell'Acqua
+option.WATER_TRANSPARENCY.comment=Controlla la trasparenza e opacità dell'acqua.
+
+value.WATER_TRANSPARENCY.1=Cristallina
+value.WATER_TRANSPARENCY.2=Bilanciata
+value.WATER_TRANSPARENCY.3=Profonda
+
+option.PROCEDURAL_CLOUDS=Nuvole Volumetriche 3D
+option.PROCEDURAL_CLOUDS.comment=Attiva nuvole 3D fisicamente attraversabili che si possono sorvolare.
+
+option.CLOUD_HEIGHT=Altitudine Nuvole
+option.CLOUD_HEIGHT.comment=Imposta l'altitudine fisica (livello Y) dello strato di nuvole nel mondo (in metri).
+
+value.CLOUD_HEIGHT.1=Bassa (~110m)
+value.CLOUD_HEIGHT.2=Standard (~160m)
+value.CLOUD_HEIGHT.3=Alta (~240m)
+
+option.CLOUD_THICKNESS=Spessore Nuvole
+option.CLOUD_THICKNESS.comment=Configura lo spessore verticale e il volume delle nuvole.
+
+value.CLOUD_THICKNESS.1=Sottili (Cirri)
+value.CLOUD_THICKNESS.2=Standard (Cumuli)
+value.CLOUD_THICKNESS.3=Dense (Temporalesche)
+
+option.CLOUD_DISTANCE=Distanza di render delle nuvole
+option.CLOUD_DISTANCE.comment=Distanza massima di rendering per nuvole volumetriche. I profili di qualità la aumentano automaticamente.
+value.CLOUD_DISTANCE.1=Vicina
+value.CLOUD_DISTANCE.2=Standard
+value.CLOUD_DISTANCE.3=Lontana
+value.CLOUD_DISTANCE.4=Molto Lontana
+
+option.AURORA_MODE=Aurora Boreale
+option.AURORA_MODE.comment=Controlla la visualizzazione di aurore fluide e realistiche nel cielo notturno.
+
+value.AURORA_MODE.0=Disattivata
+value.AURORA_MODE.1=Solo nei Bioma Freddi
+value.AURORA_MODE.2=Sempre Attiva
+
+option.AURORA_SPEED=Velocità Aurora
+option.AURORA_SPEED.comment=Controlla la velocità di ondulazione e flusso dell'aurora boreale.
+
+value.AURORA_SPEED.1=Lenta
+value.AURORA_SPEED.2=Standard
+value.AURORA_SPEED.3=Veloce
+
+option.AURORA_STRENGTH=Luminosità Aurora
+option.AURORA_STRENGTH.comment=Controlla la luminosità complessiva dell'aurora boreale.
+
+value.AURORA_STRENGTH.1=Soffusa
+value.AURORA_STRENGTH.2=Standard
+value.AURORA_STRENGTH.3=Brillante
+
+option.NEBULA_BRIGHTNESS=Luminosità Via Lattea
+option.NEBULA_BRIGHTNESS.comment=Regola la luminosità della nebulosa galattica diagonale brunastra di notte.
+
+value.NEBULA_BRIGHTNESS.1=Tenue
+value.NEBULA_BRIGHTNESS.2=Standard
+value.NEBULA_BRIGHTNESS.3=Luminosa
+
+option.STARS_BRIGHTNESS=Luminosità Stelle
+option.STARS_BRIGHTNESS.comment=Controlla la luminosità e lo scintillio delle stelle di notte.
+
+value.STARS_BRIGHTNESS.1=Debole
+value.STARS_BRIGHTNESS.2=Standard
+value.STARS_BRIGHTNESS.3=Brillante
+
+option.STARS_AMOUNT=Densità Stelle
+option.STARS_AMOUNT.comment=Controlla la quantità e densità complessiva delle stelle nel cielo.
+
+value.STARS_AMOUNT.1=Poche
+value.STARS_AMOUNT.2=Standard
+value.STARS_AMOUNT.3=Dense
+
+option.RAINBOW_STRENGTH=Intensità Arcobaleno
+option.RAINBOW_STRENGTH.comment=Configura la luminosità e saturazione dell'arcobaleno dopo la pioggia.
+
+value.RAINBOW_STRENGTH.1=Sottile
+value.RAINBOW_STRENGTH.2=Bilanciato
+value.RAINBOW_STRENGTH.3=Vivace
+
+option.COZY_LIGHTS=Sfarfallio Torce
+option.COZY_LIGHTS.comment=Attiva animazioni calde di sfarfallio in tempo reale per torce, falò e lanterne.
+
+option.WET_REFLECTIONS=Riflessi Suolo Bagnato
+option.WET_REFLECTIONS.comment=Quando piove, blocchi solidi come terra, erba e pietra diventano bagnati, scuri e lucidi sotto il cielo aperto.
+
+option.GROUND_MIST=Nebbia Bassa (Y=62-66)
+option.GROUND_MIST.comment=Attiva morbide nebbie dorate del mattino/sera che scorrono sull'acqua e il ghiaccio all'alba e al tramonto.
+
+option.FOG_DENSITY_LEVEL=Densità Nebbia
+option.FOG_DENSITY_LEVEL.comment=Controlla l'intensità della nebbia atmosferica all'orizzonte.
+
+value.FOG_DENSITY_LEVEL.1=Bassa
+value.FOG_DENSITY_LEVEL.2=Media
+value.FOG_DENSITY_LEVEL.3=Alta
+
+option.EXPOSURE=Luminosità Esposizione
+option.EXPOSURE.comment=Controlla la luminosità complessiva dell'immagine.
+
+value.EXPOSURE.1=Smorzata
+value.EXPOSURE.2=Bilanciata
+value.EXPOSURE.3=Vibrante
+
+option.COLOR_SATURATION=Vivacità Colore
+option.COLOR_SATURATION.comment=Controlla la saturazione non lineare dei colori. Rende la vegetazione smeraldo e il cielo lussureggiante.
+
+value.COLOR_SATURATION.1=Smorzati
+value.COLOR_SATURATION.2=Bilanciati
+value.COLOR_SATURATION.3=Colorati
+value.COLOR_SATURATION.4=Vividi
+
+option.CONTRAST=Contrasto Immagine
+option.CONTRAST.comment=Sceglie la curva di tone mapping e stile di contrasto.
+
+value.CONTRAST.1=Morbido
+value.CONTRAST.2=Cinematografico (ACES)
+value.CONTRAST.3=Intenso (Alto Contrasto)
+
+option.VIGNETTE=Effetto Vignetta
+option.VIGNETTE.comment=Attiva un sottile oscuramento ai bordi dello schermo per migliorare il focus.
+
+option.WATER_RIFFLES=Intensità Increspature Acqua
+option.WATER_RIFFLES.comment=Regola l'intensità delle fini increspature delle normali sull'acqua.
+
+value.WATER_RIFFLES.1=Calma
+value.WATER_RIFFLES.2=Standard
+value.WATER_RIFFLES.3=Mossa
+
+option.WATER_SPECULAR_STRENGTH=Riflesso Speculare Acqua
+option.WATER_SPECULAR_STRENGTH.comment=Regola la luminosità dei riflessi del sole/luna sulle increspature dell'acqua.
+
+value.WATER_SPECULAR_STRENGTH.1=Soffuso
+value.WATER_SPECULAR_STRENGTH.2=Standard
+value.WATER_SPECULAR_STRENGTH.3=Scintillante
+
+option.SHADOW_SOFTNESS=Morbidezza Ombre
+option.SHADOW_SOFTNESS.comment=Controlla quanto i bordi delle ombre appaiano morbidi e diffusi. Usa filtraggio Poisson disk ruotato per una penombra liscia.
+
+value.SHADOW_SOFTNESS.1=Nitide
+value.SHADOW_SOFTNESS.2=Morbide
+value.SHADOW_SOFTNESS.3=Ultra Morbide
+
+# ==============================================================================
+# Illuminazione Sole e Luna (estesa)
+# ==============================================================================
+screen.SUN_MOON=Sole e Luna
+screen.SUN_MOON.comment=Regolazione fine di intensità, temperatura colore ed effetti atmosferici del sole e della luna.
+
+option.SUN_INTENSITY=Intensità Sole
+option.SUN_INTENSITY.comment=Luminosità principale della luce solare diretta. Più alto = maggior contrasto diurno.
+value.SUN_INTENSITY.1=Debole
+value.SUN_INTENSITY.2=Standard
+value.SUN_INTENSITY.3=Brillante
+value.SUN_INTENSITY.4=Cocente
+
+option.MOON_INTENSITY=Intensità Luna
+option.MOON_INTENSITY.comment=Luminosità principale del chiaro di luna. Più alto = notti più chiare e visibili.
+value.MOON_INTENSITY.1=Notte Pesta
+value.MOON_INTENSITY.2=Standard
+value.MOON_INTENSITY.3=Luna Brillante
+value.MOON_INTENSITY.4=Notte Chiara
+
+option.SUN_TEMPERATURE=Temperatura Sole
+option.SUN_TEMPERATURE.comment=Sposta la curva Kelvin del sole. Realistica usa la formula Tanner Helland; calda = dorato; fredda = bianco neutro.
+value.SUN_TEMPERATURE.1=Fredda / Neutra
+value.SUN_TEMPERATURE.2=Realistica
+value.SUN_TEMPERATURE.3=Calda Dorata
+
+option.MOON_TEMPERATURE=Temperatura Luna
+option.MOON_TEMPERATURE.comment=Tinta del chiaro di luna. Gelida = blu freddo; Argento = realistica 4100K; Calda = luna del raccolto.
+value.MOON_TEMPERATURE.1=Blu Gelida
+value.MOON_TEMPERATURE.2=Argento (Realistica)
+value.MOON_TEMPERATURE.3=Crema Calda
+
+option.SUN_HALO=Alone Solare (Mie)
+option.SUN_HALO.comment=Aggiunge un dolce bagliore caldo sul terreno guardando vicino al sole (dispersione Mie in avanti).
+
+option.SUNRISE_GLOW=Bagliore Migliorato Alba/Tramonto
+option.SUNRISE_GLOW.comment=Attiva un caldo bagliore back-scatter più forte che avvolge le superfici opposte al sole basso.
+
+# ==============================================================================
+# Impostazioni ombre estese
+# ==============================================================================
+option.SHADOW_DISTANCE=Distanza Ombre
+option.SHADOW_DISTANCE.comment=Distanza massima a cui le ombre dinamiche vengono renderizzate prima di dissolversi.
+value.SHADOW_DISTANCE.1=Vicina (60m)
+value.SHADOW_DISTANCE.2=Standard (80m)
+value.SHADOW_DISTANCE.3=Lontana (120m)
+value.SHADOW_DISTANCE.4=Ultra (160m)
+
+option.AMBIENT_BRIGHTNESS=Sollevamento Ombre (Ambient)
+option.AMBIENT_BRIGHTNESS.comment=Controlla quanto le aree in ombra appaiano scure di notte e nelle caverne.
+value.AMBIENT_BRIGHTNESS.1=Scure
+value.AMBIENT_BRIGHTNESS.2=Standard
+value.AMBIENT_BRIGHTNESS.3=Sollevate (Chiare)
+
+option.SHADOW_TINT=Tinta Ombra
+option.SHADOW_TINT.comment=Tinge le ombre diurne. Nella realtà, le ombre sotto un cielo blu hanno una sottile tinta fredda.
+value.SHADOW_TINT.1=Grigio Neutro
+value.SHADOW_TINT.2=Blu Freddo (Realistico)
+value.SHADOW_TINT.3=Caldo
+
+option.LIGHT_WRAP=Avvolgimento Luce (Light Wrap)
+option.LIGHT_WRAP.comment=Ammorbidisce il terminatore tra superfici illuminate e oscure. Realistico = Lambert fisico; Morbido = piacevole per screenshot.
+value.LIGHT_WRAP.1=Realistico (Lambert)
+value.LIGHT_WRAP.2=Avvolgimento Morbido
+value.LIGHT_WRAP.3=Stilizzato
