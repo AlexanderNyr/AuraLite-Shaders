@@ -1,0 +1,238 @@
+# AuraLite Shaders - Copyright (c) 2026 AlexanderNyr. Licensed under CC BY-NC-SA 4.0.
+# ==============================================================================
+# AuraLite Shader Pack - Indonesian Language Translations
+# ==============================================================================
+# CATATAN: Ini adalah terjemahan dengan bantuan AI. Koreksi komunitas sangat
+# diharapkan! Silakan buka PR di:
+# https://github.com/AlexanderNyr/AuraLite-Shaders
+# ==============================================================================
+
+# ==============================================================================
+# Quality Profiles
+# ==============================================================================
+profile.LOW=Rendah
+profile.MED=Sedang
+profile.HIGH=Tinggi
+profile.ULTRA=Ultra
+profile.EXTREME=Extreme
+profile.EXTREME.comment=Kualitas eksperimental maksimal. Menambahkan occlusion ambient kontak gaya SSAO/SAO. POM tetap dinonaktifkan untuk stabilitas.
+profile.CUSTOM=Kustom
+profile.CUSTOM.comment=Pengaturan kustom pengguna.
+profile.HIGH.comment=Kualitas tinggi dengan bayangan lebih jauh dan pencahayaan lebih terang.
+profile.LOW.comment=Praset tercepat untuk GPU lemah. Menonaktifkan efek berat.
+profile.MED.comment=Praset seimbang dengan bayangan, awan, PBR dan efek atmosfer.
+profile.ULTRA.comment=Kualitas visual maksimal. PBM tetap dinonaktifkan untuk stabilitas.
+
+screen.TRANSLATION_NOTICE=⚠ Terjemahan mungkin mengandung kesalahan
+screen.TRANSLATION_NOTICE.comment=Beberapa string lokalisasi mungkin tidak akurat. Jika ada yang terlihat aneh, bandingkan dengan aslinya dalam bahasa Inggris.
+
+# Screens
+screen.LIGHTING=Pengaturan Pencahayaan
+screen.LIGHTING.comment=Konfigurasi bayangan, warna cahaya, dan kecerahan.
+screen.FOLIAGE=Pengaturan Tumbuhan
+screen.FOLIAGE.comment=Konfigurasi animasi melambai untuk rumput dan daun.
+screen.WATER=Pengaturan Air
+screen.WATER.comment=Konfigurasi gelombang, transparansi, dan gaya air.
+screen.CLOUDS_MENU=Langit & Awan
+screen.CLOUDS_MENU.comment=Konfigurasi ketinggian fisik, ketebalan, dan gaya awan 3D serta efek langit.
+screen.POST_PROCESS=Pasca-Pemrosesan & Kabut
+screen.POST_PROCESS.comment=Konfigurasi pencahayaan, kabut, dan efek sinematik.
+
+# Options
+option.SHADOWS=Bayangan Dinamis
+option.SHADOWS.comment=Mengaktifkan atau menonaktifkan bayangan dinamis lembut dari matahari dan bulan.
+option.SHADOW_RES=Resolusi Bayangan
+option.SHADOW_RES.comment=Mengubah kualitas peta bayangan. Nilai lebih tinggi menurunkan kinerja.
+option.PBR_LIGHTING=Pencahayaan PBR (LabPBR)
+option.PBR_LIGHTING.comment=Mengaktifkan rendering berbasis fisika untuk logam, kekasaran, dan peta normal 3D (memerlukan resource pack PBR).
+option.PBR_POM=Relief Blok 3D (POM)
+option.PBR_POM.comment=Mengaktifkan Parallax Occlusion Mapping untuk tekstur blok 3D sejati. Disarankan dinonaktifkan pada pack yang tidak kompatibel.
+option.PBR_STRENGTH=Intensitas PBR
+option.PBR_STRENGTH.comment=Mengontrol reflektivitas dan kilau permukaan logam PBR.
+value.PBR_STRENGTH.1=Halus
+value.PBR_STRENGTH.2=Standar
+value.PBR_STRENGTH.3=Cermin
+option.LIGHTMAP_WARMTH=Kehangatan Obor
+option.LIGHTMAP_WARMTH.comment=Menyesuaikan kehangatan dan warna cahaya blok/obor.
+value.LIGHTMAP_WARMTH.1=Nyaman
+value.LIGHTMAP_WARMTH.2=Hangat
+value.LIGHTMAP_WARMTH.3=Intens
+option.WAVING_LEAVES=Daun Melambai
+option.WAVING_LEAVES.comment=Mengaktifkan animasi melambai lembut untuk daun pohon.
+option.WAVING_GRASS=Tumbuhan Melambai
+option.WAVING_GRASS.comment=Mengaktifkan animasi melambai untuk rumput, bunga, dan tanaman.
+option.WIND_SPEED=Kecepatan Angin
+option.WIND_SPEED.comment=Mengontrol kecepatan lambaian daun, tanaman, dan gelombang air.
+value.WIND_SPEED.1=Sepoi
+value.WIND_SPEED.2=Semilir
+value.WIND_SPEED.3=Badai
+option.WATER_WAVES=Gelombang Air
+option.WATER_WAVES.comment=Mengaktifkan gelombang geometris 3D di permukaan air.
+option.WATER_TRANSPARENCY=Kepadatan Air
+option.WATER_TRANSPARENCY.comment=Mengontrol transparansi dan opasitas air.
+value.WATER_TRANSPARENCY.1=Jernih
+value.WATER_TRANSPARENCY.2=Seimbang
+value.WATER_TRANSPARENCY.3=Dalam
+option.PROCEDURAL_CLOUDS=Awan 3D Volumetrik
+option.PROCEDURAL_CLOUDS.comment=Mengaktifkan awan 3D fisik yang dapat diterbangi menembus.
+option.CLOUD_HEIGHT=Ketinggian Awan
+option.CLOUD_HEIGHT.comment=Mengatur ketinggian fisik (level Y) lapisan awan di dunia (dalam meter).
+value.CLOUD_HEIGHT.1=Rendah (~110m)
+value.CLOUD_HEIGHT.2=Standar (~160m)
+value.CLOUD_HEIGHT.3=Tinggi (~240m)
+option.CLOUD_THICKNESS=Ketebalan Awan
+option.CLOUD_THICKNESS.comment=Mengonfigurasi ketebalan vertikal dan volume awan.
+value.CLOUD_THICKNESS.1=Tipis (Sirus)
+value.CLOUD_THICKNESS.2=Standar (Kumulus)
+value.CLOUD_THICKNESS.3=Tebal (Badai)
+option.AURORA_MODE=Aurora Borealis
+option.AURORA_MODE.comment=Mengontrol tampilan aurora mengalir realistis di langit malam.
+value.AURORA_MODE.0=Dinonaktifkan
+value.AURORA_MODE.1=Hanya di Biome Dingin
+value.AURORA_MODE.2=Selalu Aktif
+option.AURORA_SPEED=Kecepatan Aurora
+option.AURORA_SPEED.comment=Mengontrol kecepatan riak dan aliran cahaya utara.
+value.AURORA_SPEED.1=Lambat
+value.AURORA_SPEED.2=Standar
+value.AURORA_SPEED.3=Cepat
+option.AURORA_STRENGTH=Kecerahan Aurora
+option.AURORA_STRENGTH.comment=Mengontrol kecerahan keseluruhan cahaya utara.
+value.AURORA_STRENGTH.1=Lembut
+value.AURORA_STRENGTH.2=Standar
+value.AURORA_STRENGTH.3=Bercahaya
+option.NEBULA_BRIGHTNESS=Kecerahan Bima Sakti
+option.NEBULA_BRIGHTNESS.comment=Menyesuaikan kecerahan nebula galaksi diagonal kecoklatan di malam hari.
+value.NEBULA_BRIGHTNESS.1=Redup
+value.NEBULA_BRIGHTNESS.2=Standar
+value.NEBULA_BRIGHTNESS.3=Cerah
+option.STARS_BRIGHTNESS=Kecerahan Bintang
+option.STARS_BRIGHTNESS.comment=Mengontrol kecerahan dan kilau bintang di malam hari.
+value.STARS_BRIGHTNESS.1=Samar
+value.STARS_BRIGHTNESS.2=Standar
+value.STARS_BRIGHTNESS.3=Berkilau
+option.STARS_AMOUNT=Kepadatan Bintang
+option.STARS_AMOUNT.comment=Mengontrol jumlah keseluruhan dan kepadatan bintang di langit.
+value.STARS_AMOUNT.1=Sedikit
+value.STARS_AMOUNT.2=Standar
+value.STARS_AMOUNT.3=Padat
+option.RAINBOW_STRENGTH=Intensitas Pelangi
+option.RAINBOW_STRENGTH.comment=Mengonfigurasi kecerahan dan saturasi pelangi setelah hujan.
+value.RAINBOW_STRENGTH.1=Halus
+value.RAINBOW_STRENGTH.2=Seimbang
+value.RAINBOW_STRENGTH.3=Hidup
+option.COZY_LIGHTS=Kerlipan Obor
+option.COZY_LIGHTS.comment=Mengaktifkan animasi kerlipan hangat dan nyaman waktu-nyata untuk obor, api unggun, dan lentera.
+option.WET_REFLECTIONS=Refleksi Tanah Basah
+option.WET_REFLECTIONS.comment=Saat hujan, blok padat seperti tanah, rumput, dan batu menjadi basah, gelap, dan mengkilap di bawah langit terbuka.
+option.GROUND_MIST=Kabut Rendah (Y=62-66)
+option.GROUND_MIST.comment=Mengaktifkan lembaran kabut emas-putih pagi/sore lembut yang meluncur di atas air dan es saat fajar dan senja.
+option.FOG_DENSITY_LEVEL=Kepadatan Kabut
+option.FOG_DENSITY_LEVEL.comment=Mengontrol kekuatan kabut horizon atmosfer.
+value.FOG_DENSITY_LEVEL.1=Rendah
+value.FOG_DENSITY_LEVEL.2=Sedang
+value.FOG_DENSITY_LEVEL.3=Tinggi
+option.EXPOSURE=Kecerahan Eksposur
+option.EXPOSURE.comment=Mengontrol kecerahan keseluruhan gambar.
+value.EXPOSURE.1=Suram
+value.EXPOSURE.2=Seimbang
+value.EXPOSURE.3=Cerah
+option.COLOR_SATURATION=Kehidupan Warna
+option.COLOR_SATURATION.comment=Mengontrol saturasi non-linear warna layar. Membuat tumbuhan terlihat zamrud dan langit subur.
+value.COLOR_SATURATION.1=Suram
+value.COLOR_SATURATION.2=Seimbang
+value.COLOR_SATURATION.3=Berwarna
+value.COLOR_SATURATION.4=Hidup
+option.CONTRAST=Kontras Gambar
+option.CONTRAST.comment=Memilih kurva tone mapping dan gaya kontras.
+value.CONTRAST.1=Lembut
+value.CONTRAST.2=Sinematik (ACES)
+value.CONTRAST.3=Intens (Kontras Tinggi)
+option.VIGNETTE=Efek Vignette
+option.VIGNETTE.comment=Mengaktifkan penggelapan halus di tepi layar untuk peningkatan fokus.
+option.WATER_RIFFLES=Intensitas Riak Air
+option.WATER_RIFFLES.comment=Menyesuaikan intensitas riak halus pada peta normal di air.
+value.WATER_RIFFLES.1=Tenang
+value.WATER_RIFFLES.2=Standar
+value.WATER_RIFFLES.3=Bergelombang
+option.WATER_SPECULAR_STRENGTH=Kilau Spekuler Air
+option.WATER_SPECULAR_STRENGTH.comment=Menyesuaikan kecerahan refleksi matahari/bulan pada riak air.
+value.WATER_SPECULAR_STRENGTH.1=Lembut
+value.WATER_SPECULAR_STRENGTH.2=Standar
+value.WATER_SPECULAR_STRENGTH.3=Berkilau
+option.SHADOW_SOFTNESS=Kelembutan Bayangan
+option.SHADOW_SOFTNESS.comment=Mengontrol seberapa lembut dan menyebar tepi bayangan terlihat. Menggunakan penyaringan Poisson disk yang diputar untuk penumbra halus.
+value.SHADOW_SOFTNESS.1=Tajam
+value.SHADOW_SOFTNESS.2=Lembut
+value.SHADOW_SOFTNESS.3=Sangat Lembut
+
+option.SSAO=SSAO / SAO Occlusion
+option.SSAO.comment=Profil Ekstrim: screen-space ambient occlusion untuk bayangan kontak di sudut, bawah blok, dan sekitar perpotongan geometri.
+option.SSAO_STRENGTH=Kekuatan SSAO
+option.SSAO_STRENGTH.comment=Mengontrol kedalaman screen-space ambient occlusion. Hanya aktif saat SSAO diaktifkan.
+value.SSAO_STRENGTH.1=Halus
+value.SSAO_STRENGTH.2=Seimbang
+value.SSAO_STRENGTH.3=Dalam
+
+option.CLOUD_DISTANCE=Jarak render awan
+option.CLOUD_DISTANCE.comment=Jarak gambar maksimum untuk awan volumetrik. Profil kualitas meningkatkannya secara otomatis.
+value.CLOUD_DISTANCE.1=Dekat
+value.CLOUD_DISTANCE.2=Standar
+value.CLOUD_DISTANCE.3=Jauh
+value.CLOUD_DISTANCE.4=Sangat Jauh
+
+# ==============================================================================
+# Matahari & Bulan (Pencahayaan Diperluas)
+# ==============================================================================
+screen.SUN_MOON=Matahari & Bulan
+screen.SUN_MOON.comment=Penyesuaian halus intensitas, suhu warna, dan efek atmosfer matahari/bulan.
+option.SUN_INTENSITY=Intensitas Matahari
+option.SUN_INTENSITY.comment=Kecerahan utama sinar matahari langsung. Lebih tinggi = kontras siang hari lebih kuat.
+value.SUN_INTENSITY.1=Redup
+value.SUN_INTENSITY.2=Standar
+value.SUN_INTENSITY.3=Cerah
+value.SUN_INTENSITY.4=Membara
+option.MOON_INTENSITY=Intensitas Bulan
+option.MOON_INTENSITY.comment=Kecerahan utama cahaya bulan. Lebih tinggi = malam lebih terang dan lebih terlihat.
+value.MOON_INTENSITY.1=Malam Pekat
+value.MOON_INTENSITY.2=Standar
+value.MOON_INTENSITY.3=Bulan Terang
+value.MOON_INTENSITY.4=Malam Terang
+option.SUN_TEMPERATURE=Suhu Warna Matahari
+option.SUN_TEMPERATURE.comment=Menggeser kurva Kelvin matahari. Realistis = rumus benda hitam Tanner Helland; hangat = emas; sejuk = putih netral.
+value.SUN_TEMPERATURE.1=Sejuk / Netral
+value.SUN_TEMPERATURE.2=Realistis
+value.SUN_TEMPERATURE.3=Emas Hangat
+option.MOON_TEMPERATURE=Suhu Warna Bulan
+option.MOON_TEMPERATURE.comment=Nuansa cahaya bulan. Es = biru dingin; Perak = realistis 4100K; Hangat = krem bulan panen.
+value.MOON_TEMPERATURE.1=Biru Es
+value.MOON_TEMPERATURE.2=Perak (Realistis)
+value.MOON_TEMPERATURE.3=Krem Hangat
+option.SUN_HALO=Halo Matahari (Hamburan Mie)
+option.SUN_HALO.comment=Menambahkan cahaya hangat lembut pada medan saat melihat ke arah matahari (hamburan Mie ke depan).
+option.SUNRISE_GLOW=Cahaya Matahari Terbit/Terbenam yang Ditingkatkan
+option.SUNRISE_GLOW.comment=Mengaktifkan cahaya hamburan-balik hangat yang lebih kuat membungkus permukaan yang menghadap jauh dari matahari rendah.
+
+# ==============================================================================
+# Pengaturan Bayangan Diperluas
+# ==============================================================================
+option.SHADOW_DISTANCE=Jarak Bayangan
+option.SHADOW_DISTANCE.comment=Jarak maksimum di mana bayangan dinamis dirender sebelum memudar.
+value.SHADOW_DISTANCE.1=Dekat (60m)
+value.SHADOW_DISTANCE.2=Standar (80m)
+value.SHADOW_DISTANCE.3=Jauh (120m)
+value.SHADOW_DISTANCE.4=Ultra (160m)
+option.AMBIENT_BRIGHTNESS=Pengangkatan Bayangan (Ambient)
+option.AMBIENT_BRIGHTNESS.comment=Mengontrol seberapa gelap area berbayang terlihat di malam hari dan di gua.
+value.AMBIENT_BRIGHTNESS.1=Gelap
+value.AMBIENT_BRIGHTNESS.2=Standar
+value.AMBIENT_BRIGHTNESS.3=Diangkat (Cerah)
+option.SHADOW_TINT=Rona Bayangan
+option.SHADOW_TINT.comment=Mewarnai bayangan siang hari. Pada kenyataannya, bayangan di bawah langit biru memiliki rona sejuk halus.
+value.SHADOW_TINT.1=Abu-abu Netral
+value.SHADOW_TINT.2=Biru Sejuk (Realistis)
+value.SHADOW_TINT.3=Hangat
+option.LIGHT_WRAP=Pembungkusan Cahaya (Light Wrap)
+option.LIGHT_WRAP.comment=Melembutkan batas antara permukaan yang diterangi dan tidak diterangi. Realistis = Lambert fisik; Lembut = bagus untuk tangkapan layar.
+value.LIGHT_WRAP.1=Realistis (Lambert)
+value.LIGHT_WRAP.2=Pembungkusan Lembut
+value.LIGHT_WRAP.3=Bergaya
