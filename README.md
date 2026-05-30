@@ -1,6 +1,6 @@
-# 🌌 AuraLite Shaders (Minecraft 1.20.1)
+# 🌌 AuraLite Shaders (Minecraft 1.16.5 – 26.1.2)
 
-[![Minecraft Version](https://img.shields.io/badge/Minecraft-1.20.1-blue?logo=minecraft&logoColor=white)](https://modrinth.com/)
+[![Minecraft Version](https://img.shields.io/badge/Minecraft-1.16.5%20--%2026.1.2-blue?logo=minecraft&logoColor=white)](https://modrinth.com/)
 [![Shader Loader](https://img.shields.io/badge/Loader-Iris%20%2F%20Sodium-green)](https://modrinth.com/)
 [![API Standard](https://img.shields.io/badge/API-OpenGL%204.6%20%2F%20GLSL%20460-orange)](https://khronos.org/)
 [![Materials Standard](https://img.shields.io/badge/PBR-LabPBR%201.3-cyan)](https://github.com/rre36/lab-pbr)
@@ -9,13 +9,29 @@
 
 > 🌐 **Languages:** **English** · [Русский](README_RU.md)
 
-**AuraLite** is a modern, lightweight, and highly optimized shader pack built on top of the **OpenGL 4.6 / GLSL 460** standard. It is specifically designed and **exclusively tested for Minecraft 1.20.1 with Sodium + Iris** (and compatible with **OptiFine 1.20.1**).
+**AuraLite** is a modern, lightweight, and highly optimized shader pack built on top of the **OpenGL 4.6 / GLSL 460** standard. It is specifically designed and **tested for Minecraft 1.16.5 – 26.1.2 with Sodium + Iris** (and compatible with **OptiFine**).
 
 AuraLite delivers a breathtaking, realistic visual experience without overcomplicating the screen with bloated post-processing effects (such as aggressive motion blur, heavy bloom, or screen-space reflections), ensuring **maximum FPS and smooth frametimes** on modern GPUs.
 
 ---
 
-## 🆕 What's New in v0.2.5 — *Settings Fix & Cloud/Lighting Refinement*
+## 🆕 What's New in v0.2.6 — *License Migration & Version Support*
+
+Version **0.2.6** is a legal protection and compatibility update. It migrates the project license to a copyleft non-commercial model to protect AuraLite from unauthorized commercial redistribution, adds copyright assertions to all source files, and officially expands tested compatibility.
+
+### ⚖️ License Migration to CC BY-NC-SA 4.0
+* **MIT to CC BY-NC-SA 4.0** — Migrated the project's license from MIT to **Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International**. AuraLite is now legally protected against commercial reuse and unauthorized sales (e.g. on third-party launchers/portals).
+* **Copyright Asserted** — Explicitly declared copyright: `Copyright (c) 2026 AlexanderNyr`.
+* **Embedded Code Headers** — Embedded copyright headers (`// AuraLite Shaders - Copyright (c) 2026 AlexanderNyr. Licensed under CC BY-NC-SA 4.0.`) into all GLSL shader files (`.fsh`, `.vsh`), block properties (`.properties`), and translation tables (`.lang`).
+* **Rules & Permissions FAQ** — Added a clear FAQ section outlining allowed actions (monetized videos/streaming, inclusion in free CurseForge/Modrinth modpacks) and prohibited actions (commercial sales, paid Patreon redistributions, raw rehosting on ad-supported download hubs).
+
+### 🎮 Version Compatibility Expansion
+* **Minecraft 26.1.2 Support Verified** — Tested and verified to work flawlessly on the latest Minecraft Java hotfix **26.1.2** with Iris + Sodium.
+* **Minecraft 1.16.5 Support Verified** — Tested and confirmed to run beautifully on the legendary modding version **1.16.5** (Iris/OptiFine).
+
+---
+
+## 🆕 Recap — What landed in v0.2.5 — *Settings Fix & Cloud/Lighting Refinement*
 
 Version **0.2.5** is a polish & stability update that fixes long-standing rendering bugs, adds a new **EXTREME** quality profile with screen-space ambient occlusion, completely overhauls the cloud system for camera-stable rendering, and refines fog, aurora, and water lighting. The composite pass grew to **~1 422 lines** of GLSL while keeping the same lightweight philosophy and FPS targets.
 
@@ -307,8 +323,8 @@ AuraLite includes a fully translated in-game configuration menu in **23 language
 
 * **AuraLite** is licensed under the [Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License](LICENSE) (CC BY-NC-SA 4.0).
 * **Copyright (c) 2026 AlexanderNyr.**
-* **Officially Supported Platform:** Minecraft **1.20.1** with **Sodium + Iris** or **OptiFine** loader.
-* *Note: Other Minecraft versions are not officially tested at this stage.*
+* **Officially Supported Platform:** Minecraft **1.16.5 – 26.1.2** with **Sodium + Iris** or **OptiFine** loader.
+* *Note: Verified to work flawlessly on Minecraft 1.16.5, 1.20.1? 1.21.1, and 26.1.2.*
 
 ### ⚖️ Rules & Permissions (FAQ)
 
