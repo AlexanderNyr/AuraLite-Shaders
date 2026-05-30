@@ -5,7 +5,7 @@
 [![API Standard](https://img.shields.io/badge/API-OpenGL%204.6%20%2F%20GLSL%20460-orange)](https://khronos.org/)
 [![Materials Standard](https://img.shields.io/badge/PBR-LabPBR%201.3-cyan)](https://github.com/rre36/lab-pbr)
 [![Version](https://img.shields.io/badge/Release-v0.2.5-purple)](https://github.com/AlexanderNyr/AuraLite-Shaders)
-[![License](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![License](https://img.shields.io/badge/License-CC%20BY--NC--SA%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by-nc-sa/4.0/)
 
 > 🌐 **Languages:** **English** · [Русский](README_RU.md)
 
@@ -305,6 +305,14 @@ AuraLite includes a fully translated in-game configuration menu in **23 language
 
 ## 📄 License & Compatibility
 
-* **AuraLite** is open-source and licensed under the [MIT License](LICENSE).
+* **AuraLite** is licensed under the [Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License](LICENSE) (CC BY-NC-SA 4.0).
 * **Officially Supported Platform:** Minecraft **1.20.1** with **Sodium + Iris** or **OptiFine** loader.
 * *Note: Other Minecraft versions are not officially tested at this stage.*
+
+### ⚖️ Rules & Permissions (FAQ)
+
+* **Videos & Streams:** You are free to showcase, stream, and use this shader in your videos (including monetized channels on YouTube, Twitch, etc.).
+* **Modpacks:** You are free to include this shader in your free modpacks on CurseForge, Modrinth, or other platforms.
+* **Personal Tweaks:** You can modify the shader code for personal use.
+* **No Re-hosting:** Do not upload the raw shader files to third-party sites (especially behind ad links like AdFly). Always link to this official GitHub page.
+* **Derivative Works:** If you modify this shader and distribute it, your version **must** be free, open-source, and licensed under the exact same **CC BY-NC-SA 4.0** license with clear attribution to the original author.
