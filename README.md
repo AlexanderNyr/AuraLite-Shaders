@@ -4,7 +4,7 @@
 [![Shader Loader](https://img.shields.io/badge/Loader-Iris%20%2F%20Sodium-green)](https://modrinth.com/)
 [![API Standard](https://img.shields.io/badge/API-OpenGL%204.6%20%2F%20GLSL%20460-orange)](https://khronos.org/)
 [![Materials Standard](https://img.shields.io/badge/PBR-LabPBR%201.3-cyan)](https://github.com/rre36/lab-pbr)
-[![Version](https://img.shields.io/badge/Release-v0.2.5-purple)](https://github.com/AlexanderNyr/AuraLite-Shaders)
+[![Version](https://img.shields.io/badge/Release-v0.2.7-purple)](https://github.com/AlexanderNyr/AuraLite-Shaders)
 [![License](https://img.shields.io/badge/License-CC%20BY--NC--SA%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by-nc-sa/4.0/)
 
 > 🌐 **Languages:** **English** · [Русский](README_RU.md)
@@ -15,7 +15,30 @@ AuraLite delivers a breathtaking, realistic visual experience without overcompli
 
 ---
 
-## 🆕 What's New in v0.2.6 — *License Migration & Version Support*
+## 🆕 What's New in v0.2.7 — *Realism, TAA & Compatibility Update*
+
+Version **0.2.7** is a practical visual-realism and compatibility update built on top of v0.2.6. It adds balanced next-generation effects for higher presets, fixes post-rain rainbows on more rendering paths, expands language support, and ships a correctly packaged shaderpack ZIP with a root `shaders/` folder.
+
+### 🌈 Sky & Weather Fixes
+* **Reliable post-rain rainbows** — rainbow and moonbow rendering moved into `gbuffers_skybasic` so they appear reliably after rain on Iris/OptiFine paths where the composite sky branch may not run.
+* **Safer sky rendering** — fixed stale G-buffer/emissive handling for sky pixels and guarded against invalid normal normalization.
+
+### ☀️ Physically-Inspired Light Shafts & Cloud Shadows
+* **Volumetric godrays** — added physically-inspired single-scattering sun shafts with Beer–Lambert extinction, Henyey–Greenstein / Mie phase, height-based aerosol density, shadow-map occlusion, weather attenuation, and cloud-shadow transmittance.
+* **Transparent procedural cloud shadows** — clouds now cast soft, variable-opacity shadows on terrain. Cirrus layers are faint, mid-level decks are moderate, and cumulus/storm decks are stronger and more dramatic.
+
+### 🎞️ TAA and Profile Balancing
+* **Temporal Anti-Aliasing (TAA)** — added a conservative temporal resolve with motion reprojection, previous-frame history, neighborhood clipping and motion/luminance rejection to reduce shimmer on high presets.
+* **New VERY_LOW profile** — a true maximum-FPS preset for very weak GPUs.
+* **Rebalanced profiles** — effects are distributed more gradually: cloud shadows begin at MED, godrays and TAA begin at HIGH, SSAO begins at ULTRA, and EXTREME pushes the heaviest variants.
+
+### 🌐 Localization & Packaging
+* **Localization expanded to 59 language files** — added many regional languages and compatibility aliases, including both `fil_ph.lang` and legacy `tl_ph.lang` for Filipino/Tagalog support.
+* **Correct shaderpack ZIP layout** — release ZIPs now contain a root `shaders/` directory, matching Minecraft shaderpack expectations.
+
+---
+
+## 🆕 Recap — What landed in v0.2.6 — *License Migration & Version Support*
 
 Version **0.2.6** is a legal protection and compatibility update. It migrates the project license to a copyleft non-commercial model to protect AuraLite from unauthorized commercial redistribution, adds copyright assertions to all source files, and officially expands tested compatibility.
 
@@ -47,7 +70,7 @@ Version **0.2.5** is a polish & stability update that fixes long-standing render
 
 ### 🌟 New EXTREME Quality Profile & SSAO
 * **EXTREME profile** — a new fifth quality tier that adds **SSAO/SAO-style contact ambient occlusion** for screen-space darkening in corners, under blocks, and around geometry intersections.
-* **SSAO Strength** — 3-step control (*Subtle / Balanced / Deep*). SSAO is enabled on **HIGH**, **ULTRA**, and **EXTREME** profiles.
+* **SSAO Strength** — 3-step control (*Subtle / Balanced / Deep*). SSAO is enabled on **ULTRA** and **EXTREME** profiles.
 
 ### 🔧 Rendering Fixes & Improvements
 * **PBR specular BRDF fix** — added the missing NdotL cosine factor for correct Cook-Torrance BRDF. Specular is now properly dim at high sun angles and bright at grazing.
@@ -74,7 +97,7 @@ Version **0.2.5** is a polish & stability update that fixes long-standing render
 * **POM disabled in ALL presets** (including ULTRA) — POM is unstable on some resource packs / GPU drivers; users can still enable it manually.
 * **All profiles use realistic terminator** (`LIGHT_WRAP=1` — Lambert) by default.
 * **profile.LOW completeness fix** *(v0.2.3)* — LOW profile now includes every settings key for reliable profile switching.
-* **Localization expanded** — **23 languages** (added Arabic, Czech, German, Spanish, Finnish, French, Hebrew, Indonesian, Italian, Japanese, Korean, Dutch, Polish, Portuguese, Swedish, Thai, Turkish, Ukrainian, Vietnamese, Chinese Simplified & Traditional alongside English and Russian).
+* **Localization expanded** — now maintained as **59 language files**, including major regional variants and compatibility aliases such as `fil_ph` and legacy `tl_ph`.
 
 ### 📋 Accumulated fixes from v0.2.3 & v0.2.4
 * `CLOUD_HEIGHT` / `CLOUD_THICKNESS` defines now wired to actual cloud geometry.
@@ -111,7 +134,7 @@ Version **0.2.0** was the original content update that nearly doubled the pack's
 * 🧊 **Ice Glitch Fix** — dedicated block ID disables waving/refraction on ice variants to eliminate visual artifacts.
 * 🌙 **Moon-Phase Aware Sky** — sky shading reacts to `moonPhase` and `dimension` for nether/end correctness.
 
-> Source for every version is shipped in this repo under [`shaders v0.2.0/`](shaders%20v0.2.0) through [`shaders v0.2.5/`](shaders%20v0.2.5). End users should grab the packaged release ZIP from [Releases](https://github.com/AlexanderNyr/AuraLite-Shaders/releases).
+> Source for every version is shipped in this repo under [`shaders v0.2.0/`](shaders%20v0.2.0) through [`shaders v0.2.7/`](shaders%20v0.2.7). End users should grab the packaged release ZIP from [Releases](https://github.com/AlexanderNyr/AuraLite-Shaders/releases).
 
 ---
 
@@ -152,7 +175,7 @@ The night sky is no longer just a static starfield — it's a fully procedural c
 * **Shadow Tint** *(v0.2.2)*: realistic cool-blue tint for daytime shadows under an open sky (or neutral / warm if you prefer).
 * **Ambient Lift** *(v0.2.2)*: control how dark shadowed areas appear at night and in caves.
 * **Light Wrap (Terminator Softness)** *(v0.2.2)*: choose physical Lambert, a soft photographic wrap, or a stylized look. *(v0.2.5: all profiles default to realistic Lambert.)*
-* 🆕 **SSAO / SAO Contact Ambient Occlusion** *(v0.2.5)*: screen-space darkening in corners and at geometry intersections. Enabled on HIGH+ profiles.
+* 🆕 **SSAO / SAO Contact Ambient Occlusion** *(v0.2.5)*: screen-space darkening in corners and at geometry intersections. Enabled on ULTRA+ profiles.
 * **Deep Dark Nights (2× darker):** Night ambient light, moonlight intensity, and fog are reduced by 2× by default to create incredibly atmospheric, immersive nights. Caves and forests are pitch dark, requiring torches for exploration (combine with the new *Pitch Night* moon preset for extra spice).
 * **Warm Block Lights:** Torches, lanterns, and lava emit a cozy golden-amber glow with physically accurate quadratic falloff.
 * 🕯️ **Cozy Torch Flickering** *(since v0.2.0)*: Real-time flickering animations for torches, campfires, and lanterns add a living, warm atmosphere to your shelters. Held-item light contribution (`heldBlockLightValue`) is also accounted for.
@@ -234,19 +257,19 @@ AuraLite is built from the ground up for maximum FPS using OpenGL 4.6 native har
 
 ## 📥 Installation
 
-1. Download **`AuraLite_ShaderPack.zip`** from the [Releases](https://github.com/AlexanderNyr/AuraLite-Shaders/releases) section on the right.
+1. Download **`AuraLite-Shaders-v0.2.7.zip`** from the [Releases](https://github.com/AlexanderNyr/AuraLite-Shaders/releases) section on the right.
 2. Open your Minecraft directory (e.g. `%appdata%/.minecraft` on Windows).
 3. Place the downloaded `.zip` file inside the **`shaderpacks`** folder (Do **not** unzip it!).
-4. Launch Minecraft **1.20.1** using a profile with **Sodium + Iris** or **OptiFine** installed.
+4. Launch a supported Minecraft version (**1.16.5 – 26.1.2**) using a profile with **Sodium + Iris** or **OptiFine** installed.
 5. In-game, go to **Options → Video Settings → Shader Packs**, select **AuraLite**, and click **Apply**.
 
-> 💡 The repository ships source folders for every release snapshot: `shaders v0.2.0/` through `shaders v0.2.5/`. The current version is **v0.2.5**. End users should grab the packaged release ZIP; developers can browse any folder directly.
+> 💡 The repository ships source folders for every release snapshot: `shaders v0.2.0/` through `shaders v0.2.7/`. The current version is **v0.2.7**. End users should grab the packaged release ZIP; developers can browse any folder directly.
 
 ---
 
 ## 🎛️ In-Game Configuration Options
 
-AuraLite includes a fully translated in-game configuration menu in **23 languages** (Arabic, Czech, German, English, Spanish, Finnish, French, Hebrew, Indonesian, Italian, Japanese, Korean, Dutch, Polish, Portuguese, Russian, Swedish, Thai, Turkish, Ukrainian, Vietnamese, Chinese Simplified & Traditional).
+AuraLite includes localized in-game configuration files for **59 language codes**, including major European, Asian, American regional variants and compatibility aliases such as `fil_ph` / `tl_ph`.
 
 > ⚠️ *Some localization strings may be inaccurate. If something looks strange, compare with the English original.*
 
@@ -290,6 +313,10 @@ AuraLite includes a fully translated in-game configuration menu in **23 language
 * **Cloud Altitude** — `Low (~110m) / Standard (~160m) / High (~240m)`
 * **Cloud Thickness** — `Thin (Cirrus) / Standard (Cumulus) / Dense (Stormy)`
 * 🆕 **Cloud Render Distance** *(v0.2.5)* — `Near / Standard / Far / Very Far` — Maximum draw distance for volumetric clouds.
+* 🆕 **Cloud Shadows** *(v0.2.7)* — transparent procedural shadows from cloud density.
+* 🆕 **Cloud Shadow Strength** *(v0.2.7)* — `Soft / Balanced / Dramatic`.
+* 🆕 **Godrays / Sun Shafts** *(v0.2.7)* — physically-inspired volumetric single-scattering light shafts.
+* 🆕 **Godrays Quality** *(v0.2.7)* — `Fast / Balanced / High`.
 * **Aurora Borealis** — `Disabled / Only in Cold Biomes / Always Enabled`
 * **Aurora Speed** — `Slow / Standard / Fast`
 * **Aurora Brightness** — `Soft / Standard / Glowing`
@@ -304,18 +331,21 @@ AuraLite includes a fully translated in-game configuration menu in **23 language
 * **Exposure Brightness** — `Muted / Balanced / Vibrant`
 * **Color Vibrancy (`COLOR_SATURATION`)** — `Muted / Balanced / Colorful / Vivid`
 * **Image Contrast (`CONTRAST`)** — `Soft / Filmic (ACES) / Intense (High Contrast)` — Choose the tone mapping curve.
+* 🆕 **Temporal Anti-Aliasing (`TAA`)** *(v0.2.7)* — motion-reprojected temporal resolve for high presets.
+* 🆕 **TAA Strength** *(v0.2.7)* — `Light / Balanced / Stable`.
 * **Vignette** — Toggle cinematic corner darkening.
 * (Hidden) **Rain Wetness Reflections (`WET_REFLECTIONS`)** — Wet glossy ground during rain (enabled by default in MED+ profiles).
 
-### 🎚️ Quality Profiles (v0.2.5)
+### 🎚️ Quality Profiles (v0.2.7)
 
-| Profile    | Shadows    | Shadow Dist. | Softness   | Clouds     | Cloud Dist. | PBR | POM | SSAO       | Cozy / Wet / Mist | Sun Halo / Sunrise | Aurora       | Tone Map |
-|------------|------------|--------------|------------|------------|-------------|-----|-----|------------|--------------------|--------------------|--------------|----------|
-| **LOW**    | ❌         | —            | Sharp      | ❌         | Near        | ❌  | ❌  | ❌         | ❌ ❌ ❌           | ❌ ❌              | Off          | Soft     |
-| **MED**    | ✅ 2048    | 80m          | Soft       | ✅         | Standard    | ✅  | ❌  | ❌         | ✅ ✅ ✅           | ✅ ✅              | Cold biomes  | ACES     |
-| **HIGH**   | ✅ 4096    | 120m         | Soft       | ✅         | Far         | ✅  | ❌  | ✅ Subtle  | ✅ ✅ ✅           | ✅ ✅              | Cold biomes  | ACES     |
-| **ULTRA**  | ✅ 4096    | 160m         | Ultra Soft | ✅         | Very Far    | ✅  | ❌  | ✅ Balanced| ✅ ✅ ✅           | ✅ ✅              | Always       | Intense  |
-| **EXTREME**| ✅ 4096    | 160m         | Ultra Soft | ✅         | Very Far    | ✅  | ❌  | ✅ Deep    | ✅ ✅ ✅           | ✅ ✅              | Always       | Intense  |
+| Profile      | Target          | Shadows | Clouds | Cloud Shadows | Godrays | TAA | PBR | SSAO | Heavy Extras |
+|--------------|-----------------|---------|--------|---------------|---------|-----|-----|------|--------------|
+| **VERY_LOW** | Maximum FPS     | ❌      | ❌     | ❌            | ❌      | ❌  | ❌  | ❌   | Most extras off |
+| **LOW**      | Weak GPUs       | ❌      | ❌     | ❌            | ❌      | ❌  | ❌  | ❌   | Cheap water/foliage motion only |
+| **MED**      | Balanced        | ✅ 1024 | ✅ Near/Standard | ✅ Soft | ❌ | ❌ | ✅ Subtle | ❌ | Wet reflections + ground mist |
+| **HIGH**     | High quality    | ✅ 2048 | ✅ Far | ✅ Balanced | ✅ Fast | ✅ Light | ✅ Standard | ❌ | Full atmosphere without SSAO |
+| **ULTRA**    | Very high       | ✅ 4096 | ✅ Very Far | ✅ Balanced | ✅ Balanced | ✅ Balanced | ✅ Strong | ✅ Balanced | High-end visuals |
+| **EXTREME**  | Maximum quality | ✅ 4096 | ✅ Dense/Very Far | ✅ Dramatic | ✅ High | ✅ Stable | ✅ Strong | ✅ Deep | Heaviest cinematic preset |
 
 ---
 
