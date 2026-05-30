@@ -324,7 +324,7 @@ AuraLite includes a fully translated in-game configuration menu in **23 language
 * **AuraLite** is licensed under the [Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License](LICENSE) (CC BY-NC-SA 4.0).
 * **Copyright (c) 2026 AlexanderNyr.**
 * **Officially Supported Platform:** Minecraft **1.16.5 – 26.1.2** with **Sodium + Iris** or **OptiFine** loader.
-* *Note: Verified to work flawlessly on Minecraft 1.16.5, 1.21.1, and 26.1.2.*
+* *Note: Verified to work flawlessly on Minecraft 1.16.5, 1.20.1, 1.21.1, and 26.1.2.*
 
 ### ⚖️ Rules & Permissions (FAQ)
 
