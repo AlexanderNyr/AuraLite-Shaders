@@ -34,6 +34,7 @@ Version **0.2.7** is a practical visual-realism and compatibility update built o
 
 ### 🌐 Localization & Packaging
 * **Localization expanded to 59 language files** — added many regional languages and compatibility aliases, including both `fil_ph.lang` and legacy `tl_ph.lang` for Filipino/Tagalog support.
+* **Correct shaderpack ZIP layout** — release ZIPs now contain a root `shaders/` directory, matching Minecraft shaderpack expectations.
 
 ---
 
@@ -96,7 +97,7 @@ Version **0.2.5** is a polish & stability update that fixes long-standing render
 * **POM disabled in ALL presets** (including ULTRA) — POM is unstable on some resource packs / GPU drivers; users can still enable it manually.
 * **All profiles use realistic terminator** (`LIGHT_WRAP=1` — Lambert) by default.
 * **profile.LOW completeness fix** *(v0.2.3)* — LOW profile now includes every settings key for reliable profile switching.
-* **Localization expanded** — now maintained as **59 language files**, including major regional variants and compatibility aliases such as `fil_ph` and legacy `tl_ph`.
+* **Localization expanded in v0.2.5** — the base menu localization was expanded to **23 language files**. Later v0.2.7 builds extend this further to 59 language codes.
 
 ### 📋 Accumulated fixes from v0.2.3 & v0.2.4
 * `CLOUD_HEIGHT` / `CLOUD_THICKNESS` defines now wired to actual cloud geometry.
