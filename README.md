@@ -4,7 +4,7 @@
 [![Shader Loader](https://img.shields.io/badge/Loader-Iris%20%2F%20Sodium-green)](https://modrinth.com/)
 [![API Standard](https://img.shields.io/badge/API-OpenGL%204.6%20%2F%20GLSL%20460-orange)](https://khronos.org/)
 [![Materials Standard](https://img.shields.io/badge/PBR-LabPBR%201.3-cyan)](https://github.com/rre36/lab-pbr)
-[![Version](https://img.shields.io/badge/Release-v0.2.5-purple)](https://github.com/AlexanderNyr/AuraLite-Shaders)
+[![Version](https://img.shields.io/badge/Release-v0.2.6-purple)](https://github.com/AlexanderNyr/AuraLite-Shaders)
 [![License](https://img.shields.io/badge/License-CC%20BY--NC--SA%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by-nc-sa/4.0/)
 
 > 🌐 **Languages:** **English** · [Русский](README_RU.md)
