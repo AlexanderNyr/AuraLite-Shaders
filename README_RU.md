@@ -4,7 +4,7 @@
 [![Загрузчик шейдеров](https://img.shields.io/badge/Loader-Iris%20%2F%20Sodium-green)](https://modrinth.com/)
 [![Стандарт API](https://img.shields.io/badge/API-OpenGL%204.6%20%2F%20GLSL%20460-orange)](https://khronos.org/)
 [![Стандарт материалов](https://img.shields.io/badge/PBR-LabPBR%201.3-cyan)](https://github.com/rre36/lab-pbr)
-[![Версия](https://img.shields.io/badge/Релиз-v0.2.5-purple)](https://github.com/AlexanderNyr/AuraLite-Shaders)
+[![Версия](https://img.shields.io/badge/Релиз-v0.2.6-purple)](https://github.com/AlexanderNyr/AuraLite-Shaders)
 [![Лицензия](https://img.shields.io/badge/Лицензия-CC%20BY--NC--SA%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.ru)
 
 > 🌐 **Языки:** [English](README.md) · **Русский**
