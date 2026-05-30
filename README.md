@@ -34,7 +34,6 @@ Version **0.2.7** is a practical visual-realism and compatibility update built o
 
 ### 🌐 Localization & Packaging
 * **Localization expanded to 59 language files** — added many regional languages and compatibility aliases, including both `fil_ph.lang` and legacy `tl_ph.lang` for Filipino/Tagalog support.
-* **Correct shaderpack ZIP layout** — release ZIPs now contain a root `shaders/` directory, matching Minecraft shaderpack expectations.
 
 ---
 
