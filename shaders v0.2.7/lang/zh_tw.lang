@@ -1,0 +1,264 @@
+# AuraLite Shaders - Copyright (c) 2026 AlexanderNyr. Licensed under CC BY-NC-SA 4.0.
+# ==============================================================================
+# AuraLite Shader Pack - Chinese (Traditional) Language Translations
+# ==============================================================================
+# 注意：這是 AI 輔助翻譯。歡迎社群校對！
+# 如有改進建議，請在以下儲存庫提交 PR：
+# https://github.com/AlexanderNyr/AuraLite-Shaders
+# ==============================================================================
+
+# ==============================================================================
+# Quality Profiles
+# ==============================================================================
+profile.VERY_LOW=Very Low
+profile.VERY_LOW.comment=Fastest possible preset for very weak GPUs. Disables heavy effects.
+profile.LOW=低
+profile.MED=中
+profile.HIGH=高
+profile.ULTRA=極高
+profile.EXTREME=Extreme
+profile.EXTREME.comment=最高實驗性畫質。添加 SSAO/SAO 式接觸環境光遮蔽。為保持穩定性，POM 保持禁用。
+profile.CUSTOM=自訂
+profile.CUSTOM.comment=使用者自訂設定。
+profile.HIGH.comment=高品質預設，陰影更遠，光照更亮。
+profile.LOW.comment=針對弱 GPU 的最快預設。停用重型效果。
+profile.MED.comment=平衡預設，包含陰影、雲、PBR 和大氣效果。
+profile.ULTRA.comment=最高畫質預設。POM 保持禁用以確保穩定性。
+
+screen.TRANSLATION_NOTICE=⚠ 翻譯可能包含錯誤
+screen.TRANSLATION_NOTICE.comment=部分本地化字串可能不準確。如果看起來奇怪，請與英文原文進行比較。
+
+# Screens
+screen.LIGHTING=光照設定
+screen.LIGHTING.comment=設定陰影、光照顏色和亮度。
+screen.FOLIAGE=植被設定
+screen.FOLIAGE.comment=設定草地和樹葉的搖曳動畫。
+screen.WATER=水面設定
+screen.WATER.comment=設定波浪、透明度和水的樣式。
+screen.CLOUDS_MENU=天空與雲層
+screen.CLOUDS_MENU.comment=設定 3D 雲層的物理高度、厚度、樣式以及天空特效。
+screen.POST_PROCESS=後期處理與霧效
+screen.POST_PROCESS.comment=設定曝光、霧氣和電影感效果。
+
+# Options
+option.SHADOWS=動態陰影
+option.SHADOWS.comment=啟用或停用來自太陽和月亮的柔和動態陰影。
+option.SHADOW_RES=陰影解析度
+option.SHADOW_RES.comment=變更陰影貼圖品質。數值越高，效能越低。
+option.PBR_LIGHTING=PBR 光照 (LabPBR)
+option.PBR_LIGHTING.comment=啟用基於物理的金屬、粗糙度和 3D 法線貼圖渲染（需要 PBR 資源包）。
+option.PBR_POM=方塊 3D 浮雕 (POM)
+option.PBR_POM.comment=啟用基於物理的視差遮蔽貼圖以獲得真正的 3D 方塊紋理。在不相容的資源包上建議停用。
+option.PBR_STRENGTH=PBR 強度
+option.PBR_STRENGTH.comment=控制 PBR 金屬表面的反射率與光澤度。
+value.PBR_STRENGTH.1=輕微
+value.PBR_STRENGTH.2=標準
+value.PBR_STRENGTH.3=鏡面
+option.LIGHTMAP_WARMTH=火把暖度
+option.LIGHTMAP_WARMTH.comment=調整方塊/火把燈光的暖度和顏色。
+value.LIGHTMAP_WARMTH.1=溫馨
+value.LIGHTMAP_WARMTH.2=溫暖
+value.LIGHTMAP_WARMTH.3=濃烈
+option.WAVING_LEAVES=搖曳的樹葉
+option.WAVING_LEAVES.comment=啟用樹葉的輕柔搖擺動畫。
+option.WAVING_GRASS=搖曳的植物
+option.WAVING_GRASS.comment=啟用草、花和作物的搖曳動畫。
+option.WIND_SPEED=風速
+option.WIND_SPEED.comment=控制樹葉、植物和水波的搖擺速度。
+value.WIND_SPEED.1=微風
+value.WIND_SPEED.2=和風
+value.WIND_SPEED.3=狂風
+option.WATER_WAVES=水面波浪
+option.WATER_WAVES.comment=啟用水面上的 3D 幾何波浪。
+option.WATER_TRANSPARENCY=水體密度
+option.WATER_TRANSPARENCY.comment=控制水的透明度與不透明度。
+value.WATER_TRANSPARENCY.1=清澈
+value.WATER_TRANSPARENCY.2=均衡
+value.WATER_TRANSPARENCY.3=深邃
+option.PROCEDURAL_CLOUDS=體積 3D 雲
+option.PROCEDURAL_CLOUDS.comment=啟用可飛越、物理化的 3D 雲層。
+option.CLOUD_HEIGHT=雲層高度
+option.CLOUD_HEIGHT.comment=設定世界中雲層的物理高度（Y 座標，單位公尺）。
+value.CLOUD_HEIGHT.1=低 (~110m)
+value.CLOUD_HEIGHT.2=標準 (~160m)
+value.CLOUD_HEIGHT.3=高 (~240m)
+option.CLOUD_THICKNESS=雲層厚度
+option.CLOUD_THICKNESS.comment=設定雲的垂直厚度與體積。
+value.CLOUD_THICKNESS.1=薄 (捲雲)
+value.CLOUD_THICKNESS.2=標準 (積雲)
+value.CLOUD_THICKNESS.3=厚 (雷雨雲)
+option.AURORA_MODE=極光
+option.AURORA_MODE.comment=控制夜空中真實流動極光的顯示。
+value.AURORA_MODE.0=停用
+value.AURORA_MODE.1=僅寒冷生態域
+value.AURORA_MODE.2=永遠啟用
+option.AURORA_SPEED=極光速度
+option.AURORA_SPEED.comment=控制北極光的波動與流動速度。
+value.AURORA_SPEED.1=慢
+value.AURORA_SPEED.2=標準
+value.AURORA_SPEED.3=快
+option.AURORA_STRENGTH=極光亮度
+option.AURORA_STRENGTH.comment=控制北極光的整體亮度。
+value.AURORA_STRENGTH.1=柔和
+value.AURORA_STRENGTH.2=標準
+value.AURORA_STRENGTH.3=耀眼
+option.NEBULA_BRIGHTNESS=銀河亮度
+option.NEBULA_BRIGHTNESS.comment=調整夜空中對角棕色星系星雲的亮度。
+value.NEBULA_BRIGHTNESS.1=昏暗
+value.NEBULA_BRIGHTNESS.2=標準
+value.NEBULA_BRIGHTNESS.3=明亮
+option.STARS_BRIGHTNESS=星星亮度
+option.STARS_BRIGHTNESS.comment=控制夜空中星星的亮度與閃爍。
+value.STARS_BRIGHTNESS.1=微弱
+value.STARS_BRIGHTNESS.2=標準
+value.STARS_BRIGHTNESS.3=璀璨
+option.STARS_AMOUNT=星星密度
+option.STARS_AMOUNT.comment=控制天空中星星的總量與密度。
+value.STARS_AMOUNT.1=稀少
+value.STARS_AMOUNT.2=標準
+value.STARS_AMOUNT.3=密集
+option.RAINBOW_STRENGTH=彩虹強度
+option.RAINBOW_STRENGTH.comment=設定雨後彩虹的亮度與飽和度。
+value.RAINBOW_STRENGTH.1=輕微
+value.RAINBOW_STRENGTH.2=均衡
+value.RAINBOW_STRENGTH.3=鮮豔
+option.COZY_LIGHTS=火把閃爍
+option.COZY_LIGHTS.comment=為火把、營火和燈籠啟用溫暖、舒適的即時閃爍動畫。
+option.WET_REFLECTIONS=雨濕地面反射
+option.WET_REFLECTIONS.comment=下雨時，露天的泥土、草和石頭等固體方塊會變濕、變暗且具有光澤。
+option.GROUND_MIST=低空地霧 (Y=62-66)
+option.GROUND_MIST.comment=在黎明與黃昏時，啟用滑過水面和冰面的金白色晨/暮霧帶。
+option.FOG_DENSITY_LEVEL=霧的濃度
+option.FOG_DENSITY_LEVEL.comment=控制地平線大氣霧的強度。
+value.FOG_DENSITY_LEVEL.1=低
+value.FOG_DENSITY_LEVEL.2=中
+value.FOG_DENSITY_LEVEL.3=高
+option.EXPOSURE=曝光亮度
+option.EXPOSURE.comment=控制畫面的整體亮度。
+value.EXPOSURE.1=低調
+value.EXPOSURE.2=均衡
+value.EXPOSURE.3=明亮
+option.COLOR_SATURATION=色彩鮮活度
+option.COLOR_SATURATION.comment=控制螢幕顏色的非線性飽和度。讓植被呈現翡翠綠，天空更顯豐盈。
+value.COLOR_SATURATION.1=暗淡
+value.COLOR_SATURATION.2=均衡
+value.COLOR_SATURATION.3=多彩
+value.COLOR_SATURATION.4=鮮豔
+option.CONTRAST=畫面對比度
+option.CONTRAST.comment=選擇色調對應曲線與對比度風格。
+value.CONTRAST.1=柔和
+value.CONTRAST.2=電影感 (ACES)
+value.CONTRAST.3=高強度 (高對比度)
+
+option.TAA=Temporal Anti-Aliasing (TAA)
+option.TAA.comment=Temporal resolve with motion reprojection and neighborhood clipping. Reduces shimmering and jagged edges on high presets.
+option.TAA_STRENGTH=TAA Strength
+option.TAA_STRENGTH.comment=Controls history blending. Higher is more stable but can be softer during motion.
+value.TAA_STRENGTH.1=Light
+value.TAA_STRENGTH.2=Balanced
+value.TAA_STRENGTH.3=Stable
+option.VIGNETTE=暗角效果
+option.VIGNETTE.comment=在螢幕邊緣啟用細微的變暗，提升畫面聚焦感。
+option.WATER_RIFFLES=水面漣漪強度
+option.WATER_RIFFLES.comment=調整水面細小法線漣漪的強度。
+value.WATER_RIFFLES.1=平靜
+value.WATER_RIFFLES.2=標準
+value.WATER_RIFFLES.3=波濤洶湧
+option.WATER_SPECULAR_STRENGTH=水面高光
+option.WATER_SPECULAR_STRENGTH.comment=調整水面漣漪上太陽/月亮反射的亮度。
+value.WATER_SPECULAR_STRENGTH.1=柔和
+value.WATER_SPECULAR_STRENGTH.2=標準
+value.WATER_SPECULAR_STRENGTH.3=閃耀
+option.SHADOW_SOFTNESS=陰影柔和度
+option.SHADOW_SOFTNESS.comment=控制陰影邊緣的柔和度與擴散程度。使用旋轉 Poisson 盤過濾以獲得平滑半影。
+value.SHADOW_SOFTNESS.1=銳利
+value.SHADOW_SOFTNESS.2=柔和
+value.SHADOW_SOFTNESS.3=超柔和
+
+option.SSAO=SSAO / SAO 環境光遮蔽
+option.SSAO.comment=極致設定檔：螢幕空間環境光遮蔽，用於角落、方塊下方和幾何體相交處的接觸陰影。
+option.SSAO_STRENGTH=SSAO 強度
+option.SSAO_STRENGTH.comment=控制螢幕空間環境光遮蔽的深度。僅在 SSAO 啟用時生效。
+value.SSAO_STRENGTH.1=輕微
+value.SSAO_STRENGTH.2=均衡
+value.SSAO_STRENGTH.3=深邃
+
+option.CLOUD_DISTANCE=雲端渲染距離
+option.CLOUD_DISTANCE.comment=體積雲的最大繪製距離。品質設定檔會自動增加此距離。
+value.CLOUD_DISTANCE.1=近
+value.CLOUD_DISTANCE.2=標準
+value.CLOUD_DISTANCE.3=遠
+value.CLOUD_DISTANCE.4=非常遠
+
+option.CLOUD_SHADOWS=Cloud Shadows
+option.CLOUD_SHADOWS.comment=Adds transparent procedural shadows from volumetric cloud density onto terrain. Balanced by quality profiles.
+option.CLOUD_SHADOW_STRENGTH=Cloud Shadow Strength
+option.CLOUD_SHADOW_STRENGTH.comment=Controls how visible and dramatic transparent cloud shadows are.
+value.CLOUD_SHADOW_STRENGTH.1=Soft
+value.CLOUD_SHADOW_STRENGTH.2=Balanced
+value.CLOUD_SHADOW_STRENGTH.3=Dramatic
+
+option.GODRAYS=Godrays / Sun Shafts
+option.GODRAYS.comment=Adds realistic screen-space sun shafts through sky gaps and behind geometry.
+option.GODRAYS_QUALITY=Godrays Quality
+option.GODRAYS_QUALITY.comment=Controls sample count and cost of godrays.
+value.GODRAYS_QUALITY.1=Fast
+value.GODRAYS_QUALITY.2=Balanced
+value.GODRAYS_QUALITY.3=High
+
+# ==============================================================================
+# 太陽與月亮（擴展光照設定）
+# ==============================================================================
+screen.SUN_MOON=太陽與月亮
+screen.SUN_MOON.comment=精細調整太陽/月亮的亮度、色溫與大氣效果。
+option.SUN_INTENSITY=太陽強度
+option.SUN_INTENSITY.comment=直接太陽光的主亮度。數值越高，白天對比度越強。
+value.SUN_INTENSITY.1=昏暗
+value.SUN_INTENSITY.2=標準
+value.SUN_INTENSITY.3=明亮
+value.SUN_INTENSITY.4=熾烈
+option.MOON_INTENSITY=月亮強度
+option.MOON_INTENSITY.comment=月光的主亮度。數值越高，夜晚越明亮可見。
+value.MOON_INTENSITY.1=漆黑之夜
+value.MOON_INTENSITY.2=標準
+value.MOON_INTENSITY.3=明月當空
+value.MOON_INTENSITY.4=明亮之夜
+option.SUN_TEMPERATURE=太陽色溫
+option.SUN_TEMPERATURE.comment=偏移太陽的開爾文曲線。逼真採用 Tanner Helland 黑體公式；暖色 = 金色；冷色 = 中性白。
+value.SUN_TEMPERATURE.1=冷色 / 中性
+value.SUN_TEMPERATURE.2=逼真
+value.SUN_TEMPERATURE.3=暖金色
+option.MOON_TEMPERATURE=月亮色溫
+option.MOON_TEMPERATURE.comment=月光的色調。冰冷 = 寒藍；銀色 = 逼真的 4100K；暖色 = 豐收奶油色月亮。
+value.MOON_TEMPERATURE.1=冰藍
+value.MOON_TEMPERATURE.2=銀色 (逼真)
+value.MOON_TEMPERATURE.3=溫暖奶油色
+option.SUN_HALO=太陽光暈 (Mie 散射)
+option.SUN_HALO.comment=朝向太陽觀看時，在地表疊加柔和的暖色光暈（Mie 前向散射）。
+option.SUNRISE_GLOW=增強日出/日落輝光
+option.SUNRISE_GLOW.comment=啟用更強的暖色背向散射，包裹背對低空太陽的表面。
+
+# ==============================================================================
+# 擴展陰影設定
+# ==============================================================================
+option.SHADOW_DISTANCE=陰影距離
+option.SHADOW_DISTANCE.comment=動態陰影渲染的最大距離，超出後逐漸淡出。
+value.SHADOW_DISTANCE.1=近 (60m)
+value.SHADOW_DISTANCE.2=標準 (80m)
+value.SHADOW_DISTANCE.3=遠 (120m)
+value.SHADOW_DISTANCE.4=超遠 (160m)
+option.AMBIENT_BRIGHTNESS=陰影提升 (環境光)
+option.AMBIENT_BRIGHTNESS.comment=控制夜晚和洞穴中陰影區域的黑暗程度。
+value.AMBIENT_BRIGHTNESS.1=深暗
+value.AMBIENT_BRIGHTNESS.2=標準
+value.AMBIENT_BRIGHTNESS.3=提亮 (明亮)
+option.SHADOW_TINT=陰影色調
+option.SHADOW_TINT.comment=給白天的陰影上色。現實中藍天下的陰影帶有細微的冷色調。
+value.SHADOW_TINT.1=中性灰
+value.SHADOW_TINT.2=冷藍 (逼真)
+value.SHADOW_TINT.3=暖色
+option.LIGHT_WRAP=光照包覆 (Light Wrap)
+option.LIGHT_WRAP.comment=柔化亮面與暗面之間的明暗交界。逼真 = 物理 Lambert；柔和 = 適合截圖。
+value.LIGHT_WRAP.1=逼真 (Lambert)
+value.LIGHT_WRAP.2=柔和包覆
+value.LIGHT_WRAP.3=風格化
