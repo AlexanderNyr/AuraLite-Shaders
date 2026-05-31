@@ -4,7 +4,7 @@
 [![Shader Loader](https://img.shields.io/badge/Loader-Iris%20%2F%20Sodium-green)](https://modrinth.com/)
 [![API Standard](https://img.shields.io/badge/API-OpenGL%204.6%20%2F%20GLSL%20460-orange)](https://khronos.org/)
 [![Materials Standard](https://img.shields.io/badge/PBR-LabPBR%201.3-cyan)](https://github.com/rre36/lab-pbr)
-[![Version](https://img.shields.io/badge/Release-v0.2.8-purple)](https://github.com/AlexanderNyr/AuraLite-Shaders)
+[![Version](https://img.shields.io/badge/Release-v0.2.9-purple)](https://github.com/AlexanderNyr/AuraLite-Shaders)
 [![License](https://img.shields.io/badge/License-CC%20BY--NC--SA%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by-nc-sa/4.0/)
 
 > 🌐 **Languages:** **English** · [Русский](README_RU.md)
@@ -14,6 +14,46 @@
 AuraLite delivers a breathtaking, realistic visual experience without overcomplicating the screen with bloated post-processing effects (such as aggressive motion blur, heavy bloom, or screen-space reflections), ensuring **maximum FPS and smooth frametimes** on modern GPUs.
 
 ---
+
+## 🆕 What's New in v0.2.9 — *Working SSR, Realistic Waves & True Night Underwater*
+
+Version **0.2.9** is a focused water-quality update that finally delivers the long-requested **screen-space reflections** that work on every loader (including the tricky Iris 1.20+ pipeline), introduces **physically-coherent procedural waves** that don't tear reflections, and gives underwater scenes **true nocturnal darkness**.
+
+### 🪞 Screen-Space Reflections (SSR) — Now Actually Working
+
+* **Loader-agnostic SSR pipeline.** Previous SSR implementations relied on multi-render-target writes via `DRAWBUFFERS:06` + `layout(location = 1) out`. This combination silently failed on Iris 1.20 — the second attachment was never bound to the FBO, so reflection data was lost between the composite and final passes. v0.2.9 reads the surface normal directly from `colortex2` and roughness from `colortex1.z` (the same buffers PBR specular highlights already use), bypassing the broken MRT path entirely.
+
+* **Bulletproof water detector.** Water surfaces are now identified by comparing `depthtex0` (depth *with* translucents) and `depthtex1` (depth *without* translucents). When they differ, the pixel is a water/glass/ice surface — no false positives on lapis lazuli, blue wool, packed ice, or terrain seen through water. Works regardless of whether `gbuffers_water` correctly writes its G-buffer attachments.
+
+* **dFdx-stabilized normal reconstruction.** For pixels where `gbufferModelView` is identity in the final pass (a known Iris quirk), the water normal is rebuilt from depth-buffer derivatives using a 4-tap central-difference kernel. The result is the *true geometric normal* of the visible water surface, independent of any matrix uniforms.
+
+* **Schlick-correct Fresnel.** Reflections now follow the physical F0 = 0.02 dielectric water curve: weak when looking straight down, near-mirror at grazing angles.
+
+* **Adaptive view-space raymarcher with binary refinement.** Textbook real-time SSR: the reflected ray is marched in view space with a step length that scales with the current depth gap (long jumps in empty space, short jumps near the surface), then refined with 4–7 binary-search iterations once a crossing is detected. Distance-aware tolerance prevents Z-fighting on far samples. 14 / 24 / 40 march steps depending on `SSR_QUALITY`.
+
+### 🌊 Coherent Procedural Wave System
+
+* **4-octave fBm height-field** with C2-continuous quintic smoothing. Each octave is rotated ~33° to break grid alignment.
+* **Analytic gradients** (4-sample central differences in world space) produce *coherent* wave slopes — reflections smoothly track wave geometry instead of jittering as random noise offsets did in earlier prototypes.
+* New **`WATER_WAVE_SCALE`** menu setting: *Calm / Standard / Choppy / Stormy* — controls wave amplitude from mirror to broken horizon.
+* New **`WATER_WAVE_DETAIL`** menu setting: *Coarse / Standard / Dense* — controls wave frequency from a few large swells to many fine ripples.
+
+### 🌑 True Underwater Night Darkness
+
+* The old underwater scattering formula had three baked-in brightness floors (`+0.25` on `dayFactor`, `+0.3` on `skyLight`, plus a constant deep-water blue tint), so even pitch-black midnight underwater looked like a moonlit pool. v0.2.9 rebuilds the formula to honour the actual day/night cycle.
+* New **`UNDERWATER_NIGHT_DARKNESS`** menu setting:
+  * **Moonlit Pool** — original 0.2.8 brightness (compat mode)
+  * **Dim** — clearly night, still visible
+  * **True Night** — realistic darkness (default)
+  * **Pitch Dark** — extreme survival realism
+
+### 🛠️ Smaller fixes
+
+* Removed the unused `colortex6Out` MRT write from `composite.fsh` along with its `colortex6Format` declaration — fewer attachments, simpler pipeline, less to break.
+* Centralized SSR/wave/underwater toggles into the regular profile system, so all six presets (VERY_LOW → EXTREME) carry sensible defaults.
+* Added English and Russian translations for all new options, plus value-label localization (`Calm`/`Choppy`/`True Night` etc.) — other languages fall back to English labels.
+
+***
 
 ## 🆕 What's New in v0.2.8 — *Dimension Upgrades, Precise Biomes & Physics Fixes*
 
@@ -275,7 +315,7 @@ AuraLite is built from the ground up for maximum FPS using OpenGL 4.6 native har
 
 ## 📥 Installation
 
-1. Download **`AuraLite-Shaders-v0.2.7.zip`** from the [Releases](https://github.com/AlexanderNyr/AuraLite-Shaders/releases) section on the right.
+1. Download **`AuraLite-Shaders-v0.2.9.zip`** from the [Releases](https://github.com/AlexanderNyr/AuraLite-Shaders/releases) section on the right.
 2. Open your Minecraft directory (e.g. `%appdata%/.minecraft` on Windows).
 3. Place the downloaded `.zip` file inside the **`shaderpacks`** folder (Do **not** unzip it!).
 4. Launch a supported Minecraft version (**1.16.5 – 26.1.2**) using a profile with **Sodium + Iris** or **OptiFine** installed.
