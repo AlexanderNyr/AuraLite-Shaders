@@ -4,14 +4,34 @@
 [![Shader Loader](https://img.shields.io/badge/Loader-Iris%20%2F%20Sodium-green)](https://modrinth.com/)
 [![API Standard](https://img.shields.io/badge/API-OpenGL%204.6%20%2F%20GLSL%20460-orange)](https://khronos.org/)
 [![Materials Standard](https://img.shields.io/badge/PBR-LabPBR%201.3-cyan)](https://github.com/rre36/lab-pbr)
-[![Version](https://img.shields.io/badge/Release-v0.2.9-purple)](https://github.com/AlexanderNyr/AuraLite-Shaders)
+[![Version](https://img.shields.io/badge/Release-v0.3.0-purple)](https://github.com/AlexanderNyr/AuraLite-Shaders)
 [![License](https://img.shields.io/badge/License-CC%20BY--NC--SA%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by-nc-sa/4.0/)
 
 > 🌐 **Languages:** **English** · [Русский](README_RU.md)
 
 **AuraLite** is a modern, lightweight, and highly optimized shader pack built on top of the **OpenGL 4.6 / GLSL 460** standard. It is specifically designed and **tested for Minecraft 1.16.5 – 26.1.2 with Sodium + Iris** (and compatible with **OptiFine**).
 
-AuraLite delivers a breathtaking, realistic visual experience without overcomplicating the screen with bloated post-processing effects (such as aggressive motion blur, heavy bloom, or screen-space reflections), ensuring **maximum FPS and smooth frametimes** on modern GPUs.
+AuraLite delivers a breathtaking, realistic visual experience without overcomplicating the screen with bloated post-processing effects (such as aggressive motion blur or heavy bloom). Optional SSR, TAA, godrays, and SSAO are profile-scaled so AuraLite keeps **high FPS and smooth frametimes** on modern GPUs.
+
+---
+
+## 🆕 What's New in v0.3.0 — *Volumetric Aurora Realism Update*
+
+Version **0.3.0** focuses on the night sky and replaces the older flat aurora overlay with a more photographic, volumetric aurora renderer. The rest of the rendering pipeline remains based on the stable v0.2.9 SSR/water foundation.
+
+### 🌌 Realistic Volumetric Aurora Borealis
+
+* **Raymarched aurora curtains.** Aurora rendering now samples a vertical volume above the horizon instead of drawing a simple 2D noise layer, giving the effect visible depth and height.
+* **Distinct vertical pillars and rays.** Fine high-frequency striations create the characteristic upward beams seen in real aurora photography.
+* **Sharper lower edge, softer upper fade.** The aurora now has a defined luminous base and gradually dissolves into the upper night sky.
+* **More vivid photographic colours.** The palette was rebalanced toward saturated cyan-green, magenta/purple, and subtle deep-blue upper blending.
+* **Better motion pacing.** Animation speed was reduced and smoothed so curtains drift naturally instead of sliding too quickly across the sky.
+* **Preserved biome/weather logic.** Existing `AURORA_MODE`, cold-biome detection, rain attenuation, speed, and brightness settings continue to work.
+
+### 🧭 Project metadata refresh
+
+* README and installation references now point to **v0.3.0**.
+* Source-folder notes now correctly describe the repository as containing snapshots through `shaders v0.3.0/`.
 
 ---
 
@@ -192,7 +212,7 @@ Version **0.2.0** was the original content update that nearly doubled the pack's
 * 🧊 **Ice Glitch Fix** — dedicated block ID disables waving/refraction on ice variants to eliminate visual artifacts.
 * 🌙 **Moon-Phase Aware Sky** — sky shading reacts to `moonPhase` and `dimension` for nether/end correctness.
 
-> Source for every version is shipped in this repo under [`shaders v0.2.0/`](shaders%20v0.2.0) through [`shaders v0.2.7/`](shaders%20v0.2.7). End users should grab the packaged release ZIP from [Releases](https://github.com/AlexanderNyr/AuraLite-Shaders/releases).
+> Source for every version is shipped in this repo under [`shaders v0.2.0/`](shaders%20v0.2.0) through [`shaders v0.3.0/`](shaders%20v0.3.0). End users should grab the packaged release ZIP from [Releases](https://github.com/AlexanderNyr/AuraLite-Shaders/releases).
 
 ---
 
@@ -315,13 +335,13 @@ AuraLite is built from the ground up for maximum FPS using OpenGL 4.6 native har
 
 ## 📥 Installation
 
-1. Download **`AuraLite-Shaders-v0.2.9.zip`** from the [Releases](https://github.com/AlexanderNyr/AuraLite-Shaders/releases) section on the right.
+1. Download **`AuraLite-Shaders-v0.3.0.zip`** from the [Releases](https://github.com/AlexanderNyr/AuraLite-Shaders/releases) section on the right.
 2. Open your Minecraft directory (e.g. `%appdata%/.minecraft` on Windows).
 3. Place the downloaded `.zip` file inside the **`shaderpacks`** folder (Do **not** unzip it!).
 4. Launch a supported Minecraft version (**1.16.5 – 26.1.2**) using a profile with **Sodium + Iris** or **OptiFine** installed.
 5. In-game, go to **Options → Video Settings → Shader Packs**, select **AuraLite**, and click **Apply**.
 
-> 💡 The repository ships source folders for every release snapshot: `shaders v0.2.0/` through `shaders v0.2.7/`. The current version is **v0.2.7**. End users should grab the packaged release ZIP; developers can browse any folder directly.
+> 💡 The repository ships source folders for every release snapshot: `shaders v0.2.0/` through `shaders v0.3.0/`. The current version is **v0.3.0**. End users should grab the packaged release ZIP; developers can browse any folder directly.
 
 ---
 
@@ -346,6 +366,9 @@ AuraLite includes localized in-game configuration files for **59 language codes*
 * **PBR Intensity** — `Subtle / Standard / Mirror`
 * 🆕 **SSAO / SAO Occlusion** *(v0.2.5)* — Screen-space ambient occlusion for contact shadows in corners, under blocks, and around geometry intersections.
 * 🆕 **SSAO Strength** *(v0.2.5)* — `Subtle / Balanced / Deep`.
+* 🆕 **Screen-Space Reflections (`SSR`)** *(v0.2.9)* — loader-agnostic screen-space reflections for water and wet glossy surfaces.
+* 🆕 **SSR Quality** *(v0.2.9)* — `Fast / Balanced / High` raymarch step budget.
+* 🆕 **SSR Strength** *(v0.2.9)* — `Soft / Balanced / Mirror` reflection intensity.
 
 ### `[Sun & Moon]` *(since v0.2.2)*
 * **Sun Intensity** — `Dim / Standard / Bright / Blazing`
@@ -365,6 +388,9 @@ AuraLite includes localized in-game configuration files for **59 language codes*
 * **Water Density** — `Clear / Balanced / Deep` — Adjust water transparency.
 * **Water Ripple Strength (`WATER_RIFFLES`)** — `Calm / Standard / Choppy` — Fine normal-map ripples.
 * **Water Specular Glow (`WATER_SPECULAR_STRENGTH`)** — `Soft / Standard / Glinting` — Brightness of sun/moon highlights on the ripples.
+* 🆕 **Water Wave Scale (`WATER_WAVE_SCALE`)** *(v0.2.9)* — `Calm / Standard / Choppy / Stormy` — procedural wave amplitude used by SSR.
+* 🆕 **Water Wave Detail (`WATER_WAVE_DETAIL`)** *(v0.2.9)* — `Coarse / Standard / Dense` — procedural wave frequency/detail.
+* 🆕 **Underwater Night Darkness** *(v0.2.9)* — `Moonlit Pool / Dim / True Night / Pitch Dark` — controls how dark underwater scenes become at night.
 
 ### `[Sky & Clouds]`
 * **Volumetric 3D Clouds** — Toggle raymarched clouds.
@@ -394,16 +420,16 @@ AuraLite includes localized in-game configuration files for **59 language codes*
 * **Vignette** — Toggle cinematic corner darkening.
 * (Hidden) **Rain Wetness Reflections (`WET_REFLECTIONS`)** — Wet glossy ground during rain (enabled by default in MED+ profiles).
 
-### 🎚️ Quality Profiles (v0.2.7)
+### 🎚️ Quality Profiles (v0.3.0)
 
-| Profile      | Target          | Shadows | Clouds | Cloud Shadows | Godrays | TAA | PBR | SSAO | Heavy Extras |
-|--------------|-----------------|---------|--------|---------------|---------|-----|-----|------|--------------|
-| **VERY_LOW** | Maximum FPS     | ❌      | ❌     | ❌            | ❌      | ❌  | ❌  | ❌   | Most extras off |
-| **LOW**      | Weak GPUs       | ❌      | ❌     | ❌            | ❌      | ❌  | ❌  | ❌   | Cheap water/foliage motion only |
-| **MED**      | Balanced        | ✅ 1024 | ✅ Near/Standard | ✅ Soft | ❌ | ❌ | ✅ Subtle | ❌ | Wet reflections + ground mist |
-| **HIGH**     | High quality    | ✅ 2048 | ✅ Far | ✅ Balanced | ✅ Fast | ✅ Light | ✅ Standard | ❌ | Full atmosphere without SSAO |
-| **ULTRA**    | Very high       | ✅ 4096 | ✅ Very Far | ✅ Balanced | ✅ Balanced | ✅ Balanced | ✅ Strong | ✅ Balanced | High-end visuals |
-| **EXTREME**  | Maximum quality | ✅ 4096 | ✅ Dense/Very Far | ✅ Dramatic | ✅ High | ✅ Stable | ✅ Strong | ✅ Deep | Heaviest cinematic preset |
+| Profile      | Target          | Shadows | Clouds | Cloud Shadows | Godrays | TAA | SSR | PBR | SSAO | Heavy Extras |
+|--------------|-----------------|---------|--------|---------------|---------|-----|-----|-----|------|--------------|
+| **VERY_LOW** | Maximum FPS     | ❌      | ❌     | ❌            | ❌      | ❌  | ❌  | ❌  | ❌   | Most extras off |
+| **LOW**      | Weak GPUs       | ❌      | ❌     | ❌            | ❌      | ❌  | ❌  | ❌  | ❌   | Cheap water/foliage motion only |
+| **MED**      | Balanced        | ✅ 1024 | ✅ Near/Standard | ✅ Soft | ❌ | ❌ | ❌ | ✅ Subtle | ❌ | Wet reflections + ground mist |
+| **HIGH**     | High quality    | ✅ 2048 | ✅ Far | ✅ Balanced | ✅ Fast | ✅ Light | ✅ Fast | ✅ Standard | ❌ | Full atmosphere with lightweight SSR |
+| **ULTRA**    | Very high       | ✅ 4096 | ✅ Very Far | ✅ Balanced | ✅ Balanced | ✅ Balanced | ✅ Balanced | ✅ Strong | ✅ Balanced | High-end visuals |
+| **EXTREME**  | Maximum quality | ✅ 4096 | ✅ Dense/Very Far | ✅ Dramatic | ✅ High | ✅ Stable | ✅ High | ✅ Strong | ✅ Deep | Heaviest cinematic preset |
 
 ---
 
