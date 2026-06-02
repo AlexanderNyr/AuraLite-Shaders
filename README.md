@@ -4,7 +4,7 @@
 [![Shader Loader](https://img.shields.io/badge/Loader-Iris%20%2F%20Sodium-green)](https://modrinth.com/)
 [![API Standard](https://img.shields.io/badge/API-OpenGL%204.6%20%2F%20GLSL%20460-orange)](https://khronos.org/)
 [![Materials Standard](https://img.shields.io/badge/PBR-LabPBR%201.3-cyan)](https://github.com/rre36/lab-pbr)
-[![Version](https://img.shields.io/badge/Release-v0.3.0-purple)](https://github.com/AlexanderNyr/AuraLite-Shaders)
+[![Version](https://img.shields.io/badge/Release-v1.0.0-purple)](https://github.com/AlexanderNyr/AuraLite-Shaders)
 [![License](https://img.shields.io/badge/License-CC%20BY--NC--SA%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by-nc-sa/4.0/)
 
 > 🌐 **Languages:** **English** · [Русский](README_RU.md)
@@ -12,6 +12,42 @@
 **AuraLite** is a modern, lightweight, and highly optimized shader pack built on top of the **OpenGL 4.6 / GLSL 460** standard. It is specifically designed and **tested for Minecraft 1.16.5 – 26.1.2 with Sodium + Iris** (and compatible with **OptiFine**).
 
 AuraLite delivers a breathtaking, realistic visual experience without overcomplicating the screen with bloated post-processing effects (such as aggressive motion blur or heavy bloom). Optional SSR, TAA, godrays, and SSAO are profile-scaled so AuraLite keeps **high FPS and smooth frametimes** on modern GPUs.
+
+---
+
+> ℹ️ **Historical note:** older changelog sections below are preserved as original release notes.
+
+## 🆕 What's New in v1.0.0 — *Meteor Showers & Finalized Reflection Pipeline*
+
+Version **1.0.0** builds on the volumetric aurora work from v0.3.0 and introduces the first **v1.0.0** source snapshot in this repository. The update adds a physically-inspired meteor system to the night sky, finalizes the modern SSR path for reliable Iris compatibility, and refreshes the documentation so the project now correctly points to the `shaders v1.0.0/` folder.
+
+### ☄️ Physically-Based Meteors / Falling Stars
+
+* **True great-circle sky arcs.** Meteors are rendered as moving arcs on the celestial sphere instead of flat 2D streaks, so showers converge toward a shared radiant like real meteor photography.
+* **Ablation-based brightness curve.** Each meteor rises, peaks, and fades with a bell-shaped light curve inspired by atmospheric entry.
+* **Blackbody plasma colouring.** Meteor heads are tinted with the same Kelvin-based colour pipeline used by AuraLite's sun/moon lighting, giving physically consistent warm-to-white fireball tones.
+* **Moonlight washout and weather attenuation.** Faint meteors are suppressed by bright moon phases, rain, and daytime sky brightness, improving realism and avoiding visual clutter in poor visibility.
+* **Persistent trains on bright fireballs.** The strongest events leave a short-lived glowing ionization trail, including a subtle green oxygen-style tint on the lingering train.
+* **Available in both Overworld and The End.** Overworld meteors respect moonlight and atmosphere; End meteors render against the permanent night sky without moon washout.
+
+### 🪞 Finalized v1.0.0 SSR / Water Reflection Path
+
+* **`colortex6` fully removed from the reflection workflow.** The older MRT export path was retired; `final.fsh` now reads normals directly from `colortex2` and roughness from `colortex1`, matching AuraLite's already-working PBR data path.
+* **Depth-based water-surface detection.** Water is identified by comparing `depthtex0` and `depthtex1`, making reflections robust on Iris paths where water G-buffer writes may be inconsistent.
+* **More stable water normals.** Reflection normals are reconstructed from neighbouring depth samples and then perturbed with coherent world-space ripple gradients, reducing faceting and torn reflections.
+* **Cleaner post-pass reliability.** The reflection pipeline now lives entirely in the final post-processing pass, simplifying the frame graph and avoiding loader-specific MRT issues.
+
+### 🎛️ New Sky Settings & Profile Integration
+
+* New configurable options: **`SHOOTING_STARS`**, **`SHOOTING_STARS_FREQUENCY`**, and **`SHOOTING_STARS_BRIGHTNESS`**.
+* Shooting stars are disabled on the lightest presets and enabled from **MED** upward through the normal profile system.
+* English and Russian UI text was expanded for the new night-sky controls, while other language files continue to fall back safely.
+
+### 🧭 Project metadata refresh
+
+* README and installation references now point to **v1.0.0**.
+* Source-folder notes now correctly describe the repository as containing snapshots through `shaders v1.0.0/`.
+* The quality-profile and configuration sections below were refreshed for the current release, while older changelog entries remain intact for historical reference.
 
 ---
 
@@ -212,7 +248,7 @@ Version **0.2.0** was the original content update that nearly doubled the pack's
 * 🧊 **Ice Glitch Fix** — dedicated block ID disables waving/refraction on ice variants to eliminate visual artifacts.
 * 🌙 **Moon-Phase Aware Sky** — sky shading reacts to `moonPhase` and `dimension` for nether/end correctness.
 
-> Source for every version is shipped in this repo under [`shaders v0.2.0/`](shaders%20v0.2.0) through [`shaders v0.3.0/`](shaders%20v0.3.0). End users should grab the packaged release ZIP from [Releases](https://github.com/AlexanderNyr/AuraLite-Shaders/releases).
+> Source for every version is shipped in this repo under [`shaders v0.2.0/`](shaders%20v0.2.0) through [`shaders v1.0.0/`](shaders%20v1.0.0). The current source snapshot is **v1.0.0**. End users should grab the packaged release ZIP from [Releases](https://github.com/AlexanderNyr/AuraLite-Shaders/releases).
 
 ---
 
@@ -233,6 +269,7 @@ The night sky is no longer just a static starfield — it's a fully procedural c
 * **Aurora Borealis:** Realistic, flowing northern lights that ripple across the upper sky. Modes: *Disabled / Only in Cold Biomes / Always Enabled*, with independent **speed** and **brightness** controls. *(v0.2.5: rendered in `gbuffers_skybasic` for reliability; cold-biome detection uses real biome uniforms.)*
 * **Milky Way Nebula:** A subtle diagonal brownish galactic band glows softly above the horizon, with adjustable brightness.
 * **Procedural Stars:** Independent **brightness** and **density** sliders let you choose between a few crisp pinpricks or a brilliantly dense Hubble-style sky. Stars sparkle and twinkle in real time.
+* **Physically-Based Meteors / Falling Stars** *(v1.0.0)*: configurable meteor activity, brightness, moon washout, and persistent ionization trails bring realistic night-sky streaks to the Overworld and the End.
 * **Persistent Rainbow:** After rain stops, a soft rainbow arcs across the sky and gently fades out as the `wetness` uniform decays. Brightness and saturation are configurable.
 
 ### ☀️ 3. Analytical Kelvin Sun & Moon — *Enhanced in v0.2.2, refined in v0.2.5*
@@ -335,13 +372,13 @@ AuraLite is built from the ground up for maximum FPS using OpenGL 4.6 native har
 
 ## 📥 Installation
 
-1. Download **`AuraLite-Shaders-v0.3.0.zip`** from the [Releases](https://github.com/AlexanderNyr/AuraLite-Shaders/releases) section on the right.
+1. Download **`AuraLite-Shaders-v1.0.0.zip`** from the [Releases](https://github.com/AlexanderNyr/AuraLite-Shaders/releases) section on the right.
 2. Open your Minecraft directory (e.g. `%appdata%/.minecraft` on Windows).
 3. Place the downloaded `.zip` file inside the **`shaderpacks`** folder (Do **not** unzip it!).
 4. Launch a supported Minecraft version (**1.16.5 – 26.1.2**) using a profile with **Sodium + Iris** or **OptiFine** installed.
 5. In-game, go to **Options → Video Settings → Shader Packs**, select **AuraLite**, and click **Apply**.
 
-> 💡 The repository ships source folders for every release snapshot: `shaders v0.2.0/` through `shaders v0.3.0/`. The current version is **v0.3.0**. End users should grab the packaged release ZIP; developers can browse any folder directly.
+> 💡 The repository ships source folders for every release snapshot: `shaders v0.2.0/` through `shaders v1.0.0/`. The current source snapshot is **v1.0.0**. End users should grab the packaged release ZIP; developers can browse any folder directly.
 
 ---
 
@@ -407,6 +444,9 @@ AuraLite includes localized in-game configuration files for **59 language codes*
 * **Milky Way Brightness** — `Dim / Standard / Bright`
 * **Stars Brightness** — `Faint / Standard / Brilliant`
 * **Stars Density** — `Few / Standard / Dense`
+* 🆕 **Meteors (Falling Stars)** *(v1.0.0)* — Physically-based meteor streaks across the night sky.
+* 🆕 **Meteor Activity (ZHR)** *(v1.0.0)* — `Sporadic (~10/hr) / Active Shower / Meteor Storm`.
+* 🆕 **Meteor Brightness** *(v1.0.0)* — `Faint (Realistic) / Standard / Bright Fireballs`.
 * **Rainbow Intensity** — `Subtle / Balanced / Vivid` — Post-rain rainbow arc.
 
 ### `[Post-Processing & Fog]`
@@ -420,7 +460,7 @@ AuraLite includes localized in-game configuration files for **59 language codes*
 * **Vignette** — Toggle cinematic corner darkening.
 * (Hidden) **Rain Wetness Reflections (`WET_REFLECTIONS`)** — Wet glossy ground during rain (enabled by default in MED+ profiles).
 
-### 🎚️ Quality Profiles (v0.3.0)
+### 🎚️ Quality Profiles (v1.0.0)
 
 | Profile      | Target          | Shadows | Clouds | Cloud Shadows | Godrays | TAA | SSR | PBR | SSAO | Heavy Extras |
 |--------------|-----------------|---------|--------|---------------|---------|-----|-----|-----|------|--------------|
@@ -430,6 +470,8 @@ AuraLite includes localized in-game configuration files for **59 language codes*
 | **HIGH**     | High quality    | ✅ 2048 | ✅ Far | ✅ Balanced | ✅ Fast | ✅ Light | ✅ Fast | ✅ Standard | ❌ | Full atmosphere with lightweight SSR |
 | **ULTRA**    | Very high       | ✅ 4096 | ✅ Very Far | ✅ Balanced | ✅ Balanced | ✅ Balanced | ✅ Balanced | ✅ Strong | ✅ Balanced | High-end visuals |
 | **EXTREME**  | Maximum quality | ✅ 4096 | ✅ Dense/Very Far | ✅ Dramatic | ✅ High | ✅ Stable | ✅ High | ✅ Strong | ✅ Deep | Heaviest cinematic preset |
+
+> 💫 **Shooting stars** are disabled on **VERY_LOW / LOW** and enabled from **MED** upward.
 
 ---
 
