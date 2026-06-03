@@ -4,7 +4,7 @@
 [![Shader Loader](https://img.shields.io/badge/Loader-Iris%20%2F%20Sodium-green)](https://modrinth.com/)
 [![API Standard](https://img.shields.io/badge/API-OpenGL%204.6%20%2F%20GLSL%20460-orange)](https://khronos.org/)
 [![Materials Standard](https://img.shields.io/badge/PBR-LabPBR%201.3-cyan)](https://github.com/rre36/lab-pbr)
-[![Version](https://img.shields.io/badge/Release-v1.0.1-purple)](https://github.com/AlexanderNyr/AuraLite-Shaders)
+[![Version](https://img.shields.io/badge/Release-v1.0.2-purple)](https://github.com/AlexanderNyr/AuraLite-Shaders)
 [![License](https://img.shields.io/badge/License-CC%20BY--NC--SA%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by-nc-sa/4.0/)
 
 > 🌐 **Languages:** **English** · [Русский](README_RU.md)
@@ -16,6 +16,22 @@ AuraLite delivers a breathtaking, realistic visual experience without overcompli
 ---
 
 > ℹ️ **Historical note:** older changelog sections below are preserved as original release notes.
+
+## 🆕 What's New in v1.0.2 — *Foliage Subsurface Scattering (SSS)*
+
+Version **1.0.2** adds realistic subsurface scattering for vegetation, making leaves, grass, and plants look more translucent and lifelike when light shines through them. This is a focused visual enhancement that integrates cleanly with the existing PBR and lighting pipeline.
+
+### 🌿 New Feature
+* **Foliage Subsurface Scattering (`FOLIAGE_SSS`)** — New toggle in the `[Foliage Settings]` menu. When enabled, foliage receives additional lighting from the back (light bleeding) and a soft wrap term for the unlit side. Controlled per-profile (enabled from MED upward by default). Uses material ID tagging in `gbuffers_terrain` and a dedicated SSS pass in `composite.fsh`.
+* Added to all quality profiles (VERY_LOW → EXTREME) with the `!FOLIAGE_SSS` or `FOLIAGE_SSS` flag.
+* Full English + Russian localization strings added.
+
+### 🧭 Project metadata refresh
+* README and installation references now point to **v1.0.2**.
+* Source-folder notes now correctly describe the repository as containing snapshots through `shaders v1.0.2/`.
+* Minor synchronization of `shaders.properties` (FOLIAGE_SSS screen entry and profile definitions).
+
+--- older changelog sections below are preserved as original release notes.
 
 ## 🆕 What's New in v1.0.1 — *Stability, HDR Bloom & Photographic Tone Mapping*
 
@@ -38,7 +54,7 @@ Version **1.0.1** is a focused hotfix on top of v1.0.0 that addresses five edge-
 ### 🧭 Project metadata refresh
 
 * README and installation references now point to **v1.0.1**.
-* Source-folder notes now correctly describe the repository as containing snapshots through `shaders v1.0.1/`.
+* Source-folder notes now correctly describe the repository as containing snapshots through `shaders v1.0.1/`. (Historical for that release)
 
 --- older changelog sections below are preserved as original release notes.
 
@@ -273,7 +289,7 @@ Version **0.2.0** was the original content update that nearly doubled the pack's
 * 🧊 **Ice Glitch Fix** — dedicated block ID disables waving/refraction on ice variants to eliminate visual artifacts.
 * 🌙 **Moon-Phase Aware Sky** — sky shading reacts to `moonPhase` and `dimension` for nether/end correctness.
 
-> Source for every version is shipped in this repo under [`shaders v0.2.0/`](shaders%20v0.2.0) through [`shaders v1.0.1/`](shaders%20v1.0.1). The current source snapshot is **v1.0.1**. End users should grab the packaged release ZIP from [Releases](https://github.com/AlexanderNyr/AuraLite-Shaders/releases).
+> Source for every version is shipped in this repo under [`shaders v0.2.0/`](shaders%20v0.2.0) through [`shaders v1.0.2/`](shaders%20v1.0.2). The current source snapshot is **v1.0.2**. End users should grab the packaged release ZIP from [Releases](https://github.com/AlexanderNyr/AuraLite-Shaders/releases).
 
 ---
 
@@ -348,7 +364,7 @@ The night sky is no longer just a static starfield — it's a fully procedural c
 ### 🌀 9. Cosmic Nether Portal *(since v0.2.0, improved in v0.2.5)*
 The vanilla Nether portal texture is procedurally transformed into a **swirling 3D plasma vortex** — animated purple/magenta cosmic energy that pulses with hypnotic depth. Mapped via dedicated block ID `10006` in `block.properties`. *(v0.2.5: portal pixels are flagged as emissive so composite skips scene lighting and displays the plasma as-is.)*
 
-### 🎬 10. Cinematic Post-Processing — *Refined in v1.0.1*
+### 🎬 10. Cinematic Post-Processing — *Refined in v1.0.1, v1.0.2*
 * **Multiple Tone Mapping Curves** *(since v0.2.0)*: Pick from **Soft**, **Filmic (ACES)**, or **Intense (High Contrast)** to match your preferred mood.
 * **Color Vibrancy** *(since v0.2.0)*: 4-step non-linear saturation control (*Muted / Balanced / Colorful / Vivid*) that makes foliage glow emerald and skies look lush, without crushing skin tones.
 * **Exposure Brightness:** Muted / Balanced / Vibrant — global brightness lift.
@@ -397,13 +413,13 @@ AuraLite is built from the ground up for maximum FPS using OpenGL 4.6 native har
 
 ## 📥 Installation
 
-1. Download **`AuraLite-Shaders-v1.0.1.zip`** from the [Releases](https://github.com/AlexanderNyr/AuraLite-Shaders/releases) section on the right.
+1. Download **`AuraLite-Shaders-v1.0.2.zip`** from the [Releases](https://github.com/AlexanderNyr/AuraLite-Shaders/releases) section on the right.
 2. Open your Minecraft directory (e.g. `%appdata%/.minecraft` on Windows).
 3. Place the downloaded `.zip` file inside the **`shaderpacks`** folder (Do **not** unzip it!).
 4. Launch a supported Minecraft version (**1.16.5 – 26.1.2**) using a profile with **Sodium + Iris** or **OptiFine** installed.
 5. In-game, go to **Options → Video Settings → Shader Packs**, select **AuraLite**, and click **Apply**.
 
-> 💡 The repository ships source folders for every release snapshot: `shaders v0.2.0/` through `shaders v1.0.1/`. The current source snapshot is **v1.0.1**. End users should grab the packaged release ZIP; developers can browse any folder directly.
+> 💡 The repository ships source folders for every release snapshot: `shaders v0.2.0/` through `shaders v1.0.2/`. The current source snapshot is **v1.0.2**. End users should grab the packaged release ZIP; developers can browse any folder directly.
 
 ---
 
@@ -444,6 +460,7 @@ AuraLite includes localized in-game configuration files for **59 language codes*
 * **Waving Leaves** — Toggle leaves animation.
 * **Waving Foliage** — Toggle grass, flowers, and crops animation.
 * **Wind Speed** — `Gentle / Breeze / Gale`
+* 🆕 **Foliage SSS (`FOLIAGE_SSS`)** *(v1.0.2)* — Subsurface scattering / translucency for leaves and plants (light bleeding when looking toward the sun).
 
 ### `[Water Settings]`
 * **Water Waves** — Toggle 3D vertex water waves.
@@ -486,7 +503,7 @@ AuraLite includes localized in-game configuration files for **59 language codes*
 * **Vignette** — Toggle cinematic corner darkening.
 * (Hidden) **Rain Wetness Reflections (`WET_REFLECTIONS`)** — Wet glossy ground during rain (enabled by default in MED+ profiles).
 
-### 🎚️ Quality Profiles (v1.0.1)
+### 🎚️ Quality Profiles (v1.0.2)
 
 | Profile      | Target          | Shadows | Clouds | Cloud Shadows | Godrays | TAA | SSR | PBR | SSAO | Heavy Extras |
 |--------------|-----------------|---------|--------|---------------|---------|-----|-----|-----|------|--------------|
@@ -498,6 +515,7 @@ AuraLite includes localized in-game configuration files for **59 language codes*
 | **EXTREME**  | Maximum quality | ✅ 4096 | ✅ Dense/Very Far | ✅ Dramatic | ✅ High | ✅ Stable | ✅ High | ✅ Strong | ✅ Deep | Heaviest cinematic preset |
 
 > 💫 **Shooting stars** are disabled on **VERY_LOW / LOW** and enabled from **MED** upward.
+> 🌿 **Foliage SSS** is enabled from **MED** upward (disabled on VERY_LOW/LOW for maximum FPS).
 
 ---
 
