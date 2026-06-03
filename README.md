@@ -4,18 +4,43 @@
 [![Shader Loader](https://img.shields.io/badge/Loader-Iris%20%2F%20Sodium-green)](https://modrinth.com/)
 [![API Standard](https://img.shields.io/badge/API-OpenGL%204.6%20%2F%20GLSL%20460-orange)](https://khronos.org/)
 [![Materials Standard](https://img.shields.io/badge/PBR-LabPBR%201.3-cyan)](https://github.com/rre36/lab-pbr)
-[![Version](https://img.shields.io/badge/Release-v1.0.0-purple)](https://github.com/AlexanderNyr/AuraLite-Shaders)
+[![Version](https://img.shields.io/badge/Release-v1.0.1-purple)](https://github.com/AlexanderNyr/AuraLite-Shaders)
 [![License](https://img.shields.io/badge/License-CC%20BY--NC--SA%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by-nc-sa/4.0/)
 
 > 🌐 **Languages:** **English** · [Русский](README_RU.md)
 
 **AuraLite** is a modern, lightweight, and highly optimized shader pack built on top of the **OpenGL 4.6 / GLSL 460** standard. It is specifically designed and **tested for Minecraft 1.16.5 – 26.1.2 with Sodium + Iris** (and compatible with **OptiFine**).
 
-AuraLite delivers a breathtaking, realistic visual experience without overcomplicating the screen with bloated post-processing effects (such as aggressive motion blur or heavy bloom). Optional SSR, TAA, godrays, and SSAO are profile-scaled so AuraLite keeps **high FPS and smooth frametimes** on modern GPUs.
+AuraLite delivers a breathtaking, realistic visual experience without overcomplicating the screen with bloated post-processing effects (such as aggressive motion blur or heavy bloom). A lightweight HDR bloom was added in v1.0.1 to softly glow emissive sources without smearing the scene. Optional SSR, TAA, godrays, and SSAO are profile-scaled so AuraLite keeps **high FPS and smooth frametimes** on modern GPUs.
 
 ---
 
 > ℹ️ **Historical note:** older changelog sections below are preserved as original release notes.
+
+## 🆕 What's New in v1.0.1 — *Stability, HDR Bloom & Photographic Tone Mapping*
+
+Version **1.0.1** is a focused hotfix on top of v1.0.0 that addresses five edge-case rendering issues and introduces a new cinematic tone-mapping curve with lightweight HDR bloom.
+
+### 🛠️ Bug Fixes
+
+* **TAA history acceptance threshold.** Added `historySample.a < 0.99` guard in `composite1.fsh` so uninitialised or stale history buffers (e.g. right after shader reload or resolution change) are rejected instead of causing ghosting.
+* **Vibrancy math.** `applyVibrancy` in `final.fsh` now correctly handles negative saturation values — oversaturation works as intended rather than relying on undefined GLSL `mix` extrapolation followed by hard clamping.
+* **SSR normal NaN guard.** Added `length(N) > 0.5` check before `traceSSR()` so invalid normals from edge pixels are silently skipped instead of producing black reflections.
+* **SSR near-field trace precision.** Minimum raymarch step lowered from `1.0` to `0.3` view-space units, dramatically improving hit rate on close surfaces (ripples, shallow pools, wet stone).
+* **Meteor moon-brightness curve.** `gbuffers_skybasic.fsh` now uses `cos²(phase × π/8)` — identical to `getMoonPhaseBrightness()` in `composite.fsh` — so moon washout is physically consistent.
+
+### 🎨 Visual Enhancements
+
+* **HDR Bloom *(v1.0.1)*.** Cheap single-pass 3×3 neighbour blur for overbright pixels (luminance threshold 0.75). Naturally affects sun/moon disks, lava, portals, bright specular highlights, and torches — without smearing the entire scene or requiring extra render targets.
+* **Photographic (AgX-like) Tone Mapping *(v1.0.1)*.** A new `CONTRAST = 4` option in `final.fsh` provides a sigmoidal tone curve with natural highlight chromatic attenuation, soft toe, and lifted blacks — giving a cinematic, non-clipped look that keeps foliage saturation under control while handling extreme brightness gracefully.
+* **EXTREME profile updated.** Now uses `CONTRAST=4` (Photographic/AgX-like) instead of `CONTRAST=3` for cinematic highlight handling.
+
+### 🧭 Project metadata refresh
+
+* README and installation references now point to **v1.0.1**.
+* Source-folder notes now correctly describe the repository as containing snapshots through `shaders v1.0.1/`.
+
+--- older changelog sections below are preserved as original release notes.
 
 ## 🆕 What's New in v1.0.0 — *Meteor Showers & Finalized Reflection Pipeline*
 
@@ -248,7 +273,7 @@ Version **0.2.0** was the original content update that nearly doubled the pack's
 * 🧊 **Ice Glitch Fix** — dedicated block ID disables waving/refraction on ice variants to eliminate visual artifacts.
 * 🌙 **Moon-Phase Aware Sky** — sky shading reacts to `moonPhase` and `dimension` for nether/end correctness.
 
-> Source for every version is shipped in this repo under [`shaders v0.2.0/`](shaders%20v0.2.0) through [`shaders v1.0.0/`](shaders%20v1.0.0). The current source snapshot is **v1.0.0**. End users should grab the packaged release ZIP from [Releases](https://github.com/AlexanderNyr/AuraLite-Shaders/releases).
+> Source for every version is shipped in this repo under [`shaders v0.2.0/`](shaders%20v0.2.0) through [`shaders v1.0.1/`](shaders%20v1.0.1). The current source snapshot is **v1.0.1**. End users should grab the packaged release ZIP from [Releases](https://github.com/AlexanderNyr/AuraLite-Shaders/releases).
 
 ---
 
@@ -323,7 +348,7 @@ The night sky is no longer just a static starfield — it's a fully procedural c
 ### 🌀 9. Cosmic Nether Portal *(since v0.2.0, improved in v0.2.5)*
 The vanilla Nether portal texture is procedurally transformed into a **swirling 3D plasma vortex** — animated purple/magenta cosmic energy that pulses with hypnotic depth. Mapped via dedicated block ID `10006` in `block.properties`. *(v0.2.5: portal pixels are flagged as emissive so composite skips scene lighting and displays the plasma as-is.)*
 
-### 🎬 10. Cinematic Post-Processing
+### 🎬 10. Cinematic Post-Processing — *Refined in v1.0.1*
 * **Multiple Tone Mapping Curves** *(since v0.2.0)*: Pick from **Soft**, **Filmic (ACES)**, or **Intense (High Contrast)** to match your preferred mood.
 * **Color Vibrancy** *(since v0.2.0)*: 4-step non-linear saturation control (*Muted / Balanced / Colorful / Vivid*) that makes foliage glow emerald and skies look lush, without crushing skin tones.
 * **Exposure Brightness:** Muted / Balanced / Vibrant — global brightness lift.
@@ -372,13 +397,13 @@ AuraLite is built from the ground up for maximum FPS using OpenGL 4.6 native har
 
 ## 📥 Installation
 
-1. Download **`AuraLite-Shaders-v1.0.0.zip`** from the [Releases](https://github.com/AlexanderNyr/AuraLite-Shaders/releases) section on the right.
+1. Download **`AuraLite-Shaders-v1.0.1.zip`** from the [Releases](https://github.com/AlexanderNyr/AuraLite-Shaders/releases) section on the right.
 2. Open your Minecraft directory (e.g. `%appdata%/.minecraft` on Windows).
 3. Place the downloaded `.zip` file inside the **`shaderpacks`** folder (Do **not** unzip it!).
 4. Launch a supported Minecraft version (**1.16.5 – 26.1.2**) using a profile with **Sodium + Iris** or **OptiFine** installed.
 5. In-game, go to **Options → Video Settings → Shader Packs**, select **AuraLite**, and click **Apply**.
 
-> 💡 The repository ships source folders for every release snapshot: `shaders v0.2.0/` through `shaders v1.0.0/`. The current source snapshot is **v1.0.0**. End users should grab the packaged release ZIP; developers can browse any folder directly.
+> 💡 The repository ships source folders for every release snapshot: `shaders v0.2.0/` through `shaders v1.0.1/`. The current source snapshot is **v1.0.1**. End users should grab the packaged release ZIP; developers can browse any folder directly.
 
 ---
 
@@ -454,13 +479,14 @@ AuraLite includes localized in-game configuration files for **59 language codes*
 * **Low Ground Mist (`GROUND_MIST`)** — Realistic dawn/evening radiation fog at Y ≈ 60–70.
 * **Exposure Brightness** — `Muted / Balanced / Vibrant`
 * **Color Vibrancy (`COLOR_SATURATION`)** — `Muted / Balanced / Colorful / Vivid`
-* **Image Contrast (`CONTRAST`)** — `Soft / Filmic (ACES) / Intense (High Contrast)` — Choose the tone mapping curve.
+* **Image Contrast (`CONTRAST`)** — `Soft / Filmic (ACES) / Intense (High Contrast) / Photographic (AgX-like)` — Choose the tone mapping curve.
+* 🆕 **HDR Bloom** *(v1.0.1)* — cheap single-pass neighbour blur for overbright emissive sources.
 * 🆕 **Temporal Anti-Aliasing (`TAA`)** *(v0.2.7)* — motion-reprojected temporal resolve for high presets.
 * 🆕 **TAA Strength** *(v0.2.7)* — `Light / Balanced / Stable`.
 * **Vignette** — Toggle cinematic corner darkening.
 * (Hidden) **Rain Wetness Reflections (`WET_REFLECTIONS`)** — Wet glossy ground during rain (enabled by default in MED+ profiles).
 
-### 🎚️ Quality Profiles (v1.0.0)
+### 🎚️ Quality Profiles (v1.0.1)
 
 | Profile      | Target          | Shadows | Clouds | Cloud Shadows | Godrays | TAA | SSR | PBR | SSAO | Heavy Extras |
 |--------------|-----------------|---------|--------|---------------|---------|-----|-----|-----|------|--------------|
