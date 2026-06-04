@@ -48,6 +48,12 @@ Version **1.0.3** adds configurable spatial anti-aliasing (FXAA / SMAA) and a PB
 
 ---
 
+### 🌿 Foliage Subsurface Scattering (also finalized in v1.0.3)
+
+* **`FOLIAGE_SSS`** — toggle in the `[Foliage Settings]` menu. Enables light bleeding through leaves and plants when looking toward the sun, plus a soft wrap term for the shaded side. Controlled per-profile (enabled from MED upward by default). Uses material ID tagging in `gbuffers_terrain` and a dedicated SSS pass in `composite.fsh`.
+* Added to all quality profiles (VERY_LOW → EXTREME) with the `!FOLIAGE_SSS` or `FOLIAGE_SSS` flag.
+* Full English + Russian localization strings added.
+
 older changelog sections below are preserved as original release notes.
 
 Version **1.0.2** adds realistic subsurface scattering for vegetation, making leaves, grass, and plants look more translucent and lifelike when light shines through them. This is a focused visual enhancement that integrates cleanly with the existing PBR and lighting pipeline.
