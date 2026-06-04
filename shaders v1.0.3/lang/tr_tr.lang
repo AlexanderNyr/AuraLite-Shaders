@@ -1,0 +1,277 @@
+# AuraLite Shaders v1.0.3 - Copyright (c) 2026 AlexanderNyr. Licensed under CC BY-NC-SA 4.0.
+# ==============================================================================
+# AuraLite Shader Pack - Turkish Language Translations
+# ==============================================================================
+# NOT: Bu, yapay zeka destekli bir çeviridir. Topluluk düzeltmeleri memnuniyetle
+# karşılanır! Lütfen şu adresten PR açın:
+# https://github.com/AlexanderNyr/AuraLite-Shaders
+# ==============================================================================
+
+# ==============================================================================
+# Quality Profiles
+# ==============================================================================
+profile.VERY_LOW=Very Low
+profile.VERY_LOW.comment=Fastest possible preset for very weak GPUs. Disables heavy effects.
+profile.LOW=Düşük
+profile.MED=Orta
+profile.HIGH=Yüksek
+profile.ULTRA=Ultra
+profile.EXTREME=Extreme
+profile.EXTREME.comment=Maksimum deneysel kalite. SSAO/SAO tarzı temas ortam gölgelemesi ekler. Kararlılık için POM devre dışı bırakılır.
+profile.CUSTOM=Özel
+profile.CUSTOM.comment=Kullanıcı tarafından özelleştirilmiş ayarlar.
+profile.HIGH.comment=Daha uzak gölgeler ve daha parlak aydınlatma ile yüksek kalite.
+profile.LOW.comment=Zayıf GPU'lar için en hızlı ön ayar. Ağır efektleri devre dışı bırakır.
+profile.MED.comment=Gölgeler, bulutlar, PBR ve atmosfer efektleri ile dengelenmiş ön ayar.
+profile.ULTRA.comment=Maksimum görsel kalite. Kararlılık için POM devre dışı bırakılır.
+
+screen.TRANSLATION_NOTICE=⚠ Çeviriler hatalar içerebilir
+screen.TRANSLATION_NOTICE.comment=Bazı yerelleştirme dizeleri hatalı olabilir. Bir şey tuhaf görünüyorsa, İngilizce orijinaliyle karşılaştırın.
+
+# Screens
+screen.LIGHTING=Aydınlatma Ayarları
+screen.LIGHTING.comment=Gölgeleri, ışık renklerini ve parlaklığı yapılandırın.
+screen.FOLIAGE=Bitki Örtüsü Ayarları
+screen.FOLIAGE.comment=Çim ve yapraklar için sallanma animasyonlarını yapılandırın.
+screen.WATER=Su Ayarları
+screen.WATER.comment=Dalgaları, şeffaflığı ve su stilini yapılandırın.
+screen.CLOUDS_MENU=Gökyüzü ve Bulutlar
+screen.CLOUDS_MENU.comment=3D bulutların fiziksel yüksekliğini, kalınlığını ve stilini ve gökyüzü efektlerini yapılandırın.
+screen.POST_PROCESS=Son İşleme ve Sis
+screen.POST_PROCESS.comment=Pozlama, sis ve sinematik efektleri yapılandırın.
+
+# Options
+option.SHADOWS=Dinamik Gölgeler
+option.SHADOWS.comment=Güneş ve aydan gelen yumuşak dinamik gölgeleri etkinleştirir veya devre dışı bırakır.
+option.SHADOW_RES=Gölge Çözünürlüğü
+option.SHADOW_RES.comment=Gölge haritası kalitesini değiştirir. Yüksek değerler performansı düşürebilir.
+option.PBR_LIGHTING=PBR Aydınlatma (LabPBR)
+option.PBR_LIGHTING.comment=Metaller, pürüzlülük ve 3D normal haritalar için fizik tabanlı render etkinleştirir (PBR kaynak paketi gerekir).
+option.PBR_POM=Blok 3D Kabartma (POM)
+option.PBR_POM.comment=Gerçek 3D blok dokular için Parallax Occlusion Mapping etkinleştirir. Uyumsuz paketlerde devre dışı bırakılması önerilir.
+option.PBR_STRENGTH=PBR Yoğunluğu
+option.PBR_STRENGTH.comment=PBR metalik yüzeylerin yansıtıcılığını ve parlaklığını kontrol eder.
+value.PBR_STRENGTH.1=İnce
+value.PBR_STRENGTH.2=Standart
+value.PBR_STRENGTH.3=Ayna
+option.LIGHTMAP_WARMTH=Meşale Sıcaklığı
+option.LIGHTMAP_WARMTH.comment=Blok/meşale ışığının sıcaklığını ve rengini ayarlar.
+value.LIGHTMAP_WARMTH.1=Sıcak Yuva
+value.LIGHTMAP_WARMTH.2=Sıcak
+value.LIGHTMAP_WARMTH.3=Yoğun
+option.WAVING_LEAVES=Sallanan Yapraklar
+option.WAVING_LEAVES.comment=Ağaç yaprakları için yumuşak sallanma animasyonlarını etkinleştirir.
+option.WAVING_GRASS=Sallanan Bitkiler
+option.WAVING_GRASS.comment=Çim, çiçek ve ekinler için sallanma animasyonlarını etkinleştirir.
+option.WIND_SPEED=Rüzgar Hızı
+option.WIND_SPEED.comment=Yaprakların, bitkilerin ve su dalgalarının sallanma hızını kontrol eder.
+value.WIND_SPEED.1=Hafif
+value.WIND_SPEED.2=Esinti
+value.WIND_SPEED.3=Fırtına
+option.WATER_WAVES=Su Dalgaları
+option.WATER_WAVES.comment=Su yüzeyinde 3D geometrik dalgaları etkinleştirir.
+option.WATER_TRANSPARENCY=Su Yoğunluğu
+option.WATER_TRANSPARENCY.comment=Suyun şeffaflığını ve opaklığını kontrol eder.
+value.WATER_TRANSPARENCY.1=Berrak
+value.WATER_TRANSPARENCY.2=Dengeli
+value.WATER_TRANSPARENCY.3=Derin
+option.PROCEDURAL_CLOUDS=Hacimsel 3D Bulutlar
+option.PROCEDURAL_CLOUDS.comment=Fiziksel olarak içinden uçulabilen 3D bulutları etkinleştirir.
+option.CLOUD_HEIGHT=Bulut Yüksekliği
+option.CLOUD_HEIGHT.comment=Dünyadaki bulut katmanının fiziksel yüksekliğini (Y seviyesi, metre) ayarlar.
+value.CLOUD_HEIGHT.1=Düşük (~110m)
+value.CLOUD_HEIGHT.2=Standart (~160m)
+value.CLOUD_HEIGHT.3=Yüksek (~240m)
+option.CLOUD_THICKNESS=Bulut Kalınlığı
+option.CLOUD_THICKNESS.comment=Bulutların dikey kalınlığını ve hacmini yapılandırır.
+value.CLOUD_THICKNESS.1=İnce (Sirrus)
+value.CLOUD_THICKNESS.2=Standart (Kümülüs)
+value.CLOUD_THICKNESS.3=Yoğun (Fırtınalı)
+option.AURORA_MODE=Kuzey Işıkları
+option.AURORA_MODE.comment=Gece gökyüzünde gerçekçi akan auroraların görüntülenmesini kontrol eder.
+value.AURORA_MODE.0=Devre Dışı
+value.AURORA_MODE.1=Yalnızca Soğuk Biyomlarda
+value.AURORA_MODE.2=Her Zaman Açık
+option.AURORA_SPEED=Aurora Hızı
+option.AURORA_SPEED.comment=Kuzey ışıklarının dalgalanma ve akış hızını kontrol eder.
+value.AURORA_SPEED.1=Yavaş
+value.AURORA_SPEED.2=Standart
+value.AURORA_SPEED.3=Hızlı
+option.AURORA_STRENGTH=Aurora Parlaklığı
+option.AURORA_STRENGTH.comment=Kuzey ışıklarının genel parlaklığını kontrol eder.
+value.AURORA_STRENGTH.1=Yumuşak
+value.AURORA_STRENGTH.2=Standart
+value.AURORA_STRENGTH.3=Parlayan
+option.NEBULA_BRIGHTNESS=Samanyolu Parlaklığı
+option.NEBULA_BRIGHTNESS.comment=Geceleri çapraz kahverengimsi galaktik nebula parlaklığını ayarlar.
+value.NEBULA_BRIGHTNESS.1=Sönük
+value.NEBULA_BRIGHTNESS.2=Standart
+value.NEBULA_BRIGHTNESS.3=Parlak
+option.STARS_BRIGHTNESS=Yıldız Parlaklığı
+option.STARS_BRIGHTNESS.comment=Geceleri yıldızların parlaklığını ve parıltısını kontrol eder.
+value.STARS_BRIGHTNESS.1=Soluk
+value.STARS_BRIGHTNESS.2=Standart
+value.STARS_BRIGHTNESS.3=Parlak
+option.STARS_AMOUNT=Yıldız Yoğunluğu
+option.STARS_AMOUNT.comment=Gökyüzündeki yıldızların toplam miktarını ve yoğunluğunu kontrol eder.
+value.STARS_AMOUNT.1=Az
+value.STARS_AMOUNT.2=Standart
+value.STARS_AMOUNT.3=Yoğun
+option.RAINBOW_STRENGTH=Gökkuşağı Yoğunluğu
+option.RAINBOW_STRENGTH.comment=Yağmur sonrası gökkuşağının parlaklığını ve doygunluğunu yapılandırır.
+value.RAINBOW_STRENGTH.1=İnce
+value.RAINBOW_STRENGTH.2=Dengeli
+value.RAINBOW_STRENGTH.3=Canlı
+option.COZY_LIGHTS=Meşale Titreşimi
+option.COZY_LIGHTS.comment=Meşaleler, kamp ateşleri ve fenerler için sıcak, rahat, gerçek zamanlı titreşim animasyonlarını etkinleştirir.
+option.WET_REFLECTIONS=Islak Zemin Yansımaları
+option.WET_REFLECTIONS.comment=Yağmurda, toprak, çim ve taş gibi katı bloklar açık gökyüzü altında ıslanır, koyulaşır ve parlar.
+option.GROUND_MIST=Alçak Yer Sisi (Y=62-66)
+option.GROUND_MIST.comment=Şafak ve alacakaranlıkta su ve buz üzerinde kayan yumuşak altın-beyaz sabah/akşam sis tabakalarını etkinleştirir.
+option.FOG_DENSITY_LEVEL=Sis Yoğunluğu
+option.FOG_DENSITY_LEVEL.comment=Ufuktaki atmosferik sisin gücünü kontrol eder.
+value.FOG_DENSITY_LEVEL.1=Düşük
+value.FOG_DENSITY_LEVEL.2=Orta
+value.FOG_DENSITY_LEVEL.3=Yüksek
+option.EXPOSURE=Pozlama Parlaklığı
+option.EXPOSURE.comment=Görüntünün genel parlaklığını kontrol eder.
+value.EXPOSURE.1=Kısık
+value.EXPOSURE.2=Dengeli
+value.EXPOSURE.3=Canlı
+option.COLOR_SATURATION=Renk Canlılığı
+option.COLOR_SATURATION.comment=Ekran renklerinin doğrusal olmayan doygunluğunu kontrol eder. Bitki örtüsünü zümrüt yeşili, gökyüzünü zengin gösterir.
+value.COLOR_SATURATION.1=Kısık
+value.COLOR_SATURATION.2=Dengeli
+value.COLOR_SATURATION.3=Renkli
+value.COLOR_SATURATION.4=Canlı
+option.CONTRAST=Görüntü Kontrastı
+option.CONTRAST.comment=Tone mapping eğrisini ve kontrast stilini seçer.
+value.CONTRAST.1=Yumuşak
+value.CONTRAST.2=Sinematik (ACES)
+value.CONTRAST.3=Yoğun (Yüksek Kontrast)
+
+option.TAA=Temporal Anti-Aliasing (TAA)
+option.TAA.comment=Temporal resolve with motion reprojection and neighborhood clipping. Reduces shimmering and jagged edges on high presets.
+option.TAA_STRENGTH=TAA Strength
+option.TAA_STRENGTH.comment=Controls history blending. Higher is more stable but can be softer during motion.
+value.TAA_STRENGTH.1=Light
+value.TAA_STRENGTH.2=Balanced
+value.TAA_STRENGTH.3=Stable
+option.VIGNETTE=Vinyet Efekti
+option.VIGNETTE.comment=Ekran kenarlarında ince bir karartma ekleyerek odağı iyileştirir.
+option.WATER_RIFFLES=Su Dalgacık Yoğunluğu
+option.WATER_RIFFLES.comment=Su üzerindeki ince normal map dalgacıklarının yoğunluğunu ayarlar.
+value.WATER_RIFFLES.1=Sakin
+value.WATER_RIFFLES.2=Standart
+value.WATER_RIFFLES.3=Çalkantılı
+option.WATER_SPECULAR_STRENGTH=Su Spekuler Parıltısı
+option.WATER_SPECULAR_STRENGTH.comment=Su dalgacıklarındaki güneş/ay yansımalarının parlaklığını ayarlar.
+value.WATER_SPECULAR_STRENGTH.1=Yumuşak
+value.WATER_SPECULAR_STRENGTH.2=Standart
+value.WATER_SPECULAR_STRENGTH.3=Parıldayan
+option.SHADOW_SOFTNESS=Gölge Yumuşaklığı
+option.SHADOW_SOFTNESS.comment=Gölge kenarlarının yumuşaklığını ve dağılımını kontrol eder. Düzgün yarı gölge için döndürülmüş Poisson disk filtreleme kullanır.
+value.SHADOW_SOFTNESS.1=Keskin
+value.SHADOW_SOFTNESS.2=Yumuşak
+value.SHADOW_SOFTNESS.3=Çok Yumuşak
+
+option.SSAO=SSAO / SAO Ortam Gölgelemesi
+option.SSAO.comment=Aşırı profil: köşelerde, blokların altında ve geometri kesişimlerinde temas gölgeleri için ekran alanı ortam gölgelemesi.
+option.SSAO_STRENGTH=SSAO Gücü
+option.SSAO_STRENGTH.comment=Ekran alanı ortam gölgelemesinin derinliğini kontrol eder. Yalnızca SSAO etkinken çalışır.
+value.SSAO_STRENGTH.1=İnce
+value.SSAO_STRENGTH.2=Dengeli
+value.SSAO_STRENGTH.3=Derin
+
+option.CLOUD_DISTANCE=Bulut render mesafesi
+option.CLOUD_DISTANCE.comment=Hacimsel bulutlar için maksimum çizim mesafesi. Kalite profilleri bunu otomatik olarak artırır.
+value.CLOUD_DISTANCE.1=Yakın
+value.CLOUD_DISTANCE.2=Standart
+value.CLOUD_DISTANCE.3=Uzak
+value.CLOUD_DISTANCE.4=Çok Uzak
+
+option.CLOUD_SHADOWS=Cloud Shadows
+option.CLOUD_SHADOWS.comment=Adds transparent procedural shadows from volumetric cloud density onto terrain. Balanced by quality profiles.
+option.CLOUD_SHADOW_STRENGTH=Cloud Shadow Strength
+option.CLOUD_SHADOW_STRENGTH.comment=Controls how visible and dramatic transparent cloud shadows are.
+value.CLOUD_SHADOW_STRENGTH.1=Soft
+value.CLOUD_SHADOW_STRENGTH.2=Balanced
+value.CLOUD_SHADOW_STRENGTH.3=Dramatic
+
+option.GODRAYS=Godrays / Sun Shafts
+option.GODRAYS.comment=Adds realistic screen-space sun shafts through sky gaps and behind geometry.
+option.GODRAYS_QUALITY=Godrays Quality
+option.GODRAYS_QUALITY.comment=Controls sample count and cost of godrays.
+value.GODRAYS_QUALITY.1=Fast
+value.GODRAYS_QUALITY.2=Balanced
+value.GODRAYS_QUALITY.3=High
+
+# ==============================================================================
+# Güneş ve Ay (genişletilmiş aydınlatma)
+# ==============================================================================
+screen.SUN_MOON=Güneş ve Ay
+screen.SUN_MOON.comment=Güneş/ay yoğunluğu, renk sıcaklığı ve atmosferik efektlerin ince ayarı.
+option.SUN_INTENSITY=Güneş Yoğunluğu
+option.SUN_INTENSITY.comment=Doğrudan güneş ışığının ana parlaklığı. Yüksek = daha güçlü gündüz kontrastı.
+value.SUN_INTENSITY.1=Sönük
+value.SUN_INTENSITY.2=Standart
+value.SUN_INTENSITY.3=Parlak
+value.SUN_INTENSITY.4=Kavurucu
+option.MOON_INTENSITY=Ay Yoğunluğu
+option.MOON_INTENSITY.comment=Ay ışığının ana parlaklığı. Yüksek = daha parlak, daha görünür geceler.
+value.MOON_INTENSITY.1=Zifiri Gece
+value.MOON_INTENSITY.2=Standart
+value.MOON_INTENSITY.3=Parlak Ay
+value.MOON_INTENSITY.4=Aydınlık Gece
+option.SUN_TEMPERATURE=Güneş Renk Sıcaklığı
+option.SUN_TEMPERATURE.comment=Güneşin Kelvin eğrisini kaydırır. Gerçekçi = Tanner Helland karacisim; sıcak = altın; serin = nötr beyaz.
+value.SUN_TEMPERATURE.1=Serin / Nötr
+value.SUN_TEMPERATURE.2=Gerçekçi
+value.SUN_TEMPERATURE.3=Sıcak Altın
+option.MOON_TEMPERATURE=Ay Renk Sıcaklığı
+option.MOON_TEMPERATURE.comment=Ay ışığının tonu. Buzlu = mavi serin; Gümüş = gerçekçi 4100K; Sıcak = hasat ayı krem.
+value.MOON_TEMPERATURE.1=Buzlu Mavi
+value.MOON_TEMPERATURE.2=Gümüş (Gerçekçi)
+value.MOON_TEMPERATURE.3=Sıcak Krem
+option.SUN_HALO=Güneş Halesi (Mie)
+option.SUN_HALO.comment=Güneşe doğru bakarken arazide yumuşak sıcak bir parıltı ekler (Mie ileri saçılım).
+option.SUNRISE_GLOW=Geliştirilmiş Şafak/Gün Batımı Parıltısı
+option.SUNRISE_GLOW.comment=Düşük güneşten yüzünü çevirmiş yüzeyleri saran daha güçlü sıcak geri saçılım parıltısını etkinleştirir.
+
+# ==============================================================================
+# Genişletilmiş gölge ayarları
+# ==============================================================================
+option.SHADOW_DISTANCE=Gölge Mesafesi
+option.SHADOW_DISTANCE.comment=Dinamik gölgelerin solmadan önce render edildiği maksimum mesafe.
+value.SHADOW_DISTANCE.1=Yakın (60m)
+value.SHADOW_DISTANCE.2=Standart (80m)
+value.SHADOW_DISTANCE.3=Uzak (120m)
+value.SHADOW_DISTANCE.4=Ultra (160m)
+option.AMBIENT_BRIGHTNESS=Gölge Yükselmesi (Ambient)
+option.AMBIENT_BRIGHTNESS.comment=Geceleri ve mağaralarda gölgeli alanların ne kadar karanlık göründüğünü kontrol eder.
+value.AMBIENT_BRIGHTNESS.1=Karanlık
+value.AMBIENT_BRIGHTNESS.2=Standart
+value.AMBIENT_BRIGHTNESS.3=Yükseltilmiş (Parlak)
+option.SHADOW_TINT=Gölge Tonu
+option.SHADOW_TINT.comment=Gündüz gölgelerini renklendirir. Gerçek dünyada mavi gökyüzü altındaki gölgeler ince serin bir tona sahiptir.
+value.SHADOW_TINT.1=Nötr Gri
+value.SHADOW_TINT.2=Serin Mavi (Gerçekçi)
+value.SHADOW_TINT.3=Sıcak
+option.LIGHT_WRAP=Işık Sarma (Light Wrap)
+option.LIGHT_WRAP.comment=Aydınlık ve karanlık yüzeyler arasındaki sınırı yumuşatır. Gerçekçi = fiziksel Lambert; Yumuşak = ekran görüntüleri için hoş.
+value.LIGHT_WRAP.1=Gerçekçi (Lambert)
+value.LIGHT_WRAP.2=Yumuşak Sarma
+value.LIGHT_WRAP.3=Stilize
+
+# v0.2.9 — water/underwater option value labels (English fallback)
+value.WATER_WAVE_SCALE.1=Calm
+value.WATER_WAVE_SCALE.2=Standard
+value.WATER_WAVE_SCALE.3=Choppy
+value.WATER_WAVE_SCALE.4=Stormy
+value.WATER_WAVE_DETAIL.1=Coarse
+value.WATER_WAVE_DETAIL.2=Standard
+value.WATER_WAVE_DETAIL.3=Dense
+value.UNDERWATER_NIGHT_DARKNESS.1=Moonlit Pool
+value.UNDERWATER_NIGHT_DARKNESS.2=Dim
+value.UNDERWATER_NIGHT_DARKNESS.3=True Night
+value.UNDERWATER_NIGHT_DARKNESS.4=Pitch Dark
