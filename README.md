@@ -4,20 +4,51 @@
 [![Shader Loader](https://img.shields.io/badge/Loader-Iris%20%2F%20Sodium-green)](https://modrinth.com/)
 [![API Standard](https://img.shields.io/badge/API-OpenGL%204.6%20%2F%20GLSL%20460-orange)](https://khronos.org/)
 [![Materials Standard](https://img.shields.io/badge/PBR-LabPBR%201.3-cyan)](https://github.com/rre36/lab-pbr)
-[![Version](https://img.shields.io/badge/Release-v1.0.2-purple)](https://github.com/AlexanderNyr/AuraLite-Shaders)
+[![Version](https://img.shields.io/badge/Release-v1.0.3-purple)](https://github.com/AlexanderNyr/AuraLite-Shaders)
 [![License](https://img.shields.io/badge/License-CC%20BY--NC--SA%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by-nc-sa/4.0/)
 
 > 🌐 **Languages:** **English** · [Русский](README_RU.md)
 
 **AuraLite** is a modern, lightweight, and highly optimized shader pack built on top of the **OpenGL 4.6 / GLSL 460** standard. It is specifically designed and **tested for Minecraft 1.16.5 – 26.1.2 with Sodium + Iris** (and compatible with **OptiFine**).
 
-AuraLite delivers a breathtaking, realistic visual experience without overcomplicating the screen with bloated post-processing effects (such as aggressive motion blur or heavy bloom). A lightweight HDR bloom was added in v1.0.1 to softly glow emissive sources without smearing the scene. Optional SSR, TAA, godrays, and SSAO are profile-scaled so AuraLite keeps **high FPS and smooth frametimes** on modern GPUs.
+AuraLite delivers a breathtaking, realistic visual experience without overcomplicating the screen with bloated post-processing effects (such as aggressive motion blur or heavy bloom). A lightweight HDR bloom was added in v1.0.1 to softly glow emissive sources without smearing the scene. Optional FXAA/SMAA anti-aliasing, SSR, TAA, godrays, and SSAO are profile-scaled so AuraLite keeps **high FPS and smooth frametimes** on modern GPUs.
 
 ---
 
 > ℹ️ **Historical note:** older changelog sections below are preserved as original release notes.
 
-## 🆕 What's New in v1.0.2 — *Foliage Subsurface Scattering (SSS)*
+## 🆕 What's New in v1.0.3 — *Anti-Aliasing & PBR Performance*
+
+Version **1.0.3** adds configurable spatial anti-aliasing (FXAA / SMAA) and a PBR render distance control that skips expensive Cook-Torrance specular calculations on distant terrain.
+
+### 🖼️ Spatial Anti-Aliasing (FXAA / SMAA)
+
+* **`SPATIAL_AA_MODE`** — new toggle in the `[Post-Processing]` menu with 3 modes:
+  * **Off** — no spatial AA (TAA-only or nothing).
+  * **FXAA** — Fast Approximate AA. Sobel gradient-directed edge detection with conservative blend weights. Cheap and effective.
+  * **SMAA** — Subpixel Morphological AA. Combines luminance Sobel gradient with depth discontinuity detection for superior edge detection on geometry where luma contrast is low. Slightly more expensive than FXAA.
+* Both modes operate in linear space before tone mapping and are conservative enough to avoid washing out the image (max blend weight 0.15–0.18, high edge thresholds).
+* Freely combinable with TAA (composite1 pass) for temporal + spatial smoothing.
+* Added to all 6 quality profiles: VERY_LOW=Off, LOW/MED=FXAA, HIGH/ULTRA/EXTREME=SMAA.
+
+### ⚡ PBR Render Distance
+
+* **`PBR_DISTANCE`** — new setting in the `[Lighting Settings]` menu with 4 levels:
+  * **Near (16m)** — PBR specular only on very close surfaces. Maximum GPU savings.
+  * **Standard (48m)** — balanced distance. Default for LOW/MED profiles.
+  * **Far (128m)** — extended range. Default for HIGH/ULTRA profiles.
+  * **Unlimited** — no distance limit. EXTREME profile only.
+* Beyond the fade range, the entire Cook-Torrance BRDF block (GGX distribution, Smith geometry, Fresnel-Schlick) is **completely skipped** via early-out — no wasted ALU on sub-pixel specular.
+* Fade is smooth (`smoothstep` between start and end distance) to avoid visible pop-in.
+
+### 🌐 Localization
+
+* Full English and Russian localization for both new settings (option names + value labels).
+* Other language files fall back to English labels.
+
+---
+
+older changelog sections below are preserved as original release notes.
 
 Version **1.0.2** adds realistic subsurface scattering for vegetation, making leaves, grass, and plants look more translucent and lifelike when light shines through them. This is a focused visual enhancement that integrates cleanly with the existing PBR and lighting pipeline.
 
@@ -27,8 +58,8 @@ Version **1.0.2** adds realistic subsurface scattering for vegetation, making le
 * Full English + Russian localization strings added.
 
 ### 🧭 Project metadata refresh
-* README and installation references now point to **v1.0.2**.
-* Source-folder notes now correctly describe the repository as containing snapshots through `shaders v1.0.2/`.
+* README and installation references now point to **v1.0.3**.
+* Source-folder notes now correctly describe the repository as containing snapshots through `shaders v1.0.3/`.
 * Minor synchronization of `shaders.properties` (FOLIAGE_SSS screen entry and profile definitions).
 
 --- older changelog sections below are preserved as original release notes.
@@ -289,7 +320,7 @@ Version **0.2.0** was the original content update that nearly doubled the pack's
 * 🧊 **Ice Glitch Fix** — dedicated block ID disables waving/refraction on ice variants to eliminate visual artifacts.
 * 🌙 **Moon-Phase Aware Sky** — sky shading reacts to `moonPhase` and `dimension` for nether/end correctness.
 
-> Source for every version is shipped in this repo under [`shaders v0.2.0/`](shaders%20v0.2.0) through [`shaders v1.0.2/`](shaders%20v1.0.2). The current source snapshot is **v1.0.2**. End users should grab the packaged release ZIP from [Releases](https://github.com/AlexanderNyr/AuraLite-Shaders/releases).
+> Source for every version is shipped in this repo under [`shaders v0.2.0/`](shaders%20v0.2.0) through [`shaders v1.0.3/`](shaders%20v1.0.3). The current source snapshot is **v1.0.3**. End users should grab the packaged release ZIP from [Releases](https://github.com/AlexanderNyr/AuraLite-Shaders/releases).
 
 ---
 
@@ -364,7 +395,7 @@ The night sky is no longer just a static starfield — it's a fully procedural c
 ### 🌀 9. Cosmic Nether Portal *(since v0.2.0, improved in v0.2.5)*
 The vanilla Nether portal texture is procedurally transformed into a **swirling 3D plasma vortex** — animated purple/magenta cosmic energy that pulses with hypnotic depth. Mapped via dedicated block ID `10006` in `block.properties`. *(v0.2.5: portal pixels are flagged as emissive so composite skips scene lighting and displays the plasma as-is.)*
 
-### 🎬 10. Cinematic Post-Processing — *Refined in v1.0.1, v1.0.2*
+### 🎬 10. Cinematic Post-Processing — *Refined in v1.0.1, v1.0.3*
 * **Multiple Tone Mapping Curves** *(since v0.2.0)*: Pick from **Soft**, **Filmic (ACES)**, or **Intense (High Contrast)** to match your preferred mood.
 * **Color Vibrancy** *(since v0.2.0)*: 4-step non-linear saturation control (*Muted / Balanced / Colorful / Vivid*) that makes foliage glow emerald and skies look lush, without crushing skin tones.
 * **Exposure Brightness:** Muted / Balanced / Vibrant — global brightness lift.
@@ -413,13 +444,13 @@ AuraLite is built from the ground up for maximum FPS using OpenGL 4.6 native har
 
 ## 📥 Installation
 
-1. Download **`AuraLite-Shaders-v1.0.2.zip`** from the [Releases](https://github.com/AlexanderNyr/AuraLite-Shaders/releases) section on the right.
+1. Download **`AuraLite-Shaders-v1.0.3.zip`** from the [Releases](https://github.com/AlexanderNyr/AuraLite-Shaders/releases) section on the right.
 2. Open your Minecraft directory (e.g. `%appdata%/.minecraft` on Windows).
 3. Place the downloaded `.zip` file inside the **`shaderpacks`** folder (Do **not** unzip it!).
 4. Launch a supported Minecraft version (**1.16.5 – 26.1.2**) using a profile with **Sodium + Iris** or **OptiFine** installed.
 5. In-game, go to **Options → Video Settings → Shader Packs**, select **AuraLite**, and click **Apply**.
 
-> 💡 The repository ships source folders for every release snapshot: `shaders v0.2.0/` through `shaders v1.0.2/`. The current source snapshot is **v1.0.2**. End users should grab the packaged release ZIP; developers can browse any folder directly.
+> 💡 The repository ships source folders for every release snapshot: `shaders v0.2.0/` through `shaders v1.0.3/`. The current source snapshot is **v1.0.3**. End users should grab the packaged release ZIP; developers can browse any folder directly.
 
 ---
 
@@ -447,6 +478,7 @@ AuraLite includes localized in-game configuration files for **59 language codes*
 * 🆕 **Screen-Space Reflections (`SSR`)** *(v0.2.9)* — loader-agnostic screen-space reflections for water and wet glossy surfaces.
 * 🆕 **SSR Quality** *(v0.2.9)* — `Fast / Balanced / High` raymarch step budget.
 * 🆕 **SSR Strength** *(v0.2.9)* — `Soft / Balanced / Mirror` reflection intensity.
+* 🆕 **PBR Render Distance (`PBR_DISTANCE`)** *(v1.0.3)* — `Near (16m) / Standard (48m) / Far (128m) / Unlimited` — maximum distance for PBR specular calculations. Saves GPU on far terrain.
 
 ### `[Sun & Moon]` *(since v0.2.2)*
 * **Sun Intensity** — `Dim / Standard / Bright / Blazing`
@@ -460,7 +492,7 @@ AuraLite includes localized in-game configuration files for **59 language codes*
 * **Waving Leaves** — Toggle leaves animation.
 * **Waving Foliage** — Toggle grass, flowers, and crops animation.
 * **Wind Speed** — `Gentle / Breeze / Gale`
-* 🆕 **Foliage SSS (`FOLIAGE_SSS`)** *(v1.0.2)* — Subsurface scattering / translucency for leaves and plants (light bleeding when looking toward the sun).
+* 🆕 **Foliage SSS (`FOLIAGE_SSS`)** *(v1.0.3)* — Subsurface scattering / translucency for leaves and plants (light bleeding when looking toward the sun).
 
 ### `[Water Settings]`
 * **Water Waves** — Toggle 3D vertex water waves.
@@ -500,19 +532,20 @@ AuraLite includes localized in-game configuration files for **59 language codes*
 * 🆕 **HDR Bloom** *(v1.0.1)* — cheap single-pass neighbour blur for overbright emissive sources.
 * 🆕 **Temporal Anti-Aliasing (`TAA`)** *(v0.2.7)* — motion-reprojected temporal resolve for high presets.
 * 🆕 **TAA Strength** *(v0.2.7)* — `Light / Balanced / Stable`.
+* 🆕 **Spatial Anti-Aliasing (`SPATIAL_AA_MODE`)** *(v1.0.3)* — `Off / FXAA / SMAA` — post-process edge smoothing. FXAA uses Sobel gradient-directed blending; SMAA adds depth discontinuity detection for geometry edges. Freely combinable with TAA.
 * **Vignette** — Toggle cinematic corner darkening.
 * (Hidden) **Rain Wetness Reflections (`WET_REFLECTIONS`)** — Wet glossy ground during rain (enabled by default in MED+ profiles).
 
-### 🎚️ Quality Profiles (v1.0.2)
+### 🎚️ Quality Profiles (v1.0.3)
 
-| Profile      | Target          | Shadows | Clouds | Cloud Shadows | Godrays | TAA | SSR | PBR | SSAO | Heavy Extras |
-|--------------|-----------------|---------|--------|---------------|---------|-----|-----|-----|------|--------------|
-| **VERY_LOW** | Maximum FPS     | ❌      | ❌     | ❌            | ❌      | ❌  | ❌  | ❌  | ❌   | Most extras off |
-| **LOW**      | Weak GPUs       | ❌      | ❌     | ❌            | ❌      | ❌  | ❌  | ❌  | ❌   | Cheap water/foliage motion only |
-| **MED**      | Balanced        | ✅ 1024 | ✅ Near/Standard | ✅ Soft | ❌ | ❌ | ❌ | ✅ Subtle | ❌ | Wet reflections + ground mist |
-| **HIGH**     | High quality    | ✅ 2048 | ✅ Far | ✅ Balanced | ✅ Fast | ✅ Light | ✅ Fast | ✅ Standard | ❌ | Full atmosphere with lightweight SSR |
-| **ULTRA**    | Very high       | ✅ 4096 | ✅ Very Far | ✅ Balanced | ✅ Balanced | ✅ Balanced | ✅ Balanced | ✅ Strong | ✅ Balanced | High-end visuals |
-| **EXTREME**  | Maximum quality | ✅ 4096 | ✅ Dense/Very Far | ✅ Dramatic | ✅ High | ✅ Stable | ✅ High | ✅ Strong | ✅ Deep | Heaviest cinematic preset |
+| Profile      | Target          | Shadows | Clouds | Cloud Shadows | Godrays | TAA | SSR | PBR | PBR Dist | AA   | SSAO | Heavy Extras |
+|--------------|-----------------|---------|--------|---------------|---------|-----|-----|-----|----------|------|------|--------------|
+| **VERY_LOW** | Maximum FPS     | ❌      | ❌     | ❌            | ❌      | ❌  | ❌  | ❌  | 16m      | Off  | ❌   | Most extras off |
+| **LOW**      | Weak GPUs       | ❌      | ❌     | ❌            | ❌      | ❌  | ❌  | ❌  | 48m      | FXAA | ❌   | Water/foliage motion |
+| **MED**      | Balanced        | ✅ 1024 | ✅ Std  | ✅ Soft       | ❌      | ❌  | ❌  | ✅   | 48m      | FXAA | ❌   | Wet refl + ground mist |
+| **HIGH**     | High quality    | ✅ 2048 | ✅ Far  | ✅ Balanced   | ✅ Fast | ✅   | ✅ F | ✅   | 128m     | SMAA | ❌   | Full atmosphere + SSR |
+| **ULTRA**    | Very high       | ✅ 4096 | ✅ VFar | ✅ Balanced   | ✅ Bal  | ✅   | ✅ B | ✅   | 128m     | SMAA | ✅   | High-end visuals |
+| **EXTREME**  | Max quality     | ✅ 4096 | ✅ Dense| ✅ Dramatic   | ✅ High | ✅   | ✅ H | ✅   | ∞        | SMAA | ✅   | Heaviest cinematic |
 
 > 💫 **Shooting stars** are disabled on **VERY_LOW / LOW** and enabled from **MED** upward.
 > 🌿 **Foliage SSS** is enabled from **MED** upward (disabled on VERY_LOW/LOW for maximum FPS).
