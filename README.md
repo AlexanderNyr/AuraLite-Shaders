@@ -4,7 +4,7 @@
 [![Shader Loader](https://img.shields.io/badge/Loader-Iris%20%2F%20Sodium-green)](https://modrinth.com/mod/iris)
 [![API Standard](https://img.shields.io/badge/API-OpenGL%204.6%20%2F%20GLSL%20460-orange)](https://khronos.org/)
 [![Materials Standard](https://img.shields.io/badge/PBR-LabPBR%201.3-cyan)](https://github.com/rre36/lab-pbr)
-[![Version](https://img.shields.io/badge/Release-v1.0.3-purple)](https://github.com/AlexanderNyr/AuraLite-Shaders)
+[![Version](https://img.shields.io/badge/Release-v1.0.4-purple)](https://github.com/AlexanderNyr/AuraLite-Shaders)
 [![License](https://img.shields.io/badge/License-CC%20BY--NC--SA%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by-nc-sa/4.0/)
 
 
@@ -15,6 +15,48 @@ AuraLite delivers a breathtaking, realistic visual experience without overcompli
 ---
 
 > ℹ️ **Historical note:** older changelog sections below are preserved as original release notes.
+
+## 🆕 What's New in v1.0.4 — *Profile Rebalance, Translucent Blocks & Glass Rendering*
+
+Version **1.0.4** delivers a full quality-profile rebalance for smoother progression, introduces proper translucent block rendering for ice and glass, adds a dedicated Iris/Oculus translucent terrain pass, and fixes a cross-vendor GLSL compatibility issue.
+
+### 🔄 Full Profile Rebalance
+
+All six quality profiles (VERY_LOW → EXTREME) have been rebalanced for a smoother, more logical feature progression:
+
+| Profile | Key Changes in v1.0.4 |
+|---|---|
+| **VERY_LOW** | Sun intensity lowered to *Dim* (1), underwater night set to *Moonlit Pool* for visibility. |
+| **LOW** | Ambient brightness lowered, cozy lights disabled, Filmic tone mapping (ACES), underwater night set to *Dim*. Stars upgraded to *Standard*. |
+| **MED** | Godrays now **enabled** (Fast quality) — this was the biggest missing piece in the sweet-spot preset. PBR strength raised to *Standard*. Meteor frequency normalized. |
+| **HIGH** | SSAO now **enabled** (Subtle) — contact shadows appear at this tier. Godrays bumped to *Balanced*. Moon intensity lowered to *Standard*. |
+| **ULTRA** | Godrays raised to *High*. TAA strength at *Balanced*. |
+| **EXTREME** | Water wave scale pushed to *Stormy*. Underwater night set to *Pitch Dark* for maximum survival realism. Photographic (AgX) tone mapping. |
+
+### 🧊 Split Ice & Glass Block Rendering
+
+* **Regular ice** (`minecraft:ice`, block ID 10005) now renders with its actual texture and semi-transparency instead of being fully opaque. Transparency scales with the `WATER_TRANSPARENCY` setting (Clear / Balanced / Deep).
+* **Packed ice, blue ice, and frosted ice** (block ID 10007) are now rendered **opaque with texture** — distinct from regular ice so the visual difference is clear.
+* **All glass blocks and panes** (block ID 10008), including every stained-glass variant and tinted glass, now render with their actual texture and proper transparency. Glass opacity scales with `WATER_TRANSPARENCY`. This eliminates the old "invisible glass" problem where glass blocks disappeared against bright skies.
+* Both ice types and glass are handled by the new `gbuffers_terrain_translucent` pass, ensuring correct rendering on Iris/Oculus split-translucent pipelines.
+
+### 🪟 New Translucent Terrain Pass (`gbuffers_terrain_translucent`)
+
+* A new **`gbuffers_terrain_translucent.fsh` / `.vsh`** shader pair was added. This pass handles water, ice, glass, and nether-portal blocks in a single Iris/Oculus-compatible translucent terrain path.
+* Mirrors the existing `gbuffers_water.fsh` logic so translucent blocks render identically regardless of whether the loader uses a unified or split translucent G-buffer path.
+* Nether portal plasma, ice Fresnel, glass opacity, and water Fresnel/ripples all route through this pass.
+
+### 🛠️ GLSL Compatibility Fix
+
+* **Replaced all `fma()` calls with direct multiply-add expressions** across every shader file. The `fma()` intrinsic, while correct on most modern GPUs, caused compilation failures on certain drivers (particularly older Intel iGPUs and some Mesa versions). The replacement `a * b + c` expressions are mathematically equivalent and compile universally.
+
+### 🧭 Project metadata refresh
+
+* README and installation references now point to **v1.0.4**.
+* Source-folder notes now correctly describe the repository as containing snapshots through `shaders v1.0.4/`.
+* All profile definitions and settings menus updated.
+
+---
 
 ## 🆕 What's New in v1.0.3 — *Anti-Aliasing & PBR Performance*
 
@@ -322,10 +364,10 @@ Version **0.2.0** was the original content update that nearly doubled the pack's
 * 🌊 **Granular Water Tuning** — separate sliders for **ripple strength** (`WATER_RIFFLES`) and **specular glow** (`WATER_SPECULAR_STRENGTH`).
 * 🎨 **Color Vibrancy + Tone-Mapping Curves** — 4-step saturation and 3 tone-mapping curves (**Soft / Filmic ACES / Intense**).
 * 🌀 **Cosmic Nether Portal** — vanilla portal texture is replaced by a swirling 3D plasma vortex.
-* 🧊 **Ice Glitch Fix** — dedicated block ID disables waving/refraction on ice variants to eliminate visual artifacts.
+* 🧊 **Ice Glitch Fix** — dedicated block ID disables waving/refraction on ice variants to eliminate visual artifacts. *(v1.0.4: split into regular ice (semi-transparent) and packed/blue ice (opaque) with proper texture rendering.)*
 * 🌙 **Moon-Phase Aware Sky** — sky shading reacts to `moonPhase` and `dimension` for nether/end correctness.
 
-> Source for every version is shipped in this repo under [`shaders v0.2.0/`](shaders%20v0.2.0) through [`shaders v1.0.3/`](shaders%20v1.0.3). The current source snapshot is **v1.0.3**. End users should grab the packaged release ZIP from [Releases](https://github.com/AlexanderNyr/AuraLite-Shaders/releases).
+> Source for every version is shipped in this repo under [`shaders v0.2.0/`](shaders%20v0.2.0) through [`shaders v1.0.4/`](shaders%20v1.0.4). The current source snapshot is **v1.0.4**. End users should grab the packaged release ZIP from [Releases](https://github.com/AlexanderNyr/AuraLite-Shaders/releases).
 
 ---
 
@@ -389,7 +431,8 @@ The night sky is no longer just a static starfield — it's a fully procedural c
 ### 🌿 7. Lively Foliage
 * Waving animations for oak/spruce/birch leaves, tall grass, flowers, vines, lily pads, and crops.
 * Gently animated using hardware-optimized sine waves and time constants.
-* 🧊 **Ice fix** *(since v0.2.0)*: ice / packed ice / blue ice / frosted ice are tagged with a dedicated block ID to disable waving and refraction, eliminating long-standing visual glitches.
+* 🧊 **Ice fix** *(since v0.2.0, refined in v1.0.4)*: regular ice renders with texture + semi-transparency; packed/blue ice renders opaque with texture. All ice types have waving and refraction disabled to eliminate visual glitches.
+* 🪟 **Glass rendering** *(v1.0.4)*: all glass blocks and panes (including every stained-glass variant and tinted glass) now render with their actual texture and proper transparency via the dedicated translucent terrain pass.
 
 ### 💎 8. Full LabPBR 1.3 Material Support + POM — *PBR refined in v0.2.5*
 * **3D Normal Maps:** Real-time **TBN (Tangent-Binormal-Normal)** matrices generate true three-dimensional depth on blocks (stone crevices, brick joints) reacting dynamically to light angles.
@@ -400,13 +443,19 @@ The night sky is no longer just a static starfield — it's a fully procedural c
 ### 🌀 9. Cosmic Nether Portal *(since v0.2.0, improved in v0.2.5)*
 The vanilla Nether portal texture is procedurally transformed into a **swirling 3D plasma vortex** — animated purple/magenta cosmic energy that pulses with hypnotic depth. Mapped via dedicated block ID `10006` in `block.properties`. *(v0.2.5: portal pixels are flagged as emissive so composite skips scene lighting and displays the plasma as-is.)*
 
-### 🎬 10. Cinematic Post-Processing — *Refined in v1.0.1, v1.0.3*
+### 🪟 10. Translucent Block Rendering *(v1.0.4)*
+AuraLite renders translucent blocks with proper per-block transparency through a dedicated `gbuffers_terrain_translucent` pass, ensuring correct display on both Iris and Oculus pipelines:
+* **Regular ice** — semi-transparent with actual texture; opacity scales with `WATER_TRANSPARENCY` (Clear / Balanced / Deep).
+* **Packed ice / blue ice / frosted ice** — opaque with texture, visually distinct from regular ice.
+* **All glass blocks and panes** — every vanilla glass type (clear, all 16 stained variants, pane variants, tinted glass) renders with its actual texture and correct transparency. No more invisible glass against bright skies.
+
+### 🎬 11. Cinematic Post-Processing — *Refined in v1.0.1, v1.0.3*
 * **Multiple Tone Mapping Curves** *(since v0.2.0)*: Pick from **Soft**, **Filmic (ACES)**, or **Intense (High Contrast)** to match your preferred mood.
 * **Color Vibrancy** *(since v0.2.0)*: 4-step non-linear saturation control (*Muted / Balanced / Colorful / Vivid*) that makes foliage glow emerald and skies look lush, without crushing skin tones.
 * **Exposure Brightness:** Muted / Balanced / Vibrant — global brightness lift.
 * **Subtle Vignette:** Gentle lens-darkening at screen edges for improved depth and immersion.
 
-### 🛡️ 11. Realistic Atmospheric Fog *(v0.2.5)*
+### 🛡️ 12. Realistic Atmospheric Fog *(v0.2.5)*
 * Fog density now accounts for **altitude** (aerosol concentration decays with height), **horizon path length**, and **indoor/outdoor exposure** via skylight.
 * Consistent Beer-Lambert distance fog with height-weighted density — no delayed fog walls.
 
@@ -449,13 +498,13 @@ AuraLite is built from the ground up for maximum FPS using OpenGL 4.6 native har
 
 ## 📥 Installation
 
-1. Download **`AuraLite-Shaders-v1.0.3.zip`** from the [Releases](https://github.com/AlexanderNyr/AuraLite-Shaders/releases) section on the right.
+1. Download **`AuraLite-Shaders-v1.0.4.zip`** from the [Releases](https://github.com/AlexanderNyr/AuraLite-Shaders/releases) section on the right.
 2. Open your Minecraft directory (e.g. `%appdata%/.minecraft` on Windows).
 3. Place the downloaded `.zip` file inside the **`shaderpacks`** folder (Do **not** unzip it!).
 4. Launch a supported Minecraft version (**1.16.5 – 26.1.2**) using a profile with **Sodium + Iris** or **OptiFine** installed.
 5. In-game, go to **Options → Video Settings → Shader Packs**, select **AuraLite**, and click **Apply**.
 
-> 💡 The repository ships source folders for every release snapshot: `shaders v0.2.0/` through `shaders v1.0.3/`. The current source snapshot is **v1.0.3**. End users should grab the packaged release ZIP; developers can browse any folder directly.
+> 💡 The repository ships source folders for every release snapshot: `shaders v0.2.0/` through `shaders v1.0.4/`. The current source snapshot is **v1.0.4**. End users should grab the packaged release ZIP; developers can browse any folder directly.
 
 ---
 
@@ -541,16 +590,16 @@ AuraLite includes localized in-game configuration files for **59 language codes*
 * **Vignette** — Toggle cinematic corner darkening.
 * (Hidden) **Rain Wetness Reflections (`WET_REFLECTIONS`)** — Wet glossy ground during rain (enabled by default in MED+ profiles).
 
-### 🎚️ Quality Profiles (v1.0.3)
+### 🎚️ Quality Profiles (v1.0.4)
 
 | Profile      | Target          | Shadows | Clouds | Cloud Shadows | Godrays | TAA | SSR | PBR | PBR Dist | AA   | SSAO | Heavy Extras |
 |--------------|-----------------|---------|--------|---------------|---------|-----|-----|-----|----------|------|------|--------------|
 | **VERY_LOW** | Maximum FPS     | ❌      | ❌     | ❌            | ❌      | ❌  | ❌  | ❌  | 16m      | Off  | ❌   | Most extras off |
-| **LOW**      | Weak GPUs       | ❌      | ❌     | ❌            | ❌      | ❌  | ❌  | ❌  | 48m      | FXAA | ❌   | Water/foliage motion |
-| **MED**      | Balanced        | ✅ 1024 | ✅ Std  | ✅ Soft       | ❌      | ❌  | ❌  | ✅   | 48m      | FXAA | ❌   | Wet refl + ground mist |
-| **HIGH**     | High quality    | ✅ 2048 | ✅ Far  | ✅ Balanced   | ✅ Fast | ✅   | ✅ F | ✅   | 128m     | SMAA | ❌   | Full atmosphere + SSR |
-| **ULTRA**    | Very high       | ✅ 4096 | ✅ VFar | ✅ Balanced   | ✅ Bal  | ✅   | ✅ B | ✅   | 128m     | SMAA | ✅   | High-end visuals |
-| **EXTREME**  | Max quality     | ✅ 4096 | ✅ Dense| ✅ Dramatic   | ✅ High | ✅   | ✅ H | ✅   | ∞        | SMAA | ✅   | Heaviest cinematic |
+| **LOW**      | Weak GPUs       | ❌      | ❌     | ❌            | ❌      | ❌  | ❌  | ❌  | 16m      | FXAA | ❌   | Water/foliage motion, stars, vignette |
+| **MED**      | Balanced        | ✅ 1024 | ✅ Std  | ✅ Soft       | ✅ Fast | ❌  | ✅ F | ✅   | 48m      | FXAA | ❌   | Wet refl + ground mist + SSS |
+| **HIGH**     | High quality    | ✅ 2048 | ✅ Far  | ✅ Balanced   | ✅ Bal  | ✅   | ✅ B | ✅   | 128m     | SMAA | ✅ Subtle | Full atmosphere + SSR + TAA |
+| **ULTRA**    | Very high       | ✅ 4096 | ✅ VFar | ✅ Balanced   | ✅ High | ✅   | ✅ H | ✅   | 128m     | SMAA | ✅ Balanced | High-end visuals |
+| **EXTREME**  | Max quality     | ✅ 4096 | ✅ Dense| ✅ Dramatic   | ✅ High | ✅   | ✅ H | ✅   | ∞        | SMAA | ✅ Deep | Heaviest cinematic |
 
 > 💫 **Shooting stars** are disabled on **VERY_LOW / LOW** and enabled from **MED** upward.
 > 🌿 **Foliage SSS** is enabled from **MED** upward (disabled on VERY_LOW/LOW for maximum FPS).
