@@ -18,7 +18,7 @@ AuraLite delivers a breathtaking, realistic visual experience without overcompli
 
 ## 🆕 What's New in v1.0.5 — *Expanded Localization*
 
-Version **1.0.5** is a localization-focused release that adds **10 new in-game languages**, bringing the total to **69 supported locales**. No shader logic was changed — this is a pure translation/metadata update on top of v1.0.4.
+Version **1.0.5** is a localization-focused release that adds **10 new in-game languages**, bringing the total to **69 supported locales**. No shader logic, profile defaults, or rendering behavior was changed — this is a pure translation / metadata update on top of **v1.0.4**.
 
 ### 🌐 New Languages
 
@@ -33,6 +33,8 @@ The following fully-translated `.lang` files were added (every option name, valu
 | `az_az` | Azerbaijani | `zh_hk` | Cantonese (Hong Kong) |
 
 * As with all non-English locales, the in-game **⚠ Translations may contain errors** notice applies — some strings in rarer languages may be imperfect; compare with the English original if anything looks off.
+* No shader logic, profile defaults, or rendering behavior changed in this release — **v1.0.5** is purely a localization / metadata refresh on top of **v1.0.4**.
+* `README.md`, installation references, and source-folder notes updated to **v1.0.5**.
 * `shaders.properties` and `block.properties` metadata headers updated to **v1.0.5**.
 * Source-folder snapshots now run through `shaders v1.0.5/`.
 
@@ -389,7 +391,7 @@ Version **0.2.0** was the original content update that nearly doubled the pack's
 * 🧊 **Ice Glitch Fix** — dedicated block ID disables waving/refraction on ice variants to eliminate visual artifacts. *(v1.0.4: split into regular ice (semi-transparent) and packed/blue ice (opaque) with proper texture rendering.)*
 * 🌙 **Moon-Phase Aware Sky** — sky shading reacts to `moonPhase` and `dimension` for nether/end correctness.
 
-> Source for every version is shipped in this repo under [`shaders v0.2.0/`](shaders%20v0.2.0) through [`shaders v1.0.4/`](shaders%20v1.0.4). The current source snapshot is **v1.0.4**. End users should grab the packaged release ZIP from [Releases](https://github.com/AlexanderNyr/AuraLite-Shaders/releases).
+> Source for every version is shipped in this repo under [`shaders v0.2.0/`](shaders%20v0.2.0) through [`shaders v1.0.5/`](shaders%20v1.0.5). The current source snapshot is **v1.0.5**. End users should grab the packaged release ZIP from [Releases](https://github.com/AlexanderNyr/AuraLite-Shaders/releases).
 
 ---
 
@@ -465,7 +467,7 @@ The night sky is no longer just a static starfield — it's a fully procedural c
 ### 🌀 9. Cosmic Nether Portal *(since v0.2.0, improved in v0.2.5)*
 The vanilla Nether portal texture is procedurally transformed into a **swirling 3D plasma vortex** — animated purple/magenta cosmic energy that pulses with hypnotic depth. Mapped via dedicated block ID `10006` in `block.properties`. *(v0.2.5: portal pixels are flagged as emissive so composite skips scene lighting and displays the plasma as-is.)*
 
-### 🪟 10. Translucent Block Rendering *(v1.0.4)*
+### 🪟 10. Translucent Block Rendering *(added in v1.0.4, unchanged in v1.0.5)*
 AuraLite renders translucent blocks with proper per-block transparency through a dedicated `gbuffers_terrain_translucent` pass, ensuring correct display on both Iris and Oculus pipelines:
 * **Regular ice** — semi-transparent with actual texture; opacity scales with `WATER_TRANSPARENCY` (Clear / Balanced / Deep).
 * **Packed ice / blue ice / frosted ice** — opaque with texture, visually distinct from regular ice.
@@ -509,7 +511,7 @@ Altitude (m)
 ## ⚙️ Performance Optimizations (OpenGL 4.6 Native)
 
 AuraLite is built from the ground up for maximum FPS using OpenGL 4.6 native hardware operations:
-* **Hardware FMA (Fused Multiply-Add):** All wave and waving foliage math is compiled into native single-cycle hardware operations (`fma`), reducing GPU execution cycles.
+* **Multiply-Add Friendly Math:** Wave and waving-foliage math is written as simple multiply-add expressions so modern drivers can optimize it efficiently, while avoiding the explicit `fma()` intrinsic that caused compilation issues on some GPUs / Mesa drivers.
 * **Bitwise Noise Generation:** Replacing slow transcendental float functions (`fract(sin(dot(...)))`) with ultra-fast **Integer Bitwise PCG-style hashes** utilizing `floatBitsToUint` and `uintBitsToFloat`.
 * **Early-Ray Termination:** Volumetric raymarching terminates instantly once cloud transmittance falls below 2%, saving rendering power.
 * **No Hand Transparency Glitches:** Handheld items, particles, and mobs are rendered in a separate stable path without tangent matrix overhead, eliminating "translucent hand" bugs.
@@ -520,19 +522,19 @@ AuraLite is built from the ground up for maximum FPS using OpenGL 4.6 native har
 
 ## 📥 Installation
 
-1. Download **`AuraLite-Shaders-v1.0.4.zip`** from the [Releases](https://github.com/AlexanderNyr/AuraLite-Shaders/releases) section on the right.
+1. Download **`AuraLite-Shaders-v1.0.5.zip`** from the [Releases](https://github.com/AlexanderNyr/AuraLite-Shaders/releases) section on the right.
 2. Open your Minecraft directory (e.g. `%appdata%/.minecraft` on Windows).
 3. Place the downloaded `.zip` file inside the **`shaderpacks`** folder (Do **not** unzip it!).
 4. Launch a supported Minecraft version (**1.16.5 – 26.1.2**) using a profile with **Sodium + Iris** or **OptiFine** installed.
 5. In-game, go to **Options → Video Settings → Shader Packs**, select **AuraLite**, and click **Apply**.
 
-> 💡 The repository ships source folders for every release snapshot: `shaders v0.2.0/` through `shaders v1.0.4/`. The current source snapshot is **v1.0.4**. End users should grab the packaged release ZIP; developers can browse any folder directly.
+> 💡 The repository ships source folders for every release snapshot: `shaders v0.2.0/` through `shaders v1.0.5/`. The current source snapshot is **v1.0.5**. End users should grab the packaged release ZIP; developers can browse any folder directly.
 
 ---
 
 ## 🎛️ In-Game Configuration Options
 
-AuraLite includes localized in-game configuration files for **59 language codes**, including major European, Asian, American regional variants and compatibility aliases such as `fil_ph` / `tl_ph`.
+AuraLite includes localized in-game configuration files for **69 language codes**, including major European, Asian, American regional variants and compatibility aliases such as `fil_ph` / `tl_ph`.
 
 > ⚠️ *Some localization strings may be inaccurate. If something looks strange, compare with the English original.*
 
@@ -612,7 +614,7 @@ AuraLite includes localized in-game configuration files for **59 language codes*
 * **Vignette** — Toggle cinematic corner darkening.
 * (Hidden) **Rain Wetness Reflections (`WET_REFLECTIONS`)** — Wet glossy ground during rain (enabled by default in MED+ profiles).
 
-### 🎚️ Quality Profiles (v1.0.4)
+### 🎚️ Quality Profiles *(rebalanced in v1.0.4, unchanged in v1.0.5)*
 
 | Profile      | Target          | Shadows | Clouds | Cloud Shadows | Godrays | TAA | SSR | PBR | PBR Dist | AA   | SSAO | Heavy Extras |
 |--------------|-----------------|---------|--------|---------------|---------|-----|-----|-----|----------|------|------|--------------|
