@@ -1,0 +1,402 @@
+# AuraLite Shaders v1.0.5 - Copyright (c) 2026 AlexanderNyr. Licensed under CC BY-NC-SA 4.0.
+# ==============================================================================
+# AuraLite Shader Pack - Swahili Language Translations
+# ==============================================================================
+
+# ==============================================================================
+# Wasifu wa ubora — Usawazishaji upya v1.0.5
+# ==============================================================================
+profile.VERY_LOW=Chini sana
+profile.VERY_LOW.comment=FPS ya juu kabisa. Vipengele vyote vimezimwa: hakuna vivuli, hakuna mawingu, hakuna PBR, hakuna SSR, hakuna miale ya jua. Uchoraji wa chini tu.
+profile.LOW=Chini
+profile.LOW.comment=Nyepesi lakini inachezeka. Inahifadhi mwendo wa mimea/maji, nyota angavu zaidi, FXAA, vignette. Hakuna vivuli, mawingu au PBR.
+profile.MED=Wastani
+profile.MED.comment=Sehemu nzuri ya kila siku. Vivuli 1024, mawingu, PBR, SSR Haraka, miale ya jua, SSS ya majani, mng'ao wa unyevu, ukungu wa ardhi, nyota zinazoanguka.
+profile.HIGH=Juu
+profile.HIGH.comment=Ubora wa mpenzi. Vivuli 2048, SSR Iliyolinganishwa, TAA, SSAO Hafifu, miale ya jua Iliyolinganishwa, SMAA.
+profile.ULTRA=Ultra
+profile.ULTRA.comment=Kiwango cha juu. Vivuli 4096, SSR Juu, SSAO Iliyolinganishwa, miale ya jua Juu, TAA Imara, athari zote zimewashwa.
+profile.EXTREME=Kupita kiasi
+profile.EXTREME.comment=Upeo wa sinema. Kila kitu kimepandishwa: masafa ya PBR Yasiyo na Kikomo, uchoraji wa toni wa Picha (AgX), SSAO ya kina zaidi, dhoruba za vimondo.
+profile.CUSTOM=Maalum
+profile.CUSTOM.comment=Mipangilio iliyobadilishwa na mtumiaji.
+
+screen.TRANSLATION_NOTICE=⚠ Tafsiri zinaweza kuwa na makosa
+screen.TRANSLATION_NOTICE.comment=Baadhi ya mistari ya tafsiri inaweza kuwa si sahihi. Kama kitu kinaonekana cha ajabu, linganisha na asili ya Kiingereza.
+
+# Screens
+screen.LIGHTING=Mipangilio ya mwanga
+screen.LIGHTING.comment=Sanidi vivuli, rangi za mwanga, na mwangaza.
+
+screen.FOLIAGE=Mipangilio ya mimea
+screen.FOLIAGE.comment=Sanidi michoro ya kuyumba kwa nyasi na majani.
+
+screen.WATER=Mipangilio ya maji
+screen.WATER.comment=Sanidi mawimbi, uwazi, na mtindo wa maji.
+
+screen.CLOUDS_MENU=Anga na mawingu
+screen.CLOUDS_MENU.comment=Sanidi urefu halisi, unene, na mtindo wa mawingu ya 3D na athari za anga.
+
+screen.POST_PROCESS=Uchakataji wa baadaye na ukungu
+screen.POST_PROCESS.comment=Sanidi mwangaza, ukungu, na athari za kisinema.
+
+# Options
+option.SHADOWS=Vivuli vinavyobadilika
+option.SHADOWS.comment=Washa au zima vivuli laini vinavyobadilika kutoka kwa jua na mwezi.
+
+option.SHADOW_RES=Azimio la vivuli
+option.SHADOW_RES.comment=Badilisha ubora wa ramani ya vivuli. Thamani za juu zinaweza kupunguza utendaji.
+
+option.PBR_LIGHTING=Mwanga wa PBR (LabPBR)
+option.PBR_LIGHTING.comment=Washa uchoraji unaotegemea fizikia kwa metali, ukali, na ramani za kawaida za 3D (inahitaji pakiti ya rasilimali ya PBR).
+
+option.PBR_POM=Nakshi ya kizuizi cha 3D (POM)
+option.PBR_POM.comment=Washa Uchoraji wa Kufunika kwa Parallax unaotegemea fizikia kwa muundo wa vizuizi vya 3D. Inashauriwa kuzima kwenye pakiti za rasilimali zisizoendana.
+
+option.PBR_STRENGTH=Nguvu ya PBR
+option.PBR_STRENGTH.comment=Dhibiti uakisi na ung'avu wa nyuso za metali za PBR.
+
+value.PBR_STRENGTH.1=Hafifu
+value.PBR_STRENGTH.2=Kawaida
+value.PBR_STRENGTH.3=Kioo
+
+option.SSAO=Kuzuia SSAO / SAO
+option.SSAO.comment=Kuzuia mazingira ya nafasi ya skrini kwa vivuli vya kugusana kwenye pembe, chini ya vizuizi, na kuzunguka makutano ya jiometri. Imewashwa kuanzia JUU kwenda juu.
+option.SSAO_STRENGTH=Nguvu ya SSAO
+option.SSAO_STRENGTH.comment=Hudhibiti kina cha kuzuia mazingira ya nafasi ya skrini. Inafanya kazi tu wakati SSAO imewashwa.
+value.SSAO_STRENGTH.1=Hafifu
+value.SSAO_STRENGTH.2=Iliyolinganishwa
+value.SSAO_STRENGTH.3=Ya kina
+
+option.LIGHTMAP_WARMTH=Joto la mwenge
+option.LIGHTMAP_WARMTH.comment=Rekebisha joto na rangi ya mwanga wa kizuizi/mwenge.
+
+value.LIGHTMAP_WARMTH.1=Faraja
+value.LIGHTMAP_WARMTH.2=Joto
+value.LIGHTMAP_WARMTH.3=Kali
+
+option.WAVING_LEAVES=Majani yanayoyumba
+option.WAVING_LEAVES.comment=Washa michoro laini ya kuyumba kwa majani ya miti.
+
+option.WAVING_GRASS=Mimea inayoyumba
+option.WAVING_GRASS.comment=Washa michoro ya kuyumba kwa nyasi, maua, na mazao.
+
+option.WIND_SPEED=Kasi ya upepo
+option.WIND_SPEED.comment=Dhibiti kasi ya kuyumba kwa majani, mimea, na mawimbi ya maji.
+
+option.FOLIAGE_SSS=SSS ya mimea
+option.FOLIAGE_SSS.comment=Huwasha utawanyiko wa chini ya uso (uwazi) kwa majani, nyasi, na mimea unapotazama dhidi ya mwanga.
+
+value.WIND_SPEED.1=Laini
+value.WIND_SPEED.2=Upepo mwanana
+value.WIND_SPEED.3=Dhoruba
+
+option.WATER_WAVES=Mawimbi ya maji
+option.WATER_WAVES.comment=Washa mawimbi ya kijiometri ya 3D juu ya uso wa maji. Vizuizi vya barafu na glasi vimeondolewa kwenye mchoro wa mawimbi.
+
+option.WATER_TRANSPARENCY=Msongamano wa maji
+option.WATER_TRANSPARENCY.comment=Dhibiti uwazi na ufinyu wa maji, barafu ya kawaida, na vizuizi vya glasi.
+
+value.WATER_TRANSPARENCY.1=Wazi
+value.WATER_TRANSPARENCY.2=Iliyolinganishwa
+value.WATER_TRANSPARENCY.3=Ya kina
+
+option.PROCEDURAL_CLOUDS=Mawingu ya 3D ya kiasi
+option.PROCEDURAL_CLOUDS.comment=Washa mawingu ya 3D yanayoweza kurukwa ambayo yanaweza kufikiwa na kurukwa ndani yake.
+
+option.CLOUD_HEIGHT=Urefu wa mawingu
+option.CLOUD_HEIGHT.comment=Weka urefu halisi (kiwango cha Y) cha safu ya mawingu duniani (kwa mita).
+
+value.CLOUD_HEIGHT.1=Chini (~110m)
+value.CLOUD_HEIGHT.2=Kawaida (~160m)
+value.CLOUD_HEIGHT.3=Juu (~240m)
+
+option.CLOUD_THICKNESS=Unene wa mawingu
+option.CLOUD_THICKNESS.comment=Sanidi unene wima na kiasi cha mawingu.
+
+value.CLOUD_THICKNESS.1=Membamba (Cirrus)
+value.CLOUD_THICKNESS.2=Kawaida (Cumulus)
+value.CLOUD_THICKNESS.3=Mazito (Dhoruba)
+
+option.CLOUD_DISTANCE=Umbali wa uchoraji wa mawingu
+option.CLOUD_DISTANCE.comment=Umbali wa juu wa kuchora kwa mawingu ya kiasi. Wasifu wa ubora huongeza kiotomatiki.
+value.CLOUD_DISTANCE.1=Karibu
+value.CLOUD_DISTANCE.2=Kawaida
+value.CLOUD_DISTANCE.3=Mbali
+value.CLOUD_DISTANCE.4=Mbali sana
+
+option.CLOUD_SHADOWS=Vivuli vya mawingu
+option.CLOUD_SHADOWS.comment=Huongeza vivuli vya uwazi vya kiutaratibu kutoka kwa msongamano wa mawingu ya kiasi juu ya ardhi. Vimelinganishwa na wasifu wa ubora.
+option.CLOUD_SHADOW_STRENGTH=Nguvu ya vivuli vya mawingu
+option.CLOUD_SHADOW_STRENGTH.comment=Hudhibiti jinsi vivuli vya mawingu vya uwazi vinavyoonekana na vya kushangaza.
+value.CLOUD_SHADOW_STRENGTH.1=Laini
+value.CLOUD_SHADOW_STRENGTH.2=Iliyolinganishwa
+value.CLOUD_SHADOW_STRENGTH.3=Ya kushangaza
+
+option.GODRAYS=Miale ya jua / Mishale ya jua
+option.GODRAYS.comment=Huongeza mishale ya jua ya kiasi ya utawanyiko mmoja iliyohamasishwa na fizikia na kuzimika kwa Beer-Lambert, awamu ya Mie, na kuzuia ramani ya vivuli.
+option.GODRAYS_QUALITY=Ubora wa miale ya jua
+option.GODRAYS_QUALITY.comment=Hudhibiti idadi ya sampuli na umbali wa kuunganisha wa miale ya jua ya kiasi inayotegemea fizikia.
+value.GODRAYS_QUALITY.1=Haraka
+value.GODRAYS_QUALITY.2=Iliyolinganishwa
+value.GODRAYS_QUALITY.3=Juu
+
+option.AURORA_MODE=Aurora Borealis
+option.AURORA_MODE.comment=Dhibiti uonyeshaji wa aurora halisi zinazotiririka kwenye anga la usiku.
+
+value.AURORA_MODE.0=Imezimwa
+value.AURORA_MODE.1=Katika biomu za baridi tu
+value.AURORA_MODE.2=Imewashwa kila wakati
+
+option.AURORA_SPEED=Kasi ya aurora
+option.AURORA_SPEED.comment=Dhibiti kasi ya kuyumba na kutiririka kwa mwanga wa kaskazini.
+
+value.AURORA_SPEED.1=Polepole
+value.AURORA_SPEED.2=Kawaida
+value.AURORA_SPEED.3=Haraka
+
+option.AURORA_STRENGTH=Mng'ao wa aurora
+option.AURORA_STRENGTH.comment=Dhibiti mng'ao wa jumla wa mwanga wa kaskazini.
+
+value.AURORA_STRENGTH.1=Laini
+value.AURORA_STRENGTH.2=Kawaida
+value.AURORA_STRENGTH.3=Ung'aao
+
+option.NEBULA_BRIGHTNESS=Mng'ao wa Njia ya Maziwa
+option.NEBULA_BRIGHTNESS.comment=Rekebisha mng'ao wa nebula ya galaksia ya kahawia ya ulalo usiku.
+
+value.NEBULA_BRIGHTNESS.1=Hafifu
+value.NEBULA_BRIGHTNESS.2=Kawaida
+value.NEBULA_BRIGHTNESS.3=Angavu
+
+option.STARS_BRIGHTNESS=Mng'ao wa nyota
+option.STARS_BRIGHTNESS.comment=Dhibiti mng'ao na ung'aao wa kumeta wa nyota usiku.
+
+value.STARS_BRIGHTNESS.1=Hafifu
+value.STARS_BRIGHTNESS.2=Kawaida
+value.STARS_BRIGHTNESS.3=Angavu sana
+
+option.STARS_AMOUNT=Msongamano wa nyota
+option.STARS_AMOUNT.comment=Dhibiti idadi ya jumla na msongamano wa nyota angani.
+
+value.STARS_AMOUNT.1=Chache
+value.STARS_AMOUNT.2=Kawaida
+value.STARS_AMOUNT.3=Nyingi
+
+option.RAINBOW_STRENGTH=Nguvu ya upinde wa mvua
+option.RAINBOW_STRENGTH.comment=Sanidi mng'ao na ujaaji wa rangi wa upinde wa mvua baada ya mvua.
+
+value.RAINBOW_STRENGTH.1=Hafifu
+value.RAINBOW_STRENGTH.2=Iliyolinganishwa
+value.RAINBOW_STRENGTH.3=Angavu
+
+option.SHOOTING_STARS=Vimondo (nyota zinazoanguka)
+option.SHOOTING_STARS.comment=Vimondo vinavyotegemea fizikia vinavyoingia mesosfia (~80-120 km). Huchora matao halisi ya 3D ya duara kubwa yenye mikondo ya mwanga ya kufyonzwa, rangi ya plasma ya mwili mweusi (3500-5500 K), kuzimika kwa Rayleigh karibu na upeo wa macho, na alama za kudumu za ioni kwenye mipira ya moto.
+
+option.SHOOTING_STARS_FREQUENCY=Shughuli za vimondo (ZHR)
+option.SHOOTING_STARS_FREQUENCY.comment=Kiwango cha takriban cha saa cha zenithi. Mara chache = mandhari halisi ya takriban 10 kwa saa. Kazi = mvua hafifu. Dhoruba = msongamano wa kilele (~100/saa).
+
+value.SHOOTING_STARS_FREQUENCY.1=Mara chache (~10/saa)
+value.SHOOTING_STARS_FREQUENCY.2=Mvua hai
+value.SHOOTING_STARS_FREQUENCY.3=Dhoruba ya vimondo
+
+option.SHOOTING_STARS_BRIGHTNESS=Mizani ya ukubwa
+option.SHOOTING_STARS_BRIGHTNESS.comment=Kizidishi kikuu kwenye mizani ya ukubwa wa vimondo. Hafifu = wastani halisi; Angavu = hupima mipira ya moto kwa mwonekano wa kisinema.
+
+value.SHOOTING_STARS_BRIGHTNESS.1=Hafifu (Halisi)
+value.SHOOTING_STARS_BRIGHTNESS.2=Kawaida
+value.SHOOTING_STARS_BRIGHTNESS.3=Mipira ya moto angavu
+
+option.COZY_LIGHTS=Kumeta kwa mwenge
+option.COZY_LIGHTS.comment=Washa michoro ya joto, ya faraja, ya kumeta ya wakati halisi kwa mienge, mioto ya kambi, na taa.
+
+option.WET_REFLECTIONS=Mng'ao wa unyevu wa mvua
+option.WET_REFLECTIONS.comment=Mvua inaponyesha, vizuizi imara kama ardhi, nyasi, na jiwe huwa na unyevu, giza, na ung'avu chini ya anga.
+
+option.GROUND_MIST=Ukungu wa chini wa ardhi (Y=62-66)
+option.GROUND_MIST.comment=Washa matabaka laini ya ukungu wa dhahabu-nyeupe wa asubuhi/jioni yanayoteleza juu ya maji na barafu wakati wa alfajiri na machweo.
+
+option.FOG_DENSITY_LEVEL=Msongamano wa ukungu
+option.FOG_DENSITY_LEVEL.comment=Dhibiti nguvu ya ukungu wa anga wa upeo wa macho.
+
+value.FOG_DENSITY_LEVEL.1=Chini
+value.FOG_DENSITY_LEVEL.2=Wastani
+value.FOG_DENSITY_LEVEL.3=Juu
+
+option.EXPOSURE=Mng'ao wa mwangaza
+option.EXPOSURE.comment=Dhibiti mng'ao wa jumla wa picha.
+
+value.EXPOSURE.1=Hafifu
+value.EXPOSURE.2=Iliyolinganishwa
+value.EXPOSURE.3=Angavu
+
+option.COLOR_SATURATION=Uchangamfu wa rangi
+option.COLOR_SATURATION.comment=Dhibiti ujaaji usio na mstari wa rangi za skrini. Hufanya mimea ionekane ya zumaridi na anga lenye sitawi.
+
+value.COLOR_SATURATION.1=Hafifu
+value.COLOR_SATURATION.2=Iliyolinganishwa
+value.COLOR_SATURATION.3=Yenye rangi
+value.COLOR_SATURATION.4=Angavu
+
+option.CONTRAST=Tofauti ya picha
+option.CONTRAST.comment=Chagua mtindo wa uchoraji wa toni na mkondo wa tofauti.
+
+value.CONTRAST.1=Laini
+value.CONTRAST.2=Sinema (ACES)
+value.CONTRAST.3=Kali (Tofauti ya juu)
+value.CONTRAST.4=Picha (kama AgX)
+
+option.TAA=Kuzuia upinde wa muda (TAA)
+option.TAA.comment=Utatuzi wa muda kwa kuelekeza tena mwendo na kukata jirani. Hupunguza kumetameta na kingo zenye meno kwenye mipangilio ya juu.
+option.TAA_STRENGTH=Nguvu ya TAA
+option.TAA_STRENGTH.comment=Hudhibiti uchanganyaji wa historia. Juu zaidi ni imara zaidi lakini inaweza kuwa laini wakati wa mwendo.
+value.TAA_STRENGTH.1=Nyepesi
+value.TAA_STRENGTH.2=Iliyolinganishwa
+value.TAA_STRENGTH.3=Imara
+
+
+
+option.VIGNETTE=Athari ya vignette
+option.VIGNETTE.comment=Washa kufanya giza kidogo kwenye kingo za skrini kwa umakini ulioboreshwa.
+
+# ==============================================================================
+# Spatial Anti-Aliasing
+# ==============================================================================
+option.SPATIAL_AA_MODE=Kuzuia upinde wa nafasi
+option.SPATIAL_AA_MODE.comment=Chagua njia ya kuzuia upinde wa uchakataji wa baadaye. FXAA ni haraka na rahisi. SMAA hutumia bafa ya kina kwa ubora bora kwenye kingo za jiometri. Inaweza kuunganishwa na TAA.
+value.SPATIAL_AA_MODE.0=Imezimwa
+value.SPATIAL_AA_MODE.1=FXAA (Haraka)
+value.SPATIAL_AA_MODE.2=SMAA (Ubora)
+
+option.WATER_RIFFLES=Nguvu ya mawimbi madogo ya maji
+option.WATER_RIFFLES.comment=Rekebisha kuyumba na nguvu ya mawimbi madogo ya ramani ya kawaida juu ya maji. Haiathiri barafu au glasi.
+
+value.WATER_RIFFLES.1=Tulivu
+value.WATER_RIFFLES.2=Kawaida
+value.WATER_RIFFLES.3=Yenye msukosuko
+
+option.WATER_SPECULAR_STRENGTH=Mng'ao maalum wa maji
+option.WATER_SPECULAR_STRENGTH.comment=Rekebisha mng'ao wa mng'ao wa jua/mwezi kwenye mawimbi madogo ya maji.
+
+value.WATER_SPECULAR_STRENGTH.1=Laini
+value.WATER_SPECULAR_STRENGTH.2=Kawaida
+value.WATER_SPECULAR_STRENGTH.3=Ung'aao
+
+option.SHADOW_SOFTNESS=Ulaini wa vivuli
+option.SHADOW_SOFTNESS.comment=Hudhibiti jinsi kingo za vivuli zinavyoonekana laini na zilizosambaa. Hutumia uchujaji wa diski ya Poisson iliyozungushwa kwa kivuli laini.
+
+value.SHADOW_SOFTNESS.1=Kali
+value.SHADOW_SOFTNESS.2=Laini
+value.SHADOW_SOFTNESS.3=Laini sana
+
+# ==============================================================================
+# Sun & Moon Lighting
+# ==============================================================================
+screen.SUN_MOON=Jua na mwezi
+screen.SUN_MOON.comment=Rekebisha kwa usahihi nguvu ya jua na mwezi, joto la rangi, na athari za anga.
+
+option.SUN_INTENSITY=Nguvu ya jua
+option.SUN_INTENSITY.comment=Mng'ao mkuu wa mwanga wa jua wa moja kwa moja. Juu zaidi = tofauti kali zaidi ya mchana.
+value.SUN_INTENSITY.1=Hafifu
+value.SUN_INTENSITY.2=Kawaida
+value.SUN_INTENSITY.3=Angavu
+value.SUN_INTENSITY.4=Linalowaka
+
+option.MOON_INTENSITY=Nguvu ya mwezi
+option.MOON_INTENSITY.comment=Mng'ao mkuu wa mwanga wa mwezi. Juu zaidi = usiku angavu zaidi, unaoonekana zaidi.
+value.MOON_INTENSITY.1=Usiku wa giza
+value.MOON_INTENSITY.2=Kawaida
+value.MOON_INTENSITY.3=Mwezi angavu
+value.MOON_INTENSITY.4=Usiku kamili
+
+option.SUN_TEMPERATURE=Joto la rangi ya jua
+option.SUN_TEMPERATURE.comment=Huhamisha mkondo wa Kelvin wa jua. Halisi hutumia mwili mweusi wa Tanner Helland; joto = dhahabu; baridi = nyeupe ya kati.
+value.SUN_TEMPERATURE.1=Baridi / Kati
+value.SUN_TEMPERATURE.2=Halisi
+value.SUN_TEMPERATURE.3=Dhahabu ya joto
+
+option.MOON_TEMPERATURE=Joto la rangi ya mwezi
+option.MOON_TEMPERATURE.comment=Rangi ya mwanga wa mwezi. Barafu = bluu baridi; Fedha = halisi 4100K; Joto = krimu ya mwezi wa mavuno.
+value.MOON_TEMPERATURE.1=Bluu ya barafu
+value.MOON_TEMPERATURE.2=Fedha (Halisi)
+value.MOON_TEMPERATURE.3=Krimu ya joto
+
+option.SUN_HALO=Halo ya jua (utawanyiko wa Mie)
+option.SUN_HALO.comment=Huongeza mng'ao laini wa joto juu ya ardhi unapotazama karibu na jua (utawanyiko wa mbele wa Mie).
+
+option.SUNRISE_GLOW=Mng'ao ulioboreshwa wa macheo/machweo
+option.SUNRISE_GLOW.comment=Huwasha utawanyiko wa nyuma wa joto wenye nguvu zaidi unaozunguka nyuso zinazoangalia mbali na jua la chini.
+
+# ==============================================================================
+# Extended shadow settings
+# ==============================================================================
+option.SHADOW_DISTANCE=Umbali wa vivuli
+option.SHADOW_DISTANCE.comment=Umbali wa juu ambapo vivuli vinavyobadilika huchorwa kabla ya kufifia.
+value.SHADOW_DISTANCE.1=Karibu (60m)
+value.SHADOW_DISTANCE.2=Kawaida (80m)
+value.SHADOW_DISTANCE.3=Mbali (120m)
+value.SHADOW_DISTANCE.4=Ultra (160m)
+
+option.AMBIENT_BRIGHTNESS=Kuinua kivuli / Mazingira
+option.AMBIENT_BRIGHTNESS.comment=Hudhibiti jinsi maeneo yenye kivuli yanavyoonekana giza usiku na kwenye mapango.
+value.AMBIENT_BRIGHTNESS.1=Giza
+value.AMBIENT_BRIGHTNESS.2=Kawaida
+value.AMBIENT_BRIGHTNESS.3=Imeinuliwa (Angavu)
+
+option.SHADOW_TINT=Rangi ya vivuli
+option.SHADOW_TINT.comment=Hupaka rangi vivuli vya mchana. Vivuli vya ulimwengu halisi chini ya anga la bluu vina rangi laini ya baridi.
+value.SHADOW_TINT.1=Kijivu cha kati
+value.SHADOW_TINT.2=Bluu baridi (Halisi)
+value.SHADOW_TINT.3=Joto
+
+option.LIGHT_WRAP=Kufunika mwanga
+option.LIGHT_WRAP.comment=Hulainisha mpaka kati ya nyuso zenye mwanga na zisizo na mwanga. Halisi = Lambert ya kifizikia; Laini = nzuri kwa picha za skrini.
+value.LIGHT_WRAP.1=Halisi (Lambert)
+value.LIGHT_WRAP.2=Kufunika laini
+value.LIGHT_WRAP.3=Iliyopambwa
+
+# ==============================================================================
+# Screen-Space Reflections (SSR)
+# ==============================================================================
+option.SSR=Mng'ao wa nafasi ya skrini (SSR)
+option.SSR.comment=Huongeza mazingira yaliyoakisiwa ya wakati halisi juu ya maji, nyuso zenye unyevu, na vizuizi vya PBR vya metali. Imewashwa kuanzia WASTANI kwenda juu.
+
+option.SSR_QUALITY=Ubora wa SSR
+option.SSR_QUALITY.comment=Hudhibiti usahihi na umbali wa miale ya mng'ao wa nafasi ya skrini. Juu zaidi = mng'ao mkali zaidi lakini gharama zaidi ya GPU.
+value.SSR_QUALITY.1=Haraka (hatua 12)
+value.SSR_QUALITY.2=Iliyolinganishwa (hatua 24)
+value.SSR_QUALITY.3=Juu (hatua 40)
+
+option.SSR_STRENGTH=Nguvu ya SSR
+option.SSR_STRENGTH.comment=Hudhibiti jinsi mazingira yaliyoakisiwa yanavyoonekana na kujitokeza juu ya nyuso zenye kuakisi.
+
+option.WATER_WAVE_SCALE=Upana wa wimbi
+option.WATER_WAVE_SCALE.comment=Hudhibiti mwinuko unaoonekana wa mawimbi ya uso wa maji. Tulivu = kama kioo, Dhoruba = mng'ao uliovunjika sana.
+option.WATER_WAVE_DETAIL=Maelezo ya wimbi
+option.WATER_WAVE_DETAIL.comment=Hudhibiti ni mawimbi madogo mangapi yanaonekana kwa kila kizuizi. Mbaya = mawimbi machache makubwa, Mengi = mawimbi madogo mengi.
+option.UNDERWATER_NIGHT_DARKNESS=Giza la usiku chini ya maji
+option.UNDERWATER_NIGHT_DARKNESS.comment=Hudhibiti jinsi mandhari ya chini ya maji yanavyokuwa giza usiku. Bwawa lenye mwanga wa mwezi huhifadhi mng'ao; Giza totoro hutoa giza la kupita kiasi la mtindo wa kuishi.
+value.SSR_STRENGTH.1=Hafifu
+value.SSR_STRENGTH.2=Iliyolinganishwa
+value.SSR_STRENGTH.3=Nguvu
+
+# v0.2.9 — water/underwater value labels
+value.WATER_WAVE_SCALE.1=Tulivu
+value.WATER_WAVE_SCALE.2=Kawaida
+value.WATER_WAVE_SCALE.3=Yenye msukosuko
+value.WATER_WAVE_SCALE.4=Dhoruba
+value.WATER_WAVE_DETAIL.1=Mbaya
+value.WATER_WAVE_DETAIL.2=Kawaida
+value.WATER_WAVE_DETAIL.3=Mengi
+value.UNDERWATER_NIGHT_DARKNESS.1=Bwawa lenye mwanga wa mwezi
+value.UNDERWATER_NIGHT_DARKNESS.2=Hafifu
+value.UNDERWATER_NIGHT_DARKNESS.3=Usiku halisi
+value.UNDERWATER_NIGHT_DARKNESS.4=Giza totoro
+
+# PBR Distance
+option.PBR_DISTANCE=Umbali wa uchoraji wa PBR
+option.PBR_DISTANCE.comment=Umbali wa juu wa mng'ao maalum wa PBR. Huokoa GPU kwenye ardhi ya mbali. Karibu (16m) kwa CHINI, Kawaida (48m) kwa WASTANI, Mbali (128m) kwa JUU/ULTRA, Bila kikomo kwa KUPITA KIASI.
+value.PBR_DISTANCE.1=Karibu (16m)
+value.PBR_DISTANCE.2=Kawaida (48m)
+value.PBR_DISTANCE.3=Mbali (128m)
+value.PBR_DISTANCE.4=Bila kikomo
