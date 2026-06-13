@@ -4,7 +4,7 @@
 [![Shader Loader](https://img.shields.io/badge/Loader-Iris%20%2F%20Sodium-green)](https://modrinth.com/mod/iris)
 [![API Standard](https://img.shields.io/badge/API-OpenGL%204.6%20%2F%20GLSL%20460-orange)](https://khronos.org/)
 [![Materials Standard](https://img.shields.io/badge/PBR-LabPBR%201.3-cyan)](https://github.com/rre36/lab-pbr)
-[![Version](https://img.shields.io/badge/Release-v1.0.4-purple)](https://github.com/AlexanderNyr/AuraLite-Shaders)
+[![Version](https://img.shields.io/badge/Release-v1.0.5-purple)](https://github.com/AlexanderNyr/AuraLite-Shaders)
 [![License](https://img.shields.io/badge/License-CC%20BY--NC--SA%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by-nc-sa/4.0/)
 
 
@@ -15,6 +15,28 @@ AuraLite delivers a breathtaking, realistic visual experience without overcompli
 ---
 
 > ℹ️ **Historical note:** older changelog sections below are preserved as original release notes.
+
+## 🆕 What's New in v1.0.5 — *Expanded Localization*
+
+Version **1.0.5** is a localization-focused release that adds **10 new in-game languages**, bringing the total to **69 supported locales**. No shader logic was changed — this is a pure translation/metadata update on top of v1.0.4.
+
+### 🌐 New Languages
+
+The following fully-translated `.lang` files were added (every option name, value label, profile name and tooltip — 289 keys each, 100% key parity with the English source):
+
+| Code | Language | Code | Language |
+|---|---|---|---|
+| `gl_es` | Galician | `sw_ke` | Swahili |
+| `ga_ie` | Irish | `nn_no` | Norwegian Nynorsk |
+| `gd_gb` | Scottish Gaelic | `tt_ru` | Tatar |
+| `af_za` | Afrikaans | `hy_am` | Armenian |
+| `az_az` | Azerbaijani | `zh_hk` | Cantonese (Hong Kong) |
+
+* As with all non-English locales, the in-game **⚠ Translations may contain errors** notice applies — some strings in rarer languages may be imperfect; compare with the English original if anything looks off.
+* `shaders.properties` and `block.properties` metadata headers updated to **v1.0.5**.
+* Source-folder snapshots now run through `shaders v1.0.5/`.
+
+---
 
 ## 🆕 What's New in v1.0.4 — *Profile Rebalance, Translucent Blocks & Glass Rendering*
 
