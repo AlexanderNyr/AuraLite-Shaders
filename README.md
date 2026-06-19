@@ -4,7 +4,7 @@
 [![Shader Loader](https://img.shields.io/badge/Loader-Iris%20%2F%20Sodium-green)](https://modrinth.com/mod/iris)
 [![API Standard](https://img.shields.io/badge/API-OpenGL%204.6%20%2F%20GLSL%20460-orange)](https://khronos.org/)
 [![Materials Standard](https://img.shields.io/badge/PBR-LabPBR%201.3-cyan)](https://github.com/rre36/lab-pbr)
-[![Version](https://img.shields.io/badge/Release-v1.0.5-purple)](https://github.com/AlexanderNyr/AuraLite-Shaders)
+[![Version](https://img.shields.io/badge/Release-v1.0.6-purple)](https://github.com/AlexanderNyr/AuraLite-Shaders)
 [![License](https://img.shields.io/badge/License-CC%20BY--NC--SA%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by-nc-sa/4.0/)
 
 
@@ -15,6 +15,28 @@ AuraLite delivers a breathtaking, realistic visual experience without overcompli
 ---
 
 > ℹ️ **Historical note:** older changelog sections below are preserved as original release notes.
+
+## 🆕 What's New in v1.0.6 — *Procedural Lava & Heat Shimmer*
+
+Version **1.0.6** adds a physically-inspired procedural lava block renderer and a subtle heat-shimmer post-processing effect. It is a focused visual update on top of **v1.0.5**.
+
+### 🔥 Procedural Lava / Magma (Block ID 10009)
+
+* **Block mapping** — `minecraft:lava` and `minecraft:flowing_lava` are now tagged with block ID `10009` in `block.properties`.
+* **3D Voronoi cracks** — the surface is generated with a procedural Voronoi crack field (basalt crust on top, glowing magma in the cracks) using a 4-step parallax occlusion raymarch for real depth.
+* **Animated convection flow** — slow noise-driven convection makes the magma crawl and pulse.
+* **Localized hot spots & bubbles** — rare high-contrast yellow-orange hot spots and short-lived rising bubbles add life without turning the surface into noise.
+* **Viscous waves** — only the top face receives a slower, heavier vertex displacement so lava feels thick and molten.
+* **PBR-ready** — the basalt crust is rough (0.95) while the magma cracks are extremely glossy (0.02), giving physically plausible highlights.
+* **Multi-pass coverage** — lava is handled in `gbuffers_terrain`, `gbuffers_water`, and `gbuffers_terrain_translucent` so it renders correctly on both Iris and Oculus pipelines regardless of which pass the loader assigns fluid blocks to.
+
+### 🌡️ Heat Shimmer Above Lava
+
+* `final.fsh` detects lava pixels through a dedicated `colortex2` alpha signature (0.1) and applies a subtle, slow screen-space distortion that simulates rising hot air.
+* The effect is constrained by depth and by the lava mask, so it only affects pixels directly above or next to lava surfaces.
+* **New in-game options:** `HEAT_SHIMMER` (on/off) and `HEAT_SHIMMER_STRENGTH` (Subtle / Balanced / Strong), located in the `[Post-Processing & Fog]` menu.
+
+---
 
 ## 🆕 What's New in v1.0.5 — *Expanded Localization*
 
@@ -391,7 +413,7 @@ Version **0.2.0** was the original content update that nearly doubled the pack's
 * 🧊 **Ice Glitch Fix** — dedicated block ID disables waving/refraction on ice variants to eliminate visual artifacts. *(v1.0.4: split into regular ice (semi-transparent) and packed/blue ice (opaque) with proper texture rendering.)*
 * 🌙 **Moon-Phase Aware Sky** — sky shading reacts to `moonPhase` and `dimension` for nether/end correctness.
 
-> Source for every version is shipped in this repo under [`shaders v0.2.0/`](shaders%20v0.2.0) through [`shaders v1.0.5/`](shaders%20v1.0.5). The current source snapshot is **v1.0.5**. End users should grab the packaged release ZIP from [Releases](https://github.com/AlexanderNyr/AuraLite-Shaders/releases).
+> Source for every version is shipped in this repo under [`shaders v0.2.0/`](shaders%20v0.2.0) through [`shaders v1.0.6/`](shaders%20v1.0.6). The current source snapshot is **v1.0.6**. End users should grab the packaged release ZIP from [Releases](https://github.com/AlexanderNyr/AuraLite-Shaders/releases).
 
 ---
 
@@ -467,7 +489,7 @@ The night sky is no longer just a static starfield — it's a fully procedural c
 ### 🌀 9. Cosmic Nether Portal *(since v0.2.0, improved in v0.2.5)*
 The vanilla Nether portal texture is procedurally transformed into a **swirling 3D plasma vortex** — animated purple/magenta cosmic energy that pulses with hypnotic depth. Mapped via dedicated block ID `10006` in `block.properties`. *(v0.2.5: portal pixels are flagged as emissive so composite skips scene lighting and displays the plasma as-is.)*
 
-### 🪟 10. Translucent Block Rendering *(added in v1.0.4, unchanged in v1.0.5)*
+### 🪟 10. Translucent Block Rendering *(added in v1.0.4, unchanged in v1.0.6)*
 AuraLite renders translucent blocks with proper per-block transparency through a dedicated `gbuffers_terrain_translucent` pass, ensuring correct display on both Iris and Oculus pipelines:
 * **Regular ice** — semi-transparent with actual texture; opacity scales with `WATER_TRANSPARENCY` (Clear / Balanced / Deep).
 * **Packed ice / blue ice / frosted ice** — opaque with texture, visually distinct from regular ice.
@@ -479,7 +501,14 @@ AuraLite renders translucent blocks with proper per-block transparency through a
 * **Exposure Brightness:** Muted / Balanced / Vibrant — global brightness lift.
 * **Subtle Vignette:** Gentle lens-darkening at screen edges for improved depth and immersion.
 
-### 🛡️ 12. Realistic Atmospheric Fog *(v0.2.5)*
+### 🔥 12. Procedural Lava & Heat Shimmer *(v1.0.6)*
+* **Procedural Magma Surface:** Lava and flowing-lava blocks are rendered with a procedural Voronoi crack field, animated convection flow, rare hot spots, and rising bubbles.
+* **3D Parallax Cracks:** A 4-step parallax occlusion raymarch gives real depth between the dark basalt crust and glowing magma.
+* **Viscous Vertex Waves:** The top face slowly swells with a heavier, slower wave than water, giving a molten feel.
+* **Heat Shimmer:** `final.fsh` applies a subtle screen-space distortion above lava pixels to simulate rising hot air.
+* **PBR-Ready:** Rough basalt crust (0.95) and glossy magma cracks (0.02) produce physically plausible highlights.
+
+### 🛡️ 13. Realistic Atmospheric Fog *(v0.2.5)*
 * Fog density now accounts for **altitude** (aerosol concentration decays with height), **horizon path length**, and **indoor/outdoor exposure** via skylight.
 * Consistent Beer-Lambert distance fog with height-weighted density — no delayed fog walls.
 
@@ -522,13 +551,13 @@ AuraLite is built from the ground up for maximum FPS using OpenGL 4.6 native har
 
 ## 📥 Installation
 
-1. Download **`AuraLite-Shaders-v1.0.5.zip`** from the [Releases](https://github.com/AlexanderNyr/AuraLite-Shaders/releases) section on the right.
+1. Download **`AuraLite-Shaders-v1.0.6.zip`** from the [Releases](https://github.com/AlexanderNyr/AuraLite-Shaders/releases) section on the right.
 2. Open your Minecraft directory (e.g. `%appdata%/.minecraft` on Windows).
 3. Place the downloaded `.zip` file inside the **`shaderpacks`** folder (Do **not** unzip it!).
 4. Launch a supported Minecraft version (**1.16.5 – 26.1.2**) using a profile with **Sodium + Iris** or **OptiFine** installed.
 5. In-game, go to **Options → Video Settings → Shader Packs**, select **AuraLite**, and click **Apply**.
 
-> 💡 The repository ships source folders for every release snapshot: `shaders v0.2.0/` through `shaders v1.0.5/`. The current source snapshot is **v1.0.5**. End users should grab the packaged release ZIP; developers can browse any folder directly.
+> 💡 The repository ships source folders for every release snapshot: `shaders v0.2.0/` through `shaders v1.0.6/`. The current source snapshot is **v1.0.6**. End users should grab the packaged release ZIP; developers can browse any folder directly.
 
 ---
 
@@ -614,19 +643,20 @@ AuraLite includes localized in-game configuration files for **69 language codes*
 * **Vignette** — Toggle cinematic corner darkening.
 * (Hidden) **Rain Wetness Reflections (`WET_REFLECTIONS`)** — Wet glossy ground during rain (enabled by default in MED+ profiles).
 
-### 🎚️ Quality Profiles *(rebalanced in v1.0.4, unchanged in v1.0.5)*
+### 🎚️ Quality Profiles *(rebalanced in v1.0.4, unchanged in v1.0.6)*
 
-| Profile      | Target          | Shadows | Clouds | Cloud Shadows | Godrays | TAA | SSR | PBR | PBR Dist | AA   | SSAO | Heavy Extras |
-|--------------|-----------------|---------|--------|---------------|---------|-----|-----|-----|----------|------|------|--------------|
-| **VERY_LOW** | Maximum FPS     | ❌      | ❌     | ❌            | ❌      | ❌  | ❌  | ❌  | 16m      | Off  | ❌   | Most extras off |
-| **LOW**      | Weak GPUs       | ❌      | ❌     | ❌            | ❌      | ❌  | ❌  | ❌  | 16m      | FXAA | ❌   | Water/foliage motion, stars, vignette |
-| **MED**      | Balanced        | ✅ 1024 | ✅ Std  | ✅ Soft       | ✅ Fast | ❌  | ✅ F | ✅   | 48m      | FXAA | ❌   | Wet refl + ground mist + SSS |
-| **HIGH**     | High quality    | ✅ 2048 | ✅ Far  | ✅ Balanced   | ✅ Bal  | ✅   | ✅ B | ✅   | 128m     | SMAA | ✅ Subtle | Full atmosphere + SSR + TAA |
-| **ULTRA**    | Very high       | ✅ 4096 | ✅ VFar | ✅ Balanced   | ✅ High | ✅   | ✅ H | ✅   | 128m     | SMAA | ✅ Balanced | High-end visuals |
-| **EXTREME**  | Max quality     | ✅ 4096 | ✅ Dense| ✅ Dramatic   | ✅ High | ✅   | ✅ H | ✅   | ∞        | SMAA | ✅ Deep | Heaviest cinematic |
+| Profile      | Target          | Shadows | Clouds | Cloud Shadows | Godrays | TAA | SSR | PBR | PBR Dist | AA   | SSAO | Heat Shimmer | Heavy Extras |
+|--------------|-----------------|---------|--------|---------------|---------|-----|-----|-----|----------|------|------|--------------|--------------|
+| **VERY_LOW** | Maximum FPS     | ❌      | ❌     | ❌            | ❌      | ❌  | ❌  | ❌  | 16m      | Off  | ❌   | ❌           | Most extras off |
+| **LOW**      | Weak GPUs       | ❌      | ❌     | ❌            | ❌      | ❌  | ❌  | ❌  | 16m      | FXAA | ❌   | ❌           | Water/foliage motion, stars, vignette |
+| **MED**      | Balanced        | ✅ 1024 | ✅ Std  | ✅ Soft       | ✅ Fast | ❌  | ✅ F | ✅   | 48m      | FXAA | ❌   | ✅ Subtle    | Wet refl + ground mist + SSS |
+| **HIGH**     | High quality    | ✅ 2048 | ✅ Far  | ✅ Balanced   | ✅ Bal  | ✅   | ✅ B | ✅   | 128m     | SMAA | ✅ Subtle | ✅ Balanced  | Full atmosphere + SSR + TAA |
+| **ULTRA**    | Very high       | ✅ 4096 | ✅ VFar | ✅ Balanced   | ✅ High | ✅   | ✅ H | ✅   | 128m     | SMAA | ✅ Balanced | ✅ Balanced  | High-end visuals |
+| **EXTREME**  | Max quality     | ✅ 4096 | ✅ Dense| ✅ Dramatic   | ✅ High | ✅   | ✅ H | ✅   | ∞        | SMAA | ✅ Deep | ✅ Strong    | Heaviest cinematic |
 
 > 💫 **Shooting stars** are disabled on **VERY_LOW / LOW** and enabled from **MED** upward.
 > 🌿 **Foliage SSS** is enabled from **MED** upward (disabled on VERY_LOW/LOW for maximum FPS).
+> 🔥 **Heat shimmer** is disabled on **VERY_LOW / LOW** and enabled from **MED** upward.
 
 ---
 
