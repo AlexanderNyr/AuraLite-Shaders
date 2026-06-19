@@ -1,0 +1,402 @@
+# AuraLite Shaders v1.0.6 - Copyright (c) 2026 AlexanderNyr. Licensed under CC BY-NC-SA 4.0.
+# ==============================================================================
+# AuraLite Shader Pack - Tatar Language Translations
+# ==============================================================================
+
+# ==============================================================================
+# Сыйфат профильләре — Яңадан баланслау v1.0.5
+# ==============================================================================
+profile.VERY_LOW=Бик түбән
+profile.VERY_LOW.comment=Абсолют максималь FPS. Барлык өстәмәләр сүндерелгән: күләгәләр, болытлар, PBR, SSR, кояш нурлары юк. Бары тик минималь рендер.
+profile.LOW=Түбән
+profile.LOW.comment=Җиңел, ләкин уйнарлык. Үсемлек/су хәрәкәтен, яктырак йолдызларны, FXAA, винетканы саклый. Күләгәләр, болытлар яки PBR юк.
+profile.MED=Урта
+profile.MED.comment=Көндәлек алтын урта. Күләгәләр 1024, болытлар, PBR, SSR Тиз, кояш нурлары, яфрак SSS, юеш чагылышлар, җир тузаны, атылучы йолдызлар.
+profile.HIGH=Югары
+profile.HIGH.comment=Энтузиаст сыйфаты. Күләгәләр 2048, SSR Балансланган, TAA, SSAO Йомшак, кояш нурлары Балансланган, SMAA.
+profile.ULTRA=Ультра
+profile.ULTRA.comment=Югары дәрәҗә. Күләгәләр 4096, SSR Югары, SSAO Балансланган, кояш нурлары Югары, TAA Тотрыклы, барлык эффектлар кабызылган.
+profile.EXTREME=Экстремаль
+profile.EXTREME.comment=Кинематографик максимум. Барысы да максимумда: PBR Чиксез ераклык, Фотографик (AgX) тон карталау, иң тирән SSAO, метеор давыллары.
+profile.CUSTOM=Шәхси
+profile.CUSTOM.comment=Кулланучы үзгәрткән көйләүләр.
+
+screen.TRANSLATION_NOTICE=⚠ Тәрҗемәләрдә хаталар булырга мөмкин
+screen.TRANSLATION_NOTICE.comment=Кайбер локализация юллары төгәл булмаска мөмкин. Әгәр нәрсәдер сәер күренсә, инглиз оригиналы белән чагыштырыгыз.
+
+# Screens
+screen.LIGHTING=Яктырту көйләүләре
+screen.LIGHTING.comment=Күләгәләрне, яктылык төсләрен һәм яктылыкны көйләгез.
+
+screen.FOLIAGE=Үсемлек көйләүләре
+screen.FOLIAGE.comment=Үлән һәм яфраклар өчен селкенү анимацияләрен көйләгез.
+
+screen.WATER=Су көйләүләре
+screen.WATER.comment=Дулкыннарны, үтә күренүчәнлекне һәм су стилен көйләгез.
+
+screen.CLOUDS_MENU=Күк һәм болытлар
+screen.CLOUDS_MENU.comment=3D болытларның һәм күк эффектларының физик биеклеген, калынлыгын һәм стилен көйләгез.
+
+screen.POST_PROCESS=Эшкәртүдән соң һәм томан
+screen.POST_PROCESS.comment=Экспозицияне, томанны һәм кинематографик эффектларны көйләгез.
+
+# Options
+option.SHADOWS=Динамик күләгәләр
+option.SHADOWS.comment=Кояш һәм айдан йомшак динамик күләгәләрне кабызыгыз яки сүндерегез.
+
+option.SHADOW_RES=Күләгә рөхсәте
+option.SHADOW_RES.comment=Күләгә картасы сыйфатын үзгәртегез. Югарырак кыйммәтләр җитештерүчәнлекне киметергә мөмкин.
+
+option.PBR_LIGHTING=PBR яктырту (LabPBR)
+option.PBR_LIGHTING.comment=Металлар, тупаслык һәм 3D нормаль карталар өчен физикага нигезләнгән рендерны кабызыгыз (PBR ресурс пакеты кирәк).
+
+option.PBR_POM=3D блок рельефы (POM)
+option.PBR_POM.comment=3D блок текстуралары өчен физикага нигезләнгән Параллакс Каплау Карталавын кабызыгыз. Туры килмәгән ресурс пакетларында сүндерергә киңәш ителә.
+
+option.PBR_STRENGTH=PBR интенсивлыгы
+option.PBR_STRENGTH.comment=PBR металл өслекләренең чагылышын һәм ялтыравыклыгын контрольдә тотыгыз.
+
+value.PBR_STRENGTH.1=Йомшак
+value.PBR_STRENGTH.2=Стандарт
+value.PBR_STRENGTH.3=Көзге
+
+option.SSAO=SSAO / SAO каплавы
+option.SSAO.comment=Почмакларда, блоклар астында һәм геометрия кисешүләре тирәсендә контакт күләгәләре өчен экран-киңлек әйләнә-тирә каплавы. ЮГАРЫдан өскә кабызылган.
+option.SSAO_STRENGTH=SSAO көче
+option.SSAO_STRENGTH.comment=Экран-киңлек әйләнә-тирә каплавының тирәнлеген контрольдә тота. Бары тик SSAO кабызылганда эшли.
+value.SSAO_STRENGTH.1=Йомшак
+value.SSAO_STRENGTH.2=Балансланган
+value.SSAO_STRENGTH.3=Тирән
+
+option.LIGHTMAP_WARMTH=Факел җылылыгы
+option.LIGHTMAP_WARMTH.comment=Блок/факел яктылыгының җылылыгын һәм төсен көйләгез.
+
+value.LIGHTMAP_WARMTH.1=Уңайлы
+value.LIGHTMAP_WARMTH.2=Җылы
+value.LIGHTMAP_WARMTH.3=Көчле
+
+option.WAVING_LEAVES=Селкенүче яфраклар
+option.WAVING_LEAVES.comment=Агач яфраклары өчен йомшак селкенү анимацияләрен кабызыгыз.
+
+option.WAVING_GRASS=Селкенүче үсемлек
+option.WAVING_GRASS.comment=Үлән, чәчәкләр һәм игеннәр өчен селкенү анимацияләрен кабызыгыз.
+
+option.WIND_SPEED=Җил тизлеге
+option.WIND_SPEED.comment=Яфракларның, үсемлекләрнең һәм су дулкыннарының селкенү тизлеген контрольдә тотыгыз.
+
+option.FOLIAGE_SSS=Үсемлек SSS
+option.FOLIAGE_SSS.comment=Яктылыкка каршы караганда яфраклар, үлән һәм үсемлекләр өчен өслек асты таралуны (үтә күренүчәнлек) кабыза.
+
+value.WIND_SPEED.1=Йомшак
+value.WIND_SPEED.2=Җил
+value.WIND_SPEED.3=Давыл
+
+option.WATER_WAVES=Су дулкыннары
+option.WATER_WAVES.comment=Су өслегендә 3D геометрик дулкыннарны кабызыгыз. Боз һәм пыяла блоклар дулкын анимациясеннән чыгарыла.
+
+option.WATER_TRANSPARENCY=Су тыгызлыгы
+option.WATER_TRANSPARENCY.comment=Суның, гадәти бозның һәм пыяла блокларның үтә күренүчәнлеген һәм тоныклыгын контрольдә тотыгыз.
+
+value.WATER_TRANSPARENCY.1=Саф
+value.WATER_TRANSPARENCY.2=Балансланган
+value.WATER_TRANSPARENCY.3=Тирән
+
+option.PROCEDURAL_CLOUDS=Волюметрик 3D болытлар
+option.PROCEDURAL_CLOUDS.comment=Җитеп булырлык һәм аша очарлык физик очарлык 3D болытларны кабызыгыз.
+
+option.CLOUD_HEIGHT=Болыт биеклеге
+option.CLOUD_HEIGHT.comment=Дөньядагы болыт катламының физик биеклеген (Y дәрәҗәсе) урнаштырыгыз (метр белән).
+
+value.CLOUD_HEIGHT.1=Түбән (~110m)
+value.CLOUD_HEIGHT.2=Стандарт (~160m)
+value.CLOUD_HEIGHT.3=Югары (~240m)
+
+option.CLOUD_THICKNESS=Болыт калынлыгы
+option.CLOUD_THICKNESS.comment=Болытларның вертикаль калынлыгын һәм күләмен көйләгез.
+
+value.CLOUD_THICKNESS.1=Нечкә (Циррус)
+value.CLOUD_THICKNESS.2=Стандарт (Кумулус)
+value.CLOUD_THICKNESS.3=Куе (Давыллы)
+
+option.CLOUD_DISTANCE=Болыт рендер ераклыгы
+option.CLOUD_DISTANCE.comment=Волюметрик болытлар өчен максималь сызу ераклыгы. Сыйфат профильләре аны автоматик арттыра.
+value.CLOUD_DISTANCE.1=Якын
+value.CLOUD_DISTANCE.2=Стандарт
+value.CLOUD_DISTANCE.3=Ерак
+value.CLOUD_DISTANCE.4=Бик ерак
+
+option.CLOUD_SHADOWS=Болыт күләгәләре
+option.CLOUD_SHADOWS.comment=Волюметрик болыт тыгызлыгыннан җир өстенә үтә күренүчән процедур күләгәләр өсти. Сыйфат профильләре белән балансланган.
+option.CLOUD_SHADOW_STRENGTH=Болыт күләгәсе көче
+option.CLOUD_SHADOW_STRENGTH.comment=Үтә күренүчән болыт күләгәләренең күренеше һәм драматиклыгын контрольдә тота.
+value.CLOUD_SHADOW_STRENGTH.1=Йомшак
+value.CLOUD_SHADOW_STRENGTH.2=Балансланган
+value.CLOUD_SHADOW_STRENGTH.3=Драматик
+
+option.GODRAYS=Кояш нурлары / Кояш баганалары
+option.GODRAYS.comment=Beer-Lambert сүнү, Mie фазасы һәм күләгә картасы каплавы белән физикадан илһамланган волюметрик бер-таралулы кояш баганалары өсти.
+option.GODRAYS_QUALITY=Кояш нурлары сыйфаты
+option.GODRAYS_QUALITY.comment=Физикага нигезләнгән волюметрик кояш нурларының үрнәк санын һәм интеграция ераклыгын контрольдә тота.
+value.GODRAYS_QUALITY.1=Тиз
+value.GODRAYS_QUALITY.2=Балансланган
+value.GODRAYS_QUALITY.3=Югары
+
+option.AURORA_MODE=Төньяк балкышы
+option.AURORA_MODE.comment=Төнге күктә реалистик агымлы балкышларның күрсәтелүен контрольдә тотыгыз.
+
+value.AURORA_MODE.0=Сүндерелгән
+value.AURORA_MODE.1=Бары тик салкын биомнарда
+value.AURORA_MODE.2=Һәрвакыт кабызылган
+
+option.AURORA_SPEED=Балкыш тизлеге
+option.AURORA_SPEED.comment=Төньяк балкышының селкенү һәм агу тизлеген контрольдә тотыгыз.
+
+value.AURORA_SPEED.1=Әкрен
+value.AURORA_SPEED.2=Стандарт
+value.AURORA_SPEED.3=Тиз
+
+option.AURORA_STRENGTH=Балкыш яктылыгы
+option.AURORA_STRENGTH.comment=Төньяк балкышының гомуми балку яктылыгын контрольдә тотыгыз.
+
+value.AURORA_STRENGTH.1=Йомшак
+value.AURORA_STRENGTH.2=Стандарт
+value.AURORA_STRENGTH.3=Балкучы
+
+option.NEBULA_BRIGHTNESS=Киек Каз Юлы яктылыгы
+option.NEBULA_BRIGHTNESS.comment=Төнлә диагональ көрәнсу галактик томанлыкның балку яктылыгын көйләгез.
+
+value.NEBULA_BRIGHTNESS.1=Сүрән
+value.NEBULA_BRIGHTNESS.2=Стандарт
+value.NEBULA_BRIGHTNESS.3=Якты
+
+option.STARS_BRIGHTNESS=Йолдыз яктылыгы
+option.STARS_BRIGHTNESS.comment=Төнлә йолдызларның яктылыгын һәм җемелдәүче балкуын контрольдә тотыгыз.
+
+value.STARS_BRIGHTNESS.1=Сүрән
+value.STARS_BRIGHTNESS.2=Стандарт
+value.STARS_BRIGHTNESS.3=Гаҗәеп
+
+option.STARS_AMOUNT=Йолдыз тыгызлыгы
+option.STARS_AMOUNT.comment=Күктәге йолдызларның гомуми санын һәм тыгызлыгын контрольдә тотыгыз.
+
+value.STARS_AMOUNT.1=Аз
+value.STARS_AMOUNT.2=Стандарт
+value.STARS_AMOUNT.3=Куе
+
+option.RAINBOW_STRENGTH=Салават күпере интенсивлыгы
+option.RAINBOW_STRENGTH.comment=Яңгырдан соңгы салават күперенең яктылыгын һәм төс туеныгуын көйләгез.
+
+value.RAINBOW_STRENGTH.1=Йомшак
+value.RAINBOW_STRENGTH.2=Балансланган
+value.RAINBOW_STRENGTH.3=Ачык
+
+option.SHOOTING_STARS=Метеорлар (атылучы йолдызлар)
+option.SHOOTING_STARS.comment=Мезосферага (~80-120 км) керүче физикага нигезләнгән метеорлар. Аблация яктылык кәкреләре, кара җисем плазма төсе (3500-5500 K), офык янында Rayleigh сүнү һәм утлы шарларда тотрыклы ионлашу эзләре белән чын зур түгәрәк 3D дугаларын рендерлый.
+
+option.SHOOTING_STARS_FREQUENCY=Метеор активлыгы (ZHR)
+option.SHOOTING_STARS_FREQUENCY.comment=Якынча зенит сәгатьлек дәрәҗәсе. Очраклы = сәгатенә ~10 реалистик фон. Актив = җиңел яңгыр. Давыл = иң югары тыгызлык (~100/сәг).
+
+value.SHOOTING_STARS_FREQUENCY.1=Очраклы (~10/сәг)
+value.SHOOTING_STARS_FREQUENCY.2=Актив яңгыр
+value.SHOOTING_STARS_FREQUENCY.3=Метеор давылы
+
+option.SHOOTING_STARS_BRIGHTNESS=Зурлык масштабы
+option.SHOOTING_STARS_BRIGHTNESS.comment=Метеор зурлыгы масштабындагы төп тапкырлаучы. Сүрән = реалистик уртача; Якты = кинематографик күренеш өчен утлы шарларны масштаблый.
+
+value.SHOOTING_STARS_BRIGHTNESS.1=Сүрән (Реалистик)
+value.SHOOTING_STARS_BRIGHTNESS.2=Стандарт
+value.SHOOTING_STARS_BRIGHTNESS.3=Якты утлы шарлар
+
+option.COZY_LIGHTS=Факел җемелдәве
+option.COZY_LIGHTS.comment=Факеллар, учаклар һәм фонарьлар өчен җылы, уңайлы, реаль вакыт җемелдәү анимацияләрен кабызыгыз.
+
+option.WET_REFLECTIONS=Яңгыр юешлеге чагылышлары
+option.WET_REFLECTIONS.comment=Яңгыр яуганда, җир, үлән һәм таш кебек каты блоклар күк астында юеш, караңгы һәм ялтыравыклы була.
+
+option.GROUND_MIST=Түбән җир тузаны (Y=62-66)
+option.GROUND_MIST.comment=Таң һәм эңгер вакытында су һәм боз өстеннән шуышучы йомшак, алтынсу-ак иртәнге/кичке тузан катламнарын кабызыгыз.
+
+option.FOG_DENSITY_LEVEL=Томан тыгызлыгы
+option.FOG_DENSITY_LEVEL.comment=Атмосфера офык томанының көчен контрольдә тотыгыз.
+
+value.FOG_DENSITY_LEVEL.1=Түбән
+value.FOG_DENSITY_LEVEL.2=Урта
+value.FOG_DENSITY_LEVEL.3=Югары
+
+option.EXPOSURE=Экспозиция яктылыгы
+option.EXPOSURE.comment=Сурәтнең гомуми яктылыгын контрольдә тотыгыз.
+
+value.EXPOSURE.1=Сүрән
+value.EXPOSURE.2=Балансланган
+value.EXPOSURE.3=Ачык
+
+option.COLOR_SATURATION=Төс ачыклыгы
+option.COLOR_SATURATION.comment=Экран төсләренең сызыксыз туенуын контрольдә тотыгыз. Үсемлекне зөбәрҗәт, ә күкне муллы итеп күрсәтә.
+
+value.COLOR_SATURATION.1=Сүрән
+value.COLOR_SATURATION.2=Балансланган
+value.COLOR_SATURATION.3=Төсле
+value.COLOR_SATURATION.4=Ачык
+
+option.CONTRAST=Сурәт контрасты
+option.CONTRAST.comment=Тон карталау һәм контраст кәкресе стилен сайлагыз.
+
+value.CONTRAST.1=Йомшак
+value.CONTRAST.2=Кинематографик (ACES)
+value.CONTRAST.3=Көчле (Югары контраст)
+value.CONTRAST.4=Фотографик (AgX кебек)
+
+option.TAA=Вакытлы тигезләү (TAA)
+option.TAA.comment=Хәрәкәт яңадан проекцияләве һәм күршелек кисү белән вакытлы чишелеш. Югары алдан көйләүләрдә җемелдәүне һәм тешле кырыйларны киметә.
+option.TAA_STRENGTH=TAA көче
+option.TAA_STRENGTH.comment=Тарих кушылуын контрольдә тота. Югарырак тотрыклырак, ләкин хәрәкәт вакытында йомшаграк булырга мөмкин.
+value.TAA_STRENGTH.1=Җиңел
+value.TAA_STRENGTH.2=Балансланган
+value.TAA_STRENGTH.3=Тотрыклы
+
+
+
+option.VIGNETTE=Винетка эффекты
+option.VIGNETTE.comment=Яхшырак фокус өчен экран кырыйларында йомшак караңгылануны кабызыгыз.
+
+# ==============================================================================
+# Spatial Anti-Aliasing
+# ==============================================================================
+option.SPATIAL_AA_MODE=Киңлек тигезләве
+option.SPATIAL_AA_MODE.comment=Эшкәртүдән соң тигезләү ысулын сайлагыз. FXAA тиз һәм арзан. SMAA геометрия кырыйларында яхшырак сыйфат өчен тирәнлек буферын куллана. TAA белән берләштерелә ала.
+value.SPATIAL_AA_MODE.0=Сүндерелгән
+value.SPATIAL_AA_MODE.1=FXAA (Тиз)
+value.SPATIAL_AA_MODE.2=SMAA (Сыйфат)
+
+option.WATER_RIFFLES=Су дулкынчыклары көче
+option.WATER_RIFFLES.comment=Су өстендәге нечкә нормаль карта дулкынчыкларының дулкынлануын һәм интенсивлыгын көйләгез. Бозга яки пыялага тәэсир итми.
+
+value.WATER_RIFFLES.1=Тыныч
+value.WATER_RIFFLES.2=Стандарт
+value.WATER_RIFFLES.3=Дулкынлы
+
+option.WATER_SPECULAR_STRENGTH=Су спекуляр балкуы
+option.WATER_SPECULAR_STRENGTH.comment=Су дулкынчыкларындагы кояш/ай чагылышларының яктылыгын көйләгез.
+
+value.WATER_SPECULAR_STRENGTH.1=Йомшак
+value.WATER_SPECULAR_STRENGTH.2=Стандарт
+value.WATER_SPECULAR_STRENGTH.3=Җемелдәүче
+
+option.SHADOW_SOFTNESS=Күләгә йомшаклыгы
+option.SHADOW_SOFTNESS.comment=Күләгә кырыйларының никадәр йомшак һәм таралган күренүен контрольдә тота. Шома ярымкүләгә өчен әйләндерелгән Пуассон диск фильтрлавын куллана.
+
+value.SHADOW_SOFTNESS.1=Үткен
+value.SHADOW_SOFTNESS.2=Йомшак
+value.SHADOW_SOFTNESS.3=Бик йомшак
+
+# ==============================================================================
+# Sun & Moon Lighting
+# ==============================================================================
+screen.SUN_MOON=Кояш һәм ай
+screen.SUN_MOON.comment=Кояш һәм ай интенсивлыгын, төс температурасын һәм атмосфера эффектларын төгәл көйләгез.
+
+option.SUN_INTENSITY=Кояш интенсивлыгы
+option.SUN_INTENSITY.comment=Туры кояш яктылыгының төп яктылыгы. Югарырак = көндезге контраст көчлерәк.
+value.SUN_INTENSITY.1=Сүрән
+value.SUN_INTENSITY.2=Стандарт
+value.SUN_INTENSITY.3=Якты
+value.SUN_INTENSITY.4=Кайнар
+
+option.MOON_INTENSITY=Ай интенсивлыгы
+option.MOON_INTENSITY.comment=Ай яктылыгының төп яктылыгы. Югарырак = яктырак, күренеклерәк төннәр.
+value.MOON_INTENSITY.1=Карагы төн
+value.MOON_INTENSITY.2=Стандарт
+value.MOON_INTENSITY.3=Якты ай
+value.MOON_INTENSITY.4=Тулы төн
+
+option.SUN_TEMPERATURE=Кояш төс температурасы
+option.SUN_TEMPERATURE.comment=Кояшның Кельвин кәкресен күчерә. Реалистик Tanner Helland кара җисемен куллана; җылы = алтынсу; салкын = нейтраль ак.
+value.SUN_TEMPERATURE.1=Салкын / Нейтраль
+value.SUN_TEMPERATURE.2=Реалистик
+value.SUN_TEMPERATURE.3=Җылы алтынсу
+
+option.MOON_TEMPERATURE=Ай төс температурасы
+option.MOON_TEMPERATURE.comment=Ай яктылыгының төсмере. Бозлы = зәңгәрсу салкын; Көмеш = реалистик 4100K; Җылы = урак ае каймагы.
+value.MOON_TEMPERATURE.1=Бозлы зәңгәр
+value.MOON_TEMPERATURE.2=Көмеш (Реалистик)
+value.MOON_TEMPERATURE.3=Җылы каймак
+
+option.SUN_HALO=Кояш гало (Mie таралуы)
+option.SUN_HALO.comment=Кояшка якын караганда җир өстенә йомшак җылы балку өсти (Mie алга таралу).
+
+option.SUNRISE_GLOW=Көчәйтелгән кояш чыгу/бату балкуы
+option.SUNRISE_GLOW.comment=Түбән кояштан читкә караган өслекләр тирәсенә уралучан көчлерәк җылы кире таралуны кабыза.
+
+# ==============================================================================
+# Extended shadow settings
+# ==============================================================================
+option.SHADOW_DISTANCE=Күләгә ераклыгы
+option.SHADOW_DISTANCE.comment=Динамик күләгәләр сүнгәнче рендерланган максималь ераклык.
+value.SHADOW_DISTANCE.1=Якын (60m)
+value.SHADOW_DISTANCE.2=Стандарт (80m)
+value.SHADOW_DISTANCE.3=Ерак (120m)
+value.SHADOW_DISTANCE.4=Ультра (160m)
+
+option.AMBIENT_BRIGHTNESS=Күләгә күтәрү / Әйләнә-тирә
+option.AMBIENT_BRIGHTNESS.comment=Төнлә һәм мәгарәләрдә күләгәле өлкәләрнең никадәр караңгы күренүен контрольдә тота.
+value.AMBIENT_BRIGHTNESS.1=Караңгы
+value.AMBIENT_BRIGHTNESS.2=Стандарт
+value.AMBIENT_BRIGHTNESS.3=Күтәрелгән (Якты)
+
+option.SHADOW_TINT=Күләгә төсмере
+option.SHADOW_TINT.comment=Көндезге күләгәләрне төсли. Зәңгәр күк астындагы реаль дөнья күләгәләрендә йомшак салкын төсмер бар.
+value.SHADOW_TINT.1=Нейтраль соры
+value.SHADOW_TINT.2=Салкын зәңгәр (Реалистик)
+value.SHADOW_TINT.3=Җылы
+
+option.LIGHT_WRAP=Яктылык уралуы
+option.LIGHT_WRAP.comment=Яктыртылган һәм яктыртылмаган өслекләр арасындагы чикне йомшарта. Реалистик = физик Lambert; Йомшак = скриншотлар өчен рәхәт.
+value.LIGHT_WRAP.1=Реалистик (Lambert)
+value.LIGHT_WRAP.2=Йомшак уралу
+value.LIGHT_WRAP.3=Стильләштерелгән
+
+# ==============================================================================
+# Screen-Space Reflections (SSR)
+# ==============================================================================
+option.SSR=Экран-киңлек чагылышлары (SSR)
+option.SSR.comment=Су, юеш өслекләр һәм металл PBR блокларында реаль вакыт чагылган мохитне өсти. УРТАдан өскә кабызылган.
+
+option.SSR_QUALITY=SSR сыйфаты
+option.SSR_QUALITY.comment=Экран-киңлек чагылышларының төгәллеген һәм нур ераклыгын контрольдә тота. Югарырак = ачыграк чагылышлар, ләкин күбрәк GPU чыгымы.
+value.SSR_QUALITY.1=Тиз (12 адым)
+value.SSR_QUALITY.2=Балансланган (24 адым)
+value.SSR_QUALITY.3=Югары (40 адым)
+
+option.SSR_STRENGTH=SSR көче
+option.SSR_STRENGTH.comment=Чагылган мохитнең чагылдыручы өслекләрдә никадәр күренекле булуын контрольдә тота.
+
+option.WATER_WAVE_SCALE=Дулкын амплитудасы
+option.WATER_WAVE_SCALE.comment=Су өслеге дулкыннарының күренекле текәлеген контрольдә тота. Тыныч = көзге кебек, Давыллы = нык ватык чагылышлар.
+option.WATER_WAVE_DETAIL=Дулкын детале
+option.WATER_WAVE_DETAIL.comment=Һәр блокта ничә кечкенә дулкын күренүен контрольдә тота. Эре = берничә зур дулкын, Куе = күп кечкенә дулкынчыклар.
+option.UNDERWATER_NIGHT_DARKNESS=Су асты төн караңгылыгы
+option.UNDERWATER_NIGHT_DARKNESS.comment=Төнлә су асты күренешенең никадәр караңгы булуын контрольдә тота. Айлы күл яктылыкны саклый; Карагы караңгылык экстремаль яшәү стиле караңгылыгын бирә.
+value.SSR_STRENGTH.1=Йомшак
+value.SSR_STRENGTH.2=Балансланган
+value.SSR_STRENGTH.3=Көчле
+
+# v0.2.9 — water/underwater value labels
+value.WATER_WAVE_SCALE.1=Тыныч
+value.WATER_WAVE_SCALE.2=Стандарт
+value.WATER_WAVE_SCALE.3=Дулкынлы
+value.WATER_WAVE_SCALE.4=Давыллы
+value.WATER_WAVE_DETAIL.1=Эре
+value.WATER_WAVE_DETAIL.2=Стандарт
+value.WATER_WAVE_DETAIL.3=Куе
+value.UNDERWATER_NIGHT_DARKNESS.1=Айлы күл
+value.UNDERWATER_NIGHT_DARKNESS.2=Сүрән
+value.UNDERWATER_NIGHT_DARKNESS.3=Чын төн
+value.UNDERWATER_NIGHT_DARKNESS.4=Карагы караңгылык
+
+# PBR Distance
+option.PBR_DISTANCE=PBR рендер ераклыгы
+option.PBR_DISTANCE.comment=PBR спекуляр балкышлары өчен максималь ераклык. Ерак җирдә GPU саклый. Якын (16m) ТҮБӘН өчен, Стандарт (48m) УРТА өчен, Ерак (128m) ЮГАРЫ/УЛЬТРА өчен, Чиксез ЭКСТРЕМАЛЬ өчен.
+value.PBR_DISTANCE.1=Якын (16m)
+value.PBR_DISTANCE.2=Стандарт (48m)
+value.PBR_DISTANCE.3=Ерак (128m)
+value.PBR_DISTANCE.4=Чиксез

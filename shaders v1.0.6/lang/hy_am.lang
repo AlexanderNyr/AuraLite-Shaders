@@ -1,0 +1,402 @@
+# AuraLite Shaders v1.0.6 - Copyright (c) 2026 AlexanderNyr. Licensed under CC BY-NC-SA 4.0.
+# ==============================================================================
+# AuraLite Shader Pack - Armenian Language Translations
+# ==============================================================================
+
+# ==============================================================================
+# Որակի պրոֆիլներ — Վերաբալանսավորում v1.0.5
+# ==============================================================================
+profile.VERY_LOW=Շատ ցածր
+profile.VERY_LOW.comment=Բացարձակ առավելագույն FPS։ Բոլոր լրացուցիչ էֆեկտներն անջատված են՝ ոչ ստվերներ, ոչ ամպեր, ոչ PBR, ոչ SSR, ոչ արևի ճառագայթներ։ Միայն նվազագույն ռենդերինգ։
+profile.LOW=Ցածր
+profile.LOW.comment=Թեթև, բայց խաղալի։ Պահպանում է բուսականության/ջրի շարժումը, ավելի պայծառ աստղերը, FXAA, վինյետը։ Ոչ ստվերներ, ամպեր կամ PBR։
+profile.MED=Միջին
+profile.MED.comment=Ամենօրյա օպտիմալ ընտրություն։ Ստվերներ 1024, ամպեր, PBR, SSR Արագ, արևի ճառագայթներ, սաղարթի SSS, թաց անդրադարձումներ, գետնի մշուշ, ընկնող աստղեր։
+profile.HIGH=Բարձր
+profile.HIGH.comment=Էնտուզիաստի որակ։ Ստվերներ 2048, SSR Հավասարակշռված, TAA, SSAO Նուրբ, արևի ճառագայթներ Հավասարակշռված, SMAA։
+profile.ULTRA=Ուլտրա
+profile.ULTRA.comment=Բարձր մակարդակ։ Ստվերներ 4096, SSR Բարձր, SSAO Հավասարակշռված, արևի ճառագայթներ Բարձր, TAA Կայուն, բոլոր էֆեկտները միացված։
+profile.EXTREME=Ծայրահեղ
+profile.EXTREME.comment=Կինեմատոգրաֆիկ առավելագույն։ Ամեն ինչ առավելագույնի հասցված՝ PBR Անսահմանափակ հեռավորություն, Լուսանկարչական (AgX) տոնի քարտեզագրում, ամենախորը SSAO, երկնաքարային փոթորիկներ։
+profile.CUSTOM=Հատուկ
+profile.CUSTOM.comment=Օգտատիրոջ կողմից փոփոխված կարգավորումներ։
+
+screen.TRANSLATION_NOTICE=⚠ Թարգմանությունները կարող են սխալներ պարունակել
+screen.TRANSLATION_NOTICE.comment=Որոշ լոկալիզացիայի տողեր կարող են անճշտ լինել։ Եթե ինչ-որ բան տարօրինակ է թվում, համեմատեք անգլերեն բնօրինակի հետ։
+
+# Screens
+screen.LIGHTING=Լուսավորության կարգավորումներ
+screen.LIGHTING.comment=Կարգավորեք ստվերները, լույսի գույները և պայծառությունը։
+
+screen.FOLIAGE=Բուսականության կարգավորումներ
+screen.FOLIAGE.comment=Կարգավորեք խոտի և տերևների ճոճվող անիմացիաները։
+
+screen.WATER=Ջրի կարգավորումներ
+screen.WATER.comment=Կարգավորեք ալիքները, թափանցիկությունը և ջրի ոճը։
+
+screen.CLOUDS_MENU=Երկինք և ամպեր
+screen.CLOUDS_MENU.comment=Կարգավորեք 3D ամպերի և երկնքի էֆեկտների ֆիզիկական բարձրությունը, հաստությունը և ոճը։
+
+screen.POST_PROCESS=Հետմշակում և մշուշ
+screen.POST_PROCESS.comment=Կարգավորեք էքսպոզիցիան, մշուշը և կինեմատոգրաֆիկ էֆեկտները։
+
+# Options
+option.SHADOWS=Դինամիկ ստվերներ
+option.SHADOWS.comment=Միացրեք կամ անջատեք արևից և լուսնից փափուկ դինամիկ ստվերները։
+
+option.SHADOW_RES=Ստվերների լուծաչափ
+option.SHADOW_RES.comment=Փոխեք ստվերների քարտեզի որակը։ Ավելի բարձր արժեքները կարող են նվազեցնել արտադրողականությունը։
+
+option.PBR_LIGHTING=PBR լուսավորություն (LabPBR)
+option.PBR_LIGHTING.comment=Միացրեք ֆիզիկայի վրա հիմնված ռենդերինգը մետաղների, կոշտության և 3D նորմալ քարտեզների համար (պահանջվում է PBR ռեսուրսների փաթեթ)։
+
+option.PBR_POM=3D բլոկի ռելիեֆ (POM)
+option.PBR_POM.comment=Միացրեք ֆիզիկայի վրա հիմնված Պարալաքսի Փակման Քարտեզագրումը 3D բլոկների հյուսվածքների համար։ Խորհուրդ է տրվում անջատել անհամատեղելի ռեսուրսների փաթեթների վրա։
+
+option.PBR_STRENGTH=PBR ինտենսիվություն
+option.PBR_STRENGTH.comment=Կառավարեք PBR մետաղական մակերեսների անդրադարձումն ու փայլը։
+
+value.PBR_STRENGTH.1=Նուրբ
+value.PBR_STRENGTH.2=Ստանդարտ
+value.PBR_STRENGTH.3=Հայելի
+
+option.SSAO=SSAO / SAO փակում
+option.SSAO.comment=Էկրանային տարածության շրջակա միջավայրի փակում՝ անկյուններում, բլոկների տակ և երկրաչափական հատումների շուրջ կոնտակտային ստվերների համար։ Միացված է ԲԱՐՁՐից վերև։
+option.SSAO_STRENGTH=SSAO ուժ
+option.SSAO_STRENGTH.comment=Կառավարում է էկրանային տարածության շրջակա միջավայրի փակման խորությունը։ Ակտիվ է միայն երբ SSAO-ն միացված է։
+value.SSAO_STRENGTH.1=Նուրբ
+value.SSAO_STRENGTH.2=Հավասարակշռված
+value.SSAO_STRENGTH.3=Խորը
+
+option.LIGHTMAP_WARMTH=Ջահի ջերմություն
+option.LIGHTMAP_WARMTH.comment=Կարգավորեք բլոկի/ջահի լույսի ջերմությունն ու գույնը։
+
+value.LIGHTMAP_WARMTH.1=Հարմարավետ
+value.LIGHTMAP_WARMTH.2=Տաք
+value.LIGHTMAP_WARMTH.3=Ինտենսիվ
+
+option.WAVING_LEAVES=Ճոճվող տերևներ
+option.WAVING_LEAVES.comment=Միացրեք ծառերի տերևների մեղմ ճոճվող անիմացիաները։
+
+option.WAVING_GRASS=Ճոճվող բուսականություն
+option.WAVING_GRASS.comment=Միացրեք խոտի, ծաղիկների և բերքի ճոճվող անիմացիաները։
+
+option.WIND_SPEED=Քամու արագություն
+option.WIND_SPEED.comment=Կառավարեք տերևների, բույսերի և ջրի ալիքների ճոճման արագությունը։
+
+option.FOLIAGE_SSS=Բուսականության SSS
+option.FOLIAGE_SSS.comment=Միացնում է ստորմակերեսային ցրումը (թափանցիկություն) տերևների, խոտի և բույսերի համար, երբ նայում եք լույսի դեմ։
+
+value.WIND_SPEED.1=Մեղմ
+value.WIND_SPEED.2=Քամի
+value.WIND_SPEED.3=Փոթորիկ
+
+option.WATER_WAVES=Ջրի ալիքներ
+option.WATER_WAVES.comment=Միացրեք 3D երկրաչափական ալիքները ջրի մակերեսին։ Սառույցի և ապակու բլոկները բացառվում են ալիքի անիմացիայից։
+
+option.WATER_TRANSPARENCY=Ջրի խտություն
+option.WATER_TRANSPARENCY.comment=Կառավարեք ջրի, սովորական սառույցի և ապակու բլոկների թափանցիկությունն ու անթափանցելիությունը։
+
+value.WATER_TRANSPARENCY.1=Մաքուր
+value.WATER_TRANSPARENCY.2=Հավասարակշռված
+value.WATER_TRANSPARENCY.3=Խորը
+
+option.PROCEDURAL_CLOUDS=Ծավալային 3D ամպեր
+option.PROCEDURAL_CLOUDS.comment=Միացրեք ֆիզիկապես թռչելի 3D ամպերը, որոնց կարելի է հասնել և թռչել դրանց միջով։
+
+option.CLOUD_HEIGHT=Ամպերի բարձրություն
+option.CLOUD_HEIGHT.comment=Սահմանեք աշխարհում ամպային շերտի ֆիզիկական բարձրությունը (Y մակարդակ) (մետրերով)։
+
+value.CLOUD_HEIGHT.1=Ցածր (~110մ)
+value.CLOUD_HEIGHT.2=Ստանդարտ (~160մ)
+value.CLOUD_HEIGHT.3=Բարձր (~240մ)
+
+option.CLOUD_THICKNESS=Ամպերի հաստություն
+option.CLOUD_THICKNESS.comment=Կարգավորեք ամպերի ուղղահայաց հաստությունն ու ծավալը։
+
+value.CLOUD_THICKNESS.1=Բարակ (Փետրամպ)
+value.CLOUD_THICKNESS.2=Ստանդարտ (Կույտամպ)
+value.CLOUD_THICKNESS.3=Խիտ (Փոթորկային)
+
+option.CLOUD_DISTANCE=Ամպերի ռենդերի հեռավորություն
+option.CLOUD_DISTANCE.comment=Ծավալային ամպերի առավելագույն գծագրման հեռավորություն։ Որակի պրոֆիլներն ավտոմատ ավելացնում են այն։
+value.CLOUD_DISTANCE.1=Մոտ
+value.CLOUD_DISTANCE.2=Ստանդարտ
+value.CLOUD_DISTANCE.3=Հեռու
+value.CLOUD_DISTANCE.4=Շատ հեռու
+
+option.CLOUD_SHADOWS=Ամպերի ստվերներ
+option.CLOUD_SHADOWS.comment=Ավելացնում է թափանցիկ ընթացակարգային ստվերներ ծավալային ամպերի խտությունից տեղանքի վրա։ Հավասարակշռված է որակի պրոֆիլներով։
+option.CLOUD_SHADOW_STRENGTH=Ամպերի ստվերի ուժ
+option.CLOUD_SHADOW_STRENGTH.comment=Կառավարում է, թե որքան տեսանելի և դրամատիկ են թափանցիկ ամպերի ստվերները։
+value.CLOUD_SHADOW_STRENGTH.1=Փափուկ
+value.CLOUD_SHADOW_STRENGTH.2=Հավասարակշռված
+value.CLOUD_SHADOW_STRENGTH.3=Դրամատիկ
+
+option.GODRAYS=Արևի ճառագայթներ / Արևի սյուներ
+option.GODRAYS.comment=Ավելացնում է ֆիզիկայով ներշնչված ծավալային մեկ-ցրման արևի սյուներ՝ Beer-Lambert մարման, Mie փուլի և ստվերների քարտեզի փակման հետ։
+option.GODRAYS_QUALITY=Արևի ճառագայթների որակ
+option.GODRAYS_QUALITY.comment=Կառավարում է ֆիզիկայի վրա հիմնված ծավալային արևի ճառագայթների նմուշների քանակը և ինտեգրման հեռավորությունը։
+value.GODRAYS_QUALITY.1=Արագ
+value.GODRAYS_QUALITY.2=Հավասարակշռված
+value.GODRAYS_QUALITY.3=Բարձր
+
+option.AURORA_MODE=Հյուսիսափայլ
+option.AURORA_MODE.comment=Կառավարեք գիշերային երկնքում իրատեսական հոսող փայլերի ցուցադրումը։
+
+value.AURORA_MODE.0=Անջատված
+value.AURORA_MODE.1=Միայն ցուրտ բիոմներում
+value.AURORA_MODE.2=Միշտ միացված
+
+option.AURORA_SPEED=Փայլի արագություն
+option.AURORA_SPEED.comment=Կառավարեք հյուսիսափայլի ճոճման և հոսման արագությունը։
+
+value.AURORA_SPEED.1=Դանդաղ
+value.AURORA_SPEED.2=Ստանդարտ
+value.AURORA_SPEED.3=Արագ
+
+option.AURORA_STRENGTH=Փայլի պայծառություն
+option.AURORA_STRENGTH.comment=Կառավարեք հյուսիսափայլի ընդհանուր փայլի պայծառությունը։
+
+value.AURORA_STRENGTH.1=Փափուկ
+value.AURORA_STRENGTH.2=Ստանդարտ
+value.AURORA_STRENGTH.3=Փայլող
+
+option.NEBULA_BRIGHTNESS=Ծիր Կաթինի պայծառություն
+option.NEBULA_BRIGHTNESS.comment=Կարգավորեք գիշերը անկյունագծային դարչնագույն գալակտիկական միգամածության փայլի պայծառությունը։
+
+value.NEBULA_BRIGHTNESS.1=Աղոտ
+value.NEBULA_BRIGHTNESS.2=Ստանդարտ
+value.NEBULA_BRIGHTNESS.3=Պայծառ
+
+option.STARS_BRIGHTNESS=Աստղերի պայծառություն
+option.STARS_BRIGHTNESS.comment=Կառավարեք գիշերը աստղերի պայծառությունն ու փայլփլող շողը։
+
+value.STARS_BRIGHTNESS.1=Թույլ
+value.STARS_BRIGHTNESS.2=Ստանդարտ
+value.STARS_BRIGHTNESS.3=Փայլուն
+
+option.STARS_AMOUNT=Աստղերի խտություն
+option.STARS_AMOUNT.comment=Կառավարեք երկնքում աստղերի ընդհանուր քանակն ու խտությունը։
+
+value.STARS_AMOUNT.1=Քիչ
+value.STARS_AMOUNT.2=Ստանդարտ
+value.STARS_AMOUNT.3=Խիտ
+
+option.RAINBOW_STRENGTH=Ծիածանի ինտենսիվություն
+option.RAINBOW_STRENGTH.comment=Կարգավորեք անձրևից հետո ծիածանի պայծառությունն ու գույնի հագեցվածությունը։
+
+value.RAINBOW_STRENGTH.1=Նուրբ
+value.RAINBOW_STRENGTH.2=Հավասարակշռված
+value.RAINBOW_STRENGTH.3=Վառ
+
+option.SHOOTING_STARS=Երկնաքարեր (ընկնող աստղեր)
+option.SHOOTING_STARS.comment=Ֆիզիկայի վրա հիմնված երկնաքարեր, որոնք մտնում են մեզոսֆերա (~80-120 կմ)։ Ռենդերում է իրական մեծ շրջանի 3D աղեղներ՝ աբլացիոն լույսի կորերով, սև մարմնի պլազմայի գույնով (3500-5500 K), հորիզոնի մոտ Rayleigh մարմամբ և հրագնդիկների վրա կայուն իոնացման հետքերով։
+
+option.SHOOTING_STARS_FREQUENCY=Երկնաքարային ակտիվություն (ZHR)
+option.SHOOTING_STARS_FREQUENCY.comment=Մոտավոր զենիթային ժամային հաճախականություն։ Սպորադիկ = իրատեսական ֆոն՝ ժամում ~10։ Ակտիվ = թեթև տեղատարափ։ Փոթորիկ = գագաթնակետային խտություն (~100/ժ)։
+
+value.SHOOTING_STARS_FREQUENCY.1=Սպորադիկ (~10/ժ)
+value.SHOOTING_STARS_FREQUENCY.2=Ակտիվ տեղատարափ
+value.SHOOTING_STARS_FREQUENCY.3=Երկնաքարային փոթորիկ
+
+option.SHOOTING_STARS_BRIGHTNESS=Աստղային մեծության սանդղակ
+option.SHOOTING_STARS_BRIGHTNESS.comment=Հիմնական բազմապատկիչ երկնաքարային մեծության սանդղակի վրա։ Թույլ = իրատեսական միջին; Պայծառ = մեծացնում է հրագնդիկները կինեմատոգրաֆիկ տեսանելիության համար։
+
+value.SHOOTING_STARS_BRIGHTNESS.1=Թույլ (Իրատեսական)
+value.SHOOTING_STARS_BRIGHTNESS.2=Ստանդարտ
+value.SHOOTING_STARS_BRIGHTNESS.3=Պայծառ հրագնդիկներ
+
+option.COZY_LIGHTS=Ջահի թարթում
+option.COZY_LIGHTS.comment=Միացրեք տաք, հարմարավետ, իրական ժամանակի թարթման անիմացիաներ ջահերի, խարույկների և լապտերների համար։
+
+option.WET_REFLECTIONS=Անձրևի թացության անդրադարձումներ
+option.WET_REFLECTIONS.comment=Անձրևի ժամանակ կոշտ բլոկները՝ ինչպիսիք են գետինը, խոտը և քարը, դառնում են թաց, մուգ և փայլուն երկնքի տակ։
+
+option.GROUND_MIST=Ցածր գետնի մշուշ (Y=62-66)
+option.GROUND_MIST.comment=Միացրեք փափուկ, ոսկեգույն-սպիտակ առավոտյան/երեկոյան մշուշի շերտեր, որոնք սահում են ջրի և սառույցի վրայով արշալույսին և մթնշաղին։
+
+option.FOG_DENSITY_LEVEL=Մշուշի խտություն
+option.FOG_DENSITY_LEVEL.comment=Կառավարեք մթնոլորտային հորիզոնի մշուշի ուժը։
+
+value.FOG_DENSITY_LEVEL.1=Ցածր
+value.FOG_DENSITY_LEVEL.2=Միջին
+value.FOG_DENSITY_LEVEL.3=Բարձր
+
+option.EXPOSURE=Էքսպոզիցիայի պայծառություն
+option.EXPOSURE.comment=Կառավարեք պատկերի ընդհանուր պայծառությունը։
+
+value.EXPOSURE.1=Մարված
+value.EXPOSURE.2=Հավասարակշռված
+value.EXPOSURE.3=Վառ
+
+option.COLOR_SATURATION=Գույնի վառություն
+option.COLOR_SATURATION.comment=Կառավարեք էկրանի գույների ոչ գծային հագեցվածությունը։ Բուսականությունը դարձնում է զմրուխտ, իսկ երկինքը՝ փարթամ։
+
+value.COLOR_SATURATION.1=Մարված
+value.COLOR_SATURATION.2=Հավասարակշռված
+value.COLOR_SATURATION.3=Գունավոր
+value.COLOR_SATURATION.4=Վառ
+
+option.CONTRAST=Պատկերի կոնտրաստ
+option.CONTRAST.comment=Ընտրեք տոնի քարտեզագրման և կոնտրաստի կորի ոճը։
+
+value.CONTRAST.1=Փափուկ
+value.CONTRAST.2=Կինոնկարային (ACES)
+value.CONTRAST.3=Ինտենսիվ (Բարձր կոնտրաստ)
+value.CONTRAST.4=Լուսանկարչական (AgX-նման)
+
+option.TAA=Ժամանակային հակաատամնավորում (TAA)
+option.TAA.comment=Ժամանակային լուծում շարժման վերաարտապատկերմամբ և հարևանության կտրմամբ։ Նվազեցնում է թարթումը և ատամնավոր եզրերը բարձր կարգավորումներում։
+option.TAA_STRENGTH=TAA ուժ
+option.TAA_STRENGTH.comment=Կառավարում է պատմության խառնումը։ Ավելի բարձրն ավելի կայուն է, բայց կարող է ավելի փափուկ լինել շարժման ժամանակ։
+value.TAA_STRENGTH.1=Թեթև
+value.TAA_STRENGTH.2=Հավասարակշռված
+value.TAA_STRENGTH.3=Կայուն
+
+
+
+option.VIGNETTE=Վինյետի էֆեկտ
+option.VIGNETTE.comment=Միացրեք էկրանի եզրերի նուրբ մգացում՝ բարելավված ֆոկուսի համար։
+
+# ==============================================================================
+# Spatial Anti-Aliasing
+# ==============================================================================
+option.SPATIAL_AA_MODE=Տարածական հակաատամնավորում
+option.SPATIAL_AA_MODE.comment=Ընտրեք հետմշակման հակաատամնավորման մեթոդը։ FXAA-ն արագ է և էժան։ SMAA-ն օգտագործում է խորության բուֆերը երկրաչափական եզրերում ավելի լավ որակի համար։ Կարող է համակցվել TAA-ի հետ։
+value.SPATIAL_AA_MODE.0=Անջատված
+value.SPATIAL_AA_MODE.1=FXAA (Արագ)
+value.SPATIAL_AA_MODE.2=SMAA (Որակ)
+
+option.WATER_RIFFLES=Ջրի ալիքների ուժ
+option.WATER_RIFFLES.comment=Կարգավորեք ջրի վրա նուրբ նորմալ քարտեզի ալիքների ալիքավորումն ու ինտենսիվությունը։ Չի ազդում սառույցի կամ ապակու վրա։
+
+value.WATER_RIFFLES.1=Հանգիստ
+value.WATER_RIFFLES.2=Ստանդարտ
+value.WATER_RIFFLES.3=Ալեկոծ
+
+option.WATER_SPECULAR_STRENGTH=Ջրի փայլուն շող
+option.WATER_SPECULAR_STRENGTH.comment=Կարգավորեք ջրի ալիքների վրա արևի/լուսնի անդրադարձումների պայծառությունը։
+
+value.WATER_SPECULAR_STRENGTH.1=Փափուկ
+value.WATER_SPECULAR_STRENGTH.2=Ստանդարտ
+value.WATER_SPECULAR_STRENGTH.3=Փայլատակող
+
+option.SHADOW_SOFTNESS=Ստվերների փափկություն
+option.SHADOW_SOFTNESS.comment=Կառավարում է, թե որքան փափուկ և ցրված են երևում ստվերների եզրերը։ Օգտագործում է պտտված Poisson սկավառակի զտում՝ հարթ կիսաստվերի համար։
+
+value.SHADOW_SOFTNESS.1=Սուր
+value.SHADOW_SOFTNESS.2=Փափուկ
+value.SHADOW_SOFTNESS.3=Ուլտրա փափուկ
+
+# ==============================================================================
+# Sun & Moon Lighting
+# ==============================================================================
+screen.SUN_MOON=Արև և լուսին
+screen.SUN_MOON.comment=Ճշգրիտ կարգավորեք արևի և լուսնի ինտենսիվությունը, գույնի ջերմաստիճանը և մթնոլորտային էֆեկտները։
+
+option.SUN_INTENSITY=Արևի ինտենսիվություն
+option.SUN_INTENSITY.comment=Ուղիղ արևի լույսի հիմնական պայծառություն։ Ավելի բարձր = ավելի ուժեղ ցերեկային կոնտրաստ։
+value.SUN_INTENSITY.1=Աղոտ
+value.SUN_INTENSITY.2=Ստանդարտ
+value.SUN_INTENSITY.3=Պայծառ
+value.SUN_INTENSITY.4=Կիզիչ
+
+option.MOON_INTENSITY=Լուսնի ինտենսիվություն
+option.MOON_INTENSITY.comment=Լուսնի լույսի հիմնական պայծառություն։ Ավելի բարձր = ավելի պայծառ, ավելի տեսանելի գիշերներ։
+value.MOON_INTENSITY.1=Անթափանց գիշեր
+value.MOON_INTENSITY.2=Ստանդարտ
+value.MOON_INTENSITY.3=Պայծառ լուսին
+value.MOON_INTENSITY.4=Լիարժեք գիշեր
+
+option.SUN_TEMPERATURE=Արևի գույնի ջերմաստիճան
+option.SUN_TEMPERATURE.comment=Տեղափոխում է արևի Կելվինի կորը։ Իրատեսականն օգտագործում է Tanner Helland սև մարմինը; տաք = ոսկեգույն; սառը = չեզոք սպիտակ։
+value.SUN_TEMPERATURE.1=Սառը / Չեզոք
+value.SUN_TEMPERATURE.2=Իրատեսական
+value.SUN_TEMPERATURE.3=Տաք ոսկեգույն
+
+option.MOON_TEMPERATURE=Լուսնի գույնի ջերմաստիճան
+option.MOON_TEMPERATURE.comment=Լուսնի լույսի երանգ։ Սառցե = կապտավուն սառը; Արծաթ = իրատեսական 4100K; Տաք = բերքի լուսնի կրեմ։
+value.MOON_TEMPERATURE.1=Սառցե կապույտ
+value.MOON_TEMPERATURE.2=Արծաթ (Իրատեսական)
+value.MOON_TEMPERATURE.3=Տաք կրեմ
+
+option.SUN_HALO=Արևի լուսապսակ (Mie ցրում)
+option.SUN_HALO.comment=Ավելացնում է փափուկ տաք շող տեղանքի վրա, երբ նայում եք արևի մոտ (Mie առաջընթաց ցրում)։
+
+option.SUNRISE_GLOW=Ուժեղացված արևածագի/մայրամուտի շող
+option.SUNRISE_GLOW.comment=Միացնում է ավելի ուժեղ տաք հետընթաց ցրում, որը պարուրում է ցածր արևից շեղված մակերեսները։
+
+# ==============================================================================
+# Extended shadow settings
+# ==============================================================================
+option.SHADOW_DISTANCE=Ստվերների հեռավորություն
+option.SHADOW_DISTANCE.comment=Առավելագույն հեռավորություն, որով դինամիկ ստվերները ռենդերվում են մարելուց առաջ։
+value.SHADOW_DISTANCE.1=Մոտ (60մ)
+value.SHADOW_DISTANCE.2=Ստանդարտ (80մ)
+value.SHADOW_DISTANCE.3=Հեռու (120մ)
+value.SHADOW_DISTANCE.4=Ուլտրա (160մ)
+
+option.AMBIENT_BRIGHTNESS=Ստվերի բարձրացում / Շրջակա միջավայր
+option.AMBIENT_BRIGHTNESS.comment=Կառավարում է, թե որքան մուգ են երևում ստվերապատ տարածքները գիշերը և քարանձավներում։
+value.AMBIENT_BRIGHTNESS.1=Մուգ
+value.AMBIENT_BRIGHTNESS.2=Ստանդարտ
+value.AMBIENT_BRIGHTNESS.3=Բարձրացված (Պայծառ)
+
+option.SHADOW_TINT=Ստվերի երանգ
+option.SHADOW_TINT.comment=Երանգավորում է ցերեկային ստվերները։ Կապույտ երկնքի տակ իրական ստվերներն ունեն նուրբ սառը երանգ։
+value.SHADOW_TINT.1=Չեզոք մոխրագույն
+value.SHADOW_TINT.2=Սառը կապույտ (Իրատեսական)
+value.SHADOW_TINT.3=Տաք
+
+option.LIGHT_WRAP=Լույսի փաթաթում
+option.LIGHT_WRAP.comment=Մեղմացնում է լուսավորված և չլուսավորված մակերեսների միջև սահմանը։ Իրատեսական = ֆիզիկական Lambert; Փափուկ = հաճելի սքրինշոթերի համար։
+value.LIGHT_WRAP.1=Իրատեսական (Lambert)
+value.LIGHT_WRAP.2=Փափուկ փաթաթում
+value.LIGHT_WRAP.3=Ոճավորված
+
+# ==============================================================================
+# Screen-Space Reflections (SSR)
+# ==============================================================================
+option.SSR=Էկրանային տարածության անդրադարձումներ (SSR)
+option.SSR.comment=Ավելացնում է իրական ժամանակի անդրադարձված միջավայր ջրի, թաց մակերեսների և մետաղական PBR բլոկների վրա։ Միացված է ՄԻՋԻՆից վերև։
+
+option.SSR_QUALITY=SSR որակ
+option.SSR_QUALITY.comment=Կառավարում է էկրանային տարածության անդրադարձումների ճշգրտությունն ու ճառագայթի հեռավորությունը։ Ավելի բարձր = ավելի սուր անդրադարձումներ, բայց ավելի շատ GPU ծախս։
+value.SSR_QUALITY.1=Արագ (12 քայլ)
+value.SSR_QUALITY.2=Հավասարակշռված (24 քայլ)
+value.SSR_QUALITY.3=Բարձր (40 քայլ)
+
+option.SSR_STRENGTH=SSR ուժ
+option.SSR_STRENGTH.comment=Կառավարում է, թե որքան տեսանելի և ակնառու է երևում անդրադարձված միջավայրն անդրադարձնող մակերեսների վրա։
+
+option.WATER_WAVE_SCALE=Ալիքի ամպլիտուդ
+option.WATER_WAVE_SCALE.comment=Կառավարում է ջրի մակերեսի ալիքների տեսանելի զառիթափությունը։ Հանգիստ = հայելու նման, Փոթորկային = ուժեղ կոտրված անդրադարձումներ։
+option.WATER_WAVE_DETAIL=Ալիքի մանրամասն
+option.WATER_WAVE_DETAIL.comment=Կառավարում է, թե քանի փոքր ալիք է հայտնվում յուրաքանչյուր բլոկում։ Կոպիտ = մի քանի մեծ ալիք, Խիտ = շատ փոքր ալիքներ։
+option.UNDERWATER_NIGHT_DARKNESS=Ստորջրյա գիշերային մթություն
+option.UNDERWATER_NIGHT_DARKNESS.comment=Կառավարում է, թե որքան մութ է դառնում ստորջրյա տեսարանը գիշերը։ Լուսնալույս լողավազանը պահպանում է պայծառությունը; Անթափանց մթությունը տալիս է գոյատևման ոճի ծայրահեղ խավար։
+value.SSR_STRENGTH.1=Նուրբ
+value.SSR_STRENGTH.2=Հավասարակշռված
+value.SSR_STRENGTH.3=Ուժեղ
+
+# v0.2.9 — water/underwater value labels
+value.WATER_WAVE_SCALE.1=Հանգիստ
+value.WATER_WAVE_SCALE.2=Ստանդարտ
+value.WATER_WAVE_SCALE.3=Ալեկոծ
+value.WATER_WAVE_SCALE.4=Փոթորկային
+value.WATER_WAVE_DETAIL.1=Կոպիտ
+value.WATER_WAVE_DETAIL.2=Ստանդարտ
+value.WATER_WAVE_DETAIL.3=Խիտ
+value.UNDERWATER_NIGHT_DARKNESS.1=Լուսնալույս լողավազան
+value.UNDERWATER_NIGHT_DARKNESS.2=Աղոտ
+value.UNDERWATER_NIGHT_DARKNESS.3=Իրական գիշեր
+value.UNDERWATER_NIGHT_DARKNESS.4=Անթափանց մթություն
+
+# PBR Distance
+option.PBR_DISTANCE=PBR ռենդերի հեռավորություն
+option.PBR_DISTANCE.comment=PBR փայլուն գագաթնակետերի առավելագույն հեռավորություն։ Խնայում է GPU հեռավոր տեղանքում։ Մոտ (16մ) ՑԱԾՐի համար, Ստանդարտ (48մ) ՄԻՋԻՆի համար, Հեռու (128մ) ԲԱՐՁՐ/ՈՒԼՏՐԱ-ի համար, Անսահմանափակ ԾԱՅՐԱՀԵՂի համար։
+value.PBR_DISTANCE.1=Մոտ (16մ)
+value.PBR_DISTANCE.2=Ստանդարտ (48մ)
+value.PBR_DISTANCE.3=Հեռու (128մ)
+value.PBR_DISTANCE.4=Անսահմանափակ
