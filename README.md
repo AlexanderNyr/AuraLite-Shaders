@@ -4,7 +4,7 @@
 [![Shader Loader](https://img.shields.io/badge/Loader-Iris%20%2F%20Sodium-green)](https://modrinth.com/mod/iris)
 [![API Standard](https://img.shields.io/badge/API-OpenGL%204.6%20%2F%20GLSL%20460-orange)](https://khronos.org/)
 [![Materials Standard](https://img.shields.io/badge/PBR-LabPBR%201.3-cyan)](https://github.com/rre36/lab-pbr)
-[![Version](https://img.shields.io/badge/Release-v1.0.6-purple)](https://github.com/AlexanderNyr/AuraLite-Shaders)
+[![Version](https://img.shields.io/badge/Release-v1.0.7-purple)](https://github.com/AlexanderNyr/AuraLite-Shaders)
 [![License](https://img.shields.io/badge/License-CC%20BY--NC--SA%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by-nc-sa/4.0/)
 
 
@@ -15,6 +15,25 @@ AuraLite delivers a breathtaking, realistic visual experience without overcompli
 ---
 
 > ℹ️ **Historical note:** older changelog sections below are preserved as original release notes.
+
+## 🆕 What's New in v1.0.7 — *Comprehensive Bug Fix & Stability Update*
+
+Version **1.0.7** conducts a deep code audit across the entire GLSL 460 pipeline to resolve rendering anomalies, feedback loops, and multi-pass inconsistencies introduced in earlier releases.
+
+### 🐞 Bug Fixes & Architectural Polish
+* **Massive Volumetric Cloud, Godray & Aurora FPS Bottleneck Resolved**
+* **Underwater Screen-Space Ripple Distortion Feedback Loop Fixed** — Removed legacy underwater ripple screen distortion from `composite.fsh` (where it erroneously sampled raw unlit G-buffer albedo `colortex0` and mixed unshaded texels into the lit scene). Moved clean underwater screen-space view perturbation directly into `final.fsh`, sampling the fully lit, composited, and TAA-resolved scene.
+* **Glass & Ice Water Refraction / Reflection Distortion Fixed** — Solved a multi-target G-buffer collision where stained glass windows and ice blocks triggered the depth-comparison detector `(depthS - depth) > 1e-5` in `final.fsh`. Added a dedicated material alpha tag `colortex2.a = 0.8` for water in `gbuffers_water` and `gbuffers_terrain_translucent`, ensuring glass windows (`1.0`) and ice blocks (`1.0`) never receive underwater refraction ripples or wavy water SSR reflections.
+* **Procedural Lava POM Coordinate Discard Fixed** — Standardized the 4-step Parallax Occlusion Mapping loop in `gbuffers_water.fsh` and `gbuffers_terrain_translucent.fsh` to match `gbuffers_terrain.fsh`. Displaced UV coordinates `p = currentTexCoords` are now properly retained across the entire shader block for crack height calculations, temperature gradients, hotspots, and rising bubbles.
+* **Unnormalized Lava Normal Output Fixed** — Normalized the G-buffer normal output `normalize(normal)` in `gbuffers_terrain.fsh` before encoding into `colortex2`, preventing interpolated vector length drift across triangle interiors.
+* **Camera-Inside Volumetric Fog, Ground Mist & Valley Sheets Fixed** — In `getInsideGroundMistVeil()`, `applyInsideCloudVeil()`, and distant ground mist sheet rendering, fixed the exponential absorption rate (lowered from `0.014`/`0.0105` to `0.0018`/`0.0035`) and removed hardcoded blanket opacity ceilings (`0.30`/`0.34`). Wired the user's `FOG_DENSITY_LEVEL` setting directly into volume optical thickness. Added a smooth attenuation factor `(1.0 - camMistHere * 0.95)` to distant 2D sheets when standing inside the ground mist layer, preventing double-accumulation with the screen-space volumetric veil.
+* **PCSS Blocker Search Self-Shadow Acne Fixed** — Updated the blocker depth comparison threshold in `composite.fsh` from a static `1e-4` epsilon to the dynamic surface slope bias (`bias`). Sloped terrain no longer detects itself as a false shadow occluder.
+* **POM Division-By-Zero NaN Fixed** — In `getParallaxCoords()`, changed the ray hit weight denominator from `(afterDepth - beforeDepth + 0.0001)` to `min(afterDepth - beforeDepth, -1e-5)`. Since `afterDepth - beforeDepth` is strictly negative, adding `+0.0001` mathematically cancelled out the denominator to zero on subtle step transitions, causing black dot NaN artifacts.
+* **POM Optical View Angle Cotangent Scaling & Limiting Added** — Scaled tangent-space UV step offsets by `V_tang.xy / max(abs(V_tang.z), 0.15)` across all POM passes. Parallax crack depth now physically stretches when viewed at grazing angles instead of flattening out.
+* **Procedural Lava Sub-Step POM Linear Interpolation Added** — Replaced the discrete sub-step endpoint `p = currentTexCoords` in the lava POM loop with exact linear interpolation `mix(currentTexCoords, prevTexCoords, weight)`. Internal crack walls no longer suffer from 4-step banding/stepping artifacts.
+* **Block Mapping Extended** — Added `minecraft:magma_block` to block ID `10009` in `block.properties`, granting overworld and nether magma blocks dynamic procedural glowing Voronoi cracks.
+
+---
 
 ## 🆕 What's New in v1.0.6 — *Procedural Lava & Heat Shimmer*
 
