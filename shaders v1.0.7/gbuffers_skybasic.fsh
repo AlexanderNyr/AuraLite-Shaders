@@ -847,12 +847,16 @@ void main() {
                 const int steps = 12; // [FIX v1.0.7] High performance 12 steps (visually identical to 24)
                 float dt = (tMax - tMin) / float(steps);
                 
-                // [FIX v1.0.7] Fast hardware dither offset instead of heavy noise() call
-                float smoothOffset = fract(sin(dot(gl_FragCoord.xy, vec2(12.9898, 78.233))) * 43758.5453);
-                float rayT = tMin + dt * smoothOffset; 
-                
-                // [FIX v1.0.7] Precompute spatial color variation once outside the ray loop
-                float spatialColorOffset = sin(worldDir.x * 3.5 + worldDir.z * 2.8) * 0.2;
+                // [FIX v1.0.7] Centered dither offset (-0.5..+0.5) instead of 0..1,
+                //             and only 60% of dt — the previous 0..1 dither made
+                //             adjacent pixels start at very different ray distances,
+                //             which read as flickering high-frequency static.
+                float smoothOffset = fract(sin(dot(gl_FragCoord.xy, vec2(12.9898, 78.233))) * 43758.5453) - 0.5;
+                float rayT = tMin + dt * (smoothOffset * 0.6 + 0.5);
+
+                // [FIX v1.0.7] Lower-frequency, lower-amplitude spatial color
+                //             variation to avoid rapid per-pixel colour flutter.
+                float spatialColorOffset = sin(worldDir.x * 2.2 + worldDir.z * 1.7) * 0.18;
                 
                 vec3 auroraAccum = vec3(0.0);
                 
@@ -870,46 +874,59 @@ void main() {
                     float c1 = 1.0 - abs(sin(uv.x * 2.0 + warp));
                     float c2 = 1.0 - abs(sin(uv.x * 2.8 - warp * 0.8 + 2.0));
                     
-                    // High power makes the curtains thin and sharp
-                    float ribbon = pow(max(0.0, c1), 5.0) + pow(max(0.0, c2), 5.0) * 0.5;
-                    
-                    // Vertical Pillars / Rays (Striations)
-                    // [FIX v1.0.7] Fast hardware ALU periodic wave for vertical pillars
-                    float rayNoise = sin(uv.x * 32.0 + warp * 3.0 - auroraTime * 4.0) * 0.5 + 0.5;
-                    float rays = pow(rayNoise, 3.0) * 2.0;
-                    
+                    // [FIX v1.0.7] Softer curtain edges (5.0 → 3.5 power) — the high
+                    //             power made the ribbons very thin and broke into
+                    //             blocky "stripes" that read as visual noise.
+                    float ribbon = pow(max(0.0, c1), 3.5) + pow(max(0.0, c2), 3.5) * 0.45;
+
+                    // [FIX v1.0.7] Vertical Pillars / Rays — frequency lowered
+                    //             from 32.0 → 14.0, and two slightly offset waves
+                    //             are blended together to break the periodic aliasing
+                    //             that made the pillars look like high-freq static.
+                    //             Exponent softened (3.0 → 1.8), multiplier 2.0 → 1.3.
+                    float rayA = sin(uv.x * 14.0 + warp * 1.6 - auroraTime * 3.2) * 0.5 + 0.5;
+                    float rayB = sin(uv.x *  9.0 - warp * 0.7 + auroraTime * 2.1) * 0.5 + 0.5;
+                    float rayNoise = mix(rayA, rayB, 0.5);
+                    float rays = pow(rayNoise, 1.8) * 1.3;
+
                     // Combine ribbon and rays
-                    float density = ribbon * (0.3 + 0.7 * rays);
-                    
+                    float density = ribbon * (0.35 + 0.65 * rays);
+
                     // Height profile: Sharp bottom, smooth top fade
                     float heightFade = smoothstep(0.0, 0.08, h) * (1.0 - smoothstep(0.2, 1.0, h));
                     density *= heightFade;
-                    
+
                     if (density > 0.01) {
-                        // Photographic Colors from the reference image
-                        vec3 colorGreen  = vec3(0.0, 0.8, 0.5); // Vibrant Cyan-Green, slightly dimmed
-                        vec3 colorPurple = vec3(0.6, 0.1, 0.7); // Vibrant Magenta/Purple, slightly dimmed
-                        
+                        // [FIX v1.0.7] Toned-down photographic palette (~30% dimmer
+                        //             and less saturated) so the aurora reads as a
+                        //             soft glow rather than oversaturated neon.
+                        vec3 colorGreen  = vec3(0.0,  0.55, 0.32); // Cyan-Green
+                        vec3 colorPurple = vec3(0.42, 0.08, 0.50); // Magenta/Purple
+                        vec3 colorBlue   = vec3(0.04, 0.08, 0.35); // Deep blue upper edge
+
                         float colorMix = clamp(smoothstep(0.15, 0.7, h) + spatialColorOffset, 0.0, 1.0);
-                        
+
                         vec3 color = mix(colorGreen, colorPurple, colorMix);
-                        vec3 colorBlue = vec3(0.05, 0.1, 0.5);
                         color = mix(color, colorBlue, smoothstep(0.7, 1.0, h));
-                        
+
                         auroraAccum += color * density;
                     }
-                    
+
                     rayT += dt;
                 }
-                
-                // Optical depth normalization
-                float opticalDepth = (dt / (hMax - hMin)) * 0.35;
+
+                // [FIX v1.0.7] Optical depth scaling lowered (0.35 → 0.26) so the
+                //             overall accumulation is softer and dimmer.
+                float opticalDepth = (dt / (hMax - hMin)) * 0.26;
                 auroraAccum *= opticalDepth;
-                
+
                 // Horizon fade
                 float horizonMask = smoothstep(0.02, 0.15, worldDir.y);
-                
-                finalSky += auroraAccum * visibility * horizonMask * strength;
+
+                // [FIX v1.0.7] Final intensity multiplier 0.78 — global dimming on
+                //             top of the per-profile AURORA_STRENGTH so the aurora
+                //             feels atmospheric rather than blindingly vivid.
+                finalSky += auroraAccum * visibility * horizonMask * strength * 0.78;
             }
         }
         #endif

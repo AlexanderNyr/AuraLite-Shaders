@@ -16,9 +16,9 @@ AuraLite delivers a breathtaking, realistic visual experience without overcompli
 
 > ℹ️ **Historical note:** older changelog sections below are preserved as original release notes.
 
-## 🆕 What's New in v1.0.7 — *Comprehensive Bug Fix & Stability Update*
+## 🆕 What's New in v1.0.7 — *Comprehensive Bug Fix, Stability & Aurora Refinement Update*
 
-Version **1.0.7** conducts a deep code audit across the entire GLSL 460 pipeline to resolve rendering anomalies, feedback loops, and multi-pass inconsistencies introduced in earlier releases.
+Version **1.0.7** conducts a deep code audit across the entire GLSL 460 pipeline to resolve rendering anomalies, feedback loops, and multi-pass inconsistencies introduced in earlier releases, and additionally refines the Aurora Borealis to remove high-frequency visual noise while softening its overall luminance.
 
 ### 🐞 Bug Fixes & Architectural Polish
 * **Massive Volumetric Cloud, Godray & Aurora FPS Bottleneck Resolved**
@@ -32,6 +32,22 @@ Version **1.0.7** conducts a deep code audit across the entire GLSL 460 pipeline
 * **POM Optical View Angle Cotangent Scaling & Limiting Added** — Scaled tangent-space UV step offsets by `V_tang.xy / max(abs(V_tang.z), 0.15)` across all POM passes. Parallax crack depth now physically stretches when viewed at grazing angles instead of flattening out.
 * **Procedural Lava Sub-Step POM Linear Interpolation Added** — Replaced the discrete sub-step endpoint `p = currentTexCoords` in the lava POM loop with exact linear interpolation `mix(currentTexCoords, prevTexCoords, weight)`. Internal crack walls no longer suffer from 4-step banding/stepping artifacts.
 * **Block Mapping Extended** — Added `minecraft:magma_block` to block ID `10009` in `block.properties`, granting overworld and nether magma blocks dynamic procedural glowing Voronoi cracks.
+
+### 🌌 Aurora Borealis Refinement — Smoother & Softer
+The volumetric Aurora in `gbuffers_skybasic.fsh` was producing subtle high-frequency "static" patterns and reading slightly oversaturated on bright presets. The shader pass has been retuned in this release:
+
+* **Dither offset re-centered and weakened** — Replaced the `0..1` per-pixel ray start offset with a centered `-0.5..+0.5` range scaled down to `0.6 × dt`. Adjacent pixels now sample closer ray distances, eliminating the flickering pattern that read as visual noise.
+* **Vertical ray frequency lowered (32.0 → 14.0)** — The single very-high-frequency `sin(uv.x × 32)` that powered the striations aliased into thin static-like lines. Two slightly offset waves (`14.0` + `9.0`) are now blended together with `mix(0.5)` to break the periodic aliasing while preserving the characteristic vertical pillar look.
+* **Ray sharpness softened (3.0 → 1.8) and amplitude reduced (2.0 → 1.3)** — Pillars no longer have harsh, sharp edges; they blend smoothly into the curtain ribbon.
+* **Curtain ribbon exponent softened (5.0 → 3.5)** and weight lowered from `0.5` to `0.45` — Lighter, more atmospheric curtains without the blocky stripe artifacts the high power was producing.
+* **Spatial color variation slowed down** — `sin(worldDir.x × 3.5 + worldDir.z × 2.8) × 0.2` → `sin(worldDir.x × 2.2 + worldDir.z × 1.7) × 0.18`. Color shifts across the sky are now gradual instead of rapid.
+* **Photographic palette toned down (~30% dimmer)**:
+  * Cyan-Green: `(0.0, 0.80, 0.50)` → `(0.0, 0.55, 0.32)`
+  * Magenta/Purple: `(0.60, 0.10, 0.70)` → `(0.42, 0.08, 0.50)`
+  * Deep Blue (upper edge): `(0.05, 0.10, 0.50)` → `(0.04, 0.08, 0.35)`
+* **Optical depth scaling lowered (0.35 → 0.26)** and final intensity multiplier `× 0.78` — Overall accumulation is roughly **35–40% softer** than the v1.0.7 original. The `AURORA_STRENGTH` profile setting still controls user-level intensity on top.
+
+The aurora now reads as a soft, glowing, photographic northern light rather than an over-saturated neon stripe pattern. No menu changes; no new options; no profile changes. All existing `AURORA_MODE`, `AURORA_SPEED`, and `AURORA_STRENGTH` settings behave as before.
 
 ---
 
@@ -432,7 +448,7 @@ Version **0.2.0** was the original content update that nearly doubled the pack's
 * 🧊 **Ice Glitch Fix** — dedicated block ID disables waving/refraction on ice variants to eliminate visual artifacts. *(v1.0.4: split into regular ice (semi-transparent) and packed/blue ice (opaque) with proper texture rendering.)*
 * 🌙 **Moon-Phase Aware Sky** — sky shading reacts to `moonPhase` and `dimension` for nether/end correctness.
 
-> Source for every version is shipped in this repo under [`shaders v0.2.0/`](shaders%20v0.2.0) through [`shaders v1.0.6/`](shaders%20v1.0.6). The current source snapshot is **v1.0.6**. End users should grab the packaged release ZIP from [Releases](https://github.com/AlexanderNyr/AuraLite-Shaders/releases).
+> Source for every version is shipped in this repo under [`shaders v0.2.0/`](shaders%20v0.2.0) through [`shaders v1.0.7/`](shaders%20v1.0.7). The current source snapshot is **v1.0.7**. End users should grab the packaged release ZIP from [Releases](https://github.com/AlexanderNyr/AuraLite-Shaders/releases).
 
 ---
 
@@ -450,7 +466,7 @@ AuraLite features a fully physical, flyable 3D cloud system driven by **12-step 
 
 ### 🌠 2. Living Night Sky *(since v0.2.0)*
 The night sky is no longer just a static starfield — it's a fully procedural cosmos:
-* **Aurora Borealis:** Realistic, flowing northern lights that ripple across the upper sky. Modes: *Disabled / Only in Cold Biomes / Always Enabled*, with independent **speed** and **brightness** controls. *(v0.2.5: rendered in `gbuffers_skybasic` for reliability; cold-biome detection uses real biome uniforms.)*
+* **Aurora Borealis:** Realistic, flowing northern lights that ripple across the upper sky. Modes: *Disabled / Only in Cold Biomes / Always Enabled*, with independent **speed** and **brightness** controls. *(v0.2.5: rendered in `gbuffers_skybasic` for reliability; cold-biome detection uses real biome uniforms. v1.0.7: tone softened and high-frequency noise removed — read as a photographic glow rather than oversaturated neon.)*
 * **Milky Way Nebula:** A subtle diagonal brownish galactic band glows softly above the horizon, with adjustable brightness.
 * **Procedural Stars:** Independent **brightness** and **density** sliders let you choose between a few crisp pinpricks or a brilliantly dense Hubble-style sky. Stars sparkle and twinkle in real time.
 * **Physically-Based Meteors / Falling Stars** *(v1.0.0)*: configurable meteor activity, brightness, moon washout, and persistent ionization trails bring realistic night-sky streaks to the Overworld and the End.
@@ -570,13 +586,13 @@ AuraLite is built from the ground up for maximum FPS using OpenGL 4.6 native har
 
 ## 📥 Installation
 
-1. Download **`AuraLite-Shaders-v1.0.6.zip`** from the [Releases](https://github.com/AlexanderNyr/AuraLite-Shaders/releases) section on the right.
+1. Download **`AuraLite-Shaders-v1.0.7.zip`** from the [Releases](https://github.com/AlexanderNyr/AuraLite-Shaders/releases) section on the right.
 2. Open your Minecraft directory (e.g. `%appdata%/.minecraft` on Windows).
 3. Place the downloaded `.zip` file inside the **`shaderpacks`** folder (Do **not** unzip it!).
 4. Launch a supported Minecraft version (**1.16.5 – 26.1.2**) using a profile with **Sodium + Iris** or **OptiFine** installed.
 5. In-game, go to **Options → Video Settings → Shader Packs**, select **AuraLite**, and click **Apply**.
 
-> 💡 The repository ships source folders for every release snapshot: `shaders v0.2.0/` through `shaders v1.0.6/`. The current source snapshot is **v1.0.6**. End users should grab the packaged release ZIP; developers can browse any folder directly.
+> 💡 The repository ships source folders for every release snapshot: `shaders v0.2.0/` through `shaders v1.0.7/`. The current source snapshot is **v1.0.7**. End users should grab the packaged release ZIP; developers can browse any folder directly.
 
 ---
 
