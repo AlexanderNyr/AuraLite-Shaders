@@ -284,47 +284,6 @@ Version **0.2.9** is a focused water-quality update that finally delivers the lo
 
 ---
 
-## 🆕 What's New in v0.2.8 — *Dimension Upgrades, Precise Biomes & Physics Fixes*
-
-Version **0.2.8** is a major dimension-specific realism, accuracy, and physics update. It implements bulletproof dimension detection using Minecraft's native engine uniforms, overhauls the End and Nether dimensions with custom atmospheres, solves long-standing visual and math bugs, and repacks the entire codebase.
-
-### 🌌 Dimension Upgrades (The End & The Nether)
-* **Crystal-Clear End Dimension** — completely removed clouds and fog in the End dimension (including on emissive surfaces). Obsidian towers and End cities are now perfectly clear, giving unblocked visibility to End stars and nebulae.
-* **Dynamic Nether Biome Atmospheres** — completely overhauled the Nether dimension. Instead of a single hardcoded orange-red fog, the shader now dynamically reads the active biome's `fogColor` (Crimson Forest, Warped Forest, Soul Sand Valley, Basalt Deltas, and Nether Wastes) and adapts both block fog and ambient lighting color in real-time.
-* **End Star Spherical Mapping** — replaced the old 2D stretched star projection in the End with a perfect, uniform 3D star grid mapping (synchronized with the Overworld). This completely eliminates equatorial star stretching and distortion near the horizon.
-
-### 🛠️ Bulletproof Code & Physics Fixes
-* **`worldTime` Overflow Protection** — replaced all occurrences of direct `float(worldTime)` casting with `mod(float(worldTime), 24000.0)`. This solves a major Minecraft bug where daylight cycles, twilight sunset factor, moon masks, and morning/evening mist would permanently freeze after the first Minecraft day (especially on long-term worlds and servers).
-* **Nether/End Cook-Torrance BRDF Light Alignment** — resolved a critical mathematical mismatch in PBR highlights. In non-Overworld dimensions where there is no direct sun/moon light direction, the light vector `L` is now aligned to a physical upward vector (`vec3(0.0, 1.0, 0.0)`), matching the overridden half-vector `H`. This guarantees perfect, balanced glossy/metallic specular reflections on all faces.
-* **Vibrancy Range Safety Clamp** — added a safety clamp inside the `applyVibrancy` saturation controller in `final.fsh`. This prevents negative values or channel overflows when using High/Extreme contrast or Vivid/Colorful presets, eliminating display clipping and driver-level color banding.
-* **Precise Biome Name Mappings** — updated `shaders.properties` custom uniforms to explicitly map and track individual Minecraft End biomes (`BIOME_THE_END`, `BIOME_SMALL_END_ISLANDS`, etc.) and Nether biomes (`BIOME_NETHER_WASTES`, `BIOME_SOUL_SAND_VALLEY`, etc.) rather than guessing by biome category.
-* **Minecraft Native `dimension` Uniform Integration** — declared and linked `uniform int dimension;` inside `composite.fsh` and `gbuffers_skybasic.fsh`. This provides 100% reliable, zero-overhead dimension checks (`-1` for Nether, `1` for End, `0` for Overworld) across all Minecraft versions, eliminating the "clouds in the Nether" and "fog in the End" glitches.
-
----
-
-## 🆕 What's New in v0.2.7 — *Realism, TAA & Compatibility Update*
-
-Version **0.2.7** is a practical visual-realism and compatibility update built on top of v0.2.6. It adds balanced next-generation effects for higher presets, fixes post-rain rainbows on more rendering paths, expands language support, and ships a correctly packaged shaderpack ZIP with a root `shaders/` folder.
-
-### 🌈 Sky & Weather Fixes
-* **Reliable post-rain rainbows** — rainbow and moonbow rendering moved into `gbuffers_skybasic` so they appear reliably after rain on Iris/OptiFine paths where the composite sky branch may not run.
-* **Safer sky rendering** — fixed stale G-buffer/emissive handling for sky pixels and guarded against invalid normal normalization.
-
-### ☀️ Physically-Inspired Light Shafts & Cloud Shadows
-* **Volumetric godrays** — added physically-inspired single-scattering sun shafts with Beer–Lambert extinction, Henyey–Greenstein / Mie phase, height-based aerosol density, shadow-map occlusion, weather attenuation, and cloud-shadow transmittance.
-* **Transparent procedural cloud shadows** — clouds now cast soft, variable-opacity shadows on terrain. Cirrus layers are faint, mid-level decks are moderate, and cumulus/storm decks are stronger and more dramatic.
-
-### 🎞️ TAA and Profile Balancing
-* **Temporal Anti-Aliasing (TAA)** — added a conservative temporal resolve with motion reprojection, previous-frame history, neighborhood clipping and motion/luminance rejection to reduce shimmer on high presets.
-* **New VERY_LOW profile** — a true maximum-FPS preset for very weak GPUs.
-* **Rebalanced profiles** — effects are distributed more gradually: cloud shadows begin at MED, godrays and TAA begin at HIGH, SSAO begins at ULTRA, and EXTREME pushes the heaviest variants.
-
-### 🌐 Localization & Packaging
-* **Localization expanded to 59 language files** — added many regional languages and compatibility aliases, including both `fil_ph.lang` and legacy `tl_ph.lang` for Filipino/Tagalog support.
-* **Correct shaderpack ZIP layout** — release ZIPs now contain a root `shaders/` directory, matching Minecraft shaderpack expectations.
-
----
-
 ## 🆕 Recap — What landed in v0.2.6 — *License Migration & Version Support*
 
 Version **0.2.6** is a legal protection and compatibility update. It migrates the project license to a copyleft non-commercial model to protect AuraLite from unauthorized commercial redistribution, adds copyright assertions to all source files, and officially expands tested compatibility.
