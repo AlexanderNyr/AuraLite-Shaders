@@ -131,12 +131,6 @@ All six quality profiles (VERY_LOW → EXTREME) have been rebalanced for a smoot
 
 * **Replaced all `fma()` calls with direct multiply-add expressions** across every shader file. The `fma()` intrinsic, while correct on most modern GPUs, caused compilation failures on certain drivers (particularly older Intel iGPUs and some Mesa versions). The replacement `a * b + c` expressions are mathematically equivalent and compile universally.
 
-### 🧭 Project metadata refresh
-
-* README and installation references now point to **v1.0.4**.
-* Source-folder notes now correctly describe the repository as containing snapshots through `shaders v1.0.4/`.
-* All profile definitions and settings menus updated.
-
 ---
 
 ## 🆕 What's New in v1.0.3 — *Anti-Aliasing & PBR Performance*
@@ -185,12 +179,7 @@ Version **1.0.2** adds realistic subsurface scattering for vegetation, making le
 * Added to all quality profiles (VERY_LOW → EXTREME) with the `!FOLIAGE_SSS` or `FOLIAGE_SSS` flag.
 * Full English + Russian localization strings added.
 
-### 🧭 Project metadata refresh
-* README and installation references now point to **v1.0.3**.
-* Source-folder notes now correctly describe the repository as containing snapshots through `shaders v1.0.3/`.
-* Minor synchronization of `shaders.properties` (FOLIAGE_SSS screen entry and profile definitions).
-
---- older changelog sections below are preserved as original release notes.
+---
 
 ## 🆕 What's New in v1.0.1 — *Stability, HDR Bloom & Photographic Tone Mapping*
 
@@ -210,12 +199,7 @@ Version **1.0.1** is a focused hotfix on top of v1.0.0 that addresses five edge-
 * **Photographic (AgX-like) Tone Mapping *(v1.0.1)*.** A new `CONTRAST = 4` option in `final.fsh` provides a sigmoidal tone curve with natural highlight chromatic attenuation, soft toe, and lifted blacks — giving a cinematic, non-clipped look that keeps foliage saturation under control while handling extreme brightness gracefully.
 * **EXTREME profile updated.** Now uses `CONTRAST=4` (Photographic/AgX-like) instead of `CONTRAST=3` for cinematic highlight handling.
 
-### 🧭 Project metadata refresh
-
-* README and installation references now point to **v1.0.1**.
-* Source-folder notes now correctly describe the repository as containing snapshots through `shaders v1.0.1/`. (Historical for that release)
-
---- older changelog sections below are preserved as original release notes.
+---
 
 ## 🆕 What's New in v1.0.0 — *Meteor Showers & Finalized Reflection Pipeline*
 
@@ -243,12 +227,6 @@ Version **1.0.0** builds on the volumetric aurora work from v0.3.0 and introduce
 * Shooting stars are disabled on the lightest presets and enabled from **MED** upward through the normal profile system.
 * English and Russian UI text was expanded for the new night-sky controls, while other language files continue to fall back safely.
 
-### 🧭 Project metadata refresh
-
-* README and installation references now point to **v1.0.0**.
-* Source-folder notes now correctly describe the repository as containing snapshots through `shaders v1.0.0/`.
-* The quality-profile and configuration sections below were refreshed for the current release, while older changelog entries remain intact for historical reference.
-
 ---
 
 ## 🆕 What's New in v0.3.0 — *Volumetric Aurora Realism Update*
@@ -263,11 +241,6 @@ Version **0.3.0** focuses on the night sky and replaces the older flat aurora ov
 * **More vivid photographic colours.** The palette was rebalanced toward saturated cyan-green, magenta/purple, and subtle deep-blue upper blending.
 * **Better motion pacing.** Animation speed was reduced and smoothed so curtains drift naturally instead of sliding too quickly across the sky.
 * **Preserved biome/weather logic.** Existing `AURORA_MODE`, cold-biome detection, rain attenuation, speed, and brightness settings continue to work.
-
-### 🧭 Project metadata refresh
-
-* README and installation references now point to **v0.3.0**.
-* Source-folder notes now correctly describe the repository as containing snapshots through `shaders v0.3.0/`.
 
 ---
 
@@ -309,7 +282,7 @@ Version **0.2.9** is a focused water-quality update that finally delivers the lo
 * Centralized SSR/wave/underwater toggles into the regular profile system, so all six presets (VERY_LOW → EXTREME) carry sensible defaults.
 * Added English and Russian translations for all new options, plus value-label localization (`Calm`/`Choppy`/`True Night` etc.) — other languages fall back to English labels.
 
-***
+---
 
 ## 🆕 What's New in v0.2.8 — *Dimension Upgrades, Precise Biomes & Physics Fixes*
 
@@ -419,17 +392,6 @@ Version **0.2.5** is a polish & stability update that fixes long-standing render
 * `SUN_TEMPERATURE` applied to `gbuffers_skybasic`'s Kelvin curve, matching `composite.fsh`.
 * All `texture2D()` calls replaced with `texture()` for GLSL 460 consistency.
 * Dead code removed: unused `noise/fbm` functions in `gbuffers_terrain`, dead `renderVolumetricClouds()` in `gbuffers_skybasic`, unused `mc_EntityOut` varying.
-
----
-
-## 🆕 Recap — What landed in v0.2.2 (Enhanced Lighting Edition)
-
-Version **0.2.2** introduced a brand-new **`[Sun & Moon]`** configuration screen and deeply expanded the shadow / ambient pipeline:
-
-* ☀️ **Sun & Moon Intensity** — 4 levels each.
-* ☀️ **Sun & Moon Colour Temperature** — Kelvin-based via the Tanner Helland blackbody curve.
-* ☀️ **Sun Halo (Mie Scatter)** & **Enhanced Sunrise/Sunset Glow**.
-* 🌑 **Shadow Softness** (rotated Poisson disk), **Shadow Distance**, **Shadow Tint**, **Shadow Lift / Ambient**, **Light Wrap (Terminator Softness)**.
 
 ---
 
@@ -581,18 +543,6 @@ AuraLite is built from the ground up for maximum FPS using OpenGL 4.6 native har
 * **No Hand Transparency Glitches:** Handheld items, particles, and mobs are rendered in a separate stable path without tangent matrix overhead, eliminating "translucent hand" bugs.
 * **Dead Code Elimination** *(v0.2.3–v0.2.5)*: Removed unused noise/fbm functions, dead cloud raymarching code from `gbuffers_skybasic`, and redundant render calls to reduce GPU compilation time.
 * **Profile-Based Scaling:** Every feature (POM, Auroras, SSAO, Cozy Lights, Wet Reflections, Ground Mist, Shadow Distance, Cloud Distance, Sun Halo, etc.) is intelligently distributed across the **LOW / MED / HIGH / ULTRA / EXTREME** profiles so low-end systems don't pay for effects they can't afford.
-
----
-
-## 📥 Installation
-
-1. Download **`AuraLite-Shaders-v1.0.7.zip`** from the [Releases](https://github.com/AlexanderNyr/AuraLite-Shaders/releases) section on the right.
-2. Open your Minecraft directory (e.g. `%appdata%/.minecraft` on Windows).
-3. Place the downloaded `.zip` file inside the **`shaderpacks`** folder (Do **not** unzip it!).
-4. Launch a supported Minecraft version (**1.16.5 – 26.1.2**) using a profile with **Sodium + Iris** or **OptiFine** installed.
-5. In-game, go to **Options → Video Settings → Shader Packs**, select **AuraLite**, and click **Apply**.
-
-> 💡 The repository ships source folders for every release snapshot: `shaders v0.2.0/` through `shaders v1.0.7/`. The current source snapshot is **v1.0.7**. End users should grab the packaged release ZIP; developers can browse any folder directly.
 
 ---
 
