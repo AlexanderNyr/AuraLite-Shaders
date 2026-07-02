@@ -1,0 +1,416 @@
+# AuraLite Shaders v1.0.7 - Copyright (c) 2026 AlexanderNyr. Licensed under CC BY-NC-SA 4.0.
+# ==============================================================================
+# AuraLite Shader Pack - Azerbaijani Language Translations
+# ==============================================================================
+
+# ==============================================================================
+# Keyfiyyət profilleri — Yenidən balanslaşdırma v1.0.5
+# ==============================================================================
+profile.VERY_LOW=Çox aşağı
+profile.VERY_LOW.comment=Mütləq maksimum FPS. Bütün əlavələr söndürülüb: kölgələr, buludlar, PBR, SSR, günəş şüaları yoxdur. Yalnız minimal render.
+profile.LOW=Aşağı
+profile.LOW.comment=Yüngül, lakin oynanıla bilən. Bitki/su animasiyası, daha parlaq ulduzlar, FXAA, vinyetka saxlanılır. Kölgələr, buludlar və ya PBR yoxdur.
+profile.MED=Orta
+profile.MED.comment=Gündəlik ən yaxşı seçim. Kölgələr 1024, buludlar, PBR, SSR Sürətli, günəş şüaları, bitki SSS, yaş əkslər, yer dumanı, axan ulduzlar.
+profile.HIGH=Yüksək
+profile.HIGH.comment=Həvəskar keyfiyyəti. Kölgələr 2048, SSR Balanslı, TAA, SSAO İncə, günəş şüaları Balanslı, SMAA.
+profile.ULTRA=Ultra
+profile.ULTRA.comment=Yüksək səviyyə. Kölgələr 4096, SSR Yüksək, SSAO Balanslı, günəş şüaları Yüksək, TAA Sabit, bütün effektlər aktiv.
+profile.EXTREME=Ekstremal
+profile.EXTREME.comment=Kinematoqrafik maksimum. Hər şey maksimumda: PBR Limitsiz məsafə, Fotoqrafik (AgX) ton xəritələmə, ən dərin SSAO, meteor fırtınaları.
+profile.CUSTOM=Fərdi
+profile.CUSTOM.comment=İstifadəçi tərəfindən dəyişdirilmiş parametrlər.
+
+screen.TRANSLATION_NOTICE=⚠ Tərcümələrdə səhvlər ola bilər
+screen.TRANSLATION_NOTICE.comment=Bəzi lokalizasiya sətirləri qeyri-dəqiq ola bilər. Əgər bir şey qəribə görünürsə, ingilis orijinalı ilə müqayisə edin.
+
+# Screens
+screen.LIGHTING=İşıqlandırma parametrləri
+screen.LIGHTING.comment=Kölgələri, işıq rənglərini və parlaqlığı tənzimləyin.
+
+screen.FOLIAGE=Bitki parametrləri
+screen.FOLIAGE.comment=Ot və yarpaqlar üçün dalğalanma animasiyalarını tənzimləyin.
+
+screen.WATER=Su parametrləri
+screen.WATER.comment=Dalğaları, şəffaflığı və su stilini tənzimləyin.
+
+screen.CLOUDS_MENU=Səma və buludlar
+screen.CLOUDS_MENU.comment=3D buludların və səma effektlərinin fiziki hündürlüyünü, qalınlığını və stilini tənzimləyin.
+
+screen.POST_PROCESS=Post-emal və duman
+screen.POST_PROCESS.comment=Ekspozisiyanı, dumanı və kinematoqrafik effektləri tənzimləyin.
+
+# Options
+option.SHADOWS=Dinamik kölgələr
+option.SHADOWS.comment=Günəş və aydan gələn yumşaq dinamik kölgələri aktivləşdirin və ya söndürün.
+
+option.SHADOW_RES=Kölgə ayırdetmə qabiliyyəti
+option.SHADOW_RES.comment=Kölgə xəritəsinin keyfiyyətini dəyişin. Daha yüksək dəyərlər performansı azalda bilər.
+
+option.PBR_LIGHTING=PBR işıqlandırma (LabPBR)
+option.PBR_LIGHTING.comment=Metallar, kələ-kötürlük və 3D normal xəritələr üçün fiziki əsaslı renderi aktivləşdirin (PBR resurs paketi tələb olunur).
+
+option.PBR_POM=3D blok relyefi (POM)
+option.PBR_POM.comment=3D blok teksturaları üçün fiziki əsaslı Parallaks Örtmə Xəritələməsini aktivləşdirin. Uyğunsuz resurs paketlərində söndürmək tövsiyə olunur.
+
+option.PBR_STRENGTH=PBR intensivliyi
+option.PBR_STRENGTH.comment=PBR metal səthlərinin əksolunmasını və parıltısını idarə edin.
+
+value.PBR_STRENGTH.1=İncə
+value.PBR_STRENGTH.2=Standart
+value.PBR_STRENGTH.3=Güzgü
+
+option.SSAO=SSAO / SAO örtməsi
+option.SSAO.comment=Künclərdə, blokların altında və həndəsə kəsişmələrinin ətrafında təmas kölgələri üçün ekran-məkan ambient örtməsi. YÜKSƏK-dən yuxarı aktivdir.
+option.SSAO_STRENGTH=SSAO gücü
+option.SSAO_STRENGTH.comment=Ekran-məkan ambient örtməsinin dərinliyini idarə edir. Yalnız SSAO aktiv olduqda işləyir.
+value.SSAO_STRENGTH.1=İncə
+value.SSAO_STRENGTH.2=Balanslı
+value.SSAO_STRENGTH.3=Dərin
+
+option.LIGHTMAP_WARMTH=Məşəl istiliyi
+option.LIGHTMAP_WARMTH.comment=Blok/məşəl işığının istiliyini və rəngini tənzimləyin.
+
+value.LIGHTMAP_WARMTH.1=Rahat
+value.LIGHTMAP_WARMTH.2=İsti
+value.LIGHTMAP_WARMTH.3=İntensiv
+
+option.WAVING_LEAVES=Dalğalanan yarpaqlar
+option.WAVING_LEAVES.comment=Ağac yarpaqları üçün yumşaq dalğalanma animasiyalarını aktivləşdirin.
+
+option.WAVING_GRASS=Dalğalanan bitki örtüyü
+option.WAVING_GRASS.comment=Ot, çiçəklər və əkinlər üçün dalğalanma animasiyalarını aktivləşdirin.
+
+option.WIND_SPEED=Külək sürəti
+option.WIND_SPEED.comment=Yarpaqların, bitkilərin və su dalğalarının dalğalanma sürətini idarə edin.
+
+option.FOLIAGE_SSS=Bitki SSS
+option.FOLIAGE_SSS.comment=İşığa qarşı baxarkən yarpaqlar, ot və bitkilər üçün altsəth səpilməsini (şəffaflıq) aktivləşdirir.
+
+value.WIND_SPEED.1=Mülayim
+value.WIND_SPEED.2=Meh
+value.WIND_SPEED.3=Qasırğa
+
+option.WATER_WAVES=Su dalğaları
+option.WATER_WAVES.comment=Su səthində 3D həndəsi dalğaları aktivləşdirin. Buz və şüşə blokları dalğa animasiyasından çıxarılır.
+
+option.WATER_TRANSPARENCY=Su sıxlığı
+option.WATER_TRANSPARENCY.comment=Suyun, adi buzun və şüşə bloklarının şəffaflığını və qeyri-şəffaflığını idarə edin.
+
+value.WATER_TRANSPARENCY.1=Təmiz
+value.WATER_TRANSPARENCY.2=Balanslı
+value.WATER_TRANSPARENCY.3=Dərin
+
+option.PROCEDURAL_CLOUDS=Volumetrik 3D buludlar
+option.PROCEDURAL_CLOUDS.comment=Çatıla bilən və içindən uçula bilən fiziki uçula bilən 3D buludları aktivləşdirin.
+
+option.CLOUD_HEIGHT=Bulud hündürlüyü
+option.CLOUD_HEIGHT.comment=Dünyada bulud qatının fiziki hündürlüyünü (Y səviyyəsi) təyin edin (metrlə).
+
+value.CLOUD_HEIGHT.1=Aşağı (~110m)
+value.CLOUD_HEIGHT.2=Standart (~160m)
+value.CLOUD_HEIGHT.3=Yüksək (~240m)
+
+option.CLOUD_THICKNESS=Bulud qalınlığı
+option.CLOUD_THICKNESS.comment=Buludların şaquli qalınlığını və həcmini tənzimləyin.
+
+value.CLOUD_THICKNESS.1=Nazik (Sirrus)
+value.CLOUD_THICKNESS.2=Standart (Kumulus)
+value.CLOUD_THICKNESS.3=Sıx (Fırtınalı)
+
+option.CLOUD_DISTANCE=Bulud render məsafəsi
+option.CLOUD_DISTANCE.comment=Volumetrik buludlar üçün maksimum çəkmə məsafəsi. Keyfiyyət profilləri onu avtomatik artırır.
+value.CLOUD_DISTANCE.1=Yaxın
+value.CLOUD_DISTANCE.2=Standart
+value.CLOUD_DISTANCE.3=Uzaq
+value.CLOUD_DISTANCE.4=Çox uzaq
+
+option.CLOUD_SHADOWS=Bulud kölgələri
+option.CLOUD_SHADOWS.comment=Volumetrik bulud sıxlığından relyefə şəffaf prosedur kölgələr əlavə edir. Keyfiyyət profilləri ilə balanslaşdırılıb.
+option.CLOUD_SHADOW_STRENGTH=Bulud kölgəsi gücü
+option.CLOUD_SHADOW_STRENGTH.comment=Şəffaf bulud kölgələrinin nə qədər görünən və dramatik olduğunu idarə edir.
+value.CLOUD_SHADOW_STRENGTH.1=Yumşaq
+value.CLOUD_SHADOW_STRENGTH.2=Balanslı
+value.CLOUD_SHADOW_STRENGTH.3=Dramatik
+
+option.GODRAYS=Günəş şüaları / Günəş şəfəqləri
+option.GODRAYS.comment=Beer-Lambert sönmə, Mie fazası və kölgə xəritəsi örtməsi ilə fiziki ilhamlı volumetrik tək-səpilmə günəş şəfəqləri əlavə edir.
+option.GODRAYS_QUALITY=Günəş şüaları keyfiyyəti
+option.GODRAYS_QUALITY.comment=Fiziki əsaslı volumetrik günəş şüalarının nümunə sayını və inteqrasiya məsafəsini idarə edir.
+value.GODRAYS_QUALITY.1=Sürətli
+value.GODRAYS_QUALITY.2=Balanslı
+value.GODRAYS_QUALITY.3=Yüksək
+
+option.AURORA_MODE=Şimal işıqları
+option.AURORA_MODE.comment=Gecə səmasında realistik axan şimal işıqlarının göstərilməsini idarə edin.
+
+value.AURORA_MODE.0=Söndürülüb
+value.AURORA_MODE.1=Yalnız soyuq biomlarda
+value.AURORA_MODE.2=Həmişə aktiv
+
+option.AURORA_SPEED=Şimal işığı sürəti
+option.AURORA_SPEED.comment=Şimal işıqlarının dalğalanma və axın sürətini idarə edin.
+
+value.AURORA_SPEED.1=Yavaş
+value.AURORA_SPEED.2=Standart
+value.AURORA_SPEED.3=Sürətli
+
+option.AURORA_STRENGTH=Şimal işığı parlaqlığı
+option.AURORA_STRENGTH.comment=Şimal işıqlarının ümumi parıltı parlaqlığını idarə edin.
+
+value.AURORA_STRENGTH.1=Yumşaq
+value.AURORA_STRENGTH.2=Standart
+value.AURORA_STRENGTH.3=Parıldayan
+
+option.NEBULA_BRIGHTNESS=Süd Yolu parlaqlığı
+option.NEBULA_BRIGHTNESS.comment=Gecə diaqonal qonurumtul qalaktik dumanlığın parıltı parlaqlığını tənzimləyin.
+
+value.NEBULA_BRIGHTNESS.1=Sönük
+value.NEBULA_BRIGHTNESS.2=Standart
+value.NEBULA_BRIGHTNESS.3=Parlaq
+
+option.STARS_BRIGHTNESS=Ulduz parlaqlığı
+option.STARS_BRIGHTNESS.comment=Gecə ulduzların parlaqlığını və parıldayan parıltısını idarə edin.
+
+value.STARS_BRIGHTNESS.1=Zəif
+value.STARS_BRIGHTNESS.2=Standart
+value.STARS_BRIGHTNESS.3=Parlaq
+
+option.STARS_AMOUNT=Ulduz sıxlığı
+option.STARS_AMOUNT.comment=Səmadakı ulduzların ümumi sayını və sıxlığını idarə edin.
+
+value.STARS_AMOUNT.1=Az
+value.STARS_AMOUNT.2=Standart
+value.STARS_AMOUNT.3=Sıx
+
+option.RAINBOW_STRENGTH=Göy qurşağı intensivliyi
+option.RAINBOW_STRENGTH.comment=Yağışdan sonrakı göy qurşağının parlaqlığını və rəng doymasını tənzimləyin.
+
+value.RAINBOW_STRENGTH.1=İncə
+value.RAINBOW_STRENGTH.2=Balanslı
+value.RAINBOW_STRENGTH.3=Canlı
+
+option.SHOOTING_STARS=Meteorlar (axan ulduzlar)
+option.SHOOTING_STARS.comment=Mezosferə (~80-120 km) daxil olan fiziki əsaslı meteorlar. Ablasiya işıq əyriləri, qara cisim plazma rəngi (3500-5500 K), üfüqə yaxın Rayleigh sönmə və odlu kürələrdə davamlı ionlaşma izləri ilə həqiqi böyük dairə 3D qövslərini render edir.
+
+option.SHOOTING_STARS_FREQUENCY=Meteor fəaliyyəti (ZHR)
+option.SHOOTING_STARS_FREQUENCY.comment=Təxmini zenit saatlıq nisbəti. Sporadik = saatda ~10 realistik fon. Aktiv = yüngül yağış. Fırtına = pik sıxlıq (~100/saat).
+
+value.SHOOTING_STARS_FREQUENCY.1=Sporadik (~10/saat)
+value.SHOOTING_STARS_FREQUENCY.2=Aktiv yağış
+value.SHOOTING_STARS_FREQUENCY.3=Meteor fırtınası
+
+option.SHOOTING_STARS_BRIGHTNESS=Ölçü miqyası
+option.SHOOTING_STARS_BRIGHTNESS.comment=Meteor ölçü miqyasında əsas vurucu. Zəif = realistik orta; Parlaq = kinematoqrafik görünürlük üçün odlu kürələri miqyaslaşdırır.
+
+value.SHOOTING_STARS_BRIGHTNESS.1=Zəif (Realistik)
+value.SHOOTING_STARS_BRIGHTNESS.2=Standart
+value.SHOOTING_STARS_BRIGHTNESS.3=Parlaq odlu kürələr
+
+option.COZY_LIGHTS=Məşəl titrəməsi
+option.COZY_LIGHTS.comment=Məşəllər, tonqallar və fənərlər üçün isti, rahat, real vaxtda titrəmə animasiyalarını aktivləşdirin.
+
+option.WET_REFLECTIONS=Yağış yaşlığı əksləri
+option.WET_REFLECTIONS.comment=Yağış yağarkən, yer, ot və daş kimi bərk bloklar səma altında yaş, qaranlıq və parlaq olur.
+
+option.GROUND_MIST=Aşağı yer dumanı (Y=62-66)
+option.GROUND_MIST.comment=Şəfəq və qürub vaxtı su və buz üzərində sürüşən yumşaq, qızılı-ağ səhər/axşam duman təbəqələrini aktivləşdirin.
+
+option.FOG_DENSITY_LEVEL=Duman sıxlığı
+option.FOG_DENSITY_LEVEL.comment=Atmosfer üfüq dumanının gücünü idarə edin.
+
+value.FOG_DENSITY_LEVEL.1=Aşağı
+value.FOG_DENSITY_LEVEL.2=Orta
+value.FOG_DENSITY_LEVEL.3=Yüksək
+
+option.EXPOSURE=Ekspozisiya parlaqlığı
+option.EXPOSURE.comment=Şəklin ümumi parlaqlığını idarə edin.
+
+value.EXPOSURE.1=Sönük
+value.EXPOSURE.2=Balanslı
+value.EXPOSURE.3=Canlı
+
+option.COLOR_SATURATION=Rəng canlılığı
+option.COLOR_SATURATION.comment=Ekran rənglərinin qeyri-xətti doymasını idarə edin. Bitki örtüyünü zümrüd, səmaları isə sıx göstərir.
+
+value.COLOR_SATURATION.1=Sönük
+value.COLOR_SATURATION.2=Balanslı
+value.COLOR_SATURATION.3=Rəngarəng
+value.COLOR_SATURATION.4=Canlı
+
+option.CONTRAST=Şəkil kontrastı
+option.CONTRAST.comment=Ton xəritələmə və kontrast əyrisi stilini seçin.
+
+value.CONTRAST.1=Yumşaq
+value.CONTRAST.2=Filmik (ACES)
+value.CONTRAST.3=İntensiv (Yüksək kontrast)
+value.CONTRAST.4=Fotoqrafik (AgX-bənzər)
+
+option.TAA=Müvəqqəti kənar hamarlama (TAA)
+option.TAA.comment=Hərəkət yenidən proyeksiyası və qonşuluq kəsmə ilə müvəqqəti həll. Yüksək hazır ayarlarda parıltını və dişli kənarları azaldır.
+option.TAA_STRENGTH=TAA gücü
+option.TAA_STRENGTH.comment=Tarix qarışdırmasını idarə edir. Daha yüksək daha sabitdir, lakin hərəkət zamanı daha yumşaq ola bilər.
+value.TAA_STRENGTH.1=Yüngül
+value.TAA_STRENGTH.2=Balanslı
+value.TAA_STRENGTH.3=Sabit
+
+
+
+option.VIGNETTE=Vinyetka effekti
+option.VIGNETTE.comment=Yaxşılaşdırılmış fokus üçün ekran kənarlarında incə qaralmanı aktivləşdirin.
+
+# ==============================================================================
+# Spatial Anti-Aliasing
+# ==============================================================================
+option.SPATIAL_AA_MODE=Məkan kənar hamarlama
+option.SPATIAL_AA_MODE.comment=Post-emal kənar hamarlama metodunu seçin. FXAA sürətli və ucuzdur. SMAA həndəsə kənarlarında daha yaxşı keyfiyyət üçün dərinlik buferindən istifadə edir. TAA ilə birləşdirilə bilər.
+value.SPATIAL_AA_MODE.0=Söndürülüb
+value.SPATIAL_AA_MODE.1=FXAA (Sürətli)
+value.SPATIAL_AA_MODE.2=SMAA (Keyfiyyət)
+
+option.WATER_RIFFLES=Su qırışı gücü
+option.WATER_RIFFLES.comment=Su üzərindəki incə normal xəritə qırışlarının dalğalanmasını və intensivliyini tənzimləyin. Buz və ya şüşəyə təsir etmir.
+
+value.WATER_RIFFLES.1=Sakit
+value.WATER_RIFFLES.2=Standart
+value.WATER_RIFFLES.3=Çırpıntılı
+
+option.WATER_SPECULAR_STRENGTH=Su spekulyar parıltısı
+option.WATER_SPECULAR_STRENGTH.comment=Su qırışları üzərindəki günəş/ay əkslərinin parlaqlığını tənzimləyin.
+
+value.WATER_SPECULAR_STRENGTH.1=Yumşaq
+value.WATER_SPECULAR_STRENGTH.2=Standart
+value.WATER_SPECULAR_STRENGTH.3=Parıldayan
+
+option.SHADOW_SOFTNESS=Kölgə yumşaqlığı
+option.SHADOW_SOFTNESS.comment=Kölgə kənarlarının nə qədər yumşaq və diffuz göründüyünü idarə edir. Hamar yarımkölgə üçün fırlanan Poisson disk filtrasiyasından istifadə edir.
+
+value.SHADOW_SOFTNESS.1=İti
+value.SHADOW_SOFTNESS.2=Yumşaq
+value.SHADOW_SOFTNESS.3=Ultra yumşaq
+
+# ==============================================================================
+# Sun & Moon Lighting
+# ==============================================================================
+screen.SUN_MOON=Günəş və ay
+screen.SUN_MOON.comment=Günəş və ay intensivliyini, rəng temperaturunu və atmosfer effektlərini dəqiq tənzimləyin.
+
+option.SUN_INTENSITY=Günəş intensivliyi
+option.SUN_INTENSITY.comment=Birbaşa günəş işığının əsas parlaqlığı. Daha yüksək = daha güclü gündüz kontrastı.
+value.SUN_INTENSITY.1=Sönük
+value.SUN_INTENSITY.2=Standart
+value.SUN_INTENSITY.3=Parlaq
+value.SUN_INTENSITY.4=Yandıran
+
+option.MOON_INTENSITY=Ay intensivliyi
+option.MOON_INTENSITY.comment=Ay işığının əsas parlaqlığı. Daha yüksək = daha parlaq, daha görünən gecələr.
+value.MOON_INTENSITY.1=Zülmət gecə
+value.MOON_INTENSITY.2=Standart
+value.MOON_INTENSITY.3=Parlaq ay
+value.MOON_INTENSITY.4=Tam gecə
+
+option.SUN_TEMPERATURE=Günəş rəng temperaturu
+option.SUN_TEMPERATURE.comment=Günəşin Kelvin əyrisini dəyişir. Realistik Tanner Helland qara cisimdən istifadə edir; isti = qızılı; soyuq = neytral ağ.
+value.SUN_TEMPERATURE.1=Soyuq / Neytral
+value.SUN_TEMPERATURE.2=Realistik
+value.SUN_TEMPERATURE.3=İsti qızılı
+
+option.MOON_TEMPERATURE=Ay rəng temperaturu
+option.MOON_TEMPERATURE.comment=Ay işığının çaları. Buzlu = mavimtraq soyuq; Gümüşü = realistik 4100K; İsti = məhsul ayı kremi.
+value.MOON_TEMPERATURE.1=Buzlu mavi
+value.MOON_TEMPERATURE.2=Gümüşü (Realistik)
+value.MOON_TEMPERATURE.3=İsti krem
+
+option.SUN_HALO=Günəş halosu (Mie səpilməsi)
+option.SUN_HALO.comment=Günəşə yaxın baxarkən relyefdə yumşaq isti parıltı əlavə edir (Mie irəli səpilmə).
+
+option.SUNRISE_GLOW=Gücləndirilmiş gündoğumu/günbatımı parıltısı
+option.SUNRISE_GLOW.comment=Alçaq günəşdən üz çevirən səthlərin ətrafına sarılan daha güclü isti geri səpilməni aktivləşdirir.
+
+# ==============================================================================
+# Extended shadow settings
+# ==============================================================================
+option.SHADOW_DISTANCE=Kölgə məsafəsi
+option.SHADOW_DISTANCE.comment=Dinamik kölgələrin sönmədən əvvəl render edildiyi maksimum məsafə.
+value.SHADOW_DISTANCE.1=Yaxın (60m)
+value.SHADOW_DISTANCE.2=Standart (80m)
+value.SHADOW_DISTANCE.3=Uzaq (120m)
+value.SHADOW_DISTANCE.4=Ultra (160m)
+
+option.AMBIENT_BRIGHTNESS=Kölgə qaldırma / Ambient
+option.AMBIENT_BRIGHTNESS.comment=Gecə və mağaralarda kölgəli sahələrin nə qədər qaranlıq göründüyünü idarə edir.
+value.AMBIENT_BRIGHTNESS.1=Qaranlıq
+value.AMBIENT_BRIGHTNESS.2=Standart
+value.AMBIENT_BRIGHTNESS.3=Qaldırılmış (Parlaq)
+
+option.SHADOW_TINT=Kölgə çaları
+option.SHADOW_TINT.comment=Gündüz kölgələrini çalalayır. Mavi səma altında real dünya kölgələrində incə soyuq çalar var.
+value.SHADOW_TINT.1=Neytral boz
+value.SHADOW_TINT.2=Soyuq mavi (Realistik)
+value.SHADOW_TINT.3=İsti
+
+option.LIGHT_WRAP=İşıq sarğısı
+option.LIGHT_WRAP.comment=İşıqlandırılmış və işıqlandırılmamış səthlər arasındakı terminatoru yumşaldır. Realistik = fiziki Lambert; Yumşaq = ekran görüntüləri üçün xoş.
+value.LIGHT_WRAP.1=Realistik (Lambert)
+value.LIGHT_WRAP.2=Yumşaq sarğı
+value.LIGHT_WRAP.3=Stilizə edilmiş
+
+# ==============================================================================
+# Screen-Space Reflections (SSR)
+# ==============================================================================
+option.SSR=Ekran-məkan əksləri (SSR)
+option.SSR.comment=Su, yaş səthlər və metal PBR blokları üzərində real vaxt əksolunan mühit əlavə edir. ORTA-dan yuxarı aktivdir.
+
+option.SSR_QUALITY=SSR keyfiyyəti
+option.SSR_QUALITY.comment=Ekran-məkan əkslərinin dəqiqliyini və şüa məsafəsini idarə edir. Daha yüksək = daha kəskin əkslər, lakin daha çox GPU xərci.
+value.SSR_QUALITY.1=Sürətli (12 addım)
+value.SSR_QUALITY.2=Balanslı (24 addım)
+value.SSR_QUALITY.3=Yüksək (40 addım)
+
+option.SSR_STRENGTH=SSR gücü
+option.SSR_STRENGTH.comment=Əksolunan mühitin əksedici səthlərdə nə qədər görünən və qabarıq göründüyünü idarə edir.
+
+option.WATER_WAVE_SCALE=Dalğa amplitudası
+option.WATER_WAVE_SCALE.comment=Su səthi dalğalarının görünən dikliyini idarə edir. Sakit = güzgü kimi, Fırtınalı = güclü qırılmış əkslər.
+option.WATER_WAVE_DETAIL=Dalğa detalı
+option.WATER_WAVE_DETAIL.comment=Hər blokda neçə kiçik dalğanın göründüyünü idarə edir. Kobud = bir neçə böyük dalğa, Sıx = çoxlu kiçik qırışlar.
+option.UNDERWATER_NIGHT_DARKNESS=Sualtı gecə qaranlığı
+option.UNDERWATER_NIGHT_DARKNESS.comment=Gecə sualtı səhnənin nə qədər qaranlıq olduğunu idarə edir. Ay işıqlı hovuz parlaqlığı saxlayır; Zülmət qaranlıq ekstremal sağ qalma tərzi qaranlıq verir.
+value.SSR_STRENGTH.1=İncə
+value.SSR_STRENGTH.2=Balanslı
+value.SSR_STRENGTH.3=Güclü
+
+# v0.2.9 — water/underwater value labels
+value.WATER_WAVE_SCALE.1=Sakit
+value.WATER_WAVE_SCALE.2=Standart
+value.WATER_WAVE_SCALE.3=Çırpıntılı
+value.WATER_WAVE_SCALE.4=Fırtınalı
+value.WATER_WAVE_DETAIL.1=Kobud
+value.WATER_WAVE_DETAIL.2=Standart
+value.WATER_WAVE_DETAIL.3=Sıx
+value.UNDERWATER_NIGHT_DARKNESS.1=Ay işıqlı hovuz
+value.UNDERWATER_NIGHT_DARKNESS.2=Sönük
+value.UNDERWATER_NIGHT_DARKNESS.3=Həqiqi gecə
+value.UNDERWATER_NIGHT_DARKNESS.4=Zülmət qaranlıq
+
+# PBR Distance
+option.PBR_DISTANCE=PBR render məsafəsi
+option.PBR_DISTANCE.comment=PBR spekulyar işıqlandırmalar üçün maksimum məsafə. Uzaq relyefdə GPU-ya qənaət edir. Yaxın (16m) AŞAĞI üçün, Standart (48m) ORTA üçün, Uzaq (128m) YÜKSƏK/ULTRA üçün, Limitsiz EKSTREMAL üçün.
+value.PBR_DISTANCE.1=Yaxın (16m)
+value.PBR_DISTANCE.2=Standart (48m)
+value.PBR_DISTANCE.3=Uzaq (128m)
+value.PBR_DISTANCE.4=Limitsiz
+# ==============================================================================
+# Experimental Tab & New Sky (v1.0.8)
+# ==============================================================================
+screen.EXPERIMENTAL=Eksperimental
+screen.EXPERIMENTAL.comment=Eksperimental
+
+option.NEW_SKY=Yeni Göy (Atmosfer Səpilməsi)
+option.NEW_SKY.comment=Yeni Göy (Atmosfer Səpilməsi)
+
+option.SKY_QUALITY=Göy Səpilmə Keyfiyyəti
+option.SKY_QUALITY.comment=Göy Səpilmə Keyfiyyəti
+value.SKY_QUALITY.1=Sürətli
+value.SKY_QUALITY.2=Standart
+value.SKY_QUALITY.3=Yüksək
