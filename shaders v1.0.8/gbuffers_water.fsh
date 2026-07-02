@@ -41,14 +41,14 @@ layout(location = 0) out vec4 colortex0;
 layout(location = 1) out vec4 colortex1;
 layout(location = 2) out vec4 colortex2;
 
-// Standard high performance 2D vnoise for the portal swirl
+// Standard high performance 2D noise for the portal swirl
 float hash(vec2 p) {
     p = fract(((p) * (vec2(123.34, 456.21)) + (vec2(0.0))));
     p += dot(p, p + 45.32);
     return fract(p.x * p.y);
 }
 
-float vnoise(vec2 p) {
+float noise(vec2 p) {
     vec2 i = floor(p);
     vec2 f = fract(p);
     vec2 u = f * f * (3.0 - 2.0 * f);
@@ -62,7 +62,7 @@ float fbm(vec2 p) {
     float v = 0.0;
     float a = 0.5;
     for (int i = 0; i < 4; ++i) {
-        v += a * vnoise(p);
+        v += a * noise(p);
         p = fbmRotMat * p * 2.1 + vec2(100.0);
         a *= 0.5;
     }

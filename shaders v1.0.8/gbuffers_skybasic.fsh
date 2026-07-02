@@ -61,38 +61,8 @@ const float SUN_RADIUS = 0.00467;
 const float MOON_RADIUS = 0.00450;
 const vec3  SUN_IRRADIANCE = vec3(25.0, 23.8, 22.5);
 
-// Ozone layer — Chappuis absorption band (~600nm, orange-red)
-// Responsible for deep blue/violet twilight colors
-const vec3  BETA_OZ = vec3(3.4e-6, 5.0e-6, 0.25e-6); // Absorption coefficients
-const float H_OZ_PEAK = 25000.0;  // Peak altitude (m)
-const float H_OZ_WIDTH = 15000.0; // Gaussian half-width (m)
-
 float getCameraAltitude() {
     return max(0.0, (cameraPosition.y - 63.0)) * 100.0;
-}
-
-// Ozone density: Gaussian profile centered at ~25 km
-float ozoneDensity(float h) {
-    float d = (h - H_OZ_PEAK) / H_OZ_WIDTH;
-    return exp(-d * d * 0.5);
-}
-
-// Atmospheric refraction (Bennett's formula)
-// Lifts the apparent elevation of objects near the horizon by up to ~0.57°
-vec3 applyRefraction(vec3 dir) {
-    float elev = asin(clamp(dir.y, -1.0, 1.0));
-    float elevDeg = degrees(elev);
-    float refArcmin = 0.0;
-    if (elevDeg > -1.5) {
-        float arg = max(elevDeg + 10.3 / (elevDeg + 5.11), 0.05);
-        refArcmin = 1.02 / tan(radians(arg));
-        refArcmin = clamp(refArcmin, 0.0, 35.0);
-    }
-    float newElev = elev + radians(refArcmin / 60.0);
-    float horizLen = length(dir.xz);
-    if (horizLen < 1e-6) return vec3(0.0, sin(newElev), cos(newElev) * step(0.0, dir.z));
-    vec2 horizDir = dir.xz / horizLen;
-    return vec3(horizDir * cos(newElev), sin(newElev));
 }
 
 bool raySphere(vec3 ro, vec3 rd, float R, out float t0, out float t1) {
@@ -118,8 +88,8 @@ float phaseMie(float cosTheta) {
 }
 
 bool lightRayOpticalDepth(vec3 p, vec3 sunDir, int N_light,
-                          out float odR, out float odM, out float odOZ) {
-    odR = 0.0; odM = 0.0; odOZ = 0.0;
+                          out float odR, out float odM) {
+    odR = 0.0; odM = 0.0;
     float tLight0, tLight1;
     if (!raySphere(p, sunDir, R_ATMO, tLight0, tLight1)) return false;
     float dtL = max(tLight1, 0.0) / float(N_light);
@@ -129,9 +99,8 @@ bool lightRayOpticalDepth(vec3 p, vec3 sunDir, int N_light,
         vec3 pL = p + sunDir * tL;
         float hL = length(pL) - R_GROUND;
         if (hL < 0.0) return false;
-        odR  += exp(-hL / H_RAYLEIGH) * dtL;
-        odM  += exp(-hL / H_MIE) * dtL;
-        odOZ += ozoneDensity(hL) * dtL;
+        odR += exp(-hL / H_RAYLEIGH) * dtL;
+        odM += exp(-hL / H_MIE) * dtL;
     }
     return true;
 }
@@ -139,8 +108,7 @@ bool lightRayOpticalDepth(vec3 p, vec3 sunDir, int N_light,
 vec3 computeAtmosphericScattering(vec3 viewDir, vec3 sunDir) {
     float camAlt = getCameraAltitude();
     vec3 ro = vec3(0.0, R_GROUND + camAlt, 0.0);
-    // Apply atmospheric refraction to the view direction
-    vec3 rd = applyRefraction(viewDir);
+    vec3 rd = viewDir;
     float tAtmo0, tAtmo1;
     if (!raySphere(ro, rd, R_ATMO, tAtmo0, tAtmo1)) return vec3(0.0);
     tAtmo0 = max(tAtmo0, 0.0);
@@ -156,7 +124,7 @@ vec3 computeAtmosphericScattering(vec3 viewDir, vec3 sunDir) {
 
     float dt = rayLen / float(N);
     vec3 sumR = vec3(0.0), sumM = vec3(0.0);
-    float viewOdR = 0.0, viewOdM = 0.0, viewOdOZ = 0.0;
+    float viewOdR = 0.0, viewOdM = 0.0;
 
     for (int i = 0; i < 24; ++i) {
         if (i >= N) break;
@@ -165,49 +133,25 @@ vec3 computeAtmosphericScattering(vec3 viewDir, vec3 sunDir) {
         float h = length(p) - R_GROUND;
         float hr = exp(-h / H_RAYLEIGH) * dt;
         float hm = exp(-h / H_MIE) * dt;
-        float hoz = ozoneDensity(h) * dt;
-        float odLightR, odLightM, odLightOZ;
-        if (!lightRayOpticalDepth(p, sunDir, N_light, odLightR, odLightM, odLightOZ)) {
-            viewOdR += hr; viewOdM += hm; viewOdOZ += hoz; continue;
+        float odLightR, odLightM;
+        if (!lightRayOpticalDepth(p, sunDir, N_light, odLightR, odLightM)) {
+            viewOdR += hr; viewOdM += hm; continue;
         }
-        // Total optical depth: Rayleigh + Mie + Ozone absorption
-        vec3 tau = BETA_R * (viewOdR + odLightR)
-                 + BETA_M * MIE_EXTINCTION_MULT * (viewOdM + odLightM)
-                 + BETA_OZ * (viewOdOZ + odLightOZ);
+        vec3 tau = BETA_R * (viewOdR + odLightR) + BETA_M * MIE_EXTINCTION_MULT * (viewOdM + odLightM);
         vec3 attenuation = exp(-tau);
         sumR += attenuation * hr;
         sumM += attenuation * hm;
-        viewOdR += hr; viewOdM += hm; viewOdOZ += hoz;
+        viewOdR += hr; viewOdM += hm;
     }
 
     float cosTheta = dot(rd, sunDir);
-    vec3 skyColor = SUN_IRRADIANCE * (sumR * BETA_R * phaseRayleigh(cosTheta)
-                                     + sumM * BETA_M * phaseMie(cosTheta));
-
-    // ====================================================================
-    // ENHANCED MULTIPLE SCATTERING
-    // ====================================================================
-    // (1) Scale up single scattering to compensate for missing higher orders
-    skyColor *= 1.45;
-
-    // (2) Isotropic ambient fill from multiply-scattered light
-    float sunAbove = smoothstep(-0.20, 0.30, sunDir.y);
-    skyColor += SUN_IRRADIANCE * 0.007 * sunAbove * vec3(0.40, 0.50, 0.64);
-
-    // (3) Forward-scatter aureole (bright haze around the sun from Mie)
-    float aureole = pow(max(0.0, cosTheta), 8.0) * 0.45 * sunAbove;
-    skyColor += SUN_IRRADIANCE * aureole * vec3(0.34, 0.30, 0.24) * 0.006;
-
-    // (4) Ground albedo bounce — warm reflected light from below
-    //     Earth surface average albedo ~0.3, gives warm fill to lower hemisphere
-    float groundBounce = max(0.0, -rd.y) * 0.12 * sunAbove;
-    skyColor += SUN_IRRADIANCE * groundBounce * vec3(0.14, 0.11, 0.06) * 0.005;
-
-    // (5) 2nd-order Rayleigh: sky light re-scattered (fills in dark areas)
-    //     Approximate as proportional to the total single-scatter energy
-    float totalEnergy = dot(sumR * BETA_R, vec3(0.2126, 0.7152, 0.0722));
-    skyColor += vec3(0.35, 0.45, 0.60) * totalEnergy * 0.18 * sunAbove;
-
+    vec3 skyColor = SUN_IRRADIANCE * (sumR * BETA_R * phaseRayleigh(cosTheta) + sumM * BETA_M * phaseMie(cosTheta));
+    skyColor *= 1.38;
+    float sunAbove = smoothstep(-0.15, 0.25, sunDir.y);
+    skyColor += SUN_IRRADIANCE * 0.0065 * sunAbove * vec3(0.38, 0.48, 0.62);
+    float aureole = pow(max(0.0, cosTheta), 8.0) * 0.42 * sunAbove;
+    skyColor += SUN_IRRADIANCE * aureole * vec3(0.32, 0.28, 0.22) * 0.005;
+    skyColor += SUN_IRRADIANCE * max(0.0, rd.y) * 0.08 * sunAbove * vec3(0.12, 0.10, 0.06) * 0.004;
     return skyColor;
 }
 
@@ -223,185 +167,27 @@ vec3 getSunTransmittance(vec3 sunDir) {
     N = 12;
     #endif
     float dt = max(t1, 0.0) / float(N);
-    float odR = 0.0, odM = 0.0, odOZ = 0.0;
+    float odR = 0.0, odM = 0.0;
     for (int i = 0; i < 16; ++i) {
         if (i >= N) break;
         float t = (float(i) + 0.5) * dt;
         vec3 p = ro + sunDir * t;
         float h = length(p) - R_GROUND;
-        odR  += exp(-h / H_RAYLEIGH) * dt;
-        odM  += exp(-h / H_MIE) * dt;
-        odOZ += ozoneDensity(h) * dt;
+        odR += exp(-h / H_RAYLEIGH) * dt;
+        odM += exp(-h / H_MIE) * dt;
     }
-    return exp(-(BETA_R * odR + BETA_M * MIE_EXTINCTION_MULT * odM + BETA_OZ * odOZ));
+    return exp(-(BETA_R * odR + BETA_M * MIE_EXTINCTION_MULT * odM));
 }
 
 vec3 renderSunDisk(vec3 viewDir, vec3 sunDir, vec3 sunColor) {
     float cosAngle = dot(viewDir, sunDir);
     float angle = acos(clamp(cosAngle, -1.0, 1.0));
-
-    // Refraction-based vertical flattening near horizon
-    // The sun appears squished vertically because refraction lifts the bottom more than the top
-    float sunElev = asin(clamp(sunDir.y, -1.0, 1.0));
-    float flattenFactor = mix(0.75, 1.0, smoothstep(0.0, 0.3, abs(sunElev)));
-    // Compute effective angular distance with vertical compression
-    vec3 toSun = sunDir - viewDir * cosAngle;
-    float toSunLen = length(toSun);
-    if (toSunLen > 1e-6) {
-        vec3 sunPerp = toSun / toSunLen;
-        float vertComponent = dot(viewDir, vec3(0.0, 1.0, 0.0)) - cosAngle * sunDir.y;
-        // Effective angle with vertical compression
-        float horizAngle = sqrt(max(0.0, angle * angle - vertComponent * vertComponent));
-        float vertAngle = abs(vertComponent) / flattenFactor;
-        float effectiveAngle = sqrt(horizAngle * horizAngle + vertAngle * vertAngle);
-        angle = effectiveAngle;
-    }
-
     float disk = smoothstep(SUN_RADIUS * 1.08, SUN_RADIUS * 0.92, angle);
     float r = clamp(angle / SUN_RADIUS, 0.0, 1.0);
-
-    // Improved limb darkening (Eddington approximation: I(μ) = I₀(1 - u + u·μ))
-    // where μ = cos(angle from disk center), u ≈ 0.6 for the sun
-    float mu = sqrt(max(0.0, 1.0 - r * r));
-    float limb = 1.0 - 0.6 * (1.0 - mu);
-
-    // Outer corona glow (extends further than disk)
-    float corona = smoothstep(SUN_RADIUS * 5.0, SUN_RADIUS * 1.0, angle) * (1.0 - disk) * 0.40;
-    // Inner corona (tight bright ring just outside disk)
-    float innerCorona = smoothstep(SUN_RADIUS * 1.8, SUN_RADIUS * 1.0, angle)
-                      * (1.0 - smoothstep(SUN_RADIUS * 0.95, SUN_RADIUS * 1.1, angle)) * 0.25;
-
-    return (disk * limb * 14.0 + corona + innerCorona) * sunColor;
+    float limb = 1.0 - 0.55 * (1.0 - cos(r * PI * 0.5));
+    float corona = smoothstep(SUN_RADIUS * 4.5, SUN_RADIUS * 1.0, angle) * (1.0 - disk) * 0.35;
+    return (disk * limb * 12.0 + corona) * sunColor;
 }
-
-// ==============================================================================
-// AIRGLOW — Faint emission from excited oxygen at ~90-100 km altitude
-// Green OI 557.7nm line + faint red OI 630nm line. Visible on dark nights.
-// ==============================================================================
-vec3 computeAirglow(vec3 viewDir, float dayFactor) {
-    if (dayFactor > 0.15) return vec3(0.0); // Washed out during day/twilight
-    float nightVis = 1.0 - smoothstep(0.0, 0.15, dayFactor);
-
-    float camAlt = getCameraAltitude();
-    vec3 ro = vec3(0.0, R_GROUND + camAlt, 0.0);
-    vec3 rd = applyRefraction(viewDir);
-
-    // Intersect view ray with the airglow emission shell (~90-95 km)
-    float shellAlt = 92000.0;
-    float t0, t1;
-    if (!raySphere(ro, rd, R_GROUND + shellAlt, t0, t1)) return vec3(0.0);
-    float tClosest = max(0.0, -dot(ro, rd)); // Closest approach to Earth center
-    tClosest = min(tClosest, t1);
-    vec3 p = ro + rd * tClosest;
-    float h = length(p) - R_GROUND;
-
-    // Emission profile: peaks at 92 km, narrow Gaussian
-    float emitProfile = exp(-pow((h - shellAlt) / 4500.0, 2.0));
-
-    // Green oxygen line (557.7nm) — dominant
-    // Red oxygen line (630nm) — fainter, higher altitude
-    vec3 airglowColor = vec3(0.12, 0.32, 0.06) * emitProfile       // Green OI
-                      + vec3(0.10, 0.03, 0.015) * emitProfile * 0.35; // Red OI
-
-    // Slight spatial variation (wave patterns in the upper atmosphere)
-    float wavePattern = vnoise(viewDir.xz * 8.0 + frameTimeCounter * 0.002) * 0.3 + 0.7;
-
-    return airglowColor * nightVis * 0.018 * wavePattern;
-}
-
-// ==============================================================================
-// ZODIACAL LIGHT — Sunlight scattered by interplanetary dust in the solar system
-// Visible as a faint cone of light along the ecliptic after sunset / before sunrise
-// ==============================================================================
-vec3 computeZodiacalLight(vec3 viewDir, vec3 sunDir, float dayFactor) {
-    // Only visible during twilight and early night (Gegenschein at opposition is too faint)
-    if (dayFactor > 0.6 || sunDir.y > 0.15) return vec3(0.0);
-    float vis = smoothstep(0.6, 0.0, dayFactor) * smoothstep(0.15, -0.1, sunDir.y);
-
-    // Angular distance from the sun (elongation)
-    float cosAngle = dot(viewDir, sunDir);
-    float elongation = acos(clamp(cosAngle, -1.0, 1.0));
-
-    // Intensity: strong near the sun, falls as ~elongation^-2.3
-    float intensity = pow(max(0.0, 1.0 - elongation / PI), 2.3);
-    // Only visible as a cone close to the sun direction
-    intensity *= smoothstep(PI * 0.6, 0.15, elongation);
-
-    // Concentrated near the ecliptic plane (tilt ~23.4° from celestial equator)
-    // Approximate ecliptic normal
-    vec3 eclipticNormal = normalize(vec3(0.0, cos(radians(23.4)), sin(radians(23.4))));
-    float eclipticLat = abs(dot(viewDir, eclipticNormal));
-    float eclipticBand = exp(-eclipticLat * eclipticLat * 12.0);
-    intensity *= eclipticBand;
-
-    // Warm color (reflected sunlight, slightly reddened)
-    vec3 zodiacalColor = vec3(0.95, 0.82, 0.58) * intensity * 0.012;
-
-    return zodiacalColor * vis;
-}
-
-// ==============================================================================
-// TWILIGHT PHENOMENA — Belt of Venus + Earth Shadow + Afterglow
-// These are visible during civil/nautical twilight when sun is just below horizon
-// ==============================================================================
-vec3 computeTwilightPhenomena(vec3 viewDir, vec3 sunDir, float dayFactor, float sunsetFactor) {
-    if (sunsetFactor < 0.01 && dayFactor > 0.5) return vec3(0.0);
-
-    vec3 result = vec3(0.0);
-    float sunElev = asin(clamp(sunDir.y, -1.0, 1.0));
-
-    // --- BELT OF VENUS ---
-    // Pink/rose band ~10-20° above the anti-solar horizon during twilight
-    // Caused by backscattered sunlight in the upper atmosphere
-    vec3 antiSunDir = -sunDir;
-    float antiSunDot = dot(viewDir, antiSunDir);
-    float antiSunAngle = acos(clamp(antiSunDot, -1.0, 1.0));
-
-    // Belt peaks at ~15° above anti-solar point, visible near horizon
-    float beltAngle = antiSunAngle;
-    float beltPeak = smoothstep(0.15, 0.35, beltAngle) * (1.0 - smoothstep(0.35, 0.55, beltAngle));
-    float horizonMask = smoothstep(0.0, 0.12, viewDir.y) * (1.0 - smoothstep(0.12, 0.35, viewDir.y));
-    float beltIntensity = beltPeak * horizonMask;
-
-    // Belt is pink/rose colored (backscattered red light from sunset)
-    vec3 beltColor = vec3(0.85, 0.45, 0.55) * beltIntensity * 0.18;
-
-    // Visibility: strongest during twilight (sun 0° to -6° below horizon)
-    float twilightVis = smoothstep(0.08, -0.05, sunDir.y) * smoothstep(-0.18, -0.05, sunDir.y);
-    beltColor *= twilightVis;
-    result += beltColor;
-
-    // --- EARTH SHADOW ---
-    // Dark blue/gray band below the Belt of Venus (Earth's shadow on the atmosphere)
-    // Visible as a darkening just above the horizon opposite to the sun
-    float shadowBand = smoothstep(0.0, 0.08, viewDir.y) * (1.0 - smoothstep(0.08, 0.18, viewDir.y));
-    float antiSunHorizon = smoothstep(-0.3, 0.1, antiSunDot);
-    float earthShadow = shadowBand * antiSunHorizon * 0.35;
-
-    // Dark blue/gray color
-    vec3 shadowColor = vec3(0.08, 0.12, 0.18) * earthShadow * twilightVis;
-    // Subtract from sky (darken it)
-    result -= shadowColor;
-
-    // --- AFTERGLOW ---
-    // Warm orange/red band that persists on the horizon after sunset
-    // Caused by multiple scattering in the lower atmosphere
-    float sunHorizon = smoothstep(0.15, -0.05, sunDir.y) * smoothstep(-0.25, -0.05, sunDir.y);
-    float sunDirDot = dot(viewDir, sunDir);
-    float sunAngle = acos(clamp(sunDirDot, -1.0, 1.0));
-
-    // Afterglow is concentrated near the sun's azimuth on the horizon
-    float afterglowHorizon = smoothstep(0.0, 0.08, viewDir.y) * (1.0 - smoothstep(0.08, 0.25, viewDir.y));
-    float afterglowSpread = smoothstep(1.8, 0.4, sunAngle); // Spread ~60° from sun azimuth
-    float afterglowIntensity = sunHorizon * afterglowHorizon * afterglowSpread;
-
-    // Warm orange/red color (multiply scattered sunset light)
-    vec3 afterglowColor = vec3(0.95, 0.45, 0.18) * afterglowIntensity * 0.22;
-    result += afterglowColor;
-
-    return result;
-}
-
 #endif // NEW_SKY
 
 // ==============================================================================
@@ -450,7 +236,7 @@ float hash3D(vec3 p) {
     return fract(p.x * p.y * p.z);
 }
 
-float vnoise(vec2 p) {
+float noise(vec2 p) {
     vec2 i = floor(p), f = fract(p);
     vec2 u = f * f * (3.0 - 2.0 * f);
     return mix(mix(hash(i), hash(i + vec2(1,0)), u.x),
@@ -462,7 +248,7 @@ const mat2 fbmRot = mat2(0.87758256, 0.47942554, -0.47942554, 0.87758256);
 float fbm(vec2 p) {
     float v = 0.0, a = 0.5;
     for (int i = 0; i < 4; ++i) {
-        v += a * vnoise(p);
+        v += a * noise(p);
         p = fbmRot * p * 2.1 + vec2(100.0);
         a *= 0.5;
     }
@@ -797,13 +583,6 @@ void main() {
             float moonBr = getMoonPhaseBrightness(moonPhase);
             finalSky += renderMoon(worldDir, moonWorldDir, moonPhase, moonExtinction) * moonVis * moonBr * 0.55;
         }
-        #endif
-
-        // ---- AIRGLOW + ZODIACAL + TWILIGHT (NEW_SKY only) ----
-        #ifdef NEW_SKY
-        finalSky += computeAirglow(worldDir, dayFactor);
-        finalSky += computeZodiacalLight(worldDir, sunWorldDir, dayFactor);
-        finalSky += computeTwilightPhenomena(worldDir, sunWorldDir, dayFactor, sunsetFactor);
         #endif
 
         // ---- STARS ----

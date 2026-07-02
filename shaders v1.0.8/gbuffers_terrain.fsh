@@ -5,7 +5,7 @@
 // AuraLite Shader Pack - Terrain Fragment Shader (GLSL 460 - Advanced 3D POM)
 // [v1.0.7] Normalized normal vector output in colortex2 for lava.
 // ==============================================================================
-// [FIX v0.2.3] Removed dead vnoise/fbm functions.
+// [FIX v0.2.3] Removed dead noise/fbm functions.
 // [v1.0.4-fixed] Replaced fma() with direct multiply-add for GLSL compatibility.
 
 #define MC_NORMAL_MAP
@@ -36,14 +36,14 @@ layout(location = 0) out vec4 colortex0;
 layout(location = 1) out vec4 colortex1;
 layout(location = 2) out vec4 colortex2;
 
-// Standard high performance 2D vnoise for the procedural lava magma cracks
+// Standard high performance 2D noise for the procedural lava magma cracks
 float hash(vec2 p) {
     p = fract(p * vec2(123.34, 456.21));
     p += dot(p, p + 45.32);
     return fract(p.x * p.y);
 }
 
-float vnoise(vec2 p) {
+float noise(vec2 p) {
     vec2 i = floor(p);
     vec2 f = fract(p);
     vec2 u = f * f * (3.0 - 2.0 * f);
@@ -57,7 +57,7 @@ float fbm(vec2 p) {
     float v = 0.0;
     float a = 0.5;
     for (int i = 0; i < 4; ++i) {
-        v += a * vnoise(p);
+        v += a * noise(p);
         p = fbmRotMat * p * 2.1 + vec2(100.0);
         a *= 0.5;
     }

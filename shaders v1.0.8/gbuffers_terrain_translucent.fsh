@@ -42,7 +42,7 @@ float hash(vec2 p) {
     return fract(p.x * p.y);
 }
 
-float vnoise(vec2 p) {
+float noise(vec2 p) {
     vec2 i = floor(p);
     vec2 f = fract(p);
     vec2 u = f * f * (3.0 - 2.0 * f);
@@ -56,7 +56,7 @@ float fbm(vec2 p) {
     float v = 0.0;
     float a = 0.5;
     for (int i = 0; i < 4; ++i) {
-        v += a * vnoise(p);
+        v += a * noise(p);
         p = fbmRotMat * p * 2.1 + vec2(100.0);
         a *= 0.5;
     }

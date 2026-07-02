@@ -214,7 +214,7 @@ float hash3D(vec3 p) {
     return fract(p.x * p.y * p.z);
 }
 
-float vnoise(vec2 p) {
+float noise(vec2 p) {
     vec2 i = floor(p);
     vec2 f = fract(p);
     vec2 u = f * f * (3.0 - 2.0 * f);
@@ -228,7 +228,7 @@ float fbm(vec2 p) {
     float v = 0.0;
     float a = 0.5;
     for (int i = 0; i < 3; ++i) {
-        v += a * vnoise(p);
+        v += a * noise(p);
         p = fbmRotMat * p * 2.05 + vec2(100.0);
         a *= 0.5;
     }
@@ -342,19 +342,19 @@ vec4 renderVolumetricClouds(vec3 worldDir, vec3 lightDir, vec3 lightColor, float
     // [FIX v0.2.5] Camera-stable sampling.
     // Screen-space jitter made clouds change/swim while rotating the camera.
     // We now sample fixed world-height slices when possible, falling back to midpoint
-    // distance slices near the horizon. Same 12 samples, no extra vnoise/fbm calls.
+    // distance slices near the horizon. Same 12 samples, no extra noise/fbm calls.
     float yStart = ((worldDir.y) * (t_start) + (cameraPosition.y));
     float yEnd   = ((worldDir.y) * (t_end) + (cameraPosition.y));
     float heightSliceWeight = smoothstep(0.012, 0.055, abs(worldDir.y));
     float safeDirY = (worldDir.y >= 0.0 ? 1.0 : -1.0) * max(abs(worldDir.y), 0.055);
 
-    // Cheap phase terms reused by all samples. No extra fbm/vnoise calls.
+    // Cheap phase terms reused by all samples. No extra fbm/noise calls.
     float lightPhase = clamp(((dot(worldDir, lightDir)) * (0.5) + (0.5)), 0.0, 1.0);
     float silverLining = pow(lightPhase, 7.0) * (1.0 - rainStrength) * dayFactor;
     float horizonSoftness = smoothstep(0.01, 0.18, abs(worldDir.y));
 
     // Independent wind-shear per cloud layer. This breaks the old "locked together"
-    // look while keeping the same number of vnoise/fbm calls.
+    // look while keeping the same number of noise/fbm calls.
     float cloudWind = getCloudWindSpeedMultiplier();
     vec2 windCirrus  = ((vec2(0.085, 0.034)) * (t * cloudWind) + (vec2(173.13, -421.70)));
     vec2 windAc      = ((vec2(0.116, 0.071)) * (t * cloudWind) + (vec2(-317.40, 118.82)));
@@ -374,8 +374,8 @@ vec4 renderVolumetricClouds(vec3 worldDir, vec3 lightDir, vec3 lightColor, float
 
         if (p.y >= layerCirrusBottom && p.y <= layerCirrusTop) {
             vec2 uv = ((cloudCoordCirrus(p.xz)) * (0.0006) + (windCirrus));
-            float d1 = vnoise(uv * 4.5);
-            float d2 = vnoise(uv * 11.0);
+            float d1 = noise(uv * 4.5);
+            float d2 = noise(uv * 11.0);
             float cirrusDensity = d1 * d2;
             float layerFeather = smoothstep(layerCirrusBottom, layerCirrusBottom + cloudSpan * 0.035, p.y) *
                                  (1.0 - smoothstep(layerCirrusTop - cloudSpan * 0.045, layerCirrusTop, p.y));
@@ -386,7 +386,7 @@ vec4 renderVolumetricClouds(vec3 worldDir, vec3 lightDir, vec3 lightColor, float
         }
         else if (p.y >= layerAcBottom && p.y < layerCirrusBottom) {
             vec2 uv = ((cloudCoordAc(p.xz)) * (0.001) + (windAc));
-            float d = vnoise(uv * 1.8);
+            float d = noise(uv * 1.8);
             float threshold = mix(0.44, 0.28, rainStrength);
             float layerFeather = smoothstep(layerAcBottom, layerAcBottom + cloudSpan * 0.035, p.y) *
                                  (1.0 - smoothstep(layerCirrusBottom - cloudSpan * 0.035, layerCirrusBottom, p.y));
@@ -397,7 +397,7 @@ vec4 renderVolumetricClouds(vec3 worldDir, vec3 lightDir, vec3 lightColor, float
         }
         else if (p.y >= layerAltoBottom && p.y < layerAcBottom) {
             vec2 uv = ((cloudCoordAlto(p.xz)) * (0.0014) + (windAlto));
-            float d = vnoise(uv * 1.5);
+            float d = noise(uv * 1.5);
             float threshold = mix(0.40, 0.22, rainStrength);
             float layerFeather = smoothstep(layerAltoBottom, layerAltoBottom + cloudSpan * 0.030, p.y) *
                                  (1.0 - smoothstep(layerAcBottom - cloudSpan * 0.035, layerAcBottom, p.y));
@@ -420,7 +420,7 @@ vec4 renderVolumetricClouds(vec3 worldDir, vec3 lightDir, vec3 lightColor, float
             stepDensity = smoothstep(cloudMin, cloudMax + edgeSoftness * (1.0 - hFactor), d) * heightProfile * 0.38;
 
             vec3 lightPos = ((lightDir) * (35.0) + (p));
-            float dLight = vnoise(((cloudCoordCumulus(lightPos.xz)) * (0.0018) + (windCumulus)));
+            float dLight = noise(((cloudCoordCumulus(lightPos.xz)) * (0.0018) + (windCumulus)));
             float shadowDensity = smoothstep(cloudMin, cloudMax, dLight);
             // Softer self-shadowing: keeps volume depth but avoids crushed black cloud undersides.
             float shadow = exp(-shadowDensity * 2.35);
@@ -473,7 +473,7 @@ float getCameraCloudDensity(float t) {
     float cloudMaxY = cloudBaseY + cloudSpan;
     float y = cameraPosition.y;
 
-    // Fast early-out: no vnoise/fbm unless the camera is actually in the cloud slab.
+    // Fast early-out: no noise/fbm unless the camera is actually in the cloud slab.
     if (y < cloudMinY || y > cloudMaxY) return 0.0;
 
     float cloudWind = getCloudWindSpeedMultiplier();
@@ -492,8 +492,8 @@ float getCameraCloudDensity(float t) {
 
     if (y >= layerAcTop && y <= layerCirrusTop) {
         vec2 uv = ((cloudCoordCirrus(p.xz)) * (0.0006) + (windCirrus));
-        float d1 = vnoise(uv * 4.5);
-        float d2 = vnoise(uv * 11.0);
+        float d1 = noise(uv * 4.5);
+        float d2 = noise(uv * 11.0);
         float layerFeather = smoothstep(layerAcTop, layerAcTop + cloudSpan * 0.035, y) *
                              (1.0 - smoothstep(layerCirrusTop - cloudSpan * 0.045, layerCirrusTop, y));
         density = smoothstep(0.18, 0.48, d1 * d2) * layerFeather * 0.70 * (1.0 - rainStrength);
@@ -703,22 +703,22 @@ float sampleCloudLayerDensityForShadow(vec2 xz, float y, float cloudMinY, float 
     if (y >= layerAcTop && y <= layerCirrusTop) {
         // High cirrus shadows are deliberately very transparent.
         vec2 uv = cloudCoordCirrus(xz) * 0.0006 + windCirrus;
-        float d = vnoise(uv * 4.5) * vnoise(uv * 11.0);
+        float d = noise(uv * 4.5) * noise(uv * 11.0);
         density = smoothstep(0.18, 0.48, d) * 0.16 * (1.0 - rainStrength);
     } else if (y >= layerAltoTop && y < layerAcTop) {
         // Altocumulus / mid deck: soft semi-transparent patches.
         vec2 uv = cloudCoordAc(xz) * 0.001 + windAc;
         float threshold = mix(0.44, 0.28, rainStrength);
-        density = smoothstep(threshold, threshold + 0.20, vnoise(uv * 1.8)) * 0.32 * (1.0 - rainStrength * 0.25);
+        density = smoothstep(threshold, threshold + 0.20, noise(uv * 1.8)) * 0.32 * (1.0 - rainStrength * 0.25);
     } else if (y >= layerCumulusTop && y < layerAltoTop) {
         // Altostratus: broad soft shading.
         vec2 uv = cloudCoordAlto(xz) * 0.0014 + windAlto;
         float threshold = mix(0.40, 0.22, rainStrength);
-        density = smoothstep(threshold, threshold + 0.24, vnoise(uv * 1.5)) * 0.42;
+        density = smoothstep(threshold, threshold + 0.24, noise(uv * 1.5)) * 0.42;
     } else {
         // Low cumulus / storm deck: strongest and most varied shadows.
         vec2 uv = cloudCoordCumulus(xz) * 0.0018 + windCumulus;
-        float d = vnoise(uv);
+        float d = noise(uv);
         float cloudMin = mix(0.42, 0.16, rainStrength);
         float cloudMax = mix(0.68, 0.44, rainStrength);
         density = smoothstep(cloudMin, cloudMax, d) * mix(0.52, 0.78, rainStrength * max(0.25, thunderStrength));
@@ -1309,7 +1309,7 @@ void main() {
         // Subsurface Scattering (SSS) for foliage
         #ifdef FOLIAGE_SSS
         if (isFoliage) {
-            // Smoothed shadow factor for SSS to reduce Poisson disk vnoise
+            // Smoothed shadow factor for SSS to reduce Poisson disk noise
             float sssShadow = smoothstep(0.0, 0.45, shadow); 
             
             // SSS term: light bleeding through when looking at the light source
@@ -1629,9 +1629,9 @@ void main() {
             for (int i = 0; i < 6; ++i) {
                 float uwDist = (float(i) + 0.5) * uwStepSize;
                 vec3 uwSampleWorld = cameraPosition + worldDir * uwDist;
-                // Light penetration pattern — caustic-like vnoise at the sample world position
+                // Light penetration pattern — caustic-like noise at the sample world position
                 vec2 uwRayUV = uwSampleWorld.xz * 0.22 + vec2(frameTimeCounter * 0.15, frameTimeCounter * 0.08);
-                float uwNoise = vnoise(uwRayUV) * 0.6 + vnoise(uwRayUV * 2.8) * 0.4;
+                float uwNoise = noise(uwRayUV) * 0.6 + noise(uwRayUV * 2.8) * 0.4;
                 // Depth attenuation — light decays with water depth below surface (~Y=62)
                 float uwDepthFade = exp(clamp((uwSampleWorld.y - 62.0) / 18.0, -2.5, 0.0));
                 // Transmittance along path
@@ -1720,7 +1720,7 @@ void main() {
             vec2 largeUV = feetPlayerPos.xz * 0.026 + drift;
             vec2 smallUV = feetPlayerPos.xz * 0.074 - drift * 1.7;
             float largeSheet = fbm(largeUV);
-            float smallBreakup = vnoise(smallUV);
+            float smallBreakup = noise(smallUV);
             float sheetMask = smoothstep(0.18, 0.82, largeSheet * 0.78 + smallBreakup * 0.22);
             float mistNoise = mix(0.48, 0.92, sheetMask);
 
