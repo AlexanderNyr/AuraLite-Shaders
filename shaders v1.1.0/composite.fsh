@@ -857,11 +857,15 @@ vec3 computeVolumetricGodrays(vec3 rayDirView, vec3 rayDirWorld, float maxRayDis
     if (rayLength <= 0.5) return vec3(0.0);
 
     // --- User-facing intensity ---
-    float strengthMult = 2.4;
+    // [TUNE HDR] Roughly halved vs the original LDR values: now that colortex0 is
+    // RGBA16F the godray radiance is no longer clipped at 1.0 together with the
+    // scene, so the additive shaft survives in full and reads far brighter. The
+    // soft shoulder below now also does the heavy lifting on the bright core.
+    float strengthMult = 1.2;
     #if GODRAYS_STRENGTH == 1
-    strengthMult = 1.4;
+    strengthMult = 0.7;
     #elif GODRAYS_STRENGTH == 3
-    strengthMult = 3.8;
+    strengthMult = 1.9;
     #endif
 
     // --- Phase function: dominant forward Mie lobe + weak backscatter lobe ---
@@ -947,7 +951,11 @@ vec3 computeVolumetricGodrays(vec3 rayDirView, vec3 rayDirWorld, float maxRayDis
     // Soft shoulder keeps the sun-facing core from blowing out the HDR pipeline
     // while preserving the linear response of faint side-lit shafts.
     // [FIX v1.1.0] Relaxed 0.55 -> 0.30 — the old shoulder crushed the bright core.
-    scattered = scattered / (1.0 + scattered * 0.30);
+    // [TUNE HDR] Raised 0.30 -> 0.50: under RGBA16F the additive godray no longer
+    // clips against an already-saturated scene, so the bright core became too hot.
+    // A stronger shoulder compresses that core back down while leaving faint side
+    // shafts (which sit well below 1.0) essentially untouched.
+    scattered = scattered / (1.0 + scattered * 0.50);
     return scattered;
 }
 #endif

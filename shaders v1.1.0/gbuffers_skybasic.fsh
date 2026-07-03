@@ -163,9 +163,13 @@ bool lightOpticalDepth(vec3 p, vec3 sunDir, int N,
         tL1 = tg0;
     }
     float dtL = tL1 / float(N);
+    // [FIX sky-banding] Same per-pixel dither applied to the sun→sample light
+    // march (only 2-4 steps). Deterministic per pixel (same gl_FragCoord hash)
+    // so it stays temporally stable; only spatially breaks up the marching steps.
+    float lightDither = fract(sin(dot(gl_FragCoord.xy, vec2(12.9898, 78.233))) * 43758.5453);
     for (int j = 0; j < 16; ++j) {
         if (j >= N) break;
-        float tL = (float(j) + 0.5) * dtL;
+        float tL = (float(j) + lightDither) * dtL;
         vec3 pL = p + sunDir * tL;
         float hL = length(pL) - R_GROUND;
         if (hL < 0.0) break;
@@ -235,9 +239,18 @@ vec3 computeAtmosphericScattering(vec3 viewDir, vec3 sunDir) {
     float viewOdR = 0.0, viewOdM = 0.0, viewOdO3 = 0.0;
     const float EARLY_TERM = 0.02;
 
+    // [FIX sky-banding] Per-pixel raymarch dither: the atmosphere is integrated
+    // in only 6-10 steps; without jittering sample positions, adjacent pixels'
+    // rays sample nearly identical discrete altitudes → visible stepped banding
+    // in the sky gradient. Output (8-bit) dithering CANNOT fix this because the
+    // steps are baked into the radiance BEFORE the buffer write. Jittering the
+    // sample offset per pixel spreads the integration points so the low-sample
+    // march converges to a smooth gradient.
+    float marchDither = fract(sin(dot(gl_FragCoord.xy, vec2(12.9898, 78.233))) * 43758.5453);
+
     for (int i = 0; i < 24; ++i) {
         if (i >= N) break;
-        float t = tAtmo0 + (float(i) + 0.5) * dt;
+        float t = tAtmo0 + (float(i) + marchDither) * dt;
         vec3 p = ro + viewDir * t;
         float h = length(p) - R_GROUND;
         if (h < 0.0) break;

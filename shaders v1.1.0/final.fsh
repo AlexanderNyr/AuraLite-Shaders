@@ -701,6 +701,26 @@ void main() {
     color = applySMAA(texcoord, color, expFactor);
     #endif
 
+    // ==========================================================================
+    // [BANDING FIX] LINEAR-SPACE DITHER — applied BEFORE tone mapping.
+    // This is the correct location for killing dark-sky + moon-halo banding (the
+    // technique BSL/Complementary use). Both the night sky gradient and the
+    // smooth glow around the sun/moon disks are so dark after tone mapping that
+    // they compress to only a handful of output codes; a post-gamma ±1 LSB dither
+    // cannot smooth that. But because gamma EXPANDS dark values, a small LINEAR
+    // noise here becomes a much larger sRGB delta in the darks — exactly enough
+    // to blend the gradient into a smooth transition. In bright regions the same
+    // linear noise maps to <±0.5 code, so it stays invisible. Triangle
+    // distribution (n1+n2-1) suppresses banding harder than uniform noise.
+    // Strength 1.0/255 matches the BSL/Complementary reference.
+    // ==========================================================================
+    {
+        vec2 dp = gl_FragCoord.xy;
+        float n1 = fract(sin(dot(dp,        vec2(12.9898, 78.233))) * 43758.5453);
+        float n2 = fract(sin(dot(dp + 17.0, vec2(12.9898, 78.233))) * 43758.5453);
+        color += vec3((n1 + n2 - 1.0) * (1.0 / 255.0));
+    }
+
 #if CONTRAST == 1
     color = clamp(mix(color, ACESFilm(color), 0.45), 0.0, 1.0);
     #elif CONTRAST == 2
@@ -730,5 +750,10 @@ void main() {
     #endif
     color = applyVibrancy(color, vibAmount);
 
-    fragColor = vec4(color, 1.0);
+    // Note: the output (post-gamma) dither that used to live here has been
+    // REMOVED. Banding is now handled by the LINEAR-space dither applied BEFORE
+    // tone mapping above, which is far more effective in dark regions (the only
+    // place banding was visible) and silent in bright regions.
+
+    fragColor = vec4(clamp(color, 0.0, 1.0), 1.0);
 }
