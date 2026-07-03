@@ -1,10 +1,10 @@
-# 🌌 AuraLite Shaders (Minecraft 1.16.5 – 26.1.2)
+# 🌌 AuraLite Shaders (Minecraft 1.16.5 – 26.2)
 
 ![Minecraft Version](https://img.shields.io/badge/Minecraft-1.16.5%20--%2026.1.2-blue?logo=minecraft&logoColor=white)
 [![Shader Loader](https://img.shields.io/badge/Loader-Iris%20%2F%20Sodium-green)](https://modrinth.com/mod/iris)
 [![API Standard](https://img.shields.io/badge/API-OpenGL%204.6%20%2F%20GLSL%20460-orange)](https://khronos.org/)
 [![Materials Standard](https://img.shields.io/badge/PBR-LabPBR%201.3-cyan)](https://github.com/rre36/lab-pbr)
-[![Version](https://img.shields.io/badge/Release-v1.0.7-purple)](https://github.com/AlexanderNyr/AuraLite-Shaders)
+[![Version](https://img.shields.io/badge/Release-v1.1.0-purple)](https://github.com/AlexanderNyr/AuraLite-Shaders)
 [![License](https://img.shields.io/badge/License-CC%20BY--NC--SA%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by-nc-sa/4.0/)
 
 
@@ -15,6 +15,46 @@ AuraLite delivers a breathtaking, realistic visual experience without overcompli
 ---
 
 > ℹ️ **Historical note:** older changelog sections below are preserved as original release notes.
+
+## 🆕 What's New in v1.1.0 — *True Volumetric Godrays, HDR Pipeline & Experimental Physical Sky*
+
+Version **1.1.0** replaces the screen-space godray approximation with a fully volumetric raymarched implementation, switches the entire G-buffer pipeline to true HDR (RGBA16F), and introduces an experimental, fully physical realtime atmospheric-scattering sky mode as an opt-in alternative to the stable gradient sky. This is a focused two-pillar update on top of the **v1.0.7** bug-fix baseline.
+
+### 🌤️ True Volumetric Godrays
+
+The old `computeGodrays()` screen-space approximation has been replaced by `computeVolumetricGodrays()` — a genuine single-scattering volumetric raymarch:
+
+* **Per-step shadow-map occlusion** — every raymarch sample now tests the shadow map individually, so light shafts are actually carved by real geometry (trees, buildings, cave ceilings) instead of being implied by a "forward-looking boost" toward the sun.
+* **Interleaved Gradient Noise dithering** (Jimenez 2014), rotated per-frame via the new `frameCounter` uniform when TAA is active — 8–24 raymarch steps now integrate as smoothly as hundreds, with no banding.
+* **Exact per-segment Beer–Lambert integration** — `Tr₀ · σs/σt · (1 − e^(−σt·Δx))` per step, which is energy-conserving regardless of step size (no more over-brightening at low sample counts).
+* **Dual-lobe Henyey-Greenstein phase function** (forward + weak backscatter lobe) with an isotropic floor, so crepuscular rays stay visible when looking *across* them, not only when staring directly at the sun.
+* **Colored radiance** — shafts are now warm Kelvin-driven sunbeams by day, deep orange at sunset, and faint blue moonbeams at night, instead of a flat white/yellow overlay.
+* **New `GODRAYS_STRENGTH`** setting (*Subtle / Balanced / Dramatic*) added to every quality profile.
+* `GODRAYS_QUALITY` sample counts and distances increased: Fast 8 samples/96m, Balanced 16/128m, High 24/160m (up from 4/72m, 6/110m, 8/150m in v1.0.7).
+
+### 🌈 Full HDR G-Buffer Pipeline
+
+* **`colortex0`, `colortex1`, and `colortex2` are now explicitly `RGBA16F`.** Bright sources — the sun disk, lava, specular highlights, portals — no longer clip to `1.0` before tone mapping, so the ACES/AgX curves in `final.fsh` finally compress genuine HDR highlights instead of receiving pre-clamped input. Bloom now samples real HDR luminance rather than an already-saturated LDR buffer.
+* `colortex2`'s alpha channel carries a 5-value material tag (`0.0`/`0.1`/`0.62`/`0.8`/`1.0`); RGBA16F guarantees these are preserved exactly, whereas a lower-precision format would have aliased and collided material tags (e.g. foliage vs. water).
+* Godray intensity constants were re-tuned (roughly halved vs. the old LDR values) now that the additive shaft survives in full instead of clipping against a saturated scene; a stronger soft shoulder (`0.50` vs. the old `0.30`) keeps the sun-facing core from blowing out under HDR.
+
+### 🧪 Experimental: Realtime Physical Sky (Off by Default)
+
+A brand-new **`[EXPERIMENTAL]`** menu tab exposes an alternate sky renderer in `gbuffers_skybasic.fsh`, disabled in every shipped profile (`SKY_MODE=0`) so the stable gradient sky remains the default:
+
+* **`SKY_MODE`** — `0` (Gradient, legacy v1.0.7-style sky) or `1` (Physical Realtime): a genuine per-pixel ray-marched atmosphere with exact 1st-order single scattering (Rayleigh + Mie + Ozone, full sun-ray optical-depth march with ground-occlusion detection) plus a blue-biased, bounded multiple-scattering ambient term that fills in the zenith/horizon without producing the typical LUT-based "yellow band" artifact. No lookup textures, no cross-frame reads.
+* **`SKY_QUALITY`** — controls raymarch sample counts (*Fast 8×4 / Standard 12×6 / High 16×8*) for the physical mode.
+* **`SKY_STYLE`** — new artistic-direction toggle independent of `SKY_MODE`: *Realistic* (true angular sun/moon size, neutral colors, minimal glow — an authentic astronomy look), *Semi-realistic* (readable ×2.8 sun/moon size, richer color, soft aureole — the default), or *Fantasy* (grand ×5.5 sun/moon, huge corona, vivid saturated teal/crimson/indigo palette for a stylized sky).
+* Physical mode renders the sun disk with real limb darkening and a physically-derived angular radius, and computes its color from actual sun-ray transmittance (ozone-aware) rather than the legacy Kelvin/airmass approximation.
+* Because this feature is explicitly experimental and disabled by default, it introduces no behavioral change to any existing profile.
+
+### 🛠️ Smaller Fixes & Cleanup
+
+* **Dark-sky/moon-halo banding fixed at the source** — a linear-space triangle-distributed dither (`±1/255`, matching the BSL/Complementary technique) is now applied in `final.fsh` *before* tone mapping, where gamma expansion makes a tiny linear noise term large enough in the darks to smooth the gradient, while staying invisible in bright regions. The old post-gamma dither (which couldn't fix pre-tonemap banding) has been removed and replaced with an explicit final `clamp()`.
+* `shadow.vsh` no longer relies on the deprecated fixed-function `ftransform()`; it now builds the clip-space position explicitly via `gl_ModelViewMatrix` / `gl_ProjectionMatrix` for broader driver compatibility.
+* Updated localization strings for `GODRAYS`, `GODRAYS_QUALITY`, and the new `GODRAYS_STRENGTH` / `SKY_MODE` / `SKY_STYLE` / `SKY_QUALITY` options and the new Experimental tab.
+
+---
 
 ## 🆕 What's New in v1.0.7 — *Comprehensive Bug Fix, Stability & Aurora Refinement Update*
 
@@ -369,7 +409,7 @@ Version **0.2.0** was the original content update that nearly doubled the pack's
 * 🧊 **Ice Glitch Fix** — dedicated block ID disables waving/refraction on ice variants to eliminate visual artifacts. *(v1.0.4: split into regular ice (semi-transparent) and packed/blue ice (opaque) with proper texture rendering.)*
 * 🌙 **Moon-Phase Aware Sky** — sky shading reacts to `moonPhase` and `dimension` for nether/end correctness.
 
-> Source for every version is shipped in this repo under [`shaders v0.2.0/`](shaders%20v0.2.0) through [`shaders v1.0.7/`](shaders%20v1.0.7). The current source snapshot is **v1.0.7**. End users should grab the packaged release ZIP from [Releases](https://github.com/AlexanderNyr/AuraLite-Shaders/releases).
+> Source for every version is shipped in this repo under [`shaders v0.2.0/`](shaders%20v0.2.0) through [`shaders v1.1.0/`](shaders%20v1.1.0). The current source snapshot is **v1.1.0**. End users should grab the packaged release ZIP from [Releases](https://github.com/AlexanderNyr/AuraLite-Shaders/releases).
 
 ---
 
@@ -561,8 +601,9 @@ AuraLite includes localized in-game configuration files for **69 language codes*
 * 🆕 **Cloud Render Distance** *(v0.2.5)* — `Near / Standard / Far / Very Far` — Maximum draw distance for volumetric clouds.
 * 🆕 **Cloud Shadows** *(v0.2.7)* — transparent procedural shadows from cloud density.
 * 🆕 **Cloud Shadow Strength** *(v0.2.7)* — `Soft / Balanced / Dramatic`.
-* 🆕 **Godrays / Sun Shafts** *(v0.2.7)* — physically-inspired volumetric single-scattering light shafts.
+* 🆕 **Godrays / Sun Shafts** *(v0.2.7, rebuilt as true volumetric raymarch in v1.1.0)* — per-step shadow-map-occluded volumetric single-scattering light shafts with colored sun/moon radiance.
 * 🆕 **Godrays Quality** *(v0.2.7)* — `Fast / Balanced / High`.
+* 🆕 **Godrays Strength (`GODRAYS_STRENGTH`)** *(v1.1.0)* — `Subtle / Balanced / Dramatic`.
 * **Aurora Borealis** — `Disabled / Only in Cold Biomes / Always Enabled`
 * **Aurora Speed** — `Slow / Standard / Fast`
 * **Aurora Brightness** — `Soft / Standard / Glowing`
@@ -587,7 +628,12 @@ AuraLite includes localized in-game configuration files for **69 language codes*
 * **Vignette** — Toggle cinematic corner darkening.
 * (Hidden) **Rain Wetness Reflections (`WET_REFLECTIONS`)** — Wet glossy ground during rain (enabled by default in MED+ profiles).
 
-### 🎚️ Quality Profiles *(rebalanced in v1.0.4, unchanged in v1.0.6)*
+### `[Experimental]` 🧪 *(new in v1.1.0, off by default in every profile)*
+* 🆕 **Sky Mode (`SKY_MODE`)** — `Gradient (Legacy) / Physical (Realtime)` — switches `gbuffers_skybasic` between the stable Kelvin-based gradient sky and a per-pixel ray-marched Rayleigh + Mie + Ozone scattering model with bounded multiple scattering. No LUTs; disabled by default so it never changes the default look.
+* 🆕 **Sky Style (`SKY_STYLE`)** — `Realistic / Semi-realistic / Fantasy` — independent artistic direction controlling sun/moon angular size, corona strength, and color saturation, from true-to-life astronomy to a vivid stylized palette.
+* 🆕 **Sky Scattering Quality (`SKY_QUALITY`)** — `Fast (8×4) / Standard (12×6) / High (16×8)` — raymarch sample counts for the Physical sky mode.
+
+### 🎚️ Quality Profiles *(rebalanced in v1.0.4, unchanged since v1.0.6 aside from the v1.1.0 Godrays Strength / Experimental Sky additions, which default off/neutral)*
 
 | Profile      | Target          | Shadows | Clouds | Cloud Shadows | Godrays | TAA | SSR | PBR | PBR Dist | AA   | SSAO | Heat Shimmer | Heavy Extras |
 |--------------|-----------------|---------|--------|---------------|---------|-----|-----|-----|----------|------|------|--------------|--------------|
