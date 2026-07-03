@@ -1,0 +1,423 @@
+# AuraLite Shaders v1.0.7 - Copyright (c) 2026 AlexanderNyr. Licensed under CC BY-NC-SA 4.0.
+# ==============================================================================
+# AuraLite Shader Pack - Cantonese (Hong Kong) Language Translations
+# ==============================================================================
+
+# ==============================================================================
+# 畫質設定檔 — 重新平衡 v1.0.5
+# ==============================================================================
+profile.VERY_LOW=極低
+profile.VERY_LOW.comment=絕對最高 FPS。所有額外效果關閉：冇陰影、冇雲、冇 PBR、冇 SSR、冇耶穌光。只有最低限度嘅渲染。
+profile.LOW=低
+profile.LOW.comment=輕量但可玩。保留植被／水面動畫、更光嘅星星、FXAA、暗角。冇陰影、雲或者 PBR。
+profile.MED=中
+profile.MED.comment=日常最佳選擇。陰影 1024、雲、PBR、SSR 快速、耶穌光、植被 SSS、濕潤反射、地面薄霧、流星。
+profile.HIGH=高
+profile.HIGH.comment=發燒友畫質。陰影 2048、SSR 平衡、TAA、SSAO 細緻、耶穌光 平衡、SMAA。
+profile.ULTRA=超高
+profile.ULTRA.comment=高端。陰影 4096、SSR 高、SSAO 平衡、耶穌光 高、TAA 穩定、所有效果開啟。
+profile.EXTREME=極致
+profile.EXTREME.comment=電影級最高。一切拉滿：PBR 無限距離、攝影級（AgX）色調映射、最深 SSAO、流星暴。
+profile.CUSTOM=自訂
+profile.CUSTOM.comment=用家自訂修改嘅設定。
+
+screen.TRANSLATION_NOTICE=⚠ 翻譯可能有誤
+screen.TRANSLATION_NOTICE.comment=部分本地化字串可能唔準確。如果有啲嘢睇落怪怪哋，請對照英文原文。
+
+# Screens
+screen.LIGHTING=光照設定
+screen.LIGHTING.comment=設定陰影、光線顏色同亮度。
+
+screen.FOLIAGE=植被設定
+screen.FOLIAGE.comment=設定草同樹葉嘅擺動動畫。
+
+screen.WATER=水面設定
+screen.WATER.comment=設定波浪、透明度同水面風格。
+
+screen.CLOUDS_MENU=天空與雲
+screen.CLOUDS_MENU.comment=設定 3D 雲同天空效果嘅物理高度、厚度同風格。
+
+screen.POST_PROCESS=後期處理與霧
+screen.POST_PROCESS.comment=設定曝光、霧同電影級效果。
+
+# Options
+option.SHADOWS=動態陰影
+option.SHADOWS.comment=開啟或關閉太陽同月亮嘅柔和動態陰影。
+
+option.SHADOW_RES=陰影解析度
+option.SHADOW_RES.comment=更改陰影貼圖畫質。數值愈高可能愈影響效能。
+
+option.PBR_LIGHTING=PBR 光照（LabPBR）
+option.PBR_LIGHTING.comment=啟用基於物理嘅渲染，用於金屬、粗糙度同 3D 法線貼圖（需要 PBR 資源包）。
+
+option.PBR_POM=3D 方塊浮雕（POM）
+option.PBR_POM.comment=啟用基於物理嘅視差遮蔽貼圖，呈現 3D 方塊紋理。喺唔相容嘅資源包上建議關閉。
+
+option.PBR_STRENGTH=PBR 強度
+option.PBR_STRENGTH.comment=控制 PBR 金屬表面嘅反射率同光澤度。
+
+value.PBR_STRENGTH.1=細緻
+value.PBR_STRENGTH.2=標準
+value.PBR_STRENGTH.3=鏡面
+
+option.SSAO=SSAO／SAO 遮蔽
+option.SSAO.comment=螢幕空間環境光遮蔽，用於牆角、方塊底下同幾何交界處嘅接觸陰影。由「高」開始向上啟用。
+option.SSAO_STRENGTH=SSAO 強度
+option.SSAO_STRENGTH.comment=控制螢幕空間環境光遮蔽嘅深度。只有喺 SSAO 啟用時先有效。
+value.SSAO_STRENGTH.1=細緻
+value.SSAO_STRENGTH.2=平衡
+value.SSAO_STRENGTH.3=深
+
+option.LIGHTMAP_WARMTH=火把暖度
+option.LIGHTMAP_WARMTH.comment=調整方塊／火把光嘅暖度同顏色。
+
+value.LIGHTMAP_WARMTH.1=溫馨
+value.LIGHTMAP_WARMTH.2=暖
+value.LIGHTMAP_WARMTH.3=強烈
+
+option.WAVING_LEAVES=擺動樹葉
+option.WAVING_LEAVES.comment=啟用樹葉嘅輕柔擺動動畫。
+
+option.WAVING_GRASS=擺動植被
+option.WAVING_GRASS.comment=啟用草、花同農作物嘅擺動動畫。
+
+option.WIND_SPEED=風速
+option.WIND_SPEED.comment=控制樹葉、植物同水波嘅擺動速度。
+
+option.FOLIAGE_SSS=植被 SSS
+option.FOLIAGE_SSS.comment=當你望住光源時，為樹葉、草同植物啟用次表面散射（半透明效果）。
+
+value.WIND_SPEED.1=輕柔
+value.WIND_SPEED.2=微風
+value.WIND_SPEED.3=狂風
+
+option.WATER_WAVES=水波
+option.WATER_WAVES.comment=喺水面啟用 3D 幾何波浪。冰同玻璃方塊唔會有波浪動畫。
+
+option.WATER_TRANSPARENCY=水密度
+option.WATER_TRANSPARENCY.comment=控制水、普通冰同玻璃方塊嘅透明度同不透明度。
+
+value.WATER_TRANSPARENCY.1=清澈
+value.WATER_TRANSPARENCY.2=平衡
+value.WATER_TRANSPARENCY.3=深
+
+option.PROCEDURAL_CLOUDS=體積 3D 雲
+option.PROCEDURAL_CLOUDS.comment=啟用可以飛入去同到達嘅物理可飛行 3D 雲。
+
+option.CLOUD_HEIGHT=雲高度
+option.CLOUD_HEIGHT.comment=設定世界入面雲層嘅物理高度（Y 層，以米計）。
+
+value.CLOUD_HEIGHT.1=低（約 110m）
+value.CLOUD_HEIGHT.2=標準（約 160m）
+value.CLOUD_HEIGHT.3=高（約 240m）
+
+option.CLOUD_THICKNESS=雲厚度
+option.CLOUD_THICKNESS.comment=設定雲嘅垂直厚度同體積。
+
+value.CLOUD_THICKNESS.1=薄（卷雲）
+value.CLOUD_THICKNESS.2=標準（積雲）
+value.CLOUD_THICKNESS.3=密（暴風雲）
+
+option.CLOUD_DISTANCE=雲渲染距離
+option.CLOUD_DISTANCE.comment=體積雲嘅最大繪製距離。畫質設定檔會自動增加。
+value.CLOUD_DISTANCE.1=近
+value.CLOUD_DISTANCE.2=標準
+value.CLOUD_DISTANCE.3=遠
+value.CLOUD_DISTANCE.4=極遠
+
+option.CLOUD_SHADOWS=雲陰影
+option.CLOUD_SHADOWS.comment=喺地形上加入由體積雲密度產生嘅半透明程序化陰影。由畫質設定檔平衡。
+option.CLOUD_SHADOW_STRENGTH=雲陰影強度
+option.CLOUD_SHADOW_STRENGTH.comment=控制半透明雲陰影有幾明顯同戲劇化。
+value.CLOUD_SHADOW_STRENGTH.1=柔和
+value.CLOUD_SHADOW_STRENGTH.2=平衡
+value.CLOUD_SHADOW_STRENGTH.3=戲劇化
+
+option.GODRAYS=耶穌光／太陽光束
+option.GODRAYS.comment=加入受物理啟發嘅體積單次散射太陽光束，具備 Beer-Lambert 消光、Mie 相位同陰影貼圖遮蔽。
+option.GODRAYS_QUALITY=耶穌光畫質
+option.GODRAYS_QUALITY.comment=控制基於物理嘅體積耶穌光嘅採樣數同積分距離。
+value.GODRAYS_QUALITY.1=快速
+value.GODRAYS_QUALITY.2=平衡
+value.GODRAYS_QUALITY.3=高
+
+option.AURORA_MODE=北極光
+option.AURORA_MODE.comment=控制夜空中逼真流動極光嘅顯示。
+
+value.AURORA_MODE.0=停用
+value.AURORA_MODE.1=只喺寒冷生態域
+value.AURORA_MODE.2=永遠啟用
+
+option.AURORA_SPEED=極光速度
+option.AURORA_SPEED.comment=控制北極光嘅擺動同流動速度。
+
+value.AURORA_SPEED.1=慢
+value.AURORA_SPEED.2=標準
+value.AURORA_SPEED.3=快
+
+option.AURORA_STRENGTH=極光亮度
+option.AURORA_STRENGTH.comment=控制北極光嘅整體輝光亮度。
+
+value.AURORA_STRENGTH.1=柔和
+value.AURORA_STRENGTH.2=標準
+value.AURORA_STRENGTH.3=發光
+
+option.NEBULA_BRIGHTNESS=銀河亮度
+option.NEBULA_BRIGHTNESS.comment=調整夜晚斜向棕色銀河星雲嘅輝光亮度。
+
+value.NEBULA_BRIGHTNESS.1=暗淡
+value.NEBULA_BRIGHTNESS.2=標準
+value.NEBULA_BRIGHTNESS.3=明亮
+
+option.STARS_BRIGHTNESS=星星亮度
+option.STARS_BRIGHTNESS.comment=控制夜晚星星嘅亮度同閃爍輝光。
+
+value.STARS_BRIGHTNESS.1=微弱
+value.STARS_BRIGHTNESS.2=標準
+value.STARS_BRIGHTNESS.3=璀璨
+
+option.STARS_AMOUNT=星星密度
+option.STARS_AMOUNT.comment=控制天空中星星嘅整體數量同密度。
+
+value.STARS_AMOUNT.1=少
+value.STARS_AMOUNT.2=標準
+value.STARS_AMOUNT.3=密
+
+option.RAINBOW_STRENGTH=彩虹強度
+option.RAINBOW_STRENGTH.comment=設定雨後彩虹嘅亮度同色彩飽和度。
+
+value.RAINBOW_STRENGTH.1=細緻
+value.RAINBOW_STRENGTH.2=平衡
+value.RAINBOW_STRENGTH.3=鮮明
+
+option.SHOOTING_STARS=流星（隕石）
+option.SHOOTING_STARS.comment=進入中氣層（約 80-120 公里）嘅基於物理嘅流星。渲染真實嘅大圓 3D 弧線，具備燒蝕光變曲線、黑體電漿顏色（3500-5500 K）、近地平線嘅 Rayleigh 消光，以及火流星上嘅持久電離尾跡。
+
+option.SHOOTING_STARS_FREQUENCY=流星活動（ZHR）
+option.SHOOTING_STARS_FREQUENCY.comment=大約天頂每小時出現率。零星 = 每小時約 10 顆嘅逼真背景。活躍 = 輕度流星雨。暴 = 峰值密度（約 100/小時）。
+
+value.SHOOTING_STARS_FREQUENCY.1=零星（約 10/小時）
+value.SHOOTING_STARS_FREQUENCY.2=活躍流星雨
+value.SHOOTING_STARS_FREQUENCY.3=流星暴
+
+option.SHOOTING_STARS_BRIGHTNESS=星等比例
+option.SHOOTING_STARS_BRIGHTNESS.comment=流星星等比例嘅主乘數。微弱 = 逼真平均值；明亮 = 放大火流星以達到電影級可見度。
+
+value.SHOOTING_STARS_BRIGHTNESS.1=微弱（逼真）
+value.SHOOTING_STARS_BRIGHTNESS.2=標準
+value.SHOOTING_STARS_BRIGHTNESS.3=明亮火流星
+
+option.COZY_LIGHTS=火把閃爍
+option.COZY_LIGHTS.comment=為火把、營火同燈籠啟用溫暖、溫馨嘅即時閃爍動畫。
+
+option.WET_REFLECTIONS=雨天濕潤反射
+option.WET_REFLECTIONS.comment=落雨時，地面、草同石頭等實心方塊喺天空下會變得濕潤、深色同有光澤。
+
+option.GROUND_MIST=低地面薄霧（Y=62-66）
+option.GROUND_MIST.comment=啟用喺黎明同黃昏時滑過水面同冰面嘅柔和金白色早晚霧層。
+
+option.FOG_DENSITY_LEVEL=霧密度
+option.FOG_DENSITY_LEVEL.comment=控制大氣地平線霧嘅強度。
+
+value.FOG_DENSITY_LEVEL.1=低
+value.FOG_DENSITY_LEVEL.2=中
+value.FOG_DENSITY_LEVEL.3=高
+
+option.EXPOSURE=曝光亮度
+option.EXPOSURE.comment=控制畫面嘅整體亮度。
+
+value.EXPOSURE.1=柔和
+value.EXPOSURE.2=平衡
+value.EXPOSURE.3=鮮豔
+
+option.COLOR_SATURATION=色彩鮮豔度
+option.COLOR_SATURATION.comment=控制螢幕顏色嘅非線性飽和度。令植被睇落似翡翠、天空鬱蔥。
+
+value.COLOR_SATURATION.1=柔和
+value.COLOR_SATURATION.2=平衡
+value.COLOR_SATURATION.3=多彩
+value.COLOR_SATURATION.4=鮮豔
+
+option.CONTRAST=畫面對比
+option.CONTRAST.comment=揀選色調映射同對比曲線風格。
+
+value.CONTRAST.1=柔和
+value.CONTRAST.2=電影級（ACES）
+value.CONTRAST.3=強烈（高對比）
+value.CONTRAST.4=攝影級（類 AgX）
+
+option.TAA=時間性抗鋸齒（TAA）
+option.TAA.comment=利用運動重投影同鄰域裁剪嘅時間性解析。喺高設定下減少閃爍同鋸齒邊緣。
+option.TAA_STRENGTH=TAA 強度
+option.TAA_STRENGTH.comment=控制歷史混合。愈高愈穩定，但喺運動時可能愈柔。
+value.TAA_STRENGTH.1=輕度
+value.TAA_STRENGTH.2=平衡
+value.TAA_STRENGTH.3=穩定
+
+
+
+option.VIGNETTE=暗角效果
+option.VIGNETTE.comment=喺螢幕邊緣啟用細微變暗，提升聚焦。
+
+# ==============================================================================
+# Spatial Anti-Aliasing
+# ==============================================================================
+option.SPATIAL_AA_MODE=空間抗鋸齒
+option.SPATIAL_AA_MODE.comment=揀選後期處理抗鋸齒方法。FXAA 快速又平價。SMAA 利用深度緩衝喺幾何邊緣有更好畫質。可以同 TAA 結合。
+value.SPATIAL_AA_MODE.0=關閉
+value.SPATIAL_AA_MODE.1=FXAA（快速）
+value.SPATIAL_AA_MODE.2=SMAA（畫質）
+
+option.WATER_RIFFLES=水波紋強度
+option.WATER_RIFFLES.comment=調整水面上幼細法線貼圖波紋嘅起伏同強度。唔影響冰或玻璃。
+
+value.WATER_RIFFLES.1=平靜
+value.WATER_RIFFLES.2=標準
+value.WATER_RIFFLES.3=洶湧
+
+option.WATER_SPECULAR_STRENGTH=水面鏡面輝光
+option.WATER_SPECULAR_STRENGTH.comment=調整水面波紋上太陽／月亮反射嘅亮度。
+
+value.WATER_SPECULAR_STRENGTH.1=柔和
+value.WATER_SPECULAR_STRENGTH.2=標準
+value.WATER_SPECULAR_STRENGTH.3=閃耀
+
+option.SHADOW_SOFTNESS=陰影柔和度
+option.SHADOW_SOFTNESS.comment=控制陰影邊緣有幾柔和同漫射。使用旋轉 Poisson 圓盤濾波以達到平滑半影。
+
+value.SHADOW_SOFTNESS.1=銳利
+value.SHADOW_SOFTNESS.2=柔和
+value.SHADOW_SOFTNESS.3=超柔和
+
+# ==============================================================================
+# Sun & Moon Lighting
+# ==============================================================================
+screen.SUN_MOON=太陽與月亮
+screen.SUN_MOON.comment=微調太陽同月亮嘅強度、色溫同大氣效果。
+
+option.SUN_INTENSITY=太陽強度
+option.SUN_INTENSITY.comment=直射陽光嘅主亮度。愈高 = 日間對比愈強。
+value.SUN_INTENSITY.1=暗淡
+value.SUN_INTENSITY.2=標準
+value.SUN_INTENSITY.3=明亮
+value.SUN_INTENSITY.4=灼熱
+
+option.MOON_INTENSITY=月亮強度
+option.MOON_INTENSITY.comment=月光嘅主亮度。愈高 = 夜晚愈光、愈清晰。
+value.MOON_INTENSITY.1=漆黑夜
+value.MOON_INTENSITY.2=標準
+value.MOON_INTENSITY.3=明月
+value.MOON_INTENSITY.4=滿夜
+
+option.SUN_TEMPERATURE=太陽色溫
+option.SUN_TEMPERATURE.comment=調整太陽嘅開爾文曲線。逼真使用 Tanner Helland 黑體；暖 = 金色；冷 = 中性白。
+value.SUN_TEMPERATURE.1=冷／中性
+value.SUN_TEMPERATURE.2=逼真
+value.SUN_TEMPERATURE.3=暖金
+
+option.MOON_TEMPERATURE=月亮色溫
+option.MOON_TEMPERATURE.comment=月光嘅色調。冰冷 = 偏藍冷色；銀色 = 逼真 4100K；暖 = 收穫月奶油色。
+value.MOON_TEMPERATURE.1=冰藍
+value.MOON_TEMPERATURE.2=銀色（逼真）
+value.MOON_TEMPERATURE.3=暖奶油
+
+option.SUN_HALO=太陽光暈（Mie 散射）
+option.SUN_HALO.comment=當你望住太陽附近時，喺地形上加入柔和暖色輝光（Mie 前向散射）。
+
+option.SUNRISE_GLOW=增強日出／日落輝光
+option.SUNRISE_GLOW.comment=啟用更強嘅暖色後向散射，包裹住背向低角度太陽嘅表面。
+
+# ==============================================================================
+# Extended shadow settings
+# ==============================================================================
+option.SHADOW_DISTANCE=陰影距離
+option.SHADOW_DISTANCE.comment=動態陰影喺淡出之前渲染嘅最大距離。
+value.SHADOW_DISTANCE.1=近（60m）
+value.SHADOW_DISTANCE.2=標準（80m）
+value.SHADOW_DISTANCE.3=遠（120m）
+value.SHADOW_DISTANCE.4=超遠（160m）
+
+option.AMBIENT_BRIGHTNESS=陰影提升／環境光
+option.AMBIENT_BRIGHTNESS.comment=控制夜晚同洞穴入面陰影區域有幾暗。
+value.AMBIENT_BRIGHTNESS.1=暗
+value.AMBIENT_BRIGHTNESS.2=標準
+value.AMBIENT_BRIGHTNESS.3=提升（光）
+
+option.SHADOW_TINT=陰影色調
+option.SHADOW_TINT.comment=為日間陰影上色。藍天下嘅真實陰影帶有細微冷色調。
+value.SHADOW_TINT.1=中性灰
+value.SHADOW_TINT.2=冷藍（逼真）
+value.SHADOW_TINT.3=暖
+
+option.LIGHT_WRAP=光線包裹
+option.LIGHT_WRAP.comment=柔化受光同未受光表面之間嘅明暗界線。逼真 = 物理 Lambert；柔和 = 適合截圖。
+value.LIGHT_WRAP.1=逼真（Lambert）
+value.LIGHT_WRAP.2=柔和包裹
+value.LIGHT_WRAP.3=風格化
+
+# ==============================================================================
+# Screen-Space Reflections (SSR)
+# ==============================================================================
+option.SSR=螢幕空間反射（SSR）
+option.SSR.comment=喺水面、濕潤表面同金屬 PBR 方塊上加入即時反射環境。由「中」開始向上啟用。
+
+option.SSR_QUALITY=SSR 畫質
+option.SSR_QUALITY.comment=控制螢幕空間反射嘅精度同光線距離。愈高 = 反射愈銳利，但 GPU 開銷愈大。
+value.SSR_QUALITY.1=快速（12 步）
+value.SSR_QUALITY.2=平衡（24 步）
+value.SSR_QUALITY.3=高（40 步）
+
+option.SSR_STRENGTH=SSR 強度
+option.SSR_STRENGTH.comment=控制反射環境喺反射表面上有幾明顯同突出。
+
+option.WATER_WAVE_SCALE=波浪振幅
+option.WATER_WAVE_SCALE.comment=控制水面波浪嘅可見陡峭程度。平靜 = 似鏡，暴風 = 強烈破碎嘅反射。
+option.WATER_WAVE_DETAIL=波浪細節
+option.WATER_WAVE_DETAIL.comment=控制每個方塊出現幾多細波浪。粗 = 幾個大波浪，密 = 好多細波紋。
+option.UNDERWATER_NIGHT_DARKNESS=水底夜晚黑暗度
+option.UNDERWATER_NIGHT_DARKNESS.comment=控制夜晚水底場景有幾黑。月光水池保持亮度；漆黑帶來極致生存風格嘅黑暗。
+value.SSR_STRENGTH.1=細緻
+value.SSR_STRENGTH.2=平衡
+value.SSR_STRENGTH.3=強
+
+# v0.2.9 — water/underwater value labels
+value.WATER_WAVE_SCALE.1=平靜
+value.WATER_WAVE_SCALE.2=標準
+value.WATER_WAVE_SCALE.3=洶湧
+value.WATER_WAVE_SCALE.4=暴風
+value.WATER_WAVE_DETAIL.1=粗
+value.WATER_WAVE_DETAIL.2=標準
+value.WATER_WAVE_DETAIL.3=密
+value.UNDERWATER_NIGHT_DARKNESS.1=月光水池
+value.UNDERWATER_NIGHT_DARKNESS.2=暗淡
+value.UNDERWATER_NIGHT_DARKNESS.3=真夜
+value.UNDERWATER_NIGHT_DARKNESS.4=漆黑
+
+# PBR Distance
+option.PBR_DISTANCE=PBR 渲染距離
+option.PBR_DISTANCE.comment=PBR 鏡面高光嘅最大距離。喺遠處地形節省 GPU。低 = 近（16m），中 = 標準（48m），高／超高 = 遠（128m），極致 = 無限。
+value.PBR_DISTANCE.1=近（16m）
+value.PBR_DISTANCE.2=標準（48m）
+value.PBR_DISTANCE.3=遠（128m）
+value.PBR_DISTANCE.4=無限
+# ==============================================================================
+# Experimental Tab & New Sky (v1.1.0)
+# ==============================================================================
+screen.EXPERIMENTAL=實驗性
+screen.EXPERIMENTAL.comment=實驗性
+
+option.SKY_MODE=新天空（大氣散射）
+option.SKY_STYLE=Sky Style
+option.SKY_STYLE.comment=option.SKY_STYLE.comment=Artistic direction for the physical sky. Realistic = true angular sizes & neutral colours (astronomy look). Semi-realistic = readable sun/moon (x2.8), richer colour, soft glow. Fantasy = grand sun/moon (x5.5), big corona, vivid teal/crimson/indigo palette.
+option.SKY_MODE.comment=EXPERIMENTAL — off in all profiles. Gradient (legacy, default) or Physical realtime scattering with true multiple scattering (Rayleigh+Mie+Ozone, 1st+2nd+3rd order). Enable manually in this tab.
+value.SKY_MODE.0=Gradient (Legacy)
+value.SKY_STYLE.0=Realistic
+value.SKY_STYLE.1=Semi-realistic
+value.SKY_STYLE.2=Fantasy
+value.SKY_MODE.1=Realtime Scattering
+
+option.SKY_QUALITY=天空散射質素
+option.SKY_QUALITY.comment=天空散射質素
+value.SKY_QUALITY.1=快速
+value.SKY_QUALITY.2=標準
+value.SKY_QUALITY.3=高

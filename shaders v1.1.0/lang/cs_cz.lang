@@ -1,0 +1,298 @@
+# AuraLite Shaders v1.0.7 - Copyright (c) 2026 AlexanderNyr. Licensed under CC BY-NC-SA 4.0.
+# ==============================================================================
+# AuraLite Shader Pack - Czech Language Translations
+# ==============================================================================
+# POZNÁMKA: Toto je AI-asistovaný překlad. Komunitní korektury jsou vítány!
+# Otevřete prosím PR na:
+# https://github.com/AlexanderNyr/AuraLite-Shaders
+# ==============================================================================
+
+# ==============================================================================
+# Quality Profiles
+# ==============================================================================
+profile.VERY_LOW=Very Low
+profile.VERY_LOW.comment=Fastest possible preset for very weak GPUs. Disables heavy effects.
+profile.LOW=Nízký
+profile.MED=Střední
+profile.HIGH=Vysoký
+profile.ULTRA=Ultra
+profile.EXTREME=Extreme
+profile.EXTREME.comment=Maximální experimentální kvalita. Přidává SSAO/SAO kontaktní ambient occlusion. POM zůstává vypnutý pro stabilitu.
+profile.CUSTOM=Vlastní
+profile.CUSTOM.comment=Uživatelské nastavení.
+profile.HIGH.comment=Vysoká kvalita se stíny dále a jasnějším osvětlením.
+profile.LOW.comment=Nejrychlejší preset pro slabé GPU. Vypíná náročné efekty.
+profile.MED.comment=Vyvážený preset se stíny, mraky, PBR a atmosférickými efekty.
+profile.ULTRA.comment=Maximální vizuální kvalita. POM zůstává vypnutý pro stabilitu.
+
+screen.TRANSLATION_NOTICE=⚠ Překlady mohou obsahovat chyby
+screen.TRANSLATION_NOTICE.comment=Některé lokalizační řetězce mohou být nepřesné. Pokud se něco zdá divné, porovnejte s anglickým originálem.
+
+# Screens
+screen.LIGHTING=Nastavení Osvětlení
+screen.LIGHTING.comment=Nakonfigurujte stíny, barvy světla a jas.
+screen.FOLIAGE=Nastavení Vegetace
+screen.FOLIAGE.comment=Nakonfigurujte animace vlnění pro trávu a listy.
+screen.WATER=Nastavení Vody
+screen.WATER.comment=Nakonfigurujte vlny, průhlednost a styl vody.
+screen.CLOUDS_MENU=Obloha a Mraky
+screen.CLOUDS_MENU.comment=Nakonfigurujte fyzickou výšku, tloušťku a styl 3D mraků a efekty oblohy.
+screen.POST_PROCESS=Postprocessing a Mlha
+screen.POST_PROCESS.comment=Nakonfigurujte expozici, mlhu a filmové efekty.
+
+# Options
+option.SHADOWS=Dynamické Stíny
+option.SHADOWS.comment=Zapne nebo vypne měkké dynamické stíny ze Slunce a Měsíce.
+option.SHADOW_RES=Rozlišení Stínů
+option.SHADOW_RES.comment=Mění kvalitu mapy stínů. Vyšší hodnoty snižují výkon.
+option.PBR_LIGHTING=PBR Osvětlení (LabPBR)
+option.PBR_LIGHTING.comment=Zapne fyzikálně založené vykreslování kovů, drsnosti a 3D normal map (vyžaduje PBR balíček).
+option.PBR_POM=3D Reliéf Bloků (POM)
+option.PBR_POM.comment=Zapne Parallax Occlusion Mapping pro skutečné 3D textury bloků. U nekompatibilních balíčků doporučeno vypnout.
+option.PBR_STRENGTH=Intenzita PBR
+option.PBR_STRENGTH.comment=Řídí odrazivost a lesk PBR kovových povrchů.
+value.PBR_STRENGTH.1=Jemná
+value.PBR_STRENGTH.2=Standardní
+value.PBR_STRENGTH.3=Zrcadlo
+option.LIGHTMAP_WARMTH=Teplota Pochodní
+option.LIGHTMAP_WARMTH.comment=Upravuje teplotu a barvu světla bloků/pochodní.
+value.LIGHTMAP_WARMTH.1=Útulná
+value.LIGHTMAP_WARMTH.2=Teplá
+value.LIGHTMAP_WARMTH.3=Intenzivní
+option.WAVING_LEAVES=Vlnící se Listí
+option.WAVING_LEAVES.comment=Zapne jemné animace vlnění listí stromů.
+option.WAVING_GRASS=Vlnící se Vegetace
+option.WAVING_GRASS.comment=Zapne animace vlnění trávy, květin a plodin.
+option.WIND_SPEED=Rychlost Větru
+option.WIND_SPEED.comment=Řídí rychlost vlnění listí, rostlin a vodních vln.
+value.WIND_SPEED.1=Jemný
+value.WIND_SPEED.2=Vánek
+value.WIND_SPEED.3=Vichřice
+option.WATER_WAVES=Vlny na Vodě
+option.WATER_WAVES.comment=Zapne 3D geometrické vlny na povrchu vody.
+option.WATER_TRANSPARENCY=Hustota Vody
+option.WATER_TRANSPARENCY.comment=Řídí průhlednost a neprůhlednost vody.
+value.WATER_TRANSPARENCY.1=Křišťálová
+value.WATER_TRANSPARENCY.2=Vyvážená
+value.WATER_TRANSPARENCY.3=Hluboká
+option.PROCEDURAL_CLOUDS=Volumetrické 3D Mraky
+option.PROCEDURAL_CLOUDS.comment=Zapne fyzicky průletné 3D mraky.
+option.CLOUD_HEIGHT=Výška Mraků
+option.CLOUD_HEIGHT.comment=Nastaví fyzickou výšku (Y-úroveň) mračné vrstvy ve světě (v metrech).
+value.CLOUD_HEIGHT.1=Nízká (~110m)
+value.CLOUD_HEIGHT.2=Standardní (~160m)
+value.CLOUD_HEIGHT.3=Vysoká (~240m)
+option.CLOUD_THICKNESS=Tloušťka Mraků
+option.CLOUD_THICKNESS.comment=Konfiguruje vertikální tloušťku a objem mraků.
+value.CLOUD_THICKNESS.1=Tenké (Cirry)
+value.CLOUD_THICKNESS.2=Standardní (Kumuly)
+value.CLOUD_THICKNESS.3=Husté (Bouřkové)
+option.AURORA_MODE=Polární Záře
+option.AURORA_MODE.comment=Řídí zobrazení realistických tekoucích polárních září na noční obloze.
+value.AURORA_MODE.0=Vypnuto
+value.AURORA_MODE.1=Pouze ve studených biomech
+value.AURORA_MODE.2=Vždy zapnuto
+option.AURORA_SPEED=Rychlost Záře
+option.AURORA_SPEED.comment=Řídí rychlost vlnění a toku polární záře.
+value.AURORA_SPEED.1=Pomalá
+value.AURORA_SPEED.2=Standardní
+value.AURORA_SPEED.3=Rychlá
+option.AURORA_STRENGTH=Jas Záře
+option.AURORA_STRENGTH.comment=Řídí celkový jas polární záře.
+value.AURORA_STRENGTH.1=Měkká
+value.AURORA_STRENGTH.2=Standardní
+value.AURORA_STRENGTH.3=Zářící
+option.NEBULA_BRIGHTNESS=Jas Mléčné Dráhy
+option.NEBULA_BRIGHTNESS.comment=Upravuje jas diagonální nahnědlé galaktické mlhoviny v noci.
+value.NEBULA_BRIGHTNESS.1=Slabý
+value.NEBULA_BRIGHTNESS.2=Standardní
+value.NEBULA_BRIGHTNESS.3=Jasný
+option.STARS_BRIGHTNESS=Jas Hvězd
+option.STARS_BRIGHTNESS.comment=Řídí jas a třpyt hvězd v noci.
+value.STARS_BRIGHTNESS.1=Slabý
+value.STARS_BRIGHTNESS.2=Standardní
+value.STARS_BRIGHTNESS.3=Brilantní
+option.STARS_AMOUNT=Hustota Hvězd
+option.STARS_AMOUNT.comment=Řídí celkové množství a hustotu hvězd na obloze.
+value.STARS_AMOUNT.1=Málo
+value.STARS_AMOUNT.2=Standardně
+value.STARS_AMOUNT.3=Hustě
+option.RAINBOW_STRENGTH=Intenzita Duhy
+option.RAINBOW_STRENGTH.comment=Konfiguruje jas a sytost duhy po dešti.
+value.RAINBOW_STRENGTH.1=Jemná
+value.RAINBOW_STRENGTH.2=Vyvážená
+value.RAINBOW_STRENGTH.3=Živá
+option.COZY_LIGHTS=Blikání Pochodní
+option.COZY_LIGHTS.comment=Zapne teplé, útulné real-time animace blikání pro pochodně, ohně a lucerny.
+option.WET_REFLECTIONS=Odrazy Mokré Země
+option.WET_REFLECTIONS.comment=Při dešti pevné bloky jako hlína, tráva a kámen mokrají, tmavnou a leskou pod otevřeným nebem.
+option.GROUND_MIST=Nízká Přízemní Mlha (Y=62-66)
+option.GROUND_MIST.comment=Zapne měkké zlatobílé ranní/večerní mlžné pásy, plující nad vodou a ledem za úsvitu a soumraku.
+option.FOG_DENSITY_LEVEL=Hustota Mlhy
+option.FOG_DENSITY_LEVEL.comment=Řídí sílu atmosférické mlhy na obzoru.
+value.FOG_DENSITY_LEVEL.1=Nízká
+value.FOG_DENSITY_LEVEL.2=Střední
+value.FOG_DENSITY_LEVEL.3=Vysoká
+option.EXPOSURE=Jas Expozice
+option.EXPOSURE.comment=Řídí celkový jas obrazu.
+value.EXPOSURE.1=Ztlumený
+value.EXPOSURE.2=Vyvážený
+value.EXPOSURE.3=Živý
+option.COLOR_SATURATION=Živost Barev
+option.COLOR_SATURATION.comment=Řídí nelineární sytost barev obrazovky. Dělá vegetaci smaragdovou a oblohu bujnou.
+value.COLOR_SATURATION.1=Ztlumené
+value.COLOR_SATURATION.2=Vyvážené
+value.COLOR_SATURATION.3=Barevné
+value.COLOR_SATURATION.4=Živé
+option.CONTRAST=Kontrast Obrazu
+option.CONTRAST.comment=Volí tone mapping křivku a styl kontrastu.
+value.CONTRAST.1=Měkký
+value.CONTRAST.2=Filmový (ACES)
+value.CONTRAST.3=Intenzivní (Vysoký Kontrast)
+
+option.TAA=Temporal Anti-Aliasing (TAA)
+option.TAA.comment=Temporal resolve with motion reprojection and neighborhood clipping. Reduces shimmering and jagged edges on high presets.
+option.TAA_STRENGTH=TAA Strength
+option.TAA_STRENGTH.comment=Controls history blending. Higher is more stable but can be softer during motion.
+value.TAA_STRENGTH.1=Light
+value.TAA_STRENGTH.2=Balanced
+value.TAA_STRENGTH.3=Stable
+option.VIGNETTE=Efekt Vinětace
+option.VIGNETTE.comment=Zapne jemné ztmavení okrajů obrazovky pro lepší zaostření.
+option.WATER_RIFFLES=Intenzita Vodních Vlnek
+option.WATER_RIFFLES.comment=Upravuje intenzitu jemných vlnek normal map na vodě.
+value.WATER_RIFFLES.1=Klidná
+value.WATER_RIFFLES.2=Standardní
+value.WATER_RIFFLES.3=Bouřlivá
+option.WATER_SPECULAR_STRENGTH=Lesk Vody
+option.WATER_SPECULAR_STRENGTH.comment=Upravuje jas odrazů Slunce/Měsíce na vodních vlnkách.
+value.WATER_SPECULAR_STRENGTH.1=Měkký
+value.WATER_SPECULAR_STRENGTH.2=Standardní
+value.WATER_SPECULAR_STRENGTH.3=Třpytivý
+option.SHADOW_SOFTNESS=Měkkost Stínů
+option.SHADOW_SOFTNESS.comment=Řídí, jak měkké a difúzní vypadají okraje stínů. Používá rotované Poisson disk filtrování pro hladký polostín.
+value.SHADOW_SOFTNESS.1=Ostré
+value.SHADOW_SOFTNESS.2=Měkké
+value.SHADOW_SOFTNESS.3=Velmi Měkké
+
+option.SSAO=SSAO / SAO Occlusion
+option.SSAO.comment=Extrémní profil: screen-space ambient occlusion pro kontaktní stíny v rozích, pod bloky a kolem průsečíků geometrie.
+option.SSAO_STRENGTH=Síla SSAO
+option.SSAO_STRENGTH.comment=Řídí hloubku screen-space ambient occlusion. Aktivní pouze při zapnutém SSAO.
+value.SSAO_STRENGTH.1=Jemná
+value.SSAO_STRENGTH.2=Vyvážená
+value.SSAO_STRENGTH.3=Hluboká
+
+option.CLOUD_DISTANCE=Vzdálenost vykreslování mraků
+option.CLOUD_DISTANCE.comment=Maximální vzdálenost kreslení pro volumetrické mraky. Profily kvality ji automaticky zvyšují.
+value.CLOUD_DISTANCE.1=Blízko
+value.CLOUD_DISTANCE.2=Standard
+value.CLOUD_DISTANCE.3=Daleko
+value.CLOUD_DISTANCE.4=Velmi Daleko
+
+option.CLOUD_SHADOWS=Cloud Shadows
+option.CLOUD_SHADOWS.comment=Adds transparent procedural shadows from volumetric cloud density onto terrain. Balanced by quality profiles.
+option.CLOUD_SHADOW_STRENGTH=Cloud Shadow Strength
+option.CLOUD_SHADOW_STRENGTH.comment=Controls how visible and dramatic transparent cloud shadows are.
+value.CLOUD_SHADOW_STRENGTH.1=Soft
+value.CLOUD_SHADOW_STRENGTH.2=Balanced
+value.CLOUD_SHADOW_STRENGTH.3=Dramatic
+
+option.GODRAYS=Godrays / Sun Shafts
+option.GODRAYS.comment=Adds realistic screen-space sun shafts through sky gaps and behind geometry.
+option.GODRAYS_QUALITY=Godrays Quality
+option.GODRAYS_QUALITY.comment=Controls sample count and cost of godrays.
+value.GODRAYS_QUALITY.1=Fast
+value.GODRAYS_QUALITY.2=Balanced
+value.GODRAYS_QUALITY.3=High
+
+# ==============================================================================
+# Slunce a Měsíc (rozšířené osvětlení)
+# ==============================================================================
+screen.SUN_MOON=Slunce a Měsíc
+screen.SUN_MOON.comment=Jemné doladění intenzity, teploty barev a atmosférických efektů Slunce/Měsíce.
+option.SUN_INTENSITY=Intenzita Slunce
+option.SUN_INTENSITY.comment=Hlavní jas přímého slunečního světla. Vyšší = silnější denní kontrast.
+value.SUN_INTENSITY.1=Slabé
+value.SUN_INTENSITY.2=Standardní
+value.SUN_INTENSITY.3=Jasné
+value.SUN_INTENSITY.4=Pálivé
+option.MOON_INTENSITY=Intenzita Měsíce
+option.MOON_INTENSITY.comment=Hlavní jas měsíčního světla. Vyšší = jasnější, viditelnější noci.
+value.MOON_INTENSITY.1=Černočerná Noc
+value.MOON_INTENSITY.2=Standardní
+value.MOON_INTENSITY.3=Jasný Měsíc
+value.MOON_INTENSITY.4=Jasná Noc
+option.SUN_TEMPERATURE=Teplota Slunce
+option.SUN_TEMPERATURE.comment=Posouvá Kelvinovu křivku Slunce. Realistická = Tanner Helland černé těleso; teplá = zlatá; chladná = neutrální bílá.
+value.SUN_TEMPERATURE.1=Chladná / Neutrální
+value.SUN_TEMPERATURE.2=Realistická
+value.SUN_TEMPERATURE.3=Teplá Zlatá
+option.MOON_TEMPERATURE=Teplota Měsíce
+option.MOON_TEMPERATURE.comment=Odstín měsíčního světla. Ledový = modrý chladný; Stříbrný = realistický 4100K; Teplý = krémový sklizňový měsíc.
+value.MOON_TEMPERATURE.1=Ledově Modrý
+value.MOON_TEMPERATURE.2=Stříbrný (Realistický)
+value.MOON_TEMPERATURE.3=Teplý Krémový
+option.SUN_HALO=Sluneční Halo (Mie)
+option.SUN_HALO.comment=Přidává jemnou teplou záři na terén při pohledu k Slunci (dopředný Mie rozptyl).
+option.SUNRISE_GLOW=Zesílená Záře Východu/Západu
+option.SUNRISE_GLOW.comment=Zapne silnější teplou zpětně rozptýlenou záři obtékající plochy odvrácené od nízkého Slunce.
+
+# ==============================================================================
+# Rozšířená nastavení stínů
+# ==============================================================================
+option.SHADOW_DISTANCE=Vzdálenost Stínů
+option.SHADOW_DISTANCE.comment=Maximální vzdálenost, na které jsou dynamické stíny vykreslovány než se rozplynou.
+value.SHADOW_DISTANCE.1=Blízko (60m)
+value.SHADOW_DISTANCE.2=Standard (80m)
+value.SHADOW_DISTANCE.3=Daleko (120m)
+value.SHADOW_DISTANCE.4=Ultra (160m)
+option.AMBIENT_BRIGHTNESS=Zesvětlení Stínů (Ambient)
+option.AMBIENT_BRIGHTNESS.comment=Řídí, jak tmavé vypadají zastíněné oblasti v noci a v jeskyních.
+value.AMBIENT_BRIGHTNESS.1=Tmavé
+value.AMBIENT_BRIGHTNESS.2=Standard
+value.AMBIENT_BRIGHTNESS.3=Zesvětlené (Jasné)
+option.SHADOW_TINT=Odstín Stínů
+option.SHADOW_TINT.comment=Tónuje denní stíny. Ve skutečnosti mají stíny pod modrou oblohou jemný chladný nádech.
+value.SHADOW_TINT.1=Neutrální Šedá
+value.SHADOW_TINT.2=Chladná Modrá (Realistická)
+value.SHADOW_TINT.3=Teplá
+option.LIGHT_WRAP=Obtékání Světla (Light Wrap)
+option.LIGHT_WRAP.comment=Změkčuje terminátor mezi osvětlenými a neosvětlenými plochami. Realistický = fyzický Lambert; Měkký = pěkný pro snímky.
+value.LIGHT_WRAP.1=Realistický (Lambert)
+value.LIGHT_WRAP.2=Měkké Obtékání
+value.LIGHT_WRAP.3=Stylizovaný
+
+# v0.2.9 — water/underwater option value labels (English fallback)
+value.WATER_WAVE_SCALE.1=Calm
+value.WATER_WAVE_SCALE.2=Standard
+value.WATER_WAVE_SCALE.3=Choppy
+value.WATER_WAVE_SCALE.4=Stormy
+value.WATER_WAVE_DETAIL.1=Coarse
+value.WATER_WAVE_DETAIL.2=Standard
+value.WATER_WAVE_DETAIL.3=Dense
+value.UNDERWATER_NIGHT_DARKNESS.1=Moonlit Pool
+value.UNDERWATER_NIGHT_DARKNESS.2=Dim
+value.UNDERWATER_NIGHT_DARKNESS.3=True Night
+value.UNDERWATER_NIGHT_DARKNESS.4=Pitch Dark
+# ==============================================================================
+# Experimental Tab & New Sky (v1.1.0)
+# ==============================================================================
+screen.EXPERIMENTAL=Experimentální
+screen.EXPERIMENTAL.comment=Experimentální
+
+option.SKY_MODE=Nová obloha (Atmosférický rozptyl)
+option.SKY_STYLE=Sky Style
+option.SKY_STYLE.comment=option.SKY_STYLE.comment=Artistic direction for the physical sky. Realistic = true angular sizes & neutral colours (astronomy look). Semi-realistic = readable sun/moon (x2.8), richer colour, soft glow. Fantasy = grand sun/moon (x5.5), big corona, vivid teal/crimson/indigo palette.
+option.SKY_MODE.comment=EXPERIMENTAL — off in all profiles. Gradient (legacy, default) or Physical realtime scattering with true multiple scattering (Rayleigh+Mie+Ozone, 1st+2nd+3rd order). Enable manually in this tab.
+value.SKY_MODE.0=Gradient (Legacy)
+value.SKY_STYLE.0=Realistic
+value.SKY_STYLE.1=Semi-realistic
+value.SKY_STYLE.2=Fantasy
+value.SKY_MODE.1=Realtime Scattering
+
+option.SKY_QUALITY=Kvalita rozptylu oblohy
+option.SKY_QUALITY.comment=Kvalita rozptylu oblohy
+value.SKY_QUALITY.1=Rychlá
+value.SKY_QUALITY.2=Standardní
+value.SKY_QUALITY.3=Vysoká

@@ -1,0 +1,423 @@
+# AuraLite Shaders v1.0.7 - Copyright (c) 2026 AlexanderNyr. Licensed under CC BY-NC-SA 4.0.
+# ==============================================================================
+# AuraLite Shader Pack - Irish Language Translations
+# ==============================================================================
+
+# ==============================================================================
+# Próifílí cáilíochta — Athchothromú v1.0.5
+# ==============================================================================
+profile.VERY_LOW=An-íseal
+profile.VERY_LOW.comment=Uasmhéid FPS iomlán. Gach breiseán múchta: gan scáthanna, gan scamaill, gan PBR, gan SSR, gan gathanna gréine. Rindreáil íosta amháin.
+profile.LOW=Íseal
+profile.LOW.comment=Éadrom ach inimeartha. Coinníonn sé beochan duilliúir/uisce, réaltaí níos gile, FXAA, fíneagar. Gan scáthanna, scamaill ná PBR.
+profile.MED=Meánach
+profile.MED.comment=Áit mhilis laethúil. Scáthanna 1024, scamaill, PBR, SSR Tapa, gathanna gréine, SSS duilliúir, frithchaitheamh fliuch, ceo talún, réaltaí reatha.
+profile.HIGH=Ard
+profile.HIGH.comment=Cáilíocht díograiseora. Scáthanna 2048, SSR Cothrom, TAA, SSAO Caolchúiseach, gathanna gréine Cothrom, SMAA.
+profile.ULTRA=Ultra
+profile.ULTRA.comment=Ardleibhéal. Scáthanna 4096, SSR Ard, SSAO Cothrom, gathanna gréine Ard, TAA Cobhsaí, gach éifeacht ar siúl.
+profile.EXTREME=Foircneach
+profile.EXTREME.comment=Uasmhéid cineamatach. Gach rud uasta: raon PBR Neamhtheoranta, mapáil tonna Grianghrafadóireachta (AgX), SSAO is doimhne, stoirmeacha dreigítí.
+profile.CUSTOM=Saincheaptha
+profile.CUSTOM.comment=Socruithe a d'athraigh an t-úsáideoir.
+
+screen.TRANSLATION_NOTICE=⚠ D'fhéadfadh earráidí a bheith sna haistriúcháin
+screen.TRANSLATION_NOTICE.comment=D'fhéadfadh roinnt teaghráin logánaithe a bheith míchruinn. Má fhéachann rud éigin aisteach, déan comparáid leis an mbunleagan Béarla.
+
+# Screens
+screen.LIGHTING=Socruithe soilsithe
+screen.LIGHTING.comment=Cumraigh scáthanna, dathanna solais agus gile.
+
+screen.FOLIAGE=Socruithe duilliúir
+screen.FOLIAGE.comment=Cumraigh beochan luascadh don fhéar agus do na duilleoga.
+
+screen.WATER=Socruithe uisce
+screen.WATER.comment=Cumraigh tonnta, trédhearcacht agus stíl an uisce.
+
+screen.CLOUDS_MENU=Spéir agus scamaill
+screen.CLOUDS_MENU.comment=Cumraigh airde fhisiciúil, tiús agus stíl na scamall 3D agus éifeachtaí na spéire.
+
+screen.POST_PROCESS=Iarphróiseáil agus ceo
+screen.POST_PROCESS.comment=Cumraigh nochtadh, ceo agus éifeachtaí cineamatacha.
+
+# Options
+option.SHADOWS=Scáthanna dinimiciúla
+option.SHADOWS.comment=Cumasaigh nó díchumasaigh scáthanna dinimiciúla boga ón ngrian agus ón ngealach.
+
+option.SHADOW_RES=Taifeach scáthanna
+option.SHADOW_RES.comment=Athraigh cáilíocht an mhapa scátha. D'fhéadfadh luachanna níos airde feidhmíocht a ísliú.
+
+option.PBR_LIGHTING=Soilsiú PBR (LabPBR)
+option.PBR_LIGHTING.comment=Cumasaigh rindreáil bunaithe ar fhisic do mhiotail, gairbhe agus mapaí gnáth 3D (teastaíonn pacáiste acmhainní PBR).
+
+option.PBR_POM=Rilíf bhloc 3D (POM)
+option.PBR_POM.comment=Cumasaigh Mapáil Bhac Parailéacsa bunaithe ar fhisic d'uigeachtaí bloc 3D. Moltar é a dhíchumasú ar phacáistí acmhainní neamh-chomhoiriúnacha.
+
+option.PBR_STRENGTH=Déine PBR
+option.PBR_STRENGTH.comment=Rialaigh frithchaiteachas agus loinnir dromchlaí miotalacha PBR.
+
+value.PBR_STRENGTH.1=Caolchúiseach
+value.PBR_STRENGTH.2=Caighdeánach
+value.PBR_STRENGTH.3=Scáthán
+
+option.SSAO=Bac SSAO / SAO
+option.SSAO.comment=Bac comhthimpeallach spáis scáileáin do scáthanna teagmhála i gcúinní, faoi bhloic agus timpeall trasnaithe geoiméadrachta. Cumasaithe ó ARD aníos.
+option.SSAO_STRENGTH=Déine SSAO
+option.SSAO_STRENGTH.comment=Rialaíonn sé doimhneacht an bhac comhthimpeallaigh spáis scáileáin. Gníomhach amháin nuair atá SSAO cumasaithe.
+value.SSAO_STRENGTH.1=Caolchúiseach
+value.SSAO_STRENGTH.2=Cothrom
+value.SSAO_STRENGTH.3=Domhain
+
+option.LIGHTMAP_WARMTH=Teas tóirsí
+option.LIGHTMAP_WARMTH.comment=Coigeartaigh teas agus dath sholas na mbloc/tóirsí.
+
+value.LIGHTMAP_WARMTH.1=Cluthar
+value.LIGHTMAP_WARMTH.2=Teolaí
+value.LIGHTMAP_WARMTH.3=Dian
+
+option.WAVING_LEAVES=Duilleoga ag luascadh
+option.WAVING_LEAVES.comment=Cumasaigh beochan luascadh bog do dhuilleoga crann.
+
+option.WAVING_GRASS=Duilliúr ag luascadh
+option.WAVING_GRASS.comment=Cumasaigh beochan luascadh don fhéar, do na bláthanna agus do na barra.
+
+option.WIND_SPEED=Luas na gaoithe
+option.WIND_SPEED.comment=Rialaigh luas luascadh na nduilleog, na bplandaí agus tonnta an uisce.
+
+option.FOLIAGE_SSS=SSS duilliúir
+option.FOLIAGE_SSS.comment=Cumasaíonn sé scaipeadh fo-dhromchla (tréshoilseacht) do dhuilleoga, féar agus plandaí agus tú ag breathnú in aghaidh an tsolais.
+
+value.WIND_SPEED.1=Séimh
+value.WIND_SPEED.2=Leoithne
+value.WIND_SPEED.3=Gála
+
+option.WATER_WAVES=Tonnta uisce
+option.WATER_WAVES.comment=Cumasaigh tonnta geoiméadracha 3D ar dhromchla an uisce. Eisiatar bloic oighir agus gloine ó bheochan na dtonn.
+
+option.WATER_TRANSPARENCY=Dlús uisce
+option.WATER_TRANSPARENCY.comment=Rialaigh trédhearcacht agus teimhneacht uisce, gnáthoighir agus bloic ghloine.
+
+value.WATER_TRANSPARENCY.1=Soiléir
+value.WATER_TRANSPARENCY.2=Cothrom
+value.WATER_TRANSPARENCY.3=Domhain
+
+option.PROCEDURAL_CLOUDS=Scamaill 3D toirtmhéadracha
+option.PROCEDURAL_CLOUDS.comment=Cumasaigh scamaill 3D inscoilte ar féidir a bhaint amach agus eitilt tríothu.
+
+option.CLOUD_HEIGHT=Airde na scamall
+option.CLOUD_HEIGHT.comment=Socraigh airde fhisiciúil (leibhéal Y) an deic scamall sa domhan (i méadair).
+
+value.CLOUD_HEIGHT.1=Íseal (~110m)
+value.CLOUD_HEIGHT.2=Caighdeánach (~160m)
+value.CLOUD_HEIGHT.3=Ard (~240m)
+
+option.CLOUD_THICKNESS=Tiús na scamall
+option.CLOUD_THICKNESS.comment=Cumraigh tiús ingearach agus toirt na scamall.
+
+value.CLOUD_THICKNESS.1=Tanaí (Cirreas)
+value.CLOUD_THICKNESS.2=Caighdeánach (Cumalas)
+value.CLOUD_THICKNESS.3=Dlúth (Stoirmiúil)
+
+option.CLOUD_DISTANCE=Fad rindreála na scamall
+option.CLOUD_DISTANCE.comment=Uasfhad tarraingthe do scamaill toirtmhéadracha. Méadaíonn próifílí cáilíochta go huathoibríoch é.
+value.CLOUD_DISTANCE.1=Gar
+value.CLOUD_DISTANCE.2=Caighdeánach
+value.CLOUD_DISTANCE.3=I bhfad
+value.CLOUD_DISTANCE.4=An-fhada
+
+option.CLOUD_SHADOWS=Scáthanna scamall
+option.CLOUD_SHADOWS.comment=Cuireann sé scáthanna nóse trédhearcacha ó dhlús na scamall toirtmhéadrach ar an talamh. Cothromaithe ag próifílí cáilíochta.
+option.CLOUD_SHADOW_STRENGTH=Déine scáthanna scamall
+option.CLOUD_SHADOW_STRENGTH.comment=Rialaíonn sé cé chomh sofheicthe agus drámatúil atá na scáthanna scamall trédhearcacha.
+value.CLOUD_SHADOW_STRENGTH.1=Bog
+value.CLOUD_SHADOW_STRENGTH.2=Cothrom
+value.CLOUD_SHADOW_STRENGTH.3=Drámatúil
+
+option.GODRAYS=Gathanna gréine / Saití gréine
+option.GODRAYS.comment=Cuireann sé saití gréine toirtmhéadracha aon-scaipthe spreagtha ag fisic, le díothú Beer-Lambert, céim Mie agus bac mapa scátha.
+option.GODRAYS_QUALITY=Cáilíocht na ngathanna gréine
+option.GODRAYS_QUALITY.comment=Rialaíonn sé líon na samplaí agus an fad imeasctha do ghathanna gréine toirtmhéadracha bunaithe ar fhisic.
+value.GODRAYS_QUALITY.1=Tapa
+value.GODRAYS_QUALITY.2=Cothrom
+value.GODRAYS_QUALITY.3=Ard
+
+option.AURORA_MODE=Aurora Borealis
+option.AURORA_MODE.comment=Rialaigh taispeáint aurora réalaíoch ag sileadh ar spéir na hoíche.
+
+value.AURORA_MODE.0=Díchumasaithe
+value.AURORA_MODE.1=I mbithómaí fuara amháin
+value.AURORA_MODE.2=Cumasaithe i gcónaí
+
+option.AURORA_SPEED=Luas an aurora
+option.AURORA_SPEED.comment=Rialaigh luas luascadh agus sileadh na soilse thuaidh.
+
+value.AURORA_SPEED.1=Mall
+value.AURORA_SPEED.2=Caighdeánach
+value.AURORA_SPEED.3=Tapa
+
+option.AURORA_STRENGTH=Gile an aurora
+option.AURORA_STRENGTH.comment=Rialaigh gile iomlán na soilse thuaidh.
+
+value.AURORA_STRENGTH.1=Bog
+value.AURORA_STRENGTH.2=Caighdeánach
+value.AURORA_STRENGTH.3=Lonrach
+
+option.NEBULA_BRIGHTNESS=Gile na Bealaí Bó Finne
+option.NEBULA_BRIGHTNESS.comment=Coigeartaigh gile an réaltnéil réaltrach trasnánach donn san oíche.
+
+value.NEBULA_BRIGHTNESS.1=Lag
+value.NEBULA_BRIGHTNESS.2=Caighdeánach
+value.NEBULA_BRIGHTNESS.3=Geal
+
+option.STARS_BRIGHTNESS=Gile na réaltaí
+option.STARS_BRIGHTNESS.comment=Rialaigh gile agus loinnir drithleach na réaltaí san oíche.
+
+value.STARS_BRIGHTNESS.1=Lag
+value.STARS_BRIGHTNESS.2=Caighdeánach
+value.STARS_BRIGHTNESS.3=Lonrach
+
+option.STARS_AMOUNT=Dlús réaltaí
+option.STARS_AMOUNT.comment=Rialaigh líon iomlán agus dlús na réaltaí sa spéir.
+
+value.STARS_AMOUNT.1=Beagán
+value.STARS_AMOUNT.2=Caighdeánach
+value.STARS_AMOUNT.3=Dlúth
+
+option.RAINBOW_STRENGTH=Déine an tuar ceatha
+option.RAINBOW_STRENGTH.comment=Cumraigh gile agus sáithiú datha an tuar ceatha tar éis báistí.
+
+value.RAINBOW_STRENGTH.1=Caolchúiseach
+value.RAINBOW_STRENGTH.2=Cothrom
+value.RAINBOW_STRENGTH.3=Beoga
+
+option.SHOOTING_STARS=Dreigítí (réaltaí reatha)
+option.SHOOTING_STARS.comment=Dreigítí bunaithe ar fhisic ag dul isteach sa mhéasaisféar (~80-120 km). Rindreálann sé fíor-airceanna 3D ciorcail mhóir le cuair solais ablóideacha, dath plasma corp dubh (3500-5500 K), díothú Rayleigh in aice leis an léaslíne, agus rianta ianúcháin marthanacha ar mheaiteoirí móra.
+
+option.SHOOTING_STARS_FREQUENCY=Gníomhaíocht dreigítí (ZHR)
+option.SHOOTING_STARS_FREQUENCY.comment=Ráta uair an chloig zeinitiúil thart. Speartha = cúlra réalaíoch de thart ar 10 in aghaidh na huaire. Gníomhach = cith éadrom. Stoirm = buaicdhlús (~100/u).
+
+value.SHOOTING_STARS_FREQUENCY.1=Speartha (~10/u)
+value.SHOOTING_STARS_FREQUENCY.2=Cith gníomhach
+value.SHOOTING_STARS_FREQUENCY.3=Stoirm dreigítí
+
+option.SHOOTING_STARS_BRIGHTNESS=Scála méide
+option.SHOOTING_STARS_BRIGHTNESS.comment=Iolraitheoir máistir ar scála méide na ndreigítí. Lag = meán réalaíoch; Geal = scálaíonn meaiteoirí móra le haghaidh infheictheachta cineamataí.
+
+value.SHOOTING_STARS_BRIGHTNESS.1=Lag (réalaíoch)
+value.SHOOTING_STARS_BRIGHTNESS.2=Caighdeánach
+value.SHOOTING_STARS_BRIGHTNESS.3=Meaiteoirí geala
+
+option.COZY_LIGHTS=Drithliú tóirsí
+option.COZY_LIGHTS.comment=Cumasaigh beochan drithlithe teolaí cluthar fíor-ama do thóirsí, tinte campa agus lóchrainn.
+
+option.WET_REFLECTIONS=Frithchaitheamh fliuchais báistí
+option.WET_REFLECTIONS.comment=Nuair a bhíonn sé ag cur báistí, éiríonn bloic sholadacha cosúil le talamh, féar agus cloch fliuch, dorcha agus snasta faoin spéir.
+
+option.GROUND_MIST=Ceo íseal talún (Y=62-66)
+option.GROUND_MIST.comment=Cumasaigh leatháin cheoluis bhog ór-bhán maidine/tráthnóna a shleamhnaíonn thar uisce agus oighear ag breacadh an lae agus ag titim na hoíche.
+
+option.FOG_DENSITY_LEVEL=Dlús an cheo
+option.FOG_DENSITY_LEVEL.comment=Rialaigh neart cheo atmaisféarach na léaslíne.
+
+value.FOG_DENSITY_LEVEL.1=Íseal
+value.FOG_DENSITY_LEVEL.2=Meánach
+value.FOG_DENSITY_LEVEL.3=Ard
+
+option.EXPOSURE=Gile an nochta
+option.EXPOSURE.comment=Rialaigh gile iomlán na híomhá.
+
+value.EXPOSURE.1=Maolaithe
+value.EXPOSURE.2=Cothrom
+value.EXPOSURE.3=Beoga
+
+option.COLOR_SATURATION=Beogacht datha
+option.COLOR_SATURATION.comment=Rialaigh sáithiú neamhlíneach dathanna an scáileáin. Déanann sé an duilliúr cosúil le smaragaid agus na spéartha méith.
+
+value.COLOR_SATURATION.1=Maolaithe
+value.COLOR_SATURATION.2=Cothrom
+value.COLOR_SATURATION.3=Daite
+value.COLOR_SATURATION.4=Beoga
+
+option.CONTRAST=Codarsnacht na híomhá
+option.CONTRAST.comment=Roghnaigh stíl na cuar mapála tonna agus codarsnachta.
+
+value.CONTRAST.1=Bog
+value.CONTRAST.2=Scannánaíoch (ACES)
+value.CONTRAST.3=Dian (Ardchodarsnacht)
+value.CONTRAST.4=Grianghrafadóireachta (cosúil le AgX)
+
+option.TAA=Frith-ailiasáil ama (TAA)
+option.TAA.comment=Réiteach ama le hathchaitheamh gluaisne agus gearradh comharsanachta. Laghdaíonn sé drithliú agus imill spící ar réamhshocruithe arda.
+option.TAA_STRENGTH=Déine TAA
+option.TAA_STRENGTH.comment=Rialaíonn sé cumasc na staire. Tá níos airde níos cobhsaí ach is féidir leis a bheith níos boige le linn gluaisne.
+value.TAA_STRENGTH.1=Éadrom
+value.TAA_STRENGTH.2=Cothrom
+value.TAA_STRENGTH.3=Cobhsaí
+
+
+
+option.VIGNETTE=Éifeacht fíneagar
+option.VIGNETTE.comment=Cumasaigh dorchú caolchúiseach ag imill an scáileáin chun fócas a fheabhsú.
+
+# ==============================================================================
+# Spatial Anti-Aliasing
+# ==============================================================================
+option.SPATIAL_AA_MODE=Frith-ailiasáil spásúil
+option.SPATIAL_AA_MODE.comment=Roghnaigh modh frith-ailiasála iarphróiseála. Tá FXAA tapa agus saor. Úsáideann SMAA an maolán doimhneachta le haghaidh cáilíochta níos fearr ar imill gheoiméadrachta. Is féidir é a chumasc le TAA.
+value.SPATIAL_AA_MODE.0=As
+value.SPATIAL_AA_MODE.1=FXAA (Tapa)
+value.SPATIAL_AA_MODE.2=SMAA (Cáilíocht)
+
+option.WATER_RIFFLES=Déine cuilithíní uisce
+option.WATER_RIFFLES.comment=Coigeartaigh tonnacht agus déine na gcuilithíní mín mapa gnáth ar uisce. Ní chuireann sé isteach ar oighear ná ar ghloine.
+
+value.WATER_RIFFLES.1=Ciúin
+value.WATER_RIFFLES.2=Caighdeánach
+value.WATER_RIFFLES.3=Suaite
+
+option.WATER_SPECULAR_STRENGTH=Loinnir speictreach uisce
+option.WATER_SPECULAR_STRENGTH.comment=Coigeartaigh gile frithchaitheamh na gréine/gealaí ar chuilithíní uisce.
+
+value.WATER_SPECULAR_STRENGTH.1=Bog
+value.WATER_SPECULAR_STRENGTH.2=Caighdeánach
+value.WATER_SPECULAR_STRENGTH.3=Drithleach
+
+option.SHADOW_SOFTNESS=Boige scáthanna
+option.SHADOW_SOFTNESS.comment=Rialaíonn sé cé chomh bog agus idirleata atá imill na scáthanna. Úsáideann sé scagadh dhiosca Poisson rothlaithe le haghaidh leathscáth réidh.
+
+value.SHADOW_SOFTNESS.1=Géar
+value.SHADOW_SOFTNESS.2=Bog
+value.SHADOW_SOFTNESS.3=Ultra-bhog
+
+# ==============================================================================
+# Sun & Moon Lighting
+# ==============================================================================
+screen.SUN_MOON=Grian agus gealach
+screen.SUN_MOON.comment=Mionchoigeartaigh déine na gréine agus na gealaí, teocht datha agus éifeachtaí atmaisféaracha.
+
+option.SUN_INTENSITY=Déine na gréine
+option.SUN_INTENSITY.comment=Gile máistir na grianghathanna díreacha. Níos airde = codarsnacht lae níos láidre.
+value.SUN_INTENSITY.1=Lag
+value.SUN_INTENSITY.2=Caighdeánach
+value.SUN_INTENSITY.3=Geal
+value.SUN_INTENSITY.4=Loiscneach
+
+option.MOON_INTENSITY=Déine na gealaí
+option.MOON_INTENSITY.comment=Gile máistir sholas na gealaí. Níos airde = oícheanta níos gile, níos sofheicthe.
+value.MOON_INTENSITY.1=Oíche dhubh
+value.MOON_INTENSITY.2=Caighdeánach
+value.MOON_INTENSITY.3=Gealach gheal
+value.MOON_INTENSITY.4=Oíche iomlán
+
+option.SUN_TEMPERATURE=Teocht datha na gréine
+option.SUN_TEMPERATURE.comment=Aistríonn sé cuar Kelvin na gréine. Úsáideann réalaíoch corp dubh Tanner Helland; teolaí = órga; fuar = bán neodrach.
+value.SUN_TEMPERATURE.1=Fuar / Neodrach
+value.SUN_TEMPERATURE.2=Réalaíoch
+value.SUN_TEMPERATURE.3=Órga teolaí
+
+option.MOON_TEMPERATURE=Teocht datha na gealaí
+option.MOON_TEMPERATURE.comment=Imir sholas na gealaí. Oighreata = gormghlas fuar; Airgead = réalaíoch 4100K; Teolaí = uachtar gealach fómhair.
+value.MOON_TEMPERATURE.1=Gorm oighreata
+value.MOON_TEMPERATURE.2=Airgead (réalaíoch)
+value.MOON_TEMPERATURE.3=Uachtar teolaí
+
+option.SUN_HALO=Fáinne na gréine (scaipeadh Mie)
+option.SUN_HALO.comment=Cuireann sé loinnir teolaí bhog ar an talamh agus tú ag breathnú in aice leis an ngrian (scaipeadh ar aghaidh Mie).
+
+option.SUNRISE_GLOW=Loinnir fheabhsaithe éirí/luí na gréine
+option.SUNRISE_GLOW.comment=Cumasaíonn sé cúl-scaipeadh teolaí níos láidre a thimpeallaíonn dromchlaí atá ag tabhairt droma don ghrian íseal.
+
+# ==============================================================================
+# Extended shadow settings
+# ==============================================================================
+option.SHADOW_DISTANCE=Fad scáthanna
+option.SHADOW_DISTANCE.comment=Uasfhad ag a rindreáiltear scáthanna dinimiciúla sula n-imíonn siad as.
+value.SHADOW_DISTANCE.1=Gar (60m)
+value.SHADOW_DISTANCE.2=Caighdeánach (80m)
+value.SHADOW_DISTANCE.3=I bhfad (120m)
+value.SHADOW_DISTANCE.4=Ultra (160m)
+
+option.AMBIENT_BRIGHTNESS=Ardú scátha / Comhthimpeallach
+option.AMBIENT_BRIGHTNESS.comment=Rialaíonn sé cé chomh dorcha is a fheictear ceantair faoi scáth san oíche agus in uaimheanna.
+value.AMBIENT_BRIGHTNESS.1=Dorcha
+value.AMBIENT_BRIGHTNESS.2=Caighdeánach
+value.AMBIENT_BRIGHTNESS.3=Ardaithe (Geal)
+
+option.SHADOW_TINT=Imir scáthanna
+option.SHADOW_TINT.comment=Imríonn sé scáthanna lae. Tá imir fhuar chaolchúiseach ag scáthanna an domhain fíor faoi spéir ghorm.
+value.SHADOW_TINT.1=Liath neodrach
+value.SHADOW_TINT.2=Gorm fuar (réalaíoch)
+value.SHADOW_TINT.3=Teolaí
+
+option.LIGHT_WRAP=Fillteán solais
+option.LIGHT_WRAP.comment=Bogaíonn sé an teorann idir dromchlaí soilsithe agus neamhshoilsithe. Réalaíoch = Lambert fisiciúil; Bog = taitneamhach do ghabhálacha scáileáin.
+value.LIGHT_WRAP.1=Réalaíoch (Lambert)
+value.LIGHT_WRAP.2=Fillteán bog
+value.LIGHT_WRAP.3=Stílithe
+
+# ==============================================================================
+# Screen-Space Reflections (SSR)
+# ==============================================================================
+option.SSR=Frithchaithimh spáis scáileáin (SSR)
+option.SSR.comment=Cuireann sé timpeallacht fhrithchaite fíor-ama ar uisce, dromchlaí fliucha agus bloic PBR mhiotalacha. Cumasaithe ó MHEÁNACH aníos.
+
+option.SSR_QUALITY=Cáilíocht SSR
+option.SSR_QUALITY.comment=Rialaíonn sé cruinneas agus fad gathanna na bhfrithchaithimh spáis scáileáin. Níos airde = frithchaithimh níos géire ach níos mó costais GPU.
+value.SSR_QUALITY.1=Tapa (12 chéim)
+value.SSR_QUALITY.2=Cothrom (24 chéim)
+value.SSR_QUALITY.3=Ard (40 céim)
+
+option.SSR_STRENGTH=Déine SSR
+option.SSR_STRENGTH.comment=Rialaíonn sé cé chomh sofheicthe agus suntasach a fheictear an timpeallacht fhrithchaite ar dhromchlaí frithchaiteacha.
+
+option.WATER_WAVE_SCALE=Aimplitiúid na dtonn
+option.WATER_WAVE_SCALE.comment=Rialaíonn sé géire infheicthe tonnta dhromchla an uisce. Ciúin = cosúil le scáthán, Stoirmiúil = frithchaithimh briste go láidir.
+option.WATER_WAVE_DETAIL=Mionsonra na dtonn
+option.WATER_WAVE_DETAIL.comment=Rialaíonn sé cé mhéad tonn beag a fheictear in aghaidh an bhloic. Garbh = cúpla tonn mhór, Dlúth = a lán cuilithíní beaga.
+option.UNDERWATER_NIGHT_DARKNESS=Dorchadas oíche faoi uisce
+option.UNDERWATER_NIGHT_DARKNESS.comment=Rialaíonn sé cé chomh dorcha is a éiríonn an radharc faoi uisce san oíche. Coinníonn Linn ghealaí gile; tugann Dorchadas iomlán dorchadas marthanais foircneach.
+value.SSR_STRENGTH.1=Caolchúiseach
+value.SSR_STRENGTH.2=Cothrom
+value.SSR_STRENGTH.3=Láidir
+
+# v0.2.9 — water/underwater value labels
+value.WATER_WAVE_SCALE.1=Ciúin
+value.WATER_WAVE_SCALE.2=Caighdeánach
+value.WATER_WAVE_SCALE.3=Suaite
+value.WATER_WAVE_SCALE.4=Stoirmiúil
+value.WATER_WAVE_DETAIL.1=Garbh
+value.WATER_WAVE_DETAIL.2=Caighdeánach
+value.WATER_WAVE_DETAIL.3=Dlúth
+value.UNDERWATER_NIGHT_DARKNESS.1=Linn ghealaí
+value.UNDERWATER_NIGHT_DARKNESS.2=Lag
+value.UNDERWATER_NIGHT_DARKNESS.3=Fíoroíche
+value.UNDERWATER_NIGHT_DARKNESS.4=Dorchadas iomlán
+
+# PBR Distance
+option.PBR_DISTANCE=Fad rindreála PBR
+option.PBR_DISTANCE.comment=Uasfhad do bhuaicphointí speictreacha PBR. Sábhálann sé GPU ar thalamh i bhfad. Gar (16m) do ÍSEAL, Caighdeánach (48m) do MHEÁNACH, I bhfad (128m) do ARD/ULTRA, Neamhtheoranta do FHOIRCNEACH.
+value.PBR_DISTANCE.1=Gar (16m)
+value.PBR_DISTANCE.2=Caighdeánach (48m)
+value.PBR_DISTANCE.3=I bhfad (128m)
+value.PBR_DISTANCE.4=Neamhtheoranta
+# ==============================================================================
+# Experimental Tab & New Sky (v1.1.0)
+# ==============================================================================
+screen.EXPERIMENTAL=Turgnamhach
+screen.EXPERIMENTAL.comment=Turgnamhach
+
+option.SKY_MODE=Spéir Nua (Scaipeadh Atmaisféarach)
+option.SKY_STYLE=Sky Style
+option.SKY_STYLE.comment=option.SKY_STYLE.comment=Artistic direction for the physical sky. Realistic = true angular sizes & neutral colours (astronomy look). Semi-realistic = readable sun/moon (x2.8), richer colour, soft glow. Fantasy = grand sun/moon (x5.5), big corona, vivid teal/crimson/indigo palette.
+option.SKY_MODE.comment=EXPERIMENTAL — off in all profiles. Gradient (legacy, default) or Physical realtime scattering with true multiple scattering (Rayleigh+Mie+Ozone, 1st+2nd+3rd order). Enable manually in this tab.
+value.SKY_MODE.0=Gradient (Legacy)
+value.SKY_STYLE.0=Realistic
+value.SKY_STYLE.1=Semi-realistic
+value.SKY_STYLE.2=Fantasy
+value.SKY_MODE.1=Realtime Scattering
+
+option.SKY_QUALITY=Cáilíocht Scaipthe na Spéire
+option.SKY_QUALITY.comment=Cáilíocht Scaipthe na Spéire
+value.SKY_QUALITY.1=Tapa
+value.SKY_QUALITY.2=Caighdeánach
+value.SKY_QUALITY.3=Ard
