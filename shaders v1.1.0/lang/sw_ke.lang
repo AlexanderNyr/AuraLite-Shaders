@@ -421,3 +421,17 @@ option.SKY_QUALITY.comment=Ubora wa Utawanyiko wa Anga
 value.SKY_QUALITY.1=Haraka
 value.SKY_QUALITY.2=Kawaida
 value.SKY_QUALITY.3=Juu
+
+# --- Auto-added missing translations (v1.1.0 sync) ---
+option.GODRAYS_STRENGTH=Ukali wa Godrays
+option.GODRAYS_STRENGTH.comment=Mwangaza wa miale ya nuru ya ujazo. Hafifu: ukungu mwepesi wa anga. Sawa: miale inayoonekana wazi. Kubwa: miale ya kisinema yenye nguvu.
+value.GODRAYS_STRENGTH.1=Hafifu
+value.GODRAYS_STRENGTH.2=Sawa
+value.GODRAYS_STRENGTH.3=Kubwa
+option.HEAT_SHIMMER=Mwako wa Joto Juu ya Lava
+option.HEAT_SHIMMER.comment=Wezesha athari ndogo ya upotoshaji wa joto wa nafasi ya skrini juu ya nyuso za lava.
+option.HEAT_SHIMMER_STRENGTH=Nguvu ya Mwako wa Joto
+option.HEAT_SHIMMER_STRENGTH.comment=Inadhibiti ukubwa wa upotoshaji wa joto juu ya lava.
+value.HEAT_SHIMMER_STRENGTH.1=Hafifu
+value.HEAT_SHIMMER_STRENGTH.2=Sawa
+value.HEAT_SHIMMER_STRENGTH.3=Nguvu

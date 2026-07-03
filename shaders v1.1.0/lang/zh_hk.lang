@@ -421,3 +421,17 @@ option.SKY_QUALITY.comment=天空散射質素
 value.SKY_QUALITY.1=快速
 value.SKY_QUALITY.2=標準
 value.SKY_QUALITY.3=高
+
+# --- Auto-added missing translations (v1.1.0 sync) ---
+option.GODRAYS_STRENGTH=丁達爾光強度
+option.GODRAYS_STRENGTH.comment=體積光束的亮度。柔和：輕微的大氣霧感。平衡：清晰可見的光束。戲劇性：濃烈的電影感光束。
+value.GODRAYS_STRENGTH.1=柔和
+value.GODRAYS_STRENGTH.2=平衡
+value.GODRAYS_STRENGTH.3=戲劇性
+option.HEAT_SHIMMER=熔岩上方的熱浪扭曲
+option.HEAT_SHIMMER.comment=在熔岩表面上方啟用輕微的螢幕空間熱扭曲效果。
+option.HEAT_SHIMMER_STRENGTH=熱浪扭曲強度
+option.HEAT_SHIMMER_STRENGTH.comment=控制熔岩上方熱扭曲效果的強度。
+value.HEAT_SHIMMER_STRENGTH.1=柔和
+value.HEAT_SHIMMER_STRENGTH.2=平衡
+value.HEAT_SHIMMER_STRENGTH.3=強烈

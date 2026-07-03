@@ -421,3 +421,17 @@ option.SKY_QUALITY.comment=Күк чәчелеш сыйфаты
 value.SKY_QUALITY.1=Тиз
 value.SKY_QUALITY.2=Стандарт
 value.SKY_QUALITY.3=Югары
+
+# --- Auto-added missing translations (v1.1.0 sync) ---
+option.GODRAYS_STRENGTH=Godrays көчлелеге
+option.GODRAYS_STRENGTH.comment=Күләмле яктылык нурларының яктылыгы. Нечкә: җиңел атмосфера тузаны. Тигезләнгән: ачык күренгән нурлар. Драматик: кыю кинематографик нурлар.
+value.GODRAYS_STRENGTH.1=Нечкә
+value.GODRAYS_STRENGTH.2=Тигезләнгән
+value.GODRAYS_STRENGTH.3=Драматик
+option.HEAT_SHIMMER=Лава өстендә җылылык калтыравы
+option.HEAT_SHIMMER.comment=Лава өслекләре өстендә экран-арасы җылылык бозылу эффектын кабызыгыз.
+option.HEAT_SHIMMER_STRENGTH=Җылылык калтыравы көче
+option.HEAT_SHIMMER_STRENGTH.comment=Лава өстендәге җылылык бозылуының көчен көйли.
+value.HEAT_SHIMMER_STRENGTH.1=Нечкә
+value.HEAT_SHIMMER_STRENGTH.2=Тигезләнгән
+value.HEAT_SHIMMER_STRENGTH.3=Көчле

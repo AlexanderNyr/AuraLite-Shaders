@@ -421,3 +421,17 @@ option.SKY_QUALITY.comment=Calidade de dispersión do ceo
 value.SKY_QUALITY.1=Rápido
 value.SKY_QUALITY.2=Estándar
 value.SKY_QUALITY.3=Alto
+
+# --- Auto-added missing translations (v1.1.0 sync) ---
+option.GODRAYS_STRENGTH=Intensidade dos Godrays
+option.GODRAYS_STRENGTH.comment=Brillo dos feixes de luz volumétricos. Sutil: brétema atmosférica suave. Equilibrado: raios claramente visibles. Dramático: feixes cinematográficos intensos.
+value.GODRAYS_STRENGTH.1=Sutil
+value.GODRAYS_STRENGTH.2=Equilibrado
+value.GODRAYS_STRENGTH.3=Dramático
+option.HEAT_SHIMMER=Distorsión de calor sobre a lava
+option.HEAT_SHIMMER.comment=Activa un sutil efecto de distorsión térmica na pantalla sobre as superficies de lava.
+option.HEAT_SHIMMER_STRENGTH=Intensidade da distorsión de calor
+option.HEAT_SHIMMER_STRENGTH.comment=Controla a intensidade da distorsión de calor sobre a lava.
+value.HEAT_SHIMMER_STRENGTH.1=Sutil
+value.HEAT_SHIMMER_STRENGTH.2=Equilibrado
+value.HEAT_SHIMMER_STRENGTH.3=Forte

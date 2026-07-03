@@ -6,7 +6,7 @@
 # ==============================================================================
 # Quality Profiles
 # ==============================================================================
-profile.VERY_LOW=Meget lav
+profile.VERY_LOW=Meget Lav
 profile.VERY_LOW.comment=Fastest possible preset for very weak GPUs. Disables shadows, clouds, water waves, foliage waving, PBR and most extras.
 profile.LOW=Lav
 profile.LOW.comment=Lightweight preset for weak GPUs. Keeps cheap water/foliage motion, disables shadows, clouds and PBR.
@@ -19,322 +19,322 @@ profile.ULTRA.comment=Ultra quality preset with 4096 shadows, very far clouds an
 profile.EXTREME=Ekstrem
 profile.EXTREME.comment=Maximum experimental quality. Pushes lighting, clouds, color and deep SSAO. POM remains disabled for stability.
 profile.CUSTOM=Brugerdefineret
-profile.CUSTOM.comment=Custom user-modified settings.
+profile.CUSTOM.comment=Brugerdefinerede, tilpassede indstillinger.
 
 screen.TRANSLATION_NOTICE=⚠ Oversættelser kan indeholde fejl
-screen.TRANSLATION_NOTICE.comment=Some localization strings may be inaccurate. If something looks strange, compare with the English original.
+screen.TRANSLATION_NOTICE.comment=Nogle lokaliseringsstrenge kan være unøjagtige. Hvis noget ser mærkeligt ud, så sammenlign med den engelske original.
 
 # Screens
 screen.LIGHTING=Lysindstillinger
-screen.LIGHTING.comment=Configure shadows, light colors, and brightness.
+screen.LIGHTING.comment=Konfigurer skygger, lysfarver og lysstyrke.
 
 screen.FOLIAGE=Løvindstillinger
-screen.FOLIAGE.comment=Configure waving animations for grass and leaves.
+screen.FOLIAGE.comment=Konfigurer vajende animationer for græs og blade.
 
 screen.WATER=Vandindstillinger
-screen.WATER.comment=Configure waves, transparency, and water styling.
+screen.WATER.comment=Konfigurer bølger, gennemsigtighed og vandstil.
 
 screen.CLOUDS_MENU=Himmel og skyer
-screen.CLOUDS_MENU.comment=Configure the physical altitude, thickness, and style of 3D clouds and sky effects.
+screen.CLOUDS_MENU.comment=Konfigurer den fysiske højde, tykkelse og stil for 3D-skyer og himmeleffekter.
 
 screen.POST_PROCESS=Efterbehandling og tåge
-screen.POST_PROCESS.comment=Configure exposure, fog, and cinematic effects.
+screen.POST_PROCESS.comment=Konfigurer eksponering, tåge og filmiske effekter.
 
 # Options
-option.SHADOWS=Dynamic Shadows
-option.SHADOWS.comment=Enable or disable soft dynamic shadows from the sun and moon.
+option.SHADOWS=Dynamiske Skygger
+option.SHADOWS.comment=Aktiver eller deaktiver bløde dynamiske skygger fra solen og månen.
 
-option.SHADOW_RES=Shadow Resolution
-option.SHADOW_RES.comment=Change the shadow map quality. Higher values may lower performance.
+option.SHADOW_RES=Skyggeopløsning
+option.SHADOW_RES.comment=Skift kvaliteten af skyggekortet. Højere værdier kan sænke ydeevnen.
 
-option.PBR_LIGHTING=PBR Lighting (LabPBR)
-option.PBR_LIGHTING.comment=Enable physically-based rendering for metals, roughness, and 3D normal maps (PBR resource pack required).
+option.PBR_LIGHTING=PBR-belysning (LabPBR)
+option.PBR_LIGHTING.comment=Aktiver fysisk baseret rendering for metaller, ruhed og 3D-normalkort (PBR-ressourcepakke påkrævet).
 
-option.PBR_POM=3D Block Relief (POM)
-option.PBR_POM.comment=Enable physically-based Parallax Occlusion Mapping for 3D block textures. Recommended to disable on incompatible resource packs.
+option.PBR_POM=3D-blokrelief (POM)
+option.PBR_POM.comment=Aktiver fysisk baseret Parallax Occlusion Mapping for 3D-blokteksturer. Anbefales deaktiveret ved inkompatible ressourcepakker.
 
-option.PBR_STRENGTH=PBR Intensity
-option.PBR_STRENGTH.comment=Control the reflectivity and glossiness of PBR metallic surfaces.
+option.PBR_STRENGTH=PBR-intensitet
+option.PBR_STRENGTH.comment=Styr refleksiviteten og glansen af PBR-metaloverflader.
 
-value.PBR_STRENGTH.1=Subtle
+value.PBR_STRENGTH.1=Subtil
 value.PBR_STRENGTH.2=Standard
-value.PBR_STRENGTH.3=Mirror
+value.PBR_STRENGTH.3=Spejl
 
-option.SSAO=SSAO / SAO Occlusion
+option.SSAO=SSAO / SAO-okklusion
 option.SSAO.comment=Extreme profile: screen-space ambient occlusion for contact shadows in corners, under blocks, and around geometry intersections.
-option.SSAO_STRENGTH=SSAO Strength
-option.SSAO_STRENGTH.comment=Controls the depth of screen-space ambient occlusion. Only active when SSAO is enabled.
-value.SSAO_STRENGTH.1=Subtle
-value.SSAO_STRENGTH.2=Balanced
-value.SSAO_STRENGTH.3=Deep
+option.SSAO_STRENGTH=SSAO-styrke
+option.SSAO_STRENGTH.comment=Styrer dybden af screen-space ambient occlusion. Kun aktiv, når SSAO er aktiveret.
+value.SSAO_STRENGTH.1=Subtil
+value.SSAO_STRENGTH.2=Balanceret
+value.SSAO_STRENGTH.3=Dyb
 
-option.LIGHTMAP_WARMTH=Torch Warmth
-option.LIGHTMAP_WARMTH.comment=Adjust the warmth and color of block/torch light.
+option.LIGHTMAP_WARMTH=Fakkelvarme
+option.LIGHTMAP_WARMTH.comment=Juster varmen og farven på blok-/fakkellys.
 
-value.LIGHTMAP_WARMTH.1=Cozy
-value.LIGHTMAP_WARMTH.2=Warm
-value.LIGHTMAP_WARMTH.3=Intense
+value.LIGHTMAP_WARMTH.1=Hyggelig
+value.LIGHTMAP_WARMTH.2=Varm
+value.LIGHTMAP_WARMTH.3=Intens
 
-option.WAVING_LEAVES=Waving Leaves
-option.WAVING_LEAVES.comment=Enable gentle waving animations for tree leaves.
+option.WAVING_LEAVES=Vajende Blade
+option.WAVING_LEAVES.comment=Aktiver bløde vajende animationer for træblade.
 
-option.WAVING_GRASS=Waving Foliage
-option.WAVING_GRASS.comment=Enable waving animations for grass, flowers, and crops.
+option.WAVING_GRASS=Vajende Bladværk
+option.WAVING_GRASS.comment=Aktiver vajende animationer for græs, blomster og afgrøder.
 
-option.WIND_SPEED=Wind Speed
-option.WIND_SPEED.comment=Control the waving speed of leaves, plants, and water waves.
+option.WIND_SPEED=Vindhastighed
+option.WIND_SPEED.comment=Styr vajehastigheden for blade, planter og vandbølger.
 
-value.WIND_SPEED.1=Gentle
-value.WIND_SPEED.2=Breeze
-value.WIND_SPEED.3=Gale
+value.WIND_SPEED.1=Mild
+value.WIND_SPEED.2=Brise
+value.WIND_SPEED.3=Storm
 
-option.WATER_WAVES=Water Waves
+option.WATER_WAVES=Vandbølger
 option.WATER_WAVES.comment=Enable 3D geometric waves on the water surface.
 
-option.WATER_TRANSPARENCY=Water Density
+option.WATER_TRANSPARENCY=Vandtæthed
 option.WATER_TRANSPARENCY.comment=Control the transparency and opacity of the water.
 
-value.WATER_TRANSPARENCY.1=Clear
-value.WATER_TRANSPARENCY.2=Balanced
-value.WATER_TRANSPARENCY.3=Deep
+value.WATER_TRANSPARENCY.1=Klar
+value.WATER_TRANSPARENCY.2=Balanceret
+value.WATER_TRANSPARENCY.3=Dyb
 
-option.PROCEDURAL_CLOUDS=Volumetric 3D Clouds
-option.PROCEDURAL_CLOUDS.comment=Enable physically flyable 3D clouds that can be reached and flown through.
+option.PROCEDURAL_CLOUDS=Volumetriske 3D-skyer
+option.PROCEDURAL_CLOUDS.comment=Aktiver fysisk gennemflyvelige 3D-skyer, der kan nås og flyves igennem.
 
-option.CLOUD_HEIGHT=Cloud Altitude
-option.CLOUD_HEIGHT.comment=Set the physical altitude (Y-level) of the cloud deck in the world (in meters).
+option.CLOUD_HEIGHT=Skyhøjde
+option.CLOUD_HEIGHT.comment=Indstil den fysiske højde (Y-niveau) for skydækket i verdenen (i meter).
 
-value.CLOUD_HEIGHT.1=Low (~110m)
+value.CLOUD_HEIGHT.1=Lav (~110m)
 value.CLOUD_HEIGHT.2=Standard (~160m)
-value.CLOUD_HEIGHT.3=High (~240m)
+value.CLOUD_HEIGHT.3=Høj (~240m)
 
-option.CLOUD_THICKNESS=Cloud Thickness
-option.CLOUD_THICKNESS.comment=Configure the vertical thickness and volume of the clouds.
+option.CLOUD_THICKNESS=Skytykkelse
+option.CLOUD_THICKNESS.comment=Konfigurer den lodrette tykkelse og volumen af skyerne.
 
-value.CLOUD_THICKNESS.1=Thin (Cirrus)
+value.CLOUD_THICKNESS.1=Tynd (Cirrus)
 value.CLOUD_THICKNESS.2=Standard (Cumulus)
-value.CLOUD_THICKNESS.3=Dense (Stormy)
+value.CLOUD_THICKNESS.3=Tæt (Stormfuld)
 
-option.CLOUD_DISTANCE=Cloud Render Distance
-option.CLOUD_DISTANCE.comment=Maximum draw distance for volumetric clouds. Quality profiles increase it automatically.
-value.CLOUD_DISTANCE.1=Near
+option.CLOUD_DISTANCE=Skyrenderingsafstand
+option.CLOUD_DISTANCE.comment=Maksimal tegneafstand for volumetriske skyer. Kvalitetsprofiler øger den automatisk.
+value.CLOUD_DISTANCE.1=Nær
 value.CLOUD_DISTANCE.2=Standard
-value.CLOUD_DISTANCE.3=Far
-value.CLOUD_DISTANCE.4=Very Far
+value.CLOUD_DISTANCE.3=Fjern
+value.CLOUD_DISTANCE.4=Meget Fjern
 
-option.CLOUD_SHADOWS=Skyggeskygger
-option.CLOUD_SHADOWS.comment=Adds transparent procedural shadows from volumetric cloud density onto terrain. Balanced by quality profiles.
-option.CLOUD_SHADOW_STRENGTH=Cloud Shadow Strength
-option.CLOUD_SHADOW_STRENGTH.comment=Controls how visible and dramatic transparent cloud shadows are.
-value.CLOUD_SHADOW_STRENGTH.1=Soft
-value.CLOUD_SHADOW_STRENGTH.2=Balanced
-value.CLOUD_SHADOW_STRENGTH.3=Dramatic
+option.CLOUD_SHADOWS=Skyskygger
+option.CLOUD_SHADOWS.comment=Tilføjer gennemsigtige procedurale skygger fra volumetrisk skytæthed på terrænet. Balanceret af kvalitetsprofiler.
+option.CLOUD_SHADOW_STRENGTH=Skyskyggestyrke
+option.CLOUD_SHADOW_STRENGTH.comment=Styrer, hvor synlige og dramatiske de gennemsigtige skyskygger er.
+value.CLOUD_SHADOW_STRENGTH.1=Blød
+value.CLOUD_SHADOW_STRENGTH.2=Balanceret
+value.CLOUD_SHADOW_STRENGTH.3=Dramatisk
 
-option.GODRAYS=Solstråler
+option.GODRAYS=Godrays / Sollysstråler
 option.GODRAYS.comment=Adds physically-inspired volumetric single-scattering sun shafts with Beer-Lambert extinction, Mie phase and shadow-map occlusion.
-option.GODRAYS_QUALITY=Godrays Quality
+option.GODRAYS_QUALITY=Godrays-kvalitet
 option.GODRAYS_QUALITY.comment=Controls the sample count and integration distance of physically-based volumetric godrays.
-value.GODRAYS_QUALITY.1=Fast
-value.GODRAYS_QUALITY.2=Balanced
-value.GODRAYS_QUALITY.3=High
+value.GODRAYS_QUALITY.1=Hurtig
+value.GODRAYS_QUALITY.2=Balanceret
+value.GODRAYS_QUALITY.3=Høj
 
-option.AURORA_MODE=Aurora Borealis
-option.AURORA_MODE.comment=Control the display of realistic flowing auroras on the night sky.
+option.AURORA_MODE=Nordlys
+option.AURORA_MODE.comment=Styr visningen af realistisk flydende nordlys på nattehimlen.
 
-value.AURORA_MODE.0=Disabled
-value.AURORA_MODE.1=Only in Cold Biomes
-value.AURORA_MODE.2=Always Enabled
+value.AURORA_MODE.0=Deaktiveret
+value.AURORA_MODE.1=Kun i Kolde Biomer
+value.AURORA_MODE.2=Altid Aktiveret
 
-option.AURORA_SPEED=Aurora Speed
-option.AURORA_SPEED.comment=Control the waving and flowing speed of the northern lights.
+option.AURORA_SPEED=Nordlyshastighed
+option.AURORA_SPEED.comment=Styr vaje- og flydehastigheden for nordlyset.
 
-value.AURORA_SPEED.1=Slow
+value.AURORA_SPEED.1=Langsom
 value.AURORA_SPEED.2=Standard
-value.AURORA_SPEED.3=Fast
+value.AURORA_SPEED.3=Hurtig
 
-option.AURORA_STRENGTH=Aurora Brightness
-option.AURORA_STRENGTH.comment=Control the overall glow brightness of the northern lights.
+option.AURORA_STRENGTH=Nordlysstyrke
+option.AURORA_STRENGTH.comment=Styr den samlede glødstyrke for nordlyset.
 
-value.AURORA_STRENGTH.1=Soft
+value.AURORA_STRENGTH.1=Blød
 value.AURORA_STRENGTH.2=Standard
-value.AURORA_STRENGTH.3=Glowing
+value.AURORA_STRENGTH.3=Glødende
 
-option.NEBULA_BRIGHTNESS=Milky Way Brightness
-option.NEBULA_BRIGHTNESS.comment=Adjust the glow brightness of the diagonal brownish galactic nebula at night.
+option.NEBULA_BRIGHTNESS=Mælkevejens Lysstyrke
+option.NEBULA_BRIGHTNESS.comment=Juster glødstyrken for den diagonale brunlige galaktiske tåge om natten.
 
-value.NEBULA_BRIGHTNESS.1=Dim
+value.NEBULA_BRIGHTNESS.1=Svag
 value.NEBULA_BRIGHTNESS.2=Standard
-value.NEBULA_BRIGHTNESS.3=Bright
+value.NEBULA_BRIGHTNESS.3=Lys
 
-option.STARS_BRIGHTNESS=Stars Brightness
-option.STARS_BRIGHTNESS.comment=Control the brightness and sparkling glow of the stars at night.
+option.STARS_BRIGHTNESS=Stjernernes Lysstyrke
+option.STARS_BRIGHTNESS.comment=Styr lysstyrken og den funklende glød hos stjernerne om natten.
 
-value.STARS_BRIGHTNESS.1=Faint
+value.STARS_BRIGHTNESS.1=Svag
 value.STARS_BRIGHTNESS.2=Standard
-value.STARS_BRIGHTNESS.3=Brilliant
+value.STARS_BRIGHTNESS.3=Strålende
 
-option.STARS_AMOUNT=Stars Density
-option.STARS_AMOUNT.comment=Control the overall amount and density of the stars in the sky.
+option.STARS_AMOUNT=Stjernetæthed
+option.STARS_AMOUNT.comment=Styr den samlede mængde og tæthed af stjerner på himlen.
 
-value.STARS_AMOUNT.1=Few
+value.STARS_AMOUNT.1=Få
 value.STARS_AMOUNT.2=Standard
-value.STARS_AMOUNT.3=Dense
+value.STARS_AMOUNT.3=Tæt
 
-option.RAINBOW_STRENGTH=Rainbow Intensity
-option.RAINBOW_STRENGTH.comment=Configure the brightness and color saturation of the post-rain rainbow.
+option.RAINBOW_STRENGTH=Regnbueintensitet
+option.RAINBOW_STRENGTH.comment=Konfigurer lysstyrken og farvemætningen for regnbuen efter regn.
 
-value.RAINBOW_STRENGTH.1=Subtle
-value.RAINBOW_STRENGTH.2=Balanced
-value.RAINBOW_STRENGTH.3=Vivid
+value.RAINBOW_STRENGTH.1=Subtil
+value.RAINBOW_STRENGTH.2=Balanceret
+value.RAINBOW_STRENGTH.3=Levende
 
-option.COZY_LIGHTS=Torch Flickering
-option.COZY_LIGHTS.comment=Enable warm, cozy, real-time flickering animations for torches, campfires, and lanterns.
+option.COZY_LIGHTS=Fakkelflimren
+option.COZY_LIGHTS.comment=Aktiver varme, hyggelige, realtidsflimrende animationer for fakler, lejrbål og lanterner.
 
-option.WET_REFLECTIONS=Rain Wetness Reflections
-option.WET_REFLECTIONS.comment=When raining, solid blocks like ground, grass, and stone become wet, dark, and glossy under the sky.
+option.WET_REFLECTIONS=Regnvåde Refleksioner
+option.WET_REFLECTIONS.comment=Når det regner, bliver faste blokke som jord, græs og sten våde, mørke og blanke under himlen.
 
-option.GROUND_MIST=Low Ground Mist (Y=62-66)
-option.GROUND_MIST.comment=Enable soft, golden-white morning/evening fog sheets that slide over water and ice at dawn and dusk.
+option.GROUND_MIST=Lav Jordtåge (Y=62-66)
+option.GROUND_MIST.comment=Aktiver bløde, gyldenhvide morgen-/aftentåge, der glider hen over vand og is ved daggry og skumring.
 
-option.FOG_DENSITY_LEVEL=Fog Density
-option.FOG_DENSITY_LEVEL.comment=Control the strength of atmospheric horizon fog.
+option.FOG_DENSITY_LEVEL=Tågetæthed
+option.FOG_DENSITY_LEVEL.comment=Styr styrken af atmosfærisk horisonttåge.
 
-value.FOG_DENSITY_LEVEL.1=Low
-value.FOG_DENSITY_LEVEL.2=Medium
-value.FOG_DENSITY_LEVEL.3=High
+value.FOG_DENSITY_LEVEL.1=Lav
+value.FOG_DENSITY_LEVEL.2=Middel
+value.FOG_DENSITY_LEVEL.3=Høj
 
-option.EXPOSURE=Exposure Brightness
-option.EXPOSURE.comment=Control the overall brightness of the image.
+option.EXPOSURE=Eksponeringsstyrke
+option.EXPOSURE.comment=Styr billedets samlede lysstyrke.
 
-value.EXPOSURE.1=Muted
-value.EXPOSURE.2=Balanced
-value.EXPOSURE.3=Vibrant
+value.EXPOSURE.1=Dæmpet
+value.EXPOSURE.2=Balanceret
+value.EXPOSURE.3=Livlig
 
-option.COLOR_SATURATION=Color Vibrancy
-option.COLOR_SATURATION.comment=Control the non-linear saturation of screen colors. Makes foliage look emerald and skies lush.
+option.COLOR_SATURATION=Farvelivlighed
+option.COLOR_SATURATION.comment=Styr den ikke-lineære mætning af skærmfarver. Får løv til at se smaragdgrønt ud og himlen frodig.
 
-value.COLOR_SATURATION.1=Muted
-value.COLOR_SATURATION.2=Balanced
-value.COLOR_SATURATION.3=Colorful
-value.COLOR_SATURATION.4=Vivid
+value.COLOR_SATURATION.1=Dæmpet
+value.COLOR_SATURATION.2=Balanceret
+value.COLOR_SATURATION.3=Farverig
+value.COLOR_SATURATION.4=Levende
 
-option.CONTRAST=Image Contrast
-option.CONTRAST.comment=Choose the tone mapping and contrast curve style.
+option.CONTRAST=Billedkontrast
+option.CONTRAST.comment=Vælg tone mapping- og kontrastkurvestilen.
 
-value.CONTRAST.1=Soft
-value.CONTRAST.2=Filmic (ACES)
-value.CONTRAST.3=Intense (High Contrast)
+value.CONTRAST.1=Blød
+value.CONTRAST.2=Filmisk (ACES)
+value.CONTRAST.3=Intens (Høj Kontrast)
 
-option.TAA=Temporal anti-aliasing (TAA)
-option.TAA.comment=Temporal resolve with motion reprojection and neighborhood clipping. Reduces shimmering and jagged edges on high presets.
-option.TAA_STRENGTH=TAA Strength
-option.TAA_STRENGTH.comment=Controls history blending. Higher is more stable but can be softer during motion.
-value.TAA_STRENGTH.1=Light
-value.TAA_STRENGTH.2=Balanced
-value.TAA_STRENGTH.3=Stable
+option.TAA=Tidsmæssig Anti-Aliasing (TAA)
+option.TAA.comment=Temporal opløsning med bevægelsesreprojektion og nabolagsbeskæring. Reducerer flimren og takkede kanter på høje forudindstillinger.
+option.TAA_STRENGTH=TAA-styrke
+option.TAA_STRENGTH.comment=Styrer historikblanding. Højere er mere stabilt, men kan være blødere under bevægelse.
+value.TAA_STRENGTH.1=Let
+value.TAA_STRENGTH.2=Balanceret
+value.TAA_STRENGTH.3=Stabil
 
-option.VIGNETTE=Vignette Effect
-option.VIGNETTE.comment=Enable subtle darkening at screen edges for improved focus.
+option.VIGNETTE=Vignetteffekt
+option.VIGNETTE.comment=Aktiver subtil formørkelse ved skærmkanterne for forbedret fokus.
 
-option.WATER_RIFFLES=Water Ripple Strength
+option.WATER_RIFFLES=Vandkrusningsstyrke
 option.WATER_RIFFLES.comment=Adjust the waviness and intensity of the fine normal map ripples on the water.
 
-value.WATER_RIFFLES.1=Calm
+value.WATER_RIFFLES.1=Rolig
 value.WATER_RIFFLES.2=Standard
-value.WATER_RIFFLES.3=Choppy
+value.WATER_RIFFLES.3=Urolig
 
-option.WATER_SPECULAR_STRENGTH=Water Specular Glow
+option.WATER_SPECULAR_STRENGTH=Vandets Spekulærglød
 option.WATER_SPECULAR_STRENGTH.comment=Adjust the brightness of sun/moon reflections on the water ripples.
 
-value.WATER_SPECULAR_STRENGTH.1=Soft
+value.WATER_SPECULAR_STRENGTH.1=Blød
 value.WATER_SPECULAR_STRENGTH.2=Standard
-value.WATER_SPECULAR_STRENGTH.3=Glinting
+value.WATER_SPECULAR_STRENGTH.3=Blinkende
 
-option.SHADOW_SOFTNESS=Shadow Softness
-option.SHADOW_SOFTNESS.comment=Controls how soft and diffuse the shadow edges appear. Uses rotated Poisson disk filtering for smooth penumbra.
+option.SHADOW_SOFTNESS=Skyggeblødhed
+option.SHADOW_SOFTNESS.comment=Styrer, hvor bløde og diffuse skyggekanterne fremstår. Bruger roteret Poisson disk-filtrering for blød penumbra.
 
-value.SHADOW_SOFTNESS.1=Sharp
-value.SHADOW_SOFTNESS.2=Soft
-value.SHADOW_SOFTNESS.3=Ultra Soft
+value.SHADOW_SOFTNESS.1=Skarp
+value.SHADOW_SOFTNESS.2=Blød
+value.SHADOW_SOFTNESS.3=Ultra Blød
 
 # ==============================================================================
 # Sun & Moon Lighting (extended)
 # ==============================================================================
 screen.SUN_MOON=Sol og måne
-screen.SUN_MOON.comment=Fine-tune sun & moon intensity, colour temperature, and atmospheric effects.
+screen.SUN_MOON.comment=Finjuster sol- og måneintensitet, farvetemperatur og atmosfæriske effekter.
 
-option.SUN_INTENSITY=Sun Intensity
-option.SUN_INTENSITY.comment=Master brightness of direct sunlight. Higher = stronger daytime contrast.
-value.SUN_INTENSITY.1=Dim
+option.SUN_INTENSITY=Solintensitet
+option.SUN_INTENSITY.comment=Hovedlysstyrke for direkte sollys. Højere = stærkere dagkontrast.
+value.SUN_INTENSITY.1=Svag
 value.SUN_INTENSITY.2=Standard
-value.SUN_INTENSITY.3=Bright
-value.SUN_INTENSITY.4=Blazing
+value.SUN_INTENSITY.3=Lys
+value.SUN_INTENSITY.4=Flammende
 
-option.MOON_INTENSITY=Moon Intensity
-option.MOON_INTENSITY.comment=Master brightness of moonlight. Higher = brighter, more visible nights.
-value.MOON_INTENSITY.1=Pitch Night
+option.MOON_INTENSITY=Måneintensitet
+option.MOON_INTENSITY.comment=Hovedlysstyrke for måneskin. Højere = lysere, mere synlige nætter.
+value.MOON_INTENSITY.1=Bælgmørk Nat
 value.MOON_INTENSITY.2=Standard
-value.MOON_INTENSITY.3=Bright Moon
-value.MOON_INTENSITY.4=Full Night
+value.MOON_INTENSITY.3=Lys Måne
+value.MOON_INTENSITY.4=Fuld Nat
 
-option.SUN_TEMPERATURE=Sun Colour Temperature
-option.SUN_TEMPERATURE.comment=Shifts the sun's Kelvin curve. Realistic uses Tanner Helland blackbody; warm = golden; cool = neutral white.
-value.SUN_TEMPERATURE.1=Cool / Neutral
-value.SUN_TEMPERATURE.2=Realistic
-value.SUN_TEMPERATURE.3=Warm Golden
+option.SUN_TEMPERATURE=Solens Farvetemperatur
+option.SUN_TEMPERATURE.comment=Skifter solens Kelvin-kurve. Realistisk bruger Tanner Helland-sortlegeme; varm = gylden; kølig = neutral hvid.
+value.SUN_TEMPERATURE.1=Kølig / Neutral
+value.SUN_TEMPERATURE.2=Realistisk
+value.SUN_TEMPERATURE.3=Varm Gylden
 
-option.MOON_TEMPERATURE=Moon Colour Temperature
-option.MOON_TEMPERATURE.comment=Tint of the moonlight. Icy = bluish cold; Silver = realistic 4100K; Warm = harvest-moon cream.
-value.MOON_TEMPERATURE.1=Icy Blue
-value.MOON_TEMPERATURE.2=Silver (Realistic)
-value.MOON_TEMPERATURE.3=Warm Cream
+option.MOON_TEMPERATURE=Månens Farvetemperatur
+option.MOON_TEMPERATURE.comment=Nuance af måneskin. Isnende = blålig kold; Sølv = realistisk 4100K; Varm = høstmånecreme.
+value.MOON_TEMPERATURE.1=Isblå
+value.MOON_TEMPERATURE.2=Sølv (Realistisk)
+value.MOON_TEMPERATURE.3=Varm Creme
 
-option.SUN_HALO=Sun Halo (Mie Scatter)
-option.SUN_HALO.comment=Adds a soft warm glow on terrain when looking near the sun (Mie forward-scattering).
+option.SUN_HALO=Solhalo (Mie-spredning)
+option.SUN_HALO.comment=Tilføjer en blød varm glød på terrænet, når man kigger nær solen (Mie-fremadspredning).
 
-option.SUNRISE_GLOW=Enhanced Sunrise/Sunset Glow
-option.SUNRISE_GLOW.comment=Enables stronger warm back-scatter that wraps around surfaces facing away from the low sun.
+option.SUNRISE_GLOW=Forbedret Solopgangs-/Solnedgangsglød
+option.SUNRISE_GLOW.comment=Aktiverer stærkere varm tilbagespredning, der omslutter overflader, der vender væk fra den lave sol.
 
 # ==============================================================================
 # Extended shadow settings
 # ==============================================================================
-option.SHADOW_DISTANCE=Shadow Distance
-option.SHADOW_DISTANCE.comment=Maximum distance at which dynamic shadows are rendered before fading out.
-value.SHADOW_DISTANCE.1=Near (60m)
+option.SHADOW_DISTANCE=Skyggeafstand
+option.SHADOW_DISTANCE.comment=Maksimal afstand, hvor dynamiske skygger gengives, før de toner ud.
+value.SHADOW_DISTANCE.1=Nær (60m)
 value.SHADOW_DISTANCE.2=Standard (80m)
-value.SHADOW_DISTANCE.3=Far (120m)
+value.SHADOW_DISTANCE.3=Fjern (120m)
 value.SHADOW_DISTANCE.4=Ultra (160m)
 
-option.AMBIENT_BRIGHTNESS=Shadow Lift / Ambient
-option.AMBIENT_BRIGHTNESS.comment=Controls how dark shadowed areas appear at night and in caves.
-value.AMBIENT_BRIGHTNESS.1=Dark
+option.AMBIENT_BRIGHTNESS=Skyggeløft / Omgivelser
+option.AMBIENT_BRIGHTNESS.comment=Styrer, hvor mørke skyggede områder fremstår om natten og i huler.
+value.AMBIENT_BRIGHTNESS.1=Mørk
 value.AMBIENT_BRIGHTNESS.2=Standard
-value.AMBIENT_BRIGHTNESS.3=Lifted (Bright)
+value.AMBIENT_BRIGHTNESS.3=Løftet (Lys)
 
-option.SHADOW_TINT=Shadow Tint
-option.SHADOW_TINT.comment=Tints daytime shadows. Real-world shadows under a blue sky have a subtle cool tint.
-value.SHADOW_TINT.1=Neutral Gray
-value.SHADOW_TINT.2=Cool Blue (Realistic)
-value.SHADOW_TINT.3=Warm
+option.SHADOW_TINT=Skyggenuance
+option.SHADOW_TINT.comment=Tonelægger dagslys-skygger. Rigtige skygger under en blå himmel har en subtil kølig nuance.
+value.SHADOW_TINT.1=Neutral Grå
+value.SHADOW_TINT.2=Kølig Blå (Realistisk)
+value.SHADOW_TINT.3=Varm
 
-option.LIGHT_WRAP=Light Wrap
-option.LIGHT_WRAP.comment=Softens the terminator between lit and unlit surfaces. Realistic = physical Lambert; Soft = pleasant for screenshots.
-value.LIGHT_WRAP.1=Realistic (Lambert)
-value.LIGHT_WRAP.2=Soft Wrap
-value.LIGHT_WRAP.3=Stylized
+option.LIGHT_WRAP=Lysindpakning
+option.LIGHT_WRAP.comment=Blødgør terminatoren mellem oplyste og uoplyste overflader. Realistisk = fysisk Lambert; Blød = behagelig til skærmbilleder.
+value.LIGHT_WRAP.1=Realistisk (Lambert)
+value.LIGHT_WRAP.2=Blød Indpakning
+value.LIGHT_WRAP.3=Stiliseret
 
 # v0.2.9 — water/underwater option value labels (English fallback)
-value.WATER_WAVE_SCALE.1=Calm
+value.WATER_WAVE_SCALE.1=Rolig
 value.WATER_WAVE_SCALE.2=Standard
-value.WATER_WAVE_SCALE.3=Choppy
-value.WATER_WAVE_SCALE.4=Stormy
-value.WATER_WAVE_DETAIL.1=Coarse
+value.WATER_WAVE_SCALE.3=Urolig
+value.WATER_WAVE_SCALE.4=Stormfuld
+value.WATER_WAVE_DETAIL.1=Grov
 value.WATER_WAVE_DETAIL.2=Standard
-value.WATER_WAVE_DETAIL.3=Dense
-value.UNDERWATER_NIGHT_DARKNESS.1=Moonlit Pool
-value.UNDERWATER_NIGHT_DARKNESS.2=Dim
-value.UNDERWATER_NIGHT_DARKNESS.3=True Night
-value.UNDERWATER_NIGHT_DARKNESS.4=Pitch Dark
+value.WATER_WAVE_DETAIL.3=Tæt
+value.UNDERWATER_NIGHT_DARKNESS.1=Måneskinsbassin
+value.UNDERWATER_NIGHT_DARKNESS.2=Svag
+value.UNDERWATER_NIGHT_DARKNESS.3=Ægte Nat
+value.UNDERWATER_NIGHT_DARKNESS.4=Bælgmørkt
 # ==============================================================================
 # Experimental Tab & New Sky (v1.1.0)
 # ==============================================================================
@@ -342,13 +342,13 @@ screen.EXPERIMENTAL=Eksperimentel
 screen.EXPERIMENTAL.comment=Eksperimentel
 
 option.SKY_MODE=Ny himmel (Atmosfærisk spredning)
-option.SKY_STYLE=Sky Style
+option.SKY_STYLE=Himmelstil
 option.SKY_STYLE.comment=option.SKY_STYLE.comment=Artistic direction for the physical sky. Realistic = true angular sizes & neutral colours (astronomy look). Semi-realistic = readable sun/moon (x2.8), richer colour, soft glow. Fantasy = grand sun/moon (x5.5), big corona, vivid teal/crimson/indigo palette.
 option.SKY_MODE.comment=EXPERIMENTAL — off in all profiles. Gradient (legacy, default) or Physical realtime scattering with true multiple scattering (Rayleigh+Mie+Ozone, 1st+2nd+3rd order). Enable manually in this tab.
-value.SKY_MODE.0=Gradient (Legacy)
-value.SKY_STYLE.0=Realistic
-value.SKY_STYLE.1=Semi-realistic
-value.SKY_STYLE.2=Fantasy
+value.SKY_MODE.0=Gradient (Ældre)
+value.SKY_STYLE.0=Realistisk
+value.SKY_STYLE.1=Semi-realistisk
+value.SKY_STYLE.2=Fantasi
 value.SKY_MODE.1=Realtime Scattering
 
 option.SKY_QUALITY=Himlens spredningskvalitet
@@ -356,3 +356,61 @@ option.SKY_QUALITY.comment=Himlens spredningskvalitet
 value.SKY_QUALITY.1=Hurtig
 value.SKY_QUALITY.2=Standard
 value.SKY_QUALITY.3=Høj
+
+# --- Auto-added missing translations (v1.1.0 sync) ---
+option.FOLIAGE_SSS=Bladværk-SSS
+option.FOLIAGE_SSS.comment=Aktiverer subsurface scattering (gennemsigtighed) for blade, græs og planter i modlys.
+option.GODRAYS_STRENGTH=Godrays-intensitet
+option.GODRAYS_STRENGTH.comment=Lysstyrken af de volumetriske lysstråler. Subtil: blid atmosfærisk dis. Balanceret: tydeligt synlige stråler. Dramatisk: dristige filmiske stråler.
+value.GODRAYS_STRENGTH.1=Subtil
+value.GODRAYS_STRENGTH.2=Balanceret
+value.GODRAYS_STRENGTH.3=Dramatisk
+option.SHOOTING_STARS=Meteorer (Stjerneskud)
+option.SHOOTING_STARS.comment=Fysisk baserede meteorer, der kommer ind i mesosfæren (~80-120 km). Gengiver ægte storcirkel-3D-buer med ablationslyskurver, sortlegemets plasmafarve (3500-5500 K), Rayleigh-udslukning nær horisonten og vedvarende ioniseringsspor på ildkugler.
+option.SHOOTING_STARS_FREQUENCY=Meteoraktivitet (ZHR)
+option.SHOOTING_STARS_FREQUENCY.comment=Omtrentlig zenital timerate. Sporadisk = realistisk baggrund på ~10 pr. time. Aktiv = mild byge. Storm = topdensitet (~100/t).
+value.SHOOTING_STARS_FREQUENCY.1=Sporadisk (~10/t)
+value.SHOOTING_STARS_FREQUENCY.2=Aktiv Byge
+value.SHOOTING_STARS_FREQUENCY.3=Meteorstorm
+option.SHOOTING_STARS_BRIGHTNESS=Magnitudeskala
+option.SHOOTING_STARS_BRIGHTNESS.comment=Hovedmultiplikator på meteorets magnitudeskala. Svag = realistisk gennemsnit; Lys = skalerer ildkugler til filmisk synlighed.
+value.SHOOTING_STARS_BRIGHTNESS.1=Svag (Realistisk)
+value.SHOOTING_STARS_BRIGHTNESS.2=Standard
+value.SHOOTING_STARS_BRIGHTNESS.3=Lyse Ildkugler
+value.CONTRAST.4=Fotografisk (AgX-lignende)
+option.SPATIAL_AA_MODE=Rumlig Anti-Aliasing
+option.SPATIAL_AA_MODE.comment=Vælg efterbehandlingsmetode til anti-aliasing. FXAA er hurtig og billig. SMAA bruger dybdebuffer for bedre kvalitet på geometrikanter. Kan kombineres med TAA.
+value.SPATIAL_AA_MODE.0=Fra
+value.SPATIAL_AA_MODE.1=FXAA (Hurtig)
+value.SPATIAL_AA_MODE.2=SMAA (Kvalitet)
+option.HEAT_SHIMMER=Varmeflimmer Over Lava
+option.HEAT_SHIMMER.comment=Aktiver en subtil screen-space-varmeforvrængningseffekt over lavaoverflader.
+option.HEAT_SHIMMER_STRENGTH=Varmeflimmerstyrke
+option.HEAT_SHIMMER_STRENGTH.comment=Styrer intensiteten af varmeforvrængningen over lava.
+value.HEAT_SHIMMER_STRENGTH.1=Subtil
+value.HEAT_SHIMMER_STRENGTH.2=Balanceret
+value.HEAT_SHIMMER_STRENGTH.3=Stærk
+option.SSR=Screen-Space-Refleksioner (SSR)
+option.SSR.comment=Tilføjer realtidsreflekteret miljø på vand, våde overflader og metalliske PBR-blokke. Aktiveret fra Middel og opefter i v1.0.4.
+option.SSR_QUALITY=SSR-kvalitet
+option.SSR_QUALITY.comment=Styrer præcisionen og strålenafstanden for screen-space-refleksioner. Højere = skarpere refleksioner men mere GPU-omkostning.
+value.SSR_QUALITY.1=Hurtig (12 trin)
+value.SSR_QUALITY.2=Balanceret (24 trin)
+value.SSR_QUALITY.3=Høj (40 trin)
+option.SSR_STRENGTH=SSR-styrke
+option.SSR_STRENGTH.comment=Styrer, hvor synligt og fremtrædende det reflekterede miljø fremstår på reflekterende overflader.
+option.WATER_WAVE_SCALE=Bølgeamplitude
+option.WATER_WAVE_SCALE.comment=Styrer den synlige stejlhed af vandoverfladens bølger. Rolig = spejlagtig, Stormfuld = stærkt brudte refleksioner.
+option.WATER_WAVE_DETAIL=Bølgedetalje
+option.WATER_WAVE_DETAIL.comment=Styrer, hvor mange små bølger der vises pr. blok. Grov = få store bølger, Tæt = mange små krusninger.
+option.UNDERWATER_NIGHT_DARKNESS=Undervands Natmørke
+option.UNDERWATER_NIGHT_DARKNESS.comment=Styrer, hvor mørk undervandsscenen bliver om natten. Måneskinsbassin bevarer lysstyrken; Bælgmørkt giver ekstrem survival-mørke.
+value.SSR_STRENGTH.1=Subtil
+value.SSR_STRENGTH.2=Balanceret
+value.SSR_STRENGTH.3=Stærk
+option.PBR_DISTANCE=PBR-renderingsafstand
+option.PBR_DISTANCE.comment=Maksimal afstand for PBR-spekulære highlights. Sparer GPU på fjernt terræn. Nær (16m) for Lav, Standard (48m) for Middel, Fjern (128m) for Høj/Ultra, Ubegrænset for Ekstrem.
+value.PBR_DISTANCE.1=Nær (16m)
+value.PBR_DISTANCE.2=Standard (48m)
+value.PBR_DISTANCE.3=Fjern (128m)
+value.PBR_DISTANCE.4=Ubegrænset

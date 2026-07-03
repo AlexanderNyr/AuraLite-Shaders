@@ -16,325 +16,325 @@ profile.HIGH=उच्च
 profile.HIGH.comment=High quality preset with 2048 shadows, farther clouds and full PBR, without SSAO.
 profile.ULTRA=अल्ट्रा
 profile.ULTRA.comment=Ultra quality preset with 4096 shadows, very far clouds and balanced SSAO. POM remains disabled for stability.
-profile.EXTREME=एक्सट्रीम
+profile.EXTREME=अत्यधिक
 profile.EXTREME.comment=Maximum experimental quality. Pushes lighting, clouds, color and deep SSAO. POM remains disabled for stability.
 profile.CUSTOM=कस्टम
-profile.CUSTOM.comment=Custom user-modified settings.
+profile.CUSTOM.comment=उपयोगकर्ता द्वारा संशोधित कस्टम सेटिंग्स।
 
 screen.TRANSLATION_NOTICE=⚠ अनुवादों में त्रुटियाँ हो सकती हैं
-screen.TRANSLATION_NOTICE.comment=Some localization strings may be inaccurate. If something looks strange, compare with the English original.
+screen.TRANSLATION_NOTICE.comment=कुछ स्थानीयकरण स्ट्रिंग गलत हो सकती हैं। यदि कुछ अजीब लगे, तो अंग्रेज़ी मूल से तुलना करें।
 
 # Screens
 screen.LIGHTING=प्रकाश सेटिंग्स
-screen.LIGHTING.comment=Configure shadows, light colors, and brightness.
+screen.LIGHTING.comment=छाया, प्रकाश रंग और चमक कॉन्फ़िगर करें।
 
 screen.FOLIAGE=वनस्पति सेटिंग्स
-screen.FOLIAGE.comment=Configure waving animations for grass and leaves.
+screen.FOLIAGE.comment=घास और पत्तियों के लिए लहराती एनिमेशन कॉन्फ़िगर करें।
 
 screen.WATER=पानी सेटिंग्स
-screen.WATER.comment=Configure waves, transparency, and water styling.
+screen.WATER.comment=तरंगें, पारदर्शिता और पानी की स्टाइलिंग कॉन्फ़िगर करें।
 
 screen.CLOUDS_MENU=आकाश और बादल
-screen.CLOUDS_MENU.comment=Configure the physical altitude, thickness, and style of 3D clouds and sky effects.
+screen.CLOUDS_MENU.comment=3D बादलों और आकाश प्रभावों की भौतिक ऊंचाई, मोटाई और शैली कॉन्फ़िगर करें।
 
 screen.POST_PROCESS=पोस्ट-प्रोसेसिंग और कोहरा
-screen.POST_PROCESS.comment=Configure exposure, fog, and cinematic effects.
+screen.POST_PROCESS.comment=एक्सपोज़र, कोहरा और सिनेमाई प्रभाव कॉन्फ़िगर करें।
 
 # Options
-option.SHADOWS=Dynamic Shadows
-option.SHADOWS.comment=Enable or disable soft dynamic shadows from the sun and moon.
+option.SHADOWS=गतिशील छाया
+option.SHADOWS.comment=सूर्य और चंद्रमा से नरम गतिशील छाया सक्षम या अक्षम करें।
 
-option.SHADOW_RES=Shadow Resolution
-option.SHADOW_RES.comment=Change the shadow map quality. Higher values may lower performance.
+option.SHADOW_RES=छाया रिज़ॉल्यूशन
+option.SHADOW_RES.comment=शैडो मैप गुणवत्ता बदलें। उच्च मान प्रदर्शन को कम कर सकते हैं।
 
-option.PBR_LIGHTING=PBR Lighting (LabPBR)
-option.PBR_LIGHTING.comment=Enable physically-based rendering for metals, roughness, and 3D normal maps (PBR resource pack required).
+option.PBR_LIGHTING=PBR प्रकाश (LabPBR)
+option.PBR_LIGHTING.comment=धातुओं, खुरदरापन और 3D सामान्य मानचित्रों के लिए भौतिक-आधारित रेंडरिंग सक्षम करें (PBR संसाधन पैक आवश्यक)।
 
-option.PBR_POM=3D Block Relief (POM)
-option.PBR_POM.comment=Enable physically-based Parallax Occlusion Mapping for 3D block textures. Recommended to disable on incompatible resource packs.
+option.PBR_POM=3D ब्लॉक रिलीफ (POM)
+option.PBR_POM.comment=3D ब्लॉक बनावट के लिए भौतिक-आधारित पैरालैक्स ऑक्लूजन मैपिंग सक्षम करें। असंगत संसाधन पैक पर अक्षम करने की अनुशंसा की जाती है।
 
-option.PBR_STRENGTH=PBR Intensity
-option.PBR_STRENGTH.comment=Control the reflectivity and glossiness of PBR metallic surfaces.
+option.PBR_STRENGTH=PBR तीव्रता
+option.PBR_STRENGTH.comment=PBR धातु सतहों की परावर्तकता और चमक को नियंत्रित करें।
 
-value.PBR_STRENGTH.1=Subtle
-value.PBR_STRENGTH.2=Standard
-value.PBR_STRENGTH.3=Mirror
+value.PBR_STRENGTH.1=सूक्ष्म
+value.PBR_STRENGTH.2=मानक
+value.PBR_STRENGTH.3=दर्पण
 
-option.SSAO=SSAO / SAO Occlusion
+option.SSAO=SSAO / SAO ऑक्लूज़न
 option.SSAO.comment=Extreme profile: screen-space ambient occlusion for contact shadows in corners, under blocks, and around geometry intersections.
-option.SSAO_STRENGTH=SSAO Strength
-option.SSAO_STRENGTH.comment=Controls the depth of screen-space ambient occlusion. Only active when SSAO is enabled.
-value.SSAO_STRENGTH.1=Subtle
-value.SSAO_STRENGTH.2=Balanced
-value.SSAO_STRENGTH.3=Deep
+option.SSAO_STRENGTH=SSAO शक्ति
+option.SSAO_STRENGTH.comment=स्क्रीन-स्पेस एम्बिएंट ऑक्लूज़न की गहराई को नियंत्रित करता है। केवल तभी सक्रिय जब SSAO सक्षम हो।
+value.SSAO_STRENGTH.1=सूक्ष्म
+value.SSAO_STRENGTH.2=संतुलित
+value.SSAO_STRENGTH.3=गहरा
 
-option.LIGHTMAP_WARMTH=Torch Warmth
-option.LIGHTMAP_WARMTH.comment=Adjust the warmth and color of block/torch light.
+option.LIGHTMAP_WARMTH=मशाल की गर्माहट
+option.LIGHTMAP_WARMTH.comment=ब्लॉक/मशाल प्रकाश की गर्माहट और रंग समायोजित करें।
 
-value.LIGHTMAP_WARMTH.1=Cozy
-value.LIGHTMAP_WARMTH.2=Warm
-value.LIGHTMAP_WARMTH.3=Intense
+value.LIGHTMAP_WARMTH.1=आरामदायक
+value.LIGHTMAP_WARMTH.2=गर्म
+value.LIGHTMAP_WARMTH.3=तीव्र
 
-option.WAVING_LEAVES=Waving Leaves
-option.WAVING_LEAVES.comment=Enable gentle waving animations for tree leaves.
+option.WAVING_LEAVES=लहराते पत्ते
+option.WAVING_LEAVES.comment=पेड़ की पत्तियों के लिए सौम्य लहराती एनिमेशन सक्षम करें।
 
-option.WAVING_GRASS=Waving Foliage
-option.WAVING_GRASS.comment=Enable waving animations for grass, flowers, and crops.
+option.WAVING_GRASS=लहराती वनस्पति
+option.WAVING_GRASS.comment=घास, फूलों और फसलों के लिए लहराती एनिमेशन सक्षम करें।
 
-option.WIND_SPEED=Wind Speed
-option.WIND_SPEED.comment=Control the waving speed of leaves, plants, and water waves.
+option.WIND_SPEED=हवा की गति
+option.WIND_SPEED.comment=पत्तियों, पौधों और पानी की तरंगों की लहराने की गति को नियंत्रित करें।
 
 value.WIND_SPEED.1=Gentle
 value.WIND_SPEED.2=Breeze
 value.WIND_SPEED.3=Gale
 
-option.WATER_WAVES=Water Waves
+option.WATER_WAVES=पानी की तरंगें
 option.WATER_WAVES.comment=Enable 3D geometric waves on the water surface.
 
-option.WATER_TRANSPARENCY=Water Density
+option.WATER_TRANSPARENCY=पानी का घनत्व
 option.WATER_TRANSPARENCY.comment=Control the transparency and opacity of the water.
 
-value.WATER_TRANSPARENCY.1=Clear
-value.WATER_TRANSPARENCY.2=Balanced
-value.WATER_TRANSPARENCY.3=Deep
+value.WATER_TRANSPARENCY.1=साफ
+value.WATER_TRANSPARENCY.2=संतुलित
+value.WATER_TRANSPARENCY.3=गहरा
 
-option.PROCEDURAL_CLOUDS=Volumetric 3D Clouds
-option.PROCEDURAL_CLOUDS.comment=Enable physically flyable 3D clouds that can be reached and flown through.
+option.PROCEDURAL_CLOUDS=वॉल्यूमेट्रिक 3D बादल
+option.PROCEDURAL_CLOUDS.comment=भौतिक रूप से उड़ने योग्य 3D बादल सक्षम करें जिन्हें पहुँचा और उड़ान भरी जा सकती है।
 
-option.CLOUD_HEIGHT=Cloud Altitude
-option.CLOUD_HEIGHT.comment=Set the physical altitude (Y-level) of the cloud deck in the world (in meters).
+option.CLOUD_HEIGHT=बादल की ऊँचाई
+option.CLOUD_HEIGHT.comment=दुनिया में बादल डेक की भौतिक ऊँचाई (Y-स्तर) सेट करें (मीटर में)।
 
-value.CLOUD_HEIGHT.1=Low (~110m)
-value.CLOUD_HEIGHT.2=Standard (~160m)
-value.CLOUD_HEIGHT.3=High (~240m)
+value.CLOUD_HEIGHT.1=कम (~110मी)
+value.CLOUD_HEIGHT.2=मानक (~160मी)
+value.CLOUD_HEIGHT.3=उच्च (~240मी)
 
-option.CLOUD_THICKNESS=Cloud Thickness
-option.CLOUD_THICKNESS.comment=Configure the vertical thickness and volume of the clouds.
+option.CLOUD_THICKNESS=बादल की मोटाई
+option.CLOUD_THICKNESS.comment=बादलों की ऊर्ध्वाधर मोटाई और आयतन कॉन्फ़िगर करें।
 
-value.CLOUD_THICKNESS.1=Thin (Cirrus)
-value.CLOUD_THICKNESS.2=Standard (Cumulus)
-value.CLOUD_THICKNESS.3=Dense (Stormy)
+value.CLOUD_THICKNESS.1=पतला (Cirrus)
+value.CLOUD_THICKNESS.2=मानक (Cumulus)
+value.CLOUD_THICKNESS.3=घना (तूफानी)
 
-option.CLOUD_DISTANCE=Cloud Render Distance
-option.CLOUD_DISTANCE.comment=Maximum draw distance for volumetric clouds. Quality profiles increase it automatically.
-value.CLOUD_DISTANCE.1=Near
-value.CLOUD_DISTANCE.2=Standard
-value.CLOUD_DISTANCE.3=Far
-value.CLOUD_DISTANCE.4=Very Far
+option.CLOUD_DISTANCE=क्लाउड रेंडर दूरी
+option.CLOUD_DISTANCE.comment=वॉल्यूमेट्रिक बादलों के लिए अधिकतम ड्रा दूरी। गुणवत्ता प्रोफ़ाइल इसे स्वचालित रूप से बढ़ाते हैं।
+value.CLOUD_DISTANCE.1=पास
+value.CLOUD_DISTANCE.2=मानक
+value.CLOUD_DISTANCE.3=दूर
+value.CLOUD_DISTANCE.4=बहुत दूर
 
-option.CLOUD_SHADOWS=बादलों की छाया
-option.CLOUD_SHADOWS.comment=Adds transparent procedural shadows from volumetric cloud density onto terrain. Balanced by quality profiles.
-option.CLOUD_SHADOW_STRENGTH=Cloud Shadow Strength
-option.CLOUD_SHADOW_STRENGTH.comment=Controls how visible and dramatic transparent cloud shadows are.
-value.CLOUD_SHADOW_STRENGTH.1=Soft
-value.CLOUD_SHADOW_STRENGTH.2=Balanced
-value.CLOUD_SHADOW_STRENGTH.3=Dramatic
+option.CLOUD_SHADOWS=बादल की छाया
+option.CLOUD_SHADOWS.comment=वॉल्यूमेट्रिक बादल घनत्व से पारदर्शी प्रक्रियात्मक छाया इलाके पर जोड़ता है। गुणवत्ता प्रोफ़ाइल द्वारा संतुलित।
+option.CLOUD_SHADOW_STRENGTH=बादल छाया शक्ति
+option.CLOUD_SHADOW_STRENGTH.comment=पारदर्शी बादल छाया कितनी दृश्यमान और नाटकीय हैं, यह नियंत्रित करता है।
+value.CLOUD_SHADOW_STRENGTH.1=नरम
+value.CLOUD_SHADOW_STRENGTH.2=संतुलित
+value.CLOUD_SHADOW_STRENGTH.3=नाटकीय
 
-option.GODRAYS=सूर्य किरणें
+option.GODRAYS=सूर्य किरणें (Godrays)
 option.GODRAYS.comment=Adds physically-inspired volumetric single-scattering sun shafts with Beer-Lambert extinction, Mie phase and shadow-map occlusion.
-option.GODRAYS_QUALITY=Godrays Quality
+option.GODRAYS_QUALITY=Godrays गुणवत्ता
 option.GODRAYS_QUALITY.comment=Controls the sample count and integration distance of physically-based volumetric godrays.
-value.GODRAYS_QUALITY.1=Fast
-value.GODRAYS_QUALITY.2=Balanced
-value.GODRAYS_QUALITY.3=High
+value.GODRAYS_QUALITY.1=तेज़
+value.GODRAYS_QUALITY.2=संतुलित
+value.GODRAYS_QUALITY.3=उच्च
 
-option.AURORA_MODE=Aurora Borealis
-option.AURORA_MODE.comment=Control the display of realistic flowing auroras on the night sky.
+option.AURORA_MODE=अरोरा बोरेलिस
+option.AURORA_MODE.comment=रात के आकाश पर यथार्थवादी बहते हुए अरोरा के प्रदर्शन को नियंत्रित करें।
 
-value.AURORA_MODE.0=Disabled
-value.AURORA_MODE.1=Only in Cold Biomes
-value.AURORA_MODE.2=Always Enabled
+value.AURORA_MODE.0=अक्षम
+value.AURORA_MODE.1=केवल ठंडे बायोम में
+value.AURORA_MODE.2=हमेशा सक्षम
 
-option.AURORA_SPEED=Aurora Speed
-option.AURORA_SPEED.comment=Control the waving and flowing speed of the northern lights.
+option.AURORA_SPEED=अरोरा गति
+option.AURORA_SPEED.comment=उत्तरी रोशनी की लहराने और बहने की गति को नियंत्रित करें।
 
-value.AURORA_SPEED.1=Slow
-value.AURORA_SPEED.2=Standard
-value.AURORA_SPEED.3=Fast
+value.AURORA_SPEED.1=धीमा
+value.AURORA_SPEED.2=मानक
+value.AURORA_SPEED.3=तेज़
 
-option.AURORA_STRENGTH=Aurora Brightness
-option.AURORA_STRENGTH.comment=Control the overall glow brightness of the northern lights.
+option.AURORA_STRENGTH=अरोरा चमक
+option.AURORA_STRENGTH.comment=उत्तरी रोशनी की समग्र चमक चमक को नियंत्रित करें।
 
-value.AURORA_STRENGTH.1=Soft
-value.AURORA_STRENGTH.2=Standard
-value.AURORA_STRENGTH.3=Glowing
+value.AURORA_STRENGTH.1=नरम
+value.AURORA_STRENGTH.2=मानक
+value.AURORA_STRENGTH.3=चमकदार
 
-option.NEBULA_BRIGHTNESS=Milky Way Brightness
-option.NEBULA_BRIGHTNESS.comment=Adjust the glow brightness of the diagonal brownish galactic nebula at night.
+option.NEBULA_BRIGHTNESS=आकाशगंगा चमक
+option.NEBULA_BRIGHTNESS.comment=रात में तिरछी भूरी आकाशगंगा नीहारिका की चमक चमक समायोजित करें।
 
-value.NEBULA_BRIGHTNESS.1=Dim
-value.NEBULA_BRIGHTNESS.2=Standard
-value.NEBULA_BRIGHTNESS.3=Bright
+value.NEBULA_BRIGHTNESS.1=धुंधला
+value.NEBULA_BRIGHTNESS.2=मानक
+value.NEBULA_BRIGHTNESS.3=उज्ज्वल
 
-option.STARS_BRIGHTNESS=Stars Brightness
-option.STARS_BRIGHTNESS.comment=Control the brightness and sparkling glow of the stars at night.
+option.STARS_BRIGHTNESS=तारों की चमक
+option.STARS_BRIGHTNESS.comment=रात में तारों की चमक और चमकदार चमक को नियंत्रित करें।
 
-value.STARS_BRIGHTNESS.1=Faint
-value.STARS_BRIGHTNESS.2=Standard
-value.STARS_BRIGHTNESS.3=Brilliant
+value.STARS_BRIGHTNESS.1=धुंधला
+value.STARS_BRIGHTNESS.2=मानक
+value.STARS_BRIGHTNESS.3=चमकदार
 
-option.STARS_AMOUNT=Stars Density
-option.STARS_AMOUNT.comment=Control the overall amount and density of the stars in the sky.
+option.STARS_AMOUNT=तारा घनत्व
+option.STARS_AMOUNT.comment=आकाश में तारों की समग्र मात्रा और घनत्व को नियंत्रित करें।
 
-value.STARS_AMOUNT.1=Few
-value.STARS_AMOUNT.2=Standard
-value.STARS_AMOUNT.3=Dense
+value.STARS_AMOUNT.1=कम
+value.STARS_AMOUNT.2=मानक
+value.STARS_AMOUNT.3=घना
 
-option.RAINBOW_STRENGTH=Rainbow Intensity
-option.RAINBOW_STRENGTH.comment=Configure the brightness and color saturation of the post-rain rainbow.
+option.RAINBOW_STRENGTH=इंद्रधनुष तीव्रता
+option.RAINBOW_STRENGTH.comment=वर्षा के बाद इंद्रधनुष की चमक और रंग संतृप्ति को कॉन्फ़िगर करें।
 
-value.RAINBOW_STRENGTH.1=Subtle
-value.RAINBOW_STRENGTH.2=Balanced
-value.RAINBOW_STRENGTH.3=Vivid
+value.RAINBOW_STRENGTH.1=सूक्ष्म
+value.RAINBOW_STRENGTH.2=संतुलित
+value.RAINBOW_STRENGTH.3=जीवंत
 
-option.COZY_LIGHTS=Torch Flickering
-option.COZY_LIGHTS.comment=Enable warm, cozy, real-time flickering animations for torches, campfires, and lanterns.
+option.COZY_LIGHTS=मशाल टिमटिमाना
+option.COZY_LIGHTS.comment=मशाल, कैंपफायर और लालटेन के लिए गर्म, आरामदायक, वास्तविक समय की टिमटिमाती एनिमेशन सक्षम करें।
 
-option.WET_REFLECTIONS=Rain Wetness Reflections
-option.WET_REFLECTIONS.comment=When raining, solid blocks like ground, grass, and stone become wet, dark, and glossy under the sky.
+option.WET_REFLECTIONS=वर्षा नमी प्रतिबिंब
+option.WET_REFLECTIONS.comment=बारिश होने पर, जमीन, घास और पत्थर जैसे ठोस ब्लॉक आकाश के नीचे गीले, गहरे और चमकदार हो जाते हैं।
 
-option.GROUND_MIST=Low Ground Mist (Y=62-66)
-option.GROUND_MIST.comment=Enable soft, golden-white morning/evening fog sheets that slide over water and ice at dawn and dusk.
+option.GROUND_MIST=निम्न भूमि कोहरा (Y=62-66)
+option.GROUND_MIST.comment=सुबह/शाम के नरम, सुनहरे-सफेद कोहरे की चादरें सक्षम करें जो भोर और शाम को पानी और बर्फ पर सरकती हैं।
 
-option.FOG_DENSITY_LEVEL=Fog Density
-option.FOG_DENSITY_LEVEL.comment=Control the strength of atmospheric horizon fog.
+option.FOG_DENSITY_LEVEL=कोहरा घनत्व
+option.FOG_DENSITY_LEVEL.comment=वायुमंडलीय क्षितिज कोहरे की शक्ति को नियंत्रित करें।
 
-value.FOG_DENSITY_LEVEL.1=Low
-value.FOG_DENSITY_LEVEL.2=Medium
-value.FOG_DENSITY_LEVEL.3=High
+value.FOG_DENSITY_LEVEL.1=कम
+value.FOG_DENSITY_LEVEL.2=मध्यम
+value.FOG_DENSITY_LEVEL.3=उच्च
 
-option.EXPOSURE=Exposure Brightness
-option.EXPOSURE.comment=Control the overall brightness of the image.
+option.EXPOSURE=एक्सपोज़र चमक
+option.EXPOSURE.comment=छवि की समग्र चमक को नियंत्रित करें।
 
-value.EXPOSURE.1=Muted
-value.EXPOSURE.2=Balanced
-value.EXPOSURE.3=Vibrant
+value.EXPOSURE.1=धीमा
+value.EXPOSURE.2=संतुलित
+value.EXPOSURE.3=जीवंत
 
-option.COLOR_SATURATION=Color Vibrancy
-option.COLOR_SATURATION.comment=Control the non-linear saturation of screen colors. Makes foliage look emerald and skies lush.
+option.COLOR_SATURATION=रंग जीवंतता
+option.COLOR_SATURATION.comment=स्क्रीन रंगों की गैर-रेखीय संतृप्ति को नियंत्रित करें। पर्णसमूह को पन्ना जैसा और आकाश को हरा-भरा बनाता है।
 
-value.COLOR_SATURATION.1=Muted
-value.COLOR_SATURATION.2=Balanced
-value.COLOR_SATURATION.3=Colorful
-value.COLOR_SATURATION.4=Vivid
+value.COLOR_SATURATION.1=धीमा
+value.COLOR_SATURATION.2=संतुलित
+value.COLOR_SATURATION.3=रंगीन
+value.COLOR_SATURATION.4=जीवंत
 
-option.CONTRAST=Image Contrast
-option.CONTRAST.comment=Choose the tone mapping and contrast curve style.
+option.CONTRAST=छवि विरोधाभास
+option.CONTRAST.comment=टोन मैपिंग और कंट्रास्ट वक्र शैली चुनें।
 
-value.CONTRAST.1=Soft
-value.CONTRAST.2=Filmic (ACES)
-value.CONTRAST.3=Intense (High Contrast)
+value.CONTRAST.1=नरम
+value.CONTRAST.2=फिल्मिक (ACES)
+value.CONTRAST.3=तीव्र (उच्च कंट्रास्ट)
 
 option.TAA=टेम्पोरल एंटी-अलियासिंग (TAA)
-option.TAA.comment=Temporal resolve with motion reprojection and neighborhood clipping. Reduces shimmering and jagged edges on high presets.
-option.TAA_STRENGTH=TAA Strength
-option.TAA_STRENGTH.comment=Controls history blending. Higher is more stable but can be softer during motion.
-value.TAA_STRENGTH.1=Light
-value.TAA_STRENGTH.2=Balanced
-value.TAA_STRENGTH.3=Stable
+option.TAA.comment=मोशन रीप्रोजेक्शन और नेबरहुड क्लिपिंग के साथ टेम्पोरल रिज़ॉल्व। उच्च प्रीसेट पर टिमटिमाना और दांतेदार किनारों को कम करता है।
+option.TAA_STRENGTH=TAA शक्ति
+option.TAA_STRENGTH.comment=इतिहास मिश्रण को नियंत्रित करता है। उच्चतर अधिक स्थिर है लेकिन गति के दौरान नरम हो सकता है।
+value.TAA_STRENGTH.1=हल्का
+value.TAA_STRENGTH.2=संतुलित
+value.TAA_STRENGTH.3=स्थिर
 
-option.VIGNETTE=Vignette Effect
-option.VIGNETTE.comment=Enable subtle darkening at screen edges for improved focus.
+option.VIGNETTE=विगनेट प्रभाव
+option.VIGNETTE.comment=बेहतर फोकस के लिए स्क्रीन किनारों पर सूक्ष्म कालापन सक्षम करें।
 
-option.WATER_RIFFLES=Water Ripple Strength
+option.WATER_RIFFLES=जल तरंग शक्ति
 option.WATER_RIFFLES.comment=Adjust the waviness and intensity of the fine normal map ripples on the water.
 
-value.WATER_RIFFLES.1=Calm
-value.WATER_RIFFLES.2=Standard
-value.WATER_RIFFLES.3=Choppy
+value.WATER_RIFFLES.1=शांत
+value.WATER_RIFFLES.2=मानक
+value.WATER_RIFFLES.3=तरंगित
 
-option.WATER_SPECULAR_STRENGTH=Water Specular Glow
+option.WATER_SPECULAR_STRENGTH=जल स्पेक्युलर चमक
 option.WATER_SPECULAR_STRENGTH.comment=Adjust the brightness of sun/moon reflections on the water ripples.
 
-value.WATER_SPECULAR_STRENGTH.1=Soft
-value.WATER_SPECULAR_STRENGTH.2=Standard
-value.WATER_SPECULAR_STRENGTH.3=Glinting
+value.WATER_SPECULAR_STRENGTH.1=नरम
+value.WATER_SPECULAR_STRENGTH.2=मानक
+value.WATER_SPECULAR_STRENGTH.3=चमकीला
 
-option.SHADOW_SOFTNESS=Shadow Softness
-option.SHADOW_SOFTNESS.comment=Controls how soft and diffuse the shadow edges appear. Uses rotated Poisson disk filtering for smooth penumbra.
+option.SHADOW_SOFTNESS=छाया कोमलता
+option.SHADOW_SOFTNESS.comment=नियंत्रित करता है कि छाया के किनारे कितने नरम और फैले हुए दिखाई देते हैं। चिकनी उपच्छाया के लिए घूर्णित पॉइसन डिस्क फ़िल्टरिंग का उपयोग करता है।
 
-value.SHADOW_SOFTNESS.1=Sharp
-value.SHADOW_SOFTNESS.2=Soft
-value.SHADOW_SOFTNESS.3=Ultra Soft
+value.SHADOW_SOFTNESS.1=तीक्ष्ण
+value.SHADOW_SOFTNESS.2=नरम
+value.SHADOW_SOFTNESS.3=अति नरम
 
 # ==============================================================================
 # Sun & Moon Lighting (extended)
 # ==============================================================================
 screen.SUN_MOON=सूर्य और चंद्रमा
-screen.SUN_MOON.comment=Fine-tune sun & moon intensity, colour temperature, and atmospheric effects.
+screen.SUN_MOON.comment=सूर्य और चंद्रमा की तीव्रता, रंग तापमान और वायुमंडलीय प्रभावों को बारीकी से समायोजित करें।
 
-option.SUN_INTENSITY=Sun Intensity
-option.SUN_INTENSITY.comment=Master brightness of direct sunlight. Higher = stronger daytime contrast.
-value.SUN_INTENSITY.1=Dim
-value.SUN_INTENSITY.2=Standard
-value.SUN_INTENSITY.3=Bright
-value.SUN_INTENSITY.4=Blazing
+option.SUN_INTENSITY=सूर्य तीव्रता
+option.SUN_INTENSITY.comment=प्रत्यक्ष सूर्य के प्रकाश की मास्टर चमक। उच्चतर = मजबूत दिन का कंट्रास्ट।
+value.SUN_INTENSITY.1=धीमा
+value.SUN_INTENSITY.2=मानक
+value.SUN_INTENSITY.3=उच्च
+value.SUN_INTENSITY.4=धधकता हुआ
 
-option.MOON_INTENSITY=Moon Intensity
-option.MOON_INTENSITY.comment=Master brightness of moonlight. Higher = brighter, more visible nights.
-value.MOON_INTENSITY.1=Pitch Night
-value.MOON_INTENSITY.2=Standard
-value.MOON_INTENSITY.3=Bright Moon
-value.MOON_INTENSITY.4=Full Night
+option.MOON_INTENSITY=चंद्रमा तीव्रता
+option.MOON_INTENSITY.comment=चांदनी की मास्टर चमक। उच्चतर = उज्ज्वल, अधिक दृश्यमान रातें।
+value.MOON_INTENSITY.1=घोर अंधेरी रात
+value.MOON_INTENSITY.2=मानक
+value.MOON_INTENSITY.3=उज्ज्वल चंद्रमा
+value.MOON_INTENSITY.4=पूर्ण रात
 
-option.SUN_TEMPERATURE=Sun Colour Temperature
-option.SUN_TEMPERATURE.comment=Shifts the sun's Kelvin curve. Realistic uses Tanner Helland blackbody; warm = golden; cool = neutral white.
-value.SUN_TEMPERATURE.1=Cool / Neutral
-value.SUN_TEMPERATURE.2=Realistic
-value.SUN_TEMPERATURE.3=Warm Golden
+option.SUN_TEMPERATURE=सूर्य रंग तापमान
+option.SUN_TEMPERATURE.comment=सूर्य के केल्विन वक्र को स्थानांतरित करता है। यथार्थवादी टान्नर हेलैंड ब्लैकबॉडी का उपयोग करता है; गर्म = सुनहरा; ठंडा = तटस्थ सफेद।
+value.SUN_TEMPERATURE.1=ठंडा / तटस्थ
+value.SUN_TEMPERATURE.2=यथार्थवादी
+value.SUN_TEMPERATURE.3=गर्म सुनहरा
 
-option.MOON_TEMPERATURE=Moon Colour Temperature
-option.MOON_TEMPERATURE.comment=Tint of the moonlight. Icy = bluish cold; Silver = realistic 4100K; Warm = harvest-moon cream.
-value.MOON_TEMPERATURE.1=Icy Blue
-value.MOON_TEMPERATURE.2=Silver (Realistic)
-value.MOON_TEMPERATURE.3=Warm Cream
+option.MOON_TEMPERATURE=चंद्रमा रंग तापमान
+option.MOON_TEMPERATURE.comment=चांदनी का रंग। बर्फीला = नीलापन लिए ठंडा; चांदी = यथार्थवादी 4100K; गर्म = हार्वेस्ट-मून क्रीम।
+value.MOON_TEMPERATURE.1=बर्फीला नीला
+value.MOON_TEMPERATURE.2=चांदी (यथार्थवादी)
+value.MOON_TEMPERATURE.3=गर्म क्रीम
 
-option.SUN_HALO=Sun Halo (Mie Scatter)
-option.SUN_HALO.comment=Adds a soft warm glow on terrain when looking near the sun (Mie forward-scattering).
+option.SUN_HALO=सूर्य प्रभामंडल (Mie प्रकीर्णन)
+option.SUN_HALO.comment=सूर्य के पास देखने पर इलाके पर एक नरम गर्म चमक जोड़ता है (Mie फॉरवर्ड-स्कैटरिंग)।
 
-option.SUNRISE_GLOW=Enhanced Sunrise/Sunset Glow
-option.SUNRISE_GLOW.comment=Enables stronger warm back-scatter that wraps around surfaces facing away from the low sun.
+option.SUNRISE_GLOW=उन्नत सूर्योदय/सूर्यास्त चमक
+option.SUNRISE_GLOW.comment=मजबूत गर्म बैक-स्कैटर सक्षम करता है जो निम्न सूर्य से दूर सतहों के चारों ओर लिपटता है।
 
 # ==============================================================================
 # Extended shadow settings
 # ==============================================================================
-option.SHADOW_DISTANCE=Shadow Distance
-option.SHADOW_DISTANCE.comment=Maximum distance at which dynamic shadows are rendered before fading out.
-value.SHADOW_DISTANCE.1=Near (60m)
-value.SHADOW_DISTANCE.2=Standard (80m)
-value.SHADOW_DISTANCE.3=Far (120m)
-value.SHADOW_DISTANCE.4=Ultra (160m)
+option.SHADOW_DISTANCE=छाया दूरी
+option.SHADOW_DISTANCE.comment=अधिकतम दूरी जिस पर गतिशील छाया फीकी पड़ने से पहले प्रस्तुत की जाती है।
+value.SHADOW_DISTANCE.1=निकट (60मी)
+value.SHADOW_DISTANCE.2=मानक (80मी)
+value.SHADOW_DISTANCE.3=दूर (120मी)
+value.SHADOW_DISTANCE.4=अल्ट्रा (160मी)
 
-option.AMBIENT_BRIGHTNESS=Shadow Lift / Ambient
-option.AMBIENT_BRIGHTNESS.comment=Controls how dark shadowed areas appear at night and in caves.
-value.AMBIENT_BRIGHTNESS.1=Dark
-value.AMBIENT_BRIGHTNESS.2=Standard
-value.AMBIENT_BRIGHTNESS.3=Lifted (Bright)
+option.AMBIENT_BRIGHTNESS=शैडो लिफ्ट / एम्बिएंट
+option.AMBIENT_BRIGHTNESS.comment=रात में और गुफाओं में छायादार क्षेत्र कितने अंधेरे दिखाई देते हैं, यह नियंत्रित करता है।
+value.AMBIENT_BRIGHTNESS.1=अंधेरा
+value.AMBIENT_BRIGHTNESS.2=मानक
+value.AMBIENT_BRIGHTNESS.3=उठाया गया (उज्ज्वल)
 
-option.SHADOW_TINT=Shadow Tint
-option.SHADOW_TINT.comment=Tints daytime shadows. Real-world shadows under a blue sky have a subtle cool tint.
+option.SHADOW_TINT=छाया रंग
+option.SHADOW_TINT.comment=दिन की छायाओं को रंगता है। नीले आकाश के नीचे वास्तविक दुनिया की छायाओं में एक सूक्ष्म ठंडा रंग होता है।
 value.SHADOW_TINT.1=Neutral Gray
 value.SHADOW_TINT.2=Cool Blue (Realistic)
 value.SHADOW_TINT.3=Warm
 
-option.LIGHT_WRAP=Light Wrap
-option.LIGHT_WRAP.comment=Softens the terminator between lit and unlit surfaces. Realistic = physical Lambert; Soft = pleasant for screenshots.
-value.LIGHT_WRAP.1=Realistic (Lambert)
-value.LIGHT_WRAP.2=Soft Wrap
-value.LIGHT_WRAP.3=Stylized
+option.LIGHT_WRAP=लाइट रैप
+option.LIGHT_WRAP.comment=प्रकाशित और अप्रकाशित सतहों के बीच टर्मिनेटर को नरम करता है। यथार्थवादी = भौतिक लैम्बर्ट; नरम = स्क्रीनशॉट के लिए सुखद।
+value.LIGHT_WRAP.1=यथार्थवादी (लैम्बर्ट)
+value.LIGHT_WRAP.2=नरम रैप
+value.LIGHT_WRAP.3=स्टाइलाइज्ड
 
 # v0.2.9 — water/underwater option value labels (English fallback)
-value.WATER_WAVE_SCALE.1=Calm
-value.WATER_WAVE_SCALE.2=Standard
-value.WATER_WAVE_SCALE.3=Choppy
-value.WATER_WAVE_SCALE.4=Stormy
-value.WATER_WAVE_DETAIL.1=Coarse
-value.WATER_WAVE_DETAIL.2=Standard
-value.WATER_WAVE_DETAIL.3=Dense
-value.UNDERWATER_NIGHT_DARKNESS.1=Moonlit Pool
-value.UNDERWATER_NIGHT_DARKNESS.2=Dim
-value.UNDERWATER_NIGHT_DARKNESS.3=True Night
-value.UNDERWATER_NIGHT_DARKNESS.4=Pitch Dark
+value.WATER_WAVE_SCALE.1=शांत
+value.WATER_WAVE_SCALE.2=मानक
+value.WATER_WAVE_SCALE.3=तरंगित
+value.WATER_WAVE_SCALE.4=तूफानी
+value.WATER_WAVE_DETAIL.1=मोटा
+value.WATER_WAVE_DETAIL.2=मानक
+value.WATER_WAVE_DETAIL.3=घना
+value.UNDERWATER_NIGHT_DARKNESS.1=मूनलिट पूल
+value.UNDERWATER_NIGHT_DARKNESS.2=धुंधला
+value.UNDERWATER_NIGHT_DARKNESS.3=सच्ची रात
+value.UNDERWATER_NIGHT_DARKNESS.4=पिच डार्क
 # ==============================================================================
 # Experimental Tab & New Sky (v1.1.0)
 # ==============================================================================
@@ -342,13 +342,13 @@ screen.EXPERIMENTAL=प्रयोगात्मक
 screen.EXPERIMENTAL.comment=प्रयोगात्मक
 
 option.SKY_MODE=नया आकाश (वायुमंडलीय प्रकीर्णन)
-option.SKY_STYLE=Sky Style
+option.SKY_STYLE=आकाश शैली
 option.SKY_STYLE.comment=option.SKY_STYLE.comment=Artistic direction for the physical sky. Realistic = true angular sizes & neutral colours (astronomy look). Semi-realistic = readable sun/moon (x2.8), richer colour, soft glow. Fantasy = grand sun/moon (x5.5), big corona, vivid teal/crimson/indigo palette.
 option.SKY_MODE.comment=EXPERIMENTAL — off in all profiles. Gradient (legacy, default) or Physical realtime scattering with true multiple scattering (Rayleigh+Mie+Ozone, 1st+2nd+3rd order). Enable manually in this tab.
-value.SKY_MODE.0=Gradient (Legacy)
-value.SKY_STYLE.0=Realistic
-value.SKY_STYLE.1=Semi-realistic
-value.SKY_STYLE.2=Fantasy
+value.SKY_MODE.0=ग्रेडिएंट (पुराना)
+value.SKY_STYLE.0=यथार्थवादी
+value.SKY_STYLE.1=अर्ध-यथार्थवादी
+value.SKY_STYLE.2=फंतासी
 value.SKY_MODE.1=Realtime Scattering
 
 option.SKY_QUALITY=आकाश प्रकीर्णन गुणवत्ता
@@ -356,3 +356,61 @@ option.SKY_QUALITY.comment=आकाश प्रकीर्णन गुणव
 value.SKY_QUALITY.1=तेज़
 value.SKY_QUALITY.2=मानक
 value.SKY_QUALITY.3=उच्च
+
+# --- Auto-added missing translations (v1.1.0 sync) ---
+option.FOLIAGE_SSS=पर्ण SSS
+option.FOLIAGE_SSS.comment=प्रकाश के विपरीत देखने पर पत्तियों, घास और पौधों के लिए सबसरफेस स्कैटरिंग (पारभासीता) सक्षम करता है।
+option.GODRAYS_STRENGTH=Godrays तीव्रता
+option.GODRAYS_STRENGTH.comment=वॉल्यूमेट्रिक प्रकाश किरणों की चमक। सूक्ष्म: हल्का वायुमंडलीय धुंध। संतुलित: स्पष्ट रूप से दिखाई देने वाली किरणें। नाटकीय: साहसिक सिनेमाई किरणें।
+value.GODRAYS_STRENGTH.1=सूक्ष्म
+value.GODRAYS_STRENGTH.2=संतुलित
+value.GODRAYS_STRENGTH.3=नाटकीय
+option.SHOOTING_STARS=उल्का (टूटते तारे)
+option.SHOOTING_STARS.comment=मध्यमंडल में प्रवेश करने वाले भौतिक-आधारित उल्का (~80-120 किमी)। पृथक्करण प्रकाश वक्र, ब्लैकबॉडी प्लाज्मा रंग (3500-5500 K), क्षितिज के पास रेले विलोपन, और फायरबॉल पर लगातार आयनीकरण ट्रेल्स के साथ सच्चे महान-वृत्त 3D चाप प्रस्तुत करता है।
+option.SHOOTING_STARS_FREQUENCY=उल्का गतिविधि (ZHR)
+option.SHOOTING_STARS_FREQUENCY.comment=अनुमानित ज़ेनिथल घंटा दर। छिटपुट = प्रति घंटे ~10 की यथार्थवादी पृष्ठभूमि। सक्रिय = हल्की बौछार। तूफान = शिखर घनत्व (~100/घंटा)।
+value.SHOOTING_STARS_FREQUENCY.1=छिटपुट (~10/घंटा)
+value.SHOOTING_STARS_FREQUENCY.2=सक्रिय बौछार
+value.SHOOTING_STARS_FREQUENCY.3=उल्का तूफान
+option.SHOOTING_STARS_BRIGHTNESS=परिमाण स्केल
+option.SHOOTING_STARS_BRIGHTNESS.comment=उल्का परिमाण स्केल पर मास्टर गुणक। धुंधला = यथार्थवादी औसत; उज्ज्वल = सिनेमाई दृश्यता के लिए फायरबॉल स्केल करता है।
+value.SHOOTING_STARS_BRIGHTNESS.1=धुंधला (यथार्थवादी)
+value.SHOOTING_STARS_BRIGHTNESS.2=मानक
+value.SHOOTING_STARS_BRIGHTNESS.3=उज्ज्वल फायरबॉल
+value.CONTRAST.4=फोटोग्राफिक (AgX जैसा)
+option.SPATIAL_AA_MODE=स्पेशियल एंटी-अलियासिंग
+option.SPATIAL_AA_MODE.comment=पोस्ट-प्रोसेस एंटी-अलियासिंग विधि चुनें। FXAA तेज़ और सस्ता है। SMAA ज्यामिति किनारों पर बेहतर गुणवत्ता के लिए डेप्थ बफर का उपयोग करता है। TAA के साथ संयुक्त किया जा सकता है।
+value.SPATIAL_AA_MODE.0=बंद
+value.SPATIAL_AA_MODE.1=FXAA (तेज़)
+value.SPATIAL_AA_MODE.2=SMAA (गुणवत्ता)
+option.HEAT_SHIMMER=लावा के ऊपर हीट शिमर
+option.HEAT_SHIMMER.comment=लावा सतहों के ऊपर एक सूक्ष्म स्क्रीन-स्पेस हीट डिस्टॉर्शन प्रभाव सक्षम करें।
+option.HEAT_SHIMMER_STRENGTH=हीट शिमर शक्ति
+option.HEAT_SHIMMER_STRENGTH.comment=लावा के ऊपर ताप विकृति की तीव्रता को नियंत्रित करता है।
+value.HEAT_SHIMMER_STRENGTH.1=सूक्ष्म
+value.HEAT_SHIMMER_STRENGTH.2=संतुलित
+value.HEAT_SHIMMER_STRENGTH.3=मजबूत
+option.SSR=स्क्रीन-स्पेस रिफ्लेक्शन (SSR)
+option.SSR.comment=पानी, गीली सतहों और धातु PBR ब्लॉक पर वास्तविक समय की परावर्तित पर्यावरण जोड़ता है। v1.0.4 में MED से ऊपर सक्षम।
+option.SSR_QUALITY=SSR गुणवत्ता
+option.SSR_QUALITY.comment=स्क्रीन-स्पेस रिफ्लेक्शन की सटीकता और किरण दूरी को नियंत्रित करता है। उच्चतर = तीक्ष्ण प्रतिबिंब लेकिन अधिक GPU लागत।
+value.SSR_QUALITY.1=तेज़ (12 चरण)
+value.SSR_QUALITY.2=संतुलित (24 चरण)
+value.SSR_QUALITY.3=उच्च (40 चरण)
+option.SSR_STRENGTH=SSR शक्ति
+option.SSR_STRENGTH.comment=परावर्तक सतहों पर परावर्तित पर्यावरण कितना दृश्यमान और प्रमुख दिखाई देता है, यह नियंत्रित करता है।
+option.WATER_WAVE_SCALE=तरंग आयाम
+option.WATER_WAVE_SCALE.comment=पानी की सतह की तरंगों की दृश्यमान तीव्रता को नियंत्रित करता है। शांत = दर्पण जैसा, तूफानी = दृढ़ता से टूटे हुए प्रतिबिंब।
+option.WATER_WAVE_DETAIL=तरंग विवरण
+option.WATER_WAVE_DETAIL.comment=प्रति ब्लॉक कितनी छोटी तरंगें दिखाई देती हैं, यह नियंत्रित करता है। मोटा = कुछ बड़ी तरंगें, घना = कई छोटी लहरें।
+option.UNDERWATER_NIGHT_DARKNESS=पानी के भीतर रात्रि अंधकार
+option.UNDERWATER_NIGHT_DARKNESS.comment=रात में पानी के नीचे का दृश्य कितना अंधेरा हो जाता है, यह नियंत्रित करता है। मूनलिट पूल चमक बनाए रखता है; पिच डार्क चरम उत्तरजीविता-शैली का अंधेरा देता है।
+value.SSR_STRENGTH.1=सूक्ष्म
+value.SSR_STRENGTH.2=संतुलित
+value.SSR_STRENGTH.3=मजबूत
+option.PBR_DISTANCE=PBR रेंडर दूरी
+option.PBR_DISTANCE.comment=PBR स्पेक्युलर हाइलाइट्स के लिए अधिकतम दूरी। दूर के इलाके पर GPU बचाता है। LOW के लिए निकट (16m), MED के लिए मानक (48m), HIGH/ULTRA के लिए दूर (128m), EXTREME के लिए असीमित।
+value.PBR_DISTANCE.1=निकट (16मी)
+value.PBR_DISTANCE.2=मानक (48मी)
+value.PBR_DISTANCE.3=दूर (128मी)
+value.PBR_DISTANCE.4=असीमित

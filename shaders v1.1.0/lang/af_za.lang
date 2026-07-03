@@ -421,3 +421,17 @@ option.SKY_QUALITY.comment=Lugverstrooiingsgehalte
 value.SKY_QUALITY.1=Vinnig
 value.SKY_QUALITY.2=Standaard
 value.SKY_QUALITY.3=Hoog
+
+# --- Auto-added missing translations (v1.1.0 sync) ---
+option.GODRAYS_STRENGTH=Godrays-intensiteit
+option.GODRAYS_STRENGTH.comment=Helderheid van die volumetriese ligstrale. Subtiel: sagte atmosferiese newel. Gebalanseerd: duidelik sigbare strale. Dramaties: gedurfde filmiese strale.
+value.GODRAYS_STRENGTH.1=Subtiel
+value.GODRAYS_STRENGTH.2=Gebalanseerd
+value.GODRAYS_STRENGTH.3=Dramaties
+option.HEAT_SHIMMER=Hittesidder Bo Lawa
+option.HEAT_SHIMMER.comment=Aktiveer 'n subtiele skerm-ruimte hitteverwringingseffek bo lawaoppervlaktes.
+option.HEAT_SHIMMER_STRENGTH=Hittesidder-sterkte
+option.HEAT_SHIMMER_STRENGTH.comment=Beheer die intensiteit van die hitteverwringing bo lawa.
+value.HEAT_SHIMMER_STRENGTH.1=Subtiel
+value.HEAT_SHIMMER_STRENGTH.2=Gebalanseerd
+value.HEAT_SHIMMER_STRENGTH.3=Sterk

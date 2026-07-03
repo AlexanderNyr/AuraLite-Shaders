@@ -19,322 +19,322 @@ profile.ULTRA.comment=Ultra quality preset with 4096 shadows, very far clouds an
 profile.EXTREME=Экстрэмальны
 profile.EXTREME.comment=Maximum experimental quality. Pushes lighting, clouds, color and deep SSAO. POM remains disabled for stability.
 profile.CUSTOM=Карыстальніцкі
-profile.CUSTOM.comment=Custom user-modified settings.
+profile.CUSTOM.comment=Уласныя налады, зменыя карыстальнікам.
 
 screen.TRANSLATION_NOTICE=⚠ Пераклады могуць утрымліваць памылкі
-screen.TRANSLATION_NOTICE.comment=Some localization strings may be inaccurate. If something looks strange, compare with the English original.
+screen.TRANSLATION_NOTICE.comment=Некаторыя радкі перакладу могуць быць недакладнымі. Калі нешта выглядае дзіўна, параўнайце з англійскім арыгіналам.
 
 # Screens
 screen.LIGHTING=Налады асвятлення
-screen.LIGHTING.comment=Configure shadows, light colors, and brightness.
+screen.LIGHTING.comment=Наладзьце цені, колеры святла і яркасць.
 
 screen.FOLIAGE=Налады расліннасці
-screen.FOLIAGE.comment=Configure waving animations for grass and leaves.
+screen.FOLIAGE.comment=Наладзьце анімацыю калыхання травы і лісця.
 
 screen.WATER=Налады вады
-screen.WATER.comment=Configure waves, transparency, and water styling.
+screen.WATER.comment=Наладзьце хвалі, празрыстасць і стыль вады.
 
 screen.CLOUDS_MENU=Неба і воблакі
-screen.CLOUDS_MENU.comment=Configure the physical altitude, thickness, and style of 3D clouds and sky effects.
+screen.CLOUDS_MENU.comment=Наладзьце фізічную вышыню, таўшчыню і стыль 3D-аблокаў і эфектаў неба.
 
 screen.POST_PROCESS=Пост-апрацоўка і туман
-screen.POST_PROCESS.comment=Configure exposure, fog, and cinematic effects.
+screen.POST_PROCESS.comment=Наладзьце экспазіцыю, туман і кінематаграфічныя эфекты.
 
 # Options
-option.SHADOWS=Dynamic Shadows
-option.SHADOWS.comment=Enable or disable soft dynamic shadows from the sun and moon.
+option.SHADOWS=Дынамічныя цені
+option.SHADOWS.comment=Уключыце або адключыце мяккія дынамічныя цені ад сонца і месяца.
 
-option.SHADOW_RES=Shadow Resolution
-option.SHADOW_RES.comment=Change the shadow map quality. Higher values may lower performance.
+option.SHADOW_RES=Раздзяленне ценяў
+option.SHADOW_RES.comment=Змяніце якасць карты ценяў. Больш высокія значэнні могуць зніжаць прадукцыйнасць.
 
-option.PBR_LIGHTING=PBR Lighting (LabPBR)
-option.PBR_LIGHTING.comment=Enable physically-based rendering for metals, roughness, and 3D normal maps (PBR resource pack required).
+option.PBR_LIGHTING=Асвятленне PBR (LabPBR)
+option.PBR_LIGHTING.comment=Уключыце фізічна карэктны рэндэрынг для металаў, шурпатасці і 3D-карт нармалей (патрабуецца пакет рэсурсаў PBR).
 
-option.PBR_POM=3D Block Relief (POM)
-option.PBR_POM.comment=Enable physically-based Parallax Occlusion Mapping for 3D block textures. Recommended to disable on incompatible resource packs.
+option.PBR_POM=3D-рэльеф блокаў (POM)
+option.PBR_POM.comment=Уключыце фізічна карэктны Parallax Occlusion Mapping для 3D-тэкстур блокаў. Рэкамендуецца адключаць на несумяшчальных пакетах рэсурсаў.
 
-option.PBR_STRENGTH=PBR Intensity
-option.PBR_STRENGTH.comment=Control the reflectivity and glossiness of PBR metallic surfaces.
+option.PBR_STRENGTH=Інтэнсіўнасць PBR
+option.PBR_STRENGTH.comment=Кіруйце адбівальнай здольнасцю і бляскам металічных паверхняў PBR.
 
-value.PBR_STRENGTH.1=Subtle
-value.PBR_STRENGTH.2=Standard
-value.PBR_STRENGTH.3=Mirror
+value.PBR_STRENGTH.1=Слабы
+value.PBR_STRENGTH.2=Стандартны
+value.PBR_STRENGTH.3=Люстра
 
-option.SSAO=SSAO / SAO Occlusion
+option.SSAO=SSAO / SAO аклюзія
 option.SSAO.comment=Extreme profile: screen-space ambient occlusion for contact shadows in corners, under blocks, and around geometry intersections.
-option.SSAO_STRENGTH=SSAO Strength
-option.SSAO_STRENGTH.comment=Controls the depth of screen-space ambient occlusion. Only active when SSAO is enabled.
-value.SSAO_STRENGTH.1=Subtle
-value.SSAO_STRENGTH.2=Balanced
-value.SSAO_STRENGTH.3=Deep
+option.SSAO_STRENGTH=Сіла SSAO
+option.SSAO_STRENGTH.comment=Кіруе глыбінёй асяроддзевай аклюзіі ў прасторы экрана. Актыўна толькі калі ўключаны SSAO.
+value.SSAO_STRENGTH.1=Слабы
+value.SSAO_STRENGTH.2=Збалансаваны
+value.SSAO_STRENGTH.3=Глыбокі
 
-option.LIGHTMAP_WARMTH=Torch Warmth
-option.LIGHTMAP_WARMTH.comment=Adjust the warmth and color of block/torch light.
+option.LIGHTMAP_WARMTH=Цеплыня факела
+option.LIGHTMAP_WARMTH.comment=Адрэгулюйце цеплыню і колер святла блока/факела.
 
-value.LIGHTMAP_WARMTH.1=Cozy
-value.LIGHTMAP_WARMTH.2=Warm
-value.LIGHTMAP_WARMTH.3=Intense
+value.LIGHTMAP_WARMTH.1=Утульны
+value.LIGHTMAP_WARMTH.2=Цёплы
+value.LIGHTMAP_WARMTH.3=Інтэнсіўны
 
-option.WAVING_LEAVES=Waving Leaves
-option.WAVING_LEAVES.comment=Enable gentle waving animations for tree leaves.
+option.WAVING_LEAVES=Хістанне лісця
+option.WAVING_LEAVES.comment=Уключыце мяккую анімацыю хістання лісця дрэў.
 
-option.WAVING_GRASS=Waving Foliage
-option.WAVING_GRASS.comment=Enable waving animations for grass, flowers, and crops.
+option.WAVING_GRASS=Хістанне расліннасці
+option.WAVING_GRASS.comment=Уключыце анімацыю хістання для травы, кветак і сельгаскультур.
 
-option.WIND_SPEED=Wind Speed
-option.WIND_SPEED.comment=Control the waving speed of leaves, plants, and water waves.
+option.WIND_SPEED=Хуткасць ветру
+option.WIND_SPEED.comment=Кіруйце хуткасцю хістання лісця, раслін і хваль вады.
 
 value.WIND_SPEED.1=Gentle
 value.WIND_SPEED.2=Breeze
 value.WIND_SPEED.3=Gale
 
-option.WATER_WAVES=Water Waves
+option.WATER_WAVES=Хвалі вады
 option.WATER_WAVES.comment=Enable 3D geometric waves on the water surface.
 
-option.WATER_TRANSPARENCY=Water Density
+option.WATER_TRANSPARENCY=Шчыльнасць вады
 option.WATER_TRANSPARENCY.comment=Control the transparency and opacity of the water.
 
-value.WATER_TRANSPARENCY.1=Clear
-value.WATER_TRANSPARENCY.2=Balanced
-value.WATER_TRANSPARENCY.3=Deep
+value.WATER_TRANSPARENCY.1=Празрысты
+value.WATER_TRANSPARENCY.2=Збалансаваны
+value.WATER_TRANSPARENCY.3=Глыбокі
 
-option.PROCEDURAL_CLOUDS=Volumetric 3D Clouds
-option.PROCEDURAL_CLOUDS.comment=Enable physically flyable 3D clouds that can be reached and flown through.
+option.PROCEDURAL_CLOUDS=Аб'ёмныя 3D-аблокі
+option.PROCEDURAL_CLOUDS.comment=Уключыце фізічна пралётныя 3D-аблокі, скрозь якія можна праляцець.
 
-option.CLOUD_HEIGHT=Cloud Altitude
-option.CLOUD_HEIGHT.comment=Set the physical altitude (Y-level) of the cloud deck in the world (in meters).
+option.CLOUD_HEIGHT=Вышыня аблокаў
+option.CLOUD_HEIGHT.comment=Задайце фізічную вышыню (Y-узровень) слоя аблокаў у свеце (у метрах).
 
-value.CLOUD_HEIGHT.1=Low (~110m)
-value.CLOUD_HEIGHT.2=Standard (~160m)
-value.CLOUD_HEIGHT.3=High (~240m)
+value.CLOUD_HEIGHT.1=Нізка (~110м)
+value.CLOUD_HEIGHT.2=Стандарт (~160м)
+value.CLOUD_HEIGHT.3=Высока (~240м)
 
-option.CLOUD_THICKNESS=Cloud Thickness
-option.CLOUD_THICKNESS.comment=Configure the vertical thickness and volume of the clouds.
+option.CLOUD_THICKNESS=Таўшчыня аблокаў
+option.CLOUD_THICKNESS.comment=Наладзьце вертыкальную таўшчыню і аб'ём аблокаў.
 
-value.CLOUD_THICKNESS.1=Thin (Cirrus)
-value.CLOUD_THICKNESS.2=Standard (Cumulus)
-value.CLOUD_THICKNESS.3=Dense (Stormy)
+value.CLOUD_THICKNESS.1=Тонкі (Cirrus)
+value.CLOUD_THICKNESS.2=Стандарт (Cumulus)
+value.CLOUD_THICKNESS.3=Шчыльны (Навальнічны)
 
-option.CLOUD_DISTANCE=Cloud Render Distance
-option.CLOUD_DISTANCE.comment=Maximum draw distance for volumetric clouds. Quality profiles increase it automatically.
-value.CLOUD_DISTANCE.1=Near
-value.CLOUD_DISTANCE.2=Standard
-value.CLOUD_DISTANCE.3=Far
-value.CLOUD_DISTANCE.4=Very Far
+option.CLOUD_DISTANCE=Дальнасць рэндэрынгу аблокаў
+option.CLOUD_DISTANCE.comment=Максімальная дальнасць адлюстравання аб'ёмных аблокаў. Профілі якасці аўтаматычна павялічваюць яе.
+value.CLOUD_DISTANCE.1=Блізка
+value.CLOUD_DISTANCE.2=Стандартны
+value.CLOUD_DISTANCE.3=Далёка
+value.CLOUD_DISTANCE.4=Вельмі далёка
 
-option.CLOUD_SHADOWS=Цені воблакаў
-option.CLOUD_SHADOWS.comment=Adds transparent procedural shadows from volumetric cloud density onto terrain. Balanced by quality profiles.
-option.CLOUD_SHADOW_STRENGTH=Cloud Shadow Strength
-option.CLOUD_SHADOW_STRENGTH.comment=Controls how visible and dramatic transparent cloud shadows are.
-value.CLOUD_SHADOW_STRENGTH.1=Soft
-value.CLOUD_SHADOW_STRENGTH.2=Balanced
-value.CLOUD_SHADOW_STRENGTH.3=Dramatic
+option.CLOUD_SHADOWS=Цені аблокаў
+option.CLOUD_SHADOWS.comment=Дадае празрыстыя працэдурныя цені ад шчыльнасці аб'ёмных аблокаў на рэльеф. Збалансавана профілямі якасці.
+option.CLOUD_SHADOW_STRENGTH=Сіла ценяў аблокаў
+option.CLOUD_SHADOW_STRENGTH.comment=Кіруе тым, наколькі бачныя і драматычныя празрыстыя цені аблокаў.
+value.CLOUD_SHADOW_STRENGTH.1=Мяккі
+value.CLOUD_SHADOW_STRENGTH.2=Збалансаваны
+value.CLOUD_SHADOW_STRENGTH.3=Драматычны
 
-option.GODRAYS=Сонечныя промні
+option.GODRAYS=Промні сонца (Godrays)
 option.GODRAYS.comment=Adds physically-inspired volumetric single-scattering sun shafts with Beer-Lambert extinction, Mie phase and shadow-map occlusion.
-option.GODRAYS_QUALITY=Godrays Quality
+option.GODRAYS_QUALITY=Якасць Godrays
 option.GODRAYS_QUALITY.comment=Controls the sample count and integration distance of physically-based volumetric godrays.
-value.GODRAYS_QUALITY.1=Fast
-value.GODRAYS_QUALITY.2=Balanced
-value.GODRAYS_QUALITY.3=High
+value.GODRAYS_QUALITY.1=Хуткі
+value.GODRAYS_QUALITY.2=Збалансаваны
+value.GODRAYS_QUALITY.3=Высокі
 
-option.AURORA_MODE=Aurora Borealis
-option.AURORA_MODE.comment=Control the display of realistic flowing auroras on the night sky.
+option.AURORA_MODE=Паўночнае ззянне
+option.AURORA_MODE.comment=Кіруйце паказам рэалістычнага плыннага паўночнага ззяння на начным небе.
 
-value.AURORA_MODE.0=Disabled
-value.AURORA_MODE.1=Only in Cold Biomes
-value.AURORA_MODE.2=Always Enabled
+value.AURORA_MODE.0=Адключана
+value.AURORA_MODE.1=Толькі ў халодных біёмах
+value.AURORA_MODE.2=Заўсёды ўключана
 
-option.AURORA_SPEED=Aurora Speed
-option.AURORA_SPEED.comment=Control the waving and flowing speed of the northern lights.
+option.AURORA_SPEED=Хуткасць ззяння
+option.AURORA_SPEED.comment=Кіруйце хуткасцю хвалявання і плыні паўночнага ззяння.
 
-value.AURORA_SPEED.1=Slow
-value.AURORA_SPEED.2=Standard
-value.AURORA_SPEED.3=Fast
+value.AURORA_SPEED.1=Павольны
+value.AURORA_SPEED.2=Стандартны
+value.AURORA_SPEED.3=Хуткі
 
-option.AURORA_STRENGTH=Aurora Brightness
-option.AURORA_STRENGTH.comment=Control the overall glow brightness of the northern lights.
+option.AURORA_STRENGTH=Яркасць ззяння
+option.AURORA_STRENGTH.comment=Кіруйце агульнай яркасцю ззяння паўночнага ззяння.
 
-value.AURORA_STRENGTH.1=Soft
-value.AURORA_STRENGTH.2=Standard
-value.AURORA_STRENGTH.3=Glowing
+value.AURORA_STRENGTH.1=Мяккі
+value.AURORA_STRENGTH.2=Стандартны
+value.AURORA_STRENGTH.3=Ззяючы
 
-option.NEBULA_BRIGHTNESS=Milky Way Brightness
-option.NEBULA_BRIGHTNESS.comment=Adjust the glow brightness of the diagonal brownish galactic nebula at night.
+option.NEBULA_BRIGHTNESS=Яркасць Млечнага Шляху
+option.NEBULA_BRIGHTNESS.comment=Адрэгулюйце яркасць ззяння дыяганальнай карычневатай галактычнай туманнасці ноччу.
 
-value.NEBULA_BRIGHTNESS.1=Dim
-value.NEBULA_BRIGHTNESS.2=Standard
-value.NEBULA_BRIGHTNESS.3=Bright
+value.NEBULA_BRIGHTNESS.1=Прыглушаны
+value.NEBULA_BRIGHTNESS.2=Стандартны
+value.NEBULA_BRIGHTNESS.3=Яркі
 
-option.STARS_BRIGHTNESS=Stars Brightness
-option.STARS_BRIGHTNESS.comment=Control the brightness and sparkling glow of the stars at night.
+option.STARS_BRIGHTNESS=Яркасць зорак
+option.STARS_BRIGHTNESS.comment=Кіруйце яркасцю і іскрыстым ззяннем зорак ноччу.
 
-value.STARS_BRIGHTNESS.1=Faint
-value.STARS_BRIGHTNESS.2=Standard
-value.STARS_BRIGHTNESS.3=Brilliant
+value.STARS_BRIGHTNESS.1=Слабы
+value.STARS_BRIGHTNESS.2=Стандартны
+value.STARS_BRIGHTNESS.3=Бліскучы
 
-option.STARS_AMOUNT=Stars Density
-option.STARS_AMOUNT.comment=Control the overall amount and density of the stars in the sky.
+option.STARS_AMOUNT=Шчыльнасць зорак
+option.STARS_AMOUNT.comment=Кіруйце агульнай колькасцю і шчыльнасцю зорак у небе.
 
-value.STARS_AMOUNT.1=Few
-value.STARS_AMOUNT.2=Standard
-value.STARS_AMOUNT.3=Dense
+value.STARS_AMOUNT.1=Мала
+value.STARS_AMOUNT.2=Стандартны
+value.STARS_AMOUNT.3=Густа
 
-option.RAINBOW_STRENGTH=Rainbow Intensity
-option.RAINBOW_STRENGTH.comment=Configure the brightness and color saturation of the post-rain rainbow.
+option.RAINBOW_STRENGTH=Інтэнсіўнасць вясёлкі
+option.RAINBOW_STRENGTH.comment=Наладзьце яркасць і насычанасць колеру вясёлкі пасля дажджу.
 
-value.RAINBOW_STRENGTH.1=Subtle
-value.RAINBOW_STRENGTH.2=Balanced
-value.RAINBOW_STRENGTH.3=Vivid
+value.RAINBOW_STRENGTH.1=Слабы
+value.RAINBOW_STRENGTH.2=Збалансаваны
+value.RAINBOW_STRENGTH.3=Яркі
 
-option.COZY_LIGHTS=Torch Flickering
-option.COZY_LIGHTS.comment=Enable warm, cozy, real-time flickering animations for torches, campfires, and lanterns.
+option.COZY_LIGHTS=Мігаценне факела
+option.COZY_LIGHTS.comment=Уключыце цёплую, утульную анімацыю мігацення ў рэальным часе для факелаў, вогнішчаў і ліхтароў.
 
-option.WET_REFLECTIONS=Rain Wetness Reflections
-option.WET_REFLECTIONS.comment=When raining, solid blocks like ground, grass, and stone become wet, dark, and glossy under the sky.
+option.WET_REFLECTIONS=Адбіткі вільготнасці ад дажджу
+option.WET_REFLECTIONS.comment=Пры дажджы цвёрдыя блокі, такія як зямля, трава і камень, становяцца мокрымі, цёмнымі і бліскучымі пад небам.
 
-option.GROUND_MIST=Low Ground Mist (Y=62-66)
-option.GROUND_MIST.comment=Enable soft, golden-white morning/evening fog sheets that slide over water and ice at dawn and dusk.
+option.GROUND_MIST=Нізкі прыземны туман (Y=62-66)
+option.GROUND_MIST.comment=Уключыце мяккія залаціста-белыя раніцовыя/вячэрнія слаі туману, якія слізгаюць над вадой і лёдам на світанку і змярканні.
 
-option.FOG_DENSITY_LEVEL=Fog Density
-option.FOG_DENSITY_LEVEL.comment=Control the strength of atmospheric horizon fog.
+option.FOG_DENSITY_LEVEL=Шчыльнасць туману
+option.FOG_DENSITY_LEVEL.comment=Кіруйце сілай атмасфернага туману на гарызонце.
 
-value.FOG_DENSITY_LEVEL.1=Low
-value.FOG_DENSITY_LEVEL.2=Medium
-value.FOG_DENSITY_LEVEL.3=High
+value.FOG_DENSITY_LEVEL.1=Нізкая
+value.FOG_DENSITY_LEVEL.2=Сярэдняя
+value.FOG_DENSITY_LEVEL.3=Высокі
 
-option.EXPOSURE=Exposure Brightness
-option.EXPOSURE.comment=Control the overall brightness of the image.
+option.EXPOSURE=Яркасць экспазіцыі
+option.EXPOSURE.comment=Кіруйце агульнай яркасцю выявы.
 
-value.EXPOSURE.1=Muted
-value.EXPOSURE.2=Balanced
-value.EXPOSURE.3=Vibrant
+value.EXPOSURE.1=Прыглушаны
+value.EXPOSURE.2=Збалансаваны
+value.EXPOSURE.3=Жывы
 
-option.COLOR_SATURATION=Color Vibrancy
-option.COLOR_SATURATION.comment=Control the non-linear saturation of screen colors. Makes foliage look emerald and skies lush.
+option.COLOR_SATURATION=Насычанасць колеру
+option.COLOR_SATURATION.comment=Кіруйце нелінейнай насычанасцю колераў экрана. Робіць лісце смарагдавым, а неба пышным.
 
-value.COLOR_SATURATION.1=Muted
-value.COLOR_SATURATION.2=Balanced
-value.COLOR_SATURATION.3=Colorful
-value.COLOR_SATURATION.4=Vivid
+value.COLOR_SATURATION.1=Прыглушаны
+value.COLOR_SATURATION.2=Збалансаваны
+value.COLOR_SATURATION.3=Каляровы
+value.COLOR_SATURATION.4=Яркі
 
-option.CONTRAST=Image Contrast
-option.CONTRAST.comment=Choose the tone mapping and contrast curve style.
+option.CONTRAST=Кантраст малюнка
+option.CONTRAST.comment=Выберыце стыль танальнага адлюстравання і крывой кантрасту.
 
-value.CONTRAST.1=Soft
-value.CONTRAST.2=Filmic (ACES)
-value.CONTRAST.3=Intense (High Contrast)
+value.CONTRAST.1=Мяккі
+value.CONTRAST.2=Кінематаграфічны (ACES)
+value.CONTRAST.3=Інтэнсіўны (Высокі кантраст)
 
-option.TAA=Temporal Anti-Aliasing (TAA)
-option.TAA.comment=Temporal resolve with motion reprojection and neighborhood clipping. Reduces shimmering and jagged edges on high presets.
-option.TAA_STRENGTH=TAA Strength
-option.TAA_STRENGTH.comment=Controls history blending. Higher is more stable but can be softer during motion.
-value.TAA_STRENGTH.1=Light
-value.TAA_STRENGTH.2=Balanced
-value.TAA_STRENGTH.3=Stable
+option.TAA=Часавае згладжванне (TAA)
+option.TAA.comment=Часавае вырашэнне з рэпраекцыяй руху і абразаннем суседства. Зніжае мільгаценне і зубчастыя краі на высокіх прэсетах.
+option.TAA_STRENGTH=Сіла TAA
+option.TAA_STRENGTH.comment=Кіруе змешваннем гісторыі. Больш высокае значэнне больш стабільна, але можа быць больш мяккім падчас руху.
+value.TAA_STRENGTH.1=Лёгкі
+value.TAA_STRENGTH.2=Збалансаваны
+value.TAA_STRENGTH.3=Стабільны
 
-option.VIGNETTE=Vignette Effect
-option.VIGNETTE.comment=Enable subtle darkening at screen edges for improved focus.
+option.VIGNETTE=Эфект вінеткі
+option.VIGNETTE.comment=Уключыце лёгкае зацямненне па краях экрана для паляпшэння фокусу.
 
-option.WATER_RIFFLES=Water Ripple Strength
+option.WATER_RIFFLES=Сіла хваль вады
 option.WATER_RIFFLES.comment=Adjust the waviness and intensity of the fine normal map ripples on the water.
 
-value.WATER_RIFFLES.1=Calm
-value.WATER_RIFFLES.2=Standard
-value.WATER_RIFFLES.3=Choppy
+value.WATER_RIFFLES.1=Спакойна
+value.WATER_RIFFLES.2=Стандартны
+value.WATER_RIFFLES.3=Хвалісты
 
-option.WATER_SPECULAR_STRENGTH=Water Specular Glow
+option.WATER_SPECULAR_STRENGTH=Люстраны бляск вады
 option.WATER_SPECULAR_STRENGTH.comment=Adjust the brightness of sun/moon reflections on the water ripples.
 
-value.WATER_SPECULAR_STRENGTH.1=Soft
-value.WATER_SPECULAR_STRENGTH.2=Standard
-value.WATER_SPECULAR_STRENGTH.3=Glinting
+value.WATER_SPECULAR_STRENGTH.1=Мяккі
+value.WATER_SPECULAR_STRENGTH.2=Стандартны
+value.WATER_SPECULAR_STRENGTH.3=Бліскучы
 
-option.SHADOW_SOFTNESS=Shadow Softness
-option.SHADOW_SOFTNESS.comment=Controls how soft and diffuse the shadow edges appear. Uses rotated Poisson disk filtering for smooth penumbra.
+option.SHADOW_SOFTNESS=Мяккасць ценяў
+option.SHADOW_SOFTNESS.comment=Кіруе тым, наколькі мяккімі і рассеянымі выглядаюць краі ценю. Выкарыстоўвае паварочаны фільтр дыска Пуасона для гладкай паўцені.
 
-value.SHADOW_SOFTNESS.1=Sharp
-value.SHADOW_SOFTNESS.2=Soft
-value.SHADOW_SOFTNESS.3=Ultra Soft
+value.SHADOW_SOFTNESS.1=Востры
+value.SHADOW_SOFTNESS.2=Мяккі
+value.SHADOW_SOFTNESS.3=Вельмі мяккі
 
 # ==============================================================================
 # Sun & Moon Lighting (extended)
 # ==============================================================================
 screen.SUN_MOON=Сонца і Месяц
-screen.SUN_MOON.comment=Fine-tune sun & moon intensity, colour temperature, and atmospheric effects.
+screen.SUN_MOON.comment=Дакладна наладзьце інтэнсіўнасць сонца і месяца, каляровую тэмпературу і атмасферныя эфекты.
 
-option.SUN_INTENSITY=Sun Intensity
-option.SUN_INTENSITY.comment=Master brightness of direct sunlight. Higher = stronger daytime contrast.
-value.SUN_INTENSITY.1=Dim
-value.SUN_INTENSITY.2=Standard
-value.SUN_INTENSITY.3=Bright
-value.SUN_INTENSITY.4=Blazing
+option.SUN_INTENSITY=Інтэнсіўнасць сонца
+option.SUN_INTENSITY.comment=Асноўная яркасць прамога сонечнага святла. Вышэй = мацнейшы дзённы кантраст.
+value.SUN_INTENSITY.1=Прыглушаны
+value.SUN_INTENSITY.2=Стандартны
+value.SUN_INTENSITY.3=Высокі
+value.SUN_INTENSITY.4=Палымяны
 
-option.MOON_INTENSITY=Moon Intensity
-option.MOON_INTENSITY.comment=Master brightness of moonlight. Higher = brighter, more visible nights.
-value.MOON_INTENSITY.1=Pitch Night
-value.MOON_INTENSITY.2=Standard
-value.MOON_INTENSITY.3=Bright Moon
-value.MOON_INTENSITY.4=Full Night
+option.MOON_INTENSITY=Інтэнсіўнасць месяца
+option.MOON_INTENSITY.comment=Асноўная яркасць месячнага святла. Вышэй = больш яркія, больш бачныя ночы.
+value.MOON_INTENSITY.1=Цёмная ноч
+value.MOON_INTENSITY.2=Стандартны
+value.MOON_INTENSITY.3=Яркі месяц
+value.MOON_INTENSITY.4=Поўная ноч
 
-option.SUN_TEMPERATURE=Sun Colour Temperature
-option.SUN_TEMPERATURE.comment=Shifts the sun's Kelvin curve. Realistic uses Tanner Helland blackbody; warm = golden; cool = neutral white.
-value.SUN_TEMPERATURE.1=Cool / Neutral
-value.SUN_TEMPERATURE.2=Realistic
-value.SUN_TEMPERATURE.3=Warm Golden
+option.SUN_TEMPERATURE=Каляровая тэмпература сонца
+option.SUN_TEMPERATURE.comment=Зрушвае крывую Кельвіна сонца. Рэалістычна выкарыстоўвае чорнае цела Танэра Хэланда; цёплы = залаты; халодны = нейтральны белы.
+value.SUN_TEMPERATURE.1=Халодны / Нейтральны
+value.SUN_TEMPERATURE.2=Рэалістычна
+value.SUN_TEMPERATURE.3=Цёплае золата
 
-option.MOON_TEMPERATURE=Moon Colour Temperature
-option.MOON_TEMPERATURE.comment=Tint of the moonlight. Icy = bluish cold; Silver = realistic 4100K; Warm = harvest-moon cream.
-value.MOON_TEMPERATURE.1=Icy Blue
-value.MOON_TEMPERATURE.2=Silver (Realistic)
-value.MOON_TEMPERATURE.3=Warm Cream
+option.MOON_TEMPERATURE=Каляровая тэмпература месяца
+option.MOON_TEMPERATURE.comment=Адценне месячнага святла. Ледзяны: бледна-блакітны халодны; Сярэбраны: рэалістычны 4100K; Цёплы: крэмавы, як месяц ураджаю.
+value.MOON_TEMPERATURE.1=Ледзяны блакіт
+value.MOON_TEMPERATURE.2=Сярэбраны (Рэалістычны)
+value.MOON_TEMPERATURE.3=Цёплы крэм
 
-option.SUN_HALO=Sun Halo (Mie Scatter)
-option.SUN_HALO.comment=Adds a soft warm glow on terrain when looking near the sun (Mie forward-scattering).
+option.SUN_HALO=Гала сонца (рассейванне Мі)
+option.SUN_HALO.comment=Дадае мяккае цёплае ззянне на рэльеф пры позірку каля сонца (пярэдняе рассейванне Мі).
 
-option.SUNRISE_GLOW=Enhanced Sunrise/Sunset Glow
-option.SUNRISE_GLOW.comment=Enables stronger warm back-scatter that wraps around surfaces facing away from the low sun.
+option.SUNRISE_GLOW=Узмоцненае ззянне ўсходу/захаду сонца
+option.SUNRISE_GLOW.comment=Уключае мацнейшае цёплае зваротнае рассейванне, якое ахутвае паверхні, адвернутыя ад нізкага сонца.
 
 # ==============================================================================
 # Extended shadow settings
 # ==============================================================================
-option.SHADOW_DISTANCE=Shadow Distance
-option.SHADOW_DISTANCE.comment=Maximum distance at which dynamic shadows are rendered before fading out.
-value.SHADOW_DISTANCE.1=Near (60m)
-value.SHADOW_DISTANCE.2=Standard (80m)
-value.SHADOW_DISTANCE.3=Far (120m)
-value.SHADOW_DISTANCE.4=Ultra (160m)
+option.SHADOW_DISTANCE=Дальнасць ценяў
+option.SHADOW_DISTANCE.comment=Максімальная дальнасць, на якой рэндэрацца дынамічныя цені перад знікненнем.
+value.SHADOW_DISTANCE.1=Блізка (60м)
+value.SHADOW_DISTANCE.2=Стандарт (80м)
+value.SHADOW_DISTANCE.3=Далёка (120м)
+value.SHADOW_DISTANCE.4=Ультра (160м)
 
-option.AMBIENT_BRIGHTNESS=Shadow Lift / Ambient
-option.AMBIENT_BRIGHTNESS.comment=Controls how dark shadowed areas appear at night and in caves.
-value.AMBIENT_BRIGHTNESS.1=Dark
-value.AMBIENT_BRIGHTNESS.2=Standard
-value.AMBIENT_BRIGHTNESS.3=Lifted (Bright)
+option.AMBIENT_BRIGHTNESS=Узняцце ценяў / асяроддзе
+option.AMBIENT_BRIGHTNESS.comment=Кіруе тым, наколькі цёмнымі выглядаюць зацененыя вобласці ноччу і ў пячорах.
+value.AMBIENT_BRIGHTNESS.1=Цёмны
+value.AMBIENT_BRIGHTNESS.2=Стандартны
+value.AMBIENT_BRIGHTNESS.3=Узняты (Яркі)
 
-option.SHADOW_TINT=Shadow Tint
-option.SHADOW_TINT.comment=Tints daytime shadows. Real-world shadows under a blue sky have a subtle cool tint.
+option.SHADOW_TINT=Адценне ценю
+option.SHADOW_TINT.comment=Афарбоўвае дзённыя цені. Сапраўдныя цені пад блакітным небам маюць лёгкае халаднаватае адценне.
 value.SHADOW_TINT.1=Neutral Gray
 value.SHADOW_TINT.2=Cool Blue (Realistic)
 value.SHADOW_TINT.3=Warm
 
-option.LIGHT_WRAP=Light Wrap
-option.LIGHT_WRAP.comment=Softens the terminator between lit and unlit surfaces. Realistic = physical Lambert; Soft = pleasant for screenshots.
-value.LIGHT_WRAP.1=Realistic (Lambert)
-value.LIGHT_WRAP.2=Soft Wrap
-value.LIGHT_WRAP.3=Stylized
+option.LIGHT_WRAP=Абгортка святлом
+option.LIGHT_WRAP.comment=Змякчае мяжу паміж асветленымі і неасветленымі паверхнямі. Рэалістычна = фізічны Ламберт; Мякка = прыемна для скрыншотаў.
+value.LIGHT_WRAP.1=Рэалістычна (Ламберт)
+value.LIGHT_WRAP.2=Мяккая абгортка
+value.LIGHT_WRAP.3=Стылізаваны
 
 # v0.2.9 — water/underwater option value labels (English fallback)
-value.WATER_WAVE_SCALE.1=Calm
-value.WATER_WAVE_SCALE.2=Standard
-value.WATER_WAVE_SCALE.3=Choppy
-value.WATER_WAVE_SCALE.4=Stormy
-value.WATER_WAVE_DETAIL.1=Coarse
-value.WATER_WAVE_DETAIL.2=Standard
-value.WATER_WAVE_DETAIL.3=Dense
-value.UNDERWATER_NIGHT_DARKNESS.1=Moonlit Pool
-value.UNDERWATER_NIGHT_DARKNESS.2=Dim
-value.UNDERWATER_NIGHT_DARKNESS.3=True Night
-value.UNDERWATER_NIGHT_DARKNESS.4=Pitch Dark
+value.WATER_WAVE_SCALE.1=Спакойна
+value.WATER_WAVE_SCALE.2=Стандартны
+value.WATER_WAVE_SCALE.3=Хвалісты
+value.WATER_WAVE_SCALE.4=Штармавы
+value.WATER_WAVE_DETAIL.1=Грубы
+value.WATER_WAVE_DETAIL.2=Стандартны
+value.WATER_WAVE_DETAIL.3=Шчыльны
+value.UNDERWATER_NIGHT_DARKNESS.1=Асветлены месяцам басейн
+value.UNDERWATER_NIGHT_DARKNESS.2=Прыглушаны
+value.UNDERWATER_NIGHT_DARKNESS.3=Сапраўдная ноч
+value.UNDERWATER_NIGHT_DARKNESS.4=Цёмна, як у мяшку
 # ==============================================================================
 # Experimental Tab & New Sky (v1.1.0)
 # ==============================================================================
@@ -342,13 +342,13 @@ screen.EXPERIMENTAL=Эксперыментальнае
 screen.EXPERIMENTAL.comment=Эксперыментальнае
 
 option.SKY_MODE=Новае неба (Атмасфернае рассейванне)
-option.SKY_STYLE=Sky Style
+option.SKY_STYLE=Стыль неба
 option.SKY_STYLE.comment=option.SKY_STYLE.comment=Artistic direction for the physical sky. Realistic = true angular sizes & neutral colours (astronomy look). Semi-realistic = readable sun/moon (x2.8), richer colour, soft glow. Fantasy = grand sun/moon (x5.5), big corona, vivid teal/crimson/indigo palette.
 option.SKY_MODE.comment=EXPERIMENTAL — off in all profiles. Gradient (legacy, default) or Physical realtime scattering with true multiple scattering (Rayleigh+Mie+Ozone, 1st+2nd+3rd order). Enable manually in this tab.
-value.SKY_MODE.0=Gradient (Legacy)
-value.SKY_STYLE.0=Realistic
-value.SKY_STYLE.1=Semi-realistic
-value.SKY_STYLE.2=Fantasy
+value.SKY_MODE.0=Градыент (Стары)
+value.SKY_STYLE.0=Рэалістычна
+value.SKY_STYLE.1=Паўрэалістычна
+value.SKY_STYLE.2=Фэнтэзі
 value.SKY_MODE.1=Realtime Scattering
 
 option.SKY_QUALITY=Якасць рассейвання неба
@@ -356,3 +356,61 @@ option.SKY_QUALITY.comment=Якасць рассейвання неба
 value.SKY_QUALITY.1=Хуткае
 value.SKY_QUALITY.2=Стандартнае
 value.SKY_QUALITY.3=Высокае
+
+# --- Auto-added missing translations (v1.1.0 sync) ---
+option.FOLIAGE_SSS=SSS расліннасці
+option.FOLIAGE_SSS.comment=Уключае падпаверхневае рассейванне (празрыстасць) для лісця, травы і раслін пры позірку супраць святла.
+option.GODRAYS_STRENGTH=Сіла Godrays
+option.GODRAYS_STRENGTH.comment=Яркасць аб'ёмных светлавых прамянёў. Слаба: лёгкая атмасферная смуга. Збалансавана: выразна бачныя прамяні. Драматычна: смелыя кінематаграфічныя прамяні.
+value.GODRAYS_STRENGTH.1=Слабы
+value.GODRAYS_STRENGTH.2=Збалансаваны
+value.GODRAYS_STRENGTH.3=Драматычны
+option.SHOOTING_STARS=Метэоры (падаючыя зоркі)
+option.SHOOTING_STARS.comment=Фізічна рэалістычныя метэоры, якія ўваходзяць у мезасферу (~80-120 км). Адлюстроўвае сапраўдныя 3D-дугі вялікага кола з крывымі абляцыйнага святла, колерам плазмы чорнага цела (3500-5500 K), рэлеевым выміраннем каля гарызонту і трывалымі іянізацыйнымі слядамі на агнявых шарах.
+option.SHOOTING_STARS_FREQUENCY=Актыўнасць метэораў (ZHR)
+option.SHOOTING_STARS_FREQUENCY.comment=Прыблізная зенітная гадзінная норма. Спарадычна: рэалістычны фон ~10 у гадзіну. Актыўна: умераны паток. Шторм: пікавая шчыльнасць (~100/гадз).
+value.SHOOTING_STARS_FREQUENCY.1=Спарадычна (~10/гадз)
+value.SHOOTING_STARS_FREQUENCY.2=Актыўны паток
+value.SHOOTING_STARS_FREQUENCY.3=Метэорны шторм
+option.SHOOTING_STARS_BRIGHTNESS=Шкала велічыні
+option.SHOOTING_STARS_BRIGHTNESS.comment=Асноўны множнік па шкале велічыні метэора. Слабая: рэалістычнае сярэдняе; Яркая: маштабуе агнявыя шары для кінематаграфічнай бачнасці.
+value.SHOOTING_STARS_BRIGHTNESS.1=Слабы (Рэалістычны)
+value.SHOOTING_STARS_BRIGHTNESS.2=Стандартны
+value.SHOOTING_STARS_BRIGHTNESS.3=Яркія агнявыя шары
+value.CONTRAST.4=Фотаграфічны (падобны да AgX)
+option.SPATIAL_AA_MODE=Прасторавае згладжванне
+option.SPATIAL_AA_MODE.comment=Выберыце метад постапрацоўкі згладжвання. FXAA хуткі і танны. SMAA выкарыстоўвае буфер глыбіні для лепшай якасці на краях геаметрыі. Можна спалучаць з TAA.
+value.SPATIAL_AA_MODE.0=Выключана
+value.SPATIAL_AA_MODE.1=FXAA (Хуткі)
+value.SPATIAL_AA_MODE.2=SMAA (Якасць)
+option.HEAT_SHIMMER=Мігаценне спякоты над лавай
+option.HEAT_SHIMMER.comment=Уключыце лёгкі эфект тэрмічнага скажэння ў прасторы экрана над паверхнямі лавы.
+option.HEAT_SHIMMER_STRENGTH=Сіла мігацення спякоты
+option.HEAT_SHIMMER_STRENGTH.comment=Кіруе інтэнсіўнасцю тэрмічнага скажэння над лавай.
+value.HEAT_SHIMMER_STRENGTH.1=Слабы
+value.HEAT_SHIMMER_STRENGTH.2=Збалансаваны
+value.HEAT_SHIMMER_STRENGTH.3=Моцны
+option.SSR=Адлюстраванні прасторы экрана (SSR)
+option.SSR.comment=Дадае адлюстраванае асяроддзе ў рэальным часе на вадзе, вільготных паверхнях і металічных PBR-блоках. Уключана ад MED і вышэй у v1.0.4.
+option.SSR_QUALITY=Якасць SSR
+option.SSR_QUALITY.comment=Кіруе дакладнасцю і дальнасцю прамянёў адлюстраванняў прасторы экрана. Вышэй = больш выразныя адлюстраванні, але большая нагрузка на GPU.
+value.SSR_QUALITY.1=Хутка (12 крокаў)
+value.SSR_QUALITY.2=Збалансавана (24 крокі)
+value.SSR_QUALITY.3=Высока (40 крокаў)
+option.SSR_STRENGTH=Сіла SSR
+option.SSR_STRENGTH.comment=Кіруе тым, наколькі бачным і выразным выглядае адлюстраванае асяроддзе на адлюстроўваючых паверхнях.
+option.WATER_WAVE_SCALE=Амплітуда хваль
+option.WATER_WAVE_SCALE.comment=Кіруе бачнай крутасцю хваль паверхні вады. Спакойна: люстэркавае, Штармова: моцна разбітыя адлюстраванні.
+option.WATER_WAVE_DETAIL=Дэталь хваль
+option.WATER_WAVE_DETAIL.comment=Кіруе колькасцю маленькіх хваль на блок. Грубая: некалькі вялікіх хваль, Шчыльная: шмат маленькіх хваляў.
+option.UNDERWATER_NIGHT_DARKNESS=Начная цемра пад вадой
+option.UNDERWATER_NIGHT_DARKNESS.comment=Кіруе тым, наколькі цёмнай становіцца падводная сцэна ноччу. Асветлены месяцам басейн захоўвае яркасць; Цёмна, як у мяшку, дае экстрэмальную цемру ў стылі выжывання.
+value.SSR_STRENGTH.1=Слабы
+value.SSR_STRENGTH.2=Збалансаваны
+value.SSR_STRENGTH.3=Моцны
+option.PBR_DISTANCE=Дальнасць рэндэрынгу PBR
+option.PBR_DISTANCE.comment=Максімальная адлегласць для люстраных водбліскаў PBR. Эканоміць GPU на далёкім рэльефе. Блізка (16 м) для LOW, Стандарт (48 м) для MED, Далёка (128 м) для HIGH/ULTRA, Неабмежавана для EXTREME.
+value.PBR_DISTANCE.1=Блізка (16м)
+value.PBR_DISTANCE.2=Стандарт (48м)
+value.PBR_DISTANCE.3=Далёка (128м)
+value.PBR_DISTANCE.4=Неабмежавана

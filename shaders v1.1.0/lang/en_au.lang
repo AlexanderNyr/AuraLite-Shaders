@@ -356,3 +356,61 @@ option.SKY_QUALITY.comment=Sky Scattering Quality
 value.SKY_QUALITY.1=Fast
 value.SKY_QUALITY.2=Standard
 value.SKY_QUALITY.3=High
+
+# --- Auto-added missing keys (v1.1.0 sync, English source) ---
+option.FOLIAGE_SSS=Foliage SSS
+option.FOLIAGE_SSS.comment=Enables subsurface scattering (translucency) for leaves, grass, and plants when looking against the light.
+option.GODRAYS_STRENGTH=Godrays Intensity
+option.GODRAYS_STRENGTH.comment=Brightness of the volumetric light shafts. Subtle: gentle atmospheric haze. Balanced: clearly visible rays. Dramatic: bold cinematic beams.
+value.GODRAYS_STRENGTH.1=Subtle
+value.GODRAYS_STRENGTH.2=Balanced
+value.GODRAYS_STRENGTH.3=Dramatic
+option.SHOOTING_STARS=Meteors (Falling Stars)
+option.SHOOTING_STARS.comment=Physically-based meteors entering the mesosphere (~80-120 km). Renders true great-circle 3D arcs with ablation light curves, blackbody plasma color (3500-5500 K), Rayleigh extinction near the horizon, and persistent ionization trails on fireballs.
+option.SHOOTING_STARS_FREQUENCY=Meteor Activity (ZHR)
+option.SHOOTING_STARS_FREQUENCY.comment=Approximate Zenithal Hourly Rate. Sporadic = realistic background of ~10 per hour. Active = mild shower. Storm = peak density (~100/hr).
+value.SHOOTING_STARS_FREQUENCY.1=Sporadic (~10/hr)
+value.SHOOTING_STARS_FREQUENCY.2=Active Shower
+value.SHOOTING_STARS_FREQUENCY.3=Meteor Storm
+option.SHOOTING_STARS_BRIGHTNESS=Magnitude Scale
+option.SHOOTING_STARS_BRIGHTNESS.comment=Master multiplier on the meteor magnitude scale. Faint = realistic average; Bright = scales fireballs for cinematic visibility.
+value.SHOOTING_STARS_BRIGHTNESS.1=Faint (Realistic)
+value.SHOOTING_STARS_BRIGHTNESS.2=Standard
+value.SHOOTING_STARS_BRIGHTNESS.3=Bright Fireballs
+value.CONTRAST.4=Photographic (AgX-like)
+option.SPATIAL_AA_MODE=Spatial Anti-Aliasing
+option.SPATIAL_AA_MODE.comment=Select post-process anti-aliasing method. FXAA is fast and cheap. SMAA uses depth buffer for better quality on geometry edges. Can be combined with TAA.
+value.SPATIAL_AA_MODE.0=Off
+value.SPATIAL_AA_MODE.1=FXAA (Fast)
+value.SPATIAL_AA_MODE.2=SMAA (Quality)
+option.HEAT_SHIMMER=Heat Shimmer Above Lava
+option.HEAT_SHIMMER.comment=Enable a subtle screen-space heat distortion effect above lava surfaces.
+option.HEAT_SHIMMER_STRENGTH=Heat Shimmer Strength
+option.HEAT_SHIMMER_STRENGTH.comment=Controls the intensity of the heat distortion above lava.
+value.HEAT_SHIMMER_STRENGTH.1=Subtle
+value.HEAT_SHIMMER_STRENGTH.2=Balanced
+value.HEAT_SHIMMER_STRENGTH.3=Strong
+option.SSR=Screen-Space Reflections (SSR)
+option.SSR.comment=Adds real-time reflected environment on water, wet surfaces and metallic PBR blocks. Enabled from MED upward in v1.0.4.
+option.SSR_QUALITY=SSR Quality
+option.SSR_QUALITY.comment=Controls the precision and ray distance of screen-space reflections. Higher = sharper reflections but more GPU cost.
+value.SSR_QUALITY.1=Fast (12 steps)
+value.SSR_QUALITY.2=Balanced (24 steps)
+value.SSR_QUALITY.3=High (40 steps)
+option.SSR_STRENGTH=SSR Strength
+option.SSR_STRENGTH.comment=Controls how visible and prominent the reflected environment appears on reflective surfaces.
+option.WATER_WAVE_SCALE=Wave Amplitude
+option.WATER_WAVE_SCALE.comment=Controls the visible steepness of water surface waves. Calm = mirror-like, Stormy = strongly broken reflections.
+option.WATER_WAVE_DETAIL=Wave Detail
+option.WATER_WAVE_DETAIL.comment=Controls how many small waves appear per block. Coarse = a few big waves, Dense = many tiny ripples.
+option.UNDERWATER_NIGHT_DARKNESS=Underwater Night Darkness
+option.UNDERWATER_NIGHT_DARKNESS.comment=Controls how dark the underwater scene becomes at night. Moonlit Pool keeps brightness; Pitch Dark gives extreme survival-style darkness.
+value.SSR_STRENGTH.1=Subtle
+value.SSR_STRENGTH.2=Balanced
+value.SSR_STRENGTH.3=Strong
+option.PBR_DISTANCE=PBR Render Distance
+option.PBR_DISTANCE.comment=Maximum distance for PBR specular highlights. Saves GPU on far terrain. Near (16m) for LOW, Standard (48m) for MED, Far (128m) for HIGH/ULTRA, Unlimited for EXTREME.
+value.PBR_DISTANCE.1=Near (16m)
+value.PBR_DISTANCE.2=Standard (48m)
+value.PBR_DISTANCE.3=Far (128m)
+value.PBR_DISTANCE.4=Unlimited

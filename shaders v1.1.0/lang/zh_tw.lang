@@ -10,13 +10,13 @@
 # ==============================================================================
 # Quality Profiles
 # ==============================================================================
-profile.VERY_LOW=Very Low
+profile.VERY_LOW=極低
 profile.VERY_LOW.comment=Fastest possible preset for very weak GPUs. Disables heavy effects.
 profile.LOW=低
 profile.MED=中
 profile.HIGH=高
 profile.ULTRA=極高
-profile.EXTREME=Extreme
+profile.EXTREME=極致
 profile.EXTREME.comment=最高實驗性畫質。添加 SSAO/SAO 式接觸環境光遮蔽。為保持穩定性，POM 保持禁用。
 profile.CUSTOM=自訂
 profile.CUSTOM.comment=使用者自訂設定。
@@ -150,13 +150,13 @@ value.CONTRAST.1=柔和
 value.CONTRAST.2=電影感 (ACES)
 value.CONTRAST.3=高強度 (高對比度)
 
-option.TAA=Temporal Anti-Aliasing (TAA)
-option.TAA.comment=Temporal resolve with motion reprojection and neighborhood clipping. Reduces shimmering and jagged edges on high presets.
-option.TAA_STRENGTH=TAA Strength
-option.TAA_STRENGTH.comment=Controls history blending. Higher is more stable but can be softer during motion.
-value.TAA_STRENGTH.1=Light
-value.TAA_STRENGTH.2=Balanced
-value.TAA_STRENGTH.3=Stable
+option.TAA=時間性抗鋸齒（TAA）
+option.TAA.comment=結合運動重投影和鄰域裁剪的時間性抗鋸齒方案，可在高畫質預設下減少閃爍和鋸齒邊緣。
+option.TAA_STRENGTH=TAA強度
+option.TAA_STRENGTH.comment=控制歷史幀混合程度。數值越高越穩定，但在運動中畫面可能會更模糊。
+value.TAA_STRENGTH.1=輕度
+value.TAA_STRENGTH.2=平衡
+value.TAA_STRENGTH.3=穩定
 option.VIGNETTE=暗角效果
 option.VIGNETTE.comment=在螢幕邊緣啟用細微的變暗，提升畫面聚焦感。
 option.WATER_RIFFLES=水面漣漪強度
@@ -190,21 +190,21 @@ value.CLOUD_DISTANCE.2=標準
 value.CLOUD_DISTANCE.3=遠
 value.CLOUD_DISTANCE.4=非常遠
 
-option.CLOUD_SHADOWS=Cloud Shadows
-option.CLOUD_SHADOWS.comment=Adds transparent procedural shadows from volumetric cloud density onto terrain. Balanced by quality profiles.
-option.CLOUD_SHADOW_STRENGTH=Cloud Shadow Strength
-option.CLOUD_SHADOW_STRENGTH.comment=Controls how visible and dramatic transparent cloud shadows are.
-value.CLOUD_SHADOW_STRENGTH.1=Soft
-value.CLOUD_SHADOW_STRENGTH.2=Balanced
-value.CLOUD_SHADOW_STRENGTH.3=Dramatic
+option.CLOUD_SHADOWS=雲層陰影
+option.CLOUD_SHADOWS.comment=根據體積雲密度在地形上新增透明的程式化陰影，效果由畫質配置檔案自動平衡。
+option.CLOUD_SHADOW_STRENGTH=雲影強度
+option.CLOUD_SHADOW_STRENGTH.comment=控制透明雲影的可見程度和戲劇化程度。
+value.CLOUD_SHADOW_STRENGTH.1=柔和
+value.CLOUD_SHADOW_STRENGTH.2=平衡
+value.CLOUD_SHADOW_STRENGTH.3=戲劇性
 
-option.GODRAYS=Godrays / Sun Shafts
+option.GODRAYS=丁達爾光/陽光光束
 option.GODRAYS.comment=Adds realistic screen-space sun shafts through sky gaps and behind geometry.
-option.GODRAYS_QUALITY=Godrays Quality
+option.GODRAYS_QUALITY=丁達爾光質量
 option.GODRAYS_QUALITY.comment=Controls sample count and cost of godrays.
-value.GODRAYS_QUALITY.1=Fast
-value.GODRAYS_QUALITY.2=Balanced
-value.GODRAYS_QUALITY.3=High
+value.GODRAYS_QUALITY.1=快速
+value.GODRAYS_QUALITY.2=平衡
+value.GODRAYS_QUALITY.3=高
 
 # ==============================================================================
 # 太陽與月亮（擴展光照設定）
@@ -264,17 +264,17 @@ value.LIGHT_WRAP.2=柔和包覆
 value.LIGHT_WRAP.3=風格化
 
 # v0.2.9 — water/underwater option value labels (English fallback)
-value.WATER_WAVE_SCALE.1=Calm
-value.WATER_WAVE_SCALE.2=Standard
-value.WATER_WAVE_SCALE.3=Choppy
-value.WATER_WAVE_SCALE.4=Stormy
-value.WATER_WAVE_DETAIL.1=Coarse
-value.WATER_WAVE_DETAIL.2=Standard
-value.WATER_WAVE_DETAIL.3=Dense
-value.UNDERWATER_NIGHT_DARKNESS.1=Moonlit Pool
-value.UNDERWATER_NIGHT_DARKNESS.2=Dim
-value.UNDERWATER_NIGHT_DARKNESS.3=True Night
-value.UNDERWATER_NIGHT_DARKNESS.4=Pitch Dark
+value.WATER_WAVE_SCALE.1=平靜
+value.WATER_WAVE_SCALE.2=標準
+value.WATER_WAVE_SCALE.3=洶湧
+value.WATER_WAVE_SCALE.4=風暴
+value.WATER_WAVE_DETAIL.1=粗糙
+value.WATER_WAVE_DETAIL.2=標準
+value.WATER_WAVE_DETAIL.3=密集
+value.UNDERWATER_NIGHT_DARKNESS.1=月光池塘
+value.UNDERWATER_NIGHT_DARKNESS.2=昏暗
+value.UNDERWATER_NIGHT_DARKNESS.3=真實夜晚
+value.UNDERWATER_NIGHT_DARKNESS.4=漆黑一片
 # ==============================================================================
 # Experimental Tab & New Sky (v1.1.0)
 # ==============================================================================
@@ -282,13 +282,13 @@ screen.EXPERIMENTAL=實驗性
 screen.EXPERIMENTAL.comment=實驗性
 
 option.SKY_MODE=新天空（大氣散射）
-option.SKY_STYLE=Sky Style
+option.SKY_STYLE=天空風格
 option.SKY_STYLE.comment=option.SKY_STYLE.comment=Artistic direction for the physical sky. Realistic = true angular sizes & neutral colours (astronomy look). Semi-realistic = readable sun/moon (x2.8), richer colour, soft glow. Fantasy = grand sun/moon (x5.5), big corona, vivid teal/crimson/indigo palette.
 option.SKY_MODE.comment=EXPERIMENTAL — off in all profiles. Gradient (legacy, default) or Physical realtime scattering with true multiple scattering (Rayleigh+Mie+Ozone, 1st+2nd+3rd order). Enable manually in this tab.
-value.SKY_MODE.0=Gradient (Legacy)
-value.SKY_STYLE.0=Realistic
-value.SKY_STYLE.1=Semi-realistic
-value.SKY_STYLE.2=Fantasy
+value.SKY_MODE.0=漸變（傳統）
+value.SKY_STYLE.0=寫實
+value.SKY_STYLE.1=半寫實
+value.SKY_STYLE.2=奇幻
 value.SKY_MODE.1=Realtime Scattering
 
 option.SKY_QUALITY=天空散射品質
@@ -296,3 +296,61 @@ option.SKY_QUALITY.comment=天空散射品質
 value.SKY_QUALITY.1=快速
 value.SKY_QUALITY.2=標準
 value.SKY_QUALITY.3=高
+
+# --- Auto-added missing translations (v1.1.0 sync, converted from Simplified) ---
+option.FOLIAGE_SSS=植被次表面散射
+option.FOLIAGE_SSS.comment=在逆光觀察時，為樹葉、草和植物啟用次表面散射（半透明）效果。
+option.GODRAYS_STRENGTH=丁達爾光強度
+option.GODRAYS_STRENGTH.comment=體積光束的亮度。柔和：輕微的大氣霧感。平衡：清晰可見的光束。戲劇性：濃烈的電影感光束。
+value.GODRAYS_STRENGTH.1=柔和
+value.GODRAYS_STRENGTH.2=平衡
+value.GODRAYS_STRENGTH.3=戲劇性
+option.SHOOTING_STARS=流星（隕星）
+option.SHOOTING_STARS.comment=基於物理的流星，進入中間層大氣（約80-120公里）。渲染真實的大圓弧三維軌跡，包含燒蝕光變曲線、黑體等離子體顏色（3500-5500K）、地平線附近的瑞利消光，以及火球持續的電離尾跡。
+option.SHOOTING_STARS_FREQUENCY=流星活躍度（天頂每時率）
+option.SHOOTING_STARS_FREQUENCY.comment=近似天頂每時率。零星：約每小時10顆的真實背景值。活躍：中等流星雨。風暴：峰值密度（約100顆/小時）。
+value.SHOOTING_STARS_FREQUENCY.1=零星（約10顆/小時）
+value.SHOOTING_STARS_FREQUENCY.2=活躍流星雨
+value.SHOOTING_STARS_FREQUENCY.3=流星風暴
+option.SHOOTING_STARS_BRIGHTNESS=星等標度
+option.SHOOTING_STARS_BRIGHTNESS.comment=流星星等標度的總體倍率。暗淡：真實平均水平；明亮：放大火球亮度以獲得更強的視覺效果。
+value.SHOOTING_STARS_BRIGHTNESS.1=暗淡（真實）
+value.SHOOTING_STARS_BRIGHTNESS.2=標準
+value.SHOOTING_STARS_BRIGHTNESS.3=明亮火球
+value.CONTRAST.4=攝影風格（類AgX）
+option.SPATIAL_AA_MODE=空間抗鋸齒
+option.SPATIAL_AA_MODE.comment=選擇後期處理抗鋸齒方式。FXAA速度快、開銷低。SMAA利用深度緩衝區在幾何邊緣獲得更好的效果，可與TAA結合使用。
+value.SPATIAL_AA_MODE.0=關閉
+value.SPATIAL_AA_MODE.1=FXAA（快速）
+value.SPATIAL_AA_MODE.2=SMAA（高質量）
+option.HEAT_SHIMMER=熔岩上方的熱浪扭曲
+option.HEAT_SHIMMER.comment=在熔岩表面上方啟用輕微的螢幕空間熱扭曲效果。
+option.HEAT_SHIMMER_STRENGTH=熱浪扭曲強度
+option.HEAT_SHIMMER_STRENGTH.comment=控制熔岩上方熱扭曲效果的強度。
+value.HEAT_SHIMMER_STRENGTH.1=柔和
+value.HEAT_SHIMMER_STRENGTH.2=平衡
+value.HEAT_SHIMMER_STRENGTH.3=強烈
+option.SSR=螢幕空間反射（SSR）
+option.SSR.comment=在水面、潮溼表面和金屬PBR方塊上新增實時環境反射效果。自v1.0.4起，從“中”畫質起預設啟用。
+option.SSR_QUALITY=SSR質量
+option.SSR_QUALITY.comment=控制螢幕空間反射的精度和光線追蹤距離。數值越高，反射越清晰，但GPU開銷也越大。
+value.SSR_QUALITY.1=快速（12步）
+value.SSR_QUALITY.2=平衡（24步）
+value.SSR_QUALITY.3=高（40步）
+option.SSR_STRENGTH=SSR強度
+option.SSR_STRENGTH.comment=控制反射表面上環境反射的可見程度和顯著程度。
+option.WATER_WAVE_SCALE=波浪幅度
+option.WATER_WAVE_SCALE.comment=控制水面波浪的可見起伏程度。平靜：如鏡面般平滑；風暴：反射強烈破碎。
+option.WATER_WAVE_DETAIL=波浪細節
+option.WATER_WAVE_DETAIL.comment=控制每個方塊內出現的小波紋數量。粗糙：少量大波浪；密集：大量細小漣漪。
+option.UNDERWATER_NIGHT_DARKNESS=夜晚水下黑暗程度
+option.UNDERWATER_NIGHT_DARKNESS.comment=控制夜晚水下場景的黑暗程度。月光池塘：保持一定亮度；漆黑一片：極端的生存式黑暗。
+value.SSR_STRENGTH.1=柔和
+value.SSR_STRENGTH.2=平衡
+value.SSR_STRENGTH.3=強烈
+option.PBR_DISTANCE=PBR渲染距離
+option.PBR_DISTANCE.comment=PBR鏡面高光的最大渲染距離。可在遠處地形上節省GPU效能。低畫質為近距離（16米），中畫質為標準（48米），高/極高畫質為遠距離（128米），極致畫質為無限。
+value.PBR_DISTANCE.1=近距離（16米）
+value.PBR_DISTANCE.2=標準（48米）
+value.PBR_DISTANCE.3=遠距離（128米）
+value.PBR_DISTANCE.4=無限

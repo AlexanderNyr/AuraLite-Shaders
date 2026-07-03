@@ -421,3 +421,17 @@ option.SKY_QUALITY.comment=Göy Səpilmə Keyfiyyəti
 value.SKY_QUALITY.1=Sürətli
 value.SKY_QUALITY.2=Standart
 value.SKY_QUALITY.3=Yüksək
+
+# --- Auto-added missing translations (v1.1.0 sync) ---
+option.GODRAYS_STRENGTH=Godrays intensivliyi
+option.GODRAYS_STRENGTH.comment=Həcmli işıq şüalarının parlaqlığı. Zərif: yumşaq atmosfer duman. Balanslaşdırılmış: aydın görünən şüalar. Dramatik: cəsarətli kinematik şüalar.
+value.GODRAYS_STRENGTH.1=Zərif
+value.GODRAYS_STRENGTH.2=Balanslaşdırılmış
+value.GODRAYS_STRENGTH.3=Dramatik
+option.HEAT_SHIMMER=Lavanın üzərində istilik parıltısı
+option.HEAT_SHIMMER.comment=Lava səthlərinin üzərində zərif ekran fəzası istilik təhrifi effektini aktivləşdirin.
+option.HEAT_SHIMMER_STRENGTH=İstilik parıltısının gücü
+option.HEAT_SHIMMER_STRENGTH.comment=Lavanın üzərindəki istilik təhrifinin intensivliyini idarə edir.
+value.HEAT_SHIMMER_STRENGTH.1=Zərif
+value.HEAT_SHIMMER_STRENGTH.2=Balanslaşdırılmış
+value.HEAT_SHIMMER_STRENGTH.3=Güclü

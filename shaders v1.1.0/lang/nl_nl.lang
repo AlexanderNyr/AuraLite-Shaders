@@ -10,23 +10,23 @@
 # ==============================================================================
 # Quality Profiles
 # ==============================================================================
-profile.VERY_LOW=Very Low
+profile.VERY_LOW=Zeer Laag
 profile.VERY_LOW.comment=Fastest possible preset for very weak GPUs. Disables heavy effects.
 profile.LOW=Laag
 profile.MED=Gemiddeld
 profile.HIGH=Hoog
 profile.ULTRA=Ultra
-profile.EXTREME=Extreme
+profile.EXTREME=Extreem
 profile.EXTREME.comment=Maximale experimentele kwaliteit. Voegt SSAO/SAO-contact ambient occlusion toe. POM blijft uitgeschakeld voor stabiliteit.
 profile.CUSTOM=Aangepast
-profile.CUSTOM.comment=Aangepaste gebruikersinstellingen.
+profile.CUSTOM.comment=Aangepaste, door de gebruiker gewijzigde instellingen.
 profile.HIGH.comment=Hoge kwaliteit met verder reikende schaduwen en helderdere verlichting.
 profile.LOW.comment=Snelste preset voor zwakkere GPU's. Schakelt zware effecten uit.
 profile.MED.comment=Gebalanceerde preset met schaduwen, wolken, PBR en atmosferische effecten.
 profile.ULTRA.comment=Maximale visuele kwaliteit. POM blijft uitgeschakeld voor stabiliteit.
 
 screen.TRANSLATION_NOTICE=⚠ Vertalingen kunnen fouten bevatten
-screen.TRANSLATION_NOTICE.comment=Sommige lokalisatieregels kunnen onnauwkeurig zijn. Als iets vreemd lijkt, vergelijk dan met het Engelse origineel.
+screen.TRANSLATION_NOTICE.comment=Sommige vertalingen kunnen onnauwkeurig zijn. Vergelijk bij twijfel met het Engelse origineel.
 
 # Screens
 screen.LIGHTING=Belichtingsinstellingen
@@ -36,35 +36,35 @@ screen.FOLIAGE.comment=Configureer wuivende animaties voor gras en bladeren.
 screen.WATER=Waterinstellingen
 screen.WATER.comment=Configureer golven, transparantie en waterstijl.
 screen.CLOUDS_MENU=Lucht en Wolken
-screen.CLOUDS_MENU.comment=Configureer fysieke hoogte, dikte en stijl van 3D-wolken en luchteffecten.
+screen.CLOUDS_MENU.comment=Configureer de fysieke hoogte, dikte en stijl van 3D-wolken en hemeleffecten.
 screen.POST_PROCESS=Postprocessing en Mist
 screen.POST_PROCESS.comment=Configureer belichting, mist en cinematische effecten.
 
 # Options
 option.SHADOWS=Dynamische Schaduwen
-option.SHADOWS.comment=Schakelt zachte dynamische schaduwen van zon en maan in of uit.
+option.SHADOWS.comment=Schakel zachte dynamische schaduwen van zon en maan in of uit.
 option.SHADOW_RES=Schaduwresolutie
-option.SHADOW_RES.comment=Wijzigt de kwaliteit van de schaduwmap. Hogere waarden verlagen de prestaties.
-option.PBR_LIGHTING=PBR-Belichting (LabPBR)
-option.PBR_LIGHTING.comment=Schakelt fysisch gebaseerde rendering in voor metalen, ruwheid en 3D normal maps (PBR-pack vereist).
-option.PBR_POM=3D-Blokreliëf (POM)
-option.PBR_POM.comment=Schakelt Parallax Occlusion Mapping in voor echte 3D-bloktexturen. Aanbevolen om uit te schakelen op incompatibele packs.
-option.PBR_STRENGTH=PBR-Intensiteit
-option.PBR_STRENGTH.comment=Bepaalt de reflectiviteit en glans van PBR-metalen oppervlakken.
+option.SHADOW_RES.comment=Wijzig de kwaliteit van de schaduwkaart. Hogere waarden kunnen de prestaties verlagen.
+option.PBR_LIGHTING=PBR-belichting (LabPBR)
+option.PBR_LIGHTING.comment=Schakel fysiek gebaseerde rendering in voor metalen, ruwheid en 3D-normaalmappen (PBR-resourcepack vereist).
+option.PBR_POM=3D-blokreliëf (POM)
+option.PBR_POM.comment=Schakel fysiek gebaseerde Parallax Occlusion Mapping in voor 3D-blokteksturen. Aanbevolen om uit te schakelen bij incompatibele resourcepacks.
+option.PBR_STRENGTH=PBR-intensiteit
+option.PBR_STRENGTH.comment=Regel de reflectiviteit en glans van PBR-metaaloppervlakken.
 value.PBR_STRENGTH.1=Subtiel
 value.PBR_STRENGTH.2=Standaard
 value.PBR_STRENGTH.3=Spiegel
 option.LIGHTMAP_WARMTH=Fakkelwarmte
-option.LIGHTMAP_WARMTH.comment=Past de warmte en kleur van blok-/fakkellicht aan.
+option.LIGHTMAP_WARMTH.comment=Pas de warmte en kleur van blok-/fakkellicht aan.
 value.LIGHTMAP_WARMTH.1=Gezellig
 value.LIGHTMAP_WARMTH.2=Warm
 value.LIGHTMAP_WARMTH.3=Intens
 option.WAVING_LEAVES=Wuivende Bladeren
-option.WAVING_LEAVES.comment=Schakelt zachte wuiveranimaties voor boombladeren in.
-option.WAVING_GRASS=Wuivende Vegetatie
-option.WAVING_GRASS.comment=Schakelt wuiveranimaties voor gras, bloemen en gewassen in.
+option.WAVING_LEAVES.comment=Schakel zachte wuivende animaties in voor boombladeren.
+option.WAVING_GRASS=Wuivend Gebladerte
+option.WAVING_GRASS.comment=Schakel wuivende animaties in voor gras, bloemen en gewassen.
 option.WIND_SPEED=Windsnelheid
-option.WIND_SPEED.comment=Bepaalt de wuifsnelheid van bladeren, planten en watergolven.
+option.WIND_SPEED.comment=Regel de wuifsnelheid van bladeren, planten en watergolven.
 value.WIND_SPEED.1=Zacht
 value.WIND_SPEED.2=Bries
 value.WIND_SPEED.3=Storm
@@ -75,206 +75,206 @@ option.WATER_TRANSPARENCY.comment=Bepaalt de transparantie en ondoorzichtigheid 
 value.WATER_TRANSPARENCY.1=Helder
 value.WATER_TRANSPARENCY.2=Gebalanceerd
 value.WATER_TRANSPARENCY.3=Diep
-option.PROCEDURAL_CLOUDS=Volumetrische 3D-Wolken
-option.PROCEDURAL_CLOUDS.comment=Schakelt fysiek doorvliegbare 3D-wolken in.
-option.CLOUD_HEIGHT=Wolkenhoogte
-option.CLOUD_HEIGHT.comment=Stelt de fysieke hoogte (Y-niveau) van de wolkenlaag in de wereld in (in meters).
+option.PROCEDURAL_CLOUDS=Volumetrische 3D-wolken
+option.PROCEDURAL_CLOUDS.comment=Schakel fysiek doorvliegbare 3D-wolken in die bereikt en doorvlogen kunnen worden.
+option.CLOUD_HEIGHT=Wolkhoogte
+option.CLOUD_HEIGHT.comment=Stel de fysieke hoogte (Y-niveau) van het wolkendek in de wereld in (in meters).
 value.CLOUD_HEIGHT.1=Laag (~110m)
 value.CLOUD_HEIGHT.2=Standaard (~160m)
 value.CLOUD_HEIGHT.3=Hoog (~240m)
 option.CLOUD_THICKNESS=Wolkendikte
-option.CLOUD_THICKNESS.comment=Configureert de verticale dikte en het volume van de wolken.
+option.CLOUD_THICKNESS.comment=Configureer de verticale dikte en het volume van de wolken.
 value.CLOUD_THICKNESS.1=Dun (Cirrus)
 value.CLOUD_THICKNESS.2=Standaard (Cumulus)
 value.CLOUD_THICKNESS.3=Dicht (Stormachtig)
 option.AURORA_MODE=Noorderlicht
-option.AURORA_MODE.comment=Regelt de weergave van realistisch stromende auroras aan de nachthemel.
+option.AURORA_MODE.comment=Regel de weergave van realistisch vloeiend noorderlicht aan de nachtelijke hemel.
 value.AURORA_MODE.0=Uitgeschakeld
 value.AURORA_MODE.1=Alleen in Koude Biomen
 value.AURORA_MODE.2=Altijd Ingeschakeld
-option.AURORA_SPEED=Aurora-Snelheid
-option.AURORA_SPEED.comment=Bepaalt de wuif- en stroomsnelheid van het noorderlicht.
+option.AURORA_SPEED=Noorderlichtsnelheid
+option.AURORA_SPEED.comment=Regel de wuif- en vloeisnelheid van het noorderlicht.
 value.AURORA_SPEED.1=Langzaam
 value.AURORA_SPEED.2=Standaard
 value.AURORA_SPEED.3=Snel
-option.AURORA_STRENGTH=Aurora-Helderheid
-option.AURORA_STRENGTH.comment=Bepaalt de algehele helderheid van het noorderlicht.
+option.AURORA_STRENGTH=Noorderlichthelderheid
+option.AURORA_STRENGTH.comment=Regel de algehele gloedhelderheid van het noorderlicht.
 value.AURORA_STRENGTH.1=Zacht
 value.AURORA_STRENGTH.2=Standaard
-value.AURORA_STRENGTH.3=Stralend
-option.NEBULA_BRIGHTNESS=Helderheid Melkweg
-option.NEBULA_BRIGHTNESS.comment=Past de helderheid aan van de diagonale bruinige galactische nevel in de nacht.
-value.NEBULA_BRIGHTNESS.1=Vaag
+value.AURORA_STRENGTH.3=Gloeiend
+option.NEBULA_BRIGHTNESS=Melkweghelderheid
+option.NEBULA_BRIGHTNESS.comment=Pas de gloedhelderheid van de diagonale bruinachtige galactische nevel 's nachts aan.
+value.NEBULA_BRIGHTNESS.1=Dof
 value.NEBULA_BRIGHTNESS.2=Standaard
 value.NEBULA_BRIGHTNESS.3=Helder
 option.STARS_BRIGHTNESS=Sterhelderheid
-option.STARS_BRIGHTNESS.comment=Bepaalt de helderheid en flonkering van de sterren 's nachts.
+option.STARS_BRIGHTNESS.comment=Regel de helderheid en fonkelende gloed van de sterren 's nachts.
 value.STARS_BRIGHTNESS.1=Zwak
 value.STARS_BRIGHTNESS.2=Standaard
 value.STARS_BRIGHTNESS.3=Briljant
 option.STARS_AMOUNT=Sterdichtheid
-option.STARS_AMOUNT.comment=Bepaalt de totale hoeveelheid en dichtheid van sterren aan de hemel.
+option.STARS_AMOUNT.comment=Regel de totale hoeveelheid en dichtheid van sterren aan de hemel.
 value.STARS_AMOUNT.1=Weinig
 value.STARS_AMOUNT.2=Standaard
 value.STARS_AMOUNT.3=Dicht
 option.RAINBOW_STRENGTH=Regenboogintensiteit
-option.RAINBOW_STRENGTH.comment=Configureert helderheid en verzadiging van de regenboog na regen.
+option.RAINBOW_STRENGTH.comment=Configureer de helderheid en kleurverzadiging van de regenboog na de regen.
 value.RAINBOW_STRENGTH.1=Subtiel
 value.RAINBOW_STRENGTH.2=Gebalanceerd
 value.RAINBOW_STRENGTH.3=Levendig
-option.COZY_LIGHTS=Fakkelflakkering
-option.COZY_LIGHTS.comment=Schakelt warme, gezellige real-time flakkeranimaties in voor fakkels, kampvuren en lantaarns.
-option.WET_REFLECTIONS=Reflecties Natte Grond
-option.WET_REFLECTIONS.comment=Bij regen worden vaste blokken zoals aarde, gras en steen nat, donker en glanzend onder de open hemel.
-option.GROUND_MIST=Lage Bodemmist (Y=62-66)
-option.GROUND_MIST.comment=Schakelt zachte goudwitte ochtend/avondmistlagen in die over water en ijs glijden bij dageraad en schemering.
+option.COZY_LIGHTS=Fakkelflikkering
+option.COZY_LIGHTS.comment=Schakel warme, gezellige, real-time flikkerende animaties in voor fakkels, kampvuren en lantaarns.
+option.WET_REFLECTIONS=Regennat-reflecties
+option.WET_REFLECTIONS.comment=Bij regen worden vaste blokken zoals grond, gras en steen nat, donker en glanzend onder de hemel.
+option.GROUND_MIST=Lage Grondmist (Y=62-66)
+option.GROUND_MIST.comment=Schakel zachte, goudwitte ochtend-/avondmistlagen in die 's ochtends en 's avonds over water en ijs glijden.
 option.FOG_DENSITY_LEVEL=Mistdichtheid
-option.FOG_DENSITY_LEVEL.comment=Bepaalt de sterkte van atmosferische horizonmist.
+option.FOG_DENSITY_LEVEL.comment=Regel de sterkte van de atmosferische horizonmist.
 value.FOG_DENSITY_LEVEL.1=Laag
 value.FOG_DENSITY_LEVEL.2=Gemiddeld
 value.FOG_DENSITY_LEVEL.3=Hoog
 option.EXPOSURE=Belichtingshelderheid
-option.EXPOSURE.comment=Bepaalt de algehele helderheid van het beeld.
+option.EXPOSURE.comment=Regel de algehele helderheid van het beeld.
 value.EXPOSURE.1=Gedempt
 value.EXPOSURE.2=Gebalanceerd
 value.EXPOSURE.3=Levendig
 option.COLOR_SATURATION=Kleurlevendigheid
-option.COLOR_SATURATION.comment=Bepaalt de niet-lineaire verzadiging van schermkleuren. Maakt vegetatie smaragdgroen en lucht weelderig.
+option.COLOR_SATURATION.comment=Regel de niet-lineaire verzadiging van schermkleuren. Maakt gebladerte smaragdgroen en luchten weelderig.
 value.COLOR_SATURATION.1=Gedempt
 value.COLOR_SATURATION.2=Gebalanceerd
 value.COLOR_SATURATION.3=Kleurrijk
 value.COLOR_SATURATION.4=Levendig
 option.CONTRAST=Beeldcontrast
-option.CONTRAST.comment=Kiest de tonemappingcurve en contraststijl.
+option.CONTRAST.comment=Kies de tone mapping- en contrastcurvestijl.
 value.CONTRAST.1=Zacht
 value.CONTRAST.2=Filmisch (ACES)
 value.CONTRAST.3=Intens (Hoog Contrast)
 
-option.TAA=Temporal Anti-Aliasing (TAA)
-option.TAA.comment=Temporal resolve with motion reprojection and neighborhood clipping. Reduces shimmering and jagged edges on high presets.
-option.TAA_STRENGTH=TAA Strength
-option.TAA_STRENGTH.comment=Controls history blending. Higher is more stable but can be softer during motion.
-value.TAA_STRENGTH.1=Light
-value.TAA_STRENGTH.2=Balanced
-value.TAA_STRENGTH.3=Stable
-option.VIGNETTE=Vignet-Effect
-option.VIGNETTE.comment=Schakelt subtiele verduistering aan schermranden in voor verbeterde focus.
-option.WATER_RIFFLES=Wateroppervlak Rimpels
+option.TAA=Temporele Anti-Aliasing (TAA)
+option.TAA.comment=Temporele resolve met bewegingsreprojectie en buurtclipping. Vermindert flikkering en gekartelde randen bij hoge instellingen.
+option.TAA_STRENGTH=TAA-sterkte
+option.TAA_STRENGTH.comment=Regelt geschiedenismenging. Hoger is stabieler maar kan zachter zijn tijdens beweging.
+value.TAA_STRENGTH.1=Licht
+value.TAA_STRENGTH.2=Gebalanceerd
+value.TAA_STRENGTH.3=Stabiel
+option.VIGNETTE=Vignet-effect
+option.VIGNETTE.comment=Schakel subtiele verduistering aan de schermranden in voor betere focus.
+option.WATER_RIFFLES=Waterrimpelsterkte
 option.WATER_RIFFLES.comment=Past de intensiteit van fijne normal map rimpels op het water aan.
 value.WATER_RIFFLES.1=Kalm
 value.WATER_RIFFLES.2=Standaard
-value.WATER_RIFFLES.3=Onstuimig
-option.WATER_SPECULAR_STRENGTH=Waterglans
+value.WATER_RIFFLES.3=Ruw
+option.WATER_SPECULAR_STRENGTH=Waterspiegelglans
 option.WATER_SPECULAR_STRENGTH.comment=Past de helderheid van zon-/maanreflecties op de waterrimpels aan.
 value.WATER_SPECULAR_STRENGTH.1=Zacht
 value.WATER_SPECULAR_STRENGTH.2=Standaard
-value.WATER_SPECULAR_STRENGTH.3=Glinsterend
+value.WATER_SPECULAR_STRENGTH.3=Flonkerend
 option.SHADOW_SOFTNESS=Schaduwzachtheid
-option.SHADOW_SOFTNESS.comment=Bepaalt hoe zacht en diffuus de schaduwranden lijken. Gebruikt geroteerde Poisson disk filtering voor zachte penumbra.
+option.SHADOW_SOFTNESS.comment=Regelt hoe zacht en diffuus de schaduwranden eruitzien. Gebruikt geroteerde Poisson disk-filtering voor een gladde penumbra.
 value.SHADOW_SOFTNESS.1=Scherp
 value.SHADOW_SOFTNESS.2=Zacht
-value.SHADOW_SOFTNESS.3=Zeer Zacht
+value.SHADOW_SOFTNESS.3=Ultra Zacht
 
-option.SSAO=SSAO / SAO Occlusion
+option.SSAO=SSAO / SAO-occlusie
 option.SSAO.comment=Extreem profiel: screen-space ambient occlusion voor contactschaduwen in hoeken, onder blokken en rond geometrieovergangen.
 option.SSAO_STRENGTH=SSAO-sterkte
-option.SSAO_STRENGTH.comment=Bepaalt de diepte van screen-space ambient occlusion. Alleen actief wanneer SSAO is ingeschakeld.
+option.SSAO_STRENGTH.comment=Regelt de diepte van screen-space ambient occlusion. Alleen actief wanneer SSAO is ingeschakeld.
 value.SSAO_STRENGTH.1=Subtiel
 value.SSAO_STRENGTH.2=Gebalanceerd
 value.SSAO_STRENGTH.3=Diep
 
-option.CLOUD_DISTANCE=Wolk-renderafstand
-option.CLOUD_DISTANCE.comment=Maximale tekenafstand voor volumetrische wolken. Kwaliteitsprofielen verhogen het automatisch.
+option.CLOUD_DISTANCE=Wolkweergaveafstand
+option.CLOUD_DISTANCE.comment=Maximale weergaveafstand voor volumetrische wolken. Kwaliteitsprofielen verhogen dit automatisch.
 value.CLOUD_DISTANCE.1=Dichtbij
 value.CLOUD_DISTANCE.2=Standaard
 value.CLOUD_DISTANCE.3=Ver
 value.CLOUD_DISTANCE.4=Zeer Ver
 
-option.CLOUD_SHADOWS=Cloud Shadows
-option.CLOUD_SHADOWS.comment=Adds transparent procedural shadows from volumetric cloud density onto terrain. Balanced by quality profiles.
-option.CLOUD_SHADOW_STRENGTH=Cloud Shadow Strength
-option.CLOUD_SHADOW_STRENGTH.comment=Controls how visible and dramatic transparent cloud shadows are.
-value.CLOUD_SHADOW_STRENGTH.1=Soft
-value.CLOUD_SHADOW_STRENGTH.2=Balanced
-value.CLOUD_SHADOW_STRENGTH.3=Dramatic
+option.CLOUD_SHADOWS=Wolkschaduwen
+option.CLOUD_SHADOWS.comment=Voegt transparante procedurele schaduwen van volumetrische wolkdichtheid toe aan het terrein. Wordt uitgebalanceerd door kwaliteitsprofielen.
+option.CLOUD_SHADOW_STRENGTH=Wolkschaduwsterkte
+option.CLOUD_SHADOW_STRENGTH.comment=Regelt hoe zichtbaar en dramatisch de transparante wolkschaduwen zijn.
+value.CLOUD_SHADOW_STRENGTH.1=Zacht
+value.CLOUD_SHADOW_STRENGTH.2=Gebalanceerd
+value.CLOUD_SHADOW_STRENGTH.3=Dramatisch
 
-option.GODRAYS=Godrays / Sun Shafts
+option.GODRAYS=Godrays / Zonnestralen
 option.GODRAYS.comment=Adds realistic screen-space sun shafts through sky gaps and behind geometry.
-option.GODRAYS_QUALITY=Godrays Quality
+option.GODRAYS_QUALITY=Godrays-kwaliteit
 option.GODRAYS_QUALITY.comment=Controls sample count and cost of godrays.
-value.GODRAYS_QUALITY.1=Fast
-value.GODRAYS_QUALITY.2=Balanced
-value.GODRAYS_QUALITY.3=High
+value.GODRAYS_QUALITY.1=Snel
+value.GODRAYS_QUALITY.2=Gebalanceerd
+value.GODRAYS_QUALITY.3=Hoog
 
 # ==============================================================================
 # Zon en Maan (uitgebreide belichting)
 # ==============================================================================
 screen.SUN_MOON=Zon en Maan
-screen.SUN_MOON.comment=Fijnafstemming van intensiteit, kleurtemperatuur en atmosferische effecten van zon en maan.
+screen.SUN_MOON.comment=Fijnafstemming van zon- & maanintensiteit, kleurtemperatuur en atmosferische effecten.
 option.SUN_INTENSITY=Zonintensiteit
-option.SUN_INTENSITY.comment=Hoofdhelderheid van direct zonlicht. Hoger = sterker dagcontrast.
-value.SUN_INTENSITY.1=Vaag
+option.SUN_INTENSITY.comment=Hoofdhelderheid van direct zonlicht. Hoger = sterker daglichtcontrast.
+value.SUN_INTENSITY.1=Dof
 value.SUN_INTENSITY.2=Standaard
 value.SUN_INTENSITY.3=Helder
-value.SUN_INTENSITY.4=Verzengend
+value.SUN_INTENSITY.4=Vlammend
 option.MOON_INTENSITY=Maanintensiteit
 option.MOON_INTENSITY.comment=Hoofdhelderheid van maanlicht. Hoger = helderdere, beter zichtbare nachten.
-value.MOON_INTENSITY.1=Pikkedonkere Nacht
+value.MOON_INTENSITY.1=Pikdonkere Nacht
 value.MOON_INTENSITY.2=Standaard
 value.MOON_INTENSITY.3=Heldere Maan
-value.MOON_INTENSITY.4=Lichte Nacht
-option.SUN_TEMPERATURE=Zon Kleurtemperatuur
-option.SUN_TEMPERATURE.comment=Verschuift de Kelvin-curve van de zon. Realistisch gebruikt Tanner Helland zwarte straler; warm = goud; koel = neutraal wit.
+value.MOON_INTENSITY.4=Volle Nacht
+option.SUN_TEMPERATURE=Zonkleurtemperatuur
+option.SUN_TEMPERATURE.comment=Verschuift de Kelvin-curve van de zon. Realistisch gebruikt Tanner Helland zwart lichaam; warm = goud; koel = neutraal wit.
 value.SUN_TEMPERATURE.1=Koel / Neutraal
 value.SUN_TEMPERATURE.2=Realistisch
 value.SUN_TEMPERATURE.3=Warm Goud
-option.MOON_TEMPERATURE=Maan Kleurtemperatuur
-option.MOON_TEMPERATURE.comment=Tint van het maanlicht. IJzig = blauw koud; Zilver = realistisch 4100K; Warm = oogstmaan crème.
+option.MOON_TEMPERATURE=Maankleurtemperatuur
+option.MOON_TEMPERATURE.comment=Tint van het maanlicht. IJzig = blauwachtig koud; Zilver = realistisch 4100K; Warm = oogstmaan-crème.
 value.MOON_TEMPERATURE.1=IJzig Blauw
 value.MOON_TEMPERATURE.2=Zilver (Realistisch)
 value.MOON_TEMPERATURE.3=Warm Crème
-option.SUN_HALO=Zon Halo (Mie)
-option.SUN_HALO.comment=Voegt een zachte warme gloed toe op het terrein bij het kijken naar de zon (Mie voorwaartse verstrooiing).
-option.SUNRISE_GLOW=Versterkte Zonsopgang/Zonsondergang Gloed
-option.SUNRISE_GLOW.comment=Schakelt een sterkere warme achterwaartse gloed in die zich wikkelt rond oppervlakken afgekeerd van de lage zon.
+option.SUN_HALO=Zonhalo (Mie-verstrooiing)
+option.SUN_HALO.comment=Voegt een zachte warme gloed toe aan het terrein bij het kijken in de buurt van de zon (Mie-voorwaartse verstrooiing).
+option.SUNRISE_GLOW=Verbeterde Zonsopgang/Zonsondergang-gloed
+option.SUNRISE_GLOW.comment=Schakelt sterkere warme terugverstrooiing in die om oppervlakken heen wikkelt die van de lage zon afgekeerd zijn.
 
 # ==============================================================================
 # Uitgebreide schaduwinstellingen
 # ==============================================================================
 option.SHADOW_DISTANCE=Schaduwafstand
-option.SHADOW_DISTANCE.comment=Maximale afstand waarop dynamische schaduwen worden gerenderd voordat ze vervagen.
+option.SHADOW_DISTANCE.comment=Maximale afstand waarop dynamische schaduwen worden weergegeven voordat ze vervagen.
 value.SHADOW_DISTANCE.1=Dichtbij (60m)
 value.SHADOW_DISTANCE.2=Standaard (80m)
 value.SHADOW_DISTANCE.3=Ver (120m)
 value.SHADOW_DISTANCE.4=Ultra (160m)
-option.AMBIENT_BRIGHTNESS=Schaduwverhoging (Ambient)
-option.AMBIENT_BRIGHTNESS.comment=Bepaalt hoe donker beschaduwde gebieden 's nachts en in grotten lijken.
+option.AMBIENT_BRIGHTNESS=Schaduwoplichting / Omgeving
+option.AMBIENT_BRIGHTNESS.comment=Regelt hoe donker beschaduwde gebieden eruitzien in de nacht en in grotten.
 value.AMBIENT_BRIGHTNESS.1=Donker
 value.AMBIENT_BRIGHTNESS.2=Standaard
-value.AMBIENT_BRIGHTNESS.3=Verhoogd (Helder)
+value.AMBIENT_BRIGHTNESS.3=Opgelicht (Helder)
 option.SHADOW_TINT=Schaduwtint
-option.SHADOW_TINT.comment=Tint dagschaduwen. In de werkelijkheid hebben schaduwen onder een blauwe lucht een subtiele koele tint.
+option.SHADOW_TINT.comment=Tint dagschaduwen. Schaduwen in de echte wereld onder een blauwe hemel hebben een subtiele koele tint.
 value.SHADOW_TINT.1=Neutraal Grijs
 value.SHADOW_TINT.2=Koel Blauw (Realistisch)
 value.SHADOW_TINT.3=Warm
-option.LIGHT_WRAP=Lichtomwikkeling (Light Wrap)
-option.LIGHT_WRAP.comment=Verzacht de overgang tussen verlichte en onverlichte oppervlakken. Realistisch = fysieke Lambert; Zacht = aangenaam voor screenshots.
+option.LIGHT_WRAP=Lichtomhulling
+option.LIGHT_WRAP.comment=Verzacht de terminator tussen verlichte en onverlichte oppervlakken. Realistisch = fysieke Lambert; Zacht = aangenaam voor screenshots.
 value.LIGHT_WRAP.1=Realistisch (Lambert)
-value.LIGHT_WRAP.2=Zachte Wikkeling
-value.LIGHT_WRAP.3=Gestyleerd
+value.LIGHT_WRAP.2=Zachte Omhulling
+value.LIGHT_WRAP.3=Gestileerd
 
 # v0.2.9 — water/underwater option value labels (English fallback)
-value.WATER_WAVE_SCALE.1=Calm
-value.WATER_WAVE_SCALE.2=Standard
-value.WATER_WAVE_SCALE.3=Choppy
-value.WATER_WAVE_SCALE.4=Stormy
-value.WATER_WAVE_DETAIL.1=Coarse
-value.WATER_WAVE_DETAIL.2=Standard
-value.WATER_WAVE_DETAIL.3=Dense
-value.UNDERWATER_NIGHT_DARKNESS.1=Moonlit Pool
-value.UNDERWATER_NIGHT_DARKNESS.2=Dim
-value.UNDERWATER_NIGHT_DARKNESS.3=True Night
-value.UNDERWATER_NIGHT_DARKNESS.4=Pitch Dark
+value.WATER_WAVE_SCALE.1=Kalm
+value.WATER_WAVE_SCALE.2=Standaard
+value.WATER_WAVE_SCALE.3=Ruw
+value.WATER_WAVE_SCALE.4=Stormachtig
+value.WATER_WAVE_DETAIL.1=Grof
+value.WATER_WAVE_DETAIL.2=Standaard
+value.WATER_WAVE_DETAIL.3=Dicht
+value.UNDERWATER_NIGHT_DARKNESS.1=Maanverlichte Poel
+value.UNDERWATER_NIGHT_DARKNESS.2=Dof
+value.UNDERWATER_NIGHT_DARKNESS.3=Echte Nacht
+value.UNDERWATER_NIGHT_DARKNESS.4=Pikdonker
 # ==============================================================================
 # Experimental Tab & New Sky (v1.1.0)
 # ==============================================================================
@@ -282,13 +282,13 @@ screen.EXPERIMENTAL=Experimenteel
 screen.EXPERIMENTAL.comment=Experimenteel
 
 option.SKY_MODE=Nieuwe lucht (Atmosferische verstrooiing)
-option.SKY_STYLE=Sky Style
+option.SKY_STYLE=Hemelstijl
 option.SKY_STYLE.comment=option.SKY_STYLE.comment=Artistic direction for the physical sky. Realistic = true angular sizes & neutral colours (astronomy look). Semi-realistic = readable sun/moon (x2.8), richer colour, soft glow. Fantasy = grand sun/moon (x5.5), big corona, vivid teal/crimson/indigo palette.
 option.SKY_MODE.comment=EXPERIMENTAL — off in all profiles. Gradient (legacy, default) or Physical realtime scattering with true multiple scattering (Rayleigh+Mie+Ozone, 1st+2nd+3rd order). Enable manually in this tab.
-value.SKY_MODE.0=Gradient (Legacy)
-value.SKY_STYLE.0=Realistic
-value.SKY_STYLE.1=Semi-realistic
-value.SKY_STYLE.2=Fantasy
+value.SKY_MODE.0=Gradiënt (Verouderd)
+value.SKY_STYLE.0=Realistisch
+value.SKY_STYLE.1=Semi-realistisch
+value.SKY_STYLE.2=Fantasie
 value.SKY_MODE.1=Realtime Scattering
 
 option.SKY_QUALITY=Luchtverstrooiingskwaliteit
@@ -296,3 +296,61 @@ option.SKY_QUALITY.comment=Luchtverstrooiingskwaliteit
 value.SKY_QUALITY.1=Snel
 value.SKY_QUALITY.2=Standaard
 value.SKY_QUALITY.3=Hoog
+
+# --- Auto-added missing translations (v1.1.0 sync) ---
+option.FOLIAGE_SSS=Gebladerte-SSS
+option.FOLIAGE_SSS.comment=Schakelt subsurface scattering (doorschijnendheid) in voor bladeren, gras en planten bij tegenlicht.
+option.GODRAYS_STRENGTH=Godrays-intensiteit
+option.GODRAYS_STRENGTH.comment=Helderheid van de volumetrische lichtstralen. Subtiel: zachte atmosferische nevel. Gebalanceerd: duidelijk zichtbare stralen. Dramatisch: gedurfde cinematische stralen.
+value.GODRAYS_STRENGTH.1=Subtiel
+value.GODRAYS_STRENGTH.2=Gebalanceerd
+value.GODRAYS_STRENGTH.3=Dramatisch
+option.SHOOTING_STARS=Meteoren (Vallende Sterren)
+option.SHOOTING_STARS.comment=Fysiek gebaseerde meteoren die de mesosfeer binnenkomen (~80-120 km). Rendert echte grootcirkel-3D-bogen met ablatie-lichtcurves, zwart-lichaam plasmakleur (3500-5500 K), Rayleigh-extinctie bij de horizon en aanhoudende ionisatiesporen op vuurbollen.
+option.SHOOTING_STARS_FREQUENCY=Meteoractiviteit (ZHR)
+option.SHOOTING_STARS_FREQUENCY.comment=Geschatte Zenithal Hourly Rate. Sporadisch = realistische achtergrond van ~10 per uur. Actief = milde regen. Storm = piekdichtheid (~100/uur).
+value.SHOOTING_STARS_FREQUENCY.1=Sporadisch (~10/uur)
+value.SHOOTING_STARS_FREQUENCY.2=Actieve Regen
+value.SHOOTING_STARS_FREQUENCY.3=Meteorenstorm
+option.SHOOTING_STARS_BRIGHTNESS=Magnitudeschaal
+option.SHOOTING_STARS_BRIGHTNESS.comment=Hoofdvermenigvuldiger op de meteor-magnitudeschaal. Zwak = realistisch gemiddelde; Helder = schaalt vuurbollen voor cinematische zichtbaarheid.
+value.SHOOTING_STARS_BRIGHTNESS.1=Zwak (Realistisch)
+value.SHOOTING_STARS_BRIGHTNESS.2=Standaard
+value.SHOOTING_STARS_BRIGHTNESS.3=Heldere Vuurbollen
+value.CONTRAST.4=Fotografisch (AgX-achtig)
+option.SPATIAL_AA_MODE=Ruimtelijke Anti-Aliasing
+option.SPATIAL_AA_MODE.comment=Selecteer de anti-aliasingmethode voor nabewerking. FXAA is snel en goedkoop. SMAA gebruikt de diepte-buffer voor betere kwaliteit op geometrische randen. Kan gecombineerd worden met TAA.
+value.SPATIAL_AA_MODE.0=Uit
+value.SPATIAL_AA_MODE.1=FXAA (Snel)
+value.SPATIAL_AA_MODE.2=SMAA (Kwaliteit)
+option.HEAT_SHIMMER=Hittetrilling Boven Lava
+option.HEAT_SHIMMER.comment=Schakel een subtiel screen-space hitte-vervormingseffect in boven lava-oppervlakken.
+option.HEAT_SHIMMER_STRENGTH=Hittetrillingssterkte
+option.HEAT_SHIMMER_STRENGTH.comment=Regelt de intensiteit van de hittevervorming boven lava.
+value.HEAT_SHIMMER_STRENGTH.1=Subtiel
+value.HEAT_SHIMMER_STRENGTH.2=Gebalanceerd
+value.HEAT_SHIMMER_STRENGTH.3=Sterk
+option.SSR=Screen-Space-Reflecties (SSR)
+option.SSR.comment=Voegt real-time gereflecteerde omgeving toe op water, natte oppervlakken en metalen PBR-blokken. Ingeschakeld vanaf Medium in v1.0.4.
+option.SSR_QUALITY=SSR-kwaliteit
+option.SSR_QUALITY.comment=Regelt de precisie en straalafstand van screen-space-reflecties. Hoger = scherpere reflecties maar meer GPU-kosten.
+value.SSR_QUALITY.1=Snel (12 stappen)
+value.SSR_QUALITY.2=Gebalanceerd (24 stappen)
+value.SSR_QUALITY.3=Hoog (40 stappen)
+option.SSR_STRENGTH=SSR-sterkte
+option.SSR_STRENGTH.comment=Regelt hoe zichtbaar en prominent de gereflecteerde omgeving verschijnt op reflecterende oppervlakken.
+option.WATER_WAVE_SCALE=Golfamplitude
+option.WATER_WAVE_SCALE.comment=Regelt de zichtbare steilheid van watergolven. Kalm = spiegelachtig, Stormachtig = sterk gebroken reflecties.
+option.WATER_WAVE_DETAIL=Golfdetail
+option.WATER_WAVE_DETAIL.comment=Regelt hoeveel kleine golven per blok verschijnen. Grof = enkele grote golven, Dicht = veel kleine rimpelingen.
+option.UNDERWATER_NIGHT_DARKNESS=Onderwater Nachtelijke Duisternis
+option.UNDERWATER_NIGHT_DARKNESS.comment=Regelt hoe donker de onderwaterscene 's nachts wordt. Maanverlichte Poel behoudt helderheid; Pikzwart geeft extreme survival-achtige duisternis.
+value.SSR_STRENGTH.1=Subtiel
+value.SSR_STRENGTH.2=Gebalanceerd
+value.SSR_STRENGTH.3=Sterk
+option.PBR_DISTANCE=PBR-weergaveafstand
+option.PBR_DISTANCE.comment=Maximale afstand voor PBR-spiegelhighlights. Bespaart GPU op verre terreinen. Dichtbij (16m) voor Laag, Standaard (48m) voor Medium, Ver (128m) voor Hoog/Ultra, Onbeperkt voor Extreem.
+value.PBR_DISTANCE.1=Dichtbij (16m)
+value.PBR_DISTANCE.2=Standaard (48m)
+value.PBR_DISTANCE.3=Ver (128m)
+value.PBR_DISTANCE.4=Onbeperkt

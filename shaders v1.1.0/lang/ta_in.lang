@@ -6,7 +6,7 @@
 # ==============================================================================
 # Quality Profiles
 # ==============================================================================
-profile.VERY_LOW=மிகக் குறைவு
+profile.VERY_LOW=மிக குறைவு
 profile.VERY_LOW.comment=Fastest possible preset for very weak GPUs. Disables shadows, clouds, water waves, foliage waving, PBR and most extras.
 profile.LOW=குறைவு
 profile.LOW.comment=Lightweight preset for weak GPUs. Keeps cheap water/foliage motion, disables shadows, clouds and PBR.
@@ -16,325 +16,325 @@ profile.HIGH=உயர்
 profile.HIGH.comment=High quality preset with 2048 shadows, farther clouds and full PBR, without SSAO.
 profile.ULTRA=அல்ட்ரா
 profile.ULTRA.comment=Ultra quality preset with 4096 shadows, very far clouds and balanced SSAO. POM remains disabled for stability.
-profile.EXTREME=எக்ஸ்ட்ரீம்
+profile.EXTREME=தீவிரம்
 profile.EXTREME.comment=Maximum experimental quality. Pushes lighting, clouds, color and deep SSAO. POM remains disabled for stability.
 profile.CUSTOM=தனிப்பயன்
-profile.CUSTOM.comment=Custom user-modified settings.
+profile.CUSTOM.comment=பயனரால் மாற்றப்பட்ட தனிப்பயன் அமைப்புகள்.
 
 screen.TRANSLATION_NOTICE=⚠ மொழிபெயர்ப்புகளில் பிழைகள் இருக்கலாம்
-screen.TRANSLATION_NOTICE.comment=Some localization strings may be inaccurate. If something looks strange, compare with the English original.
+screen.TRANSLATION_NOTICE.comment=சில உள்ளூர்மயமாக்கல் சரங்கள் தவறாக இருக்கலாம். ஏதேனும் விசித்திரமாக தோன்றினால், ஆங்கில மூலத்துடன் ஒப்பிடவும்.
 
 # Screens
 screen.LIGHTING=ஒளி அமைப்புகள்
-screen.LIGHTING.comment=Configure shadows, light colors, and brightness.
+screen.LIGHTING.comment=நிழல்கள், ஒளி வண்ணங்கள் மற்றும் பிரகாசத்தை உள்ளமைக்கவும்.
 
 screen.FOLIAGE=தாவர அமைப்புகள்
-screen.FOLIAGE.comment=Configure waving animations for grass and leaves.
+screen.FOLIAGE.comment=புல் மற்றும் இலைகளுக்கான அலை அசைவூட்டங்களை உள்ளமைக்கவும்.
 
 screen.WATER=நீர் அமைப்புகள்
-screen.WATER.comment=Configure waves, transparency, and water styling.
+screen.WATER.comment=அலைகள், வெளிப்படைத்தன்மை மற்றும் நீர் பாணியை உள்ளமைக்கவும்.
 
 screen.CLOUDS_MENU=வானம் மற்றும் மேகங்கள்
-screen.CLOUDS_MENU.comment=Configure the physical altitude, thickness, and style of 3D clouds and sky effects.
+screen.CLOUDS_MENU.comment=3D மேகங்கள் மற்றும் வான விளைவுகளின் இயற்பியல் உயரம், தடிமன் மற்றும் பாணியை உள்ளமைக்கவும்.
 
 screen.POST_PROCESS=பிந்தைய செயலாக்கம் மற்றும் மூடுபனி
-screen.POST_PROCESS.comment=Configure exposure, fog, and cinematic effects.
+screen.POST_PROCESS.comment=வெளிப்பாடு, மூடுபனி மற்றும் சினிமா விளைவுகளை உள்ளமைக்கவும்.
 
 # Options
-option.SHADOWS=Dynamic Shadows
-option.SHADOWS.comment=Enable or disable soft dynamic shadows from the sun and moon.
+option.SHADOWS=டைனமிக் நிழல்கள்
+option.SHADOWS.comment=சூரியன் மற்றும் சந்திரனிலிருந்து மென்மையான டைனமிக் நிழல்களை இயக்கவும் அல்லது முடக்கவும்.
 
-option.SHADOW_RES=Shadow Resolution
-option.SHADOW_RES.comment=Change the shadow map quality. Higher values may lower performance.
+option.SHADOW_RES=நிழல் தெளிவுத்திறன்
+option.SHADOW_RES.comment=நிழல் வரைபடத் தரத்தை மாற்றவும். அதிக மதிப்புகள் செயல்திறனைக் குறைக்கலாம்.
 
-option.PBR_LIGHTING=PBR Lighting (LabPBR)
-option.PBR_LIGHTING.comment=Enable physically-based rendering for metals, roughness, and 3D normal maps (PBR resource pack required).
+option.PBR_LIGHTING=PBR ஒளியூட்டல் (LabPBR)
+option.PBR_LIGHTING.comment=உலோகங்கள், கரடுமுரடுத்தன்மை மற்றும் 3D இயல்பான வரைபடங்களுக்கான இயற்பியல் அடிப்படையிலான வழங்கலை இயக்கவும் (PBR வள தொகுப்பு தேவை).
 
-option.PBR_POM=3D Block Relief (POM)
-option.PBR_POM.comment=Enable physically-based Parallax Occlusion Mapping for 3D block textures. Recommended to disable on incompatible resource packs.
+option.PBR_POM=3D பிளாக் நிவாரணம் (POM)
+option.PBR_POM.comment=3D பிளாக் அமைப்புகளுக்கான இயற்பியல் அடிப்படையிலான பாராலாக்ஸ் ஆக்ளூஷன் மேப்பிங்கை இயக்கவும். பொருந்தாத வள தொகுப்புகளில் முடக்க பரிந்துரைக்கப்படுகிறது.
 
-option.PBR_STRENGTH=PBR Intensity
-option.PBR_STRENGTH.comment=Control the reflectivity and glossiness of PBR metallic surfaces.
+option.PBR_STRENGTH=PBR தீவிரம்
+option.PBR_STRENGTH.comment=PBR உலோகப் பரப்புகளின் பிரதிபலிப்பு மற்றும் பளபளப்பைக் கட்டுப்படுத்தவும்.
 
-value.PBR_STRENGTH.1=Subtle
-value.PBR_STRENGTH.2=Standard
-value.PBR_STRENGTH.3=Mirror
+value.PBR_STRENGTH.1=நுணுக்கமான
+value.PBR_STRENGTH.2=நிலையான
+value.PBR_STRENGTH.3=கண்ணாடி
 
-option.SSAO=SSAO / SAO Occlusion
+option.SSAO=SSAO / SAO ஆக்ளூஷன்
 option.SSAO.comment=Extreme profile: screen-space ambient occlusion for contact shadows in corners, under blocks, and around geometry intersections.
-option.SSAO_STRENGTH=SSAO Strength
-option.SSAO_STRENGTH.comment=Controls the depth of screen-space ambient occlusion. Only active when SSAO is enabled.
-value.SSAO_STRENGTH.1=Subtle
-value.SSAO_STRENGTH.2=Balanced
-value.SSAO_STRENGTH.3=Deep
+option.SSAO_STRENGTH=SSAO வலிமை
+option.SSAO_STRENGTH.comment=திரை-இட சுற்றுப்புற ஆக்ளூஷனின் ஆழத்தைக் கட்டுப்படுத்துகிறது. SSAO இயக்கப்பட்டிருக்கும்போது மட்டுமே செயலில் உள்ளது.
+value.SSAO_STRENGTH.1=நுணுக்கமான
+value.SSAO_STRENGTH.2=சமச்சீரான
+value.SSAO_STRENGTH.3=ஆழமான
 
-option.LIGHTMAP_WARMTH=Torch Warmth
-option.LIGHTMAP_WARMTH.comment=Adjust the warmth and color of block/torch light.
+option.LIGHTMAP_WARMTH=தீப்பந்த வெப்பம்
+option.LIGHTMAP_WARMTH.comment=பிளாக்/தீப்பந்த ஒளியின் வெப்பம் மற்றும் நிறத்தை சரிசெய்யவும்.
 
-value.LIGHTMAP_WARMTH.1=Cozy
-value.LIGHTMAP_WARMTH.2=Warm
-value.LIGHTMAP_WARMTH.3=Intense
+value.LIGHTMAP_WARMTH.1=வசதியான
+value.LIGHTMAP_WARMTH.2=சூடான
+value.LIGHTMAP_WARMTH.3=தீவிரமான
 
-option.WAVING_LEAVES=Waving Leaves
-option.WAVING_LEAVES.comment=Enable gentle waving animations for tree leaves.
+option.WAVING_LEAVES=இலை அசைவு
+option.WAVING_LEAVES.comment=மர இலைகளுக்கான மென்மையான அலை அசைவூட்டங்களை இயக்கவும்.
 
-option.WAVING_GRASS=Waving Foliage
-option.WAVING_GRASS.comment=Enable waving animations for grass, flowers, and crops.
+option.WAVING_GRASS=தாவரங்கள் அசைவு
+option.WAVING_GRASS.comment=புல், பூக்கள் மற்றும் பயிர்களுக்கான அலை அசைவூட்டங்களை இயக்கவும்.
 
-option.WIND_SPEED=Wind Speed
-option.WIND_SPEED.comment=Control the waving speed of leaves, plants, and water waves.
+option.WIND_SPEED=காற்றின் வேகம்
+option.WIND_SPEED.comment=இலைகள், தாவரங்கள் மற்றும் நீர் அலைகளின் அசைவு வேகத்தைக் கட்டுப்படுத்தவும்.
 
 value.WIND_SPEED.1=Gentle
 value.WIND_SPEED.2=Breeze
 value.WIND_SPEED.3=Gale
 
-option.WATER_WAVES=Water Waves
+option.WATER_WAVES=நீர் அலைகள்
 option.WATER_WAVES.comment=Enable 3D geometric waves on the water surface.
 
-option.WATER_TRANSPARENCY=Water Density
+option.WATER_TRANSPARENCY=நீர் அடர்த்தி
 option.WATER_TRANSPARENCY.comment=Control the transparency and opacity of the water.
 
-value.WATER_TRANSPARENCY.1=Clear
-value.WATER_TRANSPARENCY.2=Balanced
-value.WATER_TRANSPARENCY.3=Deep
+value.WATER_TRANSPARENCY.1=தெளிவான
+value.WATER_TRANSPARENCY.2=சமச்சீரான
+value.WATER_TRANSPARENCY.3=ஆழமான
 
-option.PROCEDURAL_CLOUDS=Volumetric 3D Clouds
-option.PROCEDURAL_CLOUDS.comment=Enable physically flyable 3D clouds that can be reached and flown through.
+option.PROCEDURAL_CLOUDS=தொகுதி 3D மேகங்கள்
+option.PROCEDURAL_CLOUDS.comment=அடையக்கூடிய மற்றும் பறந்து செல்லக்கூடிய இயற்பியல் பறக்கக்கூடிய 3D மேகங்களை இயக்கவும்.
 
-option.CLOUD_HEIGHT=Cloud Altitude
-option.CLOUD_HEIGHT.comment=Set the physical altitude (Y-level) of the cloud deck in the world (in meters).
+option.CLOUD_HEIGHT=மேக உயரம்
+option.CLOUD_HEIGHT.comment=உலகில் மேக அடுக்கின் இயற்பியல் உயரத்தை (Y-நிலை) அமைக்கவும் (மீட்டரில்).
 
-value.CLOUD_HEIGHT.1=Low (~110m)
-value.CLOUD_HEIGHT.2=Standard (~160m)
-value.CLOUD_HEIGHT.3=High (~240m)
+value.CLOUD_HEIGHT.1=குறைந்த (~110மீ)
+value.CLOUD_HEIGHT.2=நிலையான (~160மீ)
+value.CLOUD_HEIGHT.3=உயர் (~240மீ)
 
-option.CLOUD_THICKNESS=Cloud Thickness
-option.CLOUD_THICKNESS.comment=Configure the vertical thickness and volume of the clouds.
+option.CLOUD_THICKNESS=மேக தடிமன்
+option.CLOUD_THICKNESS.comment=மேகங்களின் செங்குத்து தடிமன் மற்றும் அளவை உள்ளமைக்கவும்.
 
-value.CLOUD_THICKNESS.1=Thin (Cirrus)
-value.CLOUD_THICKNESS.2=Standard (Cumulus)
-value.CLOUD_THICKNESS.3=Dense (Stormy)
+value.CLOUD_THICKNESS.1=மெல்லிய (Cirrus)
+value.CLOUD_THICKNESS.2=நிலையான (Cumulus)
+value.CLOUD_THICKNESS.3=அடர்த்தியான (புயல்)
 
-option.CLOUD_DISTANCE=Cloud Render Distance
-option.CLOUD_DISTANCE.comment=Maximum draw distance for volumetric clouds. Quality profiles increase it automatically.
-value.CLOUD_DISTANCE.1=Near
-value.CLOUD_DISTANCE.2=Standard
-value.CLOUD_DISTANCE.3=Far
-value.CLOUD_DISTANCE.4=Very Far
+option.CLOUD_DISTANCE=மேக காட்சி தூரம்
+option.CLOUD_DISTANCE.comment=தொகுதி மேகங்களுக்கான அதிகபட்ச வரைதல் தூரம். தர சுயவிவரங்கள் அதை தானாகவே அதிகரிக்கும்.
+value.CLOUD_DISTANCE.1=அருகில்
+value.CLOUD_DISTANCE.2=நிலையான
+value.CLOUD_DISTANCE.3=தொலைவில்
+value.CLOUD_DISTANCE.4=மிக தொலைவில்
 
 option.CLOUD_SHADOWS=மேக நிழல்கள்
-option.CLOUD_SHADOWS.comment=Adds transparent procedural shadows from volumetric cloud density onto terrain. Balanced by quality profiles.
-option.CLOUD_SHADOW_STRENGTH=Cloud Shadow Strength
-option.CLOUD_SHADOW_STRENGTH.comment=Controls how visible and dramatic transparent cloud shadows are.
-value.CLOUD_SHADOW_STRENGTH.1=Soft
-value.CLOUD_SHADOW_STRENGTH.2=Balanced
-value.CLOUD_SHADOW_STRENGTH.3=Dramatic
+option.CLOUD_SHADOWS.comment=தொகுதி மேக அடர்த்தியிலிருந்து வெளிப்படையான செயல்முறை நிழல்களை நிலப்பரப்பில் சேர்க்கிறது. தர சுயவிவரங்களால் சமநிலைப்படுத்தப்படுகிறது.
+option.CLOUD_SHADOW_STRENGTH=மேக நிழல் வலிமை
+option.CLOUD_SHADOW_STRENGTH.comment=வெளிப்படையான மேக நிழல்கள் எவ்வளவு தெரியும் மற்றும் வியத்தகுவானது என்பதைக் கட்டுப்படுத்துகிறது.
+value.CLOUD_SHADOW_STRENGTH.1=மென்மையான
+value.CLOUD_SHADOW_STRENGTH.2=சமச்சீரான
+value.CLOUD_SHADOW_STRENGTH.3=வியத்தகு
 
-option.GODRAYS=சூரிய கதிர்கள்
+option.GODRAYS=சூரிய கதிர்கள் (Godrays)
 option.GODRAYS.comment=Adds physically-inspired volumetric single-scattering sun shafts with Beer-Lambert extinction, Mie phase and shadow-map occlusion.
-option.GODRAYS_QUALITY=Godrays Quality
+option.GODRAYS_QUALITY=Godrays தரம்
 option.GODRAYS_QUALITY.comment=Controls the sample count and integration distance of physically-based volumetric godrays.
-value.GODRAYS_QUALITY.1=Fast
-value.GODRAYS_QUALITY.2=Balanced
-value.GODRAYS_QUALITY.3=High
+value.GODRAYS_QUALITY.1=வேகமான
+value.GODRAYS_QUALITY.2=சமச்சீரான
+value.GODRAYS_QUALITY.3=உயர்
 
-option.AURORA_MODE=Aurora Borealis
-option.AURORA_MODE.comment=Control the display of realistic flowing auroras on the night sky.
+option.AURORA_MODE=அரோரா போரியாலிஸ்
+option.AURORA_MODE.comment=இரவு வானத்தில் யதார்த்தமான ஓடும் அரோராக்களின் காட்சியைக் கட்டுப்படுத்தவும்.
 
-value.AURORA_MODE.0=Disabled
-value.AURORA_MODE.1=Only in Cold Biomes
-value.AURORA_MODE.2=Always Enabled
+value.AURORA_MODE.0=முடக்கப்பட்டது
+value.AURORA_MODE.1=குளிர் உயிரியங்களில் மட்டும்
+value.AURORA_MODE.2=எப்போதும் இயக்கப்பட்டுள்ளது
 
-option.AURORA_SPEED=Aurora Speed
-option.AURORA_SPEED.comment=Control the waving and flowing speed of the northern lights.
+option.AURORA_SPEED=அரோரா வேகம்
+option.AURORA_SPEED.comment=வட ஒளிகளின் அசைவு மற்றும் ஓட்ட வேகத்தைக் கட்டுப்படுத்தவும்.
 
-value.AURORA_SPEED.1=Slow
-value.AURORA_SPEED.2=Standard
-value.AURORA_SPEED.3=Fast
+value.AURORA_SPEED.1=மெதுவான
+value.AURORA_SPEED.2=நிலையான
+value.AURORA_SPEED.3=வேகமான
 
-option.AURORA_STRENGTH=Aurora Brightness
-option.AURORA_STRENGTH.comment=Control the overall glow brightness of the northern lights.
+option.AURORA_STRENGTH=அரோரா பிரகாசம்
+option.AURORA_STRENGTH.comment=வட ஒளிகளின் ஒட்டுமொத்த ஒளிர்வு பிரகாசத்தைக் கட்டுப்படுத்தவும்.
 
-value.AURORA_STRENGTH.1=Soft
-value.AURORA_STRENGTH.2=Standard
-value.AURORA_STRENGTH.3=Glowing
+value.AURORA_STRENGTH.1=மென்மையான
+value.AURORA_STRENGTH.2=நிலையான
+value.AURORA_STRENGTH.3=ஒளிரும்
 
-option.NEBULA_BRIGHTNESS=Milky Way Brightness
-option.NEBULA_BRIGHTNESS.comment=Adjust the glow brightness of the diagonal brownish galactic nebula at night.
+option.NEBULA_BRIGHTNESS=பால்வெளி பிரகாசம்
+option.NEBULA_BRIGHTNESS.comment=இரவில் மூலைவிட்ட பழுப்பு நிற விண்மீன் திரள் நெபுலாவின் ஒளிர்வு பிரகாசத்தை சரிசெய்யவும்.
 
-value.NEBULA_BRIGHTNESS.1=Dim
-value.NEBULA_BRIGHTNESS.2=Standard
-value.NEBULA_BRIGHTNESS.3=Bright
+value.NEBULA_BRIGHTNESS.1=மங்கலான
+value.NEBULA_BRIGHTNESS.2=நிலையான
+value.NEBULA_BRIGHTNESS.3=பிரகாசமான
 
-option.STARS_BRIGHTNESS=Stars Brightness
-option.STARS_BRIGHTNESS.comment=Control the brightness and sparkling glow of the stars at night.
+option.STARS_BRIGHTNESS=நட்சத்திர பிரகாசம்
+option.STARS_BRIGHTNESS.comment=இரவில் நட்சத்திரங்களின் பிரகாசம் மற்றும் மின்னும் ஒளிர்வைக் கட்டுப்படுத்தவும்.
 
-value.STARS_BRIGHTNESS.1=Faint
-value.STARS_BRIGHTNESS.2=Standard
-value.STARS_BRIGHTNESS.3=Brilliant
+value.STARS_BRIGHTNESS.1=மங்கலான
+value.STARS_BRIGHTNESS.2=நிலையான
+value.STARS_BRIGHTNESS.3=பிரகாசமான
 
-option.STARS_AMOUNT=Stars Density
-option.STARS_AMOUNT.comment=Control the overall amount and density of the stars in the sky.
+option.STARS_AMOUNT=நட்சத்திர அடர்த்தி
+option.STARS_AMOUNT.comment=வானத்தில் நட்சத்திரங்களின் மொத்த அளவு மற்றும் அடர்த்தியைக் கட்டுப்படுத்தவும்.
 
-value.STARS_AMOUNT.1=Few
-value.STARS_AMOUNT.2=Standard
-value.STARS_AMOUNT.3=Dense
+value.STARS_AMOUNT.1=சில
+value.STARS_AMOUNT.2=நிலையான
+value.STARS_AMOUNT.3=அடர்த்தியான
 
-option.RAINBOW_STRENGTH=Rainbow Intensity
-option.RAINBOW_STRENGTH.comment=Configure the brightness and color saturation of the post-rain rainbow.
+option.RAINBOW_STRENGTH=வானவில் தீவிரம்
+option.RAINBOW_STRENGTH.comment=மழைக்குப் பிந்தைய வானவில்லின் பிரகாசம் மற்றும் நிற செறிவை உள்ளமைக்கவும்.
 
-value.RAINBOW_STRENGTH.1=Subtle
-value.RAINBOW_STRENGTH.2=Balanced
-value.RAINBOW_STRENGTH.3=Vivid
+value.RAINBOW_STRENGTH.1=நுணுக்கமான
+value.RAINBOW_STRENGTH.2=சமச்சீரான
+value.RAINBOW_STRENGTH.3=துடிப்பான
 
-option.COZY_LIGHTS=Torch Flickering
-option.COZY_LIGHTS.comment=Enable warm, cozy, real-time flickering animations for torches, campfires, and lanterns.
+option.COZY_LIGHTS=தீப்பந்த மின்னல்
+option.COZY_LIGHTS.comment=தீப்பந்தங்கள், முகாம் தீ மற்றும் விளக்குகளுக்கான சூடான, வசதியான, நிகழ்நேர மின்னல் அசைவூட்டங்களை இயக்கவும்.
 
-option.WET_REFLECTIONS=Rain Wetness Reflections
-option.WET_REFLECTIONS.comment=When raining, solid blocks like ground, grass, and stone become wet, dark, and glossy under the sky.
+option.WET_REFLECTIONS=மழை ஈரப்பத பிரதிபலிப்புகள்
+option.WET_REFLECTIONS.comment=மழை பெய்யும்போது, ​​தரை, புல் மற்றும் கல் போன்ற திடமான தொகுதிகள் வானத்தின் கீழ் ஈரமாகவும், இருண்டதாகவும், பளபளப்பாகவும் மாறும்.
 
-option.GROUND_MIST=Low Ground Mist (Y=62-66)
-option.GROUND_MIST.comment=Enable soft, golden-white morning/evening fog sheets that slide over water and ice at dawn and dusk.
+option.GROUND_MIST=தாழ்வான தரை மூடுபனி (Y=62-66)
+option.GROUND_MIST.comment=விடியலிலும் அந்தி நேரத்திலும் தண்ணீர் மற்றும் பனிக்கட்டியின் மேல் நகரும் மென்மையான, தங்க-வெள்ளை காலை/மாலை பனிப்படலங்களை இயக்கவும்.
 
-option.FOG_DENSITY_LEVEL=Fog Density
-option.FOG_DENSITY_LEVEL.comment=Control the strength of atmospheric horizon fog.
+option.FOG_DENSITY_LEVEL=மூடுபனி அடர்த்தி
+option.FOG_DENSITY_LEVEL.comment=வளிமண்டல அடிவான மூடுபனியின் வலிமையைக் கட்டுப்படுத்தவும்.
 
-value.FOG_DENSITY_LEVEL.1=Low
-value.FOG_DENSITY_LEVEL.2=Medium
-value.FOG_DENSITY_LEVEL.3=High
+value.FOG_DENSITY_LEVEL.1=குறைந்த
+value.FOG_DENSITY_LEVEL.2=நடுத்தர
+value.FOG_DENSITY_LEVEL.3=உயர்
 
-option.EXPOSURE=Exposure Brightness
-option.EXPOSURE.comment=Control the overall brightness of the image.
+option.EXPOSURE=வெளிப்பாடு பிரகாசம்
+option.EXPOSURE.comment=படத்தின் ஒட்டுமொத்த பிரகாசத்தைக் கட்டுப்படுத்தவும்.
 
-value.EXPOSURE.1=Muted
-value.EXPOSURE.2=Balanced
-value.EXPOSURE.3=Vibrant
+value.EXPOSURE.1=மங்கலான
+value.EXPOSURE.2=சமச்சீரான
+value.EXPOSURE.3=துடிப்பான
 
-option.COLOR_SATURATION=Color Vibrancy
-option.COLOR_SATURATION.comment=Control the non-linear saturation of screen colors. Makes foliage look emerald and skies lush.
+option.COLOR_SATURATION=நிற உயிரோட்டம்
+option.COLOR_SATURATION.comment=திரை வண்ணங்களின் நேரியல் அல்லாத செறிவைக் கட்டுப்படுத்தவும். இலைகள் மரகதம் போலவும் வானம் செழிப்பாகவும் தோன்றும்.
 
-value.COLOR_SATURATION.1=Muted
-value.COLOR_SATURATION.2=Balanced
-value.COLOR_SATURATION.3=Colorful
-value.COLOR_SATURATION.4=Vivid
+value.COLOR_SATURATION.1=மங்கலான
+value.COLOR_SATURATION.2=சமச்சீரான
+value.COLOR_SATURATION.3=வண்ணமயமான
+value.COLOR_SATURATION.4=துடிப்பான
 
-option.CONTRAST=Image Contrast
-option.CONTRAST.comment=Choose the tone mapping and contrast curve style.
+option.CONTRAST=பட மாறுபாடு
+option.CONTRAST.comment=டோன் மேப்பிங் மற்றும் மாறுபாடு வளைவு பாணியைத் தேர்ந்தெடுக்கவும்.
 
-value.CONTRAST.1=Soft
-value.CONTRAST.2=Filmic (ACES)
-value.CONTRAST.3=Intense (High Contrast)
+value.CONTRAST.1=மென்மையான
+value.CONTRAST.2=திரைப்பட (ACES)
+value.CONTRAST.3=தீவிரமான (உயர் மாறுபாடு)
 
-option.TAA=Temporal Anti-Aliasing (TAA)
-option.TAA.comment=Temporal resolve with motion reprojection and neighborhood clipping. Reduces shimmering and jagged edges on high presets.
-option.TAA_STRENGTH=TAA Strength
-option.TAA_STRENGTH.comment=Controls history blending. Higher is more stable but can be softer during motion.
-value.TAA_STRENGTH.1=Light
-value.TAA_STRENGTH.2=Balanced
-value.TAA_STRENGTH.3=Stable
+option.TAA=தற்காலிக ஆன்டி-அலியாசிங் (TAA)
+option.TAA.comment=இயக்க மறுஎறிதல் மற்றும் அண்டை பகுதி வெட்டுதலுடன் தற்காலிக தீர்வு. உயர் முன்னமைப்புகளில் மின்னலையும் பல் போன்ற விளிம்புகளையும் குறைக்கிறது.
+option.TAA_STRENGTH=TAA வலிமை
+option.TAA_STRENGTH.comment=வரலாற்று கலவையைக் கட்டுப்படுத்துகிறது. அதிகமானது நிலையானது ஆனால் இயக்கத்தின் போது மென்மையாக இருக்கலாம்.
+value.TAA_STRENGTH.1=இலகுவான
+value.TAA_STRENGTH.2=சமச்சீரான
+value.TAA_STRENGTH.3=நிலையான
 
-option.VIGNETTE=Vignette Effect
-option.VIGNETTE.comment=Enable subtle darkening at screen edges for improved focus.
+option.VIGNETTE=விக்னெட் விளைவு
+option.VIGNETTE.comment=மேம்பட்ட கவனத்திற்காக திரை விளிம்புகளில் நுட்பமான இருள் இயக்கவும்.
 
-option.WATER_RIFFLES=Water Ripple Strength
+option.WATER_RIFFLES=நீர் அலை வலிமை
 option.WATER_RIFFLES.comment=Adjust the waviness and intensity of the fine normal map ripples on the water.
 
-value.WATER_RIFFLES.1=Calm
-value.WATER_RIFFLES.2=Standard
-value.WATER_RIFFLES.3=Choppy
+value.WATER_RIFFLES.1=அமைதியான
+value.WATER_RIFFLES.2=நிலையான
+value.WATER_RIFFLES.3=அலைபாய்ந்த
 
-option.WATER_SPECULAR_STRENGTH=Water Specular Glow
+option.WATER_SPECULAR_STRENGTH=நீர் பளபளப்பு ஒளிர்வு
 option.WATER_SPECULAR_STRENGTH.comment=Adjust the brightness of sun/moon reflections on the water ripples.
 
-value.WATER_SPECULAR_STRENGTH.1=Soft
-value.WATER_SPECULAR_STRENGTH.2=Standard
-value.WATER_SPECULAR_STRENGTH.3=Glinting
+value.WATER_SPECULAR_STRENGTH.1=மென்மையான
+value.WATER_SPECULAR_STRENGTH.2=நிலையான
+value.WATER_SPECULAR_STRENGTH.3=மின்னும்
 
-option.SHADOW_SOFTNESS=Shadow Softness
-option.SHADOW_SOFTNESS.comment=Controls how soft and diffuse the shadow edges appear. Uses rotated Poisson disk filtering for smooth penumbra.
+option.SHADOW_SOFTNESS=நிழல் மென்மை
+option.SHADOW_SOFTNESS.comment=நிழல் விளிம்புகள் எவ்வளவு மென்மையாகவும் பரவலாகவும் தோன்றும் என்பதைக் கட்டுப்படுத்துகிறது. மென்மையான அரை நிழலுக்கு சுழற்றப்பட்ட பாய்சன் வட்டு வடிகட்டலைப் பயன்படுத்துகிறது.
 
-value.SHADOW_SOFTNESS.1=Sharp
-value.SHADOW_SOFTNESS.2=Soft
-value.SHADOW_SOFTNESS.3=Ultra Soft
+value.SHADOW_SOFTNESS.1=கூர்மையான
+value.SHADOW_SOFTNESS.2=மென்மையான
+value.SHADOW_SOFTNESS.3=அதி மென்மையான
 
 # ==============================================================================
 # Sun & Moon Lighting (extended)
 # ==============================================================================
 screen.SUN_MOON=சூரியன் மற்றும் சந்திரன்
-screen.SUN_MOON.comment=Fine-tune sun & moon intensity, colour temperature, and atmospheric effects.
+screen.SUN_MOON.comment=சூரியன் மற்றும் சந்திரனின் தீவிரம், நிற வெப்பநிலை மற்றும் வளிமண்டல விளைவுகளை நுணுக்கமாக சரிசெய்யவும்.
 
-option.SUN_INTENSITY=Sun Intensity
-option.SUN_INTENSITY.comment=Master brightness of direct sunlight. Higher = stronger daytime contrast.
-value.SUN_INTENSITY.1=Dim
-value.SUN_INTENSITY.2=Standard
-value.SUN_INTENSITY.3=Bright
-value.SUN_INTENSITY.4=Blazing
+option.SUN_INTENSITY=சூரிய தீவிரம்
+option.SUN_INTENSITY.comment=நேரடி சூரிய ஒளியின் முதன்மை பிரகாசம். அதிகமானது = வலுவான பகல் மாறுபாடு.
+value.SUN_INTENSITY.1=மங்கலான
+value.SUN_INTENSITY.2=நிலையான
+value.SUN_INTENSITY.3=உயர்
+value.SUN_INTENSITY.4=கொழுந்துவிட்டு எரியும்
 
-option.MOON_INTENSITY=Moon Intensity
-option.MOON_INTENSITY.comment=Master brightness of moonlight. Higher = brighter, more visible nights.
-value.MOON_INTENSITY.1=Pitch Night
-value.MOON_INTENSITY.2=Standard
-value.MOON_INTENSITY.3=Bright Moon
-value.MOON_INTENSITY.4=Full Night
+option.MOON_INTENSITY=சந்திர தீவிரம்
+option.MOON_INTENSITY.comment=நிலவொளியின் முதன்மை பிரகாசம். அதிகமானது = பிரகாசமான, தெரியும் இரவுகள்.
+value.MOON_INTENSITY.1=காரிருள் இரவு
+value.MOON_INTENSITY.2=நிலையான
+value.MOON_INTENSITY.3=பிரகாசமான நிலவு
+value.MOON_INTENSITY.4=முழு இரவு
 
-option.SUN_TEMPERATURE=Sun Colour Temperature
-option.SUN_TEMPERATURE.comment=Shifts the sun's Kelvin curve. Realistic uses Tanner Helland blackbody; warm = golden; cool = neutral white.
-value.SUN_TEMPERATURE.1=Cool / Neutral
-value.SUN_TEMPERATURE.2=Realistic
-value.SUN_TEMPERATURE.3=Warm Golden
+option.SUN_TEMPERATURE=சூரிய நிற வெப்பநிலை
+option.SUN_TEMPERATURE.comment=சூரியனின் கெல்வின் வளைவை மாற்றுகிறது. யதார்த்தமானது டானர் ஹெல்லண்ட் கருந்துளையைப் பயன்படுத்துகிறது; சூடான = தங்கம்; குளிர்ந்த = நடுநிலை வெள்ளை.
+value.SUN_TEMPERATURE.1=குளிர்ந்த / நடுநிலை
+value.SUN_TEMPERATURE.2=யதார்த்தமான
+value.SUN_TEMPERATURE.3=சூடான தங்கம்
 
-option.MOON_TEMPERATURE=Moon Colour Temperature
-option.MOON_TEMPERATURE.comment=Tint of the moonlight. Icy = bluish cold; Silver = realistic 4100K; Warm = harvest-moon cream.
-value.MOON_TEMPERATURE.1=Icy Blue
-value.MOON_TEMPERATURE.2=Silver (Realistic)
-value.MOON_TEMPERATURE.3=Warm Cream
+option.MOON_TEMPERATURE=சந்திர நிற வெப்பநிலை
+option.MOON_TEMPERATURE.comment=நிலவொளியின் நிறம். பனிக்கட்டி = நீலம் கலந்த குளிர்ச்சி; வெள்ளி = யதார்த்தமான 4100K; சூடான = அறுவடை-நிலவு கிரீம்.
+value.MOON_TEMPERATURE.1=பனிக்கட்டி நீலம்
+value.MOON_TEMPERATURE.2=வெள்ளி (யதார்த்தமான)
+value.MOON_TEMPERATURE.3=சூடான கிரீம்
 
-option.SUN_HALO=Sun Halo (Mie Scatter)
-option.SUN_HALO.comment=Adds a soft warm glow on terrain when looking near the sun (Mie forward-scattering).
+option.SUN_HALO=சூரிய வளையம் (மை சிதறல்)
+option.SUN_HALO.comment=சூரியனுக்கு அருகில் பார்க்கும்போது நிலப்பரப்பில் மென்மையான சூடான ஒளிர்வைச் சேர்க்கிறது (மை முன்னோக்கி சிதறல்).
 
-option.SUNRISE_GLOW=Enhanced Sunrise/Sunset Glow
-option.SUNRISE_GLOW.comment=Enables stronger warm back-scatter that wraps around surfaces facing away from the low sun.
+option.SUNRISE_GLOW=மேம்படுத்தப்பட்ட சூரிய உதயம்/மறைவு ஒளிர்வு
+option.SUNRISE_GLOW.comment=தாழ்வான சூரியனிலிருந்து விலகிச் செல்லும் மேற்பரப்புகளைச் சுற்றி மடிக்கும் வலுவான சூடான பின்-சிதறலை இயக்குகிறது.
 
 # ==============================================================================
 # Extended shadow settings
 # ==============================================================================
-option.SHADOW_DISTANCE=Shadow Distance
-option.SHADOW_DISTANCE.comment=Maximum distance at which dynamic shadows are rendered before fading out.
-value.SHADOW_DISTANCE.1=Near (60m)
-value.SHADOW_DISTANCE.2=Standard (80m)
-value.SHADOW_DISTANCE.3=Far (120m)
-value.SHADOW_DISTANCE.4=Ultra (160m)
+option.SHADOW_DISTANCE=நிழல் தூரம்
+option.SHADOW_DISTANCE.comment=மங்குவதற்கு முன் டைனமிக் நிழல்கள் வழங்கப்படும் அதிகபட்ச தூரம்.
+value.SHADOW_DISTANCE.1=அருகில் (60மீ)
+value.SHADOW_DISTANCE.2=நிலையான (80மீ)
+value.SHADOW_DISTANCE.3=தொலைவில் (120மீ)
+value.SHADOW_DISTANCE.4=அல்ட்ரா (160மீ)
 
-option.AMBIENT_BRIGHTNESS=Shadow Lift / Ambient
-option.AMBIENT_BRIGHTNESS.comment=Controls how dark shadowed areas appear at night and in caves.
-value.AMBIENT_BRIGHTNESS.1=Dark
-value.AMBIENT_BRIGHTNESS.2=Standard
-value.AMBIENT_BRIGHTNESS.3=Lifted (Bright)
+option.AMBIENT_BRIGHTNESS=நிழல் தூக்கம் / சுற்றுப்புற
+option.AMBIENT_BRIGHTNESS.comment=இரவிலும் குகைகளிலும் நிழலான பகுதிகள் எவ்வளவு இருட்டாகத் தோன்றும் என்பதைக் கட்டுப்படுத்துகிறது.
+value.AMBIENT_BRIGHTNESS.1=இருண்ட
+value.AMBIENT_BRIGHTNESS.2=நிலையான
+value.AMBIENT_BRIGHTNESS.3=உயர்த்தப்பட்ட (பிரகாசமான)
 
-option.SHADOW_TINT=Shadow Tint
-option.SHADOW_TINT.comment=Tints daytime shadows. Real-world shadows under a blue sky have a subtle cool tint.
+option.SHADOW_TINT=நிழல் நிறம்
+option.SHADOW_TINT.comment=பகல்நேர நிழல்களை நிறமூட்டுகிறது. நீல வானத்தின் கீழ் உண்மையான உலக நிழல்களுக்கு நுட்பமான குளிர்ந்த நிறம் உள்ளது.
 value.SHADOW_TINT.1=Neutral Gray
 value.SHADOW_TINT.2=Cool Blue (Realistic)
 value.SHADOW_TINT.3=Warm
 
-option.LIGHT_WRAP=Light Wrap
-option.LIGHT_WRAP.comment=Softens the terminator between lit and unlit surfaces. Realistic = physical Lambert; Soft = pleasant for screenshots.
-value.LIGHT_WRAP.1=Realistic (Lambert)
-value.LIGHT_WRAP.2=Soft Wrap
-value.LIGHT_WRAP.3=Stylized
+option.LIGHT_WRAP=ஒளி மடிப்பு
+option.LIGHT_WRAP.comment=ஒளியூட்டப்பட்ட மற்றும் ஒளியூட்டப்படாத மேற்பரப்புகளுக்கு இடையிலான முனையத்தை மென்மையாக்குகிறது. யதார்த்தமான = இயற்பியல் லாம்பர்ட்; மென்மையான = ஸ்கிரீன்ஷாட்களுக்கு இனிமையானது.
+value.LIGHT_WRAP.1=யதார்த்தமான (லாம்பர்ட்)
+value.LIGHT_WRAP.2=மென்மையான மடிப்பு
+value.LIGHT_WRAP.3=பாணியாக்கப்பட்ட
 
 # v0.2.9 — water/underwater option value labels (English fallback)
-value.WATER_WAVE_SCALE.1=Calm
-value.WATER_WAVE_SCALE.2=Standard
-value.WATER_WAVE_SCALE.3=Choppy
-value.WATER_WAVE_SCALE.4=Stormy
-value.WATER_WAVE_DETAIL.1=Coarse
-value.WATER_WAVE_DETAIL.2=Standard
-value.WATER_WAVE_DETAIL.3=Dense
-value.UNDERWATER_NIGHT_DARKNESS.1=Moonlit Pool
-value.UNDERWATER_NIGHT_DARKNESS.2=Dim
-value.UNDERWATER_NIGHT_DARKNESS.3=True Night
-value.UNDERWATER_NIGHT_DARKNESS.4=Pitch Dark
+value.WATER_WAVE_SCALE.1=அமைதியான
+value.WATER_WAVE_SCALE.2=நிலையான
+value.WATER_WAVE_SCALE.3=அலைபாய்ந்த
+value.WATER_WAVE_SCALE.4=புயல்
+value.WATER_WAVE_DETAIL.1=கரடுமுரடான
+value.WATER_WAVE_DETAIL.2=நிலையான
+value.WATER_WAVE_DETAIL.3=அடர்த்தியான
+value.UNDERWATER_NIGHT_DARKNESS.1=நிலவொளி குளம்
+value.UNDERWATER_NIGHT_DARKNESS.2=மங்கலான
+value.UNDERWATER_NIGHT_DARKNESS.3=உண்மையான இரவு
+value.UNDERWATER_NIGHT_DARKNESS.4=காரிருள்
 # ==============================================================================
 # Experimental Tab & New Sky (v1.1.0)
 # ==============================================================================
@@ -342,13 +342,13 @@ screen.EXPERIMENTAL=சோதனை
 screen.EXPERIMENTAL.comment=சோதனை
 
 option.SKY_MODE=புதிய வானம் (வளிமண்டல சிதறல்)
-option.SKY_STYLE=Sky Style
+option.SKY_STYLE=வான பாணி
 option.SKY_STYLE.comment=option.SKY_STYLE.comment=Artistic direction for the physical sky. Realistic = true angular sizes & neutral colours (astronomy look). Semi-realistic = readable sun/moon (x2.8), richer colour, soft glow. Fantasy = grand sun/moon (x5.5), big corona, vivid teal/crimson/indigo palette.
 option.SKY_MODE.comment=EXPERIMENTAL — off in all profiles. Gradient (legacy, default) or Physical realtime scattering with true multiple scattering (Rayleigh+Mie+Ozone, 1st+2nd+3rd order). Enable manually in this tab.
-value.SKY_MODE.0=Gradient (Legacy)
-value.SKY_STYLE.0=Realistic
-value.SKY_STYLE.1=Semi-realistic
-value.SKY_STYLE.2=Fantasy
+value.SKY_MODE.0=சாய்வு (பழையது)
+value.SKY_STYLE.0=யதார்த்தமான
+value.SKY_STYLE.1=அரை-யதார்த்தமான
+value.SKY_STYLE.2=கற்பனை
 value.SKY_MODE.1=Realtime Scattering
 
 option.SKY_QUALITY=வான சிதறல் தரம்
@@ -356,3 +356,61 @@ option.SKY_QUALITY.comment=வான சிதறல் தரம்
 value.SKY_QUALITY.1=வேகமான
 value.SKY_QUALITY.2=நிலையான
 value.SKY_QUALITY.3=உயர்
+
+# --- Auto-added missing translations (v1.1.0 sync) ---
+option.FOLIAGE_SSS=தாவர SSS
+option.FOLIAGE_SSS.comment=ஒளிக்கு எதிராகப் பார்க்கும்போது இலைகள், புல் மற்றும் தாவரங்களுக்கான துணைமேற்பரப்பு சிதறலை (அரை வெளிப்படைத்தன்மை) இயக்குகிறது.
+option.GODRAYS_STRENGTH=Godrays தீவிரம்
+option.GODRAYS_STRENGTH.comment=தொகுதி ஒளிக்கற்றைகளின் பிரகாசம். நுணுக்கமான: மென்மையான வளிமண்டல மூடுபனி. சமச்சீரான: தெளிவாகத் தெரியும் கதிர்கள். வியத்தகு: துணிச்சலான சினிமா கதிர்கள்.
+value.GODRAYS_STRENGTH.1=நுணுக்கமான
+value.GODRAYS_STRENGTH.2=சமச்சீரான
+value.GODRAYS_STRENGTH.3=வியத்தகு
+option.SHOOTING_STARS=விண்கற்கள் (விழும் நட்சத்திரங்கள்)
+option.SHOOTING_STARS.comment=மீசோஸ்பியரில் நுழையும் இயற்பியல் அடிப்படையிலான விண்கற்கள் (~80-120 கிமீ). நீக்க ஒளி வளைவுகள், கருந்துளை பிளாஸ்மா நிறம் (3500-5500 K), அடிவானத்திற்கு அருகில் ரேலி அழிவு மற்றும் நெருப்புப் பந்துகளில் தொடர்ச்சியான அயனியாக்கச் சுவடுகளுடன் உண்மையான பெரிய வட்ட 3D வளைவுகளை வழங்குகிறது.
+option.SHOOTING_STARS_FREQUENCY=விண்கல் செயல்பாடு (ZHR)
+option.SHOOTING_STARS_FREQUENCY.comment=தோராயமான உச்சிப்புள்ளி மணிநேர விகிதம். அரிதான = மணிக்கு ~10 என்ற யதார்த்தமான பின்னணி. செயலில் = மிதமான மழை. புயல் = உச்ச அடர்த்தி (~100/மணி).
+value.SHOOTING_STARS_FREQUENCY.1=அரிதான (~10/மணி)
+value.SHOOTING_STARS_FREQUENCY.2=செயலில் மழை
+value.SHOOTING_STARS_FREQUENCY.3=விண்கல் புயல்
+option.SHOOTING_STARS_BRIGHTNESS=அளவு அளவுகோல்
+option.SHOOTING_STARS_BRIGHTNESS.comment=விண்கல் அளவு அளவுகோலில் முதன்மை பெருக்கி. மங்கலான = யதார்த்தமான சராசரி; பிரகாசமான = சினிமா தெரிவுநிலைக்காக நெருப்புப் பந்துகளை அளவிடுகிறது.
+value.SHOOTING_STARS_BRIGHTNESS.1=மங்கலான (யதார்த்தமான)
+value.SHOOTING_STARS_BRIGHTNESS.2=நிலையான
+value.SHOOTING_STARS_BRIGHTNESS.3=பிரகாசமான நெருப்புப் பந்துகள்
+value.CONTRAST.4=புகைப்படவியல் (AgX போன்றது)
+option.SPATIAL_AA_MODE=இடஞ்சார் ஆன்டி-அலியாசிங்
+option.SPATIAL_AA_MODE.comment=பிந்தைய செயலாக்க ஆன்டி-அலியாசிங் முறையைத் தேர்ந்தெடுக்கவும். FXAA வேகமானது மற்றும் மலிவானது. வடிவியல் விளிம்புகளில் சிறந்த தரத்திற்காக SMAA ஆழ இடையகத்தைப் பயன்படுத்துகிறது. TAA உடன் இணைக்கலாம்.
+value.SPATIAL_AA_MODE.0=நிறுத்தப்பட்டது
+value.SPATIAL_AA_MODE.1=FXAA (வேகமான)
+value.SPATIAL_AA_MODE.2=SMAA (தரம்)
+option.HEAT_SHIMMER=லாவாவின் மேல் வெப்ப அதிர்வு
+option.HEAT_SHIMMER.comment=லாவா மேற்பரப்புகளுக்கு மேலே ஒரு நுட்பமான திரை-இட வெப்ப சிதைவு விளைவை இயக்கவும்.
+option.HEAT_SHIMMER_STRENGTH=வெப்ப அதிர்வு வலிமை
+option.HEAT_SHIMMER_STRENGTH.comment=லாவாவிற்கு மேலே வெப்ப சிதைவின் தீவிரத்தைக் கட்டுப்படுத்துகிறது.
+value.HEAT_SHIMMER_STRENGTH.1=நுணுக்கமான
+value.HEAT_SHIMMER_STRENGTH.2=சமச்சீரான
+value.HEAT_SHIMMER_STRENGTH.3=வலுவான
+option.SSR=திரை-இட பிரதிபலிப்புகள் (SSR)
+option.SSR.comment=நீர், ஈரமான மேற்பரப்புகள் மற்றும் உலோக PBR தொகுதிகளில் நிகழ்நேர பிரதிபலிப்பு சூழலைச் சேர்க்கிறது. v1.0.4 இல் MED இலிருந்து மேலே இயக்கப்பட்டுள்ளது.
+option.SSR_QUALITY=SSR தரம்
+option.SSR_QUALITY.comment=திரை-இட பிரதிபலிப்புகளின் துல்லியம் மற்றும் கதிர் தூரத்தைக் கட்டுப்படுத்துகிறது. அதிகமானது = கூர்மையான பிரதிபலிப்புகள் ஆனால் அதிக GPU செலவு.
+value.SSR_QUALITY.1=வேகமான (12 படிகள்)
+value.SSR_QUALITY.2=சமச்சீரான (24 படிகள்)
+value.SSR_QUALITY.3=உயர் (40 படிகள்)
+option.SSR_STRENGTH=SSR வலிமை
+option.SSR_STRENGTH.comment=பிரதிபலிக்கும் மேற்பரப்புகளில் பிரதிபலிக்கும் சூழல் எவ்வளவு தெரியும் மற்றும் முக்கியமானதாகத் தோன்றுகிறது என்பதைக் கட்டுப்படுத்துகிறது.
+option.WATER_WAVE_SCALE=அலை வீச்சு
+option.WATER_WAVE_SCALE.comment=நீர் மேற்பரப்பு அலைகளின் தெரியும் செங்குத்தான தன்மையைக் கட்டுப்படுத்துகிறது. அமைதியான = கண்ணாடி போன்றது, புயல் = கடுமையாக உடைந்த பிரதிபலிப்புகள்.
+option.WATER_WAVE_DETAIL=அலை விவரம்
+option.WATER_WAVE_DETAIL.comment=ஒரு தொகுதிக்கு எத்தனை சிறிய அலைகள் தோன்றும் என்பதைக் கட்டுப்படுத்துகிறது. கரடுமுரடான = சில பெரிய அலைகள், அடர்த்தியான = பல சிறிய அலைகள்.
+option.UNDERWATER_NIGHT_DARKNESS=நீருக்கடியில் இரவு இருள்
+option.UNDERWATER_NIGHT_DARKNESS.comment=இரவில் நீருக்கடியில் காட்சி எவ்வளவு இருட்டாகிறது என்பதைக் கட்டுப்படுத்துகிறது. நிலவொளி குளம் பிரகாசத்தைத் தக்க வைத்துக்கொள்கிறது; காரிருள் தீவிர உயிர்வாழ்வு பாணி இருளைத் தருகிறது.
+value.SSR_STRENGTH.1=நுணுக்கமான
+value.SSR_STRENGTH.2=சமச்சீரான
+value.SSR_STRENGTH.3=வலுவான
+option.PBR_DISTANCE=PBR காட்சி தூரம்
+option.PBR_DISTANCE.comment=PBR பளபளப்பான சிறப்பம்சங்களுக்கான அதிகபட்ச தூரம். தொலைதூர நிலப்பரப்பில் GPU ஐ சேமிக்கிறது. LOW க்கு அருகில் (16மீ), MED க்கு நிலையான (48மீ), HIGH/ULTRA க்கு தொலைவில் (128மீ), EXTREME க்கு வரம்பற்றது.
+value.PBR_DISTANCE.1=அருகில் (16மீ)
+value.PBR_DISTANCE.2=நிலையான (48மீ)
+value.PBR_DISTANCE.3=தொலைவில் (128மீ)
+value.PBR_DISTANCE.4=வரம்பற்றது

@@ -421,3 +421,17 @@ option.SKY_QUALITY.comment=Himmel-spreiingskvalitet
 value.SKY_QUALITY.1=Rask
 value.SKY_QUALITY.2=Standard
 value.SKY_QUALITY.3=Høg
+
+# --- Auto-added missing translations (v1.1.0 sync) ---
+option.GODRAYS_STRENGTH=Godrays-styrke
+option.GODRAYS_STRENGTH.comment=Lysstyrken til dei volumetriske lysstrålane. Subtil: mild atmosfærisk dis. Balansert: tydeleg synlege stråler. Dramatisk: dristige filmatiske stråler.
+value.GODRAYS_STRENGTH.1=Subtil
+value.GODRAYS_STRENGTH.2=Balansert
+value.GODRAYS_STRENGTH.3=Dramatisk
+option.HEAT_SHIMMER=Varmeskjelving Over Lava
+option.HEAT_SHIMMER.comment=Aktiver ein subtil screen-space varmeforvrengingseffekt over lavaoverflater.
+option.HEAT_SHIMMER_STRENGTH=Varmeskjelvingsstyrke
+option.HEAT_SHIMMER_STRENGTH.comment=Kontrollerer intensiteten til varmeforvrenginga over lava.
+value.HEAT_SHIMMER_STRENGTH.1=Subtil
+value.HEAT_SHIMMER_STRENGTH.2=Balansert
+value.HEAT_SHIMMER_STRENGTH.3=Sterk

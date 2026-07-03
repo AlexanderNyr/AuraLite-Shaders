@@ -10,13 +10,13 @@
 # ==============================================================================
 # Quality Profiles
 # ==============================================================================
-profile.VERY_LOW=Very Low
+profile.VERY_LOW=Sehr niedrig
 profile.VERY_LOW.comment=Fastest possible preset for very weak GPUs. Disables heavy effects.
 profile.LOW=Niedrig
 profile.MED=Mittel
 profile.HIGH=Hoch
 profile.ULTRA=Ultra
-profile.EXTREME=Extreme
+profile.EXTREME=Extrem
 profile.EXTREME.comment=Maximale experimentelle Qualität. Fügt SSAO/SAO-Kontaktambient-Occlusion hinzu. POM bleibt aus Stabilitätsgründen deaktiviert.
 profile.CUSTOM=Benutzerdefiniert
 profile.CUSTOM.comment=Benutzerdefinierte Einstellungen.
@@ -64,7 +64,7 @@ value.PBR_STRENGTH.1=Dezent
 value.PBR_STRENGTH.2=Standard
 value.PBR_STRENGTH.3=Spiegelnd
 
-option.SSAO=SSAO / SAO Occlusion
+option.SSAO=SSAO / SAO-Verdeckung
 option.SSAO.comment=Extremes Profil: Screen-Space Ambient Occlusion für Kontaktschatten in Ecken, unter Blöcken und an Geometrieüberschneidungen.
 option.SSAO_STRENGTH=SSAO-Stärke
 option.SSAO_STRENGTH.comment=Steuert die Tiefe der Screen-Space Ambient Occlusion. Nur aktiv, wenn SSAO eingeschaltet ist.
@@ -116,7 +116,7 @@ option.CLOUD_THICKNESS=Wolkendicke
 option.CLOUD_THICKNESS.comment=Konfiguriert die vertikale Dicke und das Volumen der Wolken.
 
 value.CLOUD_THICKNESS.1=Dünn (Cirrus)
-value.CLOUD_THICKNESS.2=Standard (Cumulus)
+value.CLOUD_THICKNESS.2=Standard (Kumulus)
 value.CLOUD_THICKNESS.3=Dicht (Gewitterwolken)
 
 option.CLOUD_DISTANCE=Wolken-Renderdistanz
@@ -126,21 +126,21 @@ value.CLOUD_DISTANCE.2=Standard
 value.CLOUD_DISTANCE.3=Fern
 value.CLOUD_DISTANCE.4=Sehr Fern
 
-option.CLOUD_SHADOWS=Cloud Shadows
-option.CLOUD_SHADOWS.comment=Adds transparent procedural shadows from volumetric cloud density onto terrain. Balanced by quality profiles.
-option.CLOUD_SHADOW_STRENGTH=Cloud Shadow Strength
-option.CLOUD_SHADOW_STRENGTH.comment=Controls how visible and dramatic transparent cloud shadows are.
-value.CLOUD_SHADOW_STRENGTH.1=Soft
-value.CLOUD_SHADOW_STRENGTH.2=Balanced
-value.CLOUD_SHADOW_STRENGTH.3=Dramatic
+option.CLOUD_SHADOWS=Wolkenschatten
+option.CLOUD_SHADOWS.comment=Fügt transparente prozedurale Schatten aus der volumetrischen Wolkendichte auf das Gelände hinzu. Wird durch Qualitätsprofile ausgeglichen.
+option.CLOUD_SHADOW_STRENGTH=Wolkenschatten-Stärke
+option.CLOUD_SHADOW_STRENGTH.comment=Steuert, wie sichtbar und ausgeprägt die transparenten Wolkenschatten sind.
+value.CLOUD_SHADOW_STRENGTH.1=Weich
+value.CLOUD_SHADOW_STRENGTH.2=Ausgeglichen
+value.CLOUD_SHADOW_STRENGTH.3=Dramatisch
 
-option.GODRAYS=Godrays / Sun Shafts
+option.GODRAYS=Godrays / Sonnenstrahlen
 option.GODRAYS.comment=Adds realistic screen-space sun shafts through sky gaps and behind geometry.
-option.GODRAYS_QUALITY=Godrays Quality
+option.GODRAYS_QUALITY=Godrays-Qualität
 option.GODRAYS_QUALITY.comment=Controls sample count and cost of godrays.
-value.GODRAYS_QUALITY.1=Fast
-value.GODRAYS_QUALITY.2=Balanced
-value.GODRAYS_QUALITY.3=High
+value.GODRAYS_QUALITY.1=Schnell
+value.GODRAYS_QUALITY.2=Ausgeglichen
+value.GODRAYS_QUALITY.3=Hoch
 
 option.AURORA_MODE=Nordlicht
 option.AURORA_MODE.comment=Steuert die Anzeige realistischer fließender Polarlichter am Nachthimmel.
@@ -229,13 +229,13 @@ value.CONTRAST.1=Weich
 value.CONTRAST.2=Filmisch (ACES)
 value.CONTRAST.3=Intensiv (Hoher Kontrast)
 
-option.TAA=Temporal Anti-Aliasing (TAA)
-option.TAA.comment=Temporal resolve with motion reprojection and neighborhood clipping. Reduces shimmering and jagged edges on high presets.
-option.TAA_STRENGTH=TAA Strength
-option.TAA_STRENGTH.comment=Controls history blending. Higher is more stable but can be softer during motion.
-value.TAA_STRENGTH.1=Light
-value.TAA_STRENGTH.2=Balanced
-value.TAA_STRENGTH.3=Stable
+option.TAA=Temporales Anti-Aliasing (TAA)
+option.TAA.comment=Temporale Auflösung mit Bewegungsreprojektion und Nachbarschafts-Clipping. Reduziert Flimmern und gezackte Kanten bei hohen Voreinstellungen.
+option.TAA_STRENGTH=TAA-Stärke
+option.TAA_STRENGTH.comment=Steuert die Verlaufsmischung. Höher ist stabiler, kann aber bei Bewegung weicher wirken.
+value.TAA_STRENGTH.1=Leicht
+value.TAA_STRENGTH.2=Ausgeglichen
+value.TAA_STRENGTH.3=Stabil
 
 option.VIGNETTE=Vignetten-Effekt
 option.VIGNETTE.comment=Aktiviert subtiles Abdunkeln an den Bildrändern für besseren Fokus.
@@ -285,7 +285,7 @@ option.SUN_TEMPERATURE=Sonnenfarbtemperatur
 option.SUN_TEMPERATURE.comment=Verschiebt die Kelvin-Kurve der Sonne. Realistisch nutzt Tanner-Helland-Schwarzkörper; warm = golden; kühl = neutralweiß.
 value.SUN_TEMPERATURE.1=Kühl / Neutral
 value.SUN_TEMPERATURE.2=Realistisch
-value.SUN_TEMPERATURE.3=Warm Golden
+value.SUN_TEMPERATURE.3=Warmes Gold
 
 option.MOON_TEMPERATURE=Mondfarbtemperatur
 option.MOON_TEMPERATURE.comment=Farbton des Mondlichts. Eisig = bläulich kalt; Silbern = realistisch 4100K; Warm = Erntemond-Creme.
@@ -328,17 +328,17 @@ value.LIGHT_WRAP.2=Weiche Umhüllung
 value.LIGHT_WRAP.3=Stilisiert
 
 # v0.2.9 — water/underwater option value labels (English fallback)
-value.WATER_WAVE_SCALE.1=Calm
+value.WATER_WAVE_SCALE.1=Ruhig
 value.WATER_WAVE_SCALE.2=Standard
-value.WATER_WAVE_SCALE.3=Choppy
-value.WATER_WAVE_SCALE.4=Stormy
-value.WATER_WAVE_DETAIL.1=Coarse
+value.WATER_WAVE_SCALE.3=Aufgewühlt
+value.WATER_WAVE_SCALE.4=Stürmisch
+value.WATER_WAVE_DETAIL.1=Grob
 value.WATER_WAVE_DETAIL.2=Standard
-value.WATER_WAVE_DETAIL.3=Dense
-value.UNDERWATER_NIGHT_DARKNESS.1=Moonlit Pool
-value.UNDERWATER_NIGHT_DARKNESS.2=Dim
-value.UNDERWATER_NIGHT_DARKNESS.3=True Night
-value.UNDERWATER_NIGHT_DARKNESS.4=Pitch Dark
+value.WATER_WAVE_DETAIL.3=Dicht
+value.UNDERWATER_NIGHT_DARKNESS.1=Mondbeschienener Teich
+value.UNDERWATER_NIGHT_DARKNESS.2=Dunkel
+value.UNDERWATER_NIGHT_DARKNESS.3=Echte Nacht
+value.UNDERWATER_NIGHT_DARKNESS.4=Stockfinster
 # ==============================================================================
 # Experimental Tab & New Sky (v1.1.0)
 # ==============================================================================
@@ -346,12 +346,12 @@ screen.EXPERIMENTAL=Experimentell
 screen.EXPERIMENTAL.comment=Experimentell
 
 option.SKY_MODE=Neuer Himmel (Atmosphärische Streuung)
-option.SKY_STYLE=Sky Style
+option.SKY_STYLE=Himmelsstil
 option.SKY_STYLE.comment=option.SKY_STYLE.comment=Artistic direction for the physical sky. Realistic = true angular sizes & neutral colours (astronomy look). Semi-realistic = readable sun/moon (x2.8), richer colour, soft glow. Fantasy = grand sun/moon (x5.5), big corona, vivid teal/crimson/indigo palette.
 option.SKY_MODE.comment=EXPERIMENTAL — off in all profiles. Gradient (legacy, default) or Physical realtime scattering with true multiple scattering (Rayleigh+Mie+Ozone, 1st+2nd+3rd order). Enable manually in this tab.
-value.SKY_MODE.0=Gradient (Legacy)
-value.SKY_STYLE.0=Realistic
-value.SKY_STYLE.1=Semi-realistic
+value.SKY_MODE.0=Verlauf (Legacy)
+value.SKY_STYLE.0=Realistisch
+value.SKY_STYLE.1=Halbrealistisch
 value.SKY_STYLE.2=Fantasy
 value.SKY_MODE.1=Realtime Scattering
 
@@ -360,3 +360,61 @@ option.SKY_QUALITY.comment=Himmelstreuungsqualität
 value.SKY_QUALITY.1=Schnell
 value.SKY_QUALITY.2=Standard
 value.SKY_QUALITY.3=Hoch
+
+# --- Auto-added missing translations (v1.1.0 sync) ---
+option.FOLIAGE_SSS=Vegetations-SSS
+option.FOLIAGE_SSS.comment=Aktiviert Subsurface Scattering (Lichtdurchlässigkeit) für Blätter, Gras und Pflanzen bei Gegenlicht.
+option.GODRAYS_STRENGTH=Godrays-Intensität
+option.GODRAYS_STRENGTH.comment=Helligkeit der volumetrischen Lichtschächte. Dezent: sanfter Dunst. Ausgeglichen: deutlich sichtbare Strahlen. Dramatisch: kräftige filmische Strahlen.
+value.GODRAYS_STRENGTH.1=Dezent
+value.GODRAYS_STRENGTH.2=Ausgeglichen
+value.GODRAYS_STRENGTH.3=Dramatisch
+option.SHOOTING_STARS=Meteore (Sternschnuppen)
+option.SHOOTING_STARS.comment=Physikalisch basierte Meteore, die in die Mesosphäre eintreten (~80-120 km). Rendert echte 3D-Großkreisbögen mit Ablationslichtkurven, Schwarzkörper-Plasmafarbe (3500-5500 K), Rayleigh-Extinktion nahe dem Horizont und anhaltenden Ionisationsspuren bei Feuerbällen.
+option.SHOOTING_STARS_FREQUENCY=Meteoraktivität (ZHR)
+option.SHOOTING_STARS_FREQUENCY.comment=Ungefähre zenitale Stundenrate. Sporadisch = realistischer Hintergrund von ~10 pro Stunde. Aktiv = leichter Schauer. Sturm = Spitzendichte (~100/Std).
+value.SHOOTING_STARS_FREQUENCY.1=Sporadisch (~10/Std)
+value.SHOOTING_STARS_FREQUENCY.2=Aktiver Schauer
+value.SHOOTING_STARS_FREQUENCY.3=Meteorsturm
+option.SHOOTING_STARS_BRIGHTNESS=Helligkeitsskala
+option.SHOOTING_STARS_BRIGHTNESS.comment=Hauptmultiplikator für die Meteor-Helligkeitsskala. Schwach = realistischer Durchschnitt; Hell = skaliert Feuerbälle für filmische Sichtbarkeit.
+value.SHOOTING_STARS_BRIGHTNESS.1=Schwach (Realistisch)
+value.SHOOTING_STARS_BRIGHTNESS.2=Standard
+value.SHOOTING_STARS_BRIGHTNESS.3=Helle Feuerbälle
+value.CONTRAST.4=Fotografisch (AgX-artig)
+option.SPATIAL_AA_MODE=Räumliches Anti-Aliasing
+option.SPATIAL_AA_MODE.comment=Wählt die Anti-Aliasing-Methode für die Nachbearbeitung. FXAA ist schnell und günstig. SMAA nutzt den Tiefenpuffer für bessere Qualität an Geometriekanten. Kann mit TAA kombiniert werden.
+value.SPATIAL_AA_MODE.0=Aus
+value.SPATIAL_AA_MODE.1=FXAA (Schnell)
+value.SPATIAL_AA_MODE.2=SMAA (Qualität)
+option.HEAT_SHIMMER=Hitzeflimmern über Lava
+option.HEAT_SHIMMER.comment=Aktiviert einen dezenten Screen-Space-Hitzeverzerrungseffekt über Lavaoberflächen.
+option.HEAT_SHIMMER_STRENGTH=Hitzeflimmern-Stärke
+option.HEAT_SHIMMER_STRENGTH.comment=Steuert die Intensität der Hitzeverzerrung über Lava.
+value.HEAT_SHIMMER_STRENGTH.1=Dezent
+value.HEAT_SHIMMER_STRENGTH.2=Ausgeglichen
+value.HEAT_SHIMMER_STRENGTH.3=Stark
+option.SSR=Screen-Space-Reflexionen (SSR)
+option.SSR.comment=Fügt eine in Echtzeit gespiegelte Umgebung auf Wasser, nassen Oberflächen und metallischen PBR-Blöcken hinzu. Ab v1.0.4 ab dem Profil Mittel aktiviert.
+option.SSR_QUALITY=SSR-Qualität
+option.SSR_QUALITY.comment=Steuert die Präzision und Strahldistanz der Screen-Space-Reflexionen. Höher = schärfere Reflexionen, aber höhere GPU-Last.
+value.SSR_QUALITY.1=Schnell (12 Schritte)
+value.SSR_QUALITY.2=Ausgeglichen (24 Schritte)
+value.SSR_QUALITY.3=Hoch (40 Schritte)
+option.SSR_STRENGTH=SSR-Stärke
+option.SSR_STRENGTH.comment=Steuert, wie sichtbar und ausgeprägt die gespiegelte Umgebung auf reflektierenden Oberflächen erscheint.
+option.WATER_WAVE_SCALE=Wellenamplitude
+option.WATER_WAVE_SCALE.comment=Steuert die sichtbare Steilheit der Wasseroberflächenwellen. Ruhig = spiegelglatt, Stürmisch = stark gebrochene Reflexionen.
+option.WATER_WAVE_DETAIL=Wellendetail
+option.WATER_WAVE_DETAIL.comment=Steuert, wie viele kleine Wellen pro Block erscheinen. Grob = wenige große Wellen, Dicht = viele kleine Wellen.
+option.UNDERWATER_NIGHT_DARKNESS=Unterwasser-Nachtdunkelheit
+option.UNDERWATER_NIGHT_DARKNESS.comment=Steuert, wie dunkel die Unterwasserszene nachts wird. Mondbeschienener Teich behält die Helligkeit; Stockfinster erzeugt extreme Survival-Dunkelheit.
+value.SSR_STRENGTH.1=Dezent
+value.SSR_STRENGTH.2=Ausgeglichen
+value.SSR_STRENGTH.3=Stark
+option.PBR_DISTANCE=PBR-Renderdistanz
+option.PBR_DISTANCE.comment=Maximale Distanz für PBR-Glanzlichter. Spart GPU-Leistung bei entferntem Gelände. Nah (16m) für Niedrig, Standard (48m) für Mittel, Fern (128m) für Hoch/Ultra, Unbegrenzt für Extrem.
+value.PBR_DISTANCE.1=Nah (16m)
+value.PBR_DISTANCE.2=Standard (48m)
+value.PBR_DISTANCE.3=Fern (128m)
+value.PBR_DISTANCE.4=Unbegrenzt

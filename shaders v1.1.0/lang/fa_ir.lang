@@ -6,7 +6,7 @@
 # ==============================================================================
 # Quality Profiles
 # ==============================================================================
-profile.VERY_LOW=خیلی پایین
+profile.VERY_LOW=بسیار پایین
 profile.VERY_LOW.comment=Fastest possible preset for very weak GPUs. Disables shadows, clouds, water waves, foliage waving, PBR and most extras.
 profile.LOW=پایین
 profile.LOW.comment=Lightweight preset for weak GPUs. Keeps cheap water/foliage motion, disables shadows, clouds and PBR.
@@ -14,327 +14,327 @@ profile.MED=متوسط
 profile.MED.comment=Balanced preset with 1024 shadows, standard clouds, PBR and atmospheric effects.
 profile.HIGH=بالا
 profile.HIGH.comment=High quality preset with 2048 shadows, farther clouds and full PBR, without SSAO.
-profile.ULTRA=اولترا
+profile.ULTRA=فوق‌العاده
 profile.ULTRA.comment=Ultra quality preset with 4096 shadows, very far clouds and balanced SSAO. POM remains disabled for stability.
-profile.EXTREME=اکستریم
+profile.EXTREME=شدید
 profile.EXTREME.comment=Maximum experimental quality. Pushes lighting, clouds, color and deep SSAO. POM remains disabled for stability.
 profile.CUSTOM=سفارشی
-profile.CUSTOM.comment=Custom user-modified settings.
+profile.CUSTOM.comment=تنظیمات سفارشی که توسط کاربر اصلاح شده است.
 
 screen.TRANSLATION_NOTICE=⚠ ترجمه‌ها ممکن است خطا داشته باشند
-screen.TRANSLATION_NOTICE.comment=Some localization strings may be inaccurate. If something looks strange, compare with the English original.
+screen.TRANSLATION_NOTICE.comment=برخی از رشته‌های ترجمه ممکن است نادرست باشند. اگر چیزی عجیب به نظر می‌رسد، آن را با نسخه اصلی انگلیسی مقایسه کنید.
 
 # Screens
 screen.LIGHTING=تنظیمات نورپردازی
-screen.LIGHTING.comment=Configure shadows, light colors, and brightness.
+screen.LIGHTING.comment=سایه‌ها، رنگ‌های نور و روشنایی را پیکربندی کنید.
 
 screen.FOLIAGE=تنظیمات پوشش گیاهی
-screen.FOLIAGE.comment=Configure waving animations for grass and leaves.
+screen.FOLIAGE.comment=انیمیشن‌های تکان‌خوردن را برای چمن و برگ‌ها پیکربندی کنید.
 
 screen.WATER=تنظیمات آب
-screen.WATER.comment=Configure waves, transparency, and water styling.
+screen.WATER.comment=موج‌ها، شفافیت و سبک آب را پیکربندی کنید.
 
 screen.CLOUDS_MENU=آسمان و ابرها
-screen.CLOUDS_MENU.comment=Configure the physical altitude, thickness, and style of 3D clouds and sky effects.
+screen.CLOUDS_MENU.comment=ارتفاع فیزیکی، ضخامت و سبک ابرهای سه‌بعدی و جلوه‌های آسمان را پیکربندی کنید.
 
 screen.POST_PROCESS=پس‌پردازش و مه
-screen.POST_PROCESS.comment=Configure exposure, fog, and cinematic effects.
+screen.POST_PROCESS.comment=نوردهی، مه و جلوه‌های سینمایی را پیکربندی کنید.
 
 # Options
-option.SHADOWS=Dynamic Shadows
-option.SHADOWS.comment=Enable or disable soft dynamic shadows from the sun and moon.
+option.SHADOWS=سایه‌های پویا
+option.SHADOWS.comment=سایه‌های پویا و نرم خورشید و ماه را فعال یا غیرفعال کنید.
 
-option.SHADOW_RES=Shadow Resolution
-option.SHADOW_RES.comment=Change the shadow map quality. Higher values may lower performance.
+option.SHADOW_RES=وضوح سایه
+option.SHADOW_RES.comment=کیفیت نقشه سایه را تغییر دهید. مقادیر بالاتر ممکن است عملکرد را کاهش دهند.
 
-option.PBR_LIGHTING=PBR Lighting (LabPBR)
-option.PBR_LIGHTING.comment=Enable physically-based rendering for metals, roughness, and 3D normal maps (PBR resource pack required).
+option.PBR_LIGHTING=نورپردازی PBR (LabPBR)
+option.PBR_LIGHTING.comment=رندرینگ مبتنی بر فیزیک را برای فلزات، زبری و نقشه‌های نرمال سه‌بعدی فعال کنید (بسته منابع PBR لازم است).
 
-option.PBR_POM=3D Block Relief (POM)
-option.PBR_POM.comment=Enable physically-based Parallax Occlusion Mapping for 3D block textures. Recommended to disable on incompatible resource packs.
+option.PBR_POM=برجستگی سه‌بعدی بلوک (POM)
+option.PBR_POM.comment=نگاشت انسداد پارالاکس مبتنی بر فیزیک را برای بافت‌های بلوک سه‌بعدی فعال کنید. توصیه می‌شود در بسته‌های منابع ناسازگار غیرفعال شود.
 
-option.PBR_STRENGTH=PBR Intensity
-option.PBR_STRENGTH.comment=Control the reflectivity and glossiness of PBR metallic surfaces.
+option.PBR_STRENGTH=شدت PBR
+option.PBR_STRENGTH.comment=بازتاب‌پذیری و درخشندگی سطوح فلزی PBR را کنترل کنید.
 
-value.PBR_STRENGTH.1=Subtle
-value.PBR_STRENGTH.2=Standard
-value.PBR_STRENGTH.3=Mirror
+value.PBR_STRENGTH.1=ملایم
+value.PBR_STRENGTH.2=استاندارد
+value.PBR_STRENGTH.3=آینه‌ای
 
-option.SSAO=SSAO / SAO Occlusion
+option.SSAO=انسداد SSAO / SAO
 option.SSAO.comment=Extreme profile: screen-space ambient occlusion for contact shadows in corners, under blocks, and around geometry intersections.
-option.SSAO_STRENGTH=SSAO Strength
-option.SSAO_STRENGTH.comment=Controls the depth of screen-space ambient occlusion. Only active when SSAO is enabled.
-value.SSAO_STRENGTH.1=Subtle
-value.SSAO_STRENGTH.2=Balanced
-value.SSAO_STRENGTH.3=Deep
+option.SSAO_STRENGTH=شدت SSAO
+option.SSAO_STRENGTH.comment=عمق انسداد محیطی فضای صفحه را کنترل می‌کند. تنها زمانی فعال است که SSAO فعال باشد.
+value.SSAO_STRENGTH.1=ملایم
+value.SSAO_STRENGTH.2=متعادل
+value.SSAO_STRENGTH.3=عمیق
 
-option.LIGHTMAP_WARMTH=Torch Warmth
-option.LIGHTMAP_WARMTH.comment=Adjust the warmth and color of block/torch light.
+option.LIGHTMAP_WARMTH=گرمای مشعل
+option.LIGHTMAP_WARMTH.comment=گرما و رنگ نور بلوک/مشعل را تنظیم کنید.
 
-value.LIGHTMAP_WARMTH.1=Cozy
-value.LIGHTMAP_WARMTH.2=Warm
-value.LIGHTMAP_WARMTH.3=Intense
+value.LIGHTMAP_WARMTH.1=دنج
+value.LIGHTMAP_WARMTH.2=گرم
+value.LIGHTMAP_WARMTH.3=شدید
 
-option.WAVING_LEAVES=Waving Leaves
-option.WAVING_LEAVES.comment=Enable gentle waving animations for tree leaves.
+option.WAVING_LEAVES=تکان‌خوردن برگ‌ها
+option.WAVING_LEAVES.comment=انیمیشن‌های ملایم تکان‌خوردن برگ‌های درخت را فعال کنید.
 
-option.WAVING_GRASS=Waving Foliage
-option.WAVING_GRASS.comment=Enable waving animations for grass, flowers, and crops.
+option.WAVING_GRASS=تکان‌خوردن پوشش گیاهی
+option.WAVING_GRASS.comment=انیمیشن‌های تکان‌خوردن را برای چمن، گل‌ها و محصولات فعال کنید.
 
-option.WIND_SPEED=Wind Speed
-option.WIND_SPEED.comment=Control the waving speed of leaves, plants, and water waves.
+option.WIND_SPEED=سرعت باد
+option.WIND_SPEED.comment=سرعت تکان‌خوردن برگ‌ها، گیاهان و امواج آب را کنترل کنید.
 
 value.WIND_SPEED.1=Gentle
 value.WIND_SPEED.2=Breeze
 value.WIND_SPEED.3=Gale
 
-option.WATER_WAVES=Water Waves
+option.WATER_WAVES=امواج آب
 option.WATER_WAVES.comment=Enable 3D geometric waves on the water surface.
 
-option.WATER_TRANSPARENCY=Water Density
+option.WATER_TRANSPARENCY=تراکم آب
 option.WATER_TRANSPARENCY.comment=Control the transparency and opacity of the water.
 
-value.WATER_TRANSPARENCY.1=Clear
-value.WATER_TRANSPARENCY.2=Balanced
-value.WATER_TRANSPARENCY.3=Deep
+value.WATER_TRANSPARENCY.1=شفاف
+value.WATER_TRANSPARENCY.2=متعادل
+value.WATER_TRANSPARENCY.3=عمیق
 
-option.PROCEDURAL_CLOUDS=Volumetric 3D Clouds
-option.PROCEDURAL_CLOUDS.comment=Enable physically flyable 3D clouds that can be reached and flown through.
+option.PROCEDURAL_CLOUDS=ابرهای سه‌بعدی حجمی
+option.PROCEDURAL_CLOUDS.comment=ابرهای سه‌بعدی قابل پرواز فیزیکی را فعال کنید که می‌توان به آنها رسید و از میان آنها پرواز کرد.
 
-option.CLOUD_HEIGHT=Cloud Altitude
-option.CLOUD_HEIGHT.comment=Set the physical altitude (Y-level) of the cloud deck in the world (in meters).
+option.CLOUD_HEIGHT=ارتفاع ابر
+option.CLOUD_HEIGHT.comment=ارتفاع فیزیکی (سطح Y) لایه ابر در جهان را تنظیم کنید (به متر).
 
-value.CLOUD_HEIGHT.1=Low (~110m)
-value.CLOUD_HEIGHT.2=Standard (~160m)
-value.CLOUD_HEIGHT.3=High (~240m)
+value.CLOUD_HEIGHT.1=پایین (~۱۱۰ متر)
+value.CLOUD_HEIGHT.2=استاندارد (~۱۶۰ متر)
+value.CLOUD_HEIGHT.3=بالا (~۲۴۰ متر)
 
-option.CLOUD_THICKNESS=Cloud Thickness
-option.CLOUD_THICKNESS.comment=Configure the vertical thickness and volume of the clouds.
+option.CLOUD_THICKNESS=ضخامت ابر
+option.CLOUD_THICKNESS.comment=ضخامت عمودی و حجم ابرها را پیکربندی کنید.
 
-value.CLOUD_THICKNESS.1=Thin (Cirrus)
-value.CLOUD_THICKNESS.2=Standard (Cumulus)
-value.CLOUD_THICKNESS.3=Dense (Stormy)
+value.CLOUD_THICKNESS.1=نازک (سیروس)
+value.CLOUD_THICKNESS.2=استاندارد (کومولوس)
+value.CLOUD_THICKNESS.3=متراکم (طوفانی)
 
-option.CLOUD_DISTANCE=Cloud Render Distance
-option.CLOUD_DISTANCE.comment=Maximum draw distance for volumetric clouds. Quality profiles increase it automatically.
-value.CLOUD_DISTANCE.1=Near
-value.CLOUD_DISTANCE.2=Standard
-value.CLOUD_DISTANCE.3=Far
-value.CLOUD_DISTANCE.4=Very Far
+option.CLOUD_DISTANCE=فاصله رندر ابر
+option.CLOUD_DISTANCE.comment=حداکثر فاصله رسم برای ابرهای حجمی. پروفایل‌های کیفیت به‌طور خودکار آن را افزایش می‌دهند.
+value.CLOUD_DISTANCE.1=نزدیک
+value.CLOUD_DISTANCE.2=استاندارد
+value.CLOUD_DISTANCE.3=دور
+value.CLOUD_DISTANCE.4=خیلی دور
 
-option.CLOUD_SHADOWS=سایه‌های ابر
-option.CLOUD_SHADOWS.comment=Adds transparent procedural shadows from volumetric cloud density onto terrain. Balanced by quality profiles.
-option.CLOUD_SHADOW_STRENGTH=Cloud Shadow Strength
-option.CLOUD_SHADOW_STRENGTH.comment=Controls how visible and dramatic transparent cloud shadows are.
-value.CLOUD_SHADOW_STRENGTH.1=Soft
-value.CLOUD_SHADOW_STRENGTH.2=Balanced
-value.CLOUD_SHADOW_STRENGTH.3=Dramatic
+option.CLOUD_SHADOWS=سایه ابر
+option.CLOUD_SHADOWS.comment=سایه‌های رویه‌ای شفاف از تراکم ابر حجمی روی زمین اضافه می‌کند. توسط پروفایل‌های کیفیت متعادل می‌شود.
+option.CLOUD_SHADOW_STRENGTH=شدت سایه ابر
+option.CLOUD_SHADOW_STRENGTH.comment=کنترل می‌کند که سایه‌های شفاف ابر چقدر قابل مشاهده و دراماتیک هستند.
+value.CLOUD_SHADOW_STRENGTH.1=نرم
+value.CLOUD_SHADOW_STRENGTH.2=متعادل
+value.CLOUD_SHADOW_STRENGTH.3=دراماتیک
 
-option.GODRAYS=پرتوهای خورشید
+option.GODRAYS=پرتوهای خورشید (Godrays)
 option.GODRAYS.comment=Adds physically-inspired volumetric single-scattering sun shafts with Beer-Lambert extinction, Mie phase and shadow-map occlusion.
-option.GODRAYS_QUALITY=Godrays Quality
+option.GODRAYS_QUALITY=کیفیت Godrays
 option.GODRAYS_QUALITY.comment=Controls the sample count and integration distance of physically-based volumetric godrays.
-value.GODRAYS_QUALITY.1=Fast
-value.GODRAYS_QUALITY.2=Balanced
-value.GODRAYS_QUALITY.3=High
+value.GODRAYS_QUALITY.1=سریع
+value.GODRAYS_QUALITY.2=متعادل
+value.GODRAYS_QUALITY.3=بالا
 
-option.AURORA_MODE=Aurora Borealis
-option.AURORA_MODE.comment=Control the display of realistic flowing auroras on the night sky.
+option.AURORA_MODE=شفق قطبی
+option.AURORA_MODE.comment=نمایش شفق‌های قطبی واقع‌گرایانه در آسمان شب را کنترل کنید.
 
-value.AURORA_MODE.0=Disabled
-value.AURORA_MODE.1=Only in Cold Biomes
-value.AURORA_MODE.2=Always Enabled
+value.AURORA_MODE.0=غیرفعال
+value.AURORA_MODE.1=فقط در بیوم‌های سرد
+value.AURORA_MODE.2=همیشه فعال
 
-option.AURORA_SPEED=Aurora Speed
-option.AURORA_SPEED.comment=Control the waving and flowing speed of the northern lights.
+option.AURORA_SPEED=سرعت شفق
+option.AURORA_SPEED.comment=سرعت تکان‌خوردن و جریان چراغ‌های شمالی را کنترل کنید.
 
-value.AURORA_SPEED.1=Slow
-value.AURORA_SPEED.2=Standard
-value.AURORA_SPEED.3=Fast
+value.AURORA_SPEED.1=آهسته
+value.AURORA_SPEED.2=استاندارد
+value.AURORA_SPEED.3=سریع
 
-option.AURORA_STRENGTH=Aurora Brightness
-option.AURORA_STRENGTH.comment=Control the overall glow brightness of the northern lights.
+option.AURORA_STRENGTH=روشنایی شفق
+option.AURORA_STRENGTH.comment=روشنایی کلی درخشش چراغ‌های شمالی را کنترل کنید.
 
-value.AURORA_STRENGTH.1=Soft
-value.AURORA_STRENGTH.2=Standard
-value.AURORA_STRENGTH.3=Glowing
+value.AURORA_STRENGTH.1=نرم
+value.AURORA_STRENGTH.2=استاندارد
+value.AURORA_STRENGTH.3=درخشان
 
-option.NEBULA_BRIGHTNESS=Milky Way Brightness
-option.NEBULA_BRIGHTNESS.comment=Adjust the glow brightness of the diagonal brownish galactic nebula at night.
+option.NEBULA_BRIGHTNESS=روشنایی کهکشان راه شیری
+option.NEBULA_BRIGHTNESS.comment=روشنایی درخشش سحابی کهکشانی مورب قهوه‌ای در شب را تنظیم کنید.
 
-value.NEBULA_BRIGHTNESS.1=Dim
-value.NEBULA_BRIGHTNESS.2=Standard
-value.NEBULA_BRIGHTNESS.3=Bright
+value.NEBULA_BRIGHTNESS.1=کم‌رنگ
+value.NEBULA_BRIGHTNESS.2=استاندارد
+value.NEBULA_BRIGHTNESS.3=روشن
 
-option.STARS_BRIGHTNESS=Stars Brightness
-option.STARS_BRIGHTNESS.comment=Control the brightness and sparkling glow of the stars at night.
+option.STARS_BRIGHTNESS=روشنایی ستارگان
+option.STARS_BRIGHTNESS.comment=روشنایی و درخشش برق‌آسای ستارگان در شب را کنترل کنید.
 
-value.STARS_BRIGHTNESS.1=Faint
-value.STARS_BRIGHTNESS.2=Standard
-value.STARS_BRIGHTNESS.3=Brilliant
+value.STARS_BRIGHTNESS.1=کم‌رنگ
+value.STARS_BRIGHTNESS.2=استاندارد
+value.STARS_BRIGHTNESS.3=درخشان
 
-option.STARS_AMOUNT=Stars Density
-option.STARS_AMOUNT.comment=Control the overall amount and density of the stars in the sky.
+option.STARS_AMOUNT=تراکم ستارگان
+option.STARS_AMOUNT.comment=مقدار کلی و تراکم ستارگان در آسمان را کنترل کنید.
 
-value.STARS_AMOUNT.1=Few
-value.STARS_AMOUNT.2=Standard
-value.STARS_AMOUNT.3=Dense
+value.STARS_AMOUNT.1=کم
+value.STARS_AMOUNT.2=استاندارد
+value.STARS_AMOUNT.3=متراکم
 
-option.RAINBOW_STRENGTH=Rainbow Intensity
-option.RAINBOW_STRENGTH.comment=Configure the brightness and color saturation of the post-rain rainbow.
+option.RAINBOW_STRENGTH=شدت رنگین کمان
+option.RAINBOW_STRENGTH.comment=روشنایی و اشباع رنگ رنگین کمان پس از باران را پیکربندی کنید.
 
-value.RAINBOW_STRENGTH.1=Subtle
-value.RAINBOW_STRENGTH.2=Balanced
-value.RAINBOW_STRENGTH.3=Vivid
+value.RAINBOW_STRENGTH.1=ملایم
+value.RAINBOW_STRENGTH.2=متعادل
+value.RAINBOW_STRENGTH.3=پرجلوه
 
-option.COZY_LIGHTS=Torch Flickering
-option.COZY_LIGHTS.comment=Enable warm, cozy, real-time flickering animations for torches, campfires, and lanterns.
+option.COZY_LIGHTS=سوسو زدن مشعل
+option.COZY_LIGHTS.comment=انیمیشن‌های سوسو زدن گرم و دنج در زمان واقعی را برای مشعل‌ها، آتش‌های اردویی و فانوس‌ها فعال کنید.
 
-option.WET_REFLECTIONS=Rain Wetness Reflections
-option.WET_REFLECTIONS.comment=When raining, solid blocks like ground, grass, and stone become wet, dark, and glossy under the sky.
+option.WET_REFLECTIONS=بازتاب‌های رطوبت باران
+option.WET_REFLECTIONS.comment=هنگام بارندگی، بلوک‌های جامد مانند زمین، چمن و سنگ زیر آسمان مرطوب، تیره و براق می‌شوند.
 
-option.GROUND_MIST=Low Ground Mist (Y=62-66)
-option.GROUND_MIST.comment=Enable soft, golden-white morning/evening fog sheets that slide over water and ice at dawn and dusk.
+option.GROUND_MIST=مه کم‌ارتفاع زمین (Y=62-66)
+option.GROUND_MIST.comment=لایه‌های مه صبحگاهی/عصرگاهی نرم و سفید طلایی را فعال کنید که هنگام سپیده‌دم و غروب روی آب و یخ می‌لغزند.
 
-option.FOG_DENSITY_LEVEL=Fog Density
-option.FOG_DENSITY_LEVEL.comment=Control the strength of atmospheric horizon fog.
+option.FOG_DENSITY_LEVEL=تراکم مه
+option.FOG_DENSITY_LEVEL.comment=قدرت مه افق جوی را کنترل کنید.
 
-value.FOG_DENSITY_LEVEL.1=Low
-value.FOG_DENSITY_LEVEL.2=Medium
-value.FOG_DENSITY_LEVEL.3=High
+value.FOG_DENSITY_LEVEL.1=پایین
+value.FOG_DENSITY_LEVEL.2=متوسط
+value.FOG_DENSITY_LEVEL.3=بالا
 
-option.EXPOSURE=Exposure Brightness
-option.EXPOSURE.comment=Control the overall brightness of the image.
+option.EXPOSURE=روشنایی نوردهی
+option.EXPOSURE.comment=روشنایی کلی تصویر را کنترل کنید.
 
-value.EXPOSURE.1=Muted
-value.EXPOSURE.2=Balanced
-value.EXPOSURE.3=Vibrant
+value.EXPOSURE.1=کدر
+value.EXPOSURE.2=متعادل
+value.EXPOSURE.3=پرجنب‌وجوش
 
-option.COLOR_SATURATION=Color Vibrancy
-option.COLOR_SATURATION.comment=Control the non-linear saturation of screen colors. Makes foliage look emerald and skies lush.
+option.COLOR_SATURATION=شادابی رنگ
+option.COLOR_SATURATION.comment=اشباع غیرخطی رنگ‌های صفحه را کنترل کنید. باعث می‌شود پوشش گیاهی زمردی و آسمان‌ها سرسبز به نظر برسند.
 
-value.COLOR_SATURATION.1=Muted
-value.COLOR_SATURATION.2=Balanced
-value.COLOR_SATURATION.3=Colorful
-value.COLOR_SATURATION.4=Vivid
+value.COLOR_SATURATION.1=کدر
+value.COLOR_SATURATION.2=متعادل
+value.COLOR_SATURATION.3=رنگارنگ
+value.COLOR_SATURATION.4=پرجلوه
 
-option.CONTRAST=Image Contrast
-option.CONTRAST.comment=Choose the tone mapping and contrast curve style.
+option.CONTRAST=کنتراست تصویر
+option.CONTRAST.comment=سبک نگاشت تن و منحنی کنتراست را انتخاب کنید.
 
-value.CONTRAST.1=Soft
-value.CONTRAST.2=Filmic (ACES)
-value.CONTRAST.3=Intense (High Contrast)
+value.CONTRAST.1=نرم
+value.CONTRAST.2=فیلمی (ACES)
+value.CONTRAST.3=شدید (کنتراست بالا)
 
-option.TAA=ضد دندانه‌دارسازی زمانی (TAA)
-option.TAA.comment=Temporal resolve with motion reprojection and neighborhood clipping. Reduces shimmering and jagged edges on high presets.
-option.TAA_STRENGTH=TAA Strength
-option.TAA_STRENGTH.comment=Controls history blending. Higher is more stable but can be softer during motion.
-value.TAA_STRENGTH.1=Light
-value.TAA_STRENGTH.2=Balanced
-value.TAA_STRENGTH.3=Stable
+option.TAA=ضدآلیاسینگ زمانی (TAA)
+option.TAA.comment=حل زمانی با تصویرسازی مجدد حرکت و برش همسایگی. سوسو زدن و لبه‌های ناهموار را در پیش‌تنظیمات بالا کاهش می‌دهد.
+option.TAA_STRENGTH=قدرت TAA
+option.TAA_STRENGTH.comment=ترکیب تاریخچه را کنترل می‌کند. بالاتر پایدارتر است اما ممکن است در طول حرکت نرم‌تر باشد.
+value.TAA_STRENGTH.1=سبک
+value.TAA_STRENGTH.2=متعادل
+value.TAA_STRENGTH.3=پایدار
 
-option.VIGNETTE=Vignette Effect
-option.VIGNETTE.comment=Enable subtle darkening at screen edges for improved focus.
+option.VIGNETTE=جلوه وینت
+option.VIGNETTE.comment=تیره‌سازی ملایم در لبه‌های صفحه را برای بهبود تمرکز فعال کنید.
 
-option.WATER_RIFFLES=Water Ripple Strength
+option.WATER_RIFFLES=قدرت موج آب
 option.WATER_RIFFLES.comment=Adjust the waviness and intensity of the fine normal map ripples on the water.
 
-value.WATER_RIFFLES.1=Calm
-value.WATER_RIFFLES.2=Standard
-value.WATER_RIFFLES.3=Choppy
+value.WATER_RIFFLES.1=آرام
+value.WATER_RIFFLES.2=استاندارد
+value.WATER_RIFFLES.3=موج‌دار
 
-option.WATER_SPECULAR_STRENGTH=Water Specular Glow
+option.WATER_SPECULAR_STRENGTH=درخشش آینه‌ای آب
 option.WATER_SPECULAR_STRENGTH.comment=Adjust the brightness of sun/moon reflections on the water ripples.
 
-value.WATER_SPECULAR_STRENGTH.1=Soft
-value.WATER_SPECULAR_STRENGTH.2=Standard
-value.WATER_SPECULAR_STRENGTH.3=Glinting
+value.WATER_SPECULAR_STRENGTH.1=نرم
+value.WATER_SPECULAR_STRENGTH.2=استاندارد
+value.WATER_SPECULAR_STRENGTH.3=براق
 
-option.SHADOW_SOFTNESS=Shadow Softness
-option.SHADOW_SOFTNESS.comment=Controls how soft and diffuse the shadow edges appear. Uses rotated Poisson disk filtering for smooth penumbra.
+option.SHADOW_SOFTNESS=نرمی سایه
+option.SHADOW_SOFTNESS.comment=کنترل می‌کند که لبه‌های سایه چقدر نرم و پراکنده به نظر می‌رسند. از فیلتر دیسک پواسون چرخانده شده برای نیم‌سایه صاف استفاده می‌کند.
 
-value.SHADOW_SOFTNESS.1=Sharp
-value.SHADOW_SOFTNESS.2=Soft
-value.SHADOW_SOFTNESS.3=Ultra Soft
+value.SHADOW_SOFTNESS.1=تیز
+value.SHADOW_SOFTNESS.2=نرم
+value.SHADOW_SOFTNESS.3=فوق‌العاده نرم
 
 # ==============================================================================
 # Sun & Moon Lighting (extended)
 # ==============================================================================
 screen.SUN_MOON=خورشید و ماه
-screen.SUN_MOON.comment=Fine-tune sun & moon intensity, colour temperature, and atmospheric effects.
+screen.SUN_MOON.comment=شدت خورشید و ماه، دمای رنگ و جلوه‌های جوی را به دقت تنظیم کنید.
 
-option.SUN_INTENSITY=Sun Intensity
-option.SUN_INTENSITY.comment=Master brightness of direct sunlight. Higher = stronger daytime contrast.
-value.SUN_INTENSITY.1=Dim
-value.SUN_INTENSITY.2=Standard
-value.SUN_INTENSITY.3=Bright
-value.SUN_INTENSITY.4=Blazing
+option.SUN_INTENSITY=شدت خورشید
+option.SUN_INTENSITY.comment=روشنایی اصلی نور مستقیم خورشید. بالاتر = کنتراست روزانه قوی‌تر.
+value.SUN_INTENSITY.1=کدر
+value.SUN_INTENSITY.2=استاندارد
+value.SUN_INTENSITY.3=بالا
+value.SUN_INTENSITY.4=سوزان
 
-option.MOON_INTENSITY=Moon Intensity
-option.MOON_INTENSITY.comment=Master brightness of moonlight. Higher = brighter, more visible nights.
-value.MOON_INTENSITY.1=Pitch Night
-value.MOON_INTENSITY.2=Standard
-value.MOON_INTENSITY.3=Bright Moon
-value.MOON_INTENSITY.4=Full Night
+option.MOON_INTENSITY=شدت ماه
+option.MOON_INTENSITY.comment=روشنایی اصلی نور ماه. بالاتر = شب‌های روشن‌تر و قابل‌رویت‌تر.
+value.MOON_INTENSITY.1=شب سیاه
+value.MOON_INTENSITY.2=استاندارد
+value.MOON_INTENSITY.3=ماه روشن
+value.MOON_INTENSITY.4=شب کامل
 
-option.SUN_TEMPERATURE=Sun Colour Temperature
-option.SUN_TEMPERATURE.comment=Shifts the sun's Kelvin curve. Realistic uses Tanner Helland blackbody; warm = golden; cool = neutral white.
-value.SUN_TEMPERATURE.1=Cool / Neutral
-value.SUN_TEMPERATURE.2=Realistic
-value.SUN_TEMPERATURE.3=Warm Golden
+option.SUN_TEMPERATURE=دمای رنگ خورشید
+option.SUN_TEMPERATURE.comment=منحنی کلوین خورشید را جابجا می‌کند. واقعی از جسم سیاه تانر هلند استفاده می‌کند؛ گرم = طلایی؛ خنک = سفید خنثی.
+value.SUN_TEMPERATURE.1=خنک / خنثی
+value.SUN_TEMPERATURE.2=واقعی
+value.SUN_TEMPERATURE.3=طلایی گرم
 
-option.MOON_TEMPERATURE=Moon Colour Temperature
-option.MOON_TEMPERATURE.comment=Tint of the moonlight. Icy = bluish cold; Silver = realistic 4100K; Warm = harvest-moon cream.
-value.MOON_TEMPERATURE.1=Icy Blue
-value.MOON_TEMPERATURE.2=Silver (Realistic)
-value.MOON_TEMPERATURE.3=Warm Cream
+option.MOON_TEMPERATURE=دمای رنگ ماه
+option.MOON_TEMPERATURE.comment=رنگ‌مایه نور ماه. یخی = سرد مایل به آبی؛ نقره‌ای = واقعی ۴۱۰۰ کلوین؛ گرم = کرمی ماه برداشت.
+value.MOON_TEMPERATURE.1=آبی یخی
+value.MOON_TEMPERATURE.2=نقره‌ای (واقعی)
+value.MOON_TEMPERATURE.3=کرمی گرم
 
-option.SUN_HALO=Sun Halo (Mie Scatter)
-option.SUN_HALO.comment=Adds a soft warm glow on terrain when looking near the sun (Mie forward-scattering).
+option.SUN_HALO=هاله خورشید (پراکندگی مای)
+option.SUN_HALO.comment=درخشش گرم و ملایمی روی زمین هنگام نگاه کردن نزدیک خورشید اضافه می‌کند (پراکندگی رو به جلوی مای).
 
-option.SUNRISE_GLOW=Enhanced Sunrise/Sunset Glow
-option.SUNRISE_GLOW.comment=Enables stronger warm back-scatter that wraps around surfaces facing away from the low sun.
+option.SUNRISE_GLOW=درخشش بهبودیافته طلوع/غروب
+option.SUNRISE_GLOW.comment=پراکندگی برگشتی گرم قوی‌تری را فعال می‌کند که سطوح دور از خورشید کم‌ارتفاع را می‌پیچد.
 
 # ==============================================================================
 # Extended shadow settings
 # ==============================================================================
-option.SHADOW_DISTANCE=Shadow Distance
-option.SHADOW_DISTANCE.comment=Maximum distance at which dynamic shadows are rendered before fading out.
-value.SHADOW_DISTANCE.1=Near (60m)
-value.SHADOW_DISTANCE.2=Standard (80m)
-value.SHADOW_DISTANCE.3=Far (120m)
-value.SHADOW_DISTANCE.4=Ultra (160m)
+option.SHADOW_DISTANCE=فاصله سایه
+option.SHADOW_DISTANCE.comment=حداکثر فاصله‌ای که سایه‌های پویا قبل از محو شدن رندر می‌شوند.
+value.SHADOW_DISTANCE.1=نزدیک (۶۰ متر)
+value.SHADOW_DISTANCE.2=استاندارد (۸۰ متر)
+value.SHADOW_DISTANCE.3=دور (۱۲۰ متر)
+value.SHADOW_DISTANCE.4=فوق‌العاده (۱۶۰ متر)
 
-option.AMBIENT_BRIGHTNESS=Shadow Lift / Ambient
-option.AMBIENT_BRIGHTNESS.comment=Controls how dark shadowed areas appear at night and in caves.
-value.AMBIENT_BRIGHTNESS.1=Dark
-value.AMBIENT_BRIGHTNESS.2=Standard
-value.AMBIENT_BRIGHTNESS.3=Lifted (Bright)
+option.AMBIENT_BRIGHTNESS=بالابردن سایه / محیط
+option.AMBIENT_BRIGHTNESS.comment=کنترل می‌کند که مناطق سایه‌دار در شب و غارها چقدر تاریک به نظر می‌رسند.
+value.AMBIENT_BRIGHTNESS.1=تیره
+value.AMBIENT_BRIGHTNESS.2=استاندارد
+value.AMBIENT_BRIGHTNESS.3=بالابرده (روشن)
 
-option.SHADOW_TINT=Shadow Tint
-option.SHADOW_TINT.comment=Tints daytime shadows. Real-world shadows under a blue sky have a subtle cool tint.
+option.SHADOW_TINT=رنگ‌مایه سایه
+option.SHADOW_TINT.comment=سایه‌های روزانه را رنگ‌آمیزی می‌کند. سایه‌های دنیای واقعی زیر آسمان آبی رنگ‌مایه خنک ملایمی دارند.
 value.SHADOW_TINT.1=Neutral Gray
 value.SHADOW_TINT.2=Cool Blue (Realistic)
 value.SHADOW_TINT.3=Warm
 
-option.LIGHT_WRAP=Light Wrap
-option.LIGHT_WRAP.comment=Softens the terminator between lit and unlit surfaces. Realistic = physical Lambert; Soft = pleasant for screenshots.
-value.LIGHT_WRAP.1=Realistic (Lambert)
-value.LIGHT_WRAP.2=Soft Wrap
-value.LIGHT_WRAP.3=Stylized
+option.LIGHT_WRAP=پیچش نور
+option.LIGHT_WRAP.comment=مرز بین سطوح روشن و تاریک را نرم می‌کند. واقعی = لامبرت فیزیکی؛ نرم = دلپذیر برای اسکرین‌شات‌ها.
+value.LIGHT_WRAP.1=واقعی (لامبرت)
+value.LIGHT_WRAP.2=پیچش نرم
+value.LIGHT_WRAP.3=استایل‌دار
 
 # v0.2.9 — water/underwater option value labels (English fallback)
-value.WATER_WAVE_SCALE.1=Calm
-value.WATER_WAVE_SCALE.2=Standard
-value.WATER_WAVE_SCALE.3=Choppy
-value.WATER_WAVE_SCALE.4=Stormy
-value.WATER_WAVE_DETAIL.1=Coarse
-value.WATER_WAVE_DETAIL.2=Standard
-value.WATER_WAVE_DETAIL.3=Dense
-value.UNDERWATER_NIGHT_DARKNESS.1=Moonlit Pool
-value.UNDERWATER_NIGHT_DARKNESS.2=Dim
-value.UNDERWATER_NIGHT_DARKNESS.3=True Night
-value.UNDERWATER_NIGHT_DARKNESS.4=Pitch Dark
+value.WATER_WAVE_SCALE.1=آرام
+value.WATER_WAVE_SCALE.2=استاندارد
+value.WATER_WAVE_SCALE.3=موج‌دار
+value.WATER_WAVE_SCALE.4=طوفانی
+value.WATER_WAVE_DETAIL.1=درشت
+value.WATER_WAVE_DETAIL.2=استاندارد
+value.WATER_WAVE_DETAIL.3=متراکم
+value.UNDERWATER_NIGHT_DARKNESS.1=استخر مهتابی
+value.UNDERWATER_NIGHT_DARKNESS.2=کم‌رنگ
+value.UNDERWATER_NIGHT_DARKNESS.3=شب واقعی
+value.UNDERWATER_NIGHT_DARKNESS.4=تاریکی مطلق
 # ==============================================================================
 # Experimental Tab & New Sky (v1.1.0)
 # ==============================================================================
@@ -342,13 +342,13 @@ screen.EXPERIMENTAL=آزمایشی
 screen.EXPERIMENTAL.comment=آزمایشی
 
 option.SKY_MODE=آسمان جدید (پراکندگی جوی)
-option.SKY_STYLE=Sky Style
+option.SKY_STYLE=سبک آسمان
 option.SKY_STYLE.comment=option.SKY_STYLE.comment=Artistic direction for the physical sky. Realistic = true angular sizes & neutral colours (astronomy look). Semi-realistic = readable sun/moon (x2.8), richer colour, soft glow. Fantasy = grand sun/moon (x5.5), big corona, vivid teal/crimson/indigo palette.
 option.SKY_MODE.comment=EXPERIMENTAL — off in all profiles. Gradient (legacy, default) or Physical realtime scattering with true multiple scattering (Rayleigh+Mie+Ozone, 1st+2nd+3rd order). Enable manually in this tab.
-value.SKY_MODE.0=Gradient (Legacy)
-value.SKY_STYLE.0=Realistic
-value.SKY_STYLE.1=Semi-realistic
-value.SKY_STYLE.2=Fantasy
+value.SKY_MODE.0=گرادیان (قدیمی)
+value.SKY_STYLE.0=واقعی
+value.SKY_STYLE.1=نیمه‌واقعی
+value.SKY_STYLE.2=فانتزی
 value.SKY_MODE.1=Realtime Scattering
 
 option.SKY_QUALITY=کیفیت پراکندگی آسمان
@@ -356,3 +356,61 @@ option.SKY_QUALITY.comment=کیفیت پراکندگی آسمان
 value.SKY_QUALITY.1=سریع
 value.SKY_QUALITY.2=استاندارد
 value.SKY_QUALITY.3=بالا
+
+# --- Auto-added missing translations (v1.1.0 sync) ---
+option.FOLIAGE_SSS=SSS پوشش گیاهی
+option.FOLIAGE_SSS.comment=پراکندگی زیرسطحی (شفافیت) را برای برگ‌ها، چمن و گیاهان هنگام نگاه به سمت نور فعال می‌کند.
+option.GODRAYS_STRENGTH=شدت Godrays
+option.GODRAYS_STRENGTH.comment=روشنایی پرتوهای نور حجمی. ملایم: مه جوی نرم. متعادل: پرتوهای واضح. دراماتیک: پرتوهای سینمایی جسورانه.
+value.GODRAYS_STRENGTH.1=ملایم
+value.GODRAYS_STRENGTH.2=متعادل
+value.GODRAYS_STRENGTH.3=دراماتیک
+option.SHOOTING_STARS=شهاب‌سنگ‌ها (ستاره‌های دنباله‌دار)
+option.SHOOTING_STARS.comment=شهاب‌سنگ‌های واقع‌گرایانه‌ای که وارد مزوسفر می‌شوند (~80-120 کیلومتر). قوس‌های سه‌بعدی واقعی دایره بزرگ را با منحنی‌های نور فرسایش، رنگ پلاسمای جسم سیاه (3500-5500 کلوین)، خاموشی ریلی نزدیک افق، و ردهای یونیزاسیون ماندگار روی گلوله‌های آتشین رندر می‌کند.
+option.SHOOTING_STARS_FREQUENCY=فعالیت شهاب‌سنگ (ZHR)
+option.SHOOTING_STARS_FREQUENCY.comment=نرخ ساعتی سمت‌الرأس تقریبی. پراکنده = پس‌زمینه واقعی ~۱۰ در ساعت. فعال = رگبار ملایم. طوفان = تراکم اوج (~۱۰۰/ساعت).
+value.SHOOTING_STARS_FREQUENCY.1=پراکنده (~۱۰/ساعت)
+value.SHOOTING_STARS_FREQUENCY.2=رگبار فعال
+value.SHOOTING_STARS_FREQUENCY.3=طوفان شهابی
+option.SHOOTING_STARS_BRIGHTNESS=مقیاس قدر
+option.SHOOTING_STARS_BRIGHTNESS.comment=ضریب اصلی در مقیاس قدر شهاب‌سنگ. کم‌رنگ = میانگین واقعی؛ روشن = گلوله‌های آتشین را برای دید سینمایی مقیاس می‌کند.
+value.SHOOTING_STARS_BRIGHTNESS.1=کم‌رنگ (واقعی)
+value.SHOOTING_STARS_BRIGHTNESS.2=استاندارد
+value.SHOOTING_STARS_BRIGHTNESS.3=گلوله‌های آتشین درخشان
+value.CONTRAST.4=عکاسانه (شبیه AgX)
+option.SPATIAL_AA_MODE=ضدآلیاسینگ فضایی
+option.SPATIAL_AA_MODE.comment=روش ضدآلیاسینگ پس از پردازش را انتخاب کنید. FXAA سریع و ارزان است. SMAA از بافر عمق برای کیفیت بهتر روی لبه‌های هندسی استفاده می‌کند. می‌تواند با TAA ترکیب شود.
+value.SPATIAL_AA_MODE.0=خاموش
+value.SPATIAL_AA_MODE.1=FXAA (سریع)
+value.SPATIAL_AA_MODE.2=SMAA (کیفیت)
+option.HEAT_SHIMMER=لرزش گرما بالای گدازه
+option.HEAT_SHIMMER.comment=جلوه اعوجاج حرارتی ملایم فضای صفحه را بالای سطوح گدازه فعال کنید.
+option.HEAT_SHIMMER_STRENGTH=شدت لرزش گرما
+option.HEAT_SHIMMER_STRENGTH.comment=شدت اعوجاج حرارتی بالای گدازه را کنترل می‌کند.
+value.HEAT_SHIMMER_STRENGTH.1=ملایم
+value.HEAT_SHIMMER_STRENGTH.2=متعادل
+value.HEAT_SHIMMER_STRENGTH.3=قوی
+option.SSR=بازتاب‌های فضای صفحه (SSR)
+option.SSR.comment=محیط بازتابیده بلادرنگ را روی آب، سطوح مرطوب و بلوک‌های فلزی PBR اضافه می‌کند. از MED به بالا در v1.0.4 فعال است.
+option.SSR_QUALITY=کیفیت SSR
+option.SSR_QUALITY.comment=دقت و فاصله پرتوی بازتاب‌های فضای صفحه را کنترل می‌کند. بالاتر = بازتاب‌های واضح‌تر اما هزینه GPU بیشتر.
+value.SSR_QUALITY.1=سریع (۱۲ گام)
+value.SSR_QUALITY.2=متعادل (۲۴ گام)
+value.SSR_QUALITY.3=بالا (۴۰ گام)
+option.SSR_STRENGTH=قدرت SSR
+option.SSR_STRENGTH.comment=کنترل می‌کند که محیط بازتابیده روی سطوح بازتابنده چقدر قابل مشاهده و برجسته به نظر می‌رسد.
+option.WATER_WAVE_SCALE=دامنه موج
+option.WATER_WAVE_SCALE.comment=شیب قابل مشاهده امواج سطح آب را کنترل می‌کند. آرام = مانند آینه، طوفانی = بازتاب‌های به‌شدت شکسته.
+option.WATER_WAVE_DETAIL=جزئیات موج
+option.WATER_WAVE_DETAIL.comment=کنترل می‌کند که چند موج کوچک در هر بلوک ظاهر شود. درشت = چند موج بزرگ، متراکم = بسیاری موج‌های کوچک.
+option.UNDERWATER_NIGHT_DARKNESS=تاریکی شب زیر آب
+option.UNDERWATER_NIGHT_DARKNESS.comment=کنترل می‌کند که صحنه زیر آب در شب چقدر تاریک می‌شود. استخر مهتابی روشنایی را حفظ می‌کند؛ تاریکی مطلق تاریکی شدید سبک بقا را ایجاد می‌کند.
+value.SSR_STRENGTH.1=ملایم
+value.SSR_STRENGTH.2=متعادل
+value.SSR_STRENGTH.3=قوی
+option.PBR_DISTANCE=فاصله رندر PBR
+option.PBR_DISTANCE.comment=حداکثر فاصله برای هایلایت‌های آینه‌ای PBR. در زمین دور GPU را صرفه‌جویی می‌کند. نزدیک (۱۶ متر) برای LOW، استاندارد (۴۸ متر) برای MED، دور (۱۲۸ متر) برای HIGH/ULTRA، نامحدود برای EXTREME.
+value.PBR_DISTANCE.1=نزدیک (۱۶ متر)
+value.PBR_DISTANCE.2=استاندارد (۴۸ متر)
+value.PBR_DISTANCE.3=دور (۱۲۸ متر)
+value.PBR_DISTANCE.4=نامحدود

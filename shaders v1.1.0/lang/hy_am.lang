@@ -421,3 +421,17 @@ option.SKY_QUALITY.comment=Երկնքի ցրումի որակ
 value.SKY_QUALITY.1=Արագ
 value.SKY_QUALITY.2=Ստանդարտ
 value.SKY_QUALITY.3=Բարձր
+
+# --- Auto-added missing translations (v1.1.0 sync) ---
+option.GODRAYS_STRENGTH=Godrays-ի ինտենսիվություն
+option.GODRAYS_STRENGTH.comment=Ծավալային լուսային շողերի պայծառությունը. Նուրբ՝ մեղմ մթնոլորտային մշուշ։ Հավասարակշռված՝ հստակ տեսանելի ճառագայթներ։ Դրամատիկ՝ համարձակ կինեմատոգրաֆիկ ճառագայթներ։
+value.GODRAYS_STRENGTH.1=Նուրբ
+value.GODRAYS_STRENGTH.2=Հավասարակշռված
+value.GODRAYS_STRENGTH.3=Դրամատիկ
+option.HEAT_SHIMMER=Ջերմության շողացում լավայի վրա
+option.HEAT_SHIMMER.comment=Միացրեք էկրանային տարածության ջերմային աղավաղման նուրբ էֆեկտը լավայի մակերևույթների վրա։
+option.HEAT_SHIMMER_STRENGTH=Ջերմության շողացման ուժգնություն
+option.HEAT_SHIMMER_STRENGTH.comment=Կառավարում է ջերմային աղավաղման ինտենսիվությունը լավայի վրա։
+value.HEAT_SHIMMER_STRENGTH.1=Նուրբ
+value.HEAT_SHIMMER_STRENGTH.2=Հավասարակշռված
+value.HEAT_SHIMMER_STRENGTH.3=Ուժեղ

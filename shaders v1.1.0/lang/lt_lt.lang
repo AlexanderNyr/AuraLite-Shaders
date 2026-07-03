@@ -19,322 +19,322 @@ profile.ULTRA.comment=Ultra quality preset with 4096 shadows, very far clouds an
 profile.EXTREME=Ekstremalus
 profile.EXTREME.comment=Maximum experimental quality. Pushes lighting, clouds, color and deep SSAO. POM remains disabled for stability.
 profile.CUSTOM=Pasirinktinis
-profile.CUSTOM.comment=Custom user-modified settings.
+profile.CUSTOM.comment=Vartotojo pakeisti pasirinktiniai nustatymai.
 
 screen.TRANSLATION_NOTICE=⚠ Vertimuose gali būti klaidų
-screen.TRANSLATION_NOTICE.comment=Some localization strings may be inaccurate. If something looks strange, compare with the English original.
+screen.TRANSLATION_NOTICE.comment=Kai kurios lokalizacijos eilutės gali būti netikslios. Jei kažkas atrodo keista, palyginkite su originaliu tekstu anglų kalba.
 
 # Screens
 screen.LIGHTING=Apšvietimo nustatymai
-screen.LIGHTING.comment=Configure shadows, light colors, and brightness.
+screen.LIGHTING.comment=Sukonfigūruokite šešėlius, šviesos spalvas ir ryškumą.
 
 screen.FOLIAGE=Augalijos nustatymai
-screen.FOLIAGE.comment=Configure waving animations for grass and leaves.
+screen.FOLIAGE.comment=Sukonfigūruokite žolės ir lapų siūbavimo animacijas.
 
 screen.WATER=Vandens nustatymai
-screen.WATER.comment=Configure waves, transparency, and water styling.
+screen.WATER.comment=Sukonfigūruokite bangas, skaidrumą ir vandens stilių.
 
 screen.CLOUDS_MENU=Dangus ir debesys
-screen.CLOUDS_MENU.comment=Configure the physical altitude, thickness, and style of 3D clouds and sky effects.
+screen.CLOUDS_MENU.comment=Sukonfigūruokite 3D debesų ir dangaus efektų fizinį aukštį, storį ir stilių.
 
 screen.POST_PROCESS=Post-apdorojimas ir rūkas
-screen.POST_PROCESS.comment=Configure exposure, fog, and cinematic effects.
+screen.POST_PROCESS.comment=Sukonfigūruokite ekspoziciją, rūką ir kino efektus.
 
 # Options
-option.SHADOWS=Dynamic Shadows
-option.SHADOWS.comment=Enable or disable soft dynamic shadows from the sun and moon.
+option.SHADOWS=Dinaminiai šešėliai
+option.SHADOWS.comment=Įjunkite arba išjunkite minkštus dinaminius šešėlius nuo saulės ir mėnulio.
 
-option.SHADOW_RES=Shadow Resolution
-option.SHADOW_RES.comment=Change the shadow map quality. Higher values may lower performance.
+option.SHADOW_RES=Šešėlių raiška
+option.SHADOW_RES.comment=Pakeiskite šešėlių žemėlapio kokybę. Didesnės vertės gali sumažinti našumą.
 
-option.PBR_LIGHTING=PBR Lighting (LabPBR)
-option.PBR_LIGHTING.comment=Enable physically-based rendering for metals, roughness, and 3D normal maps (PBR resource pack required).
+option.PBR_LIGHTING=PBR apšvietimas (LabPBR)
+option.PBR_LIGHTING.comment=Įjunkite fizika pagrįstą atvaizdavimą metalams, šiurkštumui ir 3D normalių žemėlapiams (reikalingas PBR išteklių paketas).
 
-option.PBR_POM=3D Block Relief (POM)
-option.PBR_POM.comment=Enable physically-based Parallax Occlusion Mapping for 3D block textures. Recommended to disable on incompatible resource packs.
+option.PBR_POM=3D blokų reljefas (POM)
+option.PBR_POM.comment=Įjunkite fizika pagrįstą Parallax Occlusion Mapping 3D blokų tekstūroms. Rekomenduojama išjungti su nesuderinamais išteklių paketais.
 
-option.PBR_STRENGTH=PBR Intensity
-option.PBR_STRENGTH.comment=Control the reflectivity and glossiness of PBR metallic surfaces.
+option.PBR_STRENGTH=PBR intensyvumas
+option.PBR_STRENGTH.comment=Valdykite PBR metalinių paviršių atspindumą ir blizgesį.
 
-value.PBR_STRENGTH.1=Subtle
-value.PBR_STRENGTH.2=Standard
-value.PBR_STRENGTH.3=Mirror
+value.PBR_STRENGTH.1=Subtilus
+value.PBR_STRENGTH.2=Standartinis
+value.PBR_STRENGTH.3=Veidrodinis
 
-option.SSAO=SSAO / SAO Occlusion
+option.SSAO=SSAO / SAO okliuzija
 option.SSAO.comment=Extreme profile: screen-space ambient occlusion for contact shadows in corners, under blocks, and around geometry intersections.
-option.SSAO_STRENGTH=SSAO Strength
-option.SSAO_STRENGTH.comment=Controls the depth of screen-space ambient occlusion. Only active when SSAO is enabled.
-value.SSAO_STRENGTH.1=Subtle
-value.SSAO_STRENGTH.2=Balanced
-value.SSAO_STRENGTH.3=Deep
+option.SSAO_STRENGTH=SSAO stiprumas
+option.SSAO_STRENGTH.comment=Valdo ekrano erdvės aplinkos okliuzijos gylį. Veikia tik įjungus SSAO.
+value.SSAO_STRENGTH.1=Subtilus
+value.SSAO_STRENGTH.2=Subalansuotas
+value.SSAO_STRENGTH.3=Gilus
 
-option.LIGHTMAP_WARMTH=Torch Warmth
-option.LIGHTMAP_WARMTH.comment=Adjust the warmth and color of block/torch light.
+option.LIGHTMAP_WARMTH=Deglo šiluma
+option.LIGHTMAP_WARMTH.comment=Sureguliuokite blokų / deglų šviesos šilumą ir spalvą.
 
-value.LIGHTMAP_WARMTH.1=Cozy
-value.LIGHTMAP_WARMTH.2=Warm
-value.LIGHTMAP_WARMTH.3=Intense
+value.LIGHTMAP_WARMTH.1=Jaukus
+value.LIGHTMAP_WARMTH.2=Šiltas
+value.LIGHTMAP_WARMTH.3=Intensyvus
 
-option.WAVING_LEAVES=Waving Leaves
-option.WAVING_LEAVES.comment=Enable gentle waving animations for tree leaves.
+option.WAVING_LEAVES=Siūbuojantys lapai
+option.WAVING_LEAVES.comment=Įjunkite švelnias medžių lapų siūbavimo animacijas.
 
-option.WAVING_GRASS=Waving Foliage
-option.WAVING_GRASS.comment=Enable waving animations for grass, flowers, and crops.
+option.WAVING_GRASS=Siūbuojanti augmenija
+option.WAVING_GRASS.comment=Įjunkite siūbavimo animacijas žolei, gėlėms ir pasėliams.
 
-option.WIND_SPEED=Wind Speed
-option.WIND_SPEED.comment=Control the waving speed of leaves, plants, and water waves.
+option.WIND_SPEED=Vėjo greitis
+option.WIND_SPEED.comment=Valdykite lapų, augalų ir vandens bangų siūbavimo greitį.
 
-value.WIND_SPEED.1=Gentle
-value.WIND_SPEED.2=Breeze
-value.WIND_SPEED.3=Gale
+value.WIND_SPEED.1=Švelnus
+value.WIND_SPEED.2=Vėjelis
+value.WIND_SPEED.3=Škvalas
 
-option.WATER_WAVES=Water Waves
+option.WATER_WAVES=Vandens bangos
 option.WATER_WAVES.comment=Enable 3D geometric waves on the water surface.
 
-option.WATER_TRANSPARENCY=Water Density
+option.WATER_TRANSPARENCY=Vandens tankis
 option.WATER_TRANSPARENCY.comment=Control the transparency and opacity of the water.
 
-value.WATER_TRANSPARENCY.1=Clear
-value.WATER_TRANSPARENCY.2=Balanced
-value.WATER_TRANSPARENCY.3=Deep
+value.WATER_TRANSPARENCY.1=Skaidrus
+value.WATER_TRANSPARENCY.2=Subalansuotas
+value.WATER_TRANSPARENCY.3=Gilus
 
-option.PROCEDURAL_CLOUDS=Volumetric 3D Clouds
-option.PROCEDURAL_CLOUDS.comment=Enable physically flyable 3D clouds that can be reached and flown through.
+option.PROCEDURAL_CLOUDS=Tūriniai 3D debesys
+option.PROCEDURAL_CLOUDS.comment=Įjunkite fiziškai perskrendamus 3D debesis, per kuriuos galima skristi.
 
-option.CLOUD_HEIGHT=Cloud Altitude
-option.CLOUD_HEIGHT.comment=Set the physical altitude (Y-level) of the cloud deck in the world (in meters).
+option.CLOUD_HEIGHT=Debesų aukštis
+option.CLOUD_HEIGHT.comment=Nustatykite fizinį debesų sluoksnio aukštį (Y lygį) pasaulyje (metrais).
 
-value.CLOUD_HEIGHT.1=Low (~110m)
-value.CLOUD_HEIGHT.2=Standard (~160m)
-value.CLOUD_HEIGHT.3=High (~240m)
+value.CLOUD_HEIGHT.1=Žemas (~110m)
+value.CLOUD_HEIGHT.2=Standartinis (~160m)
+value.CLOUD_HEIGHT.3=Aukštas (~240m)
 
-option.CLOUD_THICKNESS=Cloud Thickness
-option.CLOUD_THICKNESS.comment=Configure the vertical thickness and volume of the clouds.
+option.CLOUD_THICKNESS=Debesų storis
+option.CLOUD_THICKNESS.comment=Sukonfigūruokite vertikalų debesų storį ir tūrį.
 
-value.CLOUD_THICKNESS.1=Thin (Cirrus)
-value.CLOUD_THICKNESS.2=Standard (Cumulus)
-value.CLOUD_THICKNESS.3=Dense (Stormy)
+value.CLOUD_THICKNESS.1=Ploni (Cirrus)
+value.CLOUD_THICKNESS.2=Standartiniai (Kumulus)
+value.CLOUD_THICKNESS.3=Tanki (Audringi)
 
-option.CLOUD_DISTANCE=Cloud Render Distance
-option.CLOUD_DISTANCE.comment=Maximum draw distance for volumetric clouds. Quality profiles increase it automatically.
-value.CLOUD_DISTANCE.1=Near
-value.CLOUD_DISTANCE.2=Standard
-value.CLOUD_DISTANCE.3=Far
-value.CLOUD_DISTANCE.4=Very Far
+option.CLOUD_DISTANCE=Debesų atvaizdavimo atstumas
+option.CLOUD_DISTANCE.comment=Didžiausias tūrinių debesų piešimo atstumas. Kokybės profiliai jį automatiškai padidina.
+value.CLOUD_DISTANCE.1=Arti
+value.CLOUD_DISTANCE.2=Standartinis
+value.CLOUD_DISTANCE.3=Toli
+value.CLOUD_DISTANCE.4=Labai toli
 
 option.CLOUD_SHADOWS=Debesų šešėliai
-option.CLOUD_SHADOWS.comment=Adds transparent procedural shadows from volumetric cloud density onto terrain. Balanced by quality profiles.
-option.CLOUD_SHADOW_STRENGTH=Cloud Shadow Strength
-option.CLOUD_SHADOW_STRENGTH.comment=Controls how visible and dramatic transparent cloud shadows are.
-value.CLOUD_SHADOW_STRENGTH.1=Soft
-value.CLOUD_SHADOW_STRENGTH.2=Balanced
-value.CLOUD_SHADOW_STRENGTH.3=Dramatic
+option.CLOUD_SHADOWS.comment=Prideda skaidrius procedūrinius šešėlius iš tūrinių debesų tankio ant reljefo. Subalansuota kokybės profilių.
+option.CLOUD_SHADOW_STRENGTH=Debesų šešėlių stiprumas
+option.CLOUD_SHADOW_STRENGTH.comment=Valdo, kiek matomi ir dramatiški yra skaidrūs debesų šešėliai.
+value.CLOUD_SHADOW_STRENGTH.1=Minkštas
+value.CLOUD_SHADOW_STRENGTH.2=Subalansuotas
+value.CLOUD_SHADOW_STRENGTH.3=Dramatiškas
 
-option.GODRAYS=Saulės spinduliai
+option.GODRAYS=Saulės spinduliai (Godrays)
 option.GODRAYS.comment=Adds physically-inspired volumetric single-scattering sun shafts with Beer-Lambert extinction, Mie phase and shadow-map occlusion.
-option.GODRAYS_QUALITY=Godrays Quality
+option.GODRAYS_QUALITY=Godrays kokybė
 option.GODRAYS_QUALITY.comment=Controls the sample count and integration distance of physically-based volumetric godrays.
-value.GODRAYS_QUALITY.1=Fast
-value.GODRAYS_QUALITY.2=Balanced
-value.GODRAYS_QUALITY.3=High
+value.GODRAYS_QUALITY.1=Greitas
+value.GODRAYS_QUALITY.2=Subalansuotas
+value.GODRAYS_QUALITY.3=Aukštas
 
-option.AURORA_MODE=Aurora Borealis
-option.AURORA_MODE.comment=Control the display of realistic flowing auroras on the night sky.
+option.AURORA_MODE=Šiaurės pašvaistė
+option.AURORA_MODE.comment=Valdykite realistiškos tekančios šiaurės pašvaistės rodymą naktiniame danguje.
 
-value.AURORA_MODE.0=Disabled
-value.AURORA_MODE.1=Only in Cold Biomes
-value.AURORA_MODE.2=Always Enabled
+value.AURORA_MODE.0=Išjungta
+value.AURORA_MODE.1=Tik šaltuose biomuose
+value.AURORA_MODE.2=Visada įjungta
 
-option.AURORA_SPEED=Aurora Speed
-option.AURORA_SPEED.comment=Control the waving and flowing speed of the northern lights.
+option.AURORA_SPEED=Pašvaistės greitis
+option.AURORA_SPEED.comment=Valdykite šiaurės pašvaistės siūbavimo ir tekėjimo greitį.
 
-value.AURORA_SPEED.1=Slow
-value.AURORA_SPEED.2=Standard
-value.AURORA_SPEED.3=Fast
+value.AURORA_SPEED.1=Lėtas
+value.AURORA_SPEED.2=Standartinis
+value.AURORA_SPEED.3=Greitas
 
-option.AURORA_STRENGTH=Aurora Brightness
-option.AURORA_STRENGTH.comment=Control the overall glow brightness of the northern lights.
+option.AURORA_STRENGTH=Pašvaistės ryškumas
+option.AURORA_STRENGTH.comment=Valdykite bendrą pašvaistės švytėjimo ryškumą.
 
-value.AURORA_STRENGTH.1=Soft
-value.AURORA_STRENGTH.2=Standard
-value.AURORA_STRENGTH.3=Glowing
+value.AURORA_STRENGTH.1=Minkštas
+value.AURORA_STRENGTH.2=Standartinis
+value.AURORA_STRENGTH.3=Švytintis
 
-option.NEBULA_BRIGHTNESS=Milky Way Brightness
-option.NEBULA_BRIGHTNESS.comment=Adjust the glow brightness of the diagonal brownish galactic nebula at night.
+option.NEBULA_BRIGHTNESS=Paukščių Tako ryškumas
+option.NEBULA_BRIGHTNESS.comment=Sureguliuokite įstrižainės rusvos galaktikos ūko švytėjimo ryškumą naktį.
 
-value.NEBULA_BRIGHTNESS.1=Dim
-value.NEBULA_BRIGHTNESS.2=Standard
-value.NEBULA_BRIGHTNESS.3=Bright
+value.NEBULA_BRIGHTNESS.1=Silpnas
+value.NEBULA_BRIGHTNESS.2=Standartinis
+value.NEBULA_BRIGHTNESS.3=Ryškus
 
-option.STARS_BRIGHTNESS=Stars Brightness
-option.STARS_BRIGHTNESS.comment=Control the brightness and sparkling glow of the stars at night.
+option.STARS_BRIGHTNESS=Žvaigždžių ryškumas
+option.STARS_BRIGHTNESS.comment=Valdykite žvaigždžių ryškumą ir spindintį švytėjimą naktį.
 
-value.STARS_BRIGHTNESS.1=Faint
-value.STARS_BRIGHTNESS.2=Standard
-value.STARS_BRIGHTNESS.3=Brilliant
+value.STARS_BRIGHTNESS.1=Silpnas
+value.STARS_BRIGHTNESS.2=Standartinis
+value.STARS_BRIGHTNESS.3=Nuostabus
 
-option.STARS_AMOUNT=Stars Density
-option.STARS_AMOUNT.comment=Control the overall amount and density of the stars in the sky.
+option.STARS_AMOUNT=Žvaigždžių tankis
+option.STARS_AMOUNT.comment=Valdykite bendrą žvaigždžių kiekį ir tankį danguje.
 
-value.STARS_AMOUNT.1=Few
-value.STARS_AMOUNT.2=Standard
-value.STARS_AMOUNT.3=Dense
+value.STARS_AMOUNT.1=Mažai
+value.STARS_AMOUNT.2=Standartinis
+value.STARS_AMOUNT.3=Tankus
 
-option.RAINBOW_STRENGTH=Rainbow Intensity
-option.RAINBOW_STRENGTH.comment=Configure the brightness and color saturation of the post-rain rainbow.
+option.RAINBOW_STRENGTH=Vaivorykštės intensyvumas
+option.RAINBOW_STRENGTH.comment=Sukonfigūruokite lietaus vaivorykštės ryškumą ir spalvų sodrumą.
 
-value.RAINBOW_STRENGTH.1=Subtle
-value.RAINBOW_STRENGTH.2=Balanced
-value.RAINBOW_STRENGTH.3=Vivid
+value.RAINBOW_STRENGTH.1=Subtilus
+value.RAINBOW_STRENGTH.2=Subalansuotas
+value.RAINBOW_STRENGTH.3=Ryškus
 
-option.COZY_LIGHTS=Torch Flickering
-option.COZY_LIGHTS.comment=Enable warm, cozy, real-time flickering animations for torches, campfires, and lanterns.
+option.COZY_LIGHTS=Deglo mirgėjimas
+option.COZY_LIGHTS.comment=Įjunkite šiltas, jaukias, realaus laiko mirgėjimo animacijas degliams, laužams ir žibintams.
 
-option.WET_REFLECTIONS=Rain Wetness Reflections
-option.WET_REFLECTIONS.comment=When raining, solid blocks like ground, grass, and stone become wet, dark, and glossy under the sky.
+option.WET_REFLECTIONS=Lietaus drėgmės atspindžiai
+option.WET_REFLECTIONS.comment=Lyjant, kietieji blokai, tokie kaip žemė, žolė ir akmuo, tampa šlapi, tamsūs ir blizgūs po dangumi.
 
-option.GROUND_MIST=Low Ground Mist (Y=62-66)
-option.GROUND_MIST.comment=Enable soft, golden-white morning/evening fog sheets that slide over water and ice at dawn and dusk.
+option.GROUND_MIST=Žemas paviršiaus rūkas (Y=62-66)
+option.GROUND_MIST.comment=Įjunkite švelnius, auksinai baltus ryto / vakaro rūko sluoksnius, slystančius virš vandens ir ledo aušros bei sutemų metu.
 
-option.FOG_DENSITY_LEVEL=Fog Density
-option.FOG_DENSITY_LEVEL.comment=Control the strength of atmospheric horizon fog.
+option.FOG_DENSITY_LEVEL=Rūko tankis
+option.FOG_DENSITY_LEVEL.comment=Valdykite atmosferos horizonto rūko stiprumą.
 
-value.FOG_DENSITY_LEVEL.1=Low
-value.FOG_DENSITY_LEVEL.2=Medium
-value.FOG_DENSITY_LEVEL.3=High
+value.FOG_DENSITY_LEVEL.1=Žema
+value.FOG_DENSITY_LEVEL.2=Vidutinė
+value.FOG_DENSITY_LEVEL.3=Aukštas
 
-option.EXPOSURE=Exposure Brightness
-option.EXPOSURE.comment=Control the overall brightness of the image.
+option.EXPOSURE=Ekspozicijos ryškumas
+option.EXPOSURE.comment=Valdykite bendrą vaizdo ryškumą.
 
-value.EXPOSURE.1=Muted
-value.EXPOSURE.2=Balanced
-value.EXPOSURE.3=Vibrant
+value.EXPOSURE.1=Prislopintas
+value.EXPOSURE.2=Subalansuotas
+value.EXPOSURE.3=Gyvas
 
-option.COLOR_SATURATION=Color Vibrancy
-option.COLOR_SATURATION.comment=Control the non-linear saturation of screen colors. Makes foliage look emerald and skies lush.
+option.COLOR_SATURATION=Spalvų ryškumas
+option.COLOR_SATURATION.comment=Valdykite netiesinį ekrano spalvų sodrumą. Priverčia augmeniją atrodyti smaragdinę, o dangų – vešlų.
 
-value.COLOR_SATURATION.1=Muted
-value.COLOR_SATURATION.2=Balanced
-value.COLOR_SATURATION.3=Colorful
-value.COLOR_SATURATION.4=Vivid
+value.COLOR_SATURATION.1=Prislopintas
+value.COLOR_SATURATION.2=Subalansuotas
+value.COLOR_SATURATION.3=Spalvingas
+value.COLOR_SATURATION.4=Ryškus
 
-option.CONTRAST=Image Contrast
-option.CONTRAST.comment=Choose the tone mapping and contrast curve style.
+option.CONTRAST=Vaizdo kontrastas
+option.CONTRAST.comment=Pasirinkite tonų atvaizdavimo ir kontrasto kreivės stilių.
 
-value.CONTRAST.1=Soft
-value.CONTRAST.2=Filmic (ACES)
-value.CONTRAST.3=Intense (High Contrast)
+value.CONTRAST.1=Minkštas
+value.CONTRAST.2=Kino (ACES)
+value.CONTRAST.3=Intensyvus (Aukštas kontrastas)
 
-option.TAA=Laikinis glodinimas (TAA)
-option.TAA.comment=Temporal resolve with motion reprojection and neighborhood clipping. Reduces shimmering and jagged edges on high presets.
-option.TAA_STRENGTH=TAA Strength
-option.TAA_STRENGTH.comment=Controls history blending. Higher is more stable but can be softer during motion.
-value.TAA_STRENGTH.1=Light
-value.TAA_STRENGTH.2=Balanced
-value.TAA_STRENGTH.3=Stable
+option.TAA=Laikinas kraštų glotninimas (TAA)
+option.TAA.comment=Laikinas sprendimas su judesio perprojekcija ir kaimynystės apkarpymu. Sumažina mirgėjimą ir dantytus kraštus prie aukštų nustatymų.
+option.TAA_STRENGTH=TAA stiprumas
+option.TAA_STRENGTH.comment=Valdo istorijos maišymą. Didesnė reikšmė yra stabilesnė, tačiau gali būti minkštesnė judesio metu.
+value.TAA_STRENGTH.1=Lengvas
+value.TAA_STRENGTH.2=Subalansuotas
+value.TAA_STRENGTH.3=Stabilus
 
-option.VIGNETTE=Vignette Effect
-option.VIGNETTE.comment=Enable subtle darkening at screen edges for improved focus.
+option.VIGNETTE=Vinjetės efektas
+option.VIGNETTE.comment=Įjunkite subtilų ekrano kraštų patamsėjimą pagerintam dėmesiui.
 
-option.WATER_RIFFLES=Water Ripple Strength
+option.WATER_RIFFLES=Vandens raibulių stiprumas
 option.WATER_RIFFLES.comment=Adjust the waviness and intensity of the fine normal map ripples on the water.
 
-value.WATER_RIFFLES.1=Calm
-value.WATER_RIFFLES.2=Standard
-value.WATER_RIFFLES.3=Choppy
+value.WATER_RIFFLES.1=Ramus
+value.WATER_RIFFLES.2=Standartinis
+value.WATER_RIFFLES.3=Sujudęs
 
-option.WATER_SPECULAR_STRENGTH=Water Specular Glow
+option.WATER_SPECULAR_STRENGTH=Vandens atspindžio blizgesys
 option.WATER_SPECULAR_STRENGTH.comment=Adjust the brightness of sun/moon reflections on the water ripples.
 
-value.WATER_SPECULAR_STRENGTH.1=Soft
-value.WATER_SPECULAR_STRENGTH.2=Standard
-value.WATER_SPECULAR_STRENGTH.3=Glinting
+value.WATER_SPECULAR_STRENGTH.1=Minkštas
+value.WATER_SPECULAR_STRENGTH.2=Standartinis
+value.WATER_SPECULAR_STRENGTH.3=Spindintis
 
-option.SHADOW_SOFTNESS=Shadow Softness
-option.SHADOW_SOFTNESS.comment=Controls how soft and diffuse the shadow edges appear. Uses rotated Poisson disk filtering for smooth penumbra.
+option.SHADOW_SOFTNESS=Šešėlių minkštumas
+option.SHADOW_SOFTNESS.comment=Valdo, kaip minkšti ir difuziniai atrodo šešėlių kraštai. Naudoja pasuktą Puasono disko filtravimą sklandžiam pusšešėliui.
 
-value.SHADOW_SOFTNESS.1=Sharp
-value.SHADOW_SOFTNESS.2=Soft
-value.SHADOW_SOFTNESS.3=Ultra Soft
+value.SHADOW_SOFTNESS.1=Ryškus
+value.SHADOW_SOFTNESS.2=Minkštas
+value.SHADOW_SOFTNESS.3=Ultra minkštas
 
 # ==============================================================================
 # Sun & Moon Lighting (extended)
 # ==============================================================================
 screen.SUN_MOON=Saulė ir Mėnulis
-screen.SUN_MOON.comment=Fine-tune sun & moon intensity, colour temperature, and atmospheric effects.
+screen.SUN_MOON.comment=Tiksliai sureguliuokite saulės ir mėnulio intensyvumą, spalvos temperatūrą ir atmosferos efektus.
 
-option.SUN_INTENSITY=Sun Intensity
-option.SUN_INTENSITY.comment=Master brightness of direct sunlight. Higher = stronger daytime contrast.
-value.SUN_INTENSITY.1=Dim
-value.SUN_INTENSITY.2=Standard
-value.SUN_INTENSITY.3=Bright
-value.SUN_INTENSITY.4=Blazing
+option.SUN_INTENSITY=Saulės intensyvumas
+option.SUN_INTENSITY.comment=Pagrindinis tiesioginės saulės šviesos ryškumas. Didesnis = stipresnis dienos kontrastas.
+value.SUN_INTENSITY.1=Prislopintas
+value.SUN_INTENSITY.2=Standartinis
+value.SUN_INTENSITY.3=Ryškus
+value.SUN_INTENSITY.4=Liepsnojantis
 
-option.MOON_INTENSITY=Moon Intensity
-option.MOON_INTENSITY.comment=Master brightness of moonlight. Higher = brighter, more visible nights.
-value.MOON_INTENSITY.1=Pitch Night
-value.MOON_INTENSITY.2=Standard
-value.MOON_INTENSITY.3=Bright Moon
-value.MOON_INTENSITY.4=Full Night
+option.MOON_INTENSITY=Mėnulio intensyvumas
+option.MOON_INTENSITY.comment=Pagrindinis mėnulio šviesos ryškumas. Didesnis = šviesesnės, matomesnės naktys.
+value.MOON_INTENSITY.1=Aklina naktis
+value.MOON_INTENSITY.2=Standartinis
+value.MOON_INTENSITY.3=Ryškus mėnulis
+value.MOON_INTENSITY.4=Pilna naktis
 
-option.SUN_TEMPERATURE=Sun Colour Temperature
-option.SUN_TEMPERATURE.comment=Shifts the sun's Kelvin curve. Realistic uses Tanner Helland blackbody; warm = golden; cool = neutral white.
-value.SUN_TEMPERATURE.1=Cool / Neutral
-value.SUN_TEMPERATURE.2=Realistic
-value.SUN_TEMPERATURE.3=Warm Golden
+option.SUN_TEMPERATURE=Saulės spalvos temperatūra
+option.SUN_TEMPERATURE.comment=Pastumia saulės Kelvino kreivę. Realistiškas naudoja Tannerio Hellando juodąjį kūną; šiltas = auksinis; šaltas = neutralus baltas.
+value.SUN_TEMPERATURE.1=Šaltas / Neutralus
+value.SUN_TEMPERATURE.2=Realistiškas
+value.SUN_TEMPERATURE.3=Šiltas auksinis
 
-option.MOON_TEMPERATURE=Moon Colour Temperature
-option.MOON_TEMPERATURE.comment=Tint of the moonlight. Icy = bluish cold; Silver = realistic 4100K; Warm = harvest-moon cream.
-value.MOON_TEMPERATURE.1=Icy Blue
-value.MOON_TEMPERATURE.2=Silver (Realistic)
-value.MOON_TEMPERATURE.3=Warm Cream
+option.MOON_TEMPERATURE=Mėnulio spalvos temperatūra
+option.MOON_TEMPERATURE.comment=Mėnulio šviesos atspalvis. Ledinis = melsvai šaltas; Sidabrinis = realistiškas 4100K; Šiltas = derliaus mėnulio kreminis.
+value.MOON_TEMPERATURE.1=Ledinė mėlyna
+value.MOON_TEMPERATURE.2=Sidabrinis (Realistiškas)
+value.MOON_TEMPERATURE.3=Šiltas kreminis
 
-option.SUN_HALO=Sun Halo (Mie Scatter)
-option.SUN_HALO.comment=Adds a soft warm glow on terrain when looking near the sun (Mie forward-scattering).
+option.SUN_HALO=Saulės halo (Mie sklaida)
+option.SUN_HALO.comment=Prideda švelnų šiltą švytėjimą reljefui žiūrint arti saulės (Mie sklaida į priekį).
 
-option.SUNRISE_GLOW=Enhanced Sunrise/Sunset Glow
-option.SUNRISE_GLOW.comment=Enables stronger warm back-scatter that wraps around surfaces facing away from the low sun.
+option.SUNRISE_GLOW=Sustiprintas saulėtekio/saulėlydžio švytėjimas
+option.SUNRISE_GLOW.comment=Įjungia stipresnę šiltą atgalinę sklaidą, apgaubiančią paviršius, nusisukusius nuo žemos saulės.
 
 # ==============================================================================
 # Extended shadow settings
 # ==============================================================================
-option.SHADOW_DISTANCE=Shadow Distance
-option.SHADOW_DISTANCE.comment=Maximum distance at which dynamic shadows are rendered before fading out.
-value.SHADOW_DISTANCE.1=Near (60m)
-value.SHADOW_DISTANCE.2=Standard (80m)
-value.SHADOW_DISTANCE.3=Far (120m)
+option.SHADOW_DISTANCE=Šešėlių atstumas
+option.SHADOW_DISTANCE.comment=Didžiausias atstumas, kuriuo atvaizduojami dinaminiai šešėliai prieš išnykstant.
+value.SHADOW_DISTANCE.1=Arti (60m)
+value.SHADOW_DISTANCE.2=Standartinis (80m)
+value.SHADOW_DISTANCE.3=Toli (120m)
 value.SHADOW_DISTANCE.4=Ultra (160m)
 
-option.AMBIENT_BRIGHTNESS=Shadow Lift / Ambient
-option.AMBIENT_BRIGHTNESS.comment=Controls how dark shadowed areas appear at night and in caves.
-value.AMBIENT_BRIGHTNESS.1=Dark
-value.AMBIENT_BRIGHTNESS.2=Standard
-value.AMBIENT_BRIGHTNESS.3=Lifted (Bright)
+option.AMBIENT_BRIGHTNESS=Šešėlių pakėlimas / aplinka
+option.AMBIENT_BRIGHTNESS.comment=Valdo, kaip tamsios atrodo užtemdytos vietos naktį ir olose.
+value.AMBIENT_BRIGHTNESS.1=Tamsu
+value.AMBIENT_BRIGHTNESS.2=Standartinis
+value.AMBIENT_BRIGHTNESS.3=Pakeltas (Šviesus)
 
-option.SHADOW_TINT=Shadow Tint
-option.SHADOW_TINT.comment=Tints daytime shadows. Real-world shadows under a blue sky have a subtle cool tint.
-value.SHADOW_TINT.1=Neutral Gray
-value.SHADOW_TINT.2=Cool Blue (Realistic)
-value.SHADOW_TINT.3=Warm
+option.SHADOW_TINT=Šešėlių atspalvis
+option.SHADOW_TINT.comment=Nuspalvina dienos šešėlius. Tikri šešėliai po mėlynu dangumi turi subtilų vėsų atspalvį.
+value.SHADOW_TINT.1=Neutrali pilka
+value.SHADOW_TINT.2=Šalta mėlyna (Realistiškas)
+value.SHADOW_TINT.3=Šiltas
 
-option.LIGHT_WRAP=Light Wrap
-option.LIGHT_WRAP.comment=Softens the terminator between lit and unlit surfaces. Realistic = physical Lambert; Soft = pleasant for screenshots.
-value.LIGHT_WRAP.1=Realistic (Lambert)
-value.LIGHT_WRAP.2=Soft Wrap
-value.LIGHT_WRAP.3=Stylized
+option.LIGHT_WRAP=Šviesos apgaubimas
+option.LIGHT_WRAP.comment=Sušvelnina ribą tarp apšviestų ir neapšviestų paviršių. Realistiškas = fizinis Lambertas; Minkštas = malonu ekrano nuotraukoms.
+value.LIGHT_WRAP.1=Realistiškas (Lambertas)
+value.LIGHT_WRAP.2=Minkštas apgaubimas
+value.LIGHT_WRAP.3=Stilizuotas
 
 # v0.2.9 — water/underwater option value labels (English fallback)
-value.WATER_WAVE_SCALE.1=Calm
-value.WATER_WAVE_SCALE.2=Standard
-value.WATER_WAVE_SCALE.3=Choppy
-value.WATER_WAVE_SCALE.4=Stormy
-value.WATER_WAVE_DETAIL.1=Coarse
-value.WATER_WAVE_DETAIL.2=Standard
-value.WATER_WAVE_DETAIL.3=Dense
-value.UNDERWATER_NIGHT_DARKNESS.1=Moonlit Pool
-value.UNDERWATER_NIGHT_DARKNESS.2=Dim
-value.UNDERWATER_NIGHT_DARKNESS.3=True Night
-value.UNDERWATER_NIGHT_DARKNESS.4=Pitch Dark
+value.WATER_WAVE_SCALE.1=Ramus
+value.WATER_WAVE_SCALE.2=Standartinis
+value.WATER_WAVE_SCALE.3=Sujudęs
+value.WATER_WAVE_SCALE.4=Audringas
+value.WATER_WAVE_DETAIL.1=Grubus
+value.WATER_WAVE_DETAIL.2=Standartinis
+value.WATER_WAVE_DETAIL.3=Tankus
+value.UNDERWATER_NIGHT_DARKNESS.1=Mėnulio nutviekstas tvenkinys
+value.UNDERWATER_NIGHT_DARKNESS.2=Silpnas
+value.UNDERWATER_NIGHT_DARKNESS.3=Tikra naktis
+value.UNDERWATER_NIGHT_DARKNESS.4=Aklina tamsa
 # ==============================================================================
 # Experimental Tab & New Sky (v1.1.0)
 # ==============================================================================
@@ -342,13 +342,13 @@ screen.EXPERIMENTAL=Eksperimentinis
 screen.EXPERIMENTAL.comment=Eksperimentinis
 
 option.SKY_MODE=Naujas dangus (Atmosferos sklaida)
-option.SKY_STYLE=Sky Style
+option.SKY_STYLE=Dangaus stilius
 option.SKY_STYLE.comment=option.SKY_STYLE.comment=Artistic direction for the physical sky. Realistic = true angular sizes & neutral colours (astronomy look). Semi-realistic = readable sun/moon (x2.8), richer colour, soft glow. Fantasy = grand sun/moon (x5.5), big corona, vivid teal/crimson/indigo palette.
 option.SKY_MODE.comment=EXPERIMENTAL — off in all profiles. Gradient (legacy, default) or Physical realtime scattering with true multiple scattering (Rayleigh+Mie+Ozone, 1st+2nd+3rd order). Enable manually in this tab.
-value.SKY_MODE.0=Gradient (Legacy)
-value.SKY_STYLE.0=Realistic
-value.SKY_STYLE.1=Semi-realistic
-value.SKY_STYLE.2=Fantasy
+value.SKY_MODE.0=Gradientas (Senas)
+value.SKY_STYLE.0=Realistiškas
+value.SKY_STYLE.1=Pusiau realistiškas
+value.SKY_STYLE.2=Fantastika
 value.SKY_MODE.1=Realtime Scattering
 
 option.SKY_QUALITY=Dangaus sklaidos kokybė
@@ -356,3 +356,61 @@ option.SKY_QUALITY.comment=Dangaus sklaidos kokybė
 value.SKY_QUALITY.1=Greita
 value.SKY_QUALITY.2=Standartinė
 value.SKY_QUALITY.3=Aukšta
+
+# --- Auto-added missing translations (v1.1.0 sync) ---
+option.FOLIAGE_SSS=Augmenijos SSS
+option.FOLIAGE_SSS.comment=Įjungia paviršiaus sklaidą (permatomumą) lapams, žolei ir augalams žiūrint prieš šviesą.
+option.GODRAYS_STRENGTH=Godrays intensyvumas
+option.GODRAYS_STRENGTH.comment=Tūrinių šviesos spindulių ryškumas. Subtilus: lengvas atmosferos rūkas. Subalansuotas: aiškiai matomi spinduliai. Dramatiškas: drąsūs kino spinduliai.
+value.GODRAYS_STRENGTH.1=Subtilus
+value.GODRAYS_STRENGTH.2=Subalansuotas
+value.GODRAYS_STRENGTH.3=Dramatiškas
+option.SHOOTING_STARS=Meteorai (Krintančios žvaigždės)
+option.SHOOTING_STARS.comment=Fizika pagrįsti meteorai, patenkantys į mezosferą (~80-120 km). Atvaizduoja tikrus didžiojo apskritimo 3D lankus su abliacijos šviesos kreivėmis, juodojo kūno plazmos spalva (3500-5500 K), Reilio slopinimu prie horizonto ir išliekančiais jonizacijos pėdsakais ant ugnies kamuolių.
+option.SHOOTING_STARS_FREQUENCY=Meteorų aktyvumas (ZHR)
+option.SHOOTING_STARS_FREQUENCY.comment=Apytikslis zenito valandinis rodiklis. Atsitiktinis = realistiškas fonas ~10 per valandą. Aktyvus = lengvas lietus. Audra = didžiausias tankis (~100/val).
+value.SHOOTING_STARS_FREQUENCY.1=Atsitiktinis (~10/val)
+value.SHOOTING_STARS_FREQUENCY.2=Aktyvus lietus
+value.SHOOTING_STARS_FREQUENCY.3=Meteorų audra
+option.SHOOTING_STARS_BRIGHTNESS=Ryškio skalė
+option.SHOOTING_STARS_BRIGHTNESS.comment=Pagrindinis daugiklis meteoro ryškio skalėje. Silpnas = realistiškas vidurkis; Ryškus = padidina ugnies kamuolius kino matomumui.
+value.SHOOTING_STARS_BRIGHTNESS.1=Silpnas (Realistiškas)
+value.SHOOTING_STARS_BRIGHTNESS.2=Standartinis
+value.SHOOTING_STARS_BRIGHTNESS.3=Ryškūs ugnies kamuoliai
+value.CONTRAST.4=Fotografinis (panašus į AgX)
+option.SPATIAL_AA_MODE=Erdvinis kraštų glotninimas
+option.SPATIAL_AA_MODE.comment=Pasirinkite po apdorojimo kraštų glotninimo metodą. FXAA yra greitas ir pigus. SMAA naudoja gylio buferį geresnei kokybei ties geometrijos kraštais. Galima derinti su TAA.
+value.SPATIAL_AA_MODE.0=Išjungta
+value.SPATIAL_AA_MODE.1=FXAA (Greitas)
+value.SPATIAL_AA_MODE.2=SMAA (Kokybė)
+option.HEAT_SHIMMER=Šilumos virpėjimas virš lavos
+option.HEAT_SHIMMER.comment=Įjunkite subtilų ekrano erdvės šilumos iškraipymo efektą virš lavos paviršių.
+option.HEAT_SHIMMER_STRENGTH=Šilumos virpėjimo stiprumas
+option.HEAT_SHIMMER_STRENGTH.comment=Valdo šilumos iškraipymo virš lavos intensyvumą.
+value.HEAT_SHIMMER_STRENGTH.1=Subtilus
+value.HEAT_SHIMMER_STRENGTH.2=Subalansuotas
+value.HEAT_SHIMMER_STRENGTH.3=Stiprus
+option.SSR=Ekrano erdvės atspindžiai (SSR)
+option.SSR.comment=Prideda realaus laiko atspindėtą aplinką ant vandens, šlapių paviršių ir metalinių PBR blokų. Įjungta nuo Vidutinio profilio ir aukščiau v1.0.4.
+option.SSR_QUALITY=SSR kokybė
+option.SSR_QUALITY.comment=Valdo ekrano erdvės atspindžių tikslumą ir spindulių atstumą. Didesnis = ryškesni atspindžiai, bet didesnės GPU sąnaudos.
+value.SSR_QUALITY.1=Greitas (12 žingsnių)
+value.SSR_QUALITY.2=Subalansuotas (24 žingsniai)
+value.SSR_QUALITY.3=Aukštas (40 žingsnių)
+option.SSR_STRENGTH=SSR stiprumas
+option.SSR_STRENGTH.comment=Valdo, kaip matoma ir ryški yra atspindėta aplinka atspindinčiuose paviršiuose.
+option.WATER_WAVE_SCALE=Bangos amplitudė
+option.WATER_WAVE_SCALE.comment=Valdo matomą vandens paviršiaus bangų statumą. Ramus = veidrodinis, Audringas = stipriai suskaidyti atspindžiai.
+option.WATER_WAVE_DETAIL=Bangos detalė
+option.WATER_WAVE_DETAIL.comment=Valdo, kiek mažų bangų atsiranda viename bloke. Grubus = kelios didelės bangos, Tankus = daug mažų raibulių.
+option.UNDERWATER_NIGHT_DARKNESS=Povandeninė nakties tamsa
+option.UNDERWATER_NIGHT_DARKNESS.comment=Valdo, kaip tamsi tampa povandeninė scena naktį. Mėnulio nutviekstas tvenkinys išlaiko ryškumą; Aklina tamsa suteikia ekstremalią išgyvenimo tamsą.
+value.SSR_STRENGTH.1=Subtilus
+value.SSR_STRENGTH.2=Subalansuotas
+value.SSR_STRENGTH.3=Stiprus
+option.PBR_DISTANCE=PBR atvaizdavimo atstumas
+option.PBR_DISTANCE.comment=Didžiausias atstumas PBR veidrodiniams blyksniams. Taupo GPU tolimame reljefe. Arti (16m) ŽEMAM, Standartinis (48m) VIDUTINIAM, Toli (128m) AUKŠTAM/ULTRA, Neribotas EKSTREMALIAM.
+value.PBR_DISTANCE.1=Arti (16m)
+value.PBR_DISTANCE.2=Standartinis (48m)
+value.PBR_DISTANCE.3=Toli (128m)
+value.PBR_DISTANCE.4=Neribotas

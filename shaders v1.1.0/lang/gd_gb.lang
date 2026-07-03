@@ -421,3 +421,17 @@ option.SKY_QUALITY.comment=Càileachd Sgapaidh an Adhair
 value.SKY_QUALITY.1=Luath
 value.SKY_QUALITY.2=Àbhaisteach
 value.SKY_QUALITY.3=Àrd
+
+# --- Auto-added missing translations (v1.1.0 sync) ---
+option.GODRAYS_STRENGTH=Neart Godrays
+option.GODRAYS_STRENGTH.comment=Soilleireachd nan sadan solais tomhas-lìonaidh. Subtail: ceathach àile socair. Cothromach: gathan follaiseach. Dràmatach: gathan film-eòlach dàna.
+value.GODRAYS_STRENGTH.1=Subtail
+value.GODRAYS_STRENGTH.2=Cothromach
+value.GODRAYS_STRENGTH.3=Dràmatach
+option.HEAT_SHIMMER=Crith Teas Os Cionn Làbha
+option.HEAT_SHIMMER.comment=Cuir an comas air buaidh saobhaidh teas àite-sgrìn subtail os cionn uachdar làbha.
+option.HEAT_SHIMMER_STRENGTH=Neart a' Chrith Teas
+option.HEAT_SHIMMER_STRENGTH.comment=A' cumail smachd air dian a' chrith teas os cionn làbha.
+value.HEAT_SHIMMER_STRENGTH.1=Subtail
+value.HEAT_SHIMMER_STRENGTH.2=Cothromach
+value.HEAT_SHIMMER_STRENGTH.3=Làidir

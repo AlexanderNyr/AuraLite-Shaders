@@ -421,3 +421,17 @@ option.SKY_QUALITY.comment=Cáilíocht Scaipthe na Spéire
 value.SKY_QUALITY.1=Tapa
 value.SKY_QUALITY.2=Caighdeánach
 value.SKY_QUALITY.3=Ard
+
+# --- Auto-added missing translations (v1.1.0 sync) ---
+option.GODRAYS_STRENGTH=Déine Godrays
+option.GODRAYS_STRENGTH.comment=Gile na soilse solais toirtmhéadraí. Caol: ceo atmaisféarach séimh. Cothrom: gathanna soiléire. Drámatúil: gathanna cineamatacha dána.
+value.GODRAYS_STRENGTH.1=Caol
+value.GODRAYS_STRENGTH.2=Cothrom
+value.GODRAYS_STRENGTH.3=Drámatúil
+option.HEAT_SHIMMER=Creathadh Teasa Os Cionn Laibhe
+option.HEAT_SHIMMER.comment=Cumasaigh éifeacht shaobhadh teasa spás-scáileáin caol os cionn dromchlaí laibhe.
+option.HEAT_SHIMMER_STRENGTH=Neart an Chreathaidh Teasa
+option.HEAT_SHIMMER_STRENGTH.comment=Rialaíonn sé déine an tsaobhtha teasa os cionn na laibhe.
+value.HEAT_SHIMMER_STRENGTH.1=Caol
+value.HEAT_SHIMMER_STRENGTH.2=Cothrom
+value.HEAT_SHIMMER_STRENGTH.3=Láidir
