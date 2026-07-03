@@ -602,13 +602,64 @@ void main() {
         // =========================================================
         // LEGACY SKY: Gradient-based from v1.0.7
         // =========================================================
-        float gradHeight = clamp(worldDir.y * 0.5 + 0.5, 0.0, 1.0);
-        vec3 daySky = mix(vec3(0.42, 0.62, 0.9), vec3(0.12, 0.32, 0.72), gradHeight);
-        vec3 nightSky = mix(vec3(0.004, 0.006, 0.012), vec3(0.0005, 0.001, 0.003), gradHeight);
-        vec3 sunsetSky = mix(vec3(0.85, 0.42, 0.12), vec3(0.18, 0.08, 0.28), gradHeight);
+        // =========================================================
+        // ENHANCED GRADIENT SKY (SKY_MODE 0)
+        // Physically-inspired: deep/saturated zenith -> pale hazy Mie
+        // horizon, directional warm forward-scatter that brightens the
+        // sky toward the sun, and a multi-stop sunset palette. Keeps the
+        // project's existing Kelvin/airmass sun-colour model.
+        // =========================================================
+
+        // --- view & sun geometry ---
+        float up         = clamp(worldDir.y, 0.0, 1.0);        // 0 horizon, 1 zenith
+        float towardSun  = max(dot(worldDir, worldL), 0.0);    // cosine toward the sun
+        float sunElev    = worldL.y;                           // sun elevation (-1..1)
+        float sunUp      = smoothstep(-0.05, 0.12, sunElev);   // sun meaningfully up
+
+        // --- sun colour through the atmosphere (warm low, white high) ---
+        float sinAlpha   = max(0.001, sunElev);
+        float currentK   = getSolarKelvin(sinAlpha);
+        currentK         = mix(currentK, 1850.0, sunsetFactor * 0.88);
+        float airMass    = getAirmass(sinAlpha);
+        vec3  extinction = exp(-airMass * vec3(0.075, 0.155, 0.375));
+        extinction       = mix(extinction, max(extinction, vec3(0.42)), sunsetFactor * 0.55);
+        vec3  sunLightColor = kelvinToRGB(currentK) * extinction;
+
+        // --- DAY: deep sky-blue zenith -> pale hazy horizon (Mie wash) ---
+        vec3 dayZenith  = vec3(0.085, 0.27, 0.66);            // deep saturated blue
+        vec3 dayMid     = vec3(0.31, 0.53, 0.88);             // mid blue
+        vec3 dayHorizon = vec3(0.64, 0.77, 0.93);             // pale hazy horizon
+        vec3 daySky = mix(dayHorizon, dayMid, smoothstep(0.0, 0.30, up));
+        daySky      = mix(daySky, dayZenith, smoothstep(0.28, 1.0, up));
+        // Golden tint creeps into the lower sky as the sun lowers.
+        daySky = mix(daySky, daySky * vec3(1.10, 0.97, 0.78),
+                     (1.0 - sunUp) * pow(1.0 - up, 3.0) * 0.7);
+
+        // --- NIGHT: near-black zenith + faint blue airglow band ---
+        vec3 nightZenith  = vec3(0.002, 0.004, 0.010);
+        vec3 nightHorizon = vec3(0.022, 0.032, 0.056);
+        vec3 nightSky = mix(nightHorizon, nightZenith, smoothstep(0.0, 0.55, up));
+
+        // --- SUNSET: hot orange horizon -> pink -> mauve -> deep blue zenith ---
+        float tHoriz      = pow(towardSun, 2.0);              // brighter toward the sun
+        vec3 setHorizon   = vec3(0.98, 0.40, 0.14) * (0.6 + 0.4 * tHoriz);
+        vec3 setLow       = vec3(0.86, 0.34, 0.30);
+        vec3 setMid       = vec3(0.42, 0.22, 0.44);
+        vec3 setHigh      = vec3(0.06, 0.09, 0.26);
+        // Ordered, edge0 < edge1 smoothsteps (horizon -> zenith).
+        vec3 sunsetSky = setHorizon;
+        sunsetSky = mix(sunsetSky, setLow,  smoothstep(0.0,  0.12, up));
+        sunsetSky = mix(sunsetSky, setMid,  smoothstep(0.12, 0.32, up));
+        sunsetSky = mix(sunsetSky, setHigh, smoothstep(0.32, 0.60, up));
+        // Broaden the glowing warm band across the lower sky near the sun.
+        float alHorizonBand = pow(clamp(1.0 - up, 0.0, 1.0), 6.0);
+        sunsetSky += sunLightColor * alHorizonBand * towardSun * 0.45;
+
+        // --- combine the phases of the day ---
         vec3 skyColor = mix(nightSky, daySky, dayFactor);
         skyColor = mix(skyColor, sunsetSky, sunsetFactor);
 
+        // --- storm / overcast ---
         vec3 rainSky = vec3(0.24, 0.26, 0.29);
         vec3 thunderSky = vec3(0.05, 0.055, 0.065);
         vec3 stormSky = mix(rainSky, thunderSky, thunderStrength);
@@ -620,25 +671,11 @@ void main() {
         vec3 glowColor = vec3(0.0);
 
         if (dayFactor > 0.1) {
-            float sinAlpha = max(0.001, worldL.y);
-            float currentK = getSolarKelvin(sinAlpha);
-            currentK = mix(currentK, 1850.0, sunsetFactor * 0.88);
-            float airMass = getAirmass(sinAlpha);
-            vec3 extinction = exp(-airMass * vec3(0.075, 0.155, 0.375));
-            extinction = mix(extinction, max(extinction, vec3(0.42)), sunsetFactor * 0.55);
-            vec3 sunLightColor = kelvinToRGB(currentK) * extinction;
-
             float sunGlow = max(0.0, dotLight);
             float sunDisk = smoothstep(0.9994, 0.9996, dotLight);
             float corona = pow(sunGlow, 180.0) * 0.95;
             float halo = pow(sunGlow, 10.0) * 0.25 * dayFactor;
             glowColor = sunLightColor * (sunDisk * 5.0 + corona + halo);
-
-            if (sunsetFactor > 0.01) {
-                vec3 lowSunTint = kelvinToRGB(getSolarKelvin(0.02));
-                float horizonSunset = pow(max(0.0, 1.0 - abs(worldDir.y)), 6.0) * sunsetFactor;
-                baseSky += lowSunTint * horizonSunset * 0.25;
-            }
         } else {
             float dotMoon = dot(worldDir, worldL);
             float moonGlow = max(0.0, dotMoon);
@@ -655,7 +692,20 @@ void main() {
         }
 
         glowColor *= (1.0 - rainStrength * mix(0.65, 0.95, thunderStrength));
-        finalSky = baseSky + glowColor + baseSky * horizonGlow * 0.28;
+
+        // --- horizon airlight (Mie haze) + directional forward scatter ---
+        // Bright desaturated band hugging the horizon; it warms and intensifies
+        // toward the sun during the day and golden hour, and lingers into
+        // twilight for that glowing-sunset look. Fades out at deep night.
+        float airlight = pow(clamp(1.0 - abs(worldDir.y), 0.0, 1.0), 6.0);
+        vec3  airlightCol = mix(vec3(0.58, 0.70, 0.86), sunLightColor * 1.15, 0.55);
+        float airlightAmt = 0.06
+                          + 0.34 * pow(towardSun, 5.0) * dayFactor
+                          + 0.22 * sunsetFactor * (0.4 + 0.6 * towardSun);
+
+        finalSky = baseSky + glowColor
+                 + baseSky * horizonGlow * 0.28
+                 + airlight * airlightCol * airlightAmt;
         #endif
         // =========================================================
         // END OF SKY SWITCH — common overlays follow
