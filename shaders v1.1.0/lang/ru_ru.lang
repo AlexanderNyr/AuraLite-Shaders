@@ -134,9 +134,14 @@ value.CLOUD_SHADOW_STRENGTH.2=Сбалансированные
 value.CLOUD_SHADOW_STRENGTH.3=Драматичные
 
 option.GODRAYS=Солнечные лучи
-option.GODRAYS.comment=Добавляет физически обоснованные объёмные солнечные лучи: single scattering, затухание Бугера—Ламберта, фазу Ми и окклюзию по shadow-map.
+option.GODRAYS.comment=Настоящие объёмные лучи (raymarch): shadow-map проверяется на каждом шаге луча, поэтому деревья и рельеф вырезают реальные сумеречные лучи. Дизеринг, точное интегрирование Бугера—Ламберта, цветное излучение солнца/луны.
 option.GODRAYS_QUALITY=Качество солнечных лучей
-option.GODRAYS_QUALITY.comment=Управляет числом сэмплов и дистанцией интегрирования физически основанных объёмных лучей.
+option.GODRAYS_QUALITY.comment=Число сэмплов raymarch и дистанция интегрирования. Быстрое: 8 сэмплов / 96м. Сбалансированное: 16 / 128м. Высокое: 24 / 160м.
+option.GODRAYS_STRENGTH=Яркость солнечных лучей
+option.GODRAYS_STRENGTH.comment=Яркость объёмных световых лучей. Слабая: лёгкая атмосферная дымка. Сбалансированная: отчётливо видимые лучи. Драматичная: смелые кинематографичные лучи.
+value.GODRAYS_STRENGTH.1=Слабая
+value.GODRAYS_STRENGTH.2=Сбалансированная
+value.GODRAYS_STRENGTH.3=Драматичная
 value.GODRAYS_QUALITY.1=Быстрое
 value.GODRAYS_QUALITY.2=Сбалансированное
 value.GODRAYS_QUALITY.3=Высокое

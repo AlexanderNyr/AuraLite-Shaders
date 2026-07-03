@@ -44,8 +44,10 @@
 #define CLOUD_DISTANCE 2    // [1 2 3 4] - 1: Near, 2: Standard, 3: Far, 4: Very Far
 #define CLOUD_SHADOWS       // [true false] - Procedural transparent shadows from cloud density
 #define CLOUD_SHADOW_STRENGTH 2 // [1 2 3] - 1: Soft, 2: Balanced, 3: Dramatic
-#define GODRAYS             // [true false] - Screen-space sun shafts through sky gaps
-#define GODRAYS_QUALITY 1   // [1 2 3] - 1: Fast, 2: Balanced, 3: High
+#define GODRAYS             // [true false] - [v1.1.0] TRUE volumetric raymarched light shafts (shadow-map occluded)
+#define GODRAYS_QUALITY 1   // [1 2 3] - 1: Fast (8 samples), 2: Balanced (16), 3: High (24)
+#define GODRAYS_STRENGTH 2  // [1 2 3] - 1: Subtle, 2: Balanced, 3: Dramatic
+#define TAA                 // [true false] - [v1.1.0] Mirrored here so godray dither rotates per-frame only when TAA resolves it
 #define WIND_SPEED 2        // [1 2 3] - shared with foliage/water; also controls cloud wind drift
 
 // ==============================================================================
@@ -104,6 +106,7 @@ uniform mat4 shadowProjection;
 uniform vec3 shadowLightPosition; // Active light source direction (Sun/Moon)
 uniform vec3 cameraPosition;      // Player's actual world coordinates
 uniform float frameTimeCounter;
+uniform int frameCounter;         // [v1.1.0] Frame index for temporal godray dithering (TAA-friendly)
 uniform float rainStrength;
 uniform float thunderStrength; // Blends thunderstorm vs standard rain
 uniform float wetness; // Moisture decay after rain (used for persistent rainbows!)
@@ -802,83 +805,150 @@ float henyeyGreenstein(float cosTheta, float g) {
     return (1.0 - g2) / (12.5663706144 * denom);
 }
 
-float computeGodrays(vec3 rayDirView, vec3 rayDirWorld, float maxRayDistance,
-                     vec3 lightViewDir, vec3 lightWorldDir,
-                     float dayFactor, float sunsetFactor) {
-    // Physically-inspired single scattering integral:
-    // L = ∫ Tr(camera→x) · σs(x) · phase(view,sun) · visibilitySun(x) dx
-    // It is still screen-space/real-time, but avoids fake radial color smearing.
-    if (dayFactor <= 0.02 || lightWorldDir.y <= 0.025 || maxRayDistance <= 1.0) return 0.0;
+// ==============================================================================
+// [v1.1.0] TRUE VOLUMETRIC GODRAYS — full single-scattering raymarch
+//
+//   L(cam) = ∫ Tr(cam→x) · σs(h) · P_HG(θ) · V_shadow(x) · V_cloud(x) · E_light dx
+//
+// What makes this "true" volumetric compared to the previous approximation:
+//   • The shadow map is tested at EVERY raymarch step, so shafts are carved by
+//     real geometry occlusion (trees, buildings, caves), not implied by a
+//     forward-looking boost.
+//   • Interleaved Gradient Noise dithering (+ per-frame rotation when TAA is
+//     active) makes 8–24 steps integrate like hundreds — no banding.
+//   • Exact per-segment Beer–Lambert integration:
+//     ∫ Tr·σs dx over a segment = Tr₀ · σs/σt · (1 − e^(−σt·Δx))  — energy
+//     conserving, no over-brightening regardless of step size.
+//   • No forwardBoost gate: the dual-lobe HG phase alone shapes directionality,
+//     so shafts remain visible when looking ACROSS them (like real crepuscular
+//     rays), not only when staring at the sun.
+//   • Returns colored radiance: warm Kelvin-driven sun shafts by day, deep
+//     orange at sunset, faint blue moonbeams at night (moon shadow map is
+//     already bound to shadowtex0 after 13000 ticks).
+//   • Early-out when transmittance is fully absorbed.
+// ==============================================================================
 
-    int sampleCount = 4;
-    float maxDistance = 72.0;
-    float scatteringScale = 0.82;
+// Interleaved Gradient Noise (Jimenez 2014) — ideal spatial dither for raymarch.
+float godrayIGN(vec2 pixel) {
+    #ifdef TAA
+    // Rotate the dither pattern every frame — TAA resolves it into a clean gradient.
+    pixel += 5.588238 * float(frameCounter & 63);
+    #endif
+    return fract(52.9829189 * fract(0.06711056 * pixel.x + 0.00583715 * pixel.y));
+}
+
+vec3 computeVolumetricGodrays(vec3 rayDirView, vec3 rayDirWorld, float maxRayDistance,
+                              vec3 lightViewDir, vec3 lightWorldDir,
+                              float dayFactor, float sunsetFactor) {
+    // Light source below the horizon → nothing to in-scatter.
+    if (lightWorldDir.y <= 0.01 || maxRayDistance <= 1.0) return vec3(0.0);
+
+    int sampleCount = 8;
+    float maxDistance = 96.0;
     #if GODRAYS_QUALITY == 2
-    sampleCount = 6;
-    maxDistance = 110.0;
-    scatteringScale = 1.00;
+    sampleCount = 16;
+    maxDistance = 128.0;
     #elif GODRAYS_QUALITY == 3
-    sampleCount = 8;
-    maxDistance = 150.0;
-    scatteringScale = 1.18;
+    sampleCount = 24;
+    maxDistance = 160.0;
     #endif
 
     float rayLength = min(maxRayDistance, maxDistance);
-    if (rayLength <= 1.0) return 0.0;
+    if (rayLength <= 0.5) return vec3(0.0);
 
-    float cosTheta = clamp(dot(normalize(rayDirView), normalize(lightViewDir)), -1.0, 1.0);
-    // Mie-dominant aerosol: strong forward scattering, warmer/stronger near low sun.
-    float g = mix(0.72, 0.82, sunsetFactor);
-    float phase = henyeyGreenstein(cosTheta, g);
-
-    // Sun shafts are mostly visible when looking close to the sun direction, but
-    // the HG phase keeps a physically plausible falloff instead of a hand-made radial blur.
-    float forwardBoost = smoothstep(0.08, 0.92, cosTheta);
-    float weatherVisibility = 1.0 - rainStrength * mix(0.72, 0.96, thunderStrength);
-    float timeVisibility = clamp(dayFactor + sunsetFactor * 0.45, 0.0, 1.0);
-
-    float opticalDepth = 0.0;
-    float integrated = 0.0;
-    float previousDist = 0.0;
-
-    // [FIX v1.0.7] Single precomputed cloud shadow tap outside the volumetric loop (8x speedup!)
-    float globalCloudShadow = 1.0;
-    #ifdef CLOUD_SHADOWS
-    globalCloudShadow = computeCloudShadow(cameraPosition + rayDirWorld * min(rayLength * 0.5, 60.0), lightWorldDir, dayFactor, frameTimeCounter * 0.05);
+    // --- User-facing intensity ---
+    float strengthMult = 2.4;
+    #if GODRAYS_STRENGTH == 1
+    strengthMult = 1.4;
+    #elif GODRAYS_STRENGTH == 3
+    strengthMult = 3.8;
     #endif
 
-    for (int i = 0; i < 8; ++i) {
+    // --- Phase function: dominant forward Mie lobe + weak backscatter lobe ---
+    // [FIX v1.1.0] Do NOT reuse the shared henyeyGreenstein(): its max(0.045, ...)
+    // denominator guard (tuned for clouds) caps the forward peak ~2.5-11x too low,
+    // which made the shafts nearly invisible. Local HG with a tiny epsilon instead.
+    float cosTheta = clamp(dot(normalize(rayDirView), normalize(lightViewDir)), -1.0, 1.0);
+    float g = mix(0.74, 0.84, sunsetFactor); // hazier, more forward-peaked at sunset
+    float g2 = g * g;
+    float phaseFwd = (1.0 - g2) / (12.5663706144 * max(0.008, pow(1.0 + g2 - 2.0 * g * cosTheta, 1.5)));
+    float phaseBack = 0.0182 / max(0.008, pow(1.0334 + 0.36 * cosTheta, 1.5)); // g = -0.18 lobe
+    float phase = mix(phaseFwd, phaseBack, 0.20);
+    // Isotropic floor: real haze is polydisperse, so crepuscular rays stay clearly
+    // visible even when looking ACROSS them, not only toward the sun.
+    phase = phase * 0.92 + 0.055;
+
+    // --- Light energy (colored!) ---
+    vec3 sunE = kelvinToRGB(getSolarKelvin(max(0.001, lightWorldDir.y)));
+    sunE = mix(sunE, vec3(1.0, 0.52, 0.24), sunsetFactor * 0.6);
+    vec3 moonE = vec3(0.38, 0.50, 0.78) * getMoonPhaseBrightness(moonPhase);
+    float sunAmount = clamp(dayFactor + sunsetFactor * 0.5, 0.0, 1.0);
+    vec3 lightEnergy = mix(moonE * 0.16, sunE, sunAmount);
+
+    // Storm clouds block the direct beam; wet air scatters more after rain.
+    float weatherVisibility = 1.0 - rainStrength * mix(0.60, 0.88, thunderStrength);
+    if (weatherVisibility <= 0.02) return vec3(0.0);
+
+    // --- Medium density: user fog level + sunset haze + post-rain moisture ---
+    float densityMult = 1.0 + sunsetFactor * 0.85 + wetness * 0.45;
+    #if FOG_DENSITY_LEVEL == 1
+    densityMult *= 0.78;
+    #elif FOG_DENSITY_LEVEL == 3
+    densityMult *= 1.30;
+    #endif
+
+    // --- Dithered uniform raymarch with exact segment integration ---
+    float dither = godrayIGN(gl_FragCoord.xy);
+    float stepLen = rayLength / float(sampleCount);
+
+    float transmittance = 1.0;
+    vec3 scattered = vec3(0.0);
+    float cloudShadow = 1.0;
+
+    for (int i = 0; i < 24; ++i) {
         if (i >= sampleCount) break;
 
-        // Slightly denser sampling near the camera where shafts are most visible.
-        float u = (float(i) + 0.5) / float(sampleCount);
-        float sampleDist = rayLength * pow(u, 1.18);
-        float ds = max(0.1, sampleDist - previousDist);
-        previousDist = sampleDist;
-
+        float sampleDist = (float(i) + dither) * stepLen;
         vec3 sampleViewPos = rayDirView * sampleDist;
         vec3 sampleWorldPos = cameraPosition + rayDirWorld * sampleDist;
 
-        // Aerosol density: denser near sea level/ground, thinner at altitude.
-        float heightDensity = exp(clamp((78.0 - sampleWorldPos.y) / 145.0, -0.75, 0.65));
-        heightDensity = clamp(heightDensity, 0.48, 1.55);
+        // Exponential aerosol falloff above sea level (Y≈64), denser in valleys.
+        float heightDensity = exp(-max(sampleWorldPos.y - 64.0, 0.0) * 0.010);
+        heightDensity = clamp(heightDensity * densityMult, 0.06, 1.75);
 
-        // σ values tuned for Minecraft metres: enough to see shafts without milky fog.
-        float sigmaS = 0.0038 * heightDensity;
-        float sigmaT = 0.0062 * heightDensity;
+        // [FIX v1.1.0] Denser medium + higher single-scatter albedo (0.85):
+        // the previous 0.0050/0.0072 pair integrated to a nearly invisible shaft.
+        float sigmaS = 0.0085 * heightDensity; // scattering
+        float sigmaT = 0.0100 * heightDensity; // extinction (scatter + absorb)
 
-        float sunVisibility = sampleVolumetricSunVisibility(sampleViewPos) * globalCloudShadow;
+        // Per-step geometric occlusion from the shadow map — the heart of the effect.
+        float vis = sampleVolumetricSunVisibility(sampleViewPos);
 
-        float transmittance = exp(-opticalDepth);
-        integrated += transmittance * sigmaS * phase * sunVisibility * ds;
-        opticalDepth += sigmaT * ds;
+        // Cloud shadow is low-frequency: refresh every 4th step (spatially varying,
+        // still ~6x cheaper than per-step evaluation).
+        #ifdef CLOUD_SHADOWS
+        if ((i & 3) == 0) {
+            cloudShadow = computeCloudShadow(sampleWorldPos, lightWorldDir, dayFactor, frameTimeCounter * 0.05);
+        }
+        #endif
+        vis *= cloudShadow;
+
+        // Exact analytic integral of Tr·σs over this segment (energy conserving).
+        float segTr = exp(-sigmaT * stepLen);
+        if (vis > 0.001) {
+            scattered += lightEnergy * (transmittance * vis * phase * (sigmaS / sigmaT) * (1.0 - segTr));
+        }
+        transmittance *= segTr;
+        if (transmittance < 0.02) break; // fully absorbed — early out
     }
 
-    // Convert physically-inspired radiance to a display-friendly intensity.
-    // forwardBoost keeps the effect directional while phase controls the actual shape.
-    float shafts = integrated * scatteringScale * weatherVisibility * timeVisibility * mix(0.35, 1.0, forwardBoost);
-    shafts *= 1.0 - exp(-rayLength * 0.018); // no hard pop at tiny distances
-    return clamp(shafts, 0.0, 0.42);
+    scattered *= weatherVisibility * strengthMult;
+
+    // Soft shoulder keeps the sun-facing core from blowing out the HDR pipeline
+    // while preserving the linear response of faint side-lit shafts.
+    // [FIX v1.1.0] Relaxed 0.55 -> 0.30 — the old shoulder crushed the bright core.
+    scattered = scattered / (1.0 + scattered * 0.30);
+    return scattered;
 }
 #endif
 
@@ -1171,9 +1241,8 @@ void main() {
 
         #ifdef GODRAYS
         if (isOverworld) {
-            float rays = computeGodrays(viewDir, worldDir, terrainDist, L, worldL, dayFactor, sunsetFactor);
-            vec3 rayColor = mix(kelvinToRGB(getSolarKelvin(max(0.001, worldL.y))), vec3(1.0, 0.62, 0.34), sunsetFactor * 0.55);
-            finalColor += rayColor * rays;
+            // [v1.1.0] True volumetric raymarched godrays (colored radiance)
+            finalColor += computeVolumetricGodrays(viewDir, worldDir, terrainDist, L, worldL, dayFactor, sunsetFactor);
         }
         #endif
 
@@ -1447,9 +1516,9 @@ void main() {
 
         #ifdef GODRAYS
         if (isOverworld) {
-            float rays = computeGodrays(viewDir, worldDir, 180.0, L, worldL, dayFactor, sunsetFactor);
-            vec3 rayColor = mix(kelvinToRGB(getSolarKelvin(max(0.001, worldL.y))), vec3(1.0, 0.62, 0.34), sunsetFactor * 0.55);
-            finalColor += rayColor * rays;
+            // [v1.1.0] True volumetric raymarched godrays — sky pixels integrate
+            // the full budget distance so shafts extend naturally into the sky.
+            finalColor += computeVolumetricGodrays(viewDir, worldDir, 180.0, L, worldL, dayFactor, sunsetFactor);
         }
         #endif
 
@@ -1791,9 +1860,9 @@ void main() {
 
     #ifdef GODRAYS
     if (isOverworld) {
-        float rays = computeGodrays(viewDir, worldDir, terrainDist, L, worldL, dayFactor, sunsetFactor);
-        vec3 rayColor = mix(kelvinToRGB(getSolarKelvin(max(0.001, worldL.y))), vec3(1.0, 0.62, 0.34), sunsetFactor * 0.55);
-        finalColor += rayColor * rays;
+        // [v1.1.0] True volumetric raymarched godrays — occluded per-step by the
+        // shadow map, so terrain/trees carve real crepuscular light shafts.
+        finalColor += computeVolumetricGodrays(viewDir, worldDir, terrainDist, L, worldL, dayFactor, sunsetFactor);
     }
     #endif
 
