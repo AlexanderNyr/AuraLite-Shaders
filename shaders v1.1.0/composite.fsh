@@ -29,7 +29,7 @@
 // [FIX v0.2.5] Sunset/twilight lighting stays red at /time set 12800 instead of turning neutral.
 
 #define SHADOWS             // [true false]
-#define SHADOW_RES 2048     // [1024 2048 4096]
+#define SHADOW_RES 2048     // [512 1024 2048 4096]
 #define SHADOW_SOFTNESS 2   // [1 2 3] - 1: Sharp, 2: Soft, 3: Ultra Soft
 #define LIGHTMAP_WARMTH 3   // [1 2 3]
 #define FOG_DENSITY_LEVEL 2 // [1 2 3]

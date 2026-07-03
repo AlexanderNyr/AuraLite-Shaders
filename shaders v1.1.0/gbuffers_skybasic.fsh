@@ -638,35 +638,42 @@ void main() {
         extinction       = mix(extinction, max(extinction, vec3(0.42)), sunsetFactor * 0.55);
         vec3  sunLightColor = kelvinToRGB(currentK) * extinction;
 
-        // --- DAY: deep sky-blue zenith -> pale hazy horizon (Mie wash) ---
-        vec3 dayZenith  = vec3(0.085, 0.27, 0.66);            // deep saturated blue
-        vec3 dayMid     = vec3(0.31, 0.53, 0.88);             // mid blue
-        vec3 dayHorizon = vec3(0.64, 0.77, 0.93);             // pale hazy horizon
-        vec3 daySky = mix(dayHorizon, dayMid, smoothstep(0.0, 0.30, up));
-        daySky      = mix(daySky, dayZenith, smoothstep(0.28, 1.0, up));
-        // Golden tint creeps into the lower sky as the sun lowers.
-        daySky = mix(daySky, daySky * vec3(1.10, 0.97, 0.78),
-                     (1.0 - sunUp) * pow(1.0 - up, 3.0) * 0.7);
+        // --- DAY: realistic clear sky (Rayleigh & Mie approximation) ---
+        vec3 dayZenith  = vec3(0.08, 0.22, 0.55);            // realistic deep sky blue
+        vec3 dayMid     = vec3(0.22, 0.42, 0.72);            // softer mid-sky blue
+        vec3 dayHorizon = vec3(0.55, 0.68, 0.82);            // hazy atmospheric white-blue horizon
+        
+        // Smooth realistic blending
+        vec3 daySky = mix(dayHorizon, dayMid, smoothstep(0.0, 0.25, up));
+        daySky      = mix(daySky, dayZenith, smoothstep(0.20, 1.0, up));
+        
+        // Subtle haze layer at the horizon
+        vec3 horizonHaze = vec3(0.85, 0.82, 0.75);
+        float hazeMask = (1.0 - smoothstep(-0.1, 0.3, sunElev)) * pow(clamp(1.0 - up, 0.0, 1.0), 3.0);
+        daySky = mix(daySky, daySky * horizonHaze, hazeMask * 0.60);
 
         // --- NIGHT: near-black zenith + faint blue airglow band ---
         vec3 nightZenith  = vec3(0.002, 0.004, 0.010);
         vec3 nightHorizon = vec3(0.022, 0.032, 0.056);
         vec3 nightSky = mix(nightHorizon, nightZenith, smoothstep(0.0, 0.55, up));
 
-        // --- SUNSET: hot orange horizon -> pink -> mauve -> deep blue zenith ---
-        float tHoriz      = pow(towardSun, 2.0);              // brighter toward the sun
-        vec3 setHorizon   = vec3(0.98, 0.40, 0.14) * (0.6 + 0.4 * tHoriz);
-        vec3 setLow       = vec3(0.86, 0.34, 0.30);
-        vec3 setMid       = vec3(0.42, 0.22, 0.44);
-        vec3 setHigh      = vec3(0.06, 0.09, 0.26);
-        // Ordered, edge0 < edge1 smoothsteps (horizon -> zenith).
+        // --- SUNSET: natural sunset fading into twilight ---
+        float tHoriz      = pow(towardSun, 2.0);              
+        vec3 setHorizon   = vec3(0.85, 0.45, 0.15) * (0.6 + 0.4 * tHoriz); // warm natural orange-yellow
+        vec3 setLow       = vec3(0.65, 0.35, 0.25);           // dusty salmon/peach
+        vec3 setMid       = vec3(0.25, 0.25, 0.35);           // grayish twilight blue
+        vec3 setHigh      = vec3(0.08, 0.12, 0.22);           // darkening atmosphere
+        
+        // Natural wide transitions matching physical scattering
         vec3 sunsetSky = setHorizon;
-        sunsetSky = mix(sunsetSky, setLow,  smoothstep(0.0,  0.12, up));
-        sunsetSky = mix(sunsetSky, setMid,  smoothstep(0.12, 0.32, up));
-        sunsetSky = mix(sunsetSky, setHigh, smoothstep(0.32, 0.60, up));
-        // Broaden the glowing warm band across the lower sky near the sun.
-        float alHorizonBand = pow(clamp(1.0 - up, 0.0, 1.0), 6.0);
-        sunsetSky += sunLightColor * alHorizonBand * towardSun * 0.45;
+        sunsetSky = mix(sunsetSky, setLow,  smoothstep(0.0,  0.18, up));
+        sunsetSky = mix(sunsetSky, setMid,  smoothstep(0.12, 0.45, up));
+        sunsetSky = mix(sunsetSky, setHigh, smoothstep(0.35, 0.80, up));
+        
+        // Natural Mie forward-scatter around the sun
+        float alHorizonBand = pow(clamp(1.0 - up, 0.0, 1.0), 5.0);
+        float directionalMie = pow(towardSun, 5.0);
+        sunsetSky += sunLightColor * alHorizonBand * (towardSun * 0.3 + directionalMie * 0.6);
 
         // --- combine the phases of the day ---
         vec3 skyColor = mix(nightSky, daySky, dayFactor);

@@ -20,7 +20,8 @@ void main() {
     texcoord = gl_MultiTexCoord0.xy;
     glcolor = gl_Color;
 
-    vec4 clipPos = ftransform();
+    vec4 position = gl_ModelViewMatrix * gl_Vertex;
+    vec4 clipPos = gl_ProjectionMatrix * position;
     clipPos.xyz = distortShadowClipPos(clipPos.xyz);
     gl_Position = clipPos;
 }
