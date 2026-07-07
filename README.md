@@ -1,4 +1,4 @@
-# 🌌 AuraLite Shaders (Minecraft 1.16.5 – 26.2)
+# 🌌 AuraLite Shaders (Minecraft 1.16 – 26.2)
 
 ![Minecraft Version](https://img.shields.io/badge/Minecraft-1.16.5%20--%2026.2-blue?logo=minecraft&logoColor=white)
 [![Shader Loader](https://img.shields.io/badge/Loader-Iris%20%2F%20Sodium-green)](https://modrinth.com/mod/iris)
@@ -8,7 +8,7 @@
 [![License](https://img.shields.io/badge/License-CC%20BY--NC--SA%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by-nc-sa/4.0/)
 
 
-**AuraLite** is a modern, lightweight, and highly optimized shader pack built on top of the **OpenGL 4.6 / GLSL 460** standard. It is specifically designed and **tested for Minecraft 1.16.5 – 26.2 with Sodium + Iris** (and compatible with **OptiFine**, **Oculus**).
+**AuraLite** is a modern, lightweight, and highly optimized shader pack built on top of the **OpenGL 4.6 / GLSL 460** standard. It is specifically designed and **tested for Minecraft 1.16 – 26.2 with Sodium + Iris** (and compatible with **OptiFine**, **Oculus**).
 
 AuraLite delivers a breathtaking, realistic visual experience without overcomplicating the screen with bloated post-processing effects (such as aggressive motion blur or heavy bloom). A lightweight HDR bloom was added in v1.0.1 to softly glow emissive sources without smearing the scene. Optional FXAA/SMAA anti-aliasing, SSR, TAA, godrays, and SSAO are profile-scaled so AuraLite keeps **high FPS and smooth frametimes** on modern GPUs.
 
