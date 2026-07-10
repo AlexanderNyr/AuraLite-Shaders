@@ -1,0 +1,433 @@
+# AuraLite Shaders v1.0.7 - Copyright (c) 2026 AlexanderNyr. Licensed under CC BY-NC-SA 4.0.
+# ==============================================================================
+# AuraLite Shader Pack - Slovenian Language Translations
+# ==============================================================================
+
+# ==============================================================================
+# Quality Profiles
+# ==============================================================================
+profile.VERY_LOW=Zelo nizko
+profile.VERY_LOW.comment=Fastest possible preset for very weak GPUs. Disables shadows, clouds, water waves, foliage waving, PBR and most extras.
+profile.LOW=Nizko
+profile.LOW.comment=Lightweight preset for weak GPUs. Keeps cheap water/foliage motion, disables shadows, clouds and PBR.
+profile.MED=Srednje
+profile.MED.comment=Balanced preset with 1024 shadows, standard clouds, PBR and atmospheric effects.
+profile.HIGH=Visoko
+profile.HIGH.comment=High quality preset with 2048 shadows, farther clouds and full PBR, without SSAO.
+profile.ULTRA=Ultra
+profile.ULTRA.comment=Ultra quality preset with 4096 shadows, very far clouds and balanced SSAO. POM remains disabled for stability.
+profile.EXTREME=Ekstremno
+profile.EXTREME.comment=Maximum experimental quality. Pushes lighting, clouds, color and deep SSAO. POM remains disabled for stability.
+profile.CUSTOM=Po meri
+profile.CUSTOM.comment=Nastavitve po meri, ki jih je spremenil uporabnik.
+
+screen.TRANSLATION_NOTICE=⚠ Prevodi lahko vsebujejo napake
+screen.TRANSLATION_NOTICE.comment=Nekateri lokalizacijski nizi so lahko netočni. Če se kaj zdi čudno, primerjajte z angleškim izvirnikom.
+
+# Screens
+screen.LIGHTING=Nastavitve osvetlitve
+screen.LIGHTING.comment=Konfigurirajte sence, barve svetlobe in svetlost.
+
+screen.FOLIAGE=Nastavitve rastlinja
+screen.FOLIAGE.comment=Konfigurirajte animacije valovanja za travo in liste.
+
+screen.WATER=Nastavitve vode
+screen.WATER.comment=Konfigurirajte valove, prosojnost in slog vode.
+
+screen.CLOUDS_MENU=Nebo in oblaki
+screen.CLOUDS_MENU.comment=Konfigurirajte fizično višino, debelino in slog 3D oblakov ter nebesnih učinkov.
+
+screen.POST_PROCESS=Post-obdelava in megla
+screen.POST_PROCESS.comment=Konfigurirajte osvetlitev, meglo in filmske učinke.
+
+# Options
+option.SHADOWS=Dinamične sence
+option.SHADOWS.comment=Omogočite ali onemogočite mehke dinamične sence sonca in lune.
+
+option.shadowMapResolution=Ločljivost senc
+option.shadowMapResolution.comment=Spremenite kakovost mape senc. Višje vrednosti lahko zmanjšajo zmogljivost.
+
+option.PBR_LIGHTING=PBR osvetlitev (LabPBR)
+option.PBR_LIGHTING.comment=Omogočite fizično osnovano upodabljanje za kovine, hrapavost in 3D normalne zemljevide (potreben je paket virov PBR).
+
+option.PBR_POM=3D relief blokov (POM)
+option.PBR_POM.comment=Omogočite fizično osnovano preslikavo Parallax Occlusion za 3D teksture blokov. Priporočljivo je onemogočiti pri nezdružljivih paketih virov.
+
+option.PBR_STRENGTH=Intenzivnost PBR
+option.PBR_STRENGTH.comment=Nadzirajte odbojnost in sijaj kovinskih PBR površin.
+
+value.PBR_STRENGTH.1=Rahlo
+value.PBR_STRENGTH.2=Standardno
+value.PBR_STRENGTH.3=Zrcalno
+
+option.SSAO=SSAO / SAO okluzija
+option.SSAO.comment=Extreme profile: screen-space ambient occlusion for contact shadows in corners, under blocks, and around geometry intersections.
+option.SSAO_STRENGTH=Moč SSAO
+option.SSAO_STRENGTH.comment=Nadzira globino ambientne okluzije v prostoru zaslona. Aktivno samo, ko je SSAO omogočen.
+value.SSAO_STRENGTH.1=Rahlo
+value.SSAO_STRENGTH.2=Uravnoteženo
+value.SSAO_STRENGTH.3=Globoko
+
+option.LIGHTMAP_WARMTH=Toplota bakle
+option.LIGHTMAP_WARMTH.comment=Prilagodite toplino in barvo svetlobe blokov/bakel.
+
+value.LIGHTMAP_WARMTH.1=Prijetno
+value.LIGHTMAP_WARMTH.2=Toplo
+value.LIGHTMAP_WARMTH.3=Intenzivno
+
+option.WAVING_LEAVES=Valovanje listov
+option.WAVING_LEAVES.comment=Omogočite nežne animacije valovanja za listje dreves.
+
+option.WAVING_GRASS=Valovanje vegetacije
+option.WAVING_GRASS.comment=Omogočite animacije valovanja za travo, cvetje in pridelke.
+
+option.WIND_SPEED=Hitrost vetra
+option.WIND_SPEED.comment=Nadzirajte hitrost valovanja listov, rastlin in vodnih valov.
+
+value.WIND_SPEED.1=Nežen
+value.WIND_SPEED.2=Sapica
+value.WIND_SPEED.3=Vihar
+
+option.WATER_WAVES=Vodni valovi
+option.WATER_WAVES.comment=Enable 3D geometric waves on the water surface.
+
+option.WATER_TRANSPARENCY=Gostota vode
+option.WATER_TRANSPARENCY.comment=Control the transparency and opacity of the water.
+
+value.WATER_TRANSPARENCY.1=Čisto
+value.WATER_TRANSPARENCY.2=Uravnoteženo
+value.WATER_TRANSPARENCY.3=Globoko
+
+option.PROCEDURAL_CLOUDS=Volumetrični 3D oblaki
+option.PROCEDURAL_CLOUDS.comment=Omogočite fizično preletljive 3D oblake, skozi katere je mogoče leteti.
+
+option.CLOUD_HEIGHT=Višina oblakov
+option.CLOUD_HEIGHT.comment=Nastavite fizično višino (Y-nivo) plasti oblakov v svetu (v metrih).
+
+value.CLOUD_HEIGHT.1=Nizko (~110m)
+value.CLOUD_HEIGHT.2=Standardno (~160m)
+value.CLOUD_HEIGHT.3=Visoko (~240m)
+
+option.CLOUD_THICKNESS=Debelina oblakov
+option.CLOUD_THICKNESS.comment=Konfigurirajte navpično debelino in volumen oblakov.
+
+value.CLOUD_THICKNESS.1=Tanki (Cirus)
+value.CLOUD_THICKNESS.2=Standardno (Kumulus)
+value.CLOUD_THICKNESS.3=Gosti (Nevihtni)
+
+option.CLOUD_DISTANCE=Razdalja upodabljanja oblakov
+option.CLOUD_DISTANCE.comment=Največja razdalja izrisa za volumetrične oblake. Profili kakovosti jo samodejno povečajo.
+value.CLOUD_DISTANCE.1=Blizu
+value.CLOUD_DISTANCE.2=Standardno
+value.CLOUD_DISTANCE.3=Daleč
+value.CLOUD_DISTANCE.4=Zelo daleč
+
+option.CLOUD_SHADOWS=Sence oblakov
+option.CLOUD_SHADOWS.comment=Doda prozorne proceduralne sence iz gostote volumetričnih oblakov na teren. Uravnoteženo s profili kakovosti.
+option.CLOUD_SHADOW_STRENGTH=Moč senc oblakov
+option.CLOUD_SHADOW_STRENGTH.comment=Nadzira, kako vidne in dramatične so prozorne sence oblakov.
+value.CLOUD_SHADOW_STRENGTH.1=Mehko
+value.CLOUD_SHADOW_STRENGTH.2=Uravnoteženo
+value.CLOUD_SHADOW_STRENGTH.3=Dramatično
+
+option.GODRAYS=Sončni žarki (Godrays)
+option.GODRAYS.comment=Adds physically-inspired volumetric single-scattering sun shafts with Beer-Lambert extinction, Mie phase and shadow-map occlusion.
+option.GODRAYS_QUALITY=Kakovost Godrays
+option.GODRAYS_QUALITY.comment=Controls the sample count and integration distance of physically-based volumetric godrays.
+value.GODRAYS_QUALITY.1=Hitro
+value.GODRAYS_QUALITY.2=Uravnoteženo
+value.GODRAYS_QUALITY.3=Visoko
+
+option.AURORA_MODE=Polarni sij
+option.AURORA_MODE.comment=Nadzirajte prikaz realističnega tekočega polarnega sija na nočnem nebu.
+
+value.AURORA_MODE.0=Onemogočeno
+value.AURORA_MODE.1=Samo v hladnih biomih
+value.AURORA_MODE.2=Vedno omogočeno
+
+option.AURORA_SPEED=Hitrost polarnega sija
+option.AURORA_SPEED.comment=Nadzirajte hitrost valovanja in tečenja polarnega sija.
+
+value.AURORA_SPEED.1=Počasi
+value.AURORA_SPEED.2=Standardno
+value.AURORA_SPEED.3=Hitro
+
+option.AURORA_STRENGTH=Svetlost polarnega sija
+option.AURORA_STRENGTH.comment=Nadzirajte splošno svetlost sijaja polarnega sija.
+
+value.AURORA_STRENGTH.1=Mehko
+value.AURORA_STRENGTH.2=Standardno
+value.AURORA_STRENGTH.3=Sijoče
+
+option.NEBULA_BRIGHTNESS=Svetlost Rimske ceste
+option.NEBULA_BRIGHTNESS.comment=Prilagodite svetlost sijaja diagonalne rjavkaste galaktične meglice ponoči.
+
+value.NEBULA_BRIGHTNESS.1=Šibko
+value.NEBULA_BRIGHTNESS.2=Standardno
+value.NEBULA_BRIGHTNESS.3=Svetlo
+
+option.STARS_BRIGHTNESS=Svetlost zvezd
+option.STARS_BRIGHTNESS.comment=Nadzirajte svetlost in iskrivi sijaj zvezd ponoči.
+
+value.STARS_BRIGHTNESS.1=Šibko
+value.STARS_BRIGHTNESS.2=Standardno
+value.STARS_BRIGHTNESS.3=Bleščeče
+
+option.STARS_AMOUNT=Gostota zvezd
+option.STARS_AMOUNT.comment=Nadzirajte celotno količino in gostoto zvezd na nebu.
+
+value.STARS_AMOUNT.1=Malo
+value.STARS_AMOUNT.2=Standardno
+value.STARS_AMOUNT.3=Gosto
+
+option.RAINBOW_STRENGTH=Intenzivnost mavrice
+option.RAINBOW_STRENGTH.comment=Konfigurirajte svetlost in nasičenost barv mavrice po dežju.
+
+value.RAINBOW_STRENGTH.1=Rahlo
+value.RAINBOW_STRENGTH.2=Uravnoteženo
+value.RAINBOW_STRENGTH.3=Živo
+
+option.COZY_LIGHTS=Utripanje bakle
+option.COZY_LIGHTS.comment=Omogočite tople, prijetne animacije utripanja v realnem času za bakle, tabore in svetilke.
+
+option.WET_REFLECTIONS=Odsevi mokrote od dežja
+option.WET_REFLECTIONS.comment=Ko dežuje, trdni bloki, kot so tla, trava in kamen, postanejo mokri, temni in sijoči pod nebom.
+
+option.GROUND_MIST=Nizka prizemna megla (Y=62-66)
+option.GROUND_MIST.comment=Omogočite mehke, zlato-bele jutranje/večerne meglene plasti, ki drsijo nad vodo in ledom ob zori in mraku.
+
+option.FOG_DENSITY_LEVEL=Gostota megle
+option.FOG_DENSITY_LEVEL.comment=Nadzirajte moč atmosferske megle na obzorju.
+
+value.FOG_DENSITY_LEVEL.1=Nizko
+value.FOG_DENSITY_LEVEL.2=Srednje
+value.FOG_DENSITY_LEVEL.3=Visoko
+
+option.EXPOSURE=Svetlost osvetlitve
+option.EXPOSURE.comment=Nadzirajte splošno svetlost slike.
+
+value.EXPOSURE.1=Umirjeno
+value.EXPOSURE.2=Uravnoteženo
+value.EXPOSURE.3=Živahno
+
+option.COLOR_SATURATION=Živost barv
+option.COLOR_SATURATION.comment=Nadzirajte nelinearno nasičenost barv zaslona. Naredi listje smaragdno in nebo bujno.
+
+value.COLOR_SATURATION.1=Umirjeno
+value.COLOR_SATURATION.2=Uravnoteženo
+value.COLOR_SATURATION.3=Barvito
+value.COLOR_SATURATION.4=Živo
+
+option.CONTRAST=Kontrast slike
+option.CONTRAST.comment=Izberite slog tonskega preslikavanja in krivulje kontrasta.
+
+value.CONTRAST.1=Mehko
+value.CONTRAST.2=Filmsko (ACES)
+value.CONTRAST.3=Intenzivno (Visok kontrast)
+
+option.TAA=Časovno glajenje robov (TAA)
+option.TAA.comment=Časovna rešitev s ponovno projekcijo gibanja in sosednjim obrezovanjem. Zmanjšuje utripanje in nazobčane robove pri visokih nastavitvah.
+option.TAA_STRENGTH=Moč TAA
+option.TAA_STRENGTH.comment=Nadzira mešanje zgodovine. Višje je bolj stabilno, vendar je lahko mehkejše med gibanjem.
+value.TAA_STRENGTH.1=Lahko
+value.TAA_STRENGTH.2=Uravnoteženo
+value.TAA_STRENGTH.3=Stabilno
+
+option.VIGNETTE=Učinek vinjete
+option.VIGNETTE.comment=Omogočite rahlo temnenje na robovih zaslona za izboljšano ostrenje.
+
+option.WATER_RIFFLES=Moč vodnih valčkov
+option.WATER_RIFFLES.comment=Adjust the waviness and intensity of the fine normal map ripples on the water.
+
+value.WATER_RIFFLES.1=Mirno
+value.WATER_RIFFLES.2=Standardno
+value.WATER_RIFFLES.3=Razburkano
+
+option.WATER_SPECULAR_STRENGTH=Sijaj odsevov vode
+option.WATER_SPECULAR_STRENGTH.comment=Adjust the brightness of sun/moon reflections on the water ripples.
+
+value.WATER_SPECULAR_STRENGTH.1=Mehko
+value.WATER_SPECULAR_STRENGTH.2=Standardno
+value.WATER_SPECULAR_STRENGTH.3=Bleščeče
+
+option.SHADOW_SOFTNESS=Mehkoba senc
+option.SHADOW_SOFTNESS.comment=Nadzira, kako mehki in difuzni so robovi senc. Uporablja rotirano Poissonovo diskovno filtriranje za gladko polsenco.
+
+value.SHADOW_SOFTNESS.1=Ostro
+value.SHADOW_SOFTNESS.2=Mehko
+value.SHADOW_SOFTNESS.3=Ultra mehko
+
+# ==============================================================================
+# Sun & Moon Lighting (extended)
+# ==============================================================================
+screen.SUN_MOON=Sonce in Luna
+screen.SUN_MOON.comment=Natančno prilagodite intenzivnost sonca in lune, barvno temperaturo in atmosferske učinke.
+
+option.SUN_INTENSITY=Intenzivnost sonca
+option.SUN_INTENSITY.comment=Glavna svetlost neposredne sončne svetlobe. Višje = močnejši dnevni kontrast.
+value.SUN_INTENSITY.1=Umirjeno
+value.SUN_INTENSITY.2=Standardno
+value.SUN_INTENSITY.3=Svetlo
+value.SUN_INTENSITY.4=Plameneče
+
+option.MOON_INTENSITY=Intenzivnost lune
+option.MOON_INTENSITY.comment=Glavna svetlost mesečine. Višje = svetlejše, bolj vidne noči.
+value.MOON_INTENSITY.1=Trda noč
+value.MOON_INTENSITY.2=Standardno
+value.MOON_INTENSITY.3=Svetla luna
+value.MOON_INTENSITY.4=Polna noč
+
+option.SUN_TEMPERATURE=Barvna temperatura sonca
+option.SUN_TEMPERATURE.comment=Premakne Kelvinovo krivuljo sonca. Realistično uporablja Tanner Helland črno telo; toplo = zlato; hladno = nevtralno belo.
+value.SUN_TEMPERATURE.1=Hladno / Nevtralno
+value.SUN_TEMPERATURE.2=Realistično
+value.SUN_TEMPERATURE.3=Toplo zlato
+
+option.MOON_TEMPERATURE=Barvna temperatura lune
+option.MOON_TEMPERATURE.comment=Odtenek mesečine. Ledeno = modrikasto hladno; Srebrno = realistično 4100K; Toplo = kremasto kot žetveni mesec.
+value.MOON_TEMPERATURE.1=Ledeno modra
+value.MOON_TEMPERATURE.2=Srebrno (Realistično)
+value.MOON_TEMPERATURE.3=Toplo krem
+
+option.SUN_HALO=Sončni halo (Miejevo sipanje)
+option.SUN_HALO.comment=Doda mehak topel sijaj na teren ob gledanju blizu sonca (Miejevo sipanje naprej).
+
+option.SUNRISE_GLOW=Izboljšan sijaj sončnega vzhoda/zahoda
+option.SUNRISE_GLOW.comment=Omogoča močnejše toplo povratno sipanje, ki ovija površine, obrnjene stran od nizkega sonca.
+
+# ==============================================================================
+# Extended shadow settings
+# ==============================================================================
+option.shadowDistance=Razdalja senc
+option.shadowDistance.comment=Največja razdalja, na kateri se upodabljajo dinamične sence, preden izginejo.
+value.shadowDistance.60.0=Blizu (60m)
+value.shadowDistance.80.0=Standardno (80m)
+value.shadowDistance.120.0=Daleč (120m)
+value.shadowDistance.160.0=Ultra (160m)
+
+option.AMBIENT_BRIGHTNESS=Dvig senc / okolica
+option.AMBIENT_BRIGHTNESS.comment=Nadzira, kako temna se zdijo zasenčena območja ponoči in v jamah.
+value.AMBIENT_BRIGHTNESS.1=Temno
+value.AMBIENT_BRIGHTNESS.2=Standardno
+value.AMBIENT_BRIGHTNESS.3=Dvignjeno (Svetlo)
+
+option.SHADOW_TINT=Odtenek senc
+option.SHADOW_TINT.comment=Obarva dnevne sence. Resnične sence pod modrim nebom imajo rahel hladen odtenek.
+value.SHADOW_TINT.1=Nevtralno sivo
+value.SHADOW_TINT.2=Hladno modra (Realistično)
+value.SHADOW_TINT.3=Toplo
+
+option.LIGHT_WRAP=Ovijanje svetlobe
+option.LIGHT_WRAP.comment=Ublaži terminator med osvetljenimi in neosvetljenimi površinami. Realistično = fizikalni Lambert; Mehko = prijetno za posnetke zaslona.
+value.LIGHT_WRAP.1=Realistično (Lambert)
+value.LIGHT_WRAP.2=Mehko ovijanje
+value.LIGHT_WRAP.3=Stilizirano
+
+# v0.2.9 — water/underwater option value labels (English fallback)
+value.WATER_WAVE_SCALE.1=Mirno
+value.WATER_WAVE_SCALE.2=Standardno
+value.WATER_WAVE_SCALE.3=Razburkano
+value.WATER_WAVE_SCALE.4=Nevihtno
+value.WATER_WAVE_DETAIL.1=Grobo
+value.WATER_WAVE_DETAIL.2=Standardno
+value.WATER_WAVE_DETAIL.3=Gosto
+value.UNDERWATER_NIGHT_DARKNESS.1=Z mesečino osvetljen bazen
+value.UNDERWATER_NIGHT_DARKNESS.2=Šibko
+value.UNDERWATER_NIGHT_DARKNESS.3=Prava noč
+value.UNDERWATER_NIGHT_DARKNESS.4=Trda tema
+# ==============================================================================
+# Experimental Tab & New Sky (v1.1.0)
+# ==============================================================================
+screen.EXPERIMENTAL=Eksperimentalno
+screen.EXPERIMENTAL.comment=Eksperimentalno
+
+option.SKY_MODE=Novo nebo (Atmosfersko sipanje)
+option.SKY_STYLE=Slog neba
+option.SKY_STYLE.comment=option.SKY_STYLE.comment=Artistic direction for the physical sky. Realistic = true angular sizes & neutral colours (astronomy look). Semi-realistic = readable sun/moon (x2.8), richer colour, soft glow. Fantasy = grand sun/moon (x5.5), big corona, vivid teal/crimson/indigo palette.
+option.SKY_MODE.comment=EXPERIMENTAL — off in all profiles. Gradient (legacy, default) or Physical realtime scattering with true multiple scattering (Rayleigh+Mie+Ozone, 1st+2nd+3rd order). Enable manually in this tab.
+value.SKY_MODE.0=Gradient (Star)
+value.SKY_STYLE.0=Realistično
+value.SKY_STYLE.1=Polrealistično
+value.SKY_STYLE.2=Fantazija
+value.SKY_MODE.1=Realtime Scattering
+
+option.SKY_QUALITY=Kakovost sipanja neba
+option.SKY_QUALITY.comment=Kakovost sipanja neba
+value.SKY_QUALITY.1=Hitro
+value.SKY_QUALITY.2=Standardno
+value.SKY_QUALITY.3=Visoko
+
+# --- Auto-added missing translations (v1.1.0 sync) ---
+option.FOLIAGE_SSS=SSS listja
+option.FOLIAGE_SSS.comment=Omogoča podpovršinsko sipanje (prosojnost) za liste, travo in rastline pri pogledu proti svetlobi.
+option.GODRAYS_STRENGTH=Intenzivnost Godrays
+option.GODRAYS_STRENGTH.comment=Svetlost volumetričnih svetlobnih žarkov. Subtilno: rahla atmosferska meglica. Uravnoteženo: jasno vidni žarki. Dramatično: drzni filmski žarki.
+value.GODRAYS_STRENGTH.1=Rahlo
+value.GODRAYS_STRENGTH.2=Uravnoteženo
+value.GODRAYS_STRENGTH.3=Dramatično
+option.SHOOTING_STARS=Meteorji (Padajoče zvezde)
+option.SHOOTING_STARS.comment=Fizično osnovani meteorji, ki vstopajo v mezosfero (~80-120 km). Upodablja resnične 3D loke velikega kroga s krivuljami ablacijske svetlobe, barvo plazme črnega telesa (3500-5500 K), Rayleighovo ekstinkcijo blizu obzorja in trajne ionizacijske sledi na ognjenih kroglah.
+option.SHOOTING_STARS_FREQUENCY=Meteorska aktivnost (ZHR)
+option.SHOOTING_STARS_FREQUENCY.comment=Približna zenitna urna stopnja. Sporadično = realistično ozadje ~10 na uro. Aktivno = blag meteorski dež. Nevihta = vršna gostota (~100/h).
+value.SHOOTING_STARS_FREQUENCY.1=Sporadično (~10/h)
+value.SHOOTING_STARS_FREQUENCY.2=Aktiven meteorski dež
+value.SHOOTING_STARS_FREQUENCY.3=Meteorska nevihta
+option.SHOOTING_STARS_BRIGHTNESS=Lestvica magnitude
+option.SHOOTING_STARS_BRIGHTNESS.comment=Glavni množitelj na lestvici magnitude meteorja. Šibko = realistično povprečje; Svetlo = skalira ognjene krogle za filmsko vidljivost.
+value.SHOOTING_STARS_BRIGHTNESS.1=Šibko (Realistično)
+value.SHOOTING_STARS_BRIGHTNESS.2=Standardno
+value.SHOOTING_STARS_BRIGHTNESS.3=Svetle ognjene krogle
+value.CONTRAST.4=Fotografsko (podobno AgX)
+option.SPATIAL_AA_MODE=Prostorsko glajenje robov
+option.SPATIAL_AA_MODE.comment=Izberite metodo glajenja robov po obdelavi. FXAA je hitra in poceni. SMAA uporablja globinski medpomnilnik za boljšo kakovost na geometrijskih robovih. Lahko se kombinira s TAA.
+value.SPATIAL_AA_MODE.0=Izklopljeno
+value.SPATIAL_AA_MODE.1=FXAA (Hitro)
+value.SPATIAL_AA_MODE.2=SMAA (Kakovost)
+option.HEAT_SHIMMER=Toplotno migetanje nad lavo
+option.HEAT_SHIMMER.comment=Omogočite rahel učinek toplotnega popačenja v prostoru zaslona nad površinami lave.
+option.HEAT_SHIMMER_STRENGTH=Moč toplotnega migetanja
+option.HEAT_SHIMMER_STRENGTH.comment=Nadzira intenzivnost toplotnega popačenja nad lavo.
+value.HEAT_SHIMMER_STRENGTH.1=Rahlo
+value.HEAT_SHIMMER_STRENGTH.2=Uravnoteženo
+value.HEAT_SHIMMER_STRENGTH.3=Močno
+option.SSR=Odsevi v prostoru zaslona (SSR)
+option.SSR.comment=Doda odsev okolja v realnem času na vodi, mokrih površinah in kovinskih PBR blokih. Omogočeno od Srednjega profila navzgor v v1.0.4.
+option.SSR_QUALITY=Kakovost SSR
+option.SSR_QUALITY.comment=Nadzira natančnost in razdaljo žarkov odsevov v prostoru zaslona. Višje = ostrejši odsevi, vendar večji strošek GPE.
+value.SSR_QUALITY.1=Hitro (12 korakov)
+value.SSR_QUALITY.2=Uravnoteženo (24 korakov)
+value.SSR_QUALITY.3=Visoko (40 korakov)
+option.SSR_STRENGTH=Moč SSR
+option.SSR_STRENGTH.comment=Nadzira, kako vidno in izrazito je odseva okolje na odsevnih površinah.
+option.WATER_WAVE_SCALE=Amplituda valov
+option.WATER_WAVE_SCALE.comment=Nadzira vidno strmino valov vodne površine. Mirno = zrcalno, Nevihtno = močno razlomljeni odsevi.
+option.WATER_WAVE_DETAIL=Podrobnost valov
+option.WATER_WAVE_DETAIL.comment=Nadzira, koliko majhnih valov se pojavi na blok. Grobo = nekaj velikih valov, Gosto = veliko majhnih valčkov.
+option.UNDERWATER_NIGHT_DARKNESS=Podvodna nočna tema
+option.UNDERWATER_NIGHT_DARKNESS.comment=Nadzira, kako temen postane podvodni prizor ponoči. Z mesečino osvetljen bazen ohranja svetlost; Trda tema daje ekstremno preživetveno temo.
+value.SSR_STRENGTH.1=Rahlo
+value.SSR_STRENGTH.2=Uravnoteženo
+value.SSR_STRENGTH.3=Močno
+option.PBR_DISTANCE=Razdalja upodabljanja PBR
+option.PBR_DISTANCE.comment=Največja razdalja za PBR bleščeče odseve. Varčuje z GPE na oddaljenem terenu. Blizu (16m) za Nizko, Standard (48m) za Srednje, Daleč (128m) za Visoko/Ultra, Neomejeno za Ekstremno.
+value.PBR_DISTANCE.1=Blizu (16m)
+value.PBR_DISTANCE.2=Standardno (48m)
+value.PBR_DISTANCE.3=Daleč (128m)
+value.PBR_DISTANCE.4=Neomejeno
+
+# v1.1.1 — shadow pipeline + POM option labels
+value.shadowMapResolution.512=512
+value.shadowMapResolution.1024=1024
+value.shadowMapResolution.2048=2048
+value.shadowMapResolution.4096=4096
+option.POM_DEPTH=POM Depth
+option.POM_DEPTH.comment=Controls the visible depth of parallax occlusion mapping when PBR POM is enabled.
+value.POM_DEPTH.1=Low
+value.POM_DEPTH.2=Standard
+value.POM_DEPTH.3=Deep
+option.POM_STEPS=POM Steps
+option.POM_STEPS.comment=Controls the raymarch step count for parallax occlusion mapping. Higher values improve quality but cost more GPU time.
+value.POM_STEPS.1=Fast
+value.POM_STEPS.2=Standard
+value.POM_STEPS.3=High
+value.POM_STEPS.4=Ultra

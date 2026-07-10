@@ -1,0 +1,433 @@
+# AuraLite Shaders v1.0.7 - Copyright (c) 2026 AlexanderNyr. Licensed under CC BY-NC-SA 4.0.
+# ==============================================================================
+# AuraLite Shader Pack - Welsh Language Translations
+# ==============================================================================
+
+# ==============================================================================
+# Quality Profiles
+# ==============================================================================
+profile.VERY_LOW=Isel Iawn
+profile.VERY_LOW.comment=Fastest possible preset for very weak GPUs. Disables shadows, clouds, water waves, foliage waving, PBR and most extras.
+profile.LOW=Isel
+profile.LOW.comment=Lightweight preset for weak GPUs. Keeps cheap water/foliage motion, disables shadows, clouds and PBR.
+profile.MED=Canolig
+profile.MED.comment=Balanced preset with 1024 shadows, standard clouds, PBR and atmospheric effects.
+profile.HIGH=Uchel
+profile.HIGH.comment=High quality preset with 2048 shadows, farther clouds and full PBR, without SSAO.
+profile.ULTRA=Ultra
+profile.ULTRA.comment=Ultra quality preset with 4096 shadows, very far clouds and balanced SSAO. POM remains disabled for stability.
+profile.EXTREME=Eithafol
+profile.EXTREME.comment=Maximum experimental quality. Pushes lighting, clouds, color and deep SSAO. POM remains disabled for stability.
+profile.CUSTOM=Personol
+profile.CUSTOM.comment=Gosodiadau wedi'u haddasu gan y defnyddiwr.
+
+screen.TRANSLATION_NOTICE=⚠ Gall cyfieithiadau gynnwys gwallau
+screen.TRANSLATION_NOTICE.comment=Gall rhai llinynnau cyfieithu fod yn anghywir. Os yw rhywbeth yn edrych yn rhyfedd, cymharwch â'r Saesneg gwreiddiol.
+
+# Screens
+screen.LIGHTING=Gosodiadau goleuo
+screen.LIGHTING.comment=Cyfluniwch gysgodion, lliwiau golau, a llewyrch.
+
+screen.FOLIAGE=Gosodiadau llystyfiant
+screen.FOLIAGE.comment=Cyfluniwch animeiddiadau tonnog ar gyfer glaswellt a dail.
+
+screen.WATER=Gosodiadau dŵr
+screen.WATER.comment=Cyfluniwch donnau, tryloywder, ac arddull dŵr.
+
+screen.CLOUDS_MENU=Awyr a chymylau
+screen.CLOUDS_MENU.comment=Cyfluniwch uchder ffisegol, trwch, ac arddull cymylau 3D ac effeithiau awyr.
+
+screen.POST_PROCESS=Ôl-brosesu a niwl
+screen.POST_PROCESS.comment=Cyfluniwch amlygiad, niwl, ac effeithiau sinematig.
+
+# Options
+option.SHADOWS=Cysgodion Deinamig
+option.SHADOWS.comment=Galluogi neu analluogi cysgodion deinamig meddal o'r haul a'r lleuad.
+
+option.shadowMapResolution=Cydraniad Cysgod
+option.shadowMapResolution.comment=Newidiwch ansawdd map cysgod. Gall gwerthoedd uwch ostwng perfformiad.
+
+option.PBR_LIGHTING=Goleuo PBR (LabPBR)
+option.PBR_LIGHTING.comment=Galluogi rendro seiliedig ar ffiseg ar gyfer metelau, garwedd, a mapiau arferol 3D (angen pecyn adnoddau PBR).
+
+option.PBR_POM=Rhyddhad Bloc 3D (POM)
+option.PBR_POM.comment=Galluogi Mapio Ataliad Paralacs seiliedig ar ffiseg ar gyfer gweadau bloc 3D. Argymhellir ei analluogi ar becynnau adnoddau anghydnaws.
+
+option.PBR_STRENGTH=Dwyster PBR
+option.PBR_STRENGTH.comment=Rheoli adlewyrchedd a sglein arwynebau metelaidd PBR.
+
+value.PBR_STRENGTH.1=Cynnil
+value.PBR_STRENGTH.2=Safonol
+value.PBR_STRENGTH.3=Drych
+
+option.SSAO=Ataliad SSAO / SAO
+option.SSAO.comment=Extreme profile: screen-space ambient occlusion for contact shadows in corners, under blocks, and around geometry intersections.
+option.SSAO_STRENGTH=Cryfder SSAO
+option.SSAO_STRENGTH.comment=Rheoli dyfnder ataliad amgylchynol gofod-sgrin. Dim ond yn weithredol pan fydd SSAO wedi'i alluogi.
+value.SSAO_STRENGTH.1=Cynnil
+value.SSAO_STRENGTH.2=Cytbwys
+value.SSAO_STRENGTH.3=Dwfn
+
+option.LIGHTMAP_WARMTH=Cynhesrwydd Ffagl
+option.LIGHTMAP_WARMTH.comment=Addasu cynhesrwydd a lliw golau bloc/ffagl.
+
+value.LIGHTMAP_WARMTH.1=Clyd
+value.LIGHTMAP_WARMTH.2=Cynnes
+value.LIGHTMAP_WARMTH.3=Dwys
+
+option.WAVING_LEAVES=Dail Chwifio
+option.WAVING_LEAVES.comment=Galluogi animeiddiadau chwifio ysgafn ar gyfer dail coed.
+
+option.WAVING_GRASS=Deiliant Chwifio
+option.WAVING_GRASS.comment=Galluogi animeiddiadau chwifio ar gyfer glaswellt, blodau, a chnydau.
+
+option.WIND_SPEED=Cyflymder Gwynt
+option.WIND_SPEED.comment=Rheoli cyflymder chwifio dail, planhigion, a thonnau dŵr.
+
+value.WIND_SPEED.1=Gentle
+value.WIND_SPEED.2=Breeze
+value.WIND_SPEED.3=Gale
+
+option.WATER_WAVES=Tonnau Dŵr
+option.WATER_WAVES.comment=Enable 3D geometric waves on the water surface.
+
+option.WATER_TRANSPARENCY=Dwysedd Dŵr
+option.WATER_TRANSPARENCY.comment=Control the transparency and opacity of the water.
+
+value.WATER_TRANSPARENCY.1=Clir
+value.WATER_TRANSPARENCY.2=Cytbwys
+value.WATER_TRANSPARENCY.3=Dwfn
+
+option.PROCEDURAL_CLOUDS=Cymylau 3D Cyfaint
+option.PROCEDURAL_CLOUDS.comment=Galluogi cymylau 3D hedfan ffisegol y gellir eu cyrraedd a hedfan trwyddynt.
+
+option.CLOUD_HEIGHT=Uchder Cwmwl
+option.CLOUD_HEIGHT.comment=Gosod uchder ffisegol (lefel-Y) y dec cwmwl yn y byd (mewn metrau).
+
+value.CLOUD_HEIGHT.1=Isel (~110m)
+value.CLOUD_HEIGHT.2=Safonol (~160m)
+value.CLOUD_HEIGHT.3=Uchel (~240m)
+
+option.CLOUD_THICKNESS=Trwch Cwmwl
+option.CLOUD_THICKNESS.comment=Cyfluniwch drwch fertigol a chyfaint y cymylau.
+
+value.CLOUD_THICKNESS.1=Tenau (Cirrus)
+value.CLOUD_THICKNESS.2=Safonol (Cumulus)
+value.CLOUD_THICKNESS.3=Trwchus (Stormus)
+
+option.CLOUD_DISTANCE=Pellter Rendro Cwmwl
+option.CLOUD_DISTANCE.comment=Pellter tynnu uchaf ar gyfer cymylau cyfaint. Mae proffiliau ansawdd yn ei gynyddu'n awtomatig.
+value.CLOUD_DISTANCE.1=Agos
+value.CLOUD_DISTANCE.2=Safonol
+value.CLOUD_DISTANCE.3=Pell
+value.CLOUD_DISTANCE.4=Pell Iawn
+
+option.CLOUD_SHADOWS=Cysgodion Cwmwl
+option.CLOUD_SHADOWS.comment=Ychwanegu cysgodion gweithdrefnol tryloyw o ddwysedd cwmwl cyfaint ar dir. Cydbwysir gan broffiliau ansawdd.
+option.CLOUD_SHADOW_STRENGTH=Cryfder Cysgod Cwmwl
+option.CLOUD_SHADOW_STRENGTH.comment=Rheoli pa mor weladwy a dramatig yw cysgodion cwmwl tryloyw.
+value.CLOUD_SHADOW_STRENGTH.1=Meddal
+value.CLOUD_SHADOW_STRENGTH.2=Cytbwys
+value.CLOUD_SHADOW_STRENGTH.3=Dramatig
+
+option.GODRAYS=Pelydrau Haul (Godrays)
+option.GODRAYS.comment=Adds physically-inspired volumetric single-scattering sun shafts with Beer-Lambert extinction, Mie phase and shadow-map occlusion.
+option.GODRAYS_QUALITY=Ansawdd Godrays
+option.GODRAYS_QUALITY.comment=Controls the sample count and integration distance of physically-based volumetric godrays.
+value.GODRAYS_QUALITY.1=Cyflym
+value.GODRAYS_QUALITY.2=Cytbwys
+value.GODRAYS_QUALITY.3=Uchel
+
+option.AURORA_MODE=Aurora Borealis
+option.AURORA_MODE.comment=Rheoli arddangosiad awroreau realistig llifo ar yr awyr nos.
+
+value.AURORA_MODE.0=Analluogwyd
+value.AURORA_MODE.1=Dim ond mewn Biomau Oer
+value.AURORA_MODE.2=Bob Amser wedi'i Alluogi
+
+option.AURORA_SPEED=Cyflymder Aurora
+option.AURORA_SPEED.comment=Rheoli cyflymder chwifio a llifo'r goleuadau gogleddol.
+
+value.AURORA_SPEED.1=Araf
+value.AURORA_SPEED.2=Safonol
+value.AURORA_SPEED.3=Cyflym
+
+option.AURORA_STRENGTH=Disgleirdeb Aurora
+option.AURORA_STRENGTH.comment=Rheoli disgleirdeb gwawl cyffredinol y goleuadau gogleddol.
+
+value.AURORA_STRENGTH.1=Meddal
+value.AURORA_STRENGTH.2=Safonol
+value.AURORA_STRENGTH.3=Gwawlio
+
+option.NEBULA_BRIGHTNESS=Disgleirdeb y Llwybr Llaethog
+option.NEBULA_BRIGHTNESS.comment=Addasu disgleirdeb gwawl y nifwl galactig brownaidd croeslinol yn y nos.
+
+value.NEBULA_BRIGHTNESS.1=Pŵl
+value.NEBULA_BRIGHTNESS.2=Safonol
+value.NEBULA_BRIGHTNESS.3=Disglair
+
+option.STARS_BRIGHTNESS=Disgleirdeb Sêr
+option.STARS_BRIGHTNESS.comment=Rheoli disgleirdeb a gwawl pefriog y sêr yn y nos.
+
+value.STARS_BRIGHTNESS.1=Gwan
+value.STARS_BRIGHTNESS.2=Safonol
+value.STARS_BRIGHTNESS.3=Llachar
+
+option.STARS_AMOUNT=Dwysedd Sêr
+option.STARS_AMOUNT.comment=Rheoli cyfanswm a dwysedd y sêr yn yr awyr.
+
+value.STARS_AMOUNT.1=Ychydig
+value.STARS_AMOUNT.2=Safonol
+value.STARS_AMOUNT.3=Trwchus
+
+option.RAINBOW_STRENGTH=Dwyster Enfys
+option.RAINBOW_STRENGTH.comment=Cyfluniwch ddisgleirdeb a dirlawnder lliw yr enfys ar ôl glaw.
+
+value.RAINBOW_STRENGTH.1=Cynnil
+value.RAINBOW_STRENGTH.2=Cytbwys
+value.RAINBOW_STRENGTH.3=Bywiog
+
+option.COZY_LIGHTS=Fflachio Ffagl
+option.COZY_LIGHTS.comment=Galluogi animeiddiadau fflachio amser real cynnes, clyd ar gyfer ffaglau, tanau gwersyll, a llusernau.
+
+option.WET_REFLECTIONS=Adlewyrchiadau Gwlybaniaeth Glaw
+option.WET_REFLECTIONS.comment=Wrth lawio, mae blociau solet fel daear, glaswellt, a charreg yn dod yn wlyb, tywyll, a sgleiniog o dan yr awyr.
+
+option.GROUND_MIST=Niwl Isel y Ddaear (Y=62-66)
+option.GROUND_MIST.comment=Galluogi haenau niwl bore/nos meddal, aur-wyn sy'n llithro dros ddŵr a rhew ar wawr a chyfnos.
+
+option.FOG_DENSITY_LEVEL=Dwysedd Niwl
+option.FOG_DENSITY_LEVEL.comment=Rheoli cryfder niwl gorwel atmosfferig.
+
+value.FOG_DENSITY_LEVEL.1=Isel
+value.FOG_DENSITY_LEVEL.2=Canolig
+value.FOG_DENSITY_LEVEL.3=Uchel
+
+option.EXPOSURE=Disgleirdeb Amlygiad
+option.EXPOSURE.comment=Rheoli disgleirdeb cyffredinol y ddelwedd.
+
+value.EXPOSURE.1=Tawel
+value.EXPOSURE.2=Cytbwys
+value.EXPOSURE.3=Bywiog
+
+option.COLOR_SATURATION=Bywiogrwydd Lliw
+option.COLOR_SATURATION.comment=Rheoli dirlawnder anllinellol lliwiau sgrin. Yn gwneud i ddeiliant edrych yn emrallt ac awyr yn doreithiog.
+
+value.COLOR_SATURATION.1=Tawel
+value.COLOR_SATURATION.2=Cytbwys
+value.COLOR_SATURATION.3=Lliwgar
+value.COLOR_SATURATION.4=Bywiog
+
+option.CONTRAST=Cyferbyniad Delwedd
+option.CONTRAST.comment=Dewiswch fapio tôn ac arddull cromlin cyferbyniad.
+
+value.CONTRAST.1=Meddal
+value.CONTRAST.2=Ffilmig (ACES)
+value.CONTRAST.3=Dwys (Cyferbyniad Uchel)
+
+option.TAA=Gwrth-Ymylu Amserol (TAA)
+option.TAA.comment=Datrysiad amserol gyda hailamcaniad symudiad a thocio cyfagos. Yn lleihau crynu ac ymylon danheddog ar ragosodiadau uchel.
+option.TAA_STRENGTH=Cryfder TAA
+option.TAA_STRENGTH.comment=Rheoli cymysgu hanes. Mae uwch yn fwy sefydlog ond gall fod yn feddalach yn ystod symudiad.
+value.TAA_STRENGTH.1=Ysgafn
+value.TAA_STRENGTH.2=Cytbwys
+value.TAA_STRENGTH.3=Sefydlog
+
+option.VIGNETTE=Effaith Fignét
+option.VIGNETTE.comment=Galluogi tywyllu cynnil ar ymylon sgrin ar gyfer ffocws gwell.
+
+option.WATER_RIFFLES=Cryfder Crych Dŵr
+option.WATER_RIFFLES.comment=Adjust the waviness and intensity of the fine normal map ripples on the water.
+
+value.WATER_RIFFLES.1=Tawel
+value.WATER_RIFFLES.2=Safonol
+value.WATER_RIFFLES.3=Aflonydd
+
+option.WATER_SPECULAR_STRENGTH=Disgleirdeb Sglein Dŵr
+option.WATER_SPECULAR_STRENGTH.comment=Adjust the brightness of sun/moon reflections on the water ripples.
+
+value.WATER_SPECULAR_STRENGTH.1=Meddal
+value.WATER_SPECULAR_STRENGTH.2=Safonol
+value.WATER_SPECULAR_STRENGTH.3=Sgleiniog
+
+option.SHADOW_SOFTNESS=Meddalwch Cysgod
+option.SHADOW_SOFTNESS.comment=Rheoli pa mor feddal a gwasgaredig y mae ymylon cysgod yn ymddangos. Yn defnyddio hidlo disg Poisson cylchdro ar gyfer cysgod rhannol llyfn.
+
+value.SHADOW_SOFTNESS.1=Miniog
+value.SHADOW_SOFTNESS.2=Meddal
+value.SHADOW_SOFTNESS.3=Ultra Feddal
+
+# ==============================================================================
+# Sun & Moon Lighting (extended)
+# ==============================================================================
+screen.SUN_MOON=Haul a Lleuad
+screen.SUN_MOON.comment=Manylwch ddwyster haul a lleuad, tymheredd lliw, ac effeithiau atmosfferig.
+
+option.SUN_INTENSITY=Dwyster Haul
+option.SUN_INTENSITY.comment=Prif ddisgleirdeb golau haul uniongyrchol. Uwch = cyferbyniad dyddiol cryfach.
+value.SUN_INTENSITY.1=Tawel
+value.SUN_INTENSITY.2=Safonol
+value.SUN_INTENSITY.3=Uchel
+value.SUN_INTENSITY.4=Fflamgoch
+
+option.MOON_INTENSITY=Dwyster Lleuad
+option.MOON_INTENSITY.comment=Prif ddisgleirdeb golau'r lleuad. Uwch = nosweithiau mwy disglair, mwy gweladwy.
+value.MOON_INTENSITY.1=Nos Ddu Bitsh
+value.MOON_INTENSITY.2=Safonol
+value.MOON_INTENSITY.3=Lleuad Llachar
+value.MOON_INTENSITY.4=Nos Lawn
+
+option.SUN_TEMPERATURE=Tymheredd Lliw Haul
+option.SUN_TEMPERATURE.comment=Yn symud cromlin Kelvin yr haul. Mae realistig yn defnyddio corff du Tanner Helland; cynnes = euraidd; oer = gwyn niwtral.
+value.SUN_TEMPERATURE.1=Oer / Niwtral
+value.SUN_TEMPERATURE.2=Realistig
+value.SUN_TEMPERATURE.3=Aur Cynnes
+
+option.MOON_TEMPERATURE=Tymheredd Lliw Lleuad
+option.MOON_TEMPERATURE.comment=Arlliw golau'r lleuad. Iasoer = oer glasaidd; Arian = realistig 4100K; Cynnes = hufen lleuad cynhaeaf.
+value.MOON_TEMPERATURE.1=Glas Iasoer
+value.MOON_TEMPERATURE.2=Arian (Realistig)
+value.MOON_TEMPERATURE.3=Hufen Cynnes
+
+option.SUN_HALO=Halo Haul (Gwasgariad Mie)
+option.SUN_HALO.comment=Ychwanegu gwawl cynnes meddal ar dir wrth edrych ger yr haul (gwasgariad ymlaen Mie).
+
+option.SUNRISE_GLOW=Gwawl Codiad/Machlud Haul Gwell
+option.SUNRISE_GLOW.comment=Yn galluogi gwasgariad ôl cynnes cryfach sy'n lapio o amgylch arwynebau sy'n wynebu i ffwrdd o'r haul isel.
+
+# ==============================================================================
+# Extended shadow settings
+# ==============================================================================
+option.shadowDistance=Pellter Cysgod
+option.shadowDistance.comment=Y pellter uchaf y mae cysgodion deinamig yn cael eu rendro cyn pylu.
+value.shadowDistance.60.0=Agos (60m)
+value.shadowDistance.80.0=Safonol (80m)
+value.shadowDistance.120.0=Pell (120m)
+value.shadowDistance.160.0=Ultra (160m)
+
+option.AMBIENT_BRIGHTNESS=Codi Cysgod / Amgylchol
+option.AMBIENT_BRIGHTNESS.comment=Rheoli pa mor dywyll y mae ardaloedd cysgodol yn ymddangos yn y nos ac mewn ogofâu.
+value.AMBIENT_BRIGHTNESS.1=Tywyll
+value.AMBIENT_BRIGHTNESS.2=Safonol
+value.AMBIENT_BRIGHTNESS.3=Codwyd (Disglair)
+
+option.SHADOW_TINT=Arlliw Cysgod
+option.SHADOW_TINT.comment=Yn arlliwio cysgodion dydd. Mae gan gysgodion byd go iawn o dan awyr las arlliw oer cynnil.
+value.SHADOW_TINT.1=Neutral Gray
+value.SHADOW_TINT.2=Cool Blue (Realistic)
+value.SHADOW_TINT.3=Warm
+
+option.LIGHT_WRAP=Lapio Golau
+option.LIGHT_WRAP.comment=Yn meddalu'r derfynydd rhwng arwynebau golau a heb olau. Realistig = Lambert ffisegol; Meddal = pleserus ar gyfer sgrinluniau.
+value.LIGHT_WRAP.1=Realistig (Lambert)
+value.LIGHT_WRAP.2=Lapio Meddal
+value.LIGHT_WRAP.3=Steilyddiedig
+
+# v0.2.9 — water/underwater option value labels (English fallback)
+value.WATER_WAVE_SCALE.1=Tawel
+value.WATER_WAVE_SCALE.2=Safonol
+value.WATER_WAVE_SCALE.3=Aflonydd
+value.WATER_WAVE_SCALE.4=Stormus
+value.WATER_WAVE_DETAIL.1=Bras
+value.WATER_WAVE_DETAIL.2=Safonol
+value.WATER_WAVE_DETAIL.3=Dwys
+value.UNDERWATER_NIGHT_DARKNESS.1=Pwll Golau Lleuad
+value.UNDERWATER_NIGHT_DARKNESS.2=Gwan
+value.UNDERWATER_NIGHT_DARKNESS.3=Nos Wirioneddol
+value.UNDERWATER_NIGHT_DARKNESS.4=Tywyllwch Dudew
+# ==============================================================================
+# Experimental Tab & New Sky (v1.1.0)
+# ==============================================================================
+screen.EXPERIMENTAL=Arbrofol
+screen.EXPERIMENTAL.comment=Arbrofol
+
+option.SKY_MODE=Awyr Newydd (Gwasgariad Atmosfferig)
+option.SKY_STYLE=Arddull Awyr
+option.SKY_STYLE.comment=option.SKY_STYLE.comment=Artistic direction for the physical sky. Realistic = true angular sizes & neutral colours (astronomy look). Semi-realistic = readable sun/moon (x2.8), richer colour, soft glow. Fantasy = grand sun/moon (x5.5), big corona, vivid teal/crimson/indigo palette.
+option.SKY_MODE.comment=EXPERIMENTAL — off in all profiles. Gradient (legacy, default) or Physical realtime scattering with true multiple scattering (Rayleigh+Mie+Ozone, 1st+2nd+3rd order). Enable manually in this tab.
+value.SKY_MODE.0=Graddiant (Hen)
+value.SKY_STYLE.0=Realistig
+value.SKY_STYLE.1=Lled-realistig
+value.SKY_STYLE.2=Ffantasi
+value.SKY_MODE.1=Realtime Scattering
+
+option.SKY_QUALITY=Ansawdd Gwasgariad yr Awyr
+option.SKY_QUALITY.comment=Ansawdd Gwasgariad yr Awyr
+value.SKY_QUALITY.1=Cyflym
+value.SKY_QUALITY.2=Safonol
+value.SKY_QUALITY.3=Uchel
+
+# --- Auto-added missing translations (v1.1.0 sync) ---
+option.FOLIAGE_SSS=SSS Deiliant
+option.FOLIAGE_SSS.comment=Yn galluogi gwasgariad is-arwyneb (tryleuedd) ar gyfer dail, glaswellt, a phlanhigion wrth edrych yn erbyn y golau.
+option.GODRAYS_STRENGTH=Dwyster Godrays
+option.GODRAYS_STRENGTH.comment=Llewyrch y siafftiau golau cyfaint. Cynnil: niwlen atmosfferig ysgafn. Cytbwys: pelydrau gweladwy clir. Dramatig: pelydrau sinematig beiddgar.
+value.GODRAYS_STRENGTH.1=Cynnil
+value.GODRAYS_STRENGTH.2=Cytbwys
+value.GODRAYS_STRENGTH.3=Dramatig
+option.SHOOTING_STARS=Meteorau (Sêr Syrthiedig)
+option.SHOOTING_STARS.comment=Meteorau seiliedig ar ffiseg yn mynd i mewn i'r mesosffer (~80-120 km). Yn rendro bwâu 3D cylch mawr gwirioneddol gyda chromliniau golau ablasiwn, lliw plasma corff du (3500-5500 K), difodiant Rayleigh ger y gorwel, a llwybrau ïoneiddio parhaus ar beli tân.
+option.SHOOTING_STARS_FREQUENCY=Gweithgaredd Meteor (ZHR)
+option.SHOOTING_STARS_FREQUENCY.comment=Cyfradd Awr Zenithol Bras. Ysbeidiol = cefndir realistig o ~10 yr awr. Gweithredol = cawod ysgafn. Storm = dwysedd brig (~100/awr).
+value.SHOOTING_STARS_FREQUENCY.1=Ysbeidiol (~10/awr)
+value.SHOOTING_STARS_FREQUENCY.2=Cawod Weithredol
+value.SHOOTING_STARS_FREQUENCY.3=Storm Feteorau
+option.SHOOTING_STARS_BRIGHTNESS=Graddfa Maint
+option.SHOOTING_STARS_BRIGHTNESS.comment=Lluosydd meistr ar raddfa maint meteor. Gwan = cyfartaledd realistig; Llachar = graddfeydd peli tân ar gyfer gwelededd sinematig.
+value.SHOOTING_STARS_BRIGHTNESS.1=Gwan (Realistig)
+value.SHOOTING_STARS_BRIGHTNESS.2=Safonol
+value.SHOOTING_STARS_BRIGHTNESS.3=Peli Tân Llachar
+value.CONTRAST.4=Ffotograffig (tebyg i AgX)
+option.SPATIAL_AA_MODE=Gwrth-Ymylu Gofodol
+option.SPATIAL_AA_MODE.comment=Dewiswch ddull gwrth-ymylu ôl-brosesu. Mae FXAA yn gyflym ac yn rhad. Mae SMAA yn defnyddio byffer dyfnder ar gyfer ansawdd gwell ar ymylon geometreg. Gellir ei gyfuno â TAA.
+value.SPATIAL_AA_MODE.0=Diffodd
+value.SPATIAL_AA_MODE.1=FXAA (Cyflym)
+value.SPATIAL_AA_MODE.2=SMAA (Ansawdd)
+option.HEAT_SHIMMER=Crynu Gwres Uwchben Lafa
+option.HEAT_SHIMMER.comment=Galluogi effaith ystumio gwres gofod-sgrin cynnil uwchben arwynebau lafa.
+option.HEAT_SHIMMER_STRENGTH=Cryfder Crynu Gwres
+option.HEAT_SHIMMER_STRENGTH.comment=Rheoli dwyster yr ystumio gwres uwchben lafa.
+value.HEAT_SHIMMER_STRENGTH.1=Cynnil
+value.HEAT_SHIMMER_STRENGTH.2=Cytbwys
+value.HEAT_SHIMMER_STRENGTH.3=Cryf
+option.SSR=Adlewyrchiadau Gofod-Sgrin (SSR)
+option.SSR.comment=Ychwanegu amgylchedd adlewyrchol amser real ar ddŵr, arwynebau gwlyb a blociau PBR metelaidd. Galluogwyd o MED i fyny yn v1.0.4.
+option.SSR_QUALITY=Ansawdd SSR
+option.SSR_QUALITY.comment=Rheoli manwl gywirdeb a phellter pelydr adlewyrchiadau gofod-sgrin. Uwch = adlewyrchiadau craffach ond mwy o gost GPU.
+value.SSR_QUALITY.1=Cyflym (12 cam)
+value.SSR_QUALITY.2=Cytbwys (24 cam)
+value.SSR_QUALITY.3=Uchel (40 cam)
+option.SSR_STRENGTH=Cryfder SSR
+option.SSR_STRENGTH.comment=Rheoli pa mor weladwy a amlwg y mae'r amgylchedd adlewyrchol yn ymddangos ar arwynebau adlewyrchol.
+option.WATER_WAVE_SCALE=Osgled Ton
+option.WATER_WAVE_SCALE.comment=Rheoli serthedd gweladwy tonnau arwyneb dŵr. Tawel = fel drych, Stormus = adlewyrchiadau wedi torri'n gryf.
+option.WATER_WAVE_DETAIL=Manylder Ton
+option.WATER_WAVE_DETAIL.comment=Rheoli faint o donnau bach sy'n ymddangos fesul bloc. Bras = ychydig o donnau mawr, Dwys = llawer o grychdonnau bach.
+option.UNDERWATER_NIGHT_DARKNESS=Tywyllwch Nos Tandwr
+option.UNDERWATER_NIGHT_DARKNESS.comment=Rheoli pa mor dywyll y mae'r olygfa tandwr yn dod yn y nos. Mae Pwll Golau Lleuad yn cadw disgleirdeb; mae Tywyllwch Dudew yn rhoi tywyllwch arddull goroesi eithafol.
+value.SSR_STRENGTH.1=Cynnil
+value.SSR_STRENGTH.2=Cytbwys
+value.SSR_STRENGTH.3=Cryf
+option.PBR_DISTANCE=Pellter Rendro PBR
+option.PBR_DISTANCE.comment=Pellter uchaf ar gyfer amlygiadau sglein PBR. Yn arbed GPU ar dir pell. Agos (16m) ar gyfer LOW, Safonol (48m) ar gyfer MED, Pell (128m) ar gyfer HIGH/ULTRA, Diderfyn ar gyfer EXTREME.
+value.PBR_DISTANCE.1=Agos (16m)
+value.PBR_DISTANCE.2=Safonol (48m)
+value.PBR_DISTANCE.3=Pell (128m)
+value.PBR_DISTANCE.4=Diderfyn
+
+# v1.1.1 — shadow pipeline + POM option labels
+value.shadowMapResolution.512=512
+value.shadowMapResolution.1024=1024
+value.shadowMapResolution.2048=2048
+value.shadowMapResolution.4096=4096
+option.POM_DEPTH=POM Depth
+option.POM_DEPTH.comment=Controls the visible depth of parallax occlusion mapping when PBR POM is enabled.
+value.POM_DEPTH.1=Low
+value.POM_DEPTH.2=Standard
+value.POM_DEPTH.3=Deep
+option.POM_STEPS=POM Steps
+option.POM_STEPS.comment=Controls the raymarch step count for parallax occlusion mapping. Higher values improve quality but cost more GPU time.
+value.POM_STEPS.1=Fast
+value.POM_STEPS.2=Standard
+value.POM_STEPS.3=High
+value.POM_STEPS.4=Ultra

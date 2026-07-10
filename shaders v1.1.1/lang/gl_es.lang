@@ -1,0 +1,454 @@
+# AuraLite Shaders v1.0.7 - Copyright (c) 2026 AlexanderNyr. Licensed under CC BY-NC-SA 4.0.
+# ==============================================================================
+# AuraLite Shader Pack - Galician Language Translations
+# ==============================================================================
+
+# ==============================================================================
+# Perfís de calidade — Reequilibrio v1.0.5
+# ==============================================================================
+profile.VERY_LOW=Moi baixo
+profile.VERY_LOW.comment=FPS máximo absoluto. Todos os extras desactivados: sen sombras, sen nubes, sen PBR, sen SSR, sen raios de sol. Renderizado mínimo.
+profile.LOW=Baixo
+profile.LOW.comment=Lixeiro pero xogable. Mantén a animación da vexetación/auga, estrelas máis brillantes, FXAA, viñeta. Sen sombras, nubes nin PBR.
+profile.MED=Medio
+profile.MED.comment=Punto óptimo diario. Sombras 1024, nubes, PBR, SSR Rápido, raios de sol, SSS de follaxe, reflexos húmidos, brétema baixa, estrelas fugaces.
+profile.HIGH=Alto
+profile.HIGH.comment=Calidade de entusiasta. Sombras 2048, SSR Equilibrado, TAA, SSAO Sutil, raios de sol Equilibrados, SMAA.
+profile.ULTRA=Ultra
+profile.ULTRA.comment=Gama alta. Sombras 4096, SSR Alto, SSAO Equilibrado, raios de sol Altos, TAA Estable, todos os efectos activados.
+profile.EXTREME=Extremo
+profile.EXTREME.comment=Máximo cinematográfico. Todo ao máximo: alcance PBR Ilimitado, mapeo de tons Fotográfico (AgX), SSAO máis profundo, tormentas de meteoros.
+profile.CUSTOM=Personalizado
+profile.CUSTOM.comment=Axustes modificados polo usuario.
+
+screen.TRANSLATION_NOTICE=⚠ As traducións poden conter erros
+screen.TRANSLATION_NOTICE.comment=Algunhas cadeas de localización poden ser imprecisas. Se algo parece estraño, compáraо co orixinal en inglés.
+
+# Screens
+screen.LIGHTING=Axustes de iluminación
+screen.LIGHTING.comment=Configura sombras, cores da luz e brillo.
+
+screen.FOLIAGE=Axustes da vexetación
+screen.FOLIAGE.comment=Configura as animacións de ondeo da herba e das follas.
+
+screen.WATER=Axustes da auga
+screen.WATER.comment=Configura as ondas, a transparencia e o estilo da auga.
+
+screen.CLOUDS_MENU=Ceo e nubes
+screen.CLOUDS_MENU.comment=Configura a altitude física, o grosor e o estilo das nubes 3D e dos efectos do ceo.
+
+screen.POST_PROCESS=Posprocesado e brétema
+screen.POST_PROCESS.comment=Configura a exposición, a brétema e os efectos cinematográficos.
+
+# Options
+option.SHADOWS=Sombras dinámicas
+option.SHADOWS.comment=Activa ou desactiva as sombras dinámicas suaves do sol e da lúa.
+
+option.shadowMapResolution=Resolución das sombras
+option.shadowMapResolution.comment=Cambia a calidade do mapa de sombras. Valores máis altos poden reducir o rendemento.
+
+option.PBR_LIGHTING=Iluminación PBR (LabPBR)
+option.PBR_LIGHTING.comment=Activa o renderizado baseado na física para metais, rugosidade e mapas de normais 3D (require paquete de recursos PBR).
+
+option.PBR_POM=Relevo 3D dos bloques (POM)
+option.PBR_POM.comment=Activa o Mapeo de Oclusión por Paralaxe baseado na física para texturas de bloques 3D. Recoméndase desactivalo en paquetes de recursos incompatibles.
+
+option.PBR_STRENGTH=Intensidade PBR
+option.PBR_STRENGTH.comment=Controla a reflectividade e o brillo das superficies metálicas PBR.
+
+value.PBR_STRENGTH.1=Sutil
+value.PBR_STRENGTH.2=Estándar
+value.PBR_STRENGTH.3=Espello
+
+option.SSAO=Oclusión SSAO / SAO
+option.SSAO.comment=Oclusión ambiental en espazo de pantalla para sombras de contacto en recantos, baixo bloques e arredor de interseccións. Activada desde ALTO en adiante.
+option.SSAO_STRENGTH=Intensidade de SSAO
+option.SSAO_STRENGTH.comment=Controla a profundidade da oclusión ambiental en espazo de pantalla. Só activa cando SSAO está activado.
+value.SSAO_STRENGTH.1=Sutil
+value.SSAO_STRENGTH.2=Equilibrado
+value.SSAO_STRENGTH.3=Profundo
+
+option.LIGHTMAP_WARMTH=Calor das antorchas
+option.LIGHTMAP_WARMTH.comment=Axusta a calor e a cor da luz dos bloques/antorchas.
+
+value.LIGHTMAP_WARMTH.1=Acolledor
+value.LIGHTMAP_WARMTH.2=Cálido
+value.LIGHTMAP_WARMTH.3=Intenso
+
+option.WAVING_LEAVES=Follas ondeantes
+option.WAVING_LEAVES.comment=Activa suaves animacións de ondeo nas follas das árbores.
+
+option.WAVING_GRASS=Vexetación ondeante
+option.WAVING_GRASS.comment=Activa animacións de ondeo na herba, nas flores e nos cultivos.
+
+option.WIND_SPEED=Velocidade do vento
+option.WIND_SPEED.comment=Controla a velocidade de ondeo das follas, as plantas e as ondas da auga.
+
+option.FOLIAGE_SSS=SSS da vexetación
+option.FOLIAGE_SSS.comment=Activa a dispersión subsuperficial (translucidez) nas follas, na herba e nas plantas ao mirar a contraluz.
+
+value.WIND_SPEED.1=Suave
+value.WIND_SPEED.2=Brisa
+value.WIND_SPEED.3=Vendaval
+
+option.WATER_WAVES=Ondas da auga
+option.WATER_WAVES.comment=Activa ondas xeométricas 3D na superficie da auga. Os bloques de xeo e vidro exclúense da animación das ondas.
+
+option.WATER_TRANSPARENCY=Densidade da auga
+option.WATER_TRANSPARENCY.comment=Controla a transparencia e a opacidade da auga, do xeo normal e dos bloques de vidro.
+
+value.WATER_TRANSPARENCY.1=Clara
+value.WATER_TRANSPARENCY.2=Equilibrada
+value.WATER_TRANSPARENCY.3=Profunda
+
+option.PROCEDURAL_CLOUDS=Nubes 3D volumétricas
+option.PROCEDURAL_CLOUDS.comment=Activa nubes 3D atravesables ás que se pode chegar e voar a través delas.
+
+option.CLOUD_HEIGHT=Altitude das nubes
+option.CLOUD_HEIGHT.comment=Define a altitude física (nivel Y) da capa de nubes no mundo (en metros).
+
+value.CLOUD_HEIGHT.1=Baixa (~110m)
+value.CLOUD_HEIGHT.2=Estándar (~160m)
+value.CLOUD_HEIGHT.3=Alta (~240m)
+
+option.CLOUD_THICKNESS=Grosor das nubes
+option.CLOUD_THICKNESS.comment=Configura o grosor vertical e o volume das nubes.
+
+value.CLOUD_THICKNESS.1=Fina (Cirro)
+value.CLOUD_THICKNESS.2=Estándar (Cúmulo)
+value.CLOUD_THICKNESS.3=Densa (Tormentosa)
+
+option.CLOUD_DISTANCE=Distancia de renderizado das nubes
+option.CLOUD_DISTANCE.comment=Distancia máxima de debuxo das nubes volumétricas. Os perfís de calidade auméntana automaticamente.
+value.CLOUD_DISTANCE.1=Preto
+value.CLOUD_DISTANCE.2=Estándar
+value.CLOUD_DISTANCE.3=Lonxe
+value.CLOUD_DISTANCE.4=Moi lonxe
+
+option.CLOUD_SHADOWS=Sombras das nubes
+option.CLOUD_SHADOWS.comment=Engade sombras procedurais transparentes da densidade das nubes volumétricas sobre o terreo. Equilibradas polos perfís de calidade.
+option.CLOUD_SHADOW_STRENGTH=Intensidade das sombras das nubes
+option.CLOUD_SHADOW_STRENGTH.comment=Controla o visibles e dramáticas que son as sombras transparentes das nubes.
+value.CLOUD_SHADOW_STRENGTH.1=Suave
+value.CLOUD_SHADOW_STRENGTH.2=Equilibrada
+value.CLOUD_SHADOW_STRENGTH.3=Dramática
+
+option.GODRAYS=Raios de sol / Feixes solares
+option.GODRAYS.comment=Engade feixes solares volumétricos de dispersión simple inspirados na física, con extinción de Beer-Lambert, fase de Mie e oclusión por mapa de sombras.
+option.GODRAYS_QUALITY=Calidade dos raios de sol
+option.GODRAYS_QUALITY.comment=Controla o número de mostras e a distancia de integración dos raios de sol volumétricos baseados na física.
+value.GODRAYS_QUALITY.1=Rápida
+value.GODRAYS_QUALITY.2=Equilibrada
+value.GODRAYS_QUALITY.3=Alta
+
+option.AURORA_MODE=Aurora boreal
+option.AURORA_MODE.comment=Controla a aparición de auroras realistas que flúen no ceo nocturno.
+
+value.AURORA_MODE.0=Desactivada
+value.AURORA_MODE.1=Só en biomas fríos
+value.AURORA_MODE.2=Sempre activada
+
+option.AURORA_SPEED=Velocidade da aurora
+option.AURORA_SPEED.comment=Controla a velocidade de ondeo e fluxo das luces do norte.
+
+value.AURORA_SPEED.1=Lenta
+value.AURORA_SPEED.2=Estándar
+value.AURORA_SPEED.3=Rápida
+
+option.AURORA_STRENGTH=Brillo da aurora
+option.AURORA_STRENGTH.comment=Controla o brillo xeral das luces do norte.
+
+value.AURORA_STRENGTH.1=Suave
+value.AURORA_STRENGTH.2=Estándar
+value.AURORA_STRENGTH.3=Resplandecente
+
+option.NEBULA_BRIGHTNESS=Brillo da Vía Láctea
+option.NEBULA_BRIGHTNESS.comment=Axusta o brillo da nebulosa galáctica diagonal acastañada pola noite.
+
+value.NEBULA_BRIGHTNESS.1=Tenue
+value.NEBULA_BRIGHTNESS.2=Estándar
+value.NEBULA_BRIGHTNESS.3=Brillante
+
+option.STARS_BRIGHTNESS=Brillo das estrelas
+option.STARS_BRIGHTNESS.comment=Controla o brillo e o resplandor cintilante das estrelas pola noite.
+
+value.STARS_BRIGHTNESS.1=Tenue
+value.STARS_BRIGHTNESS.2=Estándar
+value.STARS_BRIGHTNESS.3=Brillante
+
+option.STARS_AMOUNT=Densidade de estrelas
+option.STARS_AMOUNT.comment=Controla a cantidade total e a densidade das estrelas no ceo.
+
+value.STARS_AMOUNT.1=Poucas
+value.STARS_AMOUNT.2=Estándar
+value.STARS_AMOUNT.3=Densas
+
+option.RAINBOW_STRENGTH=Intensidade do arco da vella
+option.RAINBOW_STRENGTH.comment=Configura o brillo e a saturación de cor do arco da vella despois da chuvia.
+
+value.RAINBOW_STRENGTH.1=Sutil
+value.RAINBOW_STRENGTH.2=Equilibrada
+value.RAINBOW_STRENGTH.3=Vívida
+
+option.SHOOTING_STARS=Meteoros (estrelas fugaces)
+option.SHOOTING_STARS.comment=Meteoros baseados na física que entran na mesosfera (~80-120 km). Renderiza arcos 3D reais de círculo máximo con curvas de luz de ablación, cor de plasma de corpo negro (3500-5500 K), extinción de Rayleigh preto do horizonte e regueiros de ionización persistentes nos bólidos.
+
+option.SHOOTING_STARS_FREQUENCY=Actividade de meteoros (ZHR)
+option.SHOOTING_STARS_FREQUENCY.comment=Taxa horaria cenital aproximada. Esporádica = fondo realista de ~10 por hora. Activa = chuvia leve. Tormenta = densidade máxima (~100/h).
+
+value.SHOOTING_STARS_FREQUENCY.1=Esporádica (~10/h)
+value.SHOOTING_STARS_FREQUENCY.2=Chuvia activa
+value.SHOOTING_STARS_FREQUENCY.3=Tormenta de meteoros
+
+option.SHOOTING_STARS_BRIGHTNESS=Escala de magnitude
+option.SHOOTING_STARS_BRIGHTNESS.comment=Multiplicador mestre na escala de magnitude dos meteoros. Tenue = media realista; Brillante = escala os bólidos para visibilidade cinematográfica.
+
+value.SHOOTING_STARS_BRIGHTNESS.1=Tenue (realista)
+value.SHOOTING_STARS_BRIGHTNESS.2=Estándar
+value.SHOOTING_STARS_BRIGHTNESS.3=Bólidos brillantes
+
+option.COZY_LIGHTS=Tremor das antorchas
+option.COZY_LIGHTS.comment=Activa animacións de tremor cálidas e acolledoras en tempo real para antorchas, fogueiras e lanternas.
+
+option.WET_REFLECTIONS=Reflexos de mollado pola chuvia
+option.WET_REFLECTIONS.comment=Cando chove, os bloques sólidos como o chan, a herba e a pedra vólvense húmidos, escuros e brillantes baixo o ceo.
+
+option.GROUND_MIST=Brétema baixa (Y=62-66)
+option.GROUND_MIST.comment=Activa suaves mantas de brétema branca dourada da mañá/tardiña que se deslizan sobre a auga e o xeo ao amencer e ao solpor.
+
+option.FOG_DENSITY_LEVEL=Densidade da brétema
+option.FOG_DENSITY_LEVEL.comment=Controla a intensidade da brétema atmosférica do horizonte.
+
+value.FOG_DENSITY_LEVEL.1=Baixa
+value.FOG_DENSITY_LEVEL.2=Media
+value.FOG_DENSITY_LEVEL.3=Alta
+
+option.EXPOSURE=Brillo de exposición
+option.EXPOSURE.comment=Controla o brillo xeral da imaxe.
+
+value.EXPOSURE.1=Apagado
+value.EXPOSURE.2=Equilibrado
+value.EXPOSURE.3=Vibrante
+
+option.COLOR_SATURATION=Vivacidade da cor
+option.COLOR_SATURATION.comment=Controla a saturación non lineal das cores da pantalla. Fai que a vexetación pareza esmeralda e os ceos exuberantes.
+
+value.COLOR_SATURATION.1=Apagada
+value.COLOR_SATURATION.2=Equilibrada
+value.COLOR_SATURATION.3=Colorida
+value.COLOR_SATURATION.4=Vívida
+
+option.CONTRAST=Contraste da imaxe
+option.CONTRAST.comment=Escolle o estilo da curva de mapeo de tons e contraste.
+
+value.CONTRAST.1=Suave
+value.CONTRAST.2=Cinematográfico (ACES)
+value.CONTRAST.3=Intenso (alto contraste)
+value.CONTRAST.4=Fotográfico (tipo AgX)
+
+option.TAA=Antialiasing temporal (TAA)
+option.TAA.comment=Resolución temporal con reproxección de movemento e recorte de veciñanza. Reduce o cintileo e os bordos dentados nos preaxustes altos.
+option.TAA_STRENGTH=Intensidade de TAA
+option.TAA_STRENGTH.comment=Controla a mestura do historial. Máis alto é máis estable pero pode ser máis suave en movemento.
+value.TAA_STRENGTH.1=Lixeira
+value.TAA_STRENGTH.2=Equilibrada
+value.TAA_STRENGTH.3=Estable
+
+
+
+option.VIGNETTE=Efecto de viñeta
+option.VIGNETTE.comment=Activa un sutil escurecemento nos bordos da pantalla para mellorar o enfoque.
+
+# ==============================================================================
+# Spatial Anti-Aliasing
+# ==============================================================================
+option.SPATIAL_AA_MODE=Antialiasing espacial
+option.SPATIAL_AA_MODE.comment=Selecciona o método de antialiasing de posprocesado. FXAA é rápido e barato. SMAA usa o búfer de profundidade para mellor calidade nos bordos da xeometría. Pódese combinar con TAA.
+value.SPATIAL_AA_MODE.0=Desactivado
+value.SPATIAL_AA_MODE.1=FXAA (rápido)
+value.SPATIAL_AA_MODE.2=SMAA (calidade)
+
+option.WATER_RIFFLES=Intensidade das ondiñas da auga
+option.WATER_RIFFLES.comment=Axusta a ondulación e a intensidade das ondiñas finas do mapa de normais na auga. Non afecta ao xeo nin ao vidro.
+
+value.WATER_RIFFLES.1=Calma
+value.WATER_RIFFLES.2=Estándar
+value.WATER_RIFFLES.3=Axitada
+
+option.WATER_SPECULAR_STRENGTH=Brillo especular da auga
+option.WATER_SPECULAR_STRENGTH.comment=Axusta o brillo dos reflexos do sol/lúa nas ondiñas da auga.
+
+value.WATER_SPECULAR_STRENGTH.1=Suave
+value.WATER_SPECULAR_STRENGTH.2=Estándar
+value.WATER_SPECULAR_STRENGTH.3=Resplandecente
+
+option.SHADOW_SOFTNESS=Suavidade das sombras
+option.SHADOW_SOFTNESS.comment=Controla o suaves e difusos que aparecen os bordos das sombras. Usa filtrado de disco de Poisson rotado para unha penumbra suave.
+
+value.SHADOW_SOFTNESS.1=Nítida
+value.SHADOW_SOFTNESS.2=Suave
+value.SHADOW_SOFTNESS.3=Ultra suave
+
+# ==============================================================================
+# Sun & Moon Lighting
+# ==============================================================================
+screen.SUN_MOON=Sol e lúa
+screen.SUN_MOON.comment=Axusta con precisión a intensidade do sol e da lúa, a temperatura de cor e os efectos atmosféricos.
+
+option.SUN_INTENSITY=Intensidade do sol
+option.SUN_INTENSITY.comment=Brillo mestre da luz solar directa. Máis alto = maior contraste diúrno.
+value.SUN_INTENSITY.1=Tenue
+value.SUN_INTENSITY.2=Estándar
+value.SUN_INTENSITY.3=Brillante
+value.SUN_INTENSITY.4=Abrasador
+
+option.MOON_INTENSITY=Intensidade da lúa
+option.MOON_INTENSITY.comment=Brillo mestre da luz da lúa. Máis alto = noites máis brillantes e visibles.
+value.MOON_INTENSITY.1=Noite pecha
+value.MOON_INTENSITY.2=Estándar
+value.MOON_INTENSITY.3=Lúa brillante
+value.MOON_INTENSITY.4=Noite completa
+
+option.SUN_TEMPERATURE=Temperatura de cor do sol
+option.SUN_TEMPERATURE.comment=Despraza a curva de Kelvin do sol. Realista usa o corpo negro de Tanner Helland; cálido = dourado; frío = branco neutro.
+value.SUN_TEMPERATURE.1=Frío / Neutro
+value.SUN_TEMPERATURE.2=Realista
+value.SUN_TEMPERATURE.3=Dourado cálido
+
+option.MOON_TEMPERATURE=Temperatura de cor da lúa
+option.MOON_TEMPERATURE.comment=Matiz da luz da lúa. Xeada = azul fría; Prata = realista 4100K; Cálida = crema de lúa de colleita.
+value.MOON_TEMPERATURE.1=Azul xeada
+value.MOON_TEMPERATURE.2=Prata (realista)
+value.MOON_TEMPERATURE.3=Crema cálida
+
+option.SUN_HALO=Halo do sol (dispersión de Mie)
+option.SUN_HALO.comment=Engade un suave resplandor cálido sobre o terreo ao mirar preto do sol (dispersión cara adiante de Mie).
+
+option.SUNRISE_GLOW=Resplandor mellorado do amencer/solpor
+option.SUNRISE_GLOW.comment=Activa unha retrodispersión cálida máis forte que envolve as superficies que dan as costas ao sol baixo.
+
+# ==============================================================================
+# Extended shadow settings
+# ==============================================================================
+option.shadowDistance=Distancia das sombras
+option.shadowDistance.comment=Distancia máxima á que se renderizan as sombras dinámicas antes de esvaecerse.
+value.shadowDistance.60.0=Preto (60m)
+value.shadowDistance.80.0=Estándar (80m)
+value.shadowDistance.120.0=Lonxe (120m)
+value.shadowDistance.160.0=Ultra (160m)
+
+option.AMBIENT_BRIGHTNESS=Elevación de sombra / Ambiente
+option.AMBIENT_BRIGHTNESS.comment=Controla o escuras que aparecen as zonas en sombra pola noite e nas covas.
+value.AMBIENT_BRIGHTNESS.1=Escuro
+value.AMBIENT_BRIGHTNESS.2=Estándar
+value.AMBIENT_BRIGHTNESS.3=Elevado (brillante)
+
+option.SHADOW_TINT=Matiz das sombras
+option.SHADOW_TINT.comment=Matiza as sombras diúrnas. As sombras do mundo real baixo un ceo azul teñen un sutil matiz frío.
+value.SHADOW_TINT.1=Gris neutro
+value.SHADOW_TINT.2=Azul frío (realista)
+value.SHADOW_TINT.3=Cálido
+
+option.LIGHT_WRAP=Envolvemento da luz
+option.LIGHT_WRAP.comment=Suaviza o terminador entre superficies iluminadas e non iluminadas. Realista = Lambert físico; Suave = agradable para capturas.
+value.LIGHT_WRAP.1=Realista (Lambert)
+value.LIGHT_WRAP.2=Envolvemento suave
+value.LIGHT_WRAP.3=Estilizado
+
+# ==============================================================================
+# Screen-Space Reflections (SSR)
+# ==============================================================================
+option.SSR=Reflexos en espazo de pantalla (SSR)
+option.SSR.comment=Engade ambiente reflectido en tempo real sobre a auga, as superficies húmidas e os bloques PBR metálicos. Activado desde MEDIO en adiante.
+
+option.SSR_QUALITY=Calidade de SSR
+option.SSR_QUALITY.comment=Controla a precisión e a distancia dos raios dos reflexos en espazo de pantalla. Máis alto = reflexos máis nítidos pero máis custo de GPU.
+value.SSR_QUALITY.1=Rápida (12 pasos)
+value.SSR_QUALITY.2=Equilibrada (24 pasos)
+value.SSR_QUALITY.3=Alta (40 pasos)
+
+option.SSR_STRENGTH=Intensidade de SSR
+option.SSR_STRENGTH.comment=Controla o visibles e prominentes que aparecen os reflexos do ambiente nas superficies reflectoras.
+
+option.WATER_WAVE_SCALE=Amplitude das ondas
+option.WATER_WAVE_SCALE.comment=Controla a inclinación visible das ondas da superficie da auga. Calma = tipo espello, Tormentosa = reflexos fortemente rotos.
+option.WATER_WAVE_DETAIL=Detalle das ondas
+option.WATER_WAVE_DETAIL.comment=Controla cantas ondas pequenas aparecen por bloque. Grosa = poucas ondas grandes, Densa = moitas ondiñas pequenas.
+option.UNDERWATER_NIGHT_DARKNESS=Escuridade nocturna baixo a auga
+option.UNDERWATER_NIGHT_DARKNESS.comment=Controla o escura que se volve a escena baixo a auga pola noite. Piscina con luar mantén o brillo; Escuridade total dá unha escuridade extrema de supervivencia.
+value.SSR_STRENGTH.1=Sutil
+value.SSR_STRENGTH.2=Equilibrada
+value.SSR_STRENGTH.3=Forte
+
+# v0.2.9 — water/underwater value labels
+value.WATER_WAVE_SCALE.1=Calma
+value.WATER_WAVE_SCALE.2=Estándar
+value.WATER_WAVE_SCALE.3=Axitada
+value.WATER_WAVE_SCALE.4=Tormentosa
+value.WATER_WAVE_DETAIL.1=Grosa
+value.WATER_WAVE_DETAIL.2=Estándar
+value.WATER_WAVE_DETAIL.3=Densa
+value.UNDERWATER_NIGHT_DARKNESS.1=Piscina con luar
+value.UNDERWATER_NIGHT_DARKNESS.2=Tenue
+value.UNDERWATER_NIGHT_DARKNESS.3=Noite real
+value.UNDERWATER_NIGHT_DARKNESS.4=Escuridade total
+
+# PBR Distance
+option.PBR_DISTANCE=Distancia de renderizado PBR
+option.PBR_DISTANCE.comment=Distancia máxima para os brillos especulares PBR. Aforra GPU no terreo afastado. Preto (16m) para BAIXO, Estándar (48m) para MEDIO, Lonxe (128m) para ALTO/ULTRA, Ilimitado para EXTREMO.
+value.PBR_DISTANCE.1=Preto (16m)
+value.PBR_DISTANCE.2=Estándar (48m)
+value.PBR_DISTANCE.3=Lonxe (128m)
+value.PBR_DISTANCE.4=Ilimitado
+# ==============================================================================
+# Experimental Tab & New Sky (v1.1.0)
+# ==============================================================================
+screen.EXPERIMENTAL=Experimental
+screen.EXPERIMENTAL.comment=Experimental
+
+option.SKY_MODE=Novo ceo (Dispersión atmosférica)
+option.SKY_STYLE=Sky Style
+option.SKY_STYLE.comment=option.SKY_STYLE.comment=Artistic direction for the physical sky. Realistic = true angular sizes & neutral colours (astronomy look). Semi-realistic = readable sun/moon (x2.8), richer colour, soft glow. Fantasy = grand sun/moon (x5.5), big corona, vivid teal/crimson/indigo palette.
+option.SKY_MODE.comment=EXPERIMENTAL — off in all profiles. Gradient (legacy, default) or Physical realtime scattering with true multiple scattering (Rayleigh+Mie+Ozone, 1st+2nd+3rd order). Enable manually in this tab.
+value.SKY_MODE.0=Gradient (Legacy)
+value.SKY_STYLE.0=Realistic
+value.SKY_STYLE.1=Semi-realistic
+value.SKY_STYLE.2=Fantasy
+value.SKY_MODE.1=Realtime Scattering
+
+option.SKY_QUALITY=Calidade de dispersión do ceo
+option.SKY_QUALITY.comment=Calidade de dispersión do ceo
+value.SKY_QUALITY.1=Rápido
+value.SKY_QUALITY.2=Estándar
+value.SKY_QUALITY.3=Alto
+
+# --- Auto-added missing translations (v1.1.0 sync) ---
+option.GODRAYS_STRENGTH=Intensidade dos Godrays
+option.GODRAYS_STRENGTH.comment=Brillo dos feixes de luz volumétricos. Sutil: brétema atmosférica suave. Equilibrado: raios claramente visibles. Dramático: feixes cinematográficos intensos.
+value.GODRAYS_STRENGTH.1=Sutil
+value.GODRAYS_STRENGTH.2=Equilibrado
+value.GODRAYS_STRENGTH.3=Dramático
+option.HEAT_SHIMMER=Distorsión de calor sobre a lava
+option.HEAT_SHIMMER.comment=Activa un sutil efecto de distorsión térmica na pantalla sobre as superficies de lava.
+option.HEAT_SHIMMER_STRENGTH=Intensidade da distorsión de calor
+option.HEAT_SHIMMER_STRENGTH.comment=Controla a intensidade da distorsión de calor sobre a lava.
+value.HEAT_SHIMMER_STRENGTH.1=Sutil
+value.HEAT_SHIMMER_STRENGTH.2=Equilibrado
+value.HEAT_SHIMMER_STRENGTH.3=Forte
+
+# v1.1.1 — shadow pipeline + POM option labels
+value.shadowMapResolution.512=512
+value.shadowMapResolution.1024=1024
+value.shadowMapResolution.2048=2048
+value.shadowMapResolution.4096=4096
+option.POM_DEPTH=POM Depth
+option.POM_DEPTH.comment=Controls the visible depth of parallax occlusion mapping when PBR POM is enabled.
+value.POM_DEPTH.1=Low
+value.POM_DEPTH.2=Standard
+value.POM_DEPTH.3=Deep
+option.POM_STEPS=POM Steps
+option.POM_STEPS.comment=Controls the raymarch step count for parallax occlusion mapping. Higher values improve quality but cost more GPU time.
+value.POM_STEPS.1=Fast
+value.POM_STEPS.2=Standard
+value.POM_STEPS.3=High
+value.POM_STEPS.4=Ultra

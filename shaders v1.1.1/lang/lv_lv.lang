@@ -1,0 +1,433 @@
+# AuraLite Shaders v1.0.7 - Copyright (c) 2026 AlexanderNyr. Licensed under CC BY-NC-SA 4.0.
+# ==============================================================================
+# AuraLite Shader Pack - Latvian Language Translations
+# ==============================================================================
+
+# ==============================================================================
+# Quality Profiles
+# ==============================================================================
+profile.VERY_LOW=Ļoti zems
+profile.VERY_LOW.comment=Fastest possible preset for very weak GPUs. Disables shadows, clouds, water waves, foliage waving, PBR and most extras.
+profile.LOW=Zems
+profile.LOW.comment=Lightweight preset for weak GPUs. Keeps cheap water/foliage motion, disables shadows, clouds and PBR.
+profile.MED=Vidējs
+profile.MED.comment=Balanced preset with 1024 shadows, standard clouds, PBR and atmospheric effects.
+profile.HIGH=Augsts
+profile.HIGH.comment=High quality preset with 2048 shadows, farther clouds and full PBR, without SSAO.
+profile.ULTRA=Ultra
+profile.ULTRA.comment=Ultra quality preset with 4096 shadows, very far clouds and balanced SSAO. POM remains disabled for stability.
+profile.EXTREME=Ekstremāls
+profile.EXTREME.comment=Maximum experimental quality. Pushes lighting, clouds, color and deep SSAO. POM remains disabled for stability.
+profile.CUSTOM=Pielāgots
+profile.CUSTOM.comment=Lietotāja pielāgoti iestatījumi.
+
+screen.TRANSLATION_NOTICE=⚠ Tulkojumos var būt kļūdas
+screen.TRANSLATION_NOTICE.comment=Dažas lokalizācijas virknes var būt neprecīzas. Ja kaut kas izskatās dīvaini, salīdziniet ar oriģinālu angļu valodā.
+
+# Screens
+screen.LIGHTING=Apgaismojuma iestatījumi
+screen.LIGHTING.comment=Konfigurējiet ēnas, gaismas krāsas un spilgtumu.
+
+screen.FOLIAGE=Augu iestatījumi
+screen.FOLIAGE.comment=Konfigurējiet zāles un lapu šūpošanās animācijas.
+
+screen.WATER=Ūdens iestatījumi
+screen.WATER.comment=Konfigurējiet viļņus, caurspīdīgumu un ūdens stilu.
+
+screen.CLOUDS_MENU=Debesis un mākoņi
+screen.CLOUDS_MENU.comment=Konfigurējiet 3D mākoņu un debesu efektu fizisko augstumu, biezumu un stilu.
+
+screen.POST_PROCESS=Pēcapstrāde un migla
+screen.POST_PROCESS.comment=Konfigurējiet ekspozīciju, miglu un kinematogrāfiskos efektus.
+
+# Options
+option.SHADOWS=Dinamiskās ēnas
+option.SHADOWS.comment=Ieslēdziet vai izslēdziet maigas dinamiskās ēnas no saules un mēness.
+
+option.shadowMapResolution=Ēnu izšķirtspēja
+option.shadowMapResolution.comment=Mainiet ēnu kartes kvalitāti. Augstākas vērtības var samazināt veiktspēju.
+
+option.PBR_LIGHTING=PBR apgaismojums (LabPBR)
+option.PBR_LIGHTING.comment=Iespējojiet fiziski balstītu renderēšanu metāliem, raupjumam un 3D normālkartēm (nepieciešama PBR resursu pakotne).
+
+option.PBR_POM=3D bloku reljefs (POM)
+option.PBR_POM.comment=Iespējojiet fiziski balstītu Parallax Occlusion Mapping 3D bloku tekstūrām. Ieteicams izslēgt nesaderīgām resursu pakotnēm.
+
+option.PBR_STRENGTH=PBR intensitāte
+option.PBR_STRENGTH.comment=Kontrolējiet PBR metālisko virsmu atstarošanas spēju un spīdumu.
+
+value.PBR_STRENGTH.1=Smalks
+value.PBR_STRENGTH.2=Standarta
+value.PBR_STRENGTH.3=Spoguļains
+
+option.SSAO=SSAO / SAO oklūzija
+option.SSAO.comment=Extreme profile: screen-space ambient occlusion for contact shadows in corners, under blocks, and around geometry intersections.
+option.SSAO_STRENGTH=SSAO stiprums
+option.SSAO_STRENGTH.comment=Kontrolē ekrāna telpas apkārtējās oklūzijas dziļumu. Aktīvs tikai tad, kad SSAO ir iespējots.
+value.SSAO_STRENGTH.1=Smalks
+value.SSAO_STRENGTH.2=Līdzsvarots
+value.SSAO_STRENGTH.3=Dziļš
+
+option.LIGHTMAP_WARMTH=Lāpas siltums
+option.LIGHTMAP_WARMTH.comment=Pielāgojiet bloku/lāpu gaismas siltumu un krāsu.
+
+value.LIGHTMAP_WARMTH.1=Mājīgs
+value.LIGHTMAP_WARMTH.2=Silts
+value.LIGHTMAP_WARMTH.3=Intensīvs
+
+option.WAVING_LEAVES=Šūpojošās lapas
+option.WAVING_LEAVES.comment=Iespējojiet koku lapu maigas šūpošanās animācijas.
+
+option.WAVING_GRASS=Šūpojošā veģetācija
+option.WAVING_GRASS.comment=Iespējojiet zāles, ziedu un kultūraugu šūpošanās animācijas.
+
+option.WIND_SPEED=Vēja ātrums
+option.WIND_SPEED.comment=Kontrolējiet lapu, augu un ūdens viļņu šūpošanās ātrumu.
+
+value.WIND_SPEED.1=Maigs
+value.WIND_SPEED.2=Vēja brāzma
+value.WIND_SPEED.3=Vētra
+
+option.WATER_WAVES=Ūdens viļņi
+option.WATER_WAVES.comment=Enable 3D geometric waves on the water surface.
+
+option.WATER_TRANSPARENCY=Ūdens blīvums
+option.WATER_TRANSPARENCY.comment=Control the transparency and opacity of the water.
+
+value.WATER_TRANSPARENCY.1=Dzidrs
+value.WATER_TRANSPARENCY.2=Līdzsvarots
+value.WATER_TRANSPARENCY.3=Dziļš
+
+option.PROCEDURAL_CLOUDS=Tilpuma 3D mākoņi
+option.PROCEDURAL_CLOUDS.comment=Iespējojiet fiziski pārlidojamus 3D mākoņus, kuriem var piekļūt un tos pārlidot.
+
+option.CLOUD_HEIGHT=Mākoņu augstums
+option.CLOUD_HEIGHT.comment=Iestatiet mākoņu slāņa fizisko augstumu (Y-līmeni) pasaulē (metros).
+
+value.CLOUD_HEIGHT.1=Zems (~110m)
+value.CLOUD_HEIGHT.2=Standarta (~160m)
+value.CLOUD_HEIGHT.3=Augsts (~240m)
+
+option.CLOUD_THICKNESS=Mākoņu biezums
+option.CLOUD_THICKNESS.comment=Konfigurējiet mākoņu vertikālo biezumu un tilpumu.
+
+value.CLOUD_THICKNESS.1=Plāni (Cirrus)
+value.CLOUD_THICKNESS.2=Standarta (Kumulus)
+value.CLOUD_THICKNESS.3=Blīvi (Vētraini)
+
+option.CLOUD_DISTANCE=Mākoņu renderēšanas attālums
+option.CLOUD_DISTANCE.comment=Maksimālais tilpuma mākoņu zīmēšanas attālums. Kvalitātes profili to automātiski palielina.
+value.CLOUD_DISTANCE.1=Tuvu
+value.CLOUD_DISTANCE.2=Standarta
+value.CLOUD_DISTANCE.3=Tālu
+value.CLOUD_DISTANCE.4=Ļoti tālu
+
+option.CLOUD_SHADOWS=Mākoņu ēnas
+option.CLOUD_SHADOWS.comment=Pievieno caurspīdīgas procedurālas ēnas no tilpuma mākoņu blīvuma uz reljefa. Līdzsvarots ar kvalitātes profiliem.
+option.CLOUD_SHADOW_STRENGTH=Mākoņu ēnu stiprums
+option.CLOUD_SHADOW_STRENGTH.comment=Kontrolē, cik redzamas un dramatiskas ir caurspīdīgās mākoņu ēnas.
+value.CLOUD_SHADOW_STRENGTH.1=Mīksts
+value.CLOUD_SHADOW_STRENGTH.2=Līdzsvarots
+value.CLOUD_SHADOW_STRENGTH.3=Dramatisks
+
+option.GODRAYS=Saules stari (Godrays)
+option.GODRAYS.comment=Adds physically-inspired volumetric single-scattering sun shafts with Beer-Lambert extinction, Mie phase and shadow-map occlusion.
+option.GODRAYS_QUALITY=Godrays kvalitāte
+option.GODRAYS_QUALITY.comment=Controls the sample count and integration distance of physically-based volumetric godrays.
+value.GODRAYS_QUALITY.1=Ātrs
+value.GODRAYS_QUALITY.2=Līdzsvarots
+value.GODRAYS_QUALITY.3=Augsts
+
+option.AURORA_MODE=Ziemeļblāzma
+option.AURORA_MODE.comment=Kontrolējiet reālistiskas plūstošas ziemeļblāzmas attēlošanu nakts debesīs.
+
+value.AURORA_MODE.0=Atspējots
+value.AURORA_MODE.1=Tikai aukstajos biomos
+value.AURORA_MODE.2=Vienmēr iespējots
+
+option.AURORA_SPEED=Ziemeļblāzmas ātrums
+option.AURORA_SPEED.comment=Kontrolējiet ziemeļblāzmas šūpošanās un plūsmas ātrumu.
+
+value.AURORA_SPEED.1=Lēns
+value.AURORA_SPEED.2=Standarta
+value.AURORA_SPEED.3=Ātrs
+
+option.AURORA_STRENGTH=Ziemeļblāzmas spilgtums
+option.AURORA_STRENGTH.comment=Kontrolējiet ziemeļblāzmas kopējo mirdzuma spilgtumu.
+
+value.AURORA_STRENGTH.1=Mīksts
+value.AURORA_STRENGTH.2=Standarta
+value.AURORA_STRENGTH.3=Mirdzošs
+
+option.NEBULA_BRIGHTNESS=Piena Ceļa spilgtums
+option.NEBULA_BRIGHTNESS.comment=Pielāgojiet diagonālās brūnganās galaktikas miglāja mirdzuma spilgtumu naktī.
+
+value.NEBULA_BRIGHTNESS.1=Vājš
+value.NEBULA_BRIGHTNESS.2=Standarta
+value.NEBULA_BRIGHTNESS.3=Spilgts
+
+option.STARS_BRIGHTNESS=Zvaigžņu spilgtums
+option.STARS_BRIGHTNESS.comment=Kontrolējiet zvaigžņu spilgtumu un mirdzošo mirdzumu naktī.
+
+value.STARS_BRIGHTNESS.1=Vājš
+value.STARS_BRIGHTNESS.2=Standarta
+value.STARS_BRIGHTNESS.3=Brīnišķīgs
+
+option.STARS_AMOUNT=Zvaigžņu blīvums
+option.STARS_AMOUNT.comment=Kontrolējiet debesu zvaigžņu kopējo daudzumu un blīvumu.
+
+value.STARS_AMOUNT.1=Maz
+value.STARS_AMOUNT.2=Standarta
+value.STARS_AMOUNT.3=Blīvs
+
+option.RAINBOW_STRENGTH=Varavīksnes intensitāte
+option.RAINBOW_STRENGTH.comment=Konfigurējiet pēclietus varavīksnes spilgtumu un krāsu piesātinājumu.
+
+value.RAINBOW_STRENGTH.1=Smalks
+value.RAINBOW_STRENGTH.2=Līdzsvarots
+value.RAINBOW_STRENGTH.3=Spilgts
+
+option.COZY_LIGHTS=Lāpas mirgošana
+option.COZY_LIGHTS.comment=Iespējojiet siltas, mājīgas, reāllaika mirgošanas animācijas lāpām, ugunskuriem un laternām.
+
+option.WET_REFLECTIONS=Lietus mitruma atspulgi
+option.WET_REFLECTIONS.comment=Kad līst, cietie bloki, piemēram, zeme, zāle un akmens, kļūst slapji, tumši un spīdīgi zem debesīm.
+
+option.GROUND_MIST=Zema piezemes migla (Y=62-66)
+option.GROUND_MIST.comment=Iespējojiet maigus, zeltaini baltus rīta/vakara miglas slāņus, kas slīd pāri ūdenim un ledum rītausmā un krēslā.
+
+option.FOG_DENSITY_LEVEL=Miglas blīvums
+option.FOG_DENSITY_LEVEL.comment=Kontrolējiet atmosfēras horizonta miglas stiprumu.
+
+value.FOG_DENSITY_LEVEL.1=Zems
+value.FOG_DENSITY_LEVEL.2=Vidējs
+value.FOG_DENSITY_LEVEL.3=Augsts
+
+option.EXPOSURE=Ekspozīcijas spilgtums
+option.EXPOSURE.comment=Kontrolējiet attēla kopējo spilgtumu.
+
+value.EXPOSURE.1=Klusināts
+value.EXPOSURE.2=Līdzsvarots
+value.EXPOSURE.3=Košs
+
+option.COLOR_SATURATION=Krāsu spilgtums
+option.COLOR_SATURATION.comment=Kontrolējiet ekrāna krāsu nelineāro piesātinājumu. Padara veģetāciju smaragdzaļu un debesis bagātīgas.
+
+value.COLOR_SATURATION.1=Klusināts
+value.COLOR_SATURATION.2=Līdzsvarots
+value.COLOR_SATURATION.3=Krāsains
+value.COLOR_SATURATION.4=Spilgts
+
+option.CONTRAST=Attēla kontrasts
+option.CONTRAST.comment=Izvēlieties toņu kartēšanas un kontrasta līknes stilu.
+
+value.CONTRAST.1=Mīksts
+value.CONTRAST.2=Kinematogrāfisks (ACES)
+value.CONTRAST.3=Intensīvs (Augsts kontrasts)
+
+option.TAA=Laika nogludināšana (TAA)
+option.TAA.comment=Laika izšķirtspēja ar kustības pārprojekciju un kaimiņu apgriešanu. Samazina mirgošanu un robainas malas augstos iestatījumos.
+option.TAA_STRENGTH=TAA stiprums
+option.TAA_STRENGTH.comment=Kontrolē vēstures sajaukšanu. Augstāka vērtība ir stabilāka, bet var būt mīkstāka kustības laikā.
+value.TAA_STRENGTH.1=Viegls
+value.TAA_STRENGTH.2=Līdzsvarots
+value.TAA_STRENGTH.3=Stabils
+
+option.VIGNETTE=Vinjetes efekts
+option.VIGNETTE.comment=Iespējojiet nelielu ekrāna malu aptumšošanu labākai fokusēšanai.
+
+option.WATER_RIFFLES=Ūdens viļņošanās stiprums
+option.WATER_RIFFLES.comment=Adjust the waviness and intensity of the fine normal map ripples on the water.
+
+value.WATER_RIFFLES.1=Mierīgs
+value.WATER_RIFFLES.2=Standarta
+value.WATER_RIFFLES.3=Nemierīgs
+
+option.WATER_SPECULAR_STRENGTH=Ūdens atstarojuma spīdums
+option.WATER_SPECULAR_STRENGTH.comment=Adjust the brightness of sun/moon reflections on the water ripples.
+
+value.WATER_SPECULAR_STRENGTH.1=Mīksts
+value.WATER_SPECULAR_STRENGTH.2=Standarta
+value.WATER_SPECULAR_STRENGTH.3=Mirdzošs
+
+option.SHADOW_SOFTNESS=Ēnu mīkstums
+option.SHADOW_SOFTNESS.comment=Kontrolē, cik mīkstas un difūzas izskatās ēnu malas. Izmanto rotētu Puasona diska filtrēšanu gludai pussēnai.
+
+value.SHADOW_SOFTNESS.1=Ass
+value.SHADOW_SOFTNESS.2=Mīksts
+value.SHADOW_SOFTNESS.3=Ultra mīksts
+
+# ==============================================================================
+# Sun & Moon Lighting (extended)
+# ==============================================================================
+screen.SUN_MOON=Saule un Mēness
+screen.SUN_MOON.comment=Precīzi noregulējiet saules un mēness intensitāti, krāsas temperatūru un atmosfēras efektus.
+
+option.SUN_INTENSITY=Saules intensitāte
+option.SUN_INTENSITY.comment=Tiešās saules gaismas galvenais spilgtums. Augstāks = spēcīgāks dienas kontrasts.
+value.SUN_INTENSITY.1=Klusināts
+value.SUN_INTENSITY.2=Standarta
+value.SUN_INTENSITY.3=Spilgts
+value.SUN_INTENSITY.4=Liesmojošs
+
+option.MOON_INTENSITY=Mēness intensitāte
+option.MOON_INTENSITY.comment=Mēness gaismas galvenais spilgtums. Augstāks = spilgtākas, redzamākas naktis.
+value.MOON_INTENSITY.1=Pilnīga nakts tumsa
+value.MOON_INTENSITY.2=Standarta
+value.MOON_INTENSITY.3=Spilgts mēness
+value.MOON_INTENSITY.4=Pilna nakts
+
+option.SUN_TEMPERATURE=Saules krāsas temperatūra
+option.SUN_TEMPERATURE.comment=Pārbīda saules Kelvina līkni. Reālistiskais izmanto Tannera Hellanda melno ķermeni; silts = zeltains; vēss = neitrāli balts.
+value.SUN_TEMPERATURE.1=Vēss / Neitrāls
+value.SUN_TEMPERATURE.2=Reālistisks
+value.SUN_TEMPERATURE.3=Silti zeltains
+
+option.MOON_TEMPERATURE=Mēness krāsas temperatūra
+option.MOON_TEMPERATURE.comment=Mēness gaismas nokrāsa. Ledains = zilgani auksts; Sudrabains = reālistisks 4100K; Silts = ražas mēness krēmīgs.
+value.MOON_TEMPERATURE.1=Ledains zils
+value.MOON_TEMPERATURE.2=Sudrabains (Reālistisks)
+value.MOON_TEMPERATURE.3=Silts krēmīgs
+
+option.SUN_HALO=Saules halo (Mī izkliede)
+option.SUN_HALO.comment=Pievieno maigu siltu mirdzumu reljefam, skatoties tuvu saulei (Mī uz priekšu izkliede).
+
+option.SUNRISE_GLOW=Uzlabots saullēkta/saulrieta mirdzums
+option.SUNRISE_GLOW.comment=Iespējo spēcīgāku siltu atpakaļizkliedi, kas apņem virsmas, kas vērstas prom no zemas saules.
+
+# ==============================================================================
+# Extended shadow settings
+# ==============================================================================
+option.shadowDistance=Ēnu attālums
+option.shadowDistance.comment=Maksimālais attālums, kādā tiek renderētas dinamiskās ēnas pirms izbalēšanas.
+value.shadowDistance.60.0=Tuvu (60m)
+value.shadowDistance.80.0=Standarta (80m)
+value.shadowDistance.120.0=Tālu (120m)
+value.shadowDistance.160.0=Ultra (160m)
+
+option.AMBIENT_BRIGHTNESS=Ēnu pacelšana / apkārtējā gaisma
+option.AMBIENT_BRIGHTNESS.comment=Kontrolē, cik tumšas izskatās ēnainas vietas naktī un alās.
+value.AMBIENT_BRIGHTNESS.1=Tumšs
+value.AMBIENT_BRIGHTNESS.2=Standarta
+value.AMBIENT_BRIGHTNESS.3=Pacelts (Spilgts)
+
+option.SHADOW_TINT=Ēnu nokrāsa
+option.SHADOW_TINT.comment=Iekrāso dienas ēnas. Reālas ēnas zem zilām debesīm ir ar smalku vēsu nokrāsu.
+value.SHADOW_TINT.1=Neitrāli pelēks
+value.SHADOW_TINT.2=Vēsi zils (Reālistisks)
+value.SHADOW_TINT.3=Silts
+
+option.LIGHT_WRAP=Gaismas apvīšana
+option.LIGHT_WRAP.comment=Mīkstina terminatoru starp apgaismotām un neapgaismotām virsmām. Reālistisks = fizikāls Lamberts; Mīksts = patīkams ekrānuzņēmumiem.
+value.LIGHT_WRAP.1=Reālistisks (Lamberts)
+value.LIGHT_WRAP.2=Mīksta apvīšana
+value.LIGHT_WRAP.3=Stilizēts
+
+# v0.2.9 — water/underwater option value labels (English fallback)
+value.WATER_WAVE_SCALE.1=Mierīgs
+value.WATER_WAVE_SCALE.2=Standarta
+value.WATER_WAVE_SCALE.3=Nemierīgs
+value.WATER_WAVE_SCALE.4=Vētrains
+value.WATER_WAVE_DETAIL.1=Rupjš
+value.WATER_WAVE_DETAIL.2=Standarta
+value.WATER_WAVE_DETAIL.3=Blīvs
+value.UNDERWATER_NIGHT_DARKNESS.1=Mēness apgaismots dīķis
+value.UNDERWATER_NIGHT_DARKNESS.2=Vājš
+value.UNDERWATER_NIGHT_DARKNESS.3=Īsta nakts
+value.UNDERWATER_NIGHT_DARKNESS.4=Bez gaismas
+# ==============================================================================
+# Experimental Tab & New Sky (v1.1.0)
+# ==============================================================================
+screen.EXPERIMENTAL=Eksperimentāls
+screen.EXPERIMENTAL.comment=Eksperimentāls
+
+option.SKY_MODE=Jaunas debesis (Atmosfēras izkliede)
+option.SKY_STYLE=Debesu stils
+option.SKY_STYLE.comment=option.SKY_STYLE.comment=Artistic direction for the physical sky. Realistic = true angular sizes & neutral colours (astronomy look). Semi-realistic = readable sun/moon (x2.8), richer colour, soft glow. Fantasy = grand sun/moon (x5.5), big corona, vivid teal/crimson/indigo palette.
+option.SKY_MODE.comment=EXPERIMENTAL — off in all profiles. Gradient (legacy, default) or Physical realtime scattering with true multiple scattering (Rayleigh+Mie+Ozone, 1st+2nd+3rd order). Enable manually in this tab.
+value.SKY_MODE.0=Gradients (Vecais)
+value.SKY_STYLE.0=Reālistisks
+value.SKY_STYLE.1=Daļēji reālistisks
+value.SKY_STYLE.2=Fantāzija
+value.SKY_MODE.1=Realtime Scattering
+
+option.SKY_QUALITY=Debesu izkliedes kvalitāte
+option.SKY_QUALITY.comment=Debesu izkliedes kvalitāte
+value.SKY_QUALITY.1=Ātra
+value.SKY_QUALITY.2=Standarta
+value.SKY_QUALITY.3=Augsta
+
+# --- Auto-added missing translations (v1.1.0 sync) ---
+option.FOLIAGE_SSS=Veģetācijas SSS
+option.FOLIAGE_SSS.comment=Iespējo apakšvirsmas izkliedi (caurspīdīgumu) lapām, zālei un augiem, skatoties pretī gaismai.
+option.GODRAYS_STRENGTH=Godrays intensitāte
+option.GODRAYS_STRENGTH.comment=Tilpuma gaismas staru spilgtums. Smalks: viegla atmosfēras dūmaka. Līdzsvarots: skaidri redzami stari. Dramatisks: drosmīgi kinematogrāfiski stari.
+value.GODRAYS_STRENGTH.1=Smalks
+value.GODRAYS_STRENGTH.2=Līdzsvarots
+value.GODRAYS_STRENGTH.3=Dramatisks
+option.SHOOTING_STARS=Meteori (Krītošās zvaigznes)
+option.SHOOTING_STARS.comment=Fiziski balstīti meteori, kas ienāk mezosfērā (~80-120 km). Renderē īstus lielā apļa 3D lokus ar ablācijas gaismas līknēm, melnā ķermeņa plazmas krāsu (3500-5500 K), Releja izgaišanu pie horizonta un noturīgām jonizācijas pēdām uz uguns lodēm.
+option.SHOOTING_STARS_FREQUENCY=Meteoru aktivitāte (ZHR)
+option.SHOOTING_STARS_FREQUENCY.comment=Aptuvenais zenīta stundas rādītājs. Sporādisks = reālistisks fons ~10 stundā. Aktīvs = viegla lietusgāze. Vētra = maksimālais blīvums (~100/h).
+value.SHOOTING_STARS_FREQUENCY.1=Sporādisks (~10/h)
+value.SHOOTING_STARS_FREQUENCY.2=Aktīva lietusgāze
+value.SHOOTING_STARS_FREQUENCY.3=Meteoru vētra
+option.SHOOTING_STARS_BRIGHTNESS=Lieluma skala
+option.SHOOTING_STARS_BRIGHTNESS.comment=Galvenais reizinātājs meteora lieluma skalā. Vājš = reālistisks vidējais; Spilgts = mērogo uguns lodes kinematogrāfiskai redzamībai.
+value.SHOOTING_STARS_BRIGHTNESS.1=Vājš (Reālistisks)
+value.SHOOTING_STARS_BRIGHTNESS.2=Standarta
+value.SHOOTING_STARS_BRIGHTNESS.3=Spilgtas uguns lodes
+value.CONTRAST.4=Fotogrāfisks (līdzīgs AgX)
+option.SPATIAL_AA_MODE=Telpiskā nogludināšana
+option.SPATIAL_AA_MODE.comment=Izvēlieties pēcapstrādes nogludināšanas metodi. FXAA ir ātrs un lēts. SMAA izmanto dziļuma buferi labākai kvalitātei ģeometrijas malās. Var kombinēt ar TAA.
+value.SPATIAL_AA_MODE.0=Izslēgts
+value.SPATIAL_AA_MODE.1=FXAA (Ātrs)
+value.SPATIAL_AA_MODE.2=SMAA (Kvalitāte)
+option.HEAT_SHIMMER=Karstuma mirgošana virs lavas
+option.HEAT_SHIMMER.comment=Iespējojiet smalku ekrāna telpas siltuma izkropļojuma efektu virs lavas virsmām.
+option.HEAT_SHIMMER_STRENGTH=Karstuma mirgošanas stiprums
+option.HEAT_SHIMMER_STRENGTH.comment=Kontrolē siltuma izkropļojuma intensitāti virs lavas.
+value.HEAT_SHIMMER_STRENGTH.1=Smalks
+value.HEAT_SHIMMER_STRENGTH.2=Līdzsvarots
+value.HEAT_SHIMMER_STRENGTH.3=Spēcīgs
+option.SSR=Ekrāna telpas atstarojumi (SSR)
+option.SSR.comment=Pievieno reāllaika atspoguļotu vidi ūdenim, mitrām virsmām un metāla PBR blokiem. Iespējots no Vidēja profila un augstāk v1.0.4.
+option.SSR_QUALITY=SSR kvalitāte
+option.SSR_QUALITY.comment=Kontrolē ekrāna telpas atstarojumu precizitāti un staru attālumu. Augstāks = asāki atstarojumi, bet lielākas GPU izmaksas.
+value.SSR_QUALITY.1=Ātrs (12 soļi)
+value.SSR_QUALITY.2=Līdzsvarots (24 soļi)
+value.SSR_QUALITY.3=Augsts (40 soļi)
+option.SSR_STRENGTH=SSR stiprums
+option.SSR_STRENGTH.comment=Kontrolē, cik redzama un izteikta ir atspoguļotā vide uz atstarojošām virsmām.
+option.WATER_WAVE_SCALE=Viļņu amplitūda
+option.WATER_WAVE_SCALE.comment=Kontrolē redzamo ūdens virsmas viļņu stāvumu. Mierīgs = spoguļains, Vētrains = spēcīgi sadrumstaloti atspulgi.
+option.WATER_WAVE_DETAIL=Viļņu detalizācija
+option.WATER_WAVE_DETAIL.comment=Kontrolē, cik mazu viļņu parādās uz bloku. Rupjš = daži lieli viļņi, Blīvs = daudz mazu viļņošanos.
+option.UNDERWATER_NIGHT_DARKNESS=Zemūdens nakts tumsa
+option.UNDERWATER_NIGHT_DARKNESS.comment=Kontrolē, cik tumša kļūst zemūdens aina naktī. Mēness apgaismots dīķis saglabā spilgtumu; Bez gaismas dod ekstrēmu izdzīvošanas stila tumsu.
+value.SSR_STRENGTH.1=Smalks
+value.SSR_STRENGTH.2=Līdzsvarots
+value.SSR_STRENGTH.3=Spēcīgs
+option.PBR_DISTANCE=PBR renderēšanas attālums
+option.PBR_DISTANCE.comment=Maksimālais attālums PBR spoguļatstarojumiem. Taupa GPU tālā reljefā. Tuvu (16m) ZEMAM, Standarta (48m) VIDĒJAM, Tālu (128m) AUGSTAM/ULTRA, Neierobežots EKSTREMĀLAM.
+value.PBR_DISTANCE.1=Tuvu (16m)
+value.PBR_DISTANCE.2=Standarta (48m)
+value.PBR_DISTANCE.3=Tālu (128m)
+value.PBR_DISTANCE.4=Neierobežots
+
+# v1.1.1 — shadow pipeline + POM option labels
+value.shadowMapResolution.512=512
+value.shadowMapResolution.1024=1024
+value.shadowMapResolution.2048=2048
+value.shadowMapResolution.4096=4096
+option.POM_DEPTH=POM Depth
+option.POM_DEPTH.comment=Controls the visible depth of parallax occlusion mapping when PBR POM is enabled.
+value.POM_DEPTH.1=Low
+value.POM_DEPTH.2=Standard
+value.POM_DEPTH.3=Deep
+option.POM_STEPS=POM Steps
+option.POM_STEPS.comment=Controls the raymarch step count for parallax occlusion mapping. Higher values improve quality but cost more GPU time.
+value.POM_STEPS.1=Fast
+value.POM_STEPS.2=Standard
+value.POM_STEPS.3=High
+value.POM_STEPS.4=Ultra

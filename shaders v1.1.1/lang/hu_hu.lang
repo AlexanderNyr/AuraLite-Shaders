@@ -1,0 +1,433 @@
+# AuraLite Shaders v1.0.7 - Copyright (c) 2026 AlexanderNyr. Licensed under CC BY-NC-SA 4.0.
+# ==============================================================================
+# AuraLite Shader Pack - Hungarian Language Translations
+# ==============================================================================
+
+# ==============================================================================
+# Quality Profiles
+# ==============================================================================
+profile.VERY_LOW=Nagyon alacsony
+profile.VERY_LOW.comment=Fastest possible preset for very weak GPUs. Disables shadows, clouds, water waves, foliage waving, PBR and most extras.
+profile.LOW=Alacsony
+profile.LOW.comment=Lightweight preset for weak GPUs. Keeps cheap water/foliage motion, disables shadows, clouds and PBR.
+profile.MED=Közepes
+profile.MED.comment=Balanced preset with 1024 shadows, standard clouds, PBR and atmospheric effects.
+profile.HIGH=Magas
+profile.HIGH.comment=High quality preset with 2048 shadows, farther clouds and full PBR, without SSAO.
+profile.ULTRA=Ultra
+profile.ULTRA.comment=Ultra quality preset with 4096 shadows, very far clouds and balanced SSAO. POM remains disabled for stability.
+profile.EXTREME=Extrém
+profile.EXTREME.comment=Maximum experimental quality. Pushes lighting, clouds, color and deep SSAO. POM remains disabled for stability.
+profile.CUSTOM=Egyéni
+profile.CUSTOM.comment=Egyedi, felhasználó által módosított beállítások.
+
+screen.TRANSLATION_NOTICE=⚠ A fordítások hibákat tartalmazhatnak
+screen.TRANSLATION_NOTICE.comment=Egyes fordítási szövegek pontatlanok lehetnek. Ha valami furcsának tűnik, hasonlítsd össze az angol eredetivel.
+
+# Screens
+screen.LIGHTING=Fénybeállítások
+screen.LIGHTING.comment=Állítsd be az árnyékokat, a fényszíneket és a fényerőt.
+
+screen.FOLIAGE=Lombozat beállítások
+screen.FOLIAGE.comment=Állítsd be a fű és a levelek hullámzó animációit.
+
+screen.WATER=Víz beállítások
+screen.WATER.comment=Állítsd be a hullámokat, az átlátszóságot és a víz stílusát.
+
+screen.CLOUDS_MENU=Ég és felhők
+screen.CLOUDS_MENU.comment=Állítsd be a 3D felhők és égi effektek fizikai magasságát, vastagságát és stílusát.
+
+screen.POST_PROCESS=Utófeldolgozás és köd
+screen.POST_PROCESS.comment=Állítsd be az expozíciót, a ködöt és a filmes hatásokat.
+
+# Options
+option.SHADOWS=Dinamikus árnyékok
+option.SHADOWS.comment=Kapcsold be vagy ki a nap és a hold lágy dinamikus árnyékait.
+
+option.shadowMapResolution=Árnyékfelbontás
+option.shadowMapResolution.comment=Változtasd meg az árnyéktérkép minőségét. A magasabb értékek csökkenthetik a teljesítményt.
+
+option.PBR_LIGHTING=PBR megvilágítás (LabPBR)
+option.PBR_LIGHTING.comment=Kapcsold be a fizikai alapú megjelenítést a fémekhez, érdességhez és 3D normáltérképekhez (PBR erőforráscsomag szükséges).
+
+option.PBR_POM=3D blokk-dombormű (POM)
+option.PBR_POM.comment=Kapcsold be a fizikai alapú Parallax Occlusion Mapping-et a 3D blokktextúrákhoz. Nem kompatibilis erőforráscsomagok esetén ajánlott kikapcsolni.
+
+option.PBR_STRENGTH=PBR intenzitás
+option.PBR_STRENGTH.comment=Szabályozd a PBR fémes felületek visszaverő képességét és fényességét.
+
+value.PBR_STRENGTH.1=Finom
+value.PBR_STRENGTH.2=Standard
+value.PBR_STRENGTH.3=Tükör
+
+option.SSAO=SSAO / SAO takarás
+option.SSAO.comment=Extreme profile: screen-space ambient occlusion for contact shadows in corners, under blocks, and around geometry intersections.
+option.SSAO_STRENGTH=SSAO erőssége
+option.SSAO_STRENGTH.comment=Szabályozza a képernyőtér ambiens takarásának mélységét. Csak akkor aktív, ha az SSAO be van kapcsolva.
+value.SSAO_STRENGTH.1=Finom
+value.SSAO_STRENGTH.2=Kiegyensúlyozott
+value.SSAO_STRENGTH.3=Mély
+
+option.LIGHTMAP_WARMTH=Fáklya melegsége
+option.LIGHTMAP_WARMTH.comment=Állítsd be a blokk-/fáklyafény melegségét és színét.
+
+value.LIGHTMAP_WARMTH.1=Hangulatos
+value.LIGHTMAP_WARMTH.2=Meleg
+value.LIGHTMAP_WARMTH.3=Intenzív
+
+option.WAVING_LEAVES=Hullámzó levelek
+option.WAVING_LEAVES.comment=Kapcsold be a fák leveleinek finom hullámzó animációit.
+
+option.WAVING_GRASS=Hullámzó növényzet
+option.WAVING_GRASS.comment=Kapcsold be a fű, virágok és növények hullámzó animációit.
+
+option.WIND_SPEED=Szélsebesség
+option.WIND_SPEED.comment=Szabályozd a levelek, növények és vízhullámok hullámzási sebességét.
+
+value.WIND_SPEED.1=Enyhe
+value.WIND_SPEED.2=Szellő
+value.WIND_SPEED.3=Szélvihar
+
+option.WATER_WAVES=Vízhullámok
+option.WATER_WAVES.comment=Enable 3D geometric waves on the water surface.
+
+option.WATER_TRANSPARENCY=Víz sűrűsége
+option.WATER_TRANSPARENCY.comment=Control the transparency and opacity of the water.
+
+value.WATER_TRANSPARENCY.1=Tiszta
+value.WATER_TRANSPARENCY.2=Kiegyensúlyozott
+value.WATER_TRANSPARENCY.3=Mély
+
+option.PROCEDURAL_CLOUDS=Térfogati 3D felhők
+option.PROCEDURAL_CLOUDS.comment=Kapcsold be a fizikailag átrepülhető 3D felhőket, amelyeket el lehet érni és át lehet repülni.
+
+option.CLOUD_HEIGHT=Felhőmagasság
+option.CLOUD_HEIGHT.comment=Állítsd be a felhőréteg fizikai magasságát (Y-szint) a világban (méterben).
+
+value.CLOUD_HEIGHT.1=Alacsony (~110m)
+value.CLOUD_HEIGHT.2=Standard (~160m)
+value.CLOUD_HEIGHT.3=Magas (~240m)
+
+option.CLOUD_THICKNESS=Felhővastagság
+option.CLOUD_THICKNESS.comment=Állítsd be a felhők függőleges vastagságát és térfogatát.
+
+value.CLOUD_THICKNESS.1=Vékony (Cirrus)
+value.CLOUD_THICKNESS.2=Standard (Cumulus)
+value.CLOUD_THICKNESS.3=Sűrű (Viharos)
+
+option.CLOUD_DISTANCE=Felhő megjelenítési távolság
+option.CLOUD_DISTANCE.comment=A térfogati felhők maximális megjelenítési távolsága. A minőségi profilok automatikusan növelik.
+value.CLOUD_DISTANCE.1=Közel
+value.CLOUD_DISTANCE.2=Standard
+value.CLOUD_DISTANCE.3=Távol
+value.CLOUD_DISTANCE.4=Nagyon távol
+
+option.CLOUD_SHADOWS=Felhőárnyékok
+option.CLOUD_SHADOWS.comment=Átlátszó procedurális árnyékokat ad hozzá a terephez a térfogati felhők sűrűségéből. A minőségi profilok egyensúlyozzák.
+option.CLOUD_SHADOW_STRENGTH=Felhőárnyék erőssége
+option.CLOUD_SHADOW_STRENGTH.comment=Szabályozza, mennyire láthatóak és drámaiak az átlátszó felhőárnyékok.
+value.CLOUD_SHADOW_STRENGTH.1=Lágy
+value.CLOUD_SHADOW_STRENGTH.2=Kiegyensúlyozott
+value.CLOUD_SHADOW_STRENGTH.3=Drámai
+
+option.GODRAYS=Napsugarak (Godrays)
+option.GODRAYS.comment=Adds physically-inspired volumetric single-scattering sun shafts with Beer-Lambert extinction, Mie phase and shadow-map occlusion.
+option.GODRAYS_QUALITY=Godrays minőség
+option.GODRAYS_QUALITY.comment=Controls the sample count and integration distance of physically-based volumetric godrays.
+value.GODRAYS_QUALITY.1=Gyors
+value.GODRAYS_QUALITY.2=Kiegyensúlyozott
+value.GODRAYS_QUALITY.3=Magas
+
+option.AURORA_MODE=Sarki fény
+option.AURORA_MODE.comment=Szabályozd a valósághűen áramló sarki fények megjelenítését az éjszakai égbolton.
+
+value.AURORA_MODE.0=Letiltva
+value.AURORA_MODE.1=Csak hideg biomokban
+value.AURORA_MODE.2=Mindig bekapcsolva
+
+option.AURORA_SPEED=Sarki fény sebessége
+option.AURORA_SPEED.comment=Szabályozd a sarki fény hullámzásának és áramlásának sebességét.
+
+value.AURORA_SPEED.1=Lassú
+value.AURORA_SPEED.2=Standard
+value.AURORA_SPEED.3=Gyors
+
+option.AURORA_STRENGTH=Sarki fény fényessége
+option.AURORA_STRENGTH.comment=Szabályozd a sarki fény izzásának összfényességét.
+
+value.AURORA_STRENGTH.1=Lágy
+value.AURORA_STRENGTH.2=Standard
+value.AURORA_STRENGTH.3=Izzó
+
+option.NEBULA_BRIGHTNESS=Tejút fényessége
+option.NEBULA_BRIGHTNESS.comment=Állítsd be az átlós barnás galaktikus köd izzásának fényességét éjszaka.
+
+value.NEBULA_BRIGHTNESS.1=Halvány
+value.NEBULA_BRIGHTNESS.2=Standard
+value.NEBULA_BRIGHTNESS.3=Fényes
+
+option.STARS_BRIGHTNESS=Csillagfényesség
+option.STARS_BRIGHTNESS.comment=Szabályozd a csillagok fényességét és csillogó ragyogását éjszaka.
+
+value.STARS_BRIGHTNESS.1=Halvány
+value.STARS_BRIGHTNESS.2=Standard
+value.STARS_BRIGHTNESS.3=Ragyogó
+
+option.STARS_AMOUNT=Csillagsűrűség
+option.STARS_AMOUNT.comment=Szabályozd az égbolt csillagainak összmennyiségét és sűrűségét.
+
+value.STARS_AMOUNT.1=Kevés
+value.STARS_AMOUNT.2=Standard
+value.STARS_AMOUNT.3=Sűrű
+
+option.RAINBOW_STRENGTH=Szivárvány intenzitása
+option.RAINBOW_STRENGTH.comment=Állítsd be az eső utáni szivárvány fényességét és színtelítettségét.
+
+value.RAINBOW_STRENGTH.1=Finom
+value.RAINBOW_STRENGTH.2=Kiegyensúlyozott
+value.RAINBOW_STRENGTH.3=Élénk
+
+option.COZY_LIGHTS=Fáklyapislákolás
+option.COZY_LIGHTS.comment=Kapcsold be a fáklyák, tábortüzek és lámpások meleg, hangulatos, valós idejű pislákoló animációit.
+
+option.WET_REFLECTIONS=Esős nedvesség tükröződések
+option.WET_REFLECTIONS.comment=Esőben a szilárd blokkok, mint a talaj, fű és kő, nedvessé, sötétebbé és fényessé válnak az ég alatt.
+
+option.GROUND_MIST=Alacsony talajköd (Y=62-66)
+option.GROUND_MIST.comment=Kapcsold be a lágy, aranyfehér reggeli/esti ködrétegeket, amelyek hajnalban és alkonyatkor a víz és a jég felett siklanak.
+
+option.FOG_DENSITY_LEVEL=Ködsűrűség
+option.FOG_DENSITY_LEVEL.comment=Szabályozd a légköri horizontköd erősségét.
+
+value.FOG_DENSITY_LEVEL.1=Alacsony
+value.FOG_DENSITY_LEVEL.2=Közepes
+value.FOG_DENSITY_LEVEL.3=Magas
+
+option.EXPOSURE=Expozíció fényereje
+option.EXPOSURE.comment=Szabályozd a kép összfényerejét.
+
+value.EXPOSURE.1=Tompított
+value.EXPOSURE.2=Kiegyensúlyozott
+value.EXPOSURE.3=Élénk
+
+option.COLOR_SATURATION=Színélénkség
+option.COLOR_SATURATION.comment=Szabályozd a képernyő színeinek nemlineáris telítettségét. Smaragdzölddé teszi a növényzetet és dúsabbá az eget.
+
+value.COLOR_SATURATION.1=Tompított
+value.COLOR_SATURATION.2=Kiegyensúlyozott
+value.COLOR_SATURATION.3=Színes
+value.COLOR_SATURATION.4=Élénk
+
+option.CONTRAST=Kép kontrasztja
+option.CONTRAST.comment=Válaszd ki a tónusleképzés és a kontrasztgörbe stílusát.
+
+value.CONTRAST.1=Lágy
+value.CONTRAST.2=Filmes (ACES)
+value.CONTRAST.3=Intenzív (Magas kontraszt)
+
+option.TAA=Temporális élsimítás (TAA)
+option.TAA.comment=Időbeli feloldás mozgás-újravetítéssel és szomszédsági vágással. Csökkenti a csillogást és a recés éleket magas beállításoknál.
+option.TAA_STRENGTH=TAA erőssége
+option.TAA_STRENGTH.comment=Szabályozza az előzmény keverést. A magasabb érték stabilabb, de mozgás közben lágyabb lehet.
+value.TAA_STRENGTH.1=Enyhe
+value.TAA_STRENGTH.2=Kiegyensúlyozott
+value.TAA_STRENGTH.3=Stabil
+
+option.VIGNETTE=Vinjetta effekt
+option.VIGNETTE.comment=Kapcsold be a képernyő széleinek finom elsötétítését a jobb fókusz érdekében.
+
+option.WATER_RIFFLES=Vízfodor erőssége
+option.WATER_RIFFLES.comment=Adjust the waviness and intensity of the fine normal map ripples on the water.
+
+value.WATER_RIFFLES.1=Nyugodt
+value.WATER_RIFFLES.2=Standard
+value.WATER_RIFFLES.3=Hullámzó
+
+option.WATER_SPECULAR_STRENGTH=Víz csillogása
+option.WATER_SPECULAR_STRENGTH.comment=Adjust the brightness of sun/moon reflections on the water ripples.
+
+value.WATER_SPECULAR_STRENGTH.1=Lágy
+value.WATER_SPECULAR_STRENGTH.2=Standard
+value.WATER_SPECULAR_STRENGTH.3=Csillogó
+
+option.SHADOW_SOFTNESS=Árnyék lágysága
+option.SHADOW_SOFTNESS.comment=Szabályozza, mennyire lágyak és diffúzak az árnyékélek. Forgatott Poisson-lemez szűrést használ a sima félárnyékhoz.
+
+value.SHADOW_SOFTNESS.1=Éles
+value.SHADOW_SOFTNESS.2=Lágy
+value.SHADOW_SOFTNESS.3=Ultra lágy
+
+# ==============================================================================
+# Sun & Moon Lighting (extended)
+# ==============================================================================
+screen.SUN_MOON=Nap és Hold
+screen.SUN_MOON.comment=Finomhangold a nap és a hold intenzitását, a színhőmérsékletet és az atmoszférikus hatásokat.
+
+option.SUN_INTENSITY=Nap intenzitása
+option.SUN_INTENSITY.comment=A közvetlen napfény fő fényereje. Magasabb = erősebb nappali kontraszt.
+value.SUN_INTENSITY.1=Tompított
+value.SUN_INTENSITY.2=Standard
+value.SUN_INTENSITY.3=Fényes
+value.SUN_INTENSITY.4=Lángoló
+
+option.MOON_INTENSITY=Hold intenzitása
+option.MOON_INTENSITY.comment=A holdfény fő fényereje. Magasabb = fényesebb, láthatóbb éjszakák.
+value.MOON_INTENSITY.1=Koromsötét éjszaka
+value.MOON_INTENSITY.2=Standard
+value.MOON_INTENSITY.3=Fényes hold
+value.MOON_INTENSITY.4=Teljes éjszaka
+
+option.SUN_TEMPERATURE=Nap színhőmérséklete
+option.SUN_TEMPERATURE.comment=Eltolja a nap Kelvin-görbéjét. Reális a Tanner Helland feketetest modellt használja; meleg = arany; hideg = semleges fehér.
+value.SUN_TEMPERATURE.1=Hideg / Semleges
+value.SUN_TEMPERATURE.2=Reális
+value.SUN_TEMPERATURE.3=Meleg arany
+
+option.MOON_TEMPERATURE=Hold színhőmérséklete
+option.MOON_TEMPERATURE.comment=A holdfény árnyalata. Jeges = kékes hideg; Ezüst = valósághű 4100K; Meleg = aratóhold krémszín.
+value.MOON_TEMPERATURE.1=Jeges kék
+value.MOON_TEMPERATURE.2=Ezüst (Reális)
+value.MOON_TEMPERATURE.3=Meleg krém
+
+option.SUN_HALO=Napglória (Mie-szórás)
+option.SUN_HALO.comment=Lágy meleg ragyogást ad a tereptárgyakhoz, amikor a nap közelébe nézünk (Mie előreszórás).
+
+option.SUNRISE_GLOW=Fokozott napkelte/napnyugta ragyogás
+option.SUNRISE_GLOW.comment=Erősebb meleg visszaszórást tesz lehetővé, amely körbefonja az alacsony naptól elforduló felületeket.
+
+# ==============================================================================
+# Extended shadow settings
+# ==============================================================================
+option.shadowDistance=Árnyéktávolság
+option.shadowDistance.comment=Az a maximális távolság, ameddig a dinamikus árnyékok megjelennek, mielőtt elhalványulnak.
+value.shadowDistance.60.0=Közel (60m)
+value.shadowDistance.80.0=Standard (80m)
+value.shadowDistance.120.0=Távol (120m)
+value.shadowDistance.160.0=Ultra (160m)
+
+option.AMBIENT_BRIGHTNESS=Árnyékemelés / ambiens
+option.AMBIENT_BRIGHTNESS.comment=Szabályozza, mennyire sötétnek tűnnek az árnyékos területek éjszaka és barlangokban.
+value.AMBIENT_BRIGHTNESS.1=Sötét
+value.AMBIENT_BRIGHTNESS.2=Standard
+value.AMBIENT_BRIGHTNESS.3=Emelt (Fényes)
+
+option.SHADOW_TINT=Árnyék árnyalata
+option.SHADOW_TINT.comment=Színezi a nappali árnyékokat. A valós árnyékok kék ég alatt enyhén hideg árnyalatúak.
+value.SHADOW_TINT.1=Semleges szürke
+value.SHADOW_TINT.2=Hideg kék (Reális)
+value.SHADOW_TINT.3=Meleg
+
+option.LIGHT_WRAP=Fényburkolás
+option.LIGHT_WRAP.comment=Lágyítja a megvilágított és nem megvilágított felületek közötti terminátort. Reális = fizikai Lambert; Lágy = kellemes képernyőképekhez.
+value.LIGHT_WRAP.1=Reális (Lambert)
+value.LIGHT_WRAP.2=Lágy burkolás
+value.LIGHT_WRAP.3=Stilizált
+
+# v0.2.9 — water/underwater option value labels (English fallback)
+value.WATER_WAVE_SCALE.1=Nyugodt
+value.WATER_WAVE_SCALE.2=Standard
+value.WATER_WAVE_SCALE.3=Hullámzó
+value.WATER_WAVE_SCALE.4=Viharos
+value.WATER_WAVE_DETAIL.1=Durva
+value.WATER_WAVE_DETAIL.2=Standard
+value.WATER_WAVE_DETAIL.3=Sűrű
+value.UNDERWATER_NIGHT_DARKNESS.1=Holdfényes tó
+value.UNDERWATER_NIGHT_DARKNESS.2=Halvány
+value.UNDERWATER_NIGHT_DARKNESS.3=Valódi éjszaka
+value.UNDERWATER_NIGHT_DARKNESS.4=Koromsötét
+# ==============================================================================
+# Experimental Tab & New Sky (v1.1.0)
+# ==============================================================================
+screen.EXPERIMENTAL=Kísérleti
+screen.EXPERIMENTAL.comment=Kísérleti
+
+option.SKY_MODE=Új égbolt (Légköri szórás)
+option.SKY_STYLE=Égbolt stílusa
+option.SKY_STYLE.comment=option.SKY_STYLE.comment=Artistic direction for the physical sky. Realistic = true angular sizes & neutral colours (astronomy look). Semi-realistic = readable sun/moon (x2.8), richer colour, soft glow. Fantasy = grand sun/moon (x5.5), big corona, vivid teal/crimson/indigo palette.
+option.SKY_MODE.comment=EXPERIMENTAL — off in all profiles. Gradient (legacy, default) or Physical realtime scattering with true multiple scattering (Rayleigh+Mie+Ozone, 1st+2nd+3rd order). Enable manually in this tab.
+value.SKY_MODE.0=Színátmenet (Régi)
+value.SKY_STYLE.0=Reális
+value.SKY_STYLE.1=Félig reális
+value.SKY_STYLE.2=Fantázia
+value.SKY_MODE.1=Realtime Scattering
+
+option.SKY_QUALITY=Égboltszórási minőség
+option.SKY_QUALITY.comment=Égboltszórási minőség
+value.SKY_QUALITY.1=Gyors
+value.SKY_QUALITY.2=Standard
+value.SKY_QUALITY.3=Magas
+
+# --- Auto-added missing translations (v1.1.0 sync) ---
+option.FOLIAGE_SSS=Növényzet SSS
+option.FOLIAGE_SSS.comment=Bekapcsolja a felszín alatti szórást (áttetszőséget) a leveleknél, fűnél és növényeknél, ha szemben nézünk a fénnyel.
+option.GODRAYS_STRENGTH=Godrays intenzitás
+option.GODRAYS_STRENGTH.comment=A térfogati fénynyalábok fényessége. Finom: enyhe atmoszférikus pára. Kiegyensúlyozott: jól látható sugarak. Drámai: merész filmes fénysugarak.
+value.GODRAYS_STRENGTH.1=Finom
+value.GODRAYS_STRENGTH.2=Kiegyensúlyozott
+value.GODRAYS_STRENGTH.3=Drámai
+option.SHOOTING_STARS=Meteorok (hullócsillagok)
+option.SHOOTING_STARS.comment=Fizikai alapú meteorok, amelyek belépnek a mezoszférába (~80-120 km). Valódi nagykör 3D íveket jelenít meg abláció fénygörbékkel, feketetest plazma színnel (3500-5500 K), horizont közeli Rayleigh-kioltással és tartós ionizációs nyomokkal a tűzgolyókon.
+option.SHOOTING_STARS_FREQUENCY=Meteor aktivitás (ZHR)
+option.SHOOTING_STARS_FREQUENCY.comment=Hozzávetőleges zenit óránkénti arány. Szórványos = reális háttér ~10/óra. Aktív = enyhe hullócsillag-zápor. Vihar = csúcssűrűség (~100/óra).
+value.SHOOTING_STARS_FREQUENCY.1=Szórványos (~10/óra)
+value.SHOOTING_STARS_FREQUENCY.2=Aktív hullócsillag-zápor
+value.SHOOTING_STARS_FREQUENCY.3=Meteorvihar
+option.SHOOTING_STARS_BRIGHTNESS=Magnitúdó skála
+option.SHOOTING_STARS_BRIGHTNESS.comment=Fő szorzó a meteor magnitúdó skáláján. Halvány = reális átlag; Fényes = filmes láthatóság érdekében felskálázza a tűzgolyókat.
+value.SHOOTING_STARS_BRIGHTNESS.1=Halvány (Reális)
+value.SHOOTING_STARS_BRIGHTNESS.2=Standard
+value.SHOOTING_STARS_BRIGHTNESS.3=Fényes tűzgolyók
+value.CONTRAST.4=Fotografikus (AgX-szerű)
+option.SPATIAL_AA_MODE=Térbeli élsimítás
+option.SPATIAL_AA_MODE.comment=Válaszd ki az utófeldolgozási élsimítási módszert. Az FXAA gyors és olcsó. Az SMAA mélységi puffert használ a geometriai élek jobb minőségéhez. Kombinálható a TAA-val.
+value.SPATIAL_AA_MODE.0=Kikapcsolva
+value.SPATIAL_AA_MODE.1=FXAA (Gyors)
+value.SPATIAL_AA_MODE.2=SMAA (Minőség)
+option.HEAT_SHIMMER=Hőremegés a láva felett
+option.HEAT_SHIMMER.comment=Kapcsold be a finom képernyőtéri hőtorzítási hatást a lávafelszínek felett.
+option.HEAT_SHIMMER_STRENGTH=Hőremegés erőssége
+option.HEAT_SHIMMER_STRENGTH.comment=Szabályozza a láva feletti hőtorzítás intenzitását.
+value.HEAT_SHIMMER_STRENGTH.1=Finom
+value.HEAT_SHIMMER_STRENGTH.2=Kiegyensúlyozott
+value.HEAT_SHIMMER_STRENGTH.3=Erős
+option.SSR=Képernyőtér-tükröződések (SSR)
+option.SSR.comment=Valós idejű tükröződő környezetet ad hozzá vízhez, nedves felületekhez és fémes PBR blokkokhoz. A Közepes profiltól felfelé aktív a v1.0.4-ben.
+option.SSR_QUALITY=SSR minőség
+option.SSR_QUALITY.comment=Szabályozza a képernyőtér-tükröződések pontosságát és sugártávolságát. Magasabb = élesebb tükröződések, de nagyobb GPU-terhelés.
+value.SSR_QUALITY.1=Gyors (12 lépés)
+value.SSR_QUALITY.2=Kiegyensúlyozott (24 lépés)
+value.SSR_QUALITY.3=Magas (40 lépés)
+option.SSR_STRENGTH=SSR erőssége
+option.SSR_STRENGTH.comment=Szabályozza, mennyire látható és kiemelkedő a tükröződő környezet a tükröző felületeken.
+option.WATER_WAVE_SCALE=Hullámamplitúdó
+option.WATER_WAVE_SCALE.comment=Szabályozza a vízfelszín hullámainak látható meredekségét. Nyugodt = tükörszerű, Viharos = erősen töredezett tükröződések.
+option.WATER_WAVE_DETAIL=Hullám részlet
+option.WATER_WAVE_DETAIL.comment=Szabályozza, hány kis hullám jelenik meg blokkonként. Durva = néhány nagy hullám, Sűrű = sok apró fodrozódás.
+option.UNDERWATER_NIGHT_DARKNESS=Víz alatti éjszakai sötétség
+option.UNDERWATER_NIGHT_DARKNESS.comment=Szabályozza, mennyire sötét lesz a víz alatti jelenet éjszaka. Holdfényes tó megtartja a fényerőt; Koromsötét extrém survival-stílusú sötétséget ad.
+value.SSR_STRENGTH.1=Finom
+value.SSR_STRENGTH.2=Kiegyensúlyozott
+value.SSR_STRENGTH.3=Erős
+option.PBR_DISTANCE=PBR megjelenítési távolság
+option.PBR_DISTANCE.comment=Maximális távolság a PBR spekuláris fényekhez. GPU-t takarít meg távoli terepen. Közel (16m) ALACSONY-hoz, Standard (48m) KÖZEPES-hez, Távol (128m) MAGAS/ULTRA-hoz, Korlátlan EXTRÉM-hez.
+value.PBR_DISTANCE.1=Közel (16m)
+value.PBR_DISTANCE.2=Standard (48m)
+value.PBR_DISTANCE.3=Távol (128m)
+value.PBR_DISTANCE.4=Korlátlan
+
+# v1.1.1 — shadow pipeline + POM option labels
+value.shadowMapResolution.512=512
+value.shadowMapResolution.1024=1024
+value.shadowMapResolution.2048=2048
+value.shadowMapResolution.4096=4096
+option.POM_DEPTH=POM Depth
+option.POM_DEPTH.comment=Controls the visible depth of parallax occlusion mapping when PBR POM is enabled.
+value.POM_DEPTH.1=Low
+value.POM_DEPTH.2=Standard
+value.POM_DEPTH.3=Deep
+option.POM_STEPS=POM Steps
+option.POM_STEPS.comment=Controls the raymarch step count for parallax occlusion mapping. Higher values improve quality but cost more GPU time.
+value.POM_STEPS.1=Fast
+value.POM_STEPS.2=Standard
+value.POM_STEPS.3=High
+value.POM_STEPS.4=Ultra

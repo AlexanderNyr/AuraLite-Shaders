@@ -1,0 +1,433 @@
+# AuraLite Shaders v1.0.7 - Copyright (c) 2026 AlexanderNyr. Licensed under CC BY-NC-SA 4.0.
+# ==============================================================================
+# AuraLite Shader Pack - Filipino Language Translations
+# ==============================================================================
+
+# ==============================================================================
+# Quality Profiles
+# ==============================================================================
+profile.VERY_LOW=Napakababa
+profile.VERY_LOW.comment=Fastest possible preset for very weak GPUs. Disables shadows, clouds, water waves, foliage waving, PBR and most extras.
+profile.LOW=Mababa
+profile.LOW.comment=Lightweight preset for weak GPUs. Keeps cheap water/foliage motion, disables shadows, clouds and PBR.
+profile.MED=Katamtaman
+profile.MED.comment=Balanced preset with 1024 shadows, standard clouds, PBR and atmospheric effects.
+profile.HIGH=Mataas
+profile.HIGH.comment=High quality preset with 2048 shadows, farther clouds and full PBR, without SSAO.
+profile.ULTRA=Ultra
+profile.ULTRA.comment=Ultra quality preset with 4096 shadows, very far clouds and balanced SSAO. POM remains disabled for stability.
+profile.EXTREME=Sukdulan
+profile.EXTREME.comment=Maximum experimental quality. Pushes lighting, clouds, color and deep SSAO. POM remains disabled for stability.
+profile.CUSTOM=Custom
+profile.CUSTOM.comment=Custom na mga setting na binago ng user.
+
+screen.TRANSLATION_NOTICE=⚠ Maaaring may mali sa mga salin
+screen.TRANSLATION_NOTICE.comment=Maaaring hindi tumpak ang ilang mga string ng lokalisasyon. Kung may mukhang kakaiba, ihambing sa orihinal na Ingles.
+
+# Screens
+screen.LIGHTING=Mga Setting ng Ilaw
+screen.LIGHTING.comment=I-configure ang mga anino, kulay ng ilaw, at liwanag.
+
+screen.FOLIAGE=Mga Setting ng Halaman
+screen.FOLIAGE.comment=I-configure ang mga animation ng pag-alon para sa damo at dahon.
+
+screen.WATER=Mga Setting ng Tubig
+screen.WATER.comment=I-configure ang mga alon, transparency, at estilo ng tubig.
+
+screen.CLOUDS_MENU=Langit at Ulap
+screen.CLOUDS_MENU.comment=I-configure ang pisikal na taas, kapal, at estilo ng 3D na ulap at mga epekto ng langit.
+
+screen.POST_PROCESS=Post-Processing at Hamog
+screen.POST_PROCESS.comment=I-configure ang exposure, ulap, at sineng epekto.
+
+# Options
+option.SHADOWS=Dynamic na Anino
+option.SHADOWS.comment=I-enable o i-disable ang malambot na dynamic na anino mula sa araw at buwan.
+
+option.shadowMapResolution=Resolution ng Anino
+option.shadowMapResolution.comment=Baguhin ang kalidad ng shadow map. Ang mas mataas na value ay maaaring magpababa ng performance.
+
+option.PBR_LIGHTING=PBR Lighting (LabPBR)
+option.PBR_LIGHTING.comment=I-enable ang physically-based rendering para sa mga metal, roughness, at 3D normal maps (kailangan ng PBR resource pack).
+
+option.PBR_POM=3D Block Relief (POM)
+option.PBR_POM.comment=I-enable ang physically-based Parallax Occlusion Mapping para sa 3D block textures. Inirerekomenda na i-disable sa mga hindi tugmang resource pack.
+
+option.PBR_STRENGTH=PBR Intensity
+option.PBR_STRENGTH.comment=Kontrolin ang reflectivity at gloss ng PBR metallic surfaces.
+
+value.PBR_STRENGTH.1=Banayad
+value.PBR_STRENGTH.2=Standard
+value.PBR_STRENGTH.3=Salamin
+
+option.SSAO=SSAO / SAO Occlusion
+option.SSAO.comment=Extreme profile: screen-space ambient occlusion for contact shadows in corners, under blocks, and around geometry intersections.
+option.SSAO_STRENGTH=SSAO Strength
+option.SSAO_STRENGTH.comment=Kinokontrol ang lalim ng screen-space ambient occlusion. Aktibo lang kapag naka-enable ang SSAO.
+value.SSAO_STRENGTH.1=Banayad
+value.SSAO_STRENGTH.2=Balanse
+value.SSAO_STRENGTH.3=Malalim
+
+option.LIGHTMAP_WARMTH=Init ng Sulo
+option.LIGHTMAP_WARMTH.comment=Isaayos ang init at kulay ng block/torch light.
+
+value.LIGHTMAP_WARMTH.1=Komportable
+value.LIGHTMAP_WARMTH.2=Mainit
+value.LIGHTMAP_WARMTH.3=Matindi
+
+option.WAVING_LEAVES=Umuugoy na Dahon
+option.WAVING_LEAVES.comment=I-enable ang banayad na animation ng pag-alon para sa mga dahon ng puno.
+
+option.WAVING_GRASS=Umuugoy na Halaman
+option.WAVING_GRASS.comment=I-enable ang animation ng pag-alon para sa damo, bulaklak, at pananim.
+
+option.WIND_SPEED=Bilis ng Hangin
+option.WIND_SPEED.comment=Kontrolin ang bilis ng pag-alon ng mga dahon, halaman, at alon ng tubig.
+
+value.WIND_SPEED.1=Gentle
+value.WIND_SPEED.2=Breeze
+value.WIND_SPEED.3=Gale
+
+option.WATER_WAVES=Alon ng Tubig
+option.WATER_WAVES.comment=Enable 3D geometric waves on the water surface.
+
+option.WATER_TRANSPARENCY=Density ng Tubig
+option.WATER_TRANSPARENCY.comment=Control the transparency and opacity of the water.
+
+value.WATER_TRANSPARENCY.1=Malinaw
+value.WATER_TRANSPARENCY.2=Balanse
+value.WATER_TRANSPARENCY.3=Malalim
+
+option.PROCEDURAL_CLOUDS=Volumetric 3D Clouds
+option.PROCEDURAL_CLOUDS.comment=I-enable ang physically flyable 3D clouds na maaaring marating at lipadin.
+
+option.CLOUD_HEIGHT=Taas ng Ulap
+option.CLOUD_HEIGHT.comment=Itakda ang pisikal na taas (Y-level) ng cloud deck sa mundo (sa metro).
+
+value.CLOUD_HEIGHT.1=Mababa (~110m)
+value.CLOUD_HEIGHT.2=Standard (~160m)
+value.CLOUD_HEIGHT.3=Mataas (~240m)
+
+option.CLOUD_THICKNESS=Kapal ng Ulap
+option.CLOUD_THICKNESS.comment=I-configure ang vertical na kapal at volume ng mga ulap.
+
+value.CLOUD_THICKNESS.1=Manipis (Cirrus)
+value.CLOUD_THICKNESS.2=Standard (Cumulus)
+value.CLOUD_THICKNESS.3=Makapal (Maulan)
+
+option.CLOUD_DISTANCE=Cloud Render Distance
+option.CLOUD_DISTANCE.comment=Maximum draw distance para sa volumetric clouds. Awtomatikong dinadagdagan ito ng quality profiles.
+value.CLOUD_DISTANCE.1=Malapit
+value.CLOUD_DISTANCE.2=Standard
+value.CLOUD_DISTANCE.3=Malayo
+value.CLOUD_DISTANCE.4=Napakalayo
+
+option.CLOUD_SHADOWS=Anino ng Ulap
+option.CLOUD_SHADOWS.comment=Nagdaragdag ng transparent na procedural shadow mula sa density ng volumetric cloud sa lupa. Balanse ng quality profiles.
+option.CLOUD_SHADOW_STRENGTH=Lakas ng Anino ng Ulap
+option.CLOUD_SHADOW_STRENGTH.comment=Kinokontrol kung gaano kakita at dramatiko ang transparent na anino ng ulap.
+value.CLOUD_SHADOW_STRENGTH.1=Malambot
+value.CLOUD_SHADOW_STRENGTH.2=Balanse
+value.CLOUD_SHADOW_STRENGTH.3=Dramatiko
+
+option.GODRAYS=Sinag ng Araw (Godrays)
+option.GODRAYS.comment=Adds physically-inspired volumetric single-scattering sun shafts with Beer-Lambert extinction, Mie phase and shadow-map occlusion.
+option.GODRAYS_QUALITY=Kalidad ng Godrays
+option.GODRAYS_QUALITY.comment=Controls the sample count and integration distance of physically-based volumetric godrays.
+value.GODRAYS_QUALITY.1=Mabilis
+value.GODRAYS_QUALITY.2=Balanse
+value.GODRAYS_QUALITY.3=Mataas
+
+option.AURORA_MODE=Aurora Borealis
+option.AURORA_MODE.comment=Kontrolin ang pagpapakita ng makatotohanang umaagos na aurora sa gabing kalangitan.
+
+value.AURORA_MODE.0=Naka-disable
+value.AURORA_MODE.1=Sa mga Malamig na Biome Lamang
+value.AURORA_MODE.2=Palaging Naka-enable
+
+option.AURORA_SPEED=Bilis ng Aurora
+option.AURORA_SPEED.comment=Kontrolin ang bilis ng pag-alon at pag-agos ng northern lights.
+
+value.AURORA_SPEED.1=Mabagal
+value.AURORA_SPEED.2=Standard
+value.AURORA_SPEED.3=Mabilis
+
+option.AURORA_STRENGTH=Liwanag ng Aurora
+option.AURORA_STRENGTH.comment=Kontrolin ang pangkalahatang liwanag ng glow ng northern lights.
+
+value.AURORA_STRENGTH.1=Malambot
+value.AURORA_STRENGTH.2=Standard
+value.AURORA_STRENGTH.3=Nagniningning
+
+option.NEBULA_BRIGHTNESS=Liwanag ng Milky Way
+option.NEBULA_BRIGHTNESS.comment=Isaayos ang liwanag ng glow ng diagonal na kayumangging galactic nebula sa gabi.
+
+value.NEBULA_BRIGHTNESS.1=Mahina
+value.NEBULA_BRIGHTNESS.2=Standard
+value.NEBULA_BRIGHTNESS.3=Maliwanag
+
+option.STARS_BRIGHTNESS=Liwanag ng mga Bituin
+option.STARS_BRIGHTNESS.comment=Kontrolin ang liwanag at kislap ng glow ng mga bituin sa gabi.
+
+value.STARS_BRIGHTNESS.1=Mahina
+value.STARS_BRIGHTNESS.2=Standard
+value.STARS_BRIGHTNESS.3=Makinang
+
+option.STARS_AMOUNT=Density ng mga Bituin
+option.STARS_AMOUNT.comment=Kontrolin ang kabuuang dami at density ng mga bituin sa langit.
+
+value.STARS_AMOUNT.1=Kaunti
+value.STARS_AMOUNT.2=Standard
+value.STARS_AMOUNT.3=Makapal
+
+option.RAINBOW_STRENGTH=Intensity ng Bahaghari
+option.RAINBOW_STRENGTH.comment=I-configure ang liwanag at color saturation ng bahaghari pagkatapos ng ulan.
+
+value.RAINBOW_STRENGTH.1=Banayad
+value.RAINBOW_STRENGTH.2=Balanse
+value.RAINBOW_STRENGTH.3=Buhay na Buhay
+
+option.COZY_LIGHTS=Kislap ng Sulo
+option.COZY_LIGHTS.comment=I-enable ang mainit, komportableng, real-time na kumikislap na animation para sa mga sulo, campfire, at parol.
+
+option.WET_REFLECTIONS=Reflection ng Basa dahil sa Ulan
+option.WET_REFLECTIONS.comment=Kapag umuulan, ang mga matibay na block gaya ng lupa, damo, at bato ay nagiging basa, madilim, at makintab sa ilalim ng langit.
+
+option.GROUND_MIST=Mababang Ground Mist (Y=62-66)
+option.GROUND_MIST.comment=I-enable ang malambot, ginto-puting umaga/gabi fog sheet na dumudulas sa ibabaw ng tubig at yelo sa madaling-araw at takipsilim.
+
+option.FOG_DENSITY_LEVEL=Density ng Ulap
+option.FOG_DENSITY_LEVEL.comment=Kontrolin ang lakas ng atmospheric horizon fog.
+
+value.FOG_DENSITY_LEVEL.1=Mababa
+value.FOG_DENSITY_LEVEL.2=Katamtaman
+value.FOG_DENSITY_LEVEL.3=Mataas
+
+option.EXPOSURE=Liwanag ng Exposure
+option.EXPOSURE.comment=Kontrolin ang pangkalahatang liwanag ng larawan.
+
+value.EXPOSURE.1=Mapurol
+value.EXPOSURE.2=Balanse
+value.EXPOSURE.3=Masigla
+
+option.COLOR_SATURATION=Color Vibrancy
+option.COLOR_SATURATION.comment=Kontrolin ang non-linear saturation ng mga kulay sa screen. Ginagawang emerald ang foliage at mayaman ang mga kalangitan.
+
+value.COLOR_SATURATION.1=Mapurol
+value.COLOR_SATURATION.2=Balanse
+value.COLOR_SATURATION.3=Makulay
+value.COLOR_SATURATION.4=Buhay na Buhay
+
+option.CONTRAST=Contrast ng Larawan
+option.CONTRAST.comment=Piliin ang estilo ng tone mapping at contrast curve.
+
+value.CONTRAST.1=Malambot
+value.CONTRAST.2=Filmic (ACES)
+value.CONTRAST.3=Matindi (Mataas na Contrast)
+
+option.TAA=Temporal Anti-Aliasing (TAA)
+option.TAA.comment=Temporal resolve na may motion reprojection at neighborhood clipping. Binabawasan ang pagkislap at gusot na gilid sa mataas na preset.
+option.TAA_STRENGTH=Lakas ng TAA
+option.TAA_STRENGTH.comment=Kinokontrol ang history blending. Mas mataas ay mas matatag ngunit maaaring maging mas malambot sa panahon ng galaw.
+value.TAA_STRENGTH.1=Magaan
+value.TAA_STRENGTH.2=Balanse
+value.TAA_STRENGTH.3=Matatag
+
+option.VIGNETTE=Epekto ng Vignette
+option.VIGNETTE.comment=I-enable ang banayad na pagdidilim sa gilid ng screen para sa pinahusay na focus.
+
+option.WATER_RIFFLES=Lakas ng Water Ripple
+option.WATER_RIFFLES.comment=Adjust the waviness and intensity of the fine normal map ripples on the water.
+
+value.WATER_RIFFLES.1=Kalmado
+value.WATER_RIFFLES.2=Standard
+value.WATER_RIFFLES.3=Magaspang
+
+option.WATER_SPECULAR_STRENGTH=Water Specular Glow
+option.WATER_SPECULAR_STRENGTH.comment=Adjust the brightness of sun/moon reflections on the water ripples.
+
+value.WATER_SPECULAR_STRENGTH.1=Malambot
+value.WATER_SPECULAR_STRENGTH.2=Standard
+value.WATER_SPECULAR_STRENGTH.3=Makinang
+
+option.SHADOW_SOFTNESS=Lambot ng Anino
+option.SHADOW_SOFTNESS.comment=Kinokontrol kung gaano kalambot at kalat ang hitsura ng gilid ng anino. Gumagamit ng rotated Poisson disk filtering para sa makinis na penumbra.
+
+value.SHADOW_SOFTNESS.1=Matalas
+value.SHADOW_SOFTNESS.2=Malambot
+value.SHADOW_SOFTNESS.3=Napaka-Malambot
+
+# ==============================================================================
+# Sun & Moon Lighting (extended)
+# ==============================================================================
+screen.SUN_MOON=Araw at Buwan
+screen.SUN_MOON.comment=I-fine-tune ang intensity ng araw at buwan, temperatura ng kulay, at mga epekto ng atmospera.
+
+option.SUN_INTENSITY=Intensity ng Araw
+option.SUN_INTENSITY.comment=Master brightness ng direktang sikat ng araw. Mas mataas = mas malakas na daytime contrast.
+value.SUN_INTENSITY.1=Mapurol
+value.SUN_INTENSITY.2=Standard
+value.SUN_INTENSITY.3=Mataas
+value.SUN_INTENSITY.4=Nag-aalab
+
+option.MOON_INTENSITY=Intensity ng Buwan
+option.MOON_INTENSITY.comment=Master brightness ng liwanag ng buwan. Mas mataas = mas maliwanag, mas kitang-kita na gabi.
+value.MOON_INTENSITY.1=Pitch Night
+value.MOON_INTENSITY.2=Standard
+value.MOON_INTENSITY.3=Maliwanag na Buwan
+value.MOON_INTENSITY.4=Buong Gabi
+
+option.SUN_TEMPERATURE=Temperatura ng Kulay ng Araw
+option.SUN_TEMPERATURE.comment=Inililipat ang Kelvin curve ng araw. Ang makatotohanan ay gumagamit ng Tanner Helland blackbody; mainit = ginto; malamig = neutral na puti.
+value.SUN_TEMPERATURE.1=Malamig / Neutral
+value.SUN_TEMPERATURE.2=Makatotohanan
+value.SUN_TEMPERATURE.3=Mainit na Ginto
+
+option.MOON_TEMPERATURE=Temperatura ng Kulay ng Buwan
+option.MOON_TEMPERATURE.comment=Tint ng liwanag ng buwan. Icy = mala-asul na malamig; Silver = makatotohanang 4100K; Mainit = harvest-moon cream.
+value.MOON_TEMPERATURE.1=Icy Blue
+value.MOON_TEMPERATURE.2=Silver (Makatotohanan)
+value.MOON_TEMPERATURE.3=Mainit na Cream
+
+option.SUN_HALO=Sun Halo (Mie Scatter)
+option.SUN_HALO.comment=Nagdaragdag ng malambot na mainit na glow sa lupa kapag tumitingin malapit sa araw (Mie forward-scattering).
+
+option.SUNRISE_GLOW=Pinahusay na Sunrise/Sunset Glow
+option.SUNRISE_GLOW.comment=Pinapagana ang mas malakas na mainit na back-scatter na bumabalot sa mga surface na nakatalikod sa mababang araw.
+
+# ==============================================================================
+# Extended shadow settings
+# ==============================================================================
+option.shadowDistance=Distansya ng Anino
+option.shadowDistance.comment=Maximum na distansya kung saan naire-render ang dynamic na anino bago mamaho.
+value.shadowDistance.60.0=Malapit (60m)
+value.shadowDistance.80.0=Standard (80m)
+value.shadowDistance.120.0=Malayo (120m)
+value.shadowDistance.160.0=Ultra (160m)
+
+option.AMBIENT_BRIGHTNESS=Shadow Lift / Ambient
+option.AMBIENT_BRIGHTNESS.comment=Kinokontrol kung gaano kadilim ang mga anino na lugar sa gabi at sa mga kuweba.
+value.AMBIENT_BRIGHTNESS.1=Madilim
+value.AMBIENT_BRIGHTNESS.2=Standard
+value.AMBIENT_BRIGHTNESS.3=Naitaas (Maliwanag)
+
+option.SHADOW_TINT=Tint ng Anino
+option.SHADOW_TINT.comment=Tinitina ang mga anino sa araw. Ang mga totoong anino sa ilalim ng asul na langit ay may banayad na malamig na tint.
+value.SHADOW_TINT.1=Neutral Gray
+value.SHADOW_TINT.2=Cool Blue (Realistic)
+value.SHADOW_TINT.3=Warm
+
+option.LIGHT_WRAP=Light Wrap
+option.LIGHT_WRAP.comment=Pinapalambot ang terminator sa pagitan ng maliwanag at madilim na surface. Makatotohanan = physical Lambert; Malambot = kaaya-aya para sa mga screenshot.
+value.LIGHT_WRAP.1=Makatotohanan (Lambert)
+value.LIGHT_WRAP.2=Malambot na Wrap
+value.LIGHT_WRAP.3=Stylized
+
+# v0.2.9 — water/underwater option value labels (English fallback)
+value.WATER_WAVE_SCALE.1=Kalmado
+value.WATER_WAVE_SCALE.2=Standard
+value.WATER_WAVE_SCALE.3=Magaspang
+value.WATER_WAVE_SCALE.4=Maunos
+value.WATER_WAVE_DETAIL.1=Magaspang
+value.WATER_WAVE_DETAIL.2=Standard
+value.WATER_WAVE_DETAIL.3=Makapal
+value.UNDERWATER_NIGHT_DARKNESS.1=Moonlit Pool
+value.UNDERWATER_NIGHT_DARKNESS.2=Mahina
+value.UNDERWATER_NIGHT_DARKNESS.3=Tunay na Gabi
+value.UNDERWATER_NIGHT_DARKNESS.4=Ganap na Kadiliman
+# ==============================================================================
+# Experimental Tab & New Sky (v1.1.0)
+# ==============================================================================
+screen.EXPERIMENTAL=Eksperimental
+screen.EXPERIMENTAL.comment=Eksperimental
+
+option.SKY_MODE=Bagong Langit (Atmospheric Scattering)
+option.SKY_STYLE=Estilo ng Langit
+option.SKY_STYLE.comment=option.SKY_STYLE.comment=Artistic direction for the physical sky. Realistic = true angular sizes & neutral colours (astronomy look). Semi-realistic = readable sun/moon (x2.8), richer colour, soft glow. Fantasy = grand sun/moon (x5.5), big corona, vivid teal/crimson/indigo palette.
+option.SKY_MODE.comment=EXPERIMENTAL — off in all profiles. Gradient (legacy, default) or Physical realtime scattering with true multiple scattering (Rayleigh+Mie+Ozone, 1st+2nd+3rd order). Enable manually in this tab.
+value.SKY_MODE.0=Gradient (Luma)
+value.SKY_STYLE.0=Makatotohanan
+value.SKY_STYLE.1=Semi-realistiko
+value.SKY_STYLE.2=Fantasya
+value.SKY_MODE.1=Realtime Scattering
+
+option.SKY_QUALITY=Kalidad ng Pagkakalat ng Langit
+option.SKY_QUALITY.comment=Kalidad ng Pagkakalat ng Langit
+value.SKY_QUALITY.1=Mabilis
+value.SKY_QUALITY.2=Pamantayan
+value.SKY_QUALITY.3=Mataas
+
+# --- Auto-added missing translations (v1.1.0 sync) ---
+option.FOLIAGE_SSS=Foliage SSS
+option.FOLIAGE_SSS.comment=Pinapagana ang subsurface scattering (translucency) para sa mga dahon, damo, at halaman kapag tumitingin laban sa liwanag.
+option.GODRAYS_STRENGTH=Godrays Intensity
+option.GODRAYS_STRENGTH.comment=Liwanag ng volumetric light shafts. Banayad: banayad na atmospheric haze. Balanse: malinaw na nakikitang sinag. Dramatiko: matapang na sinematikong sinag.
+value.GODRAYS_STRENGTH.1=Banayad
+value.GODRAYS_STRENGTH.2=Balanse
+value.GODRAYS_STRENGTH.3=Dramatiko
+option.SHOOTING_STARS=Mga Meteor (Umuulang Bituin)
+option.SHOOTING_STARS.comment=Physically-based na meteor na pumapasok sa mesosphere (~80-120 km). Nagre-render ng tunay na great-circle 3D arcs na may ablation light curves, blackbody plasma color (3500-5500 K), Rayleigh extinction malapit sa horizon, at persistent na ionization trail sa mga fireball.
+option.SHOOTING_STARS_FREQUENCY=Aktibidad ng Meteor (ZHR)
+option.SHOOTING_STARS_FREQUENCY.comment=Tinatayang Zenithal Hourly Rate. Sporadic = makatotohanang background na ~10 kada oras. Active = banayad na ulan. Storm = pinakamataas na density (~100/oras).
+value.SHOOTING_STARS_FREQUENCY.1=Sporadic (~10/oras)
+value.SHOOTING_STARS_FREQUENCY.2=Aktibong Ulan
+value.SHOOTING_STARS_FREQUENCY.3=Meteor Storm
+option.SHOOTING_STARS_BRIGHTNESS=Magnitude Scale
+option.SHOOTING_STARS_BRIGHTNESS.comment=Master multiplier sa magnitude scale ng meteor. Mahina = makatotohanang average; Maliwanag = sinusukat ang fireball para sa sinematikong visibility.
+value.SHOOTING_STARS_BRIGHTNESS.1=Mahina (Makatotohanan)
+value.SHOOTING_STARS_BRIGHTNESS.2=Standard
+value.SHOOTING_STARS_BRIGHTNESS.3=Maliwanag na Fireball
+value.CONTRAST.4=Photographic (parang AgX)
+option.SPATIAL_AA_MODE=Spatial Anti-Aliasing
+option.SPATIAL_AA_MODE.comment=Piliin ang post-process na anti-aliasing method. Mabilis at mura ang FXAA. Gumagamit ang SMAA ng depth buffer para sa mas mahusay na kalidad sa geometry edges. Maaaring pagsamahin sa TAA.
+value.SPATIAL_AA_MODE.0=Naka-off
+value.SPATIAL_AA_MODE.1=FXAA (Mabilis)
+value.SPATIAL_AA_MODE.2=SMAA (Kalidad)
+option.HEAT_SHIMMER=Heat Shimmer sa Ibabaw ng Lava
+option.HEAT_SHIMMER.comment=I-enable ang banayad na screen-space heat distortion effect sa ibabaw ng lava surfaces.
+option.HEAT_SHIMMER_STRENGTH=Lakas ng Heat Shimmer
+option.HEAT_SHIMMER_STRENGTH.comment=Kinokontrol ang intensity ng heat distortion sa ibabaw ng lava.
+value.HEAT_SHIMMER_STRENGTH.1=Banayad
+value.HEAT_SHIMMER_STRENGTH.2=Balanse
+value.HEAT_SHIMMER_STRENGTH.3=Malakas
+option.SSR=Screen-Space Reflections (SSR)
+option.SSR.comment=Nagdaragdag ng real-time na reflected environment sa tubig, basang surface, at metallic PBR blocks. Naka-enable mula MED pataas sa v1.0.4.
+option.SSR_QUALITY=Kalidad ng SSR
+option.SSR_QUALITY.comment=Kinokontrol ang precision at distance ng ray ng screen-space reflections. Mas mataas = mas matalim na reflections pero mas maraming GPU cost.
+value.SSR_QUALITY.1=Mabilis (12 hakbang)
+value.SSR_QUALITY.2=Balanse (24 hakbang)
+value.SSR_QUALITY.3=Mataas (40 hakbang)
+option.SSR_STRENGTH=Lakas ng SSR
+option.SSR_STRENGTH.comment=Kinokontrol kung gaano kakita at kapansin-pansin ang reflected environment sa mga reflective surface.
+option.WATER_WAVE_SCALE=Amplitude ng Alon
+option.WATER_WAVE_SCALE.comment=Kinokontrol ang nakikitang katarikan ng alon sa ibabaw ng tubig. Kalmado = parang salamin, Maunos = malakas na sirang reflections.
+option.WATER_WAVE_DETAIL=Detalye ng Alon
+option.WATER_WAVE_DETAIL.comment=Kinokontrol kung ilang maliliit na alon ang lumalabas kada block. Magaspang = ilang malalaking alon, Makapal = maraming maliliit na ripples.
+option.UNDERWATER_NIGHT_DARKNESS=Karimlan sa Ilalim ng Tubig Kung Gabi
+option.UNDERWATER_NIGHT_DARKNESS.comment=Kinokontrol kung gaano kadilim ang eksena sa ilalim ng tubig sa gabi. Ang Moonlit Pool ay nagpapanatili ng liwanag; ang Pitch Dark ay nagbibigay ng matinding survival-style na kadiliman.
+value.SSR_STRENGTH.1=Banayad
+value.SSR_STRENGTH.2=Balanse
+value.SSR_STRENGTH.3=Malakas
+option.PBR_DISTANCE=PBR Render Distance
+option.PBR_DISTANCE.comment=Maximum na distansya para sa PBR specular highlights. Nakakatipid ng GPU sa malayong terrain. Malapit (16m) para sa LOW, Standard (48m) para sa MED, Malayo (128m) para sa HIGH/ULTRA, Walang Limitasyon para sa EXTREME.
+value.PBR_DISTANCE.1=Malapit (16m)
+value.PBR_DISTANCE.2=Standard (48m)
+value.PBR_DISTANCE.3=Malayo (128m)
+value.PBR_DISTANCE.4=Walang Limitasyon
+
+# v1.1.1 — shadow pipeline + POM option labels
+value.shadowMapResolution.512=512
+value.shadowMapResolution.1024=1024
+value.shadowMapResolution.2048=2048
+value.shadowMapResolution.4096=4096
+option.POM_DEPTH=POM Depth
+option.POM_DEPTH.comment=Controls the visible depth of parallax occlusion mapping when PBR POM is enabled.
+value.POM_DEPTH.1=Low
+value.POM_DEPTH.2=Standard
+value.POM_DEPTH.3=Deep
+option.POM_STEPS=POM Steps
+option.POM_STEPS.comment=Controls the raymarch step count for parallax occlusion mapping. Higher values improve quality but cost more GPU time.
+value.POM_STEPS.1=Fast
+value.POM_STEPS.2=Standard
+value.POM_STEPS.3=High
+value.POM_STEPS.4=Ultra

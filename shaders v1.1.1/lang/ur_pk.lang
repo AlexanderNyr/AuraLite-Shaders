@@ -1,0 +1,433 @@
+# AuraLite Shaders v1.0.7 - Copyright (c) 2026 AlexanderNyr. Licensed under CC BY-NC-SA 4.0.
+# ==============================================================================
+# AuraLite Shader Pack - Urdu Language Translations
+# ==============================================================================
+
+# ==============================================================================
+# Quality Profiles
+# ==============================================================================
+profile.VERY_LOW=بہت کم
+profile.VERY_LOW.comment=Fastest possible preset for very weak GPUs. Disables shadows, clouds, water waves, foliage waving, PBR and most extras.
+profile.LOW=کم
+profile.LOW.comment=Lightweight preset for weak GPUs. Keeps cheap water/foliage motion, disables shadows, clouds and PBR.
+profile.MED=درمیانہ
+profile.MED.comment=Balanced preset with 1024 shadows, standard clouds, PBR and atmospheric effects.
+profile.HIGH=زیادہ
+profile.HIGH.comment=High quality preset with 2048 shadows, farther clouds and full PBR, without SSAO.
+profile.ULTRA=الٹرا
+profile.ULTRA.comment=Ultra quality preset with 4096 shadows, very far clouds and balanced SSAO. POM remains disabled for stability.
+profile.EXTREME=انتہائی
+profile.EXTREME.comment=Maximum experimental quality. Pushes lighting, clouds, color and deep SSAO. POM remains disabled for stability.
+profile.CUSTOM=حسب ضرورت
+profile.CUSTOM.comment=صارف کی طرف سے ترمیم شدہ حسب ضرورت ترتیبات۔
+
+screen.TRANSLATION_NOTICE=⚠ ترجموں میں غلطیاں ہو سکتی ہیں
+screen.TRANSLATION_NOTICE.comment=کچھ لوکلائزیشن سٹرنگز غلط ہو سکتی ہیں۔ اگر کچھ عجیب لگے تو انگریزی اصل سے موازنہ کریں۔
+
+# Screens
+screen.LIGHTING=روشنی کی ترتیبات
+screen.LIGHTING.comment=سائے، روشنی کے رنگ اور چمک کنفیگر کریں۔
+
+screen.FOLIAGE=پودوں کی ترتیبات
+screen.FOLIAGE.comment=گھاس اور پتوں کے لیے لہراتی اینیمیشنز کنفیگر کریں۔
+
+screen.WATER=پانی کی ترتیبات
+screen.WATER.comment=لہریں، شفافیت اور پانی کا انداز کنفیگر کریں۔
+
+screen.CLOUDS_MENU=آسمان اور بادل
+screen.CLOUDS_MENU.comment=3D بادلوں اور آسمانی اثرات کی جسمانی اونچائی، موٹائی اور انداز کنفیگر کریں۔
+
+screen.POST_PROCESS=پوسٹ پروسیسنگ اور دھند
+screen.POST_PROCESS.comment=ایکسپوژر، دھند اور سینمائی اثرات کنفیگر کریں۔
+
+# Options
+option.SHADOWS=متحرک سائے
+option.SHADOWS.comment=سورج اور چاند سے نرم متحرک سائے فعال یا غیر فعال کریں۔
+
+option.shadowMapResolution=سائے کی ریزولوشن
+option.shadowMapResolution.comment=شیڈو میپ کوالٹی تبدیل کریں۔ زیادہ اقدار کارکردگی کو کم کر سکتی ہیں۔
+
+option.PBR_LIGHTING=PBR روشنی (LabPBR)
+option.PBR_LIGHTING.comment=دھاتوں، کھردرے پن اور 3D نارمل نقشوں کے لیے فزیکل بیسڈ رینڈرنگ فعال کریں (PBR ریسورس پیک درکار ہے)۔
+
+option.PBR_POM=3D بلاک ریلیف (POM)
+option.PBR_POM.comment=3D بلاک ساخت کے لیے فزیکل بیسڈ پیرالیکس اوکلوژن میپنگ فعال کریں۔ غیر مطابقت پذیر ریسورس پیکس پر غیر فعال کرنے کی سفارش کی جاتی ہے۔
+
+option.PBR_STRENGTH=PBR شدت
+option.PBR_STRENGTH.comment=PBR دھاتی سطحوں کی عکاسی اور چمک کو کنٹرول کریں۔
+
+value.PBR_STRENGTH.1=لطیف
+value.PBR_STRENGTH.2=معیاری
+value.PBR_STRENGTH.3=آئینہ
+
+option.SSAO=SSAO / SAO اوکلوژن
+option.SSAO.comment=Extreme profile: screen-space ambient occlusion for contact shadows in corners, under blocks, and around geometry intersections.
+option.SSAO_STRENGTH=SSAO طاقت
+option.SSAO_STRENGTH.comment=اسکرین اسپیس ایمبیئنٹ اوکلوژن کی گہرائی کو کنٹرول کرتا ہے۔ صرف اس وقت فعال جب SSAO فعال ہو۔
+value.SSAO_STRENGTH.1=لطیف
+value.SSAO_STRENGTH.2=متوازن
+value.SSAO_STRENGTH.3=گہرا
+
+option.LIGHTMAP_WARMTH=مشعل کی گرمی
+option.LIGHTMAP_WARMTH.comment=بلاک/مشعل کی روشنی کی گرمی اور رنگ ایڈجسٹ کریں۔
+
+value.LIGHTMAP_WARMTH.1=آرام دہ
+value.LIGHTMAP_WARMTH.2=گرم
+value.LIGHTMAP_WARMTH.3=شدید
+
+option.WAVING_LEAVES=لہراتے پتے
+option.WAVING_LEAVES.comment=درخت کے پتوں کے لیے نرم لہراتی اینیمیشنز فعال کریں۔
+
+option.WAVING_GRASS=لہراتی نباتات
+option.WAVING_GRASS.comment=گھاس، پھولوں اور فصلوں کے لیے لہراتی اینیمیشنز فعال کریں۔
+
+option.WIND_SPEED=ہوا کی رفتار
+option.WIND_SPEED.comment=پتوں، پودوں اور پانی کی لہروں کی لہرانے کی رفتار کو کنٹرول کریں۔
+
+value.WIND_SPEED.1=Gentle
+value.WIND_SPEED.2=Breeze
+value.WIND_SPEED.3=Gale
+
+option.WATER_WAVES=پانی کی لہریں
+option.WATER_WAVES.comment=Enable 3D geometric waves on the water surface.
+
+option.WATER_TRANSPARENCY=پانی کی کثافت
+option.WATER_TRANSPARENCY.comment=Control the transparency and opacity of the water.
+
+value.WATER_TRANSPARENCY.1=صاف
+value.WATER_TRANSPARENCY.2=متوازن
+value.WATER_TRANSPARENCY.3=گہرا
+
+option.PROCEDURAL_CLOUDS=والیومیٹرک 3D بادل
+option.PROCEDURAL_CLOUDS.comment=جسمانی طور پر اڑنے کے قابل 3D بادل فعال کریں جن تک پہنچا اور اڑان بھری جا سکتی ہے۔
+
+option.CLOUD_HEIGHT=بادل کی اونچائی
+option.CLOUD_HEIGHT.comment=دنیا میں بادل کی تہہ کی جسمانی اونچائی (Y-سطح) سیٹ کریں (میٹر میں)۔
+
+value.CLOUD_HEIGHT.1=کم (~110م)
+value.CLOUD_HEIGHT.2=معیاری (~160م)
+value.CLOUD_HEIGHT.3=بلند (~240م)
+
+option.CLOUD_THICKNESS=بادل کی موٹائی
+option.CLOUD_THICKNESS.comment=بادلوں کی عمودی موٹائی اور حجم کنفیگر کریں۔
+
+value.CLOUD_THICKNESS.1=پتلا (Cirrus)
+value.CLOUD_THICKNESS.2=معیاری (Cumulus)
+value.CLOUD_THICKNESS.3=گھنا (طوفانی)
+
+option.CLOUD_DISTANCE=کلاؤڈ رینڈر فاصلہ
+option.CLOUD_DISTANCE.comment=والیومیٹرک بادلوں کے لیے زیادہ سے زیادہ ڈرا فاصلہ۔ کوالٹی پروفائلز خودکار طور پر اسے بڑھاتے ہیں۔
+value.CLOUD_DISTANCE.1=قریب
+value.CLOUD_DISTANCE.2=معیاری
+value.CLOUD_DISTANCE.3=دور
+value.CLOUD_DISTANCE.4=بہت دور
+
+option.CLOUD_SHADOWS=بادل کے سائے
+option.CLOUD_SHADOWS.comment=زمین پر والیومیٹرک بادل کثافت سے شفاف طریقہ کار کے سائے شامل کرتا ہے۔ کوالٹی پروفائلز کے ذریعے متوازن۔
+option.CLOUD_SHADOW_STRENGTH=بادل کے سائے کی طاقت
+option.CLOUD_SHADOW_STRENGTH.comment=کنٹرول کرتا ہے کہ شفاف بادل کے سائے کتنے نظر آنے والے اور ڈرامائی ہیں۔
+value.CLOUD_SHADOW_STRENGTH.1=نرم
+value.CLOUD_SHADOW_STRENGTH.2=متوازن
+value.CLOUD_SHADOW_STRENGTH.3=ڈرامائی
+
+option.GODRAYS=سورج کی کرنیں (Godrays)
+option.GODRAYS.comment=Adds physically-inspired volumetric single-scattering sun shafts with Beer-Lambert extinction, Mie phase and shadow-map occlusion.
+option.GODRAYS_QUALITY=Godrays معیار
+option.GODRAYS_QUALITY.comment=Controls the sample count and integration distance of physically-based volumetric godrays.
+value.GODRAYS_QUALITY.1=تیز
+value.GODRAYS_QUALITY.2=متوازن
+value.GODRAYS_QUALITY.3=بلند
+
+option.AURORA_MODE=قطبی روشنی
+option.AURORA_MODE.comment=رات کے آسمان پر حقیقت پسندانہ بہتی ہوئی قطبی روشنی کی نمائش کو کنٹرول کریں۔
+
+value.AURORA_MODE.0=غیر فعال
+value.AURORA_MODE.1=صرف ٹھنڈے بایوم میں
+value.AURORA_MODE.2=ہمیشہ فعال
+
+option.AURORA_SPEED=قطبی روشنی کی رفتار
+option.AURORA_SPEED.comment=شمالی روشنیوں کی لہرانے اور بہنے کی رفتار کو کنٹرول کریں۔
+
+value.AURORA_SPEED.1=سست
+value.AURORA_SPEED.2=معیاری
+value.AURORA_SPEED.3=تیز
+
+option.AURORA_STRENGTH=قطبی روشنی کی چمک
+option.AURORA_STRENGTH.comment=شمالی روشنیوں کی مجموعی چمک کو کنٹرول کریں۔
+
+value.AURORA_STRENGTH.1=نرم
+value.AURORA_STRENGTH.2=معیاری
+value.AURORA_STRENGTH.3=چمکتا ہوا
+
+option.NEBULA_BRIGHTNESS=ملکی وے کی چمک
+option.NEBULA_BRIGHTNESS.comment=رات کو ترچھی بھوری کہکشاں نیبولا کی چمک کو ایڈجسٹ کریں۔
+
+value.NEBULA_BRIGHTNESS.1=مدھم
+value.NEBULA_BRIGHTNESS.2=معیاری
+value.NEBULA_BRIGHTNESS.3=روشن
+
+option.STARS_BRIGHTNESS=ستاروں کی چمک
+option.STARS_BRIGHTNESS.comment=رات کو ستاروں کی چمک اور جگمگاتی چمک کو کنٹرول کریں۔
+
+value.STARS_BRIGHTNESS.1=مدھم
+value.STARS_BRIGHTNESS.2=معیاری
+value.STARS_BRIGHTNESS.3=چمکدار
+
+option.STARS_AMOUNT=ستاروں کی کثافت
+option.STARS_AMOUNT.comment=آسمان میں ستاروں کی مجموعی مقدار اور کثافت کو کنٹرول کریں۔
+
+value.STARS_AMOUNT.1=کم
+value.STARS_AMOUNT.2=معیاری
+value.STARS_AMOUNT.3=گھنا
+
+option.RAINBOW_STRENGTH=قوس قزح کی شدت
+option.RAINBOW_STRENGTH.comment=بارش کے بعد قوس قزح کی چمک اور رنگ کی سنترپتی کنفیگر کریں۔
+
+value.RAINBOW_STRENGTH.1=لطیف
+value.RAINBOW_STRENGTH.2=متوازن
+value.RAINBOW_STRENGTH.3=جاندار
+
+option.COZY_LIGHTS=مشعل کی جھلملاہٹ
+option.COZY_LIGHTS.comment=مشعلوں، الاؤ اور لالٹینوں کے لیے گرم، آرام دہ، حقیقی وقت کی جھلملاتی اینیمیشنز فعال کریں۔
+
+option.WET_REFLECTIONS=بارش کی نمی کے انعکاسات
+option.WET_REFLECTIONS.comment=جب بارش ہوتی ہے تو زمین، گھاس اور پتھر جیسے ٹھوس بلاکس آسمان کے نیچے گیلے، تاریک اور چمکدار ہو جاتے ہیں۔
+
+option.GROUND_MIST=نچلی زمینی دھند (Y=62-66)
+option.GROUND_MIST.comment=صبح/شام کی نرم، سنہری سفید دھند کی چادریں فعال کریں جو طلوع اور غروب کے وقت پانی اور برف پر پھسلتی ہیں۔
+
+option.FOG_DENSITY_LEVEL=دھند کی کثافت
+option.FOG_DENSITY_LEVEL.comment=ماحولیاتی افق دھند کی طاقت کو کنٹرول کریں۔
+
+value.FOG_DENSITY_LEVEL.1=کم
+value.FOG_DENSITY_LEVEL.2=درمیانہ
+value.FOG_DENSITY_LEVEL.3=بلند
+
+option.EXPOSURE=ایکسپوژر چمک
+option.EXPOSURE.comment=تصویر کی مجموعی چمک کو کنٹرول کریں۔
+
+value.EXPOSURE.1=دھیما
+value.EXPOSURE.2=متوازن
+value.EXPOSURE.3=زندہ دل
+
+option.COLOR_SATURATION=رنگ کی زندگی
+option.COLOR_SATURATION.comment=اسکرین کے رنگوں کی نان لینیئر سنترپتی کو کنٹرول کریں۔ پودوں کو زمردی اور آسمانوں کو شاداب بناتا ہے۔
+
+value.COLOR_SATURATION.1=دھیما
+value.COLOR_SATURATION.2=متوازن
+value.COLOR_SATURATION.3=رنگین
+value.COLOR_SATURATION.4=جاندار
+
+option.CONTRAST=تصویر کا تضاد
+option.CONTRAST.comment=ٹون میپنگ اور تضاد وکر انداز منتخب کریں۔
+
+value.CONTRAST.1=نرم
+value.CONTRAST.2=فلمی (ACES)
+value.CONTRAST.3=شدید (اعلی تضاد)
+
+option.TAA=ٹیمپورل اینٹی الائیزنگ (TAA)
+option.TAA.comment=موشن ری پروجیکشن اور نیبرہڈ کلپنگ کے ساتھ ٹیمپورل ریزولو۔ اعلی پری سیٹس پر جھلملاہٹ اور دانتے دار کناروں کو کم کرتا ہے۔
+option.TAA_STRENGTH=TAA طاقت
+option.TAA_STRENGTH.comment=تاریخ ملاپ کو کنٹرول کرتا ہے۔ زیادہ زیادہ مستحکم ہے لیکن حرکت کے دوران نرم ہو سکتا ہے۔
+value.TAA_STRENGTH.1=ہلکا
+value.TAA_STRENGTH.2=متوازن
+value.TAA_STRENGTH.3=مستحکم
+
+option.VIGNETTE=وگنیٹ اثر
+option.VIGNETTE.comment=بہتر فوکس کے لیے اسکرین کے کناروں پر لطیف تاریکی فعال کریں۔
+
+option.WATER_RIFFLES=پانی کی لہر کی طاقت
+option.WATER_RIFFLES.comment=Adjust the waviness and intensity of the fine normal map ripples on the water.
+
+value.WATER_RIFFLES.1=پرسکون
+value.WATER_RIFFLES.2=معیاری
+value.WATER_RIFFLES.3=موجزن
+
+option.WATER_SPECULAR_STRENGTH=پانی کی عکاسی چمک
+option.WATER_SPECULAR_STRENGTH.comment=Adjust the brightness of sun/moon reflections on the water ripples.
+
+value.WATER_SPECULAR_STRENGTH.1=نرم
+value.WATER_SPECULAR_STRENGTH.2=معیاری
+value.WATER_SPECULAR_STRENGTH.3=چمکتا ہوا
+
+option.SHADOW_SOFTNESS=سائے کی نرمی
+option.SHADOW_SOFTNESS.comment=کنٹرول کرتا ہے کہ سائے کے کنارے کتنے نرم اور پھیلے ہوئے نظر آتے ہیں۔ ہموار نیم سائے کے لیے گھمائے گئے پوئسن ڈسک فلٹرنگ استعمال کرتا ہے۔
+
+value.SHADOW_SOFTNESS.1=تیز
+value.SHADOW_SOFTNESS.2=نرم
+value.SHADOW_SOFTNESS.3=انتہائی نرم
+
+# ==============================================================================
+# Sun & Moon Lighting (extended)
+# ==============================================================================
+screen.SUN_MOON=سورج اور چاند
+screen.SUN_MOON.comment=سورج اور چاند کی شدت، رنگ کا درجہ حرارت اور ماحولیاتی اثرات کو باریک بینی سے ایڈجسٹ کریں۔
+
+option.SUN_INTENSITY=سورج کی شدت
+option.SUN_INTENSITY.comment=براہ راست سورج کی روشنی کی ماسٹر چمک۔ زیادہ = مضبوط دن کا تضاد۔
+value.SUN_INTENSITY.1=دھیما
+value.SUN_INTENSITY.2=معیاری
+value.SUN_INTENSITY.3=بلند
+value.SUN_INTENSITY.4=دہکتا ہوا
+
+option.MOON_INTENSITY=چاند کی شدت
+option.MOON_INTENSITY.comment=چاندنی کی ماسٹر چمک۔ زیادہ = روشن، زیادہ نظر آنے والی راتیں۔
+value.MOON_INTENSITY.1=گھپ اندھیری رات
+value.MOON_INTENSITY.2=معیاری
+value.MOON_INTENSITY.3=روشن چاند
+value.MOON_INTENSITY.4=مکمل رات
+
+option.SUN_TEMPERATURE=سورج کے رنگ کا درجہ حرارت
+option.SUN_TEMPERATURE.comment=سورج کے کیلون وکر کو منتقل کرتا ہے۔ حقیقت پسندانہ ٹینر ہیلینڈ بلیک باڈی استعمال کرتا ہے؛ گرم = سنہری؛ ٹھنڈا = غیر جانبدار سفید۔
+value.SUN_TEMPERATURE.1=ٹھنڈا / غیر جانبدار
+value.SUN_TEMPERATURE.2=حقیقت پسندانہ
+value.SUN_TEMPERATURE.3=گرم سنہری
+
+option.MOON_TEMPERATURE=چاند کے رنگ کا درجہ حرارت
+option.MOON_TEMPERATURE.comment=چاندنی کا رنگ۔ برفیلا = نیلا سرد؛ چاندی = حقیقت پسندانہ 4100K؛ گرم = ہارویسٹ مون کریم۔
+value.MOON_TEMPERATURE.1=برفیلا نیلا
+value.MOON_TEMPERATURE.2=چاندی (حقیقت پسندانہ)
+value.MOON_TEMPERATURE.3=گرم کریم
+
+option.SUN_HALO=سورج کا ہالہ (مائی سکیٹر)
+option.SUN_HALO.comment=سورج کے قریب دیکھتے وقت زمین پر ایک نرم گرم چمک شامل کرتا ہے (مائی فارورڈ سکیٹرنگ)۔
+
+option.SUNRISE_GLOW=بہتر طلوع/غروب آفتاب کی چمک
+option.SUNRISE_GLOW.comment=مضبوط گرم بیک سکیٹر کو فعال کرتا ہے جو نیچے سورج سے دور سطحوں کے ارد گرد لپیٹتا ہے۔
+
+# ==============================================================================
+# Extended shadow settings
+# ==============================================================================
+option.shadowDistance=سائے کا فاصلہ
+option.shadowDistance.comment=زیادہ سے زیادہ فاصلہ جس پر متحرک سائے دھندلانے سے پہلے رینڈر کیے جاتے ہیں۔
+value.shadowDistance.60.0=قریب (60م)
+value.shadowDistance.80.0=معیاری (80م)
+value.shadowDistance.120.0=دور (120م)
+value.shadowDistance.160.0=الٹرا (160م)
+
+option.AMBIENT_BRIGHTNESS=سائے کی بلندی / ماحول
+option.AMBIENT_BRIGHTNESS.comment=کنٹرول کرتا ہے کہ رات اور غاروں میں سایہ دار علاقے کتنے تاریک نظر آتے ہیں۔
+value.AMBIENT_BRIGHTNESS.1=تاریک
+value.AMBIENT_BRIGHTNESS.2=معیاری
+value.AMBIENT_BRIGHTNESS.3=اٹھایا ہوا (روشن)
+
+option.SHADOW_TINT=سائے کا رنگ
+option.SHADOW_TINT.comment=دن کے سائے کو رنگ دیتا ہے۔ نیلے آسمان کے نیچے حقیقی دنیا کے سائے میں ہلکا ٹھنڈا رنگ ہوتا ہے۔
+value.SHADOW_TINT.1=Neutral Gray
+value.SHADOW_TINT.2=Cool Blue (Realistic)
+value.SHADOW_TINT.3=Warm
+
+option.LIGHT_WRAP=روشنی کی لپیٹ
+option.LIGHT_WRAP.comment=روشن اور غیر روشن سطحوں کے درمیان ٹرمینیٹر کو نرم کرتا ہے۔ حقیقت پسندانہ = فزیکل لیمبرٹ؛ نرم = اسکرین شاٹس کے لیے خوشگوار۔
+value.LIGHT_WRAP.1=حقیقت پسندانہ (لیمبرٹ)
+value.LIGHT_WRAP.2=نرم لپیٹ
+value.LIGHT_WRAP.3=اسٹائلائزڈ
+
+# v0.2.9 — water/underwater option value labels (English fallback)
+value.WATER_WAVE_SCALE.1=پرسکون
+value.WATER_WAVE_SCALE.2=معیاری
+value.WATER_WAVE_SCALE.3=موجزن
+value.WATER_WAVE_SCALE.4=طوفانی
+value.WATER_WAVE_DETAIL.1=موٹا
+value.WATER_WAVE_DETAIL.2=معیاری
+value.WATER_WAVE_DETAIL.3=گھنا
+value.UNDERWATER_NIGHT_DARKNESS.1=چاندنی تالاب
+value.UNDERWATER_NIGHT_DARKNESS.2=مدھم
+value.UNDERWATER_NIGHT_DARKNESS.3=حقیقی رات
+value.UNDERWATER_NIGHT_DARKNESS.4=گہری تاریکی
+# ==============================================================================
+# Experimental Tab & New Sky (v1.1.0)
+# ==============================================================================
+screen.EXPERIMENTAL=تجرباتی
+screen.EXPERIMENTAL.comment=تجرباتی
+
+option.SKY_MODE=نیا آسمان (فضائی انتشار)
+option.SKY_STYLE=آسمان کا انداز
+option.SKY_STYLE.comment=option.SKY_STYLE.comment=Artistic direction for the physical sky. Realistic = true angular sizes & neutral colours (astronomy look). Semi-realistic = readable sun/moon (x2.8), richer colour, soft glow. Fantasy = grand sun/moon (x5.5), big corona, vivid teal/crimson/indigo palette.
+option.SKY_MODE.comment=EXPERIMENTAL — off in all profiles. Gradient (legacy, default) or Physical realtime scattering with true multiple scattering (Rayleigh+Mie+Ozone, 1st+2nd+3rd order). Enable manually in this tab.
+value.SKY_MODE.0=گریڈینٹ (پرانا)
+value.SKY_STYLE.0=حقیقت پسندانہ
+value.SKY_STYLE.1=نیم حقیقت پسندانہ
+value.SKY_STYLE.2=فینٹسی
+value.SKY_MODE.1=Realtime Scattering
+
+option.SKY_QUALITY=آسمان کے انتشار کا معیار
+option.SKY_QUALITY.comment=آسمان کے انتشار کا معیار
+value.SKY_QUALITY.1=تیز
+value.SKY_QUALITY.2=معیاری
+value.SKY_QUALITY.3=اعلی
+
+# --- Auto-added missing translations (v1.1.0 sync) ---
+option.FOLIAGE_SSS=پودوں کا SSS
+option.FOLIAGE_SSS.comment=روشنی کے خلاف دیکھتے وقت پتوں، گھاس اور پودوں کے لیے سب سرفیس سکیٹرنگ (شفافیت) فعال کرتا ہے۔
+option.GODRAYS_STRENGTH=Godrays شدت
+option.GODRAYS_STRENGTH.comment=والیومیٹرک روشنی کی کرنوں کی چمک۔ نرم: ہلکی ماحولیاتی دھند۔ متوازن: واضح طور پر نظر آنے والی کرنیں۔ ڈرامائی: دلیرانہ سنیمائی کرنیں۔
+value.GODRAYS_STRENGTH.1=لطیف
+value.GODRAYS_STRENGTH.2=متوازن
+value.GODRAYS_STRENGTH.3=ڈرامائی
+option.SHOOTING_STARS=شہاب ثاقب (گرتے ستارے)
+option.SHOOTING_STARS.comment=میسوسفیئر میں داخل ہونے والے فزیکل بیسڈ شہاب ثاقب (~80-120 کلومیٹر)۔ ایبلیشن لائٹ کرو، بلیک باڈی پلازما رنگ (3500-5500 K)، افق کے قریب ریلی معدومیت، اور فائر بالز پر مستقل آئنائزیشن ٹریلز کے ساتھ حقیقی گریٹ سرکل 3D آرکس رینڈر کرتا ہے۔
+option.SHOOTING_STARS_FREQUENCY=شہابی سرگرمی (ZHR)
+option.SHOOTING_STARS_FREQUENCY.comment=تخمینی زینتھل گھنٹہ وار شرح۔ چھٹپٹ = فی گھنٹہ ~10 کا حقیقت پسندانہ پس منظر۔ فعال = ہلکی بارش۔ طوفان = عروج کثافت (~100/گھنٹہ)۔
+value.SHOOTING_STARS_FREQUENCY.1=چھٹپٹ (~10/گھنٹہ)
+value.SHOOTING_STARS_FREQUENCY.2=فعال بارش
+value.SHOOTING_STARS_FREQUENCY.3=شہابی طوفان
+option.SHOOTING_STARS_BRIGHTNESS=شدت کا پیمانہ
+option.SHOOTING_STARS_BRIGHTNESS.comment=شہابی شدت کے پیمانے پر ماسٹر ملٹی پلائر۔ مدھم = حقیقت پسندانہ اوسط؛ روشن = سنیمائی مرئیت کے لیے فائر بالز کو بڑھاتا ہے۔
+value.SHOOTING_STARS_BRIGHTNESS.1=مدھم (حقیقت پسندانہ)
+value.SHOOTING_STARS_BRIGHTNESS.2=معیاری
+value.SHOOTING_STARS_BRIGHTNESS.3=روشن فائر بالز
+value.CONTRAST.4=فوٹوگرافک (AgX جیسا)
+option.SPATIAL_AA_MODE=مقامی اینٹی الائیزنگ
+option.SPATIAL_AA_MODE.comment=پوسٹ پروسیس اینٹی الائیزنگ طریقہ منتخب کریں۔ FXAA تیز اور سستا ہے۔ SMAA جیومیٹری کناروں پر بہتر معیار کے لیے ڈیپتھ بفر استعمال کرتا ہے۔ TAA کے ساتھ ملایا جا سکتا ہے۔
+value.SPATIAL_AA_MODE.0=بند
+value.SPATIAL_AA_MODE.1=FXAA (تیز)
+value.SPATIAL_AA_MODE.2=SMAA (معیار)
+option.HEAT_SHIMMER=لاوے کے اوپر گرمی کی جھلملاہٹ
+option.HEAT_SHIMMER.comment=لاوے کی سطحوں کے اوپر ایک لطیف اسکرین اسپیس ہیٹ ڈسٹورشن اثر فعال کریں۔
+option.HEAT_SHIMMER_STRENGTH=گرمی کی جھلملاہٹ کی طاقت
+option.HEAT_SHIMMER_STRENGTH.comment=لاوے کے اوپر گرمی کی خرابی کی شدت کو کنٹرول کرتا ہے۔
+value.HEAT_SHIMMER_STRENGTH.1=لطیف
+value.HEAT_SHIMMER_STRENGTH.2=متوازن
+value.HEAT_SHIMMER_STRENGTH.3=مضبوط
+option.SSR=اسکرین اسپیس عکس (SSR)
+option.SSR.comment=پانی، گیلی سطحوں اور دھاتی PBR بلاکس پر حقیقی وقت کا منعکس ماحول شامل کرتا ہے۔ v1.0.4 میں MED سے اوپر فعال۔
+option.SSR_QUALITY=SSR معیار
+option.SSR_QUALITY.comment=اسکرین اسپیس عکس کی درستگی اور شعاع کے فاصلے کو کنٹرول کرتا ہے۔ زیادہ = تیز تر عکس لیکن زیادہ GPU لاگت۔
+value.SSR_QUALITY.1=تیز (12 قدم)
+value.SSR_QUALITY.2=متوازن (24 قدم)
+value.SSR_QUALITY.3=بلند (40 قدم)
+option.SSR_STRENGTH=SSR طاقت
+option.SSR_STRENGTH.comment=کنٹرول کرتا ہے کہ منعکس ماحول عکاس سطحوں پر کتنا نظر آنے والا اور نمایاں ہے۔
+option.WATER_WAVE_SCALE=لہر کا طول
+option.WATER_WAVE_SCALE.comment=پانی کی سطح کی لہروں کی نظر آنے والی کھڑی پن کو کنٹرول کرتا ہے۔ پرسکون = آئینے کی طرح، طوفانی = بری طرح ٹوٹے ہوئے عکس۔
+option.WATER_WAVE_DETAIL=لہر کی تفصیل
+option.WATER_WAVE_DETAIL.comment=فی بلاک کتنی چھوٹی لہریں ظاہر ہوتی ہیں کو کنٹرول کرتا ہے۔ موٹا = چند بڑی لہریں، گھنا = بہت سی چھوٹی لہریں۔
+option.UNDERWATER_NIGHT_DARKNESS=پانی کے اندر رات کی تاریکی
+option.UNDERWATER_NIGHT_DARKNESS.comment=رات کو زیر آب منظر کتنا تاریک ہو جاتا ہے کنٹرول کرتا ہے۔ چاندنی تالاب چمک برقرار رکھتا ہے؛ گہری تاریکی انتہائی بقا کے انداز کی تاریکی دیتی ہے۔
+value.SSR_STRENGTH.1=لطیف
+value.SSR_STRENGTH.2=متوازن
+value.SSR_STRENGTH.3=مضبوط
+option.PBR_DISTANCE=PBR رینڈر فاصلہ
+option.PBR_DISTANCE.comment=PBR اسپیکولر ہائی لائٹس کے لیے زیادہ سے زیادہ فاصلہ۔ دور کے علاقے پر GPU بچاتا ہے۔ LOW کے لیے قریب (16m)، MED کے لیے معیاری (48m)، HIGH/ULTRA کے لیے دور (128m)، EXTREME کے لیے لامحدود۔
+value.PBR_DISTANCE.1=قریب (16م)
+value.PBR_DISTANCE.2=معیاری (48م)
+value.PBR_DISTANCE.3=دور (128م)
+value.PBR_DISTANCE.4=لامحدود
+
+# v1.1.1 — shadow pipeline + POM option labels
+value.shadowMapResolution.512=512
+value.shadowMapResolution.1024=1024
+value.shadowMapResolution.2048=2048
+value.shadowMapResolution.4096=4096
+option.POM_DEPTH=POM Depth
+option.POM_DEPTH.comment=Controls the visible depth of parallax occlusion mapping when PBR POM is enabled.
+value.POM_DEPTH.1=Low
+value.POM_DEPTH.2=Standard
+value.POM_DEPTH.3=Deep
+option.POM_STEPS=POM Steps
+option.POM_STEPS.comment=Controls the raymarch step count for parallax occlusion mapping. Higher values improve quality but cost more GPU time.
+value.POM_STEPS.1=Fast
+value.POM_STEPS.2=Standard
+value.POM_STEPS.3=High
+value.POM_STEPS.4=Ultra

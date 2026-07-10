@@ -1,0 +1,433 @@
+# AuraLite Shaders v1.0.7 - Copyright (c) 2026 AlexanderNyr. Licensed under CC BY-NC-SA 4.0.
+# ==============================================================================
+# AuraLite Shader Pack - Georgian Language Translations
+# ==============================================================================
+
+# ==============================================================================
+# Quality Profiles
+# ==============================================================================
+profile.VERY_LOW=ძალიან დაბალი
+profile.VERY_LOW.comment=Fastest possible preset for very weak GPUs. Disables shadows, clouds, water waves, foliage waving, PBR and most extras.
+profile.LOW=დაბალი
+profile.LOW.comment=Lightweight preset for weak GPUs. Keeps cheap water/foliage motion, disables shadows, clouds and PBR.
+profile.MED=საშუალო
+profile.MED.comment=Balanced preset with 1024 shadows, standard clouds, PBR and atmospheric effects.
+profile.HIGH=მაღალი
+profile.HIGH.comment=High quality preset with 2048 shadows, farther clouds and full PBR, without SSAO.
+profile.ULTRA=ულტრა
+profile.ULTRA.comment=Ultra quality preset with 4096 shadows, very far clouds and balanced SSAO. POM remains disabled for stability.
+profile.EXTREME=ექსტრემალური
+profile.EXTREME.comment=Maximum experimental quality. Pushes lighting, clouds, color and deep SSAO. POM remains disabled for stability.
+profile.CUSTOM=მორგებული
+profile.CUSTOM.comment=მომხმარებლის მიერ შეცვლილი მორგებული პარამეტრები.
+
+screen.TRANSLATION_NOTICE=⚠ თარგმანები შეიძლება შეიცავდეს შეცდომებს
+screen.TRANSLATION_NOTICE.comment=ზოგიერთი ლოკალიზაციის სტრიქონი შეიძლება არაზუსტი იყოს. თუ რაღაც უცნაურად გამოიყურება, შეადარეთ ინგლისურ ორიგინალს.
+
+# Screens
+screen.LIGHTING=განათების პარამეტრები
+screen.LIGHTING.comment=დააკონფიგურირეთ ჩრდილები, სინათლის ფერები და სიკაშკაშე.
+
+screen.FOLIAGE=მცენარეულობის პარამეტრები
+screen.FOLIAGE.comment=დააკონფიგურირეთ ბალახისა და ფოთლების რხევის ანიმაცია.
+
+screen.WATER=წყლის პარამეტრები
+screen.WATER.comment=დააკონფიგურირეთ ტალღები, გამჭვირვალობა და წყლის სტილი.
+
+screen.CLOUDS_MENU=ცა და ღრუბლები
+screen.CLOUDS_MENU.comment=დააკონფიგურირეთ 3D ღრუბლების და ცის ეფექტების ფიზიკური სიმაღლე, სისქე და სტილი.
+
+screen.POST_PROCESS=პოსტ-პროცესინგი და ნისლი
+screen.POST_PROCESS.comment=დააკონფიგურირეთ ექსპოზიცია, ნისლი და კინემატოგრაფიული ეფექტები.
+
+# Options
+option.SHADOWS=დინამიური ჩრდილები
+option.SHADOWS.comment=ჩართეთ ან გამორთეთ მზისა და მთვარის რბილი დინამიური ჩრდილები.
+
+option.shadowMapResolution=ჩრდილის გარჩევადობა
+option.shadowMapResolution.comment=შეცვალეთ ჩრდილის რუკის ხარისხი. მაღალმა მნიშვნელობებმა შესაძლოა შეამციროს წარმადობა.
+
+option.PBR_LIGHTING=PBR განათება (LabPBR)
+option.PBR_LIGHTING.comment=ჩართეთ ფიზიკურად სწორი რენდერინგი ლითონებისთვის, სიმქისისთვის და 3D ნორმალური რუქებისთვის (საჭიროა PBR რესურს პაკეტი).
+
+option.PBR_POM=3D ბლოკის რელიეფი (POM)
+option.PBR_POM.comment=ჩართეთ ფიზიკურად სწორი Parallax Occlusion Mapping 3D ბლოკის ტექსტურებისთვის. რეკომენდირებულია გამორთვა შეუთავსებელ რესურს პაკეტებზე.
+
+option.PBR_STRENGTH=PBR ინტენსივობა
+option.PBR_STRENGTH.comment=აკონტროლეთ PBR ლითონის ზედაპირების არეკვლა და ბზინვარება.
+
+value.PBR_STRENGTH.1=ნაზი
+value.PBR_STRENGTH.2=სტანდარტული
+value.PBR_STRENGTH.3=სარკისებრი
+
+option.SSAO=SSAO / SAO ოკლუზია
+option.SSAO.comment=Extreme profile: screen-space ambient occlusion for contact shadows in corners, under blocks, and around geometry intersections.
+option.SSAO_STRENGTH=SSAO სიძლიერე
+option.SSAO_STRENGTH.comment=აკონტროლებს ეკრანის სივრცის გარემო ოკლუზიის სიღრმეს. აქტიურია მხოლოდ მაშინ, როცა SSAO ჩართულია.
+value.SSAO_STRENGTH.1=ნაზი
+value.SSAO_STRENGTH.2=დაბალანსებული
+value.SSAO_STRENGTH.3=ღრმა
+
+option.LIGHTMAP_WARMTH=ჩირაღდნის სითბო
+option.LIGHTMAP_WARMTH.comment=დაარეგულირეთ ბლოკის/ჩირაღდნის სინათლის სითბო და ფერი.
+
+value.LIGHTMAP_WARMTH.1=მყუდრო
+value.LIGHTMAP_WARMTH.2=თბილი
+value.LIGHTMAP_WARMTH.3=ინტენსიური
+
+option.WAVING_LEAVES=ფოთლების ქანაობა
+option.WAVING_LEAVES.comment=ჩართეთ ხის ფოთლების ნაზი ქანაობის ანიმაცია.
+
+option.WAVING_GRASS=მცენარეულობის ქანაობა
+option.WAVING_GRASS.comment=ჩართეთ ბალახის, ყვავილების და კულტურების ქანაობის ანიმაცია.
+
+option.WIND_SPEED=ქარის სიჩქარე
+option.WIND_SPEED.comment=აკონტროლეთ ფოთლების, მცენარეების და წყლის ტალღების ქანაობის სიჩქარე.
+
+value.WIND_SPEED.1=Gentle
+value.WIND_SPEED.2=Breeze
+value.WIND_SPEED.3=Gale
+
+option.WATER_WAVES=წყლის ტალღები
+option.WATER_WAVES.comment=Enable 3D geometric waves on the water surface.
+
+option.WATER_TRANSPARENCY=წყლის სიმკვრივე
+option.WATER_TRANSPARENCY.comment=Control the transparency and opacity of the water.
+
+value.WATER_TRANSPARENCY.1=გამჭვირვალე
+value.WATER_TRANSPARENCY.2=დაბალანსებული
+value.WATER_TRANSPARENCY.3=ღრმა
+
+option.PROCEDURAL_CLOUDS=მოცულობითი 3D ღრუბლები
+option.PROCEDURAL_CLOUDS.comment=ჩართეთ ფიზიკურად გადასაფრენი 3D ღრუბლები, რომლებსაც შეგიძლიათ მიაღწიოთ და გაუფრინდეთ.
+
+option.CLOUD_HEIGHT=ღრუბლის სიმაღლე
+option.CLOUD_HEIGHT.comment=დააყენეთ ღრუბლის ფენის ფიზიკური სიმაღლე (Y-დონე) სამყაროში (მეტრებში).
+
+value.CLOUD_HEIGHT.1=დაბალი (~110მ)
+value.CLOUD_HEIGHT.2=სტანდარტული (~160მ)
+value.CLOUD_HEIGHT.3=მაღალი (~240მ)
+
+option.CLOUD_THICKNESS=ღრუბლის სისქე
+option.CLOUD_THICKNESS.comment=დააკონფიგურირეთ ღრუბლების ვერტიკალური სისქე და მოცულობა.
+
+value.CLOUD_THICKNESS.1=წვრილი (Cirrus)
+value.CLOUD_THICKNESS.2=სტანდარტული (Cumulus)
+value.CLOUD_THICKNESS.3=მკვრივი (ქარიშხლიანი)
+
+option.CLOUD_DISTANCE=ღრუბლის რენდერის მანძილი
+option.CLOUD_DISTANCE.comment=მაქსიმალური დახატვის მანძილი მოცულობითი ღრუბლებისთვის. ხარისხის პროფილები ავტომატურად ზრდის მას.
+value.CLOUD_DISTANCE.1=ახლოს
+value.CLOUD_DISTANCE.2=სტანდარტული
+value.CLOUD_DISTANCE.3=შორს
+value.CLOUD_DISTANCE.4=ძალიან შორს
+
+option.CLOUD_SHADOWS=ღრუბლის ჩრდილები
+option.CLOUD_SHADOWS.comment=ამატებს გამჭვირვალე პროცედურულ ჩრდილებს მოცულობითი ღრუბლის სიმკვრივიდან რელიეფზე. დაბალანსებულია ხარისხის პროფილებით.
+option.CLOUD_SHADOW_STRENGTH=ღრუბლის ჩრდილის სიძლიერე
+option.CLOUD_SHADOW_STRENGTH.comment=აკონტროლებს რამდენად თვალსაჩინო და დრამატულია გამჭვირვალე ღრუბლის ჩრდილები.
+value.CLOUD_SHADOW_STRENGTH.1=რბილი
+value.CLOUD_SHADOW_STRENGTH.2=დაბალანსებული
+value.CLOUD_SHADOW_STRENGTH.3=დრამატული
+
+option.GODRAYS=მზის სხივები (Godrays)
+option.GODRAYS.comment=Adds physically-inspired volumetric single-scattering sun shafts with Beer-Lambert extinction, Mie phase and shadow-map occlusion.
+option.GODRAYS_QUALITY=Godrays ხარისხი
+option.GODRAYS_QUALITY.comment=Controls the sample count and integration distance of physically-based volumetric godrays.
+value.GODRAYS_QUALITY.1=სწრაფი
+value.GODRAYS_QUALITY.2=დაბალანსებული
+value.GODRAYS_QUALITY.3=მაღალი
+
+option.AURORA_MODE=ჩრდილოეთის ნათება
+option.AURORA_MODE.comment=აკონტროლეთ რეალისტური მოძრავი ჩრდილოეთის ნათების ჩვენება ღამის ცაზე.
+
+value.AURORA_MODE.0=გამორთული
+value.AURORA_MODE.1=მხოლოდ ცივ ბიომებში
+value.AURORA_MODE.2=ყოველთვის ჩართული
+
+option.AURORA_SPEED=ნათების სიჩქარე
+option.AURORA_SPEED.comment=აკონტროლეთ ჩრდილოეთის ნათების ქანაობისა და დინების სიჩქარე.
+
+value.AURORA_SPEED.1=ნელი
+value.AURORA_SPEED.2=სტანდარტული
+value.AURORA_SPEED.3=სწრაფი
+
+option.AURORA_STRENGTH=ნათების სიკაშკაშე
+option.AURORA_STRENGTH.comment=აკონტროლეთ ჩრდილოეთის ნათების საერთო ბზინვარების სიკაშკაშე.
+
+value.AURORA_STRENGTH.1=რბილი
+value.AURORA_STRENGTH.2=სტანდარტული
+value.AURORA_STRENGTH.3=ბრწყინვალე
+
+option.NEBULA_BRIGHTNESS=ირმის ნახტომის სიკაშკაშე
+option.NEBULA_BRIGHTNESS.comment=დაარეგულირეთ ღამით დიაგონალური მოყავისფრო გალაქტიკური ნისლეულის ბზინვარების სიკაშკაშე.
+
+value.NEBULA_BRIGHTNESS.1=მკრთალი
+value.NEBULA_BRIGHTNESS.2=სტანდარტული
+value.NEBULA_BRIGHTNESS.3=ნათელი
+
+option.STARS_BRIGHTNESS=ვარსკვლავების სიკაშკაშე
+option.STARS_BRIGHTNESS.comment=აკონტროლეთ ღამით ვარსკვლავების სიკაშკაშე და ციმციმა ბზინვარება.
+
+value.STARS_BRIGHTNESS.1=მკრთალი
+value.STARS_BRIGHTNESS.2=სტანდარტული
+value.STARS_BRIGHTNESS.3=ბრწყინვალე
+
+option.STARS_AMOUNT=ვარსკვლავების სიმკვრივე
+option.STARS_AMOUNT.comment=აკონტროლეთ ცაში ვარსკვლავების საერთო რაოდენობა და სიმკვრივე.
+
+value.STARS_AMOUNT.1=ცოტა
+value.STARS_AMOUNT.2=სტანდარტული
+value.STARS_AMOUNT.3=მკვრივი
+
+option.RAINBOW_STRENGTH=ცისარტყელას ინტენსივობა
+option.RAINBOW_STRENGTH.comment=დააკონფიგურირეთ წვიმის შემდგომი ცისარტყელას სიკაშკაშე და ფერის გაჯერება.
+
+value.RAINBOW_STRENGTH.1=ნაზი
+value.RAINBOW_STRENGTH.2=დაბალანსებული
+value.RAINBOW_STRENGTH.3=ცოცხალი
+
+option.COZY_LIGHTS=ჩირაღდნის ციმციმი
+option.COZY_LIGHTS.comment=ჩართეთ თბილი, მყუდრო, რეალურ დროში ციმციმის ანიმაცია ჩირაღდნებისთვის, კოცონებისთვის და ფარნებისთვის.
+
+option.WET_REFLECTIONS=წვიმის სინესტის ანარეკლები
+option.WET_REFLECTIONS.comment=წვიმის დროს მყარი ბლოკები, როგორიცაა მიწა, ბალახი და ქვა, ცის ქვეშ სველი, მუქი და პრიალა ხდება.
+
+option.GROUND_MIST=დაბალი მიწისზედა ნისლი (Y=62-66)
+option.GROUND_MIST.comment=ჩართეთ რბილი, ოქროსფერ-თეთრი დილის/საღამოს ნისლის ფენები, რომლებიც სრიალებენ წყალსა და ყინულზე გამთენიისას და დაბინდებისას.
+
+option.FOG_DENSITY_LEVEL=ნისლის სიმკვრივე
+option.FOG_DENSITY_LEVEL.comment=აკონტროლეთ ატმოსფერული ჰორიზონტის ნისლის სიძლიერე.
+
+value.FOG_DENSITY_LEVEL.1=დაბალი
+value.FOG_DENSITY_LEVEL.2=საშუალო
+value.FOG_DENSITY_LEVEL.3=მაღალი
+
+option.EXPOSURE=ექსპოზიციის სიკაშკაშე
+option.EXPOSURE.comment=აკონტროლეთ სურათის საერთო სიკაშკაშე.
+
+value.EXPOSURE.1=მუქი
+value.EXPOSURE.2=დაბალანსებული
+value.EXPOSURE.3=სიცოცხლისუნარიანი
+
+option.COLOR_SATURATION=ფერის სიცოცხლისუნარიანობა
+option.COLOR_SATURATION.comment=აკონტროლეთ ეკრანის ფერების არაწრფივი გაჯერება. ხის ფოთლებს ზურმუხტისფერს ხდის და ცას - ხასხასას.
+
+value.COLOR_SATURATION.1=მუქი
+value.COLOR_SATURATION.2=დაბალანსებული
+value.COLOR_SATURATION.3=ფერადი
+value.COLOR_SATURATION.4=ცოცხალი
+
+option.CONTRAST=სურათის კონტრასტი
+option.CONTRAST.comment=აირჩიეთ ტონის რუკის და კონტრასტის მრუდის სტილი.
+
+value.CONTRAST.1=რბილი
+value.CONTRAST.2=ფილმური (ACES)
+value.CONTRAST.3=ინტენსიური (მაღალი კონტრასტი)
+
+option.TAA=დროითი ანტი-ალიასინგი (TAA)
+option.TAA.comment=დროითი გადაწყვეტა მოძრაობის ხელახალი პროექციით და მეზობლის ამოჭრით. ამცირებს ციმციმს და დაკბილულ კიდეებს მაღალ პრესეტებზე.
+option.TAA_STRENGTH=TAA სიძლიერე
+option.TAA_STRENGTH.comment=აკონტროლებს ისტორიის შერევას. მაღალი უფრო სტაბილურია, მაგრამ მოძრაობისას შეიძლება უფრო რბილი იყოს.
+value.TAA_STRENGTH.1=მსუბუქი
+value.TAA_STRENGTH.2=დაბალანსებული
+value.TAA_STRENGTH.3=სტაბილური
+
+option.VIGNETTE=ვინიეტის ეფექტი
+option.VIGNETTE.comment=ჩართეთ მსუბუქი დაბნელება ეკრანის კიდეებზე გაუმჯობესებული ფოკუსირებისთვის.
+
+option.WATER_RIFFLES=წყლის ტალღების სიძლიერე
+option.WATER_RIFFLES.comment=Adjust the waviness and intensity of the fine normal map ripples on the water.
+
+value.WATER_RIFFLES.1=მშვიდი
+value.WATER_RIFFLES.2=სტანდარტული
+value.WATER_RIFFLES.3=ტალღოვანი
+
+option.WATER_SPECULAR_STRENGTH=წყლის სარკისებრი ბზინვარება
+option.WATER_SPECULAR_STRENGTH.comment=Adjust the brightness of sun/moon reflections on the water ripples.
+
+value.WATER_SPECULAR_STRENGTH.1=რბილი
+value.WATER_SPECULAR_STRENGTH.2=სტანდარტული
+value.WATER_SPECULAR_STRENGTH.3=ბრჭყვიალა
+
+option.SHADOW_SOFTNESS=ჩრდილის სირბილე
+option.SHADOW_SOFTNESS.comment=აკონტროლებს რამდენად რბილი და გაფანტულია ჩრდილის კიდეები. იყენებს ბრუნვად პუასონის დისკის ფილტრაციას გლუვი ნახევარჩრდილისთვის.
+
+value.SHADOW_SOFTNESS.1=მკვეთრი
+value.SHADOW_SOFTNESS.2=რბილი
+value.SHADOW_SOFTNESS.3=ულტრა რბილი
+
+# ==============================================================================
+# Sun & Moon Lighting (extended)
+# ==============================================================================
+screen.SUN_MOON=მზე და მთვარე
+screen.SUN_MOON.comment=ზუსტად დაარეგულირეთ მზისა და მთვარის ინტენსივობა, ფერის ტემპერატურა და ატმოსფერული ეფექტები.
+
+option.SUN_INTENSITY=მზის ინტენსივობა
+option.SUN_INTENSITY.comment=პირდაპირი მზის სინათლის მთავარი სიკაშკაშე. მაღალი = უფრო ძლიერი დღის კონტრასტი.
+value.SUN_INTENSITY.1=მუქი
+value.SUN_INTENSITY.2=სტანდარტული
+value.SUN_INTENSITY.3=მაღალი
+value.SUN_INTENSITY.4=მოგიზგიზე
+
+option.MOON_INTENSITY=მთვარის ინტენსივობა
+option.MOON_INTENSITY.comment=მთვარის შუქის მთავარი სიკაშკაშე. მაღალი = უფრო ნათელი, უფრო ხილული ღამეები.
+value.MOON_INTENSITY.1=ბოლიანი ღამე
+value.MOON_INTENSITY.2=სტანდარტული
+value.MOON_INTENSITY.3=ნათელი მთვარე
+value.MOON_INTENSITY.4=სრული ღამე
+
+option.SUN_TEMPERATURE=მზის ფერის ტემპერატურა
+option.SUN_TEMPERATURE.comment=ცვლის მზის კელვინის მრუდს. რეალისტური იყენებს ტანერ ჰელანდის შავ სხეულს; თბილი = ოქროსფერი; გრილი = ნეიტრალური თეთრი.
+value.SUN_TEMPERATURE.1=გრილი / ნეიტრალური
+value.SUN_TEMPERATURE.2=რეალისტური
+value.SUN_TEMPERATURE.3=თბილი ოქროსფერი
+
+option.MOON_TEMPERATURE=მთვარის ფერის ტემპერატურა
+option.MOON_TEMPERATURE.comment=მთვარის შუქის ტონი. ყინულოვანი = მოლურჯო ცივი; ვერცხლისფერი = რეალისტური 4100K; თბილი = მოსავლის მთვარის კრემისფერი.
+value.MOON_TEMPERATURE.1=ყინულოვანი ლურჯი
+value.MOON_TEMPERATURE.2=ვერცხლისფერი (რეალისტური)
+value.MOON_TEMPERATURE.3=თბილი კრემისფერი
+
+option.SUN_HALO=მზის ჰალო (მის გაბნევა)
+option.SUN_HALO.comment=მზესთან ახლოს ყურებისას რელიეფზე ამატებს რბილ თბილ ბზინვარებას (მის წინსვლის გაბნევა).
+
+option.SUNRISE_GLOW=გაუმჯობესებული მზის ამოსვლის/ჩასვლის ბზინვარება
+option.SUNRISE_GLOW.comment=ააქტიურებს ძლიერ თბილ უკუგაბნევას, რომელიც ხვევს ზედაპირებს, რომლებიც არიან დაშორებული დაბალი მზისგან.
+
+# ==============================================================================
+# Extended shadow settings
+# ==============================================================================
+option.shadowDistance=ჩრდილის მანძილი
+option.shadowDistance.comment=მაქსიმალური მანძილი, რომელზეც დინამიური ჩრდილები რენდერდება ქრობამდე.
+value.shadowDistance.60.0=ახლოს (60მ)
+value.shadowDistance.80.0=სტანდარტული (80მ)
+value.shadowDistance.120.0=შორს (120მ)
+value.shadowDistance.160.0=ულტრა (160მ)
+
+option.AMBIENT_BRIGHTNESS=ჩრდილის აწევა / გარემო
+option.AMBIENT_BRIGHTNESS.comment=აკონტროლებს რამდენად ბნელი გამოიყურება დაჩრდილული ადგილები ღამით და გამოქვაბულებში.
+value.AMBIENT_BRIGHTNESS.1=მუქი
+value.AMBIENT_BRIGHTNESS.2=სტანდარტული
+value.AMBIENT_BRIGHTNESS.3=აწეული (ნათელი)
+
+option.SHADOW_TINT=ჩრდილის ტონი
+option.SHADOW_TINT.comment=აფერადებს დღის ჩრდილებს. რეალურ სამყაროში ჩრდილებს ლურჯი ცის ქვეშ აქვთ მსუბუქი გრილი ტონი.
+value.SHADOW_TINT.1=Neutral Gray
+value.SHADOW_TINT.2=Cool Blue (Realistic)
+value.SHADOW_TINT.3=Warm
+
+option.LIGHT_WRAP=სინათლის შემოხვევა
+option.LIGHT_WRAP.comment=არბილებს ტერმინატორს განათებულ და განუათებელ ზედაპირებს შორის. რეალისტური = ფიზიკური ლამბერტი; რბილი = სასიამოვნო სქრინშოტებისთვის.
+value.LIGHT_WRAP.1=რეალისტური (ლამბერტი)
+value.LIGHT_WRAP.2=რბილი შემოხვევა
+value.LIGHT_WRAP.3=სტილიზებული
+
+# v0.2.9 — water/underwater option value labels (English fallback)
+value.WATER_WAVE_SCALE.1=მშვიდი
+value.WATER_WAVE_SCALE.2=სტანდარტული
+value.WATER_WAVE_SCALE.3=ტალღოვანი
+value.WATER_WAVE_SCALE.4=ქარიშხლიანი
+value.WATER_WAVE_DETAIL.1=უხეში
+value.WATER_WAVE_DETAIL.2=სტანდარტული
+value.WATER_WAVE_DETAIL.3=მკვრივი
+value.UNDERWATER_NIGHT_DARKNESS.1=მთვარით განათებული აუზი
+value.UNDERWATER_NIGHT_DARKNESS.2=მკრთალი
+value.UNDERWATER_NIGHT_DARKNESS.3=ნამდვილი ღამე
+value.UNDERWATER_NIGHT_DARKNESS.4=ბოლიანი სიბნელე
+# ==============================================================================
+# Experimental Tab & New Sky (v1.1.0)
+# ==============================================================================
+screen.EXPERIMENTAL=ექსპერიმენტული
+screen.EXPERIMENTAL.comment=ექსპერიმენტული
+
+option.SKY_MODE=ახალი ცა (ატმოსფერული გაბნევა)
+option.SKY_STYLE=ცის სტილი
+option.SKY_STYLE.comment=option.SKY_STYLE.comment=Artistic direction for the physical sky. Realistic = true angular sizes & neutral colours (astronomy look). Semi-realistic = readable sun/moon (x2.8), richer colour, soft glow. Fantasy = grand sun/moon (x5.5), big corona, vivid teal/crimson/indigo palette.
+option.SKY_MODE.comment=EXPERIMENTAL — off in all profiles. Gradient (legacy, default) or Physical realtime scattering with true multiple scattering (Rayleigh+Mie+Ozone, 1st+2nd+3rd order). Enable manually in this tab.
+value.SKY_MODE.0=გრადიენტი (ძველი)
+value.SKY_STYLE.0=რეალისტური
+value.SKY_STYLE.1=ნახევრად-რეალისტური
+value.SKY_STYLE.2=ფანტასტიკა
+value.SKY_MODE.1=Realtime Scattering
+
+option.SKY_QUALITY=ცის გაბნევის ხარისხი
+option.SKY_QUALITY.comment=ცის გაბნევის ხარისხი
+value.SKY_QUALITY.1=სწრაფი
+value.SKY_QUALITY.2=სტანდარტული
+value.SKY_QUALITY.3=მაღალი
+
+# --- Auto-added missing translations (v1.1.0 sync) ---
+option.FOLIAGE_SSS=ფოთლების SSS
+option.FOLIAGE_SSS.comment=ააქტიურებს ქვეპოვერხნულ გაბნევას (ნახევრადგამჭვირვალობას) ფოთლებისთვის, ბალახისთვის და მცენარეებისთვის შუქის საწინააღმდეგოდ ყურებისას.
+option.GODRAYS_STRENGTH=Godrays ინტენსივობა
+option.GODRAYS_STRENGTH.comment=მოცულობითი შუქის სხივების სიკაშკაშე. ნაზი: მსუბუქი ატმოსფერული ბინდი. დაბალანსებული: ნათლად ხილული სხივები. დრამატული: თამამი კინემატოგრაფიული სხივები.
+value.GODRAYS_STRENGTH.1=ნაზი
+value.GODRAYS_STRENGTH.2=დაბალანსებული
+value.GODRAYS_STRENGTH.3=დრამატული
+option.SHOOTING_STARS=მეტეორები (ვარსკვლავცვენა)
+option.SHOOTING_STARS.comment=ფიზიკურად რეალისტური მეტეორები, რომლებიც შედიან მეზოსფეროში (~80-120 კმ). რენდერავს ნამდვილ დიდი წრის 3D რკალებს აბლაციის სინათლის მრუდებით, შავი სხეულის პლაზმის ფერით (3500-5500 K), რეილის გაქრობით ჰორიზონტთან ახლოს და მუდმივი იონიზაციის კვალით ცეცხლოვან ბურთებზე.
+option.SHOOTING_STARS_FREQUENCY=მეტეორების აქტივობა (ZHR)
+option.SHOOTING_STARS_FREQUENCY.comment=სავარაუდო ზენიტური საათობრივი მაჩვენებელი. სპორადული = რეალისტური ფონი ~10 საათში. აქტიური = ზომიერი წვიმა. შტორმი = პიკური სიმკვრივე (~100/სთ).
+value.SHOOTING_STARS_FREQUENCY.1=სპორადული (~10/სთ)
+value.SHOOTING_STARS_FREQUENCY.2=აქტიური წვიმა
+value.SHOOTING_STARS_FREQUENCY.3=მეტეორული შტორმი
+option.SHOOTING_STARS_BRIGHTNESS=სიდიდის შკალა
+option.SHOOTING_STARS_BRIGHTNESS.comment=მთავარი გამამრავლებელი მეტეორის სიდიდის შკალაზე. მკრთალი = რეალისტური საშუალო; ნათელი = ზრდის ცეცხლოვან ბურთებს კინემატოგრაფიული ხილვადობისთვის.
+value.SHOOTING_STARS_BRIGHTNESS.1=მკრთალი (რეალისტური)
+value.SHOOTING_STARS_BRIGHTNESS.2=სტანდარტული
+value.SHOOTING_STARS_BRIGHTNESS.3=ნათელი ცეცხლოვანი ბურთები
+value.CONTRAST.4=ფოტოგრაფიული (AgX-ის მსგავსი)
+option.SPATIAL_AA_MODE=სივრცითი ანტი-ალიასინგი
+option.SPATIAL_AA_MODE.comment=აირჩიეთ დამუშავების შემდგომი ანტი-ალიასინგის მეთოდი. FXAA სწრაფი და იაფია. SMAA იყენებს სიღრმის ბუფერს გეომეტრიის კიდეებზე უკეთესი ხარისხისთვის. შეიძლება გაერთიანდეს TAA-სთან.
+value.SPATIAL_AA_MODE.0=გამორთული
+value.SPATIAL_AA_MODE.1=FXAA (სწრაფი)
+value.SPATIAL_AA_MODE.2=SMAA (ხარისხი)
+option.HEAT_SHIMMER=სითბოს ციმციმი ლავაზე
+option.HEAT_SHIMMER.comment=ჩართეთ მსუბუქი ეკრანის სივრცის სითბოს დამახინჯების ეფექტი ლავის ზედაპირებზე.
+option.HEAT_SHIMMER_STRENGTH=სითბოს ციმციმის სიძლიერე
+option.HEAT_SHIMMER_STRENGTH.comment=აკონტროლებს ლავაზე სითბოს დამახინჯების ინტენსივობას.
+value.HEAT_SHIMMER_STRENGTH.1=ნაზი
+value.HEAT_SHIMMER_STRENGTH.2=დაბალანსებული
+value.HEAT_SHIMMER_STRENGTH.3=ძლიერი
+option.SSR=ეკრანის სივრცის ანარეკლები (SSR)
+option.SSR.comment=ამატებს რეალურ დროში ასახულ გარემოს წყალზე, სველ ზედაპირებზე და მეტალის PBR ბლოკებზე. ჩართულია MED-დან ზემოთ v1.0.4-ში.
+option.SSR_QUALITY=SSR ხარისხი
+option.SSR_QUALITY.comment=აკონტროლებს ეკრანის სივრცის ანარეკლების სიზუსტესა და სხივის მანძილს. მაღალი = უფრო მკვეთრი ანარეკლები, მაგრამ მეტი GPU ხარჯი.
+value.SSR_QUALITY.1=სწრაფი (12 ნაბიჯი)
+value.SSR_QUALITY.2=დაბალანსებული (24 ნაბიჯი)
+value.SSR_QUALITY.3=მაღალი (40 ნაბიჯი)
+option.SSR_STRENGTH=SSR სიძლიერე
+option.SSR_STRENGTH.comment=აკონტროლებს რამდენად თვალსაჩინო და გამორჩეულია ასახული გარემო არეკვლადი ზედაპირებზე.
+option.WATER_WAVE_SCALE=ტალღის ამპლიტუდა
+option.WATER_WAVE_SCALE.comment=აკონტროლებს წყლის ზედაპირის ტალღების ხილულ დამრეცობას. მშვიდი = სარკისებრი, ქარიშხლიანი = ძლიერად გატეხილი ანარეკლები.
+option.WATER_WAVE_DETAIL=ტალღის დეტალი
+option.WATER_WAVE_DETAIL.comment=აკონტროლებს რამდენი პატარა ტალღა ჩნდება ბლოკზე. უხეში = რამდენიმე დიდი ტალღა, მკვრივი = ბევრი პატარა ტალღა.
+option.UNDERWATER_NIGHT_DARKNESS=წყალქვეშა ღამის სიბნელე
+option.UNDERWATER_NIGHT_DARKNESS.comment=აკონტროლებს რამდენად ბნელი ხდება წყალქვეშა სცენა ღამით. მთვარით განათებული აუზი ინარჩუნებს სიკაშკაშეს; ბოლიანი სიბნელე იძლევა ექსტრემალურ გადარჩენის სტილის სიბნელეს.
+value.SSR_STRENGTH.1=ნაზი
+value.SSR_STRENGTH.2=დაბალანსებული
+value.SSR_STRENGTH.3=ძლიერი
+option.PBR_DISTANCE=PBR რენდერის მანძილი
+option.PBR_DISTANCE.comment=მაქსიმალური მანძილი PBR სარკისებრი მონიშვნებისთვის. ზოგავს GPU-ს შორეულ რელიეფზე. ახლოს (16მ) LOW-სთვის, სტანდარტული (48მ) MED-სთვის, შორს (128მ) HIGH/ULTRA-სთვის, შეუზღუდავი EXTREME-სთვის.
+value.PBR_DISTANCE.1=ახლოს (16მ)
+value.PBR_DISTANCE.2=სტანდარტული (48მ)
+value.PBR_DISTANCE.3=შორს (128მ)
+value.PBR_DISTANCE.4=შეუზღუდავი
+
+# v1.1.1 — shadow pipeline + POM option labels
+value.shadowMapResolution.512=512
+value.shadowMapResolution.1024=1024
+value.shadowMapResolution.2048=2048
+value.shadowMapResolution.4096=4096
+option.POM_DEPTH=POM Depth
+option.POM_DEPTH.comment=Controls the visible depth of parallax occlusion mapping when PBR POM is enabled.
+value.POM_DEPTH.1=Low
+value.POM_DEPTH.2=Standard
+value.POM_DEPTH.3=Deep
+option.POM_STEPS=POM Steps
+option.POM_STEPS.comment=Controls the raymarch step count for parallax occlusion mapping. Higher values improve quality but cost more GPU time.
+value.POM_STEPS.1=Fast
+value.POM_STEPS.2=Standard
+value.POM_STEPS.3=High
+value.POM_STEPS.4=Ultra

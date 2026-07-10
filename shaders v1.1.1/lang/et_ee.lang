@@ -1,0 +1,433 @@
+# AuraLite Shaders v1.0.7 - Copyright (c) 2026 AlexanderNyr. Licensed under CC BY-NC-SA 4.0.
+# ==============================================================================
+# AuraLite Shader Pack - Estonian Language Translations
+# ==============================================================================
+
+# ==============================================================================
+# Quality Profiles
+# ==============================================================================
+profile.VERY_LOW=Väga madal
+profile.VERY_LOW.comment=Fastest possible preset for very weak GPUs. Disables shadows, clouds, water waves, foliage waving, PBR and most extras.
+profile.LOW=Madal
+profile.LOW.comment=Lightweight preset for weak GPUs. Keeps cheap water/foliage motion, disables shadows, clouds and PBR.
+profile.MED=Keskmine
+profile.MED.comment=Balanced preset with 1024 shadows, standard clouds, PBR and atmospheric effects.
+profile.HIGH=Kõrge
+profile.HIGH.comment=High quality preset with 2048 shadows, farther clouds and full PBR, without SSAO.
+profile.ULTRA=Ultra
+profile.ULTRA.comment=Ultra quality preset with 4096 shadows, very far clouds and balanced SSAO. POM remains disabled for stability.
+profile.EXTREME=Äärmuslik
+profile.EXTREME.comment=Maximum experimental quality. Pushes lighting, clouds, color and deep SSAO. POM remains disabled for stability.
+profile.CUSTOM=Kohandatud
+profile.CUSTOM.comment=Kasutaja muudetud kohandatud seaded.
+
+screen.TRANSLATION_NOTICE=⚠ Tõlked võivad sisaldada vigu
+screen.TRANSLATION_NOTICE.comment=Mõned lokaliseerimise stringid võivad olla ebatäpsed. Kui midagi tundub kummaline, võrrelge ingliskeelse originaaliga.
+
+# Screens
+screen.LIGHTING=Valgustuse seaded
+screen.LIGHTING.comment=Seadista varjud, valguse värvid ja heledus.
+
+screen.FOLIAGE=Taimestiku seaded
+screen.FOLIAGE.comment=Seadista rohu ja lehtede lehvimisanimatsioonid.
+
+screen.WATER=Vee seaded
+screen.WATER.comment=Seadista lained, läbipaistvus ja vee stiil.
+
+screen.CLOUDS_MENU=Taevas ja pilved
+screen.CLOUDS_MENU.comment=Seadista 3D pilvede ja taevaefektide füüsiline kõrgus, paksus ja stiil.
+
+screen.POST_PROCESS=Järeltöötlus ja udu
+screen.POST_PROCESS.comment=Seadista särivalgus, udu ja filmilikud efektid.
+
+# Options
+option.SHADOWS=Dünaamilised varjud
+option.SHADOWS.comment=Lülita sisse või välja päikese ja kuu pehmed dünaamilised varjud.
+
+option.shadowMapResolution=Varjude eraldusvõime
+option.shadowMapResolution.comment=Muuda varjukaardi kvaliteeti. Kõrgemad väärtused võivad vähendada jõudlust.
+
+option.PBR_LIGHTING=PBR valgustus (LabPBR)
+option.PBR_LIGHTING.comment=Luba füüsikapõhine renderdamine metallidele, karedusele ja 3D normaalkaartidele (vajalik on PBR ressursipakett).
+
+option.PBR_POM=3D plokireljeef (POM)
+option.PBR_POM.comment=Luba füüsikapõhine Parallax Occlusion Mapping 3D plokitekstuuridele. Ühildumatute ressursipakettidega on soovitatav keelata.
+
+option.PBR_STRENGTH=PBR intensiivsus
+option.PBR_STRENGTH.comment=Juhi PBR metallpindade peegeldusvõimet ja läiget.
+
+value.PBR_STRENGTH.1=Peen
+value.PBR_STRENGTH.2=Standardne
+value.PBR_STRENGTH.3=Peegel
+
+option.SSAO=SSAO / SAO oklusioon
+option.SSAO.comment=Extreme profile: screen-space ambient occlusion for contact shadows in corners, under blocks, and around geometry intersections.
+option.SSAO_STRENGTH=SSAO tugevus
+option.SSAO_STRENGTH.comment=Juhib ekraaniruumi ümbritseva oklusiooni sügavust. Aktiivne ainult siis, kui SSAO on lubatud.
+value.SSAO_STRENGTH.1=Peen
+value.SSAO_STRENGTH.2=Tasakaalustatud
+value.SSAO_STRENGTH.3=Sügav
+
+option.LIGHTMAP_WARMTH=Tõrviku soojus
+option.LIGHTMAP_WARMTH.comment=Kohanda plokivalguse/tõrvikuvalguse soojust ja värvi.
+
+value.LIGHTMAP_WARMTH.1=Hubane
+value.LIGHTMAP_WARMTH.2=Soe
+value.LIGHTMAP_WARMTH.3=Intensiivne
+
+option.WAVING_LEAVES=Lehvivad lehed
+option.WAVING_LEAVES.comment=Luba puulehtede õrn lehvimisanimatsioon.
+
+option.WAVING_GRASS=Lehviv taimestik
+option.WAVING_GRASS.comment=Luba rohu, lillede ja põllukultuuride lehvimisanimatsioonid.
+
+option.WIND_SPEED=Tuule kiirus
+option.WIND_SPEED.comment=Juhi lehtede, taimede ja veelainete lehviskiirust.
+
+value.WIND_SPEED.1=Õrn
+value.WIND_SPEED.2=Tuuleiil
+value.WIND_SPEED.3=Torm
+
+option.WATER_WAVES=Veelained
+option.WATER_WAVES.comment=Enable 3D geometric waves on the water surface.
+
+option.WATER_TRANSPARENCY=Vee tihedus
+option.WATER_TRANSPARENCY.comment=Control the transparency and opacity of the water.
+
+value.WATER_TRANSPARENCY.1=Selge
+value.WATER_TRANSPARENCY.2=Tasakaalustatud
+value.WATER_TRANSPARENCY.3=Sügav
+
+option.PROCEDURAL_CLOUDS=Ruumilised 3D pilved
+option.PROCEDURAL_CLOUDS.comment=Luba füüsiliselt läbilennatavad 3D pilved, mida saab läbida lennates.
+
+option.CLOUD_HEIGHT=Pilvede kõrgus
+option.CLOUD_HEIGHT.comment=Määra pilvekihi füüsiline kõrgus (Y-tase) maailmas (meetrites).
+
+value.CLOUD_HEIGHT.1=Madal (~110m)
+value.CLOUD_HEIGHT.2=Standardne (~160m)
+value.CLOUD_HEIGHT.3=Kõrge (~240m)
+
+option.CLOUD_THICKNESS=Pilvede paksus
+option.CLOUD_THICKNESS.comment=Seadista pilvede vertikaalne paksus ja maht.
+
+value.CLOUD_THICKNESS.1=Õhuke (Cirrus)
+value.CLOUD_THICKNESS.2=Standardne (Kumulus)
+value.CLOUD_THICKNESS.3=Tihe (Tormine)
+
+option.CLOUD_DISTANCE=Pilvede renderdamiskaugus
+option.CLOUD_DISTANCE.comment=Ruumiliste pilvede maksimaalne joonistuskaugus. Kvaliteediprofiilid suurendavad seda automaatselt.
+value.CLOUD_DISTANCE.1=Lähedal
+value.CLOUD_DISTANCE.2=Standardne
+value.CLOUD_DISTANCE.3=Kaugel
+value.CLOUD_DISTANCE.4=Väga kaugel
+
+option.CLOUD_SHADOWS=Pilvede varjud
+option.CLOUD_SHADOWS.comment=Lisab maastikule läbipaistvad protseduurilised varjud ruumiliste pilvede tiheduse põhjal. Kvaliteediprofiilid tasakaalustavad seda.
+option.CLOUD_SHADOW_STRENGTH=Pilvevarju tugevus
+option.CLOUD_SHADOW_STRENGTH.comment=Juhib, kui nähtavad ja dramaatilised on läbipaistvad pilvevarjud.
+value.CLOUD_SHADOW_STRENGTH.1=Pehme
+value.CLOUD_SHADOW_STRENGTH.2=Tasakaalustatud
+value.CLOUD_SHADOW_STRENGTH.3=Dramaatiline
+
+option.GODRAYS=Päikesekiired (Godrays)
+option.GODRAYS.comment=Adds physically-inspired volumetric single-scattering sun shafts with Beer-Lambert extinction, Mie phase and shadow-map occlusion.
+option.GODRAYS_QUALITY=Godrays kvaliteet
+option.GODRAYS_QUALITY.comment=Controls the sample count and integration distance of physically-based volumetric godrays.
+value.GODRAYS_QUALITY.1=Kiire
+value.GODRAYS_QUALITY.2=Tasakaalustatud
+value.GODRAYS_QUALITY.3=Kõrge
+
+option.AURORA_MODE=Virmalised
+option.AURORA_MODE.comment=Juhi realistlike vooluvate virmaliste kuvamist öötaevas.
+
+value.AURORA_MODE.0=Keelatud
+value.AURORA_MODE.1=Ainult külmades biomides
+value.AURORA_MODE.2=Alati lubatud
+
+option.AURORA_SPEED=Virmaliste kiirus
+option.AURORA_SPEED.comment=Juhi virmaliste laine- ja vooluskiirust.
+
+value.AURORA_SPEED.1=Aeglane
+value.AURORA_SPEED.2=Standardne
+value.AURORA_SPEED.3=Kiire
+
+option.AURORA_STRENGTH=Virmaliste heledus
+option.AURORA_STRENGTH.comment=Juhi virmaliste üldist hõõgumisheledust.
+
+value.AURORA_STRENGTH.1=Pehme
+value.AURORA_STRENGTH.2=Standardne
+value.AURORA_STRENGTH.3=Hõõguv
+
+option.NEBULA_BRIGHTNESS=Linnutee heledus
+option.NEBULA_BRIGHTNESS.comment=Kohanda öösel diagonaalse pruunika galaktilise udukogu hõõgumisheledust.
+
+value.NEBULA_BRIGHTNESS.1=Nõrk
+value.NEBULA_BRIGHTNESS.2=Standardne
+value.NEBULA_BRIGHTNESS.3=Ere
+
+option.STARS_BRIGHTNESS=Tähtede heledus
+option.STARS_BRIGHTNESS.comment=Juhi tähtede heledust ja sädelevat hõõgumist öösel.
+
+value.STARS_BRIGHTNESS.1=Nõrk
+value.STARS_BRIGHTNESS.2=Standardne
+value.STARS_BRIGHTNESS.3=Hiilgav
+
+option.STARS_AMOUNT=Tähtede tihedus
+option.STARS_AMOUNT.comment=Juhi taeva tähtede kogukogust ja tihedust.
+
+value.STARS_AMOUNT.1=Vähe
+value.STARS_AMOUNT.2=Standardne
+value.STARS_AMOUNT.3=Tihe
+
+option.RAINBOW_STRENGTH=Vikerkaare intensiivsus
+option.RAINBOW_STRENGTH.comment=Seadista vihmajärgse vikerkaare heledust ja värviküllastust.
+
+value.RAINBOW_STRENGTH.1=Peen
+value.RAINBOW_STRENGTH.2=Tasakaalustatud
+value.RAINBOW_STRENGTH.3=Elav
+
+option.COZY_LIGHTS=Tõrviku vilkumine
+option.COZY_LIGHTS.comment=Luba soojad, hubased, reaalajas virvendavad animatsioonid tõrvikutele, lõkketuledele ja laternatele.
+
+option.WET_REFLECTIONS=Vihma niiskuse peegeldused
+option.WET_REFLECTIONS.comment=Vihma ajal muutuvad tahked plokid, nagu maapind, rohi ja kivi, taeva all märjaks, tumedaks ja läikivaks.
+
+option.GROUND_MIST=Madal maapinnalähedane udu (Y=62-66)
+option.GROUND_MIST.comment=Luba pehmed, kuldvalged hommiku-/õhtuudu kihid, mis libisevad vee ja jää kohal koidikul ja hämaruses.
+
+option.FOG_DENSITY_LEVEL=Udu tihedus
+option.FOG_DENSITY_LEVEL.comment=Juhi atmosfääri horisonduudu tugevust.
+
+value.FOG_DENSITY_LEVEL.1=Madal
+value.FOG_DENSITY_LEVEL.2=Keskmine
+value.FOG_DENSITY_LEVEL.3=Kõrge
+
+option.EXPOSURE=Särituse heledus
+option.EXPOSURE.comment=Juhi kujutise üldist heledust.
+
+value.EXPOSURE.1=Summutatud
+value.EXPOSURE.2=Tasakaalustatud
+value.EXPOSURE.3=Erk
+
+option.COLOR_SATURATION=Värvi elavus
+option.COLOR_SATURATION.comment=Juhi ekraanivärvide mittelineaarset küllastust. Muudab taimestiku smaragdroheliseks ja taeva lopsakaks.
+
+value.COLOR_SATURATION.1=Summutatud
+value.COLOR_SATURATION.2=Tasakaalustatud
+value.COLOR_SATURATION.3=Värviline
+value.COLOR_SATURATION.4=Elav
+
+option.CONTRAST=Pildi kontrastsus
+option.CONTRAST.comment=Vali tooni kaardistuse ja kontrastikõvera stiil.
+
+value.CONTRAST.1=Pehme
+value.CONTRAST.2=Filmilik (ACES)
+value.CONTRAST.3=Intensiivne (Kõrge kontrastsus)
+
+option.TAA=Ajaline servade siledus (TAA)
+option.TAA.comment=Ajaline lahendus liikumise ümberprojektsiooni ja naabruse lõikamisega. Vähendab virvendust ja sakilisi servi kõrgetel eelseadetel.
+option.TAA_STRENGTH=TAA tugevus
+option.TAA_STRENGTH.comment=Juhib ajaloo segamist. Kõrgem on stabiilsem, kuid võib liikumise ajal olla pehmem.
+value.TAA_STRENGTH.1=Kerge
+value.TAA_STRENGTH.2=Tasakaalustatud
+value.TAA_STRENGTH.3=Stabiilne
+
+option.VIGNETTE=Vinjeti efekt
+option.VIGNETTE.comment=Luba ekraani servade peen tumenemine parema fookuse jaoks.
+
+option.WATER_RIFFLES=Vee lainetuse tugevus
+option.WATER_RIFFLES.comment=Adjust the waviness and intensity of the fine normal map ripples on the water.
+
+value.WATER_RIFFLES.1=Rahulik
+value.WATER_RIFFLES.2=Standardne
+value.WATER_RIFFLES.3=Loksuv
+
+option.WATER_SPECULAR_STRENGTH=Vee peegelduse hõõgus
+option.WATER_SPECULAR_STRENGTH.comment=Adjust the brightness of sun/moon reflections on the water ripples.
+
+value.WATER_SPECULAR_STRENGTH.1=Pehme
+value.WATER_SPECULAR_STRENGTH.2=Standardne
+value.WATER_SPECULAR_STRENGTH.3=Sädelev
+
+option.SHADOW_SOFTNESS=Varjude pehmus
+option.SHADOW_SOFTNESS.comment=Juhib, kui pehmed ja hajusad varjuservad tunduvad. Kasutab pöördenurgaga Poissoni ketta filtrit sujuva poolvarju jaoks.
+
+value.SHADOW_SOFTNESS.1=Terav
+value.SHADOW_SOFTNESS.2=Pehme
+value.SHADOW_SOFTNESS.3=Ultrapehme
+
+# ==============================================================================
+# Sun & Moon Lighting (extended)
+# ==============================================================================
+screen.SUN_MOON=Päike ja Kuu
+screen.SUN_MOON.comment=Peenhäälesta päikese ja kuu intensiivsust, värvitemperatuuri ja atmosfääriefekte.
+
+option.SUN_INTENSITY=Päikese intensiivsus
+option.SUN_INTENSITY.comment=Otsese päikesevalguse peaheledus. Kõrgem = tugevam päevane kontrastsus.
+value.SUN_INTENSITY.1=Summutatud
+value.SUN_INTENSITY.2=Standardne
+value.SUN_INTENSITY.3=Ere
+value.SUN_INTENSITY.4=Leegitsev
+
+option.MOON_INTENSITY=Kuu intensiivsus
+option.MOON_INTENSITY.comment=Kuuvalguse peaheledus. Kõrgem = heledamad, nähtavamad ööd.
+value.MOON_INTENSITY.1=Pilkane öö
+value.MOON_INTENSITY.2=Standardne
+value.MOON_INTENSITY.3=Ere kuu
+value.MOON_INTENSITY.4=Täisöö
+
+option.SUN_TEMPERATURE=Päikese värvitemperatuur
+option.SUN_TEMPERATURE.comment=Nihutab päikese Kelvini kõverat. Realistlik kasutab Tanner Hellandi mustkeha; soe = kuldne; jahe = neutraalne valge.
+value.SUN_TEMPERATURE.1=Jahe / Neutraalne
+value.SUN_TEMPERATURE.2=Realistlik
+value.SUN_TEMPERATURE.3=Soe kuldne
+
+option.MOON_TEMPERATURE=Kuu värvitemperatuur
+option.MOON_TEMPERATURE.comment=Kuuvalguse toon. Jäine = sinakas külm; Hõbedane = realistlik 4100K; Soe = saagikoristuskuu kreemjas.
+value.MOON_TEMPERATURE.1=Jäine sinine
+value.MOON_TEMPERATURE.2=Hõbedane (Realistlik)
+value.MOON_TEMPERATURE.3=Soe kreemjas
+
+option.SUN_HALO=Päikesehalo (Mie hajumine)
+option.SUN_HALO.comment=Lisab maastikule pehme sooja hõõgumise päikese lähedale vaadates (Mie edasihajumine).
+
+option.SUNRISE_GLOW=Täiustatud päikesetõusu/-loojangu hõõgumine
+option.SUNRISE_GLOW.comment=Lubab tugevama sooja tagasihajumise, mis mähib madala päikese eest ära pöördunud pindu.
+
+# ==============================================================================
+# Extended shadow settings
+# ==============================================================================
+option.shadowDistance=Varjude kaugus
+option.shadowDistance.comment=Maksimaalne kaugus, mille juures dünaamilised varjud renderdatakse enne hajumist.
+value.shadowDistance.60.0=Lähedal (60m)
+value.shadowDistance.80.0=Standardne (80m)
+value.shadowDistance.120.0=Kaugel (120m)
+value.shadowDistance.160.0=Ultra (160m)
+
+option.AMBIENT_BRIGHTNESS=Varjude tõstmine / ümbritsev
+option.AMBIENT_BRIGHTNESS.comment=Juhib, kui tumedad varjulised alad öösel ja koobastes tunduvad.
+value.AMBIENT_BRIGHTNESS.1=Tume
+value.AMBIENT_BRIGHTNESS.2=Standardne
+value.AMBIENT_BRIGHTNESS.3=Tõstetud (Hele)
+
+option.SHADOW_TINT=Varjude toon
+option.SHADOW_TINT.comment=Toonib päevaseid varje. Sinise taeva all olevad päris varjud on kergelt jahedatoonilised.
+value.SHADOW_TINT.1=Neutraalne hall
+value.SHADOW_TINT.2=Jahe sinine (Realistlik)
+value.SHADOW_TINT.3=Soe
+
+option.LIGHT_WRAP=Valguse mähis
+option.LIGHT_WRAP.comment=Pehmendab valgustatud ja valgustamata pindade vahelist terminaatorit. Realistlik = füüsikaline Lambert; Pehme = meeldiv ekraanipiltide jaoks.
+value.LIGHT_WRAP.1=Realistlik (Lambert)
+value.LIGHT_WRAP.2=Pehme mähis
+value.LIGHT_WRAP.3=Stiliseeritud
+
+# v0.2.9 — water/underwater option value labels (English fallback)
+value.WATER_WAVE_SCALE.1=Rahulik
+value.WATER_WAVE_SCALE.2=Standardne
+value.WATER_WAVE_SCALE.3=Loksuv
+value.WATER_WAVE_SCALE.4=Tormine
+value.WATER_WAVE_DETAIL.1=Jäme
+value.WATER_WAVE_DETAIL.2=Standardne
+value.WATER_WAVE_DETAIL.3=Tihe
+value.UNDERWATER_NIGHT_DARKNESS.1=Kuuvalgusega bassein
+value.UNDERWATER_NIGHT_DARKNESS.2=Nõrk
+value.UNDERWATER_NIGHT_DARKNESS.3=Tõeline öö
+value.UNDERWATER_NIGHT_DARKNESS.4=Pilkane pimedus
+# ==============================================================================
+# Experimental Tab & New Sky (v1.1.0)
+# ==============================================================================
+screen.EXPERIMENTAL=Eksperimentaalne
+screen.EXPERIMENTAL.comment=Eksperimentaalne
+
+option.SKY_MODE=Uus taevas (Atmosfääri hajumine)
+option.SKY_STYLE=Taeva stiil
+option.SKY_STYLE.comment=option.SKY_STYLE.comment=Artistic direction for the physical sky. Realistic = true angular sizes & neutral colours (astronomy look). Semi-realistic = readable sun/moon (x2.8), richer colour, soft glow. Fantasy = grand sun/moon (x5.5), big corona, vivid teal/crimson/indigo palette.
+option.SKY_MODE.comment=EXPERIMENTAL — off in all profiles. Gradient (legacy, default) or Physical realtime scattering with true multiple scattering (Rayleigh+Mie+Ozone, 1st+2nd+3rd order). Enable manually in this tab.
+value.SKY_MODE.0=Gradient (Vana)
+value.SKY_STYLE.0=Realistlik
+value.SKY_STYLE.1=Poolrealistlik
+value.SKY_STYLE.2=Fantaasia
+value.SKY_MODE.1=Realtime Scattering
+
+option.SKY_QUALITY=Taeva hajumise kvaliteet
+option.SKY_QUALITY.comment=Taeva hajumise kvaliteet
+value.SKY_QUALITY.1=Kiire
+value.SKY_QUALITY.2=Standard
+value.SKY_QUALITY.3=Kõrge
+
+# --- Auto-added missing translations (v1.1.0 sync) ---
+option.FOLIAGE_SSS=Taimestiku SSS
+option.FOLIAGE_SSS.comment=Lülitab sisse pinnaaluse hajumise (läbipaistvuse) lehtedele, rohule ja taimedele valguse suunas vaadates.
+option.GODRAYS_STRENGTH=Godrays intensiivsus
+option.GODRAYS_STRENGTH.comment=Ruumiliste valguskiirte heledus. Peen: kerge atmosfääriudu. Tasakaalustatud: selgelt nähtavad kiired. Dramaatiline: julged filmilikud kiired.
+value.GODRAYS_STRENGTH.1=Peen
+value.GODRAYS_STRENGTH.2=Tasakaalustatud
+value.GODRAYS_STRENGTH.3=Dramaatiline
+option.SHOOTING_STARS=Meteoorid (Langevad tähed)
+option.SHOOTING_STARS.comment=Füüsikapõhised meteoorid, mis sisenevad mesosfääri (~80-120 km). Renderdab tõelisi suurringi 3D kaari ablatsiooni valguskõverate, mustkeha plasmavärvi (3500-5500 K), silmapiiri lähedase Rayleigh' hajumise ja tulekerade püsivate ioniseerumisjälgedega.
+option.SHOOTING_STARS_FREQUENCY=Meteoriaktiivsus (ZHR)
+option.SHOOTING_STARS_FREQUENCY.comment=Ligikaudne seniidi tunnimäär. Juhuslik = realistlik taust ~10 tunnis. Aktiivne = kerge sadu. Torm = tipptihedus (~100/h).
+value.SHOOTING_STARS_FREQUENCY.1=Juhuslik (~10/h)
+value.SHOOTING_STARS_FREQUENCY.2=Aktiivne sadu
+value.SHOOTING_STARS_FREQUENCY.3=Meteoritorm
+option.SHOOTING_STARS_BRIGHTNESS=Magnituudi skaala
+option.SHOOTING_STARS_BRIGHTNESS.comment=Peakordaja meteoori magnituudi skaalal. Nõrk = realistlik keskmine; Ere = skaleerib tulekerad filmiliku nähtavuse jaoks.
+value.SHOOTING_STARS_BRIGHTNESS.1=Nõrk (Realistlik)
+value.SHOOTING_STARS_BRIGHTNESS.2=Standardne
+value.SHOOTING_STARS_BRIGHTNESS.3=Eredad tulekerad
+value.CONTRAST.4=Fotograafiline (AgX-laadne)
+option.SPATIAL_AA_MODE=Ruumiline servade siledus
+option.SPATIAL_AA_MODE.comment=Vali järeltöötluse servasiluse meetod. FXAA on kiire ja odav. SMAA kasutab geomeetriaservade parema kvaliteedi jaoks sügavuspuhvrit. Saab kombineerida TAA-ga.
+value.SPATIAL_AA_MODE.0=Väljas
+value.SPATIAL_AA_MODE.1=FXAA (Kiire)
+value.SPATIAL_AA_MODE.2=SMAA (Kvaliteet)
+option.HEAT_SHIMMER=Kuumuse virvendus laava kohal
+option.HEAT_SHIMMER.comment=Luba peen ekraaniruumi soojusmoonutuse efekt laavapindade kohal.
+option.HEAT_SHIMMER_STRENGTH=Kuumuse virvenduse tugevus
+option.HEAT_SHIMMER_STRENGTH.comment=Juhib laava kohal oleva soojusmoonutuse intensiivsust.
+value.HEAT_SHIMMER_STRENGTH.1=Peen
+value.HEAT_SHIMMER_STRENGTH.2=Tasakaalustatud
+value.HEAT_SHIMMER_STRENGTH.3=Tugev
+option.SSR=Ekraaniruumi peegeldused (SSR)
+option.SSR.comment=Lisab reaalajas peegelduva keskkonna veele, märgadele pindadele ja metallilistele PBR plokkidele. Lubatud Keskmisest profiilist ülespoole v1.0.4-s.
+option.SSR_QUALITY=SSR kvaliteet
+option.SSR_QUALITY.comment=Juhib ekraaniruumi peegelduste täpsust ja kiirte kaugust. Kõrgem = teravamad peegeldused, kuid suurem GPU koormus.
+value.SSR_QUALITY.1=Kiire (12 sammu)
+value.SSR_QUALITY.2=Tasakaalustatud (24 sammu)
+value.SSR_QUALITY.3=Kõrge (40 sammu)
+option.SSR_STRENGTH=SSR tugevus
+option.SSR_STRENGTH.comment=Juhib, kui nähtav ja silmapaistev on peegeldunud keskkond peegeldavatel pindadel.
+option.WATER_WAVE_SCALE=Laine amplituud
+option.WATER_WAVE_SCALE.comment=Juhib veepinna lainete nähtavat järsust. Rahulik = peegelsile, Tormine = tugevalt katkendlikud peegeldused.
+option.WATER_WAVE_DETAIL=Laine detail
+option.WATER_WAVE_DETAIL.comment=Juhib, kui palju väikeseid laineid ploki kohta ilmub. Jäme = mõned suured lained, Tihe = palju väikeseid lainetusi.
+option.UNDERWATER_NIGHT_DARKNESS=Vee-alune öine pimedus
+option.UNDERWATER_NIGHT_DARKNESS.comment=Juhib, kui pimedaks muutub vee-alune stseen öösel. Kuuvalgusega bassein säilitab heleduse; Pilkane pimedus annab äärmusliku ellujäämisstiili pimeduse.
+value.SSR_STRENGTH.1=Peen
+value.SSR_STRENGTH.2=Tasakaalustatud
+value.SSR_STRENGTH.3=Tugev
+option.PBR_DISTANCE=PBR renderdamiskaugus
+option.PBR_DISTANCE.comment=Maksimaalne kaugus PBR peegelduste jaoks. Säästab GPU-d kaugel maastikul. Lähedal (16m) MADALALE, Standard (48m) KESKMISELE, Kaugel (128m) KÕRGELE/ULTRALE, Piiramatu ÄÄRMUSLIKULE.
+value.PBR_DISTANCE.1=Lähedal (16m)
+value.PBR_DISTANCE.2=Standardne (48m)
+value.PBR_DISTANCE.3=Kaugel (128m)
+value.PBR_DISTANCE.4=Piiramatu
+
+# v1.1.1 — shadow pipeline + POM option labels
+value.shadowMapResolution.512=512
+value.shadowMapResolution.1024=1024
+value.shadowMapResolution.2048=2048
+value.shadowMapResolution.4096=4096
+option.POM_DEPTH=POM Depth
+option.POM_DEPTH.comment=Controls the visible depth of parallax occlusion mapping when PBR POM is enabled.
+value.POM_DEPTH.1=Low
+value.POM_DEPTH.2=Standard
+value.POM_DEPTH.3=Deep
+option.POM_STEPS=POM Steps
+option.POM_STEPS.comment=Controls the raymarch step count for parallax occlusion mapping. Higher values improve quality but cost more GPU time.
+value.POM_STEPS.1=Fast
+value.POM_STEPS.2=Standard
+value.POM_STEPS.3=High
+value.POM_STEPS.4=Ultra
