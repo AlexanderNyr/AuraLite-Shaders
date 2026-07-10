@@ -16,7 +16,7 @@ AuraLite delivers a breathtaking, realistic visual experience without overcompli
 
 > ℹ️ **Historical note:** older changelog sections below are preserved as original release notes.
 
-## 🛠️ What's New in v1.1.1 — *Pipeline Correctness & Shaderpack Packaging Fix*
+## 🛠️ What's New in v1.1.1 — *Pipeline Correctness Fix*
 
 Version **1.1.1** is a focused bug-fix release for the v1.1.0 codebase. It keeps the visual design intact while fixing configuration and runtime issues found in the shader pipeline:
 
