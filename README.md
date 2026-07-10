@@ -32,7 +32,6 @@ Version **1.1.1** is a focused bug-fix release for the v1.1.0 codebase. It keeps
 * Forced vanilla Minecraft clouds off via `clouds=false` and added `gbuffers_clouds` discard shaders as a fallback, so AuraLite's procedural clouds do not overlap with default clouds.
 * Added `gbuffers_weather` to make vanilla rain/snow streaks less dense and more transparent by default.
 * Added explicit opaque entity/hand passes to prevent players, mobs and held items from appearing semi-transparent.
-* Restored the v1.0.5-style water surface pipeline with a hybrid detector: depth-difference compatibility for strong reflections, plus glass/ice rejection when reliable material data is present.
 
 ---
 
