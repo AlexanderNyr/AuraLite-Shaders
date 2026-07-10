@@ -16,6 +16,27 @@ AuraLite delivers a breathtaking, realistic visual experience without overcompli
 
 > ℹ️ **Historical note:** older changelog sections below are preserved as original release notes.
 
+## 🛠️ What's New in v1.1.1 — *Pipeline Correctness & Shaderpack Packaging Fix*
+
+Version **1.1.1** is a focused bug-fix release for the v1.1.0 codebase. It keeps the visual design intact while fixing configuration and runtime issues found in the shader pipeline:
+
+* Moved HDR/TAA buffer directives to GLSL const directives so `colortex0/1/2/7` formats and persistent TAA history are actually applied by Iris/OptiFine.
+* Replaced the custom `SHADOW_RES`/`SHADOW_DISTANCE` menu controls with real `shadowMapResolution` and `shadowDistance` pipeline constants.
+* Fixed Nether/End dimension fallback detection so a default `dimension=0` cannot override biome/fog-based Nether/End detection.
+* Retuned shadow bias to a balanced value with extra water receiver bias: fixes low-sun Peter Panning while cleaning remaining Shadow Acne on water/ice surfaces.
+* Made underwater caustics and ground-mist sheets world-stable by using `cameraPosition`-corrected world coordinates.
+* Added performance-neutral height-aware pseudo-3D cloud noise: same ray steps/noise calls, but cloud density now changes through Y instead of looking like flat 2D sheets.
+* Added `WET_REFLECTIONS` to the menu and wired it into final-pass SSR wetness.
+* Added profile-scaled `SKY_QUALITY`, removed physical-sky hash-noise by switching to centred higher-sample raymarching, fixed `SKY_STYLE` grading so it affects only the base sky, restored readable sun/moon sizes in gradient sky, and corrected moonbow direction.
+* Fixed emissive-surface cloud lighting, added a safe fallback for unknown tagged translucent blocks, removed the empty translation submenu, made TAA default-off as a standard user toggle, and synced waving vegetation displacement in the shadow pass.
+* Added a packaged release layout (`AuraLite-v1.1.1.zip`) with a proper root `shaders/` directory.
+* Forced vanilla Minecraft clouds off via `clouds=false` and added `gbuffers_clouds` discard shaders as a fallback, so AuraLite's procedural clouds do not overlap with default clouds.
+* Added `gbuffers_weather` to make vanilla rain/snow streaks less dense and more transparent by default.
+* Added explicit opaque entity/hand passes to prevent players, mobs and held items from appearing semi-transparent.
+* Restored the v1.0.5-style water surface pipeline with a hybrid detector: depth-difference compatibility for strong reflections, plus glass/ice rejection when reliable material data is present.
+
+---
+
 ## 🆕 What's New in v1.1.0 — *True Volumetric Godrays, HDR Pipeline & Experimental Physical Sky*
 
 Version **1.1.0** replaces the screen-space godray approximation with a fully volumetric raymarched implementation, switches the entire G-buffer pipeline to true HDR (RGBA16F), and introduces an experimental, fully physical realtime atmospheric-scattering sky mode as an opt-in alternative to the stable gradient sky. This is a focused two-pillar update on top of the **v1.0.7** bug-fix baseline.
