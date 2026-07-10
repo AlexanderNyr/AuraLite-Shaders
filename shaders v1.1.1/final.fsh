@@ -517,7 +517,7 @@ void main() {
         // ==================================================================
         bool isWaterSurfaceInner = (depthS - depth) > 1e-5 && abs(nd.a - 0.8) < 0.05;
         if (isWaterSurfaceInner) {
-            // [v1.1.1-waterSSR] Return water to the older near-mirror look.
+            // [v1.1.1] Return water to the older near-mirror look.
             // Force very low roughness; final blend below boosts water hit alpha.
             roughness = 0.015;
             if (haveWaterNormal) {
@@ -591,7 +591,7 @@ void main() {
             #endif
 
             if (isWaterSurfaceInner) {
-                // [v1.1.1-waterSSR] traceSSR() already contains a conservative
+                // [v1.1.1] traceSSR() already contains a conservative
                 // Fresnel term (min ~0.05), which made water reflections barely
                 // visible from common top-down angles. Boost only water hits so
                 // the surface returns to the old mirror-like style.

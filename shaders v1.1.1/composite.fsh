@@ -1434,7 +1434,7 @@ void main() {
         vec3 shadowViewPos = (shadowModelView * vec4(feetPlayerPos, 1.0)).xyz;
         vec4 shadowClipPos = shadowProjection * vec4(shadowViewPos, 1.0);
         shadowClipPos.xyz = distortShadowClipPos(shadowClipPos.xyz);
-        // [v1.1.1-hotfix4] Shadow Acne cleanup.
+        // [v1.1.1] Shadow Acne cleanup.
         // Hotfix3 reduced the artifacts but a little acne remained on water/ice at
         // low sun. Increase the general bias slightly and add an extra receiver
         // bias only for tagged water pixels (colortex2.a ~= 0.8). This keeps
