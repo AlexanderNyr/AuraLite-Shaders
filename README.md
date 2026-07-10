@@ -29,7 +29,6 @@ Version **1.1.1** is a focused bug-fix release for the v1.1.0 codebase. It keeps
 * Added `WET_REFLECTIONS` to the menu and wired it into final-pass SSR wetness.
 * Added profile-scaled `SKY_QUALITY`, removed physical-sky hash-noise by switching to centred higher-sample raymarching, fixed `SKY_STYLE` grading so it affects only the base sky, restored readable sun/moon sizes in gradient sky, and corrected moonbow direction.
 * Fixed emissive-surface cloud lighting, added a safe fallback for unknown tagged translucent blocks, removed the empty translation submenu, made TAA default-off as a standard user toggle, and synced waving vegetation displacement in the shadow pass.
-* Added a packaged release layout (`AuraLite-v1.1.1.zip`) with a proper root `shaders/` directory.
 * Forced vanilla Minecraft clouds off via `clouds=false` and added `gbuffers_clouds` discard shaders as a fallback, so AuraLite's procedural clouds do not overlap with default clouds.
 * Added `gbuffers_weather` to make vanilla rain/snow streaks less dense and more transparent by default.
 * Added explicit opaque entity/hand passes to prevent players, mobs and held items from appearing semi-transparent.
