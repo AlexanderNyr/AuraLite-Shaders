@@ -1,0 +1,459 @@
+# AuraLite Shaders v1.0.7 - Copyright (c) 2026 AlexanderNyr. Licensed under CC BY-NC-SA 4.0.
+# ==============================================================================
+# AuraLite Shader Pack - Icelandic Language Translations
+# ==============================================================================
+
+# ==============================================================================
+# Quality Profiles
+# ==============================================================================
+profile.VERY_LOW=Mjög Lágt
+profile.VERY_LOW.comment=Algjört FPS hámark. Allt aukaflutt slökkt: engar skuggar, engin ský, ekkert PBR, ekkert SSR, engar ljósgeislar. Aðeins lágmarksrendering.
+profile.LOW=Lágt
+profile.LOW.comment=Létt en spilanlegt. Heldur laufblaða/vatns hreyfimyndum, bjartari stjörnum, FXAA, myndramma. Engar skuggar, ský eða PBR.
+profile.MED=Miðlungs
+profile.MED.comment=Daglegt sætt punkt. Skuggar 1024, ský, PBR, SSR Fljótur, ljósgeislar, laufblaða SSS, blautar endurkast, þoka, stjörnuhröp.
+profile.HIGH=Hátt
+profile.HIGH.comment=Áhugamanneskjuk gæði. Skuggar 2048, SSR Jafnvægi, TAA, SSAO Fín, ljósgeislar Jafnvægi, SMAA.
+profile.ULTRA=Ultra
+profile.ULTRA.comment=Hágæða. Skuggar 4096, SSR Hátt, SSAO Jafnvægi, ljósgeislar Hátt, TAA Stöðugt, allir áhrif virk.
+profile.EXTREME=Öfgafullt
+profile.EXTREME.comment=Kvikmyndalegt hámark. Allt á hámarki: PBR Ótakmörkuð svið, ljósmynda tónkortlagning (AgX), dýpsta SSAO, stjörnuhrapsstormar.
+profile.CUSTOM=Sérsniðið
+profile.CUSTOM.comment=Sérsniðnar stillingar breyttar af notanda.
+
+screen.TRANSLATION_NOTICE=⚠ Þýðingar geta innihaldið villur
+screen.TRANSLATION_NOTICE.comment=Sumar staðfærslustrengir gætu verið ónákvæmir. Ef eitthvað lítur skrýtið út, berðu saman við enska frumtextann.
+
+# Screens
+screen.LIGHTING=Ljósstillingar
+screen.LIGHTING.comment=Stilltu skugga, ljósliti og birtu.
+
+screen.FOLIAGE=Gróðurstillingar
+screen.FOLIAGE.comment=Stilltu bylgjuhreyfimyndir fyrir gras og lauf.
+
+screen.WATER=Vatnsstillingar
+screen.WATER.comment=Stilltu öldur, gegnsæi og útlit vatns.
+
+screen.CLOUDS_MENU=Himinn og ský
+screen.CLOUDS_MENU.comment=Stilltu líkamlega hæð, þykkt og útlit þrívíddarskýja og himináhrifa.
+
+screen.POST_PROCESS=Eftirvinnsla og þoka
+screen.POST_PROCESS.comment=Stilltu lýsingu, þoku og kvikmyndaáhrif.
+
+# Options
+option.SHADOWS=Kvikir Skuggar
+option.SHADOWS.comment=Virkjaðu eða slökktu á mjúkum kvikum skuggum frá sól og tungli.
+
+option.shadowMapResolution=Skuggaupplausn
+option.shadowMapResolution.comment=Breyttu gæðum skuggakorts. Hærri gildi geta lækkað afköst.
+
+option.PBR_LIGHTING=PBR-lýsing (LabPBR)
+option.PBR_LIGHTING.comment=Virkjaðu eðlisfræðilega byggða myndgerð fyrir málma, grófleika og 3D venjulega kort (PBR auðlindapakki nauðsynlegur).
+
+option.PBR_POM=3D Blokkarlágmynd (POM)
+option.PBR_POM.comment=Virkjaðu eðlisfræðilega byggða Parallax Occlusion Mapping fyrir 3D blokkarmynstur. Mælt er með að slökkva á því á ósamhæfum auðlindapökkum.
+
+option.PBR_STRENGTH=PBR-styrkur
+option.PBR_STRENGTH.comment=Stjórnaðu endurspeglun og gljáa PBR málmyfirborða.
+
+value.PBR_STRENGTH.1=Fíngert
+value.PBR_STRENGTH.2=Staðlað
+value.PBR_STRENGTH.3=Spegill
+
+option.SSAO=SSAO / SAO Byrgir
+option.SSAO.comment=Extreme profile: screen-space ambient occlusion for contact shadows in corners, under blocks, and around geometry intersections.
+option.SSAO_STRENGTH=SSAO-styrkur
+option.SSAO_STRENGTH.comment=Stjórnar dýpt umhverfisbyrgingar í skjárými. Aðeins virkt þegar SSAO er virkt.
+value.SSAO_STRENGTH.1=Fíngert
+value.SSAO_STRENGTH.2=Jafnvægi
+value.SSAO_STRENGTH.3=Djúpt
+
+option.LIGHTMAP_WARMTH=Kyndilhlýja
+option.LIGHTMAP_WARMTH.comment=Stilltu hlýju og lit blokkar-/kyndilsljóss.
+
+value.LIGHTMAP_WARMTH.1=Notalegt
+value.LIGHTMAP_WARMTH.2=Hlýtt
+value.LIGHTMAP_WARMTH.3=Ákaft
+
+option.WAVING_LEAVES=Sveiflandi Lauf
+option.WAVING_LEAVES.comment=Virkjaðu mjúkar sveifluhreyfimyndir fyrir trjálauf.
+
+option.WAVING_GRASS=Sveiflandi Gróður
+option.WAVING_GRASS.comment=Virkjaðu sveifluhreyfimyndir fyrir gras, blóm og uppskeru.
+
+option.WIND_SPEED=Vindhraði
+option.WIND_SPEED.comment=Stjórnaðu sveifluhraða laufa, plantna og vatnsöldu.
+
+value.WIND_SPEED.1=Gentle
+value.WIND_SPEED.2=Breeze
+value.WIND_SPEED.3=Gale
+
+option.WATER_WAVES=Vatnsöldur
+option.WATER_WAVES.comment=Enable 3D geometric waves on the water surface.
+
+option.WATER_TRANSPARENCY=Vatnsþéttleiki
+option.WATER_TRANSPARENCY.comment=Control the transparency and opacity of the water.
+
+value.WATER_TRANSPARENCY.1=Tært
+value.WATER_TRANSPARENCY.2=Jafnvægi
+value.WATER_TRANSPARENCY.3=Djúpt
+
+option.PROCEDURAL_CLOUDS=Rúmfræðileg 3D Ský
+option.PROCEDURAL_CLOUDS.comment=Virkjaðu eðlisfræðilega fljúganleg 3D ský sem hægt er að ná og fljúga í gegnum.
+
+option.CLOUD_HEIGHT=Skýjahæð
+option.CLOUD_HEIGHT.comment=Stilltu líkamlega hæð (Y-stig) skýjaþilfarsins í heiminum (í metrum).
+
+value.CLOUD_HEIGHT.1=Lágt (~110m)
+value.CLOUD_HEIGHT.2=Staðlað (~160m)
+value.CLOUD_HEIGHT.3=Hátt (~240m)
+
+option.CLOUD_THICKNESS=Skýjaþykkt
+option.CLOUD_THICKNESS.comment=Stilltu lóðrétta þykkt og rúmmál skýjanna.
+
+value.CLOUD_THICKNESS.1=Þunnt (Cirrus)
+value.CLOUD_THICKNESS.2=Staðlað (Cumulus)
+value.CLOUD_THICKNESS.3=Þétt (Stormasamt)
+
+option.CLOUD_DISTANCE=Skýjateiknivegalengd
+option.CLOUD_DISTANCE.comment=Hámarks teiknivegalengd fyrir rúmfræðileg ský. Gæðasnið auka hana sjálfkrafa.
+value.CLOUD_DISTANCE.1=Nálægt
+value.CLOUD_DISTANCE.2=Staðlað
+value.CLOUD_DISTANCE.3=Fjarri
+value.CLOUD_DISTANCE.4=Mjög Fjarri
+
+option.CLOUD_SHADOWS=Skýjaskuggar
+option.CLOUD_SHADOWS.comment=Bætir við gagnsæjum reikniritsskuggum úr rúmfræðilegri skýjaþéttleika á landslag. Jafnvægi með gæðasniðum.
+option.CLOUD_SHADOW_STRENGTH=Skýjaskuggastyrkur
+option.CLOUD_SHADOW_STRENGTH.comment=Stjórnar hversu sýnilegir og áhrifamiklir gagnsæir skýjaskuggar eru.
+value.CLOUD_SHADOW_STRENGTH.1=Mjúkt
+value.CLOUD_SHADOW_STRENGTH.2=Jafnvægi
+value.CLOUD_SHADOW_STRENGTH.3=Áhrifamikið
+
+option.GODRAYS=Sólargeislar (Godrays)
+option.GODRAYS.comment=Adds physically-inspired volumetric single-scattering sun shafts with Beer-Lambert extinction, Mie phase and shadow-map occlusion.
+option.GODRAYS_QUALITY=Godrays-gæði
+option.GODRAYS_QUALITY.comment=Controls the sample count and integration distance of physically-based volumetric godrays.
+value.GODRAYS_QUALITY.1=Hratt
+value.GODRAYS_QUALITY.2=Jafnvægi
+value.GODRAYS_QUALITY.3=Hátt
+
+option.AURORA_MODE=Norðurljós
+option.AURORA_MODE.comment=Stjórnaðu birtingu raunsærra streymandi norðurljósa á næturhimninum.
+
+value.AURORA_MODE.0=Óvirkt
+value.AURORA_MODE.1=Aðeins í Köldum Lífbeltum
+value.AURORA_MODE.2=Alltaf Virkt
+
+option.AURORA_SPEED=Norðurljósahraði
+option.AURORA_SPEED.comment=Stjórnaðu sveiflu- og streymishraða norðurljósanna.
+
+value.AURORA_SPEED.1=Hægt
+value.AURORA_SPEED.2=Staðlað
+value.AURORA_SPEED.3=Hratt
+
+option.AURORA_STRENGTH=Norðurljósabirtan
+option.AURORA_STRENGTH.comment=Stjórnaðu heildarbirtu ljóma norðurljósanna.
+
+value.AURORA_STRENGTH.1=Mjúkt
+value.AURORA_STRENGTH.2=Staðlað
+value.AURORA_STRENGTH.3=Glóandi
+
+option.NEBULA_BRIGHTNESS=Vetrarbrautarbirta
+option.NEBULA_BRIGHTNESS.comment=Stilltu ljómabirtu skálæga brúnleita vetrarbrautaþokunnar á nóttunni.
+
+value.NEBULA_BRIGHTNESS.1=Dauft
+value.NEBULA_BRIGHTNESS.2=Staðlað
+value.NEBULA_BRIGHTNESS.3=Bjart
+
+option.STARS_BRIGHTNESS=Stjörnubirtan
+option.STARS_BRIGHTNESS.comment=Stjórnaðu birtu og glitrandi ljóma stjarnanna á nóttunni.
+
+value.STARS_BRIGHTNESS.1=Dauft
+value.STARS_BRIGHTNESS.2=Staðlað
+value.STARS_BRIGHTNESS.3=Glæsilegt
+
+option.STARS_AMOUNT=Stjörnuþéttleiki
+option.STARS_AMOUNT.comment=Stjórnaðu heildarmagni og þéttleika stjarnanna á himninum.
+
+value.STARS_AMOUNT.1=Fáar
+value.STARS_AMOUNT.2=Staðlað
+value.STARS_AMOUNT.3=Þétt
+
+option.RAINBOW_STRENGTH=Regnbogastyrkur
+option.RAINBOW_STRENGTH.comment=Stilltu birtu og litamettun regnbogans eftir rigningu.
+
+value.RAINBOW_STRENGTH.1=Fíngert
+value.RAINBOW_STRENGTH.2=Jafnvægi
+value.RAINBOW_STRENGTH.3=Líflegt
+
+option.COZY_LIGHTS=Kyndilflökt
+option.COZY_LIGHTS.comment=Virkjaðu hlýjar, notalegar, rauntíma flöktandi hreyfimyndir fyrir kyndla, varðelda og luktir.
+
+option.WET_REFLECTIONS=Vætuspeglun Rigningar
+option.WET_REFLECTIONS.comment=Þegar rignir verða solid blokkir eins og jörð, gras og steinn blaut, dökk og gljáandi undir himninum.
+
+option.GROUND_MIST=Lág Jarðarþoka (Y=62-66)
+option.GROUND_MIST.comment=Virkjaðu mjúk, gyllt-hvít morgun-/kvöldþokulög sem renna yfir vatn og ís í dögun og rökkri.
+
+option.FOG_DENSITY_LEVEL=Þokuþéttleiki
+option.FOG_DENSITY_LEVEL.comment=Stjórnaðu styrk andrúmslofts sjóndeildarhringsþoku.
+
+value.FOG_DENSITY_LEVEL.1=Lágt
+value.FOG_DENSITY_LEVEL.2=Miðlungs
+value.FOG_DENSITY_LEVEL.3=Hátt
+
+option.EXPOSURE=Lýsingarbirtan
+option.EXPOSURE.comment=Stjórnaðu heildarbirtu myndarinnar.
+
+value.EXPOSURE.1=Dempt
+value.EXPOSURE.2=Jafnvægi
+value.EXPOSURE.3=Líflegt
+
+option.COLOR_SATURATION=Litlifleiki
+option.COLOR_SATURATION.comment=Stjórnaðu ólínulegri litamettun skjálita. Fær laufgróður til að líta út eins og smaragð og himin gróskumikinn.
+
+value.COLOR_SATURATION.1=Dempt
+value.COLOR_SATURATION.2=Jafnvægi
+value.COLOR_SATURATION.3=Litríkt
+value.COLOR_SATURATION.4=Líflegt
+
+option.CONTRAST=Myndskerpa
+option.CONTRAST.comment=Veldu tónakortlagningu og skerpuferilsstíl.
+
+value.CONTRAST.1=Mjúkt
+value.CONTRAST.2=Kvikmyndalegt (ACES)
+value.CONTRAST.3=Ákaft (Hár Skerpa)
+
+option.TAA=Tímabundin Sléttun (TAA)
+option.TAA.comment=Tímabundin úrlausn með hreyfingarendurvarpi og nágrannaklippingu. Dregur úr flökti og hrjúfum brúnum á háum forstillingum.
+option.TAA_STRENGTH=TAA-styrkur
+option.TAA_STRENGTH.comment=Stjórnar sögublöndun. Hærra er stöðugra en getur verið mýkra í hreyfingu.
+value.TAA_STRENGTH.1=Létt
+value.TAA_STRENGTH.2=Jafnvægi
+value.TAA_STRENGTH.3=Stöðugt
+
+option.VIGNETTE=Vinjettuáhrif
+option.VIGNETTE.comment=Virkjaðu lúmskt dökknun við skjájaðra fyrir bætta fókus.
+
+option.WATER_RIFFLES=Vatnsgárustyrkur
+option.WATER_RIFFLES.comment=Adjust the waviness and intensity of the fine normal map ripples on the water.
+
+value.WATER_RIFFLES.1=Rólegt
+value.WATER_RIFFLES.2=Staðlað
+value.WATER_RIFFLES.3=Ólgandi
+
+option.WATER_SPECULAR_STRENGTH=Vatnsglans
+option.WATER_SPECULAR_STRENGTH.comment=Adjust the brightness of sun/moon reflections on the water ripples.
+
+value.WATER_SPECULAR_STRENGTH.1=Mjúkt
+value.WATER_SPECULAR_STRENGTH.2=Staðlað
+value.WATER_SPECULAR_STRENGTH.3=Glansandi
+
+option.SHADOW_SOFTNESS=Skuggamýkt
+option.SHADOW_SOFTNESS.comment=Stjórnar hversu mjúkar og dreifðar skuggabrúnirnar birtast. Notar snúið Poisson-diskssíun fyrir slétta hálfskugga.
+
+value.SHADOW_SOFTNESS.1=Skarpt
+value.SHADOW_SOFTNESS.2=Mjúkt
+value.SHADOW_SOFTNESS.3=Ofurmjúkt
+
+# ==============================================================================
+# Sun & Moon Lighting (extended)
+# ==============================================================================
+screen.SUN_MOON=Sól og tungl
+screen.SUN_MOON.comment=Fínstilltu styrkleika sólar og tungls, litahitastig og andrúmsloftsáhrif.
+
+option.SUN_INTENSITY=Sólarstyrkur
+option.SUN_INTENSITY.comment=Aðalbirtan á beinu sólarljósi. Hærra = sterkari dagsbirtuskil.
+value.SUN_INTENSITY.1=Dempt
+value.SUN_INTENSITY.2=Staðlað
+value.SUN_INTENSITY.3=Hátt
+value.SUN_INTENSITY.4=Brennandi
+
+option.MOON_INTENSITY=Tunglstyrkur
+option.MOON_INTENSITY.comment=Aðalbirtan á tunglskini. Hærra = bjartari, sýnilegri nætur.
+value.MOON_INTENSITY.1=Kolniðamyrkur
+value.MOON_INTENSITY.2=Staðlað
+value.MOON_INTENSITY.3=Bjart Tungl
+value.MOON_INTENSITY.4=Full Nótt
+
+option.SUN_TEMPERATURE=Litahitastig Sólar
+option.SUN_TEMPERATURE.comment=Færir Kelvin-feril sólarinnar. Raunsætt notar Tanner Helland svarthlut; hlýtt = gyllt; svalt = hlutlaust hvítt.
+value.SUN_TEMPERATURE.1=Svalt / Hlutlaust
+value.SUN_TEMPERATURE.2=Raunsætt
+value.SUN_TEMPERATURE.3=Hlýtt Gyllt
+
+option.MOON_TEMPERATURE=Litahitastig Tungls
+option.MOON_TEMPERATURE.comment=Litblær tunglskins. Ísköld = bláleit köld; Silfur = raunsætt 4100K; Hlýtt = uppskerutungls rjómi.
+value.MOON_TEMPERATURE.1=Ísblátt
+value.MOON_TEMPERATURE.2=Silfur (Raunsætt)
+value.MOON_TEMPERATURE.3=Hlýr Rjómi
+
+option.SUN_HALO=Sólkringla (Mie-dreifing)
+option.SUN_HALO.comment=Bætir við mjúkum hlýjum ljóma á landslag þegar horft er nálægt sólinni (Mie framávirk dreifing).
+
+option.SUNRISE_GLOW=Aukinn Sólarupprás/-lag Ljómi
+option.SUNRISE_GLOW.comment=Virkjar sterkari hlýja bakdreifingu sem vefst um fleti sem snúa frá lágri sólinni.
+
+# ==============================================================================
+# Extended shadow settings
+# ==============================================================================
+option.shadowDistance=Skuggavegalengd
+option.shadowDistance.comment=Hámarksfjarlægð þar sem dynamískir skuggar eru renderadir. Hærri gildi lengja skugga út í renderingsfjarlægð; notaðu Shadow LOD til að viðhalda afköstum á lengri sviðum.
+value.shadowDistance.60.0=Nálægt (60m)
+value.shadowDistance.80.0=Staðlað (80m)
+value.shadowDistance.120.0=Fjarri (120m)
+value.shadowDistance.160.0=Ultra (160 m)
+value.shadowDistance.256.0=Lengt (256 m)
+value.shadowDistance.384.0=Renderingsfjarlægð (384 m)
+
+option.SHADOW_LOD=Skugga LOD
+option.SHADOW_LOD.comment=Stýrir skugga gæða rýrnun með fjarlægð. Með útbreiddri skugga fjarlægð (256-384 m) dregur LOD úr sýnafjölda og eykur síunaradius í fjarlægð til að viðhalda afköstum. Slökkt = jöfn gæði (hægt). Jafnvægi = minnkun við 25-50% fjarlægð. Árásargjarn = hámarks minnkun við 15-60% fjarlægð. Skuggar eru alveg slepptir fyrir utan 95% af renderingsfjarlægð.
+value.SHADOW_LOD.0=Slökkt (jöfn gæði)
+value.SHADOW_LOD.1=Jafnvægi
+value.SHADOW_LOD.2=Árásargjarn
+option.SHADOW_PCSS_BLUR=PCSS fjarlægðarþoka
+option.SHADOW_PCSS_BLUR.comment=Virkjar PCSS hálfskugga mýkingu sem eykur skugga þoku með fjarlægð og í rigningu. Slökkva fyrir fastan mýkt (skarpari fjarlægir skuggar, minna raunhæft).
+value.SHADOW_PCSS_BLUR.0=Slökkt (fastur mýkt)
+value.SHADOW_PCSS_BLUR.1=Kveikt (PCSS hálfskuggi)
+
+
+option.AMBIENT_BRIGHTNESS=Skuggalyfting / Umhverfi
+option.AMBIENT_BRIGHTNESS.comment=Stjórnar hversu dökk skuggasvæði birtast á nóttunni og í hellum.
+value.AMBIENT_BRIGHTNESS.1=Dökkt
+value.AMBIENT_BRIGHTNESS.2=Staðlað
+value.AMBIENT_BRIGHTNESS.3=Lyft (Bjart)
+
+option.SHADOW_TINT=Skuggablær
+option.SHADOW_TINT.comment=Litar dagsbirtuskugga. Raunverulegir skuggar undir bláum himni hafa lúmskan svalan blæ.
+value.SHADOW_TINT.1=Neutral Gray
+value.SHADOW_TINT.2=Cool Blue (Realistic)
+value.SHADOW_TINT.3=Warm
+
+option.LIGHT_WRAP=Ljósvöfun
+option.LIGHT_WRAP.comment=Mýkir mörkin milli lýstra og ólýstra flata. Raunsætt = eðlisfræðilegt Lambert; Mjúkt = notalegt fyrir skjámyndir.
+value.LIGHT_WRAP.1=Raunsætt (Lambert)
+value.LIGHT_WRAP.2=Mjúk Vöfun
+value.LIGHT_WRAP.3=Stílfært
+
+# v0.2.9 — water/underwater option value labels (English fallback)
+value.WATER_WAVE_SCALE.1=Rólegt
+value.WATER_WAVE_SCALE.2=Staðlað
+value.WATER_WAVE_SCALE.3=Ólgandi
+value.WATER_WAVE_SCALE.4=Stormasamt
+value.WATER_WAVE_DETAIL.1=Gróft
+value.WATER_WAVE_DETAIL.2=Staðlað
+value.WATER_WAVE_DETAIL.3=Þétt
+value.UNDERWATER_NIGHT_DARKNESS.1=Tunglskinslaug
+value.UNDERWATER_NIGHT_DARKNESS.2=Dauft
+value.UNDERWATER_NIGHT_DARKNESS.3=Sönn Nótt
+value.UNDERWATER_NIGHT_DARKNESS.4=Biksvart
+# ==============================================================================
+# Experimental Tab & New Sky (v1.1.0)
+# ==============================================================================
+screen.EXPERIMENTAL=Tilraunakennt
+screen.EXPERIMENTAL.comment=Tilraunakennt
+
+option.SKY_MODE=Nýr himinn (Andrúmsloftsdreifing)
+option.SKY_STYLE=Himinstíll
+option.SKY_STYLE.comment=Artistic direction for the physical sky. Realistic = true angular sizes & neutral colours (astronomy look). Semi-realistic = readable sun/moon (x2.8), richer colour, soft glow. Fantasy = grand sun/moon (x5.5), big corona, vivid teal/crimson/indigo palette.
+option.SKY_MODE.comment=EXPERIMENTAL — off in all profiles. Gradient (legacy, default) or Physical realtime scattering with true multiple scattering (Rayleigh+Mie+Ozone, 1st+2nd+3rd order). Enable manually in this tab.
+value.SKY_MODE.0=Litstigull (Eldri)
+value.SKY_STYLE.0=Raunsætt
+value.SKY_STYLE.1=Hálf-raunsætt
+value.SKY_STYLE.2=Fantasía
+value.SKY_MODE.1=Realtime Scattering
+
+option.SKY_QUALITY=Gæði dreifingar himins
+option.SKY_QUALITY.comment=Gæði dreifingar himins
+value.SKY_QUALITY.1=Hratt
+value.SKY_QUALITY.2=Staðlað
+value.SKY_QUALITY.3=Hátt
+
+# --- Auto-added missing translations (v1.1.0 sync) ---
+option.FOLIAGE_SSS=SSS Laufblaðs
+option.FOLIAGE_SSS.comment=Virkjar undirborðsdreifingu (hálfgagnsæi) fyrir lauf, gras og plöntur þegar horft er á móti ljósinu.
+option.GODRAYS_STRENGTH=Godrays-styrkur
+option.GODRAYS_STRENGTH.comment=Birta rúmfræðilegra ljósgeisla. Fíngert: mild andrúmslofts móða. Jafnvægi: skýrt sýnilegir geislar. Áhrifamikið: djarfir kvikmyndalegir geislar.
+value.GODRAYS_STRENGTH.1=Fíngert
+value.GODRAYS_STRENGTH.2=Jafnvægi
+value.GODRAYS_STRENGTH.3=Áhrifamikið
+option.SHOOTING_STARS=Loftsteinar (Stjörnuhröp)
+option.SHOOTING_STARS.comment=Eðlisfræðilega raunsæir loftsteinar sem fara inn í miðhvolfið (~80-120 km). Myndgerir sanna stórhringa 3D boga með rýrnunarljósferlum, svarthlutaplasmalit (3500-5500 K), Rayleigh-útrýmingu nálægt sjóndeildarhringnum og viðvarandi jónunarslóðir á eldkúlum.
+option.SHOOTING_STARS_FREQUENCY=Loftsteinavirkni (ZHR)
+option.SHOOTING_STARS_FREQUENCY.comment=Áætlað hágöngutíðni. Stöku sinnum = raunsætt bakgrunnsgildi um 10 á klukkustund. Virkt = væg skúr. Stormur = hámarksþéttleiki (~100/klst).
+value.SHOOTING_STARS_FREQUENCY.1=Stöku sinnum (~10/klst)
+value.SHOOTING_STARS_FREQUENCY.2=Virk Skúr
+value.SHOOTING_STARS_FREQUENCY.3=Loftsteinastormur
+option.SHOOTING_STARS_BRIGHTNESS=Stærðarkvarði
+option.SHOOTING_STARS_BRIGHTNESS.comment=Aðalmargfaldari á stærðarkvarða loftsteina. Dauft = raunsætt meðaltal; Bjart = stækkar eldkúlur fyrir kvikmyndalega sýnileika.
+value.SHOOTING_STARS_BRIGHTNESS.1=Dauft (Raunsætt)
+value.SHOOTING_STARS_BRIGHTNESS.2=Staðlað
+value.SHOOTING_STARS_BRIGHTNESS.3=Bjartar Eldkúlur
+value.CONTRAST.4=Ljósmyndalegt (AgX-líkt)
+option.SPATIAL_AA_MODE=Rúmleg Sléttun
+option.SPATIAL_AA_MODE.comment=Veldu eftirvinnslu sléttunaraðferð. FXAA er hratt og ódýrt. SMAA notar dýptarbuffer fyrir betri gæði á rúmfræðibrúnum. Hægt að sameina með TAA.
+value.SPATIAL_AA_MODE.0=Slökkt
+value.SPATIAL_AA_MODE.1=FXAA (Hratt)
+value.SPATIAL_AA_MODE.2=SMAA (Gæði)
+option.HEAT_SHIMMER=Hitaskjálfti Yfir Hrauni
+option.HEAT_SHIMMER.comment=Virkjaðu lúmskt skjárýmis hitaskekkjuáhrif yfir hraunflötum.
+option.HEAT_SHIMMER_STRENGTH=Hitaskjálftastyrkur
+option.HEAT_SHIMMER_STRENGTH.comment=Stjórnar styrk hitaskekkjunnar yfir hrauninu.
+value.HEAT_SHIMMER_STRENGTH.1=Fíngert
+value.HEAT_SHIMMER_STRENGTH.2=Jafnvægi
+value.HEAT_SHIMMER_STRENGTH.3=Sterkt
+option.SSR=Skjárýmisspeglanir (SSR)
+option.SSR.comment=Bætir við rauntíma endurspegluðu umhverfi á vatni, blautum flötum og málm-PBR blokkum. Virkjað frá MED og upp í v1.0.4.
+option.SSR_QUALITY=SSR-gæði
+option.SSR_QUALITY.comment=Stjórnar nákvæmni og geislafjarlægð skjárýmisspeglana. Hærra = skarpari speglanir en meiri GPU kostnaður.
+value.SSR_QUALITY.1=Hratt (12 skref)
+value.SSR_QUALITY.2=Jafnvægi (24 skref)
+value.SSR_QUALITY.3=Hátt (40 skref)
+option.SSR_STRENGTH=SSR-styrkur
+option.SSR_STRENGTH.comment=Stjórnar hversu sýnilegt og áberandi endurspeglað umhverfi birtist á endurskinsflötum.
+option.WATER_WAVE_SCALE=Öldusveifla
+option.WATER_WAVE_SCALE.comment=Stjórnar sýnilegri bratta vatnsyfirborðsöldu. Rólegt = spegilslétt, Stormasamt = sterklega brotnar speglanir.
+option.WATER_WAVE_DETAIL=Öldusmáatriði
+option.WATER_WAVE_DETAIL.comment=Stjórnar hversu margar litlar öldur birtast á hverja blokk. Gróft = nokkrar stórar öldur, Þétt = margar smáar gárur.
+option.UNDERWATER_NIGHT_DARKNESS=Neðansjávarnæturmyrkur
+option.UNDERWATER_NIGHT_DARKNESS.comment=Stjórnar hversu dökk neðansjávarsviðsmyndin verður á nóttunni. Tunglskinslaug heldur birtu; Biksvart gefur öfgafullt lífsbaráttustíl myrkur.
+value.SSR_STRENGTH.1=Fíngert
+value.SSR_STRENGTH.2=Jafnvægi
+value.SSR_STRENGTH.3=Sterkt
+option.PBR_DISTANCE=PBR-teiknivegalengd
+option.PBR_DISTANCE.comment=Hámarksfjarlægð fyrir PBR speglahápunkta. Sparar GPU á fjarlægu landslagi. Nálægt (16m) fyrir LOW, Staðlað (48m) fyrir MED, Fjarri (128m) fyrir HIGH/ULTRA, Ótakmarkað fyrir EXTREME.
+value.PBR_DISTANCE.1=Nálægt (16m)
+value.PBR_DISTANCE.2=Staðlað (48m)
+value.PBR_DISTANCE.3=Fjarri (128m)
+value.PBR_DISTANCE.4=Ótakmarkað
+
+# v1.1.1 — shadow pipeline + POM option labels
+value.shadowMapResolution.512=512
+value.shadowMapResolution.1024=1024
+value.shadowMapResolution.2048=2048
+value.shadowMapResolution.4096=4096
+option.POM_DEPTH=POM-dýpt
+option.POM_DEPTH.comment=Stýrir sýnilegu dýpt parallax-kortlagningar þegar PBR POM er virkt.
+value.POM_DEPTH.1=Lág
+value.POM_DEPTH.2=Staðlað
+value.POM_DEPTH.3=Djúp
+option.POM_STEPS=POM skref
+option.POM_STEPS.comment=Stýrir fjölda raymarch-skrefa fyrir parallax-kortlagningu. Hærri gildi bæta gæði en kosta meiri GPU-tíma.
+value.POM_STEPS.1=Fljótur
+value.POM_STEPS.2=Staðlað
+value.POM_STEPS.3=Hár
+value.POM_STEPS.4=Ultra
+
+screen.SHADOW_OPTIONS=Skuggar
+screen.SHADOW_OPTIONS.comment=Upplausn, fjarlægð, mýkt og tónn dynamískra skugga.
+screen.PBR_OPTIONS=PBR og efni
+screen.PBR_OPTIONS.comment=PBR lýsing, parallax-uppbygging, styrkleiki og renderingsfjarlægð.
+screen.AO_REFLECTIONS=AO og endurkast
+screen.AO_REFLECTIONS.comment=SSAO, skjáspeglanir og regn speglanir.
+screen.CLOUD_SHAPE=Ský
+screen.CLOUD_SHAPE.comment=Lögun, hæð, fjarlægð og skuggar rúmmálsskýja.
+screen.LIGHT_SHAFTS=Ljósgeislar
+screen.LIGHT_SHAFTS.comment=Rúmmáls sól-/tunglgeislar og gæði/styrkleiki þeirra.
+screen.NIGHT_SKY=Næturhiminn
+screen.NIGHT_SKY.comment=Norðurljós, stjörnur, Vetrarbrautin og stjörnuhröp.

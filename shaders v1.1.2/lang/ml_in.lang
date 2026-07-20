@@ -1,0 +1,459 @@
+# AuraLite Shaders v1.0.7 - Copyright (c) 2026 AlexanderNyr. Licensed under CC BY-NC-SA 4.0.
+# ==============================================================================
+# AuraLite Shader Pack - Malayalam Language Translations
+# ==============================================================================
+
+# ==============================================================================
+# Quality Profiles
+# ==============================================================================
+profile.VERY_LOW=വളരെ കുറവ്
+profile.VERY_LOW.comment=പരമാവധി FPS പരമാവധി. എല്ലാ അധിക ഓഫ്: നിഴലുകള്‍ ഇല്ല, മേഘങ്ങള്‍ ഇല്ല, PBR ഇല്ല, SSR ഇല്ല, പ്രകാശ രശ്മികള്‍ ഇല്ല. കുറഞ്ഞ render മാത്രം.
+profile.LOW=കുറവ്
+profile.LOW.comment=ലഘുവായ പക്ഷേ കളിക്കാവുന്നത്. ഇല/വെള്ളം ആനിമേഷൻ, തിളക്കമുള്ള നക്ഷത്രങ്ങൾ, FXAA, വിനെറ്റ് നിലനിർത്തുന്നു. നിഴലുകളോ മേഘങ്ങളോ PBR ഇല്ല.
+profile.MED=ഇടത്തരം
+profile.MED.comment=ദൈനംദിന മധുര സ്ഥലം. നിഴലുകൾ 1024, മേഘങ്ങൾ, PBR, വേഗമുള്ള SSR, പ്രകാശ രശ്മികൾ, ഇല SSS, നനഞ്ഞ പ്രതിഫലനങ്ങൾ, മൂടൽമഞ്ഞ്, ഉൽക്കകൾ.
+profile.HIGH=ഉയരം
+profile.HIGH.comment=ഉത്സാഹികളുടെ ഗുണനിലവാരം. നിഴലുകൾ 2048, ബാലൻസ്ഡ് SSR, TAA, സൂക്ഷ്മമായ SSAO, ബാലൻസ്ഡ് ഗോഡ്റേക്ക്സ്, SMAA.
+profile.ULTRA=അൾട്രാ
+profile.ULTRA.comment=ഹൈ-എൻഡ്. നിഴലുകൾ 4096, ഉയർന്ന SSR, ബാലൻസ്ഡ് SSAO, ഉയർന്ന ഗോഡ്റേക്ക്സ്, സ്ഥിരതയുള്ള TAA, എല്ലാ ഇഫക്ടുകളും ഓണാണ്.
+profile.EXTREME=അതിതീവ്രം
+profile.EXTREME.comment=സിനിമാറ്റിക് മാക്സ്. എല്ലാം പരമാവധി: PBR പരിധിയില്ലാത്ത ശ്രേണി, ഫോട്ടോഗ്രാഫിക് (AgX) ടോൺ മാപ്പ്, ഏറ്റവും ആഴമേറിയ SSAO, ഉൽക്ക കൊടുങ്കാറ്റുകൾ.
+profile.CUSTOM=കസ്റ്റം
+profile.CUSTOM.comment=ഉപയോക്താവ് പരിഷ്‌ക്കരിച്ച ഇഷ്ടാനുസൃത ക്രമീകരണങ്ങൾ.
+
+screen.TRANSLATION_NOTICE=⚠ വിവർത്തനങ്ങളിൽ പിശകുകൾ ഉണ്ടായേക്കാം
+screen.TRANSLATION_NOTICE.comment=ചില പ്രാദേശികവൽക്കരണ സ്ട്രിംഗുകൾ കൃത്യമല്ലായിരിക്കാം. എന്തെങ്കിലും വിചിത്രമായി തോന്നിയാൽ, ഇംഗ്ലീഷ് മൂലവുമായി താരതമ്യം ചെയ്യുക.
+
+# Screens
+screen.LIGHTING=ലൈറ്റിംഗ് ക്രമീകരണങ്ങൾ
+screen.LIGHTING.comment=നിഴലുകൾ, പ്രകാശ നിറങ്ങൾ, തെളിച്ചം എന്നിവ ക്രമീകരിക്കുക.
+
+screen.FOLIAGE=സസ്യ ക്രമീകരണങ്ങൾ
+screen.FOLIAGE.comment=പുല്ലിനും ഇലകൾക്കുമുള്ള ചലന ആനിമേഷനുകൾ ക്രമീകരിക്കുക.
+
+screen.WATER=ജല ക്രമീകരണങ്ങൾ
+screen.WATER.comment=തിരമാലകൾ, സുതാര്യത, ജല ശൈലി എന്നിവ ക്രമീകരിക്കുക.
+
+screen.CLOUDS_MENU=ആകാശവും മേഘങ്ങളും
+screen.CLOUDS_MENU.comment=3D മേഘങ്ങളുടെയും ആകാശ ഇഫക്റ്റുകളുടെയും ഭൗതിക ഉയരം, കനം, ശൈലി എന്നിവ ക്രമീകരിക്കുക.
+
+screen.POST_PROCESS=പോസ്റ്റ്-പ്രോസസ്സിംഗും മൂടൽമഞ്ഞും
+screen.POST_PROCESS.comment=എക്സ്പോഷർ, മൂടൽമഞ്ഞ്, സിനിമാറ്റിക് ഇഫക്റ്റുകൾ എന്നിവ ക്രമീകരിക്കുക.
+
+# Options
+option.SHADOWS=ഡൈനാമിക് നിഴലുകൾ
+option.SHADOWS.comment=സൂര്യനിൽ നിന്നും ചന്ദ്രനിൽ നിന്നുമുള്ള മൃദുവായ ഡൈനാമിക് നിഴലുകൾ പ്രവർത്തനക്ഷമമാക്കുക അല്ലെങ്കിൽ പ്രവർത്തനരഹിതമാക്കുക.
+
+option.shadowMapResolution=ഷാഡോ റെസലൂഷൻ
+option.shadowMapResolution.comment=ഷാഡോ മാപ്പ് ഗുണനിലവാരം മാറ്റുക. ഉയർന്ന മൂല്യങ്ങൾ പ്രകടനം കുറയ്ക്കാം.
+
+option.PBR_LIGHTING=PBR ലൈറ്റിംഗ് (LabPBR)
+option.PBR_LIGHTING.comment=ലോഹങ്ങൾ, പരുപരുപ്പ്, 3D നോർമൽ മാപ്പുകൾ എന്നിവയ്‌ക്കായി ഫിസിക്കൽ-ബേസ്ഡ് റെൻഡറിംഗ് പ്രവർത്തനക്ഷമമാക്കുക (PBR റിസോഴ്‌സ് പാക്ക് ആവശ്യമാണ്).
+
+option.PBR_POM=3D ബ്ലോക്ക് റിലീഫ് (POM)
+option.PBR_POM.comment=3D ബ്ലോക്ക് ടെക്‌സ്ചറുകൾക്കായി ഫിസിക്കൽ-ബേസ്ഡ് പാരലാക്സ് ഒക്ലൂഷൻ മാപ്പിംഗ് പ്രവർത്തനക്ഷമമാക്കുക. പൊരുത്തമില്ലാത്ത റിസോഴ്‌സ് പാക്കുകളിൽ പ്രവർത്തനരഹിതമാക്കാൻ ശുപാർശ ചെയ്യുന്നു.
+
+option.PBR_STRENGTH=PBR തീവ്രത
+option.PBR_STRENGTH.comment=PBR ലോഹ പ്രതലങ്ങളുടെ പ്രതിഫലനവും തിളക്കവും നിയന്ത്രിക്കുക.
+
+value.PBR_STRENGTH.1=സൂക്ഷ്മം
+value.PBR_STRENGTH.2=സ്റ്റാൻഡേർഡ്
+value.PBR_STRENGTH.3=കണ്ണാടി
+
+option.SSAO=SSAO / SAO ഒക്ലൂഷൻ
+option.SSAO.comment=Extreme profile: screen-space ambient occlusion for contact shadows in corners, under blocks, and around geometry intersections.
+option.SSAO_STRENGTH=SSAO ശക്തി
+option.SSAO_STRENGTH.comment=സ്ക്രീൻ-സ്പേസ് ആംബിയന്റ് ഒക്ലൂഷന്റെ ആഴം നിയന്ത്രിക്കുന്നു. SSAO പ്രവർത്തനക്ഷമമാക്കുമ്പോൾ മാത്രം സജീവം.
+value.SSAO_STRENGTH.1=സൂക്ഷ്മം
+value.SSAO_STRENGTH.2=സന്തുലിതം
+value.SSAO_STRENGTH.3=ആഴമുള്ള
+
+option.LIGHTMAP_WARMTH=ടോർച്ച് ഊഷ്മളത
+option.LIGHTMAP_WARMTH.comment=ബ്ലോക്ക്/ടോർച്ച് വെളിച്ചത്തിന്റെ ഊഷ്മളതയും നിറവും ക്രമീകരിക്കുക.
+
+value.LIGHTMAP_WARMTH.1=ഹൃദ്യമായ
+value.LIGHTMAP_WARMTH.2=ഊഷ്മളമായ
+value.LIGHTMAP_WARMTH.3=തീവ്രം
+
+option.WAVING_LEAVES=ഇലകൾ ചലിക്കൽ
+option.WAVING_LEAVES.comment=മരത്തിന്റെ ഇലകൾക്ക് സൗമ്യമായ ചലന ആനിമേഷനുകൾ പ്രവർത്തനക്ഷമമാക്കുക.
+
+option.WAVING_GRASS=സസ്യങ്ങളുടെ ചലനം
+option.WAVING_GRASS.comment=പുല്ല്, പൂക്കൾ, വിളകൾ എന്നിവയ്‌ക്കുള്ള ചലന ആനിമേഷനുകൾ പ്രവർത്തനക്ഷമമാക്കുക.
+
+option.WIND_SPEED=കാറ്റിന്റെ വേഗത
+option.WIND_SPEED.comment=ഇലകൾ, സസ്യങ്ങൾ, ജല തിരമാലകൾ എന്നിവയുടെ ചലന വേഗത നിയന്ത്രിക്കുക.
+
+value.WIND_SPEED.1=Gentle
+value.WIND_SPEED.2=Breeze
+value.WIND_SPEED.3=Gale
+
+option.WATER_WAVES=ജല തിരമാലകൾ
+option.WATER_WAVES.comment=Enable 3D geometric waves on the water surface.
+
+option.WATER_TRANSPARENCY=ജല സാന്ദ്രത
+option.WATER_TRANSPARENCY.comment=Control the transparency and opacity of the water.
+
+value.WATER_TRANSPARENCY.1=തെളിഞ്ഞ
+value.WATER_TRANSPARENCY.2=സന്തുലിതം
+value.WATER_TRANSPARENCY.3=ആഴമുള്ള
+
+option.PROCEDURAL_CLOUDS=വോള്യൂമെട്രിക് 3D മേഘങ്ങൾ
+option.PROCEDURAL_CLOUDS.comment=എത്തിച്ചേരാനും പറന്നു കടക്കാനും കഴിയുന്ന ഫിസിക്കലി ഫ്ലൈയബിൾ 3D മേഘങ്ങൾ പ്രവർത്തനക്ഷമമാക്കുക.
+
+option.CLOUD_HEIGHT=മേഘ ഉയരം
+option.CLOUD_HEIGHT.comment=ലോകത്തിലെ മേഘ പാളിയുടെ ഭൗതിക ഉയരം (Y-ലെവൽ) സജ്ജമാക്കുക (മീറ്ററിൽ).
+
+value.CLOUD_HEIGHT.1=താഴ്ന്നത് (~110മീ)
+value.CLOUD_HEIGHT.2=സ്റ്റാൻഡേർഡ് (~160മീ)
+value.CLOUD_HEIGHT.3=ഉയർന്നത് (~240മീ)
+
+option.CLOUD_THICKNESS=മേഘ കനം
+option.CLOUD_THICKNESS.comment=മേഘങ്ങളുടെ ലംബ കനവും വോള്യവും ക്രമീകരിക്കുക.
+
+value.CLOUD_THICKNESS.1=നേർത്ത (Cirrus)
+value.CLOUD_THICKNESS.2=സ്റ്റാൻഡേർഡ് (Cumulus)
+value.CLOUD_THICKNESS.3=സാന്ദ്രം (കൊടുങ്കാറ്റ്)
+
+option.CLOUD_DISTANCE=ക്ലൗഡ് റെൻഡർ ദൂരം
+option.CLOUD_DISTANCE.comment=വോള്യൂമെട്രിക് മേഘങ്ങൾക്കുള്ള പരമാവധി ഡ്രോ ദൂരം. ഗുണനിലവാര പ്രൊഫൈലുകൾ ഇത് സ്വയമേവ വർദ്ധിപ്പിക്കുന്നു.
+value.CLOUD_DISTANCE.1=അടുത്ത്
+value.CLOUD_DISTANCE.2=സ്റ്റാൻഡേർഡ്
+value.CLOUD_DISTANCE.3=ദൂരെ
+value.CLOUD_DISTANCE.4=വളരെ ദൂരെ
+
+option.CLOUD_SHADOWS=മേഘ നിഴലുകൾ
+option.CLOUD_SHADOWS.comment=വോള്യൂമെട്രിക് മേഘ സാന്ദ്രതയിൽ നിന്ന് സുതാര്യമായ പ്രൊസീജറൽ നിഴലുകൾ ഭൂപ്രകൃതിയിൽ ചേർക്കുന്നു. ഗുണനിലവാര പ്രൊഫൈലുകൾ വഴി സന്തുലിതം.
+option.CLOUD_SHADOW_STRENGTH=മേഘ നിഴൽ ശക്തി
+option.CLOUD_SHADOW_STRENGTH.comment=സുതാര്യമായ മേഘ നിഴലുകൾ എത്രത്തോളം ദൃശ്യമാണെന്നും നാടകീയമാണെന്നും നിയന്ത്രിക്കുന്നു.
+value.CLOUD_SHADOW_STRENGTH.1=മൃദു
+value.CLOUD_SHADOW_STRENGTH.2=സന്തുലിതം
+value.CLOUD_SHADOW_STRENGTH.3=നാടകീയം
+
+option.GODRAYS=സൂര്യരശ്മികൾ (Godrays)
+option.GODRAYS.comment=Adds physically-inspired volumetric single-scattering sun shafts with Beer-Lambert extinction, Mie phase and shadow-map occlusion.
+option.GODRAYS_QUALITY=Godrays ഗുണനിലവാരം
+option.GODRAYS_QUALITY.comment=Controls the sample count and integration distance of physically-based volumetric godrays.
+value.GODRAYS_QUALITY.1=വേഗത
+value.GODRAYS_QUALITY.2=സന്തുലിതം
+value.GODRAYS_QUALITY.3=ഉയർന്നത്
+
+option.AURORA_MODE=അറോറ ബോറിയാലിസ്
+option.AURORA_MODE.comment=രാത്രി ആകാശത്ത് യാഥാർത്ഥ്യബോധമുള്ള ഒഴുകുന്ന അറോറകളുടെ പ്രദർശനം നിയന്ത്രിക്കുക.
+
+value.AURORA_MODE.0=പ്രവർത്തനരഹിതം
+value.AURORA_MODE.1=തണുത്ത ബയോമുകളിൽ മാത്രം
+value.AURORA_MODE.2=എപ്പോഴും പ്രവർത്തനക്ഷമം
+
+option.AURORA_SPEED=അറോറ വേഗത
+option.AURORA_SPEED.comment=നോർത്തേൺ ലൈറ്റുകളുടെ ചലനവും ഒഴുക്ക് വേഗതയും നിയന്ത്രിക്കുക.
+
+value.AURORA_SPEED.1=സാവധാനം
+value.AURORA_SPEED.2=സ്റ്റാൻഡേർഡ്
+value.AURORA_SPEED.3=വേഗത
+
+option.AURORA_STRENGTH=അറോറ തെളിച്ചം
+option.AURORA_STRENGTH.comment=നോർത്തേൺ ലൈറ്റുകളുടെ മൊത്തത്തിലുള്ള തിളക്കം നിയന്ത്രിക്കുക.
+
+value.AURORA_STRENGTH.1=മൃദു
+value.AURORA_STRENGTH.2=സ്റ്റാൻഡേർഡ്
+value.AURORA_STRENGTH.3=തിളങ്ങുന്ന
+
+option.NEBULA_BRIGHTNESS=ക്ഷീരപഥ തെളിച്ചം
+option.NEBULA_BRIGHTNESS.comment=രാത്രിയിൽ ഡയഗണൽ ബ്രൗണിഷ് ഗാലക്‌റ്റിക് നെബുലയുടെ തിളക്കം ക്രമീകരിക്കുക.
+
+value.NEBULA_BRIGHTNESS.1=മങ്ങിയ
+value.NEBULA_BRIGHTNESS.2=സ്റ്റാൻഡേർഡ്
+value.NEBULA_BRIGHTNESS.3=തെളിച്ചമുള്ള
+
+option.STARS_BRIGHTNESS=നക്ഷത്ര തെളിച്ചം
+option.STARS_BRIGHTNESS.comment=രാത്രിയിൽ നക്ഷത്രങ്ങളുടെ തെളിച്ചവും തിളങ്ങുന്ന തിളക്കവും നിയന്ത്രിക്കുക.
+
+value.STARS_BRIGHTNESS.1=മങ്ങിയ
+value.STARS_BRIGHTNESS.2=സ്റ്റാൻഡേർഡ്
+value.STARS_BRIGHTNESS.3=തിളക്കമുള്ള
+
+option.STARS_AMOUNT=നക്ഷത്ര സാന്ദ്രത
+option.STARS_AMOUNT.comment=ആകാശത്തിലെ നക്ഷത്രങ്ങളുടെ മൊത്തം അളവും സാന്ദ്രതയും നിയന്ത്രിക്കുക.
+
+value.STARS_AMOUNT.1=കുറച്ച്
+value.STARS_AMOUNT.2=സ്റ്റാൻഡേർഡ്
+value.STARS_AMOUNT.3=സാന്ദ്രം
+
+option.RAINBOW_STRENGTH=മഴവില്ല് തീവ്രത
+option.RAINBOW_STRENGTH.comment=മഴയ്ക്ക് ശേഷമുള്ള മഴവില്ലിന്റെ തെളിച്ചവും വർണ്ണ സാച്ചുറേഷനും ക്രമീകരിക്കുക.
+
+value.RAINBOW_STRENGTH.1=സൂക്ഷ്മം
+value.RAINBOW_STRENGTH.2=സന്തുലിതം
+value.RAINBOW_STRENGTH.3=ചൈതന്യമുള്ള
+
+option.COZY_LIGHTS=ടോർച്ച് മിന്നൽ
+option.COZY_LIGHTS.comment=ടോർച്ചുകൾ, ക്യാമ്പ്ഫയറുകൾ, വിളക്കുകൾ എന്നിവയ്‌ക്കായി ഊഷ്മളവും ഹൃദ്യവുമായ തത്സമയ മിന്നൽ ആനിമേഷനുകൾ പ്രവർത്തനക്ഷമമാക്കുക.
+
+option.WET_REFLECTIONS=മഴ നനവ് പ്രതിഫലനങ്ങൾ
+option.WET_REFLECTIONS.comment=മഴ പെയ്യുമ്പോൾ, നിലം, പുല്ല്, കല്ല് തുടങ്ങിയ ഖര ബ്ലോക്കുകൾ ആകാശത്തിന് താഴെ നനഞ്ഞതും ഇരുണ്ടതും തിളങ്ങുന്നതുമായി മാറുന്നു.
+
+option.GROUND_MIST=താഴ്ന്ന ഗ്രൗണ്ട് മൂടൽമഞ്ഞ് (Y=62-66)
+option.GROUND_MIST.comment=പ്രഭാതത്തിലും സന്ധ്യയിലും വെള്ളത്തിനും ഹിമത്തിനും മുകളിലൂടെ തെന്നിനീങ്ങുന്ന മൃദുവായ, സ്വർണ്ണ-വെള്ള രാവിലെ/വൈകുന്നേരം മൂടൽമഞ്ഞ് ഷീറ്റുകൾ പ്രവർത്തനക്ഷമമാക്കുക.
+
+option.FOG_DENSITY_LEVEL=മൂടൽമഞ്ഞ് സാന്ദ്രത
+option.FOG_DENSITY_LEVEL.comment=അന്തരീക്ഷ ചക്രവാള മൂടൽമഞ്ഞിന്റെ ശക്തി നിയന്ത്രിക്കുക.
+
+value.FOG_DENSITY_LEVEL.1=താഴ്ന്നത്
+value.FOG_DENSITY_LEVEL.2=ഇടത്തരം
+value.FOG_DENSITY_LEVEL.3=ഉയർന്നത്
+
+option.EXPOSURE=എക്സ്പോഷർ തെളിച്ചം
+option.EXPOSURE.comment=ചിത്രത്തിന്റെ മൊത്തത്തിലുള്ള തെളിച്ചം നിയന്ത്രിക്കുക.
+
+value.EXPOSURE.1=നിശ്ശബ്ദം
+value.EXPOSURE.2=സന്തുലിതം
+value.EXPOSURE.3=ചടുലമായ
+
+option.COLOR_SATURATION=നിറ ചൈതന്യം
+option.COLOR_SATURATION.comment=സ്ക്രീൻ നിറങ്ങളുടെ നോൺ-ലീനിയർ സാച്ചുറേഷൻ നിയന്ത്രിക്കുക. ഇലകൾ മരതകം പോലെയും ആകാശം സമൃദ്ധമായും കാണപ്പെടുന്നു.
+
+value.COLOR_SATURATION.1=നിശ്ശബ്ദം
+value.COLOR_SATURATION.2=സന്തുലിതം
+value.COLOR_SATURATION.3=നിറമുള്ള
+value.COLOR_SATURATION.4=ചൈതന്യമുള്ള
+
+option.CONTRAST=ചിത്ര കോൺട്രാസ്റ്റ്
+option.CONTRAST.comment=ടോൺ മാപ്പിംഗ്, കോൺട്രാസ്റ്റ് കർവ് ശൈലി തിരഞ്ഞെടുക്കുക.
+
+value.CONTRAST.1=മൃദു
+value.CONTRAST.2=ഫിലിമിക് (ACES)
+value.CONTRAST.3=തീവ്രം (ഉയർന്ന കോൺട്രാസ്റ്റ്)
+
+option.TAA=ടെമ്പറൽ ആന്റി-അലിയാസിംഗ് (TAA)
+option.TAA.comment=മോഷൻ റീപ്രൊജക്ഷനും നെയ്ബർഹുഡ് ക്ലിപ്പിംഗുമുള്ള ടെമ്പറൽ റെസോൾവ്. ഉയർന്ന പ്രീസെറ്റുകളിൽ മിന്നലും പല്ലുകളുള്ള അരികുകളും കുറയ്ക്കുന്നു.
+option.TAA_STRENGTH=TAA ശക്തി
+option.TAA_STRENGTH.comment=ചരിത്ര മിശ്രണം നിയന്ത്രിക്കുന്നു. ഉയർന്നത് കൂടുതൽ സ്ഥിരതയുള്ളതാണ്, പക്ഷേ ചലന സമയത്ത് മൃദുവാകാം.
+value.TAA_STRENGTH.1=ലഘു
+value.TAA_STRENGTH.2=സന്തുലിതം
+value.TAA_STRENGTH.3=സ്ഥിരതയുള്ള
+
+option.VIGNETTE=വിഗ്നറ്റ് ഇഫക്റ്റ്
+option.VIGNETTE.comment=മെച്ചപ്പെട്ട ഫോക്കസിനായി സ്ക്രീൻ അരികുകളിൽ നേരിയ ഇരുട്ട് പ്രവർത്തനക്ഷമമാക്കുക.
+
+option.WATER_RIFFLES=ജല തരംഗ ശക്തി
+option.WATER_RIFFLES.comment=Adjust the waviness and intensity of the fine normal map ripples on the water.
+
+value.WATER_RIFFLES.1=ശാന്തം
+value.WATER_RIFFLES.2=സ്റ്റാൻഡേർഡ്
+value.WATER_RIFFLES.3=ഇളകിയ
+
+option.WATER_SPECULAR_STRENGTH=ജല സ്‌പെക്യുലർ തിളക്കം
+option.WATER_SPECULAR_STRENGTH.comment=Adjust the brightness of sun/moon reflections on the water ripples.
+
+value.WATER_SPECULAR_STRENGTH.1=മൃദു
+value.WATER_SPECULAR_STRENGTH.2=സ്റ്റാൻഡേർഡ്
+value.WATER_SPECULAR_STRENGTH.3=തിളങ്ങുന്ന
+
+option.SHADOW_SOFTNESS=നിഴൽ മൃദുത്വം
+option.SHADOW_SOFTNESS.comment=നിഴൽ അരികുകൾ എത്രത്തോളം മൃദുവും വ്യാപകവുമായി കാണപ്പെടുന്നു എന്ന് നിയന്ത്രിക്കുന്നു. മിനുസമാർന്ന അർദ്ധച്ഛായയ്ക്കായി ഭ്രമണം ചെയ്ത പോയിസൺ ഡിസ്ക് ഫിൽട്ടറിംഗ് ഉപയോഗിക്കുന്നു.
+
+value.SHADOW_SOFTNESS.1=മൂർച്ചയുള്ള
+value.SHADOW_SOFTNESS.2=മൃദു
+value.SHADOW_SOFTNESS.3=അൾട്രാ മൃദു
+
+# ==============================================================================
+# Sun & Moon Lighting (extended)
+# ==============================================================================
+screen.SUN_MOON=സൂര്യനും ചന്ദ്രനും
+screen.SUN_MOON.comment=സൂര്യന്റെയും ചന്ദ്രന്റെയും തീവ്രത, വർണ്ണ താപനില, അന്തരീക്ഷ ഇഫക്റ്റുകൾ എന്നിവ സൂക്ഷ്മമായി ക്രമീകരിക്കുക.
+
+option.SUN_INTENSITY=സൂര്യ തീവ്രത
+option.SUN_INTENSITY.comment=നേരിട്ടുള്ള സൂര്യപ്രകാശത്തിന്റെ മാസ്റ്റർ തെളിച്ചം. ഉയർന്നത് = ശക്തമായ പകൽ കോൺട്രാസ്റ്റ്.
+value.SUN_INTENSITY.1=നിശ്ശബ്ദം
+value.SUN_INTENSITY.2=സ്റ്റാൻഡേർഡ്
+value.SUN_INTENSITY.3=ഉയർന്നത്
+value.SUN_INTENSITY.4=ജ്വലിക്കുന്ന
+
+option.MOON_INTENSITY=ചന്ദ്ര തീവ്രത
+option.MOON_INTENSITY.comment=നിലാവിന്റെ മാസ്റ്റർ തെളിച്ചം. ഉയർന്നത് = തെളിച്ചമുള്ള, കൂടുതൽ ദൃശ്യമായ രാത്രികൾ.
+value.MOON_INTENSITY.1=കൂരിരുട്ട് രാത്രി
+value.MOON_INTENSITY.2=സ്റ്റാൻഡേർഡ്
+value.MOON_INTENSITY.3=തിളക്കമുള്ള ചന്ദ്രൻ
+value.MOON_INTENSITY.4=പൂർണ്ണ രാത്രി
+
+option.SUN_TEMPERATURE=സൂര്യ വർണ്ണ താപനില
+option.SUN_TEMPERATURE.comment=സൂര്യന്റെ കെൽവിൻ വക്രം മാറ്റുന്നു. യാഥാർത്ഥ്യബോധം ടാനർ ഹെല്ലാൻഡ് ബ്ലാക്ക്ബോഡി ഉപയോഗിക്കുന്നു; ഊഷ്മളം = സ്വർണ്ണനിറം; തണുപ്പ് = ന്യൂട്രൽ വൈറ്റ്.
+value.SUN_TEMPERATURE.1=തണുപ്പ് / ന്യൂട്രൽ
+value.SUN_TEMPERATURE.2=യാഥാർത്ഥ്യബോധം
+value.SUN_TEMPERATURE.3=ഊഷ്മള സ്വർണ്ണം
+
+option.MOON_TEMPERATURE=ചന്ദ്ര വർണ്ണ താപനില
+option.MOON_TEMPERATURE.comment=നിലാവിന്റെ ടിന്റ്. ഐസി = നീലകലർന്ന തണുപ്പ്; സിൽവർ = യാഥാർത്ഥ്യബോധമുള്ള 4100K; ഊഷ്മളം = ഹാർവെസ്റ്റ്-മൂൺ ക്രീം.
+value.MOON_TEMPERATURE.1=ഐസി ബ്ലൂ
+value.MOON_TEMPERATURE.2=സിൽവർ (യാഥാർത്ഥ്യബോധം)
+value.MOON_TEMPERATURE.3=ഊഷ്മള ക്രീം
+
+option.SUN_HALO=സൂര്യ ഹാലോ (മൈ സ്‌കാറ്റർ)
+option.SUN_HALO.comment=സൂര്യന്റെ അടുത്ത് നോക്കുമ്പോൾ ഭൂപ്രകൃതിയിൽ മൃദുവായ ഊഷ്മള തിളക്കം ചേർക്കുന്നു (മൈ ഫോർവേഡ്-സ്‌കാറ്ററിംഗ്).
+
+option.SUNRISE_GLOW=മെച്ചപ്പെടുത്തിയ സൂര്യോദയം/സൂര്യാസ്തമയ തിളക്കം
+option.SUNRISE_GLOW.comment=താഴ്ന്ന സൂര്യനിൽ നിന്ന് അകലെ അഭിമുഖീകരിക്കുന്ന പ്രതലങ്ങളെ പൊതിയുന്ന ശക്തമായ ഊഷ്മള ബാക്ക്-സ്‌കാറ്റർ പ്രവർത്തനക്ഷമമാക്കുന്നു.
+
+# ==============================================================================
+# Extended shadow settings
+# ==============================================================================
+option.shadowDistance=നിഴൽ ദൂരം
+option.shadowDistance.comment=പരമാവധി ദൂരം, ഇതിൽ ചലനാത്മക നിഴലുകൾ റെന്ഡർ ചെയ്യുന്നു. ഉയർന്ന മൂല്യങ്ങൾ നിഴലുകളെ റെന്ഡർ ദൂരത്തേക്ക് വികസിപ്പിക്കുന്നു; വികസിത ശ്രേണികളിൽ പ്രകടനം നിലനിർത്താൻ Shadow LOD ഉപയോഗിക്കുക.
+value.shadowDistance.60.0=സമീപം (60മീ)
+value.shadowDistance.80.0=സ്റ്റാൻഡേർഡ് (80മീ)
+value.shadowDistance.120.0=ദൂരെ (120മീ)
+value.shadowDistance.160.0=അൾട്രാ (160മീ)
+value.shadowDistance.256.0=വികസിപ്പിച്ച (256 മീ)
+value.shadowDistance.384.0=Render ദൂരം (384 മീ)
+
+option.SHADOW_LOD=നിഴല്‍ LOD
+option.SHADOW_LOD.comment=ദൂരത്തോടൊപ്പം നിഴല്‍ ഗുണനിലവാരത്തിന്റെ തകര്‍ച്ച നിയന്ത്രിക്കുന്നു. വിപുലമായ നിഴല്‍ ദൂരത്തോടൊപ്പം (256-384 മീ), LOD പ്രകടനം നിലനിര്‍ത്താന്‍ സാമ്പിളുകളുടെ എണ്ണം കുറയ്ക്കുകയും ദൂരത്ത് ഫില്‍ട്ടര്‍ ആരം വര്‍ദ്ധിപ്പിക്കുകയും ചെയ്യുന്നു. ഓഫ് = ഏകീകൃത ഗുണനിലവാരം (സാവധാനം). ബാലന്‍സ്ഡ് = 25-50% ദൂരത്തില്‍ കുറയ്ക്കല്‍. ആക്രമണകരം = 15-60% ദൂരത്തില്‍ പരമാവധി കുറയ്ക്കല്‍. റെന്‍ഡര്‍ ദൂരത്തിന്റെ 95% കവിഞ്ഞാല്‍ നിഴലുകള്‍ പൂര്‍ണ്ണമായും ഒഴിവാക്കപ്പെടുന്നു.
+value.SHADOW_LOD.0=ഓഫ് (ഏകീകൃത ഗുണനിലവാരം)
+value.SHADOW_LOD.1=ബാലന്‍സ്ഡ്
+value.SHADOW_LOD.2=ആക്രമണകരം
+option.SHADOW_PCSS_BLUR=PCSS ദൂരം മങ്ങല്‍
+option.SHADOW_PCSS_BLUR.comment=PCSS പെനംബ്ര സോഫ്റ്റനിംഗ് പ്രവർത്തനക്ഷമമാക്കുന്നു, ഇത് ദൂരത്തിലും മഴയിലും നിഴലുകളുടെ മങ്ങൽ വർദ്ധിപ്പിക്കുന്നു. സ്ഥിരമായ മൃദുത്വത്തിന് പ്രവർത്തനരഹിതമാക്കുക (അകലെയുള്ള നിഴലുകൾ കൂടുതൽ മൂർച്ചയുള്ളവ, കുറഞ്ഞ യാഥാർത്ഥ്യബന്ധം).
+value.SHADOW_PCSS_BLUR.0=ഓഫ് (സ്ഥിരമായ മൃദുത്വം)
+value.SHADOW_PCSS_BLUR.1=ഓണ്‍ (PCSS പെനംബ്ര)
+
+
+option.AMBIENT_BRIGHTNESS=ഷാഡോ ലിഫ്റ്റ് / ആംബിയന്റ്
+option.AMBIENT_BRIGHTNESS.comment=രാത്രിയിലും ഗുഹകളിലും നിഴൽ പ്രദേശങ്ങൾ എത്ര ഇരുണ്ടതായി കാണപ്പെടുന്നു എന്ന് നിയന്ത്രിക്കുന്നു.
+value.AMBIENT_BRIGHTNESS.1=ഇരുണ്ട
+value.AMBIENT_BRIGHTNESS.2=സ്റ്റാൻഡേർഡ്
+value.AMBIENT_BRIGHTNESS.3=ഉയർത്തിയത് (തെളിച്ചമുള്ളത്)
+
+option.SHADOW_TINT=നിഴൽ ടിന്റ്
+option.SHADOW_TINT.comment=പകൽ നിഴലുകൾക്ക് നിറം നൽകുന്നു. നീല ആകാശത്തിന് കീഴിലുള്ള യഥാർത്ഥ ലോക നിഴലുകൾക്ക് നേരിയ തണുപ്പുള്ള ടിന്റ് ഉണ്ട്.
+value.SHADOW_TINT.1=Neutral Gray
+value.SHADOW_TINT.2=Cool Blue (Realistic)
+value.SHADOW_TINT.3=Warm
+
+option.LIGHT_WRAP=ലൈറ്റ് റാപ്പ്
+option.LIGHT_WRAP.comment=പ്രകാശിതവും അപ്രകാശിതവുമായ പ്രതലങ്ങൾ തമ്മിലുള്ള ടെർമിനേറ്റർ മൃദുവാക്കുന്നു. യാഥാർത്ഥ്യബോധം = ഫിസിക്കൽ ലാംബർട്ട്; മൃദു = സ്ക്രീൻഷോട്ടുകൾക്ക് ആനന്ദകരം.
+value.LIGHT_WRAP.1=യാഥാർത്ഥ്യബോധം (ലാംബർട്ട്)
+value.LIGHT_WRAP.2=മൃദു റാപ്പ്
+value.LIGHT_WRAP.3=സ്റ്റൈലൈസ്ഡ്
+
+# v0.2.9 — water/underwater option value labels (English fallback)
+value.WATER_WAVE_SCALE.1=ശാന്തം
+value.WATER_WAVE_SCALE.2=സ്റ്റാൻഡേർഡ്
+value.WATER_WAVE_SCALE.3=ഇളകിയ
+value.WATER_WAVE_SCALE.4=കൊടുങ്കാറ്റ്
+value.WATER_WAVE_DETAIL.1=പരുഷം
+value.WATER_WAVE_DETAIL.2=സ്റ്റാൻഡേർഡ്
+value.WATER_WAVE_DETAIL.3=സാന്ദ്രം
+value.UNDERWATER_NIGHT_DARKNESS.1=മൂൺലിറ്റ് പൂൾ
+value.UNDERWATER_NIGHT_DARKNESS.2=മങ്ങിയ
+value.UNDERWATER_NIGHT_DARKNESS.3=യഥാർത്ഥ രാത്രി
+value.UNDERWATER_NIGHT_DARKNESS.4=പിച്ച് ഡാർക്ക്
+# ==============================================================================
+# Experimental Tab & New Sky (v1.1.0)
+# ==============================================================================
+screen.EXPERIMENTAL=പരീക്ഷണാത്മകം
+screen.EXPERIMENTAL.comment=പരീക്ഷണാത്മകം
+
+option.SKY_MODE=പുതിയ ആകാശം (അന്തരീക്ഷ വിസരണം)
+option.SKY_STYLE=ആകാശ ശൈലി
+option.SKY_STYLE.comment=Artistic direction for the physical sky. Realistic = true angular sizes & neutral colours (astronomy look). Semi-realistic = readable sun/moon (x2.8), richer colour, soft glow. Fantasy = grand sun/moon (x5.5), big corona, vivid teal/crimson/indigo palette.
+option.SKY_MODE.comment=EXPERIMENTAL — off in all profiles. Gradient (legacy, default) or Physical realtime scattering with true multiple scattering (Rayleigh+Mie+Ozone, 1st+2nd+3rd order). Enable manually in this tab.
+value.SKY_MODE.0=ഗ്രേഡിയന്റ് (പഴയത്)
+value.SKY_STYLE.0=യാഥാർത്ഥ്യബോധം
+value.SKY_STYLE.1=അർദ്ധ-യാഥാർത്ഥ്യബോധം
+value.SKY_STYLE.2=ഫാന്റസി
+value.SKY_MODE.1=Realtime Scattering
+
+option.SKY_QUALITY=ആകാശ വിസരണ നിലവാരം
+option.SKY_QUALITY.comment=ആകാശ വിസരണ നിലവാരം
+value.SKY_QUALITY.1=വേഗത
+value.SKY_QUALITY.2=സ്റ്റാൻഡേർഡ്
+value.SKY_QUALITY.3=ഉയർന്നത്
+
+# --- Auto-added missing translations (v1.1.0 sync) ---
+option.FOLIAGE_SSS=ഫോളിയേജ് SSS
+option.FOLIAGE_SSS.comment=വെളിച്ചത്തിനെതിരെ നോക്കുമ്പോൾ ഇലകൾ, പുല്ല്, സസ്യങ്ങൾ എന്നിവയ്‌ക്കായി സബ്‌സർഫേസ് സ്‌കാറ്ററിംഗ് (അർദ്ധസുതാര്യത) പ്രവർത്തനക്ഷമമാക്കുന്നു.
+option.GODRAYS_STRENGTH=Godrays തീവ്രത
+option.GODRAYS_STRENGTH.comment=വോള്യൂമെട്രിക് ലൈറ്റ് ഷാഫ്റ്റുകളുടെ തെളിച്ചം. സൂക്ഷ്മം: ലഘുവായ അന്തരീക്ഷ പുക. സന്തുലിതം: വ്യക്തമായി ദൃശ്യമാകുന്ന കിരണങ്ങൾ. നാടകീയം: ധീരമായ സിനിമാറ്റിക് കിരണങ്ങൾ.
+value.GODRAYS_STRENGTH.1=സൂക്ഷ്മം
+value.GODRAYS_STRENGTH.2=സന്തുലിതം
+value.GODRAYS_STRENGTH.3=നാടകീയം
+option.SHOOTING_STARS=ഉൽക്കകൾ (വീഴുന്ന നക്ഷത്രങ്ങൾ)
+option.SHOOTING_STARS.comment=മെസോസ്ഫിയറിലേക്ക് പ്രവേശിക്കുന്ന ഫിസിക്കൽ-ബേസ്ഡ് ഉൽക്കകൾ (~80-120 കി.മീ). അബ്ലേഷൻ ലൈറ്റ് കർവുകൾ, ബ്ലാക്ക്ബോഡി പ്ലാസ്മ നിറം (3500-5500 K), ചക്രവാളത്തിനടുത്തുള്ള റെയ്‌ലീ വംശനാശം, ഫയർബോളുകളിൽ സ്ഥിരമായ അയോണൈസേഷൻ പാതകൾ എന്നിവയോടെ യഥാർത്ഥ വലിയ വൃത്ത 3D ആർക്കുകൾ റെൻഡർ ചെയ്യുന്നു.
+option.SHOOTING_STARS_FREQUENCY=ഉൽക്ക പ്രവർത്തനം (ZHR)
+option.SHOOTING_STARS_FREQUENCY.comment=ഏകദേശ സെനിത്തൽ ഹൗർലി റേറ്റ്. ഇടയ്ക്കിടെ = മണിക്കൂറിൽ ~10 എന്ന യാഥാർത്ഥ്യമായ പശ്ചാത്തലം. സജീവം = മിതമായ മഴ. കൊടുങ്കാറ്റ് = പരമാവധി സാന്ദ്രത (~100/മണിക്കൂർ).
+value.SHOOTING_STARS_FREQUENCY.1=ഇടയ്ക്കിടെ (~10/മണിക്കൂർ)
+value.SHOOTING_STARS_FREQUENCY.2=സജീവ മഴ
+value.SHOOTING_STARS_FREQUENCY.3=ഉൽക്ക കൊടുങ്കാറ്റ്
+option.SHOOTING_STARS_BRIGHTNESS=മാഗ്നിറ്റ്യൂഡ് സ്കെയിൽ
+option.SHOOTING_STARS_BRIGHTNESS.comment=ഉൽക്ക മാഗ്നിറ്റ്യൂഡ് സ്കെയിലിലെ മാസ്റ്റർ മൾട്ടിപ്ലയർ. മങ്ങിയത് = യാഥാർത്ഥ്യബോധമുള്ള ശരാശരി; തിളക്കമുള്ളത് = സിനിമാറ്റിക് ദൃശ്യപരതയ്ക്കായി ഫയർബോളുകൾ സ്കെയിൽ ചെയ്യുന്നു.
+value.SHOOTING_STARS_BRIGHTNESS.1=മങ്ങിയ (യാഥാർത്ഥ്യബോധം)
+value.SHOOTING_STARS_BRIGHTNESS.2=സ്റ്റാൻഡേർഡ്
+value.SHOOTING_STARS_BRIGHTNESS.3=തിളക്കമുള്ള ഫയർബോളുകൾ
+value.CONTRAST.4=ഫോട്ടോഗ്രാഫിക് (AgX പോലുള്ളത്)
+option.SPATIAL_AA_MODE=സ്പേഷ്യൽ ആന്റി-അലിയാസിംഗ്
+option.SPATIAL_AA_MODE.comment=പോസ്റ്റ്-പ്രോസസ് ആന്റി-അലിയാസിംഗ് രീതി തിരഞ്ഞെടുക്കുക. FXAA വേഗതയേറിയതും ചെലവുകുറഞ്ഞതുമാണ്. ജ്യാമിതി അരികുകളിൽ മികച്ച നിലവാരത്തിനായി SMAA ഡെപ്ത് ബഫർ ഉപയോഗിക്കുന്നു. TAA-യുമായി സംയോജിപ്പിക്കാം.
+value.SPATIAL_AA_MODE.0=ഓഫ്
+value.SPATIAL_AA_MODE.1=FXAA (വേഗത)
+value.SPATIAL_AA_MODE.2=SMAA (ഗുണനിലവാരം)
+option.HEAT_SHIMMER=ലാവയ്ക്ക് മുകളിലുള്ള ചൂട് മിന്നൽ
+option.HEAT_SHIMMER.comment=ലാവ പ്രതലങ്ങൾക്ക് മുകളിൽ സൂക്ഷ്മമായ സ്ക്രീൻ-സ്പേസ് ചൂട് വൈകൃത ഇഫക്റ്റ് പ്രവർത്തനക്ഷമമാക്കുക.
+option.HEAT_SHIMMER_STRENGTH=ചൂട് മിന്നൽ ശക്തി
+option.HEAT_SHIMMER_STRENGTH.comment=ലാവയ്ക്ക് മുകളിലുള്ള ചൂട് വൈകൃതത്തിന്റെ തീവ്രത നിയന്ത്രിക്കുന്നു.
+value.HEAT_SHIMMER_STRENGTH.1=സൂക്ഷ്മം
+value.HEAT_SHIMMER_STRENGTH.2=സന്തുലിതം
+value.HEAT_SHIMMER_STRENGTH.3=ശക്തമായ
+option.SSR=സ്ക്രീൻ-സ്പേസ് പ്രതിഫലനങ്ങൾ (SSR)
+option.SSR.comment=വെള്ളം, നനഞ്ഞ പ്രതലങ്ങൾ, മെറ്റാലിക് PBR ബ്ലോക്കുകൾ എന്നിവയിൽ തത്സമയ പ്രതിഫലിക്കുന്ന പരിസ്ഥിതി ചേർക്കുന്നു. v1.0.4-ൽ MED മുതൽ മുകളിലേക്ക് പ്രവർത്തനക്ഷമമാക്കിയിരിക്കുന്നു.
+option.SSR_QUALITY=SSR ഗുണനിലവാരം
+option.SSR_QUALITY.comment=സ്ക്രീൻ-സ്പേസ് പ്രതിഫലനങ്ങളുടെ കൃത്യതയും റേ ദൂരവും നിയന്ത്രിക്കുന്നു. ഉയർന്നത് = മൂർച്ചയുള്ള പ്രതിഫലനങ്ങൾ, പക്ഷേ കൂടുതൽ GPU ചെലവ്.
+value.SSR_QUALITY.1=വേഗത (12 ഘട്ടങ്ങൾ)
+value.SSR_QUALITY.2=സന്തുലിതം (24 ഘട്ടങ്ങൾ)
+value.SSR_QUALITY.3=ഉയർന്നത് (40 ഘട്ടങ്ങൾ)
+option.SSR_STRENGTH=SSR ശക്തി
+option.SSR_STRENGTH.comment=പ്രതിഫലന പ്രതലങ്ങളിൽ പ്രതിഫലിക്കുന്ന പരിസ്ഥിതി എത്രത്തോളം ദൃശ്യമാണെന്നും പ്രാധാന്യമുള്ളതാണെന്നും നിയന്ത്രിക്കുന്നു.
+option.WATER_WAVE_SCALE=തരംഗ ആംപ്ലിറ്റ്യൂഡ്
+option.WATER_WAVE_SCALE.comment=ജല ഉപരിതല തരംഗങ്ങളുടെ ദൃശ്യമായ കുത്തനെയുള്ളത നിയന്ത്രിക്കുന്നു. ശാന്തം = കണ്ണാടി പോലെ, കൊടുങ്കാറ്റ് = ശക്തമായി തകർന്ന പ്രതിഫലനങ്ങൾ.
+option.WATER_WAVE_DETAIL=തരംഗ വിശദാംശം
+option.WATER_WAVE_DETAIL.comment=ഓരോ ബ്ലോക്കിലും എത്ര ചെറിയ തരംഗങ്ങൾ ദൃശ്യമാകുന്നു എന്ന് നിയന്ത്രിക്കുന്നു. പരുഷം = കുറച്ച് വലിയ തരംഗങ്ങൾ, സാന്ദ്രം = ധാരാളം ചെറിയ അലകൾ.
+option.UNDERWATER_NIGHT_DARKNESS=വെള്ളത്തിനടിയിലെ രാത്രി ഇരുട്ട്
+option.UNDERWATER_NIGHT_DARKNESS.comment=രാത്രിയിൽ വെള്ളത്തിനടിയിലെ രംഗം എത്ര ഇരുണ്ടതാകുന്നു എന്ന് നിയന്ത്രിക്കുന്നു. മൂൺലിറ്റ് പൂൾ തെളിച്ചം നിലനിർത്തുന്നു; പിച്ച് ഡാർക്ക് അതിതീവ്ര അതിജീവന ശൈലി ഇരുട്ട് നൽകുന്നു.
+value.SSR_STRENGTH.1=സൂക്ഷ്മം
+value.SSR_STRENGTH.2=സന്തുലിതം
+value.SSR_STRENGTH.3=ശക്തമായ
+option.PBR_DISTANCE=PBR റെൻഡർ ദൂരം
+option.PBR_DISTANCE.comment=PBR സ്‌പെക്യുലർ ഹൈലൈറ്റുകൾക്കുള്ള പരമാവധി ദൂരം. ദൂരെയുള്ള ഭൂപ്രകൃതിയിൽ GPU ലാഭിക്കുന്നു. LOW-ന് സമീപം (16മീ), MED-ന് സ്റ്റാൻഡേർഡ് (48മീ), HIGH/ULTRA-ന് ദൂരെ (128മീ), EXTREME-ന് പരിധിയില്ലാത്തത്.
+value.PBR_DISTANCE.1=സമീപം (16മീ)
+value.PBR_DISTANCE.2=സ്റ്റാൻഡേർഡ് (48മീ)
+value.PBR_DISTANCE.3=ദൂരെ (128മീ)
+value.PBR_DISTANCE.4=പരിധിയില്ലാത്തത്
+
+# v1.1.1 — shadow pipeline + POM option labels
+value.shadowMapResolution.512=512
+value.shadowMapResolution.1024=1024
+value.shadowMapResolution.2048=2048
+value.shadowMapResolution.4096=4096
+option.POM_DEPTH=POM ആഴം
+option.POM_DEPTH.comment=PBR POM പ്രവർത്തനക്ഷമമാക്കുമ്പോൾ parallax മാപ്പിംഗിന്റെ ദൃശ്യമായ ആഴം നിയന്ത്രിക്കുന്നു.
+value.POM_DEPTH.1=കുറഞ്ഞ
+value.POM_DEPTH.2=സ്റ്റാൻഡേർഡ്
+value.POM_DEPTH.3=ആഴമേറിയ
+option.POM_STEPS=POM ഘട്ടങ്ങൾ
+option.POM_STEPS.comment=parallax മാപ്പിംഗിനുള്ള raymarch ഘട്ടങ്ങളുടെ എണ്ണം നിയന്ത്രിക്കുന്നു. ഉയർന്ന മൂല്യങ്ങൾ ഗുണനിലവാരം മെച്ചപ്പെടുത്തുന്നു, പക്ഷേ കൂടുതൽ GPU സമയം ആവശ്യമാണ്.
+value.POM_STEPS.1=വേഗം
+value.POM_STEPS.2=സ്റ്റാൻഡേർഡ്
+value.POM_STEPS.3=ഉയർന്ന
+value.POM_STEPS.4=അൾട്രാ
+
+screen.SHADOW_OPTIONS=നിഴലുകള്‍
+screen.SHADOW_OPTIONS.comment=ചലനാത്മക നിഴലുകളുടെ റെസല്യൂഷന്‍, ദൂരം, മൃദുത്വം, നിറം.
+screen.PBR_OPTIONS=PBR, വസ്തുക്കള്‍
+screen.PBR_OPTIONS.comment=PBR ലൈറ്റിംഗ്, parallax റിലീഫ്, തീവ്രത, render ദൂരം.
+screen.AO_REFLECTIONS=AO, പ്രതിഫലനങ്ങള്‍
+screen.AO_REFLECTIONS.comment=SSAO, സ്ക്രീന്‍ പ്രതിഫലനങ്ങള്‍, മഴ പ്രതിഫലനങ്ങള്‍.
+screen.CLOUD_SHAPE=മേഘങ്ങള്‍
+screen.CLOUD_SHAPE.comment=വോളിയം മേഘങ്ങളുടെ ആകൃതി, ഉയരം, ദൂരം, നിഴല്‍.
+screen.LIGHT_SHAFTS=പ്രകാശ രശ്മികള്‍
+screen.LIGHT_SHAFTS.comment=വോളിയം സൂര്യ/ചന്ദ്ര രശ്മികള്‍, അവയുടെ ഗുണനിലവാരം/തീവ്രത.
+screen.NIGHT_SKY=രാത്രി ആകാശം
+screen.NIGHT_SKY.comment=ഓറോറ, നക്ഷത്രങ്ങള്‍, ആകാശഗംഗ ഒപ്പം വാല്‍നക്ഷത്രങ്ങള്‍.

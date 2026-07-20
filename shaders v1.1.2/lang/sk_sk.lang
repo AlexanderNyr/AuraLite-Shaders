@@ -1,0 +1,459 @@
+# AuraLite Shaders v1.0.7 - Copyright (c) 2026 AlexanderNyr. Licensed under CC BY-NC-SA 4.0.
+# ==============================================================================
+# AuraLite Shader Pack - Slovak Language Translations
+# ==============================================================================
+
+# ==============================================================================
+# Quality Profiles
+# ==============================================================================
+profile.VERY_LOW=Veľmi nízky
+profile.VERY_LOW.comment=Absolútne maximum FPS. Všetky doplnky vypnuté: bez tieňov, oblakov, PBR, SSR, lúčov. Iba minimálne vykresľovanie.
+profile.LOW=Nízky
+profile.LOW.comment=Ľahký, ale hrateľný. Zachováva animáciu listov/vody, jasnejšie hviezdy, FXAA, vinetáciu. Bez tieňov, oblakov a PBR.
+profile.MED=Stredný
+profile.MED.comment=Denný sladký bod. Tiene 1024, oblaky, PBR, SSR Rýchly, lúče, SSS lístia, mokré odrazy, hmla, meteory.
+profile.HIGH=Vysoký
+profile.HIGH.comment=Kvalita pre nadšencov. Tiene 2048, SSR Vyvážený, TAA, SSAO Jemné, lúče Vyvážené, SMAA.
+profile.ULTRA=Ultra
+profile.ULTRA.comment=High-end. Tiene 4096, SSR Vysoký, SSAO Vyvážené, lúče Vysoké, TAA Stabilný, všetky efekty zapnuté.
+profile.EXTREME=Extrémny
+profile.EXTREME.comment=Kinematografické maximum. Všetko na max: PBR Neobmedzený dosah, fotografické mapovanie tónov (AgX), najhlbší SSAO, meteorické búrky.
+profile.CUSTOM=Vlastný
+profile.CUSTOM.comment=Vlastné nastavenia upravené používateľom.
+
+screen.TRANSLATION_NOTICE=⚠ Preklady môžu obsahovať chyby
+screen.TRANSLATION_NOTICE.comment=Niektoré lokalizačné reťazce môžu byť nepresné. Ak niečo vyzerá zvláštne, porovnajte s anglickým originálom.
+
+# Screens
+screen.LIGHTING=Nastavenia osvetlenia
+screen.LIGHTING.comment=Nakonfigurujte tiene, farby svetla a jas.
+
+screen.FOLIAGE=Nastavenia vegetácie
+screen.FOLIAGE.comment=Nakonfigurujte animácie vlnenia trávy a lístia.
+
+screen.WATER=Nastavenia vody
+screen.WATER.comment=Nakonfigurujte vlny, priehľadnosť a štýl vody.
+
+screen.CLOUDS_MENU=Obloha a oblaky
+screen.CLOUDS_MENU.comment=Nakonfigurujte fyzickú výšku, hrúbku a štýl 3D mrakov a efektov oblohy.
+
+screen.POST_PROCESS=Post-processing a hmla
+screen.POST_PROCESS.comment=Nakonfigurujte expozíciu, hmlu a filmové efekty.
+
+# Options
+option.SHADOWS=Dynamické tiene
+option.SHADOWS.comment=Zapnite alebo vypnite mäkké dynamické tiene od slnka a mesiaca.
+
+option.shadowMapResolution=Rozlíšenie tieňov
+option.shadowMapResolution.comment=Zmeňte kvalitu mapy tieňov. Vyššie hodnoty môžu znížiť výkon.
+
+option.PBR_LIGHTING=PBR osvetlenie (LabPBR)
+option.PBR_LIGHTING.comment=Zapnite fyzikálne založené vykresľovanie pre kovy, drsnosť a 3D normálové mapy (vyžaduje sa PBR balík zdrojov).
+
+option.PBR_POM=3D reliéf blokov (POM)
+option.PBR_POM.comment=Zapnite fyzikálne založené Parallax Occlusion Mapping pre 3D textúry blokov. Odporúča sa vypnúť pri nekompatibilných balíkoch zdrojov.
+
+option.PBR_STRENGTH=Intenzita PBR
+option.PBR_STRENGTH.comment=Ovládajte odrazivosť a lesk kovových PBR povrchov.
+
+value.PBR_STRENGTH.1=Jemné
+value.PBR_STRENGTH.2=Štandardná
+value.PBR_STRENGTH.3=Zrkadlové
+
+option.SSAO=SSAO / SAO oklúzia
+option.SSAO.comment=Extreme profile: screen-space ambient occlusion for contact shadows in corners, under blocks, and around geometry intersections.
+option.SSAO_STRENGTH=Sila SSAO
+option.SSAO_STRENGTH.comment=Ovláda hĺbku ambientnej oklúzie v priestore obrazovky. Aktívne iba keď je SSAO zapnuté.
+value.SSAO_STRENGTH.1=Jemné
+value.SSAO_STRENGTH.2=Vyvážené
+value.SSAO_STRENGTH.3=Hlboké
+
+option.LIGHTMAP_WARMTH=Teplota fakle
+option.LIGHTMAP_WARMTH.comment=Upravte teplotu a farbu svetla blokov/fakieľ.
+
+value.LIGHTMAP_WARMTH.1=Útulné
+value.LIGHTMAP_WARMTH.2=Teplé
+value.LIGHTMAP_WARMTH.3=Intenzívne
+
+option.WAVING_LEAVES=Vlnenie lístia
+option.WAVING_LEAVES.comment=Zapnite jemné animácie vlnenia pre listy stromov.
+
+option.WAVING_GRASS=Vlnenie vegetácie
+option.WAVING_GRASS.comment=Zapnite animácie vlnenia pre trávu, kvety a plodiny.
+
+option.WIND_SPEED=Rýchlosť vetra
+option.WIND_SPEED.comment=Ovládajte rýchlosť vlnenia listov, rastlín a vodných vĺn.
+
+value.WIND_SPEED.1=Mierny
+value.WIND_SPEED.2=Vánok
+value.WIND_SPEED.3=Víchrica
+
+option.WATER_WAVES=Vodné vlny
+option.WATER_WAVES.comment=Enable 3D geometric waves on the water surface.
+
+option.WATER_TRANSPARENCY=Hustota vody
+option.WATER_TRANSPARENCY.comment=Control the transparency and opacity of the water.
+
+value.WATER_TRANSPARENCY.1=Číra
+value.WATER_TRANSPARENCY.2=Vyvážené
+value.WATER_TRANSPARENCY.3=Hlboká
+
+option.PROCEDURAL_CLOUDS=Objemové 3D mraky
+option.PROCEDURAL_CLOUDS.comment=Zapnite fyzicky preletiteľné 3D mraky, ktorými je možné preletieť.
+
+option.CLOUD_HEIGHT=Výška mrakov
+option.CLOUD_HEIGHT.comment=Nastavte fyzickú výšku (Y-úroveň) vrstvy mrakov vo svete (v metroch).
+
+value.CLOUD_HEIGHT.1=Nízka (~110m)
+value.CLOUD_HEIGHT.2=Štandardná (~160m)
+value.CLOUD_HEIGHT.3=Vysoká (~240m)
+
+option.CLOUD_THICKNESS=Hrúbka mrakov
+option.CLOUD_THICKNESS.comment=Nakonfigurujte vertikálnu hrúbku a objem mrakov.
+
+value.CLOUD_THICKNESS.1=Tenké (Cirrus)
+value.CLOUD_THICKNESS.2=Štandardné (Kumulus)
+value.CLOUD_THICKNESS.3=Husté (Búrkové)
+
+option.CLOUD_DISTANCE=Vzdialenosť vykreslenia mrakov
+option.CLOUD_DISTANCE.comment=Maximálna vykresľovacia vzdialenosť pre objemové mraky. Profily kvality ju automaticky zvyšujú.
+value.CLOUD_DISTANCE.1=Blízko
+value.CLOUD_DISTANCE.2=Štandardná
+value.CLOUD_DISTANCE.3=Ďaleko
+value.CLOUD_DISTANCE.4=Veľmi ďaleko
+
+option.CLOUD_SHADOWS=Tiene mrakov
+option.CLOUD_SHADOWS.comment=Pridáva priehľadné procedurálne tiene z hustoty objemových mrakov na terén. Vyvážené profilmi kvality.
+option.CLOUD_SHADOW_STRENGTH=Sila tieňov mrakov
+option.CLOUD_SHADOW_STRENGTH.comment=Ovláda, aké viditeľné a dramatické sú priehľadné tiene mrakov.
+value.CLOUD_SHADOW_STRENGTH.1=Mäkké
+value.CLOUD_SHADOW_STRENGTH.2=Vyvážené
+value.CLOUD_SHADOW_STRENGTH.3=Dramatické
+
+option.GODRAYS=Slnečné lúče (Godrays)
+option.GODRAYS.comment=Adds physically-inspired volumetric single-scattering sun shafts with Beer-Lambert extinction, Mie phase and shadow-map occlusion.
+option.GODRAYS_QUALITY=Kvalita Godrays
+option.GODRAYS_QUALITY.comment=Controls the sample count and integration distance of physically-based volumetric godrays.
+value.GODRAYS_QUALITY.1=Rýchle
+value.GODRAYS_QUALITY.2=Vyvážené
+value.GODRAYS_QUALITY.3=Vysoké
+
+option.AURORA_MODE=Polárna žiara
+option.AURORA_MODE.comment=Ovládajte zobrazenie realistickej plynúcej polárnej žiary na nočnej oblohe.
+
+value.AURORA_MODE.0=Vypnuté
+value.AURORA_MODE.1=Iba v studených biómoch
+value.AURORA_MODE.2=Vždy zapnuté
+
+option.AURORA_SPEED=Rýchlosť polárnej žiary
+option.AURORA_SPEED.comment=Ovládajte rýchlosť vlnenia a plynutia polárnej žiary.
+
+value.AURORA_SPEED.1=Pomalé
+value.AURORA_SPEED.2=Štandardná
+value.AURORA_SPEED.3=Rýchle
+
+option.AURORA_STRENGTH=Jas polárnej žiary
+option.AURORA_STRENGTH.comment=Ovládajte celkový jas žiary polárnej žiary.
+
+value.AURORA_STRENGTH.1=Mäkké
+value.AURORA_STRENGTH.2=Štandardná
+value.AURORA_STRENGTH.3=Žiariace
+
+option.NEBULA_BRIGHTNESS=Jas Mliečnej dráhy
+option.NEBULA_BRIGHTNESS.comment=Upravte jas žiary diagonálnej hnedastej galaktickej hmloviny v noci.
+
+value.NEBULA_BRIGHTNESS.1=Slabé
+value.NEBULA_BRIGHTNESS.2=Štandardná
+value.NEBULA_BRIGHTNESS.3=Jasné
+
+option.STARS_BRIGHTNESS=Jas hviezd
+option.STARS_BRIGHTNESS.comment=Ovládajte jas a iskrivú žiaru hviezd v noci.
+
+value.STARS_BRIGHTNESS.1=Slabé
+value.STARS_BRIGHTNESS.2=Štandardná
+value.STARS_BRIGHTNESS.3=Skvelé
+
+option.STARS_AMOUNT=Hustota hviezd
+option.STARS_AMOUNT.comment=Ovládajte celkové množstvo a hustotu hviezd na oblohe.
+
+value.STARS_AMOUNT.1=Málo
+value.STARS_AMOUNT.2=Štandardná
+value.STARS_AMOUNT.3=Husté
+
+option.RAINBOW_STRENGTH=Intenzita dúhy
+option.RAINBOW_STRENGTH.comment=Nakonfigurujte jas a sýtosť farieb dúhy po daždi.
+
+value.RAINBOW_STRENGTH.1=Jemné
+value.RAINBOW_STRENGTH.2=Vyvážené
+value.RAINBOW_STRENGTH.3=Živé
+
+option.COZY_LIGHTS=Blikanie fakle
+option.COZY_LIGHTS.comment=Zapnite teplé, útulné animácie blikania v reálnom čase pre fakle, táboráky a lampáše.
+
+option.WET_REFLECTIONS=Odrazy vlhkosti od dažďa
+option.WET_REFLECTIONS.comment=Keď prší, pevné bloky ako zem, tráva a kameň sa stávajú mokrými, tmavými a lesklými pod oblohou.
+
+option.GROUND_MIST=Nízka prízemná hmla (Y=62-66)
+option.GROUND_MIST.comment=Zapnite mäkké, zlatobiele ranné/večerné hmlové vrstvy, ktoré kĺžu nad vodou a ľadom za úsvitu a súmraku.
+
+option.FOG_DENSITY_LEVEL=Hustota hmly
+option.FOG_DENSITY_LEVEL.comment=Ovládajte silu atmosférickej hmly na horizonte.
+
+value.FOG_DENSITY_LEVEL.1=Nízka
+value.FOG_DENSITY_LEVEL.2=Stredná
+value.FOG_DENSITY_LEVEL.3=Vysoké
+
+option.EXPOSURE=Jas expozície
+option.EXPOSURE.comment=Ovládajte celkový jas obrazu.
+
+value.EXPOSURE.1=Tlmené
+value.EXPOSURE.2=Vyvážené
+value.EXPOSURE.3=Živé
+
+option.COLOR_SATURATION=Živosť farieb
+option.COLOR_SATURATION.comment=Ovládajte nelineárnu sýtosť farieb obrazovky. Vytvára smaragdový vzhľad listov a bujnú oblohu.
+
+value.COLOR_SATURATION.1=Tlmené
+value.COLOR_SATURATION.2=Vyvážené
+value.COLOR_SATURATION.3=Farebné
+value.COLOR_SATURATION.4=Živé
+
+option.CONTRAST=Kontrast obrazu
+option.CONTRAST.comment=Vyberte štýl tonálneho mapovania a krivky kontrastu.
+
+value.CONTRAST.1=Mäkké
+value.CONTRAST.2=Filmové (ACES)
+value.CONTRAST.3=Intenzívne (Vysoký kontrast)
+
+option.TAA=Časové vyhladzovanie hrán (TAA)
+option.TAA.comment=Časové riešenie s reprojekciou pohybu a susedným orezaním. Znižuje trblietanie a zubaté hrany pri vysokých nastaveniach.
+option.TAA_STRENGTH=Sila TAA
+option.TAA_STRENGTH.comment=Ovláda miešanie histórie. Vyššia hodnota je stabilnejšia, ale môže byť mäkšia počas pohybu.
+value.TAA_STRENGTH.1=Ľahké
+value.TAA_STRENGTH.2=Vyvážené
+value.TAA_STRENGTH.3=Stabilné
+
+option.VIGNETTE=Efekt vinety
+option.VIGNETTE.comment=Zapnite jemné stmavnutie na okrajoch obrazovky pre lepšie zaostrenie.
+
+option.WATER_RIFFLES=Sila vodných vlniek
+option.WATER_RIFFLES.comment=Adjust the waviness and intensity of the fine normal map ripples on the water.
+
+value.WATER_RIFFLES.1=Pokojné
+value.WATER_RIFFLES.2=Štandardná
+value.WATER_RIFFLES.3=Rozbúrené
+
+option.WATER_SPECULAR_STRENGTH=Odlesk vody
+option.WATER_SPECULAR_STRENGTH.comment=Adjust the brightness of sun/moon reflections on the water ripples.
+
+value.WATER_SPECULAR_STRENGTH.1=Mäkké
+value.WATER_SPECULAR_STRENGTH.2=Štandardná
+value.WATER_SPECULAR_STRENGTH.3=Trblietavé
+
+option.SHADOW_SOFTNESS=Mäkkosť tieňov
+option.SHADOW_SOFTNESS.comment=Ovláda, aké mäkké a difúzne sa javia okraje tieňov. Používa rotované filtrovanie Poissonovho disku pre hladký polotieň.
+
+value.SHADOW_SOFTNESS.1=Ostré
+value.SHADOW_SOFTNESS.2=Mäkké
+value.SHADOW_SOFTNESS.3=Ultra mäkké
+
+# ==============================================================================
+# Sun & Moon Lighting (extended)
+# ==============================================================================
+screen.SUN_MOON=Slnko a Mesiac
+screen.SUN_MOON.comment=Doladíte intenzitu slnka a mesiaca, teplotu farby a atmosférické efekty.
+
+option.SUN_INTENSITY=Intenzita slnka
+option.SUN_INTENSITY.comment=Hlavný jas priameho slnečného svetla. Vyššie = silnejší denný kontrast.
+value.SUN_INTENSITY.1=Tlmené
+value.SUN_INTENSITY.2=Štandardná
+value.SUN_INTENSITY.3=Jasné
+value.SUN_INTENSITY.4=Planúce
+
+option.MOON_INTENSITY=Intenzita mesiaca
+option.MOON_INTENSITY.comment=Hlavný jas mesačného svitu. Vyššie = jasnejšie, viditeľnejšie noci.
+value.MOON_INTENSITY.1=Tmavá noc
+value.MOON_INTENSITY.2=Štandardná
+value.MOON_INTENSITY.3=Jasný mesiac
+value.MOON_INTENSITY.4=Plná noc
+
+option.SUN_TEMPERATURE=Farebná teplota slnka
+option.SUN_TEMPERATURE.comment=Posúva Kelvinovu krivku slnka. Realistické používa čierne teleso Tannera Hellanda; teplé = zlaté; chladné = neutrálne biele.
+value.SUN_TEMPERATURE.1=Chladná / Neutrálna
+value.SUN_TEMPERATURE.2=Realistická
+value.SUN_TEMPERATURE.3=Teplá zlatá
+
+option.MOON_TEMPERATURE=Farebná teplota mesiaca
+option.MOON_TEMPERATURE.comment=Odtieň mesačného svitu. Ľadové = modrasto studené; Strieborné = realistické 4100K; Teplé = krémové ako mesiac žatvy.
+value.MOON_TEMPERATURE.1=Ľadovo modrá
+value.MOON_TEMPERATURE.2=Strieborné (Realistické)
+value.MOON_TEMPERATURE.3=Teplá krémová
+
+option.SUN_HALO=Halo slnka (Mieho rozptyl)
+option.SUN_HALO.comment=Pridáva mäkkú teplú žiaru na terén pri pohľade blízko slnka (Mieho dopredný rozptyl).
+
+option.SUNRISE_GLOW=Vylepšená žiara východu/západu slnka
+option.SUNRISE_GLOW.comment=Zapína silnejší teplý spätný rozptyl, ktorý obopína povrchy odvrátené od nízkeho slnka.
+
+# ==============================================================================
+# Extended shadow settings
+# ==============================================================================
+option.shadowDistance=Vzdialenosť tieňov
+option.shadowDistance.comment=Maximálna vzdialenosť, v ktorej sa vykresľujú dynamické tiene. Vyššie hodnoty rozširujú tiene na vykresľovaciu vzdialenosť; na zachovanie výkonu pri rozšírených rozsahoch použite Shadow LOD.
+value.shadowDistance.60.0=Blízko (60m)
+value.shadowDistance.80.0=Štandardná (80m)
+value.shadowDistance.120.0=Ďaleko (120m)
+value.shadowDistance.160.0=Ultra (160 m)
+value.shadowDistance.256.0=Rozšírená (256 m)
+value.shadowDistance.384.0=Vzdialenosť vykresľovania (384 m)
+
+option.SHADOW_LOD=LOD tieňov
+option.SHADOW_LOD.comment=Riadi znižovanie kvality tieňov so vzdialenosťou. Pri rozšírenej vzdialenosti tieňov (256-384 m) LOD znižuje počet vzoriek a zväčšuje polomer filtra na diaľku na zachovanie výkonu. Vypnuté = rovnomerná kvalita (pomalé). Vyvážené = zníženie na 25-50% vzdialenosti. Agresívne = maximálne zníženie na 15-60% vzdialenosti. Tiene sú úplne preskočené za 95% vzdialenosti vykresľovania.
+value.SHADOW_LOD.0=Vypnuté (rovnomerná kvalita)
+value.SHADOW_LOD.1=Vyvážené
+value.SHADOW_LOD.2=Agresívne
+option.SHADOW_PCSS_BLUR=PCSS rozostrenie na vzdialenosť
+option.SHADOW_PCSS_BLUR.comment=Povoľuje PCSS zmäkčenie polotieňa, ktoré zväčšuje rozostrenie tieňov so vzdialenosťou a počas dažďa. Vypnite pre pevnú mäkkosť (ostrejšie vzdialené tiene, menej realistické).
+value.SHADOW_PCSS_BLUR.0=Vypnuté (pevná mäkkosť)
+value.SHADOW_PCSS_BLUR.1=Zapnuté (PCSS polotieň)
+
+
+option.AMBIENT_BRIGHTNESS=Zdvihnutie tieňov / okolie
+option.AMBIENT_BRIGHTNESS.comment=Ovláda, ako tmavo vyzerajú zatienené oblasti v noci a v jaskyniach.
+value.AMBIENT_BRIGHTNESS.1=Tmavé
+value.AMBIENT_BRIGHTNESS.2=Štandardná
+value.AMBIENT_BRIGHTNESS.3=Zdvihnuté (Jasné)
+
+option.SHADOW_TINT=Odtieň tieňov
+option.SHADOW_TINT.comment=Farbí denné tiene. Skutočné tiene pod modrou oblohou majú jemný chladný odtieň.
+value.SHADOW_TINT.1=Neutrálna sivá
+value.SHADOW_TINT.2=Chladná modrá (Realistické)
+value.SHADOW_TINT.3=Teplé
+
+option.LIGHT_WRAP=Obal svetla
+option.LIGHT_WRAP.comment=Zjemňuje terminátor medzi osvetlenými a neosvetlenými povrchmi. Realistické = fyzikálny Lambert; Mäkké = príjemné pre snímky obrazovky.
+value.LIGHT_WRAP.1=Realistické (Lambert)
+value.LIGHT_WRAP.2=Mäkký obal
+value.LIGHT_WRAP.3=Štylizované
+
+# v0.2.9 — water/underwater option value labels (English fallback)
+value.WATER_WAVE_SCALE.1=Pokojné
+value.WATER_WAVE_SCALE.2=Štandardná
+value.WATER_WAVE_SCALE.3=Rozbúrené
+value.WATER_WAVE_SCALE.4=Búrlivé
+value.WATER_WAVE_DETAIL.1=Hrubé
+value.WATER_WAVE_DETAIL.2=Štandardná
+value.WATER_WAVE_DETAIL.3=Husté
+value.UNDERWATER_NIGHT_DARKNESS.1=Jazierko v mesačnom svite
+value.UNDERWATER_NIGHT_DARKNESS.2=Slabé
+value.UNDERWATER_NIGHT_DARKNESS.3=Skutočná noc
+value.UNDERWATER_NIGHT_DARKNESS.4=Tma ako v pytli
+# ==============================================================================
+# Experimental Tab & New Sky (v1.1.0)
+# ==============================================================================
+screen.EXPERIMENTAL=Experimentálne
+screen.EXPERIMENTAL.comment=Experimentálne
+
+option.SKY_MODE=Nová obloha (Atmosférický rozptyl)
+option.SKY_STYLE=Štýl oblohy
+option.SKY_STYLE.comment=Artistic direction for the physical sky. Realistic = true angular sizes & neutral colours (astronomy look). Semi-realistic = readable sun/moon (x2.8), richer colour, soft glow. Fantasy = grand sun/moon (x5.5), big corona, vivid teal/crimson/indigo palette.
+option.SKY_MODE.comment=EXPERIMENTAL — off in all profiles. Gradient (legacy, default) or Physical realtime scattering with true multiple scattering (Rayleigh+Mie+Ozone, 1st+2nd+3rd order). Enable manually in this tab.
+value.SKY_MODE.0=Prechod (Starý)
+value.SKY_STYLE.0=Realistický
+value.SKY_STYLE.1=Polorealistický
+value.SKY_STYLE.2=Fantázia
+value.SKY_MODE.1=Realtime Scattering
+
+option.SKY_QUALITY=Kvalita rozptylu oblohy
+option.SKY_QUALITY.comment=Kvalita rozptylu oblohy
+value.SKY_QUALITY.1=Rýchla
+value.SKY_QUALITY.2=Štandardná
+value.SKY_QUALITY.3=Vysoká
+
+# --- Auto-added missing translations (v1.1.0 sync) ---
+option.FOLIAGE_SSS=SSS listov
+option.FOLIAGE_SSS.comment=Zapína podpovrchový rozptyl (priesvitnosť) pre listy, trávu a rastliny pri pohľade proti svetlu.
+option.GODRAYS_STRENGTH=Intenzita Godrays
+option.GODRAYS_STRENGTH.comment=Jas objemových svetelných lúčov. Jemné: mierny atmosférický opar. Vyvážené: jasne viditeľné lúče. Dramatické: výrazné filmové lúče.
+value.GODRAYS_STRENGTH.1=Jemné
+value.GODRAYS_STRENGTH.2=Vyvážené
+value.GODRAYS_STRENGTH.3=Dramatické
+option.SHOOTING_STARS=Meteory (Padajúce hviezdy)
+option.SHOOTING_STARS.comment=Fyzikálne založené meteory vstupujúce do mezosféry (~80-120 km). Vykresľuje skutočné 3D oblúky veľkého kruhu s krivkami ablačného svetla, farbou plazmy čierneho telesa (3500-5500 K), Rayleighovým zoslabením blízko horizontu a pretrvávajúcimi ionizačnými stopami na ohnivých guliach.
+option.SHOOTING_STARS_FREQUENCY=Meteorická aktivita (ZHR)
+option.SHOOTING_STARS_FREQUENCY.comment=Približná zenitálna hodinová miera. Sporadicky = realistické pozadie ~10 za hodinu. Aktívne = mierny roj. Búrka = vrcholová hustota (~100/h).
+value.SHOOTING_STARS_FREQUENCY.1=Sporadicky (~10/h)
+value.SHOOTING_STARS_FREQUENCY.2=Aktívny roj
+value.SHOOTING_STARS_FREQUENCY.3=Meteorická búrka
+option.SHOOTING_STARS_BRIGHTNESS=Škála magnitúdy
+option.SHOOTING_STARS_BRIGHTNESS.comment=Hlavný násobiteľ na škále magnitúdy meteoru. Slabé = realistický priemer; Jasné = škáluje ohnivé gule pre filmovú viditeľnosť.
+value.SHOOTING_STARS_BRIGHTNESS.1=Slabé (Realistické)
+value.SHOOTING_STARS_BRIGHTNESS.2=Štandardná
+value.SHOOTING_STARS_BRIGHTNESS.3=Jasné ohnivé gule
+value.CONTRAST.4=Fotografické (podobné AgX)
+option.SPATIAL_AA_MODE=Priestorové vyhladzovanie hrán
+option.SPATIAL_AA_MODE.comment=Vyberte metódu vyhladzovania hrán po spracovaní. FXAA je rýchle a lacné. SMAA používa hĺbkový buffer pre lepšiu kvalitu na geometrických hranách. Možno kombinovať s TAA.
+value.SPATIAL_AA_MODE.0=Vypnuté
+value.SPATIAL_AA_MODE.1=FXAA (Rýchle)
+value.SPATIAL_AA_MODE.2=SMAA (Kvalita)
+option.HEAT_SHIMMER=Tepelné chvenie nad lávou
+option.HEAT_SHIMMER.comment=Zapnite jemný efekt tepelného skreslenia v priestore obrazovky nad povrchmi lávy.
+option.HEAT_SHIMMER_STRENGTH=Sila tepelného chvenia
+option.HEAT_SHIMMER_STRENGTH.comment=Ovláda intenzitu tepelného skreslenia nad lávou.
+value.HEAT_SHIMMER_STRENGTH.1=Jemné
+value.HEAT_SHIMMER_STRENGTH.2=Vyvážené
+value.HEAT_SHIMMER_STRENGTH.3=Silné
+option.SSR=Odrazy v priestore obrazovky (SSR)
+option.SSR.comment=Pridáva odrazené prostredie v reálnom čase na vode, mokrých povrchoch a kovových PBR blokoch. Zapnuté od Stredného profilu vyššie v v1.0.4.
+option.SSR_QUALITY=Kvalita SSR
+option.SSR_QUALITY.comment=Ovláda presnosť a vzdialenosť lúčov odrazov v priestore obrazovky. Vyššie = ostrejšie odrazy, ale vyššie GPU náklady.
+value.SSR_QUALITY.1=Rýchle (12 krokov)
+value.SSR_QUALITY.2=Vyvážené (24 krokov)
+value.SSR_QUALITY.3=Vysoké (40 krokov)
+option.SSR_STRENGTH=Sila SSR
+option.SSR_STRENGTH.comment=Ovláda, ako viditeľné a výrazné je odrazené prostredie na odrazových povrchoch.
+option.WATER_WAVE_SCALE=Amplitúda vĺn
+option.WATER_WAVE_SCALE.comment=Ovláda viditeľnú strmosť vĺn na vodnej hladine. Pokojné = zrkadlové, Búrlivé = silne rozbité odrazy.
+option.WATER_WAVE_DETAIL=Detail vĺn
+option.WATER_WAVE_DETAIL.comment=Ovláda, koľko malých vĺn sa objaví na blok. Hrubé = niekoľko veľkých vĺn, Husté = veľa malých vlniek.
+option.UNDERWATER_NIGHT_DARKNESS=Podvodná nočná tma
+option.UNDERWATER_NIGHT_DARKNESS.comment=Ovláda, ako tmavá sa stane podvodná scéna v noci. Jazierko v mesačnom svite zachováva jas; Tma ako v pytli dáva extrémnu survival tmu.
+value.SSR_STRENGTH.1=Jemné
+value.SSR_STRENGTH.2=Vyvážené
+value.SSR_STRENGTH.3=Silné
+option.PBR_DISTANCE=Vzdialenosť vykreslenia PBR
+option.PBR_DISTANCE.comment=Maximálna vzdialenosť pre PBR odlesky. Šetrí GPU na vzdialenom teréne. Blízko (16m) pre Nízky, Štandard (48m) pre Stredný, Ďaleko (128m) pre Vysoký/Ultra, Neobmedzené pre Extrémny.
+value.PBR_DISTANCE.1=Blízko (16m)
+value.PBR_DISTANCE.2=Štandardná (48m)
+value.PBR_DISTANCE.3=Ďaleko (128m)
+value.PBR_DISTANCE.4=Neobmedzené
+
+# v1.1.1 — shadow pipeline + POM option labels
+value.shadowMapResolution.512=512
+value.shadowMapResolution.1024=1024
+value.shadowMapResolution.2048=2048
+value.shadowMapResolution.4096=4096
+option.POM_DEPTH=Hĺbka POM
+option.POM_DEPTH.comment=Riadi viditeľnú hĺbku paralaxného mapovania pri zapnutom PBR POM.
+value.POM_DEPTH.1=Nízka
+value.POM_DEPTH.2=Štandardná
+value.POM_DEPTH.3=Hlboká
+option.POM_STEPS=Kroky POM
+option.POM_STEPS.comment=Riadi počet krokov raymarch pre paralaxné mapovanie. Vyššie hodnoty zlepšujú kvalitu, ale stoja viac času GPU.
+value.POM_STEPS.1=Rýchly
+value.POM_STEPS.2=Štandardná
+value.POM_STEPS.3=Vysoký
+value.POM_STEPS.4=Ultra
+
+screen.SHADOW_OPTIONS=Tiene
+screen.SHADOW_OPTIONS.comment=Rozlíšenie, vzdialenosť, mäkkosť a odtieň dynamických tieňov.
+screen.PBR_OPTIONS=PBR a materiály
+screen.PBR_OPTIONS.comment=PBR osvetlenie, paralaxný reliéf, intenzita a vzdialenosť vykresľovania.
+screen.AO_REFLECTIONS=AO a odrazy
+screen.AO_REFLECTIONS.comment=SSAO, odrazy na obrazovke a odrazy dažďa.
+screen.CLOUD_SHAPE=Oblaky
+screen.CLOUD_SHAPE.comment=Tvar, výška, vzdialenosť a tiene objemových oblakov.
+screen.LIGHT_SHAFTS=Svetelné lúče
+screen.LIGHT_SHAFTS.comment=Objemové slnečné/mesačné lúče a ich kvalita/intenzita.
+screen.NIGHT_SKY=Nočná obloha
+screen.NIGHT_SKY.comment=Polárna žiara, hviezdy, Mliečna dráha a padajúce hviezdy.

@@ -1,0 +1,459 @@
+# AuraLite Shaders v1.0.7 - Copyright (c) 2026 AlexanderNyr. Licensed under CC BY-NC-SA 4.0.
+# ==============================================================================
+# AuraLite Shader Pack - British English Language Translations
+# ==============================================================================
+
+# ==============================================================================
+# Quality Profiles
+# ==============================================================================
+profile.VERY_LOW=Very Low
+profile.VERY_LOW.comment=Absolute maximum FPS. All extras off: no shadows, no clouds, no PBR, no SSR, no godrays. Minimal rendering only.
+profile.LOW=Low
+profile.LOW.comment=Lightweight but playable. Keeps foliage/water animation, brighter stars, FXAA, vignette. No shadows, clouds or PBR.
+profile.MED=Medium
+profile.MED.comment=Everyday sweet spot. Shadows 1024, clouds, PBR, SSR Fast, godrays, foliage SSS, wet reflections, ground mist, shooting stars.
+profile.HIGH=High
+profile.HIGH.comment=Enthusiast quality. Shadows 2048, SSR Balanced, TAA, SSAO Subtle, godrays Balanced, SMAA.
+profile.ULTRA=Ultra
+profile.ULTRA.comment=High-end. Shadows 4096, SSR High, SSAO Balanced, godrays High, TAA Stable, all effects on.
+profile.EXTREME=Extreme
+profile.EXTREME.comment=Cinematic max. Everything maxed: PBR Unlimited range, Photographic (AgX) tone map, deepest SSAO, meteor storms.
+profile.CUSTOM=Custom
+profile.CUSTOM.comment=Custom user-modified settings.
+
+screen.TRANSLATION_NOTICE=⚠ Translations may contain errors
+screen.TRANSLATION_NOTICE.comment=Some localization strings may be inaccurate. If something looks strange, compare with the English original.
+
+# Screens
+screen.LIGHTING=Lighting Settings
+screen.LIGHTING.comment=Configure shadows, light colors, and brightness.
+
+screen.FOLIAGE=Foliage Settings
+screen.FOLIAGE.comment=Configure waving animations for grass and leaves.
+
+screen.WATER=Water Settings
+screen.WATER.comment=Configure waves, transparency, and water styling.
+
+screen.CLOUDS_MENU=Sky & Clouds
+screen.CLOUDS_MENU.comment=Configure the physical altitude, thickness, and style of 3D clouds and sky effects.
+
+screen.POST_PROCESS=Post-Processing & Fog
+screen.POST_PROCESS.comment=Configure exposure, fog, and cinematic effects.
+
+# Options
+option.SHADOWS=Dynamic Shadows
+option.SHADOWS.comment=Enable or disable soft dynamic shadows from the sun and moon.
+
+option.shadowMapResolution=Shadow Resolution
+option.shadowMapResolution.comment=Change the shadow map quality. Higher values may lower performance.
+
+option.PBR_LIGHTING=PBR Lighting (LabPBR)
+option.PBR_LIGHTING.comment=Enable physically-based rendering for metals, roughness, and 3D normal maps (PBR resource pack required).
+
+option.PBR_POM=3D Block Relief (POM)
+option.PBR_POM.comment=Enable physically-based Parallax Occlusion Mapping for 3D block textures. Recommended to disable on incompatible resource packs.
+
+option.PBR_STRENGTH=PBR Intensity
+option.PBR_STRENGTH.comment=Control the reflectivity and glossiness of PBR metallic surfaces.
+
+value.PBR_STRENGTH.1=Subtle
+value.PBR_STRENGTH.2=Standard
+value.PBR_STRENGTH.3=Mirror
+
+option.SSAO=SSAO / SAO Occlusion
+option.SSAO.comment=Extreme profile: screen-space ambient occlusion for contact shadows in corners, under blocks, and around geometry intersections.
+option.SSAO_STRENGTH=SSAO Strength
+option.SSAO_STRENGTH.comment=Controls the depth of screen-space ambient occlusion. Only active when SSAO is enabled.
+value.SSAO_STRENGTH.1=Subtle
+value.SSAO_STRENGTH.2=Balanced
+value.SSAO_STRENGTH.3=Deep
+
+option.LIGHTMAP_WARMTH=Torch Warmth
+option.LIGHTMAP_WARMTH.comment=Adjust the warmth and color of block/torch light.
+
+value.LIGHTMAP_WARMTH.1=Cozy
+value.LIGHTMAP_WARMTH.2=Warm
+value.LIGHTMAP_WARMTH.3=Intense
+
+option.WAVING_LEAVES=Waving Leaves
+option.WAVING_LEAVES.comment=Enable gentle waving animations for tree leaves.
+
+option.WAVING_GRASS=Waving Foliage
+option.WAVING_GRASS.comment=Enable waving animations for grass, flowers, and crops.
+
+option.WIND_SPEED=Wind Speed
+option.WIND_SPEED.comment=Control the waving speed of leaves, plants, and water waves.
+
+value.WIND_SPEED.1=Gentle
+value.WIND_SPEED.2=Breeze
+value.WIND_SPEED.3=Gale
+
+option.WATER_WAVES=Water Waves
+option.WATER_WAVES.comment=Enable 3D geometric waves on the water surface.
+
+option.WATER_TRANSPARENCY=Water Density
+option.WATER_TRANSPARENCY.comment=Control the transparency and opacity of the water.
+
+value.WATER_TRANSPARENCY.1=Clear
+value.WATER_TRANSPARENCY.2=Balanced
+value.WATER_TRANSPARENCY.3=Deep
+
+option.PROCEDURAL_CLOUDS=Volumetric 3D Clouds
+option.PROCEDURAL_CLOUDS.comment=Enable physically flyable 3D clouds that can be reached and flown through.
+
+option.CLOUD_HEIGHT=Cloud Altitude
+option.CLOUD_HEIGHT.comment=Set the physical altitude (Y-level) of the cloud deck in the world (in meters).
+
+value.CLOUD_HEIGHT.1=Low (~110m)
+value.CLOUD_HEIGHT.2=Standard (~160m)
+value.CLOUD_HEIGHT.3=High (~240m)
+
+option.CLOUD_THICKNESS=Cloud Thickness
+option.CLOUD_THICKNESS.comment=Configure the vertical thickness and volume of the clouds.
+
+value.CLOUD_THICKNESS.1=Thin (Cirrus)
+value.CLOUD_THICKNESS.2=Standard (Cumulus)
+value.CLOUD_THICKNESS.3=Dense (Stormy)
+
+option.CLOUD_DISTANCE=Cloud Render Distance
+option.CLOUD_DISTANCE.comment=Maximum draw distance for volumetric clouds. Quality profiles increase it automatically.
+value.CLOUD_DISTANCE.1=Near
+value.CLOUD_DISTANCE.2=Standard
+value.CLOUD_DISTANCE.3=Far
+value.CLOUD_DISTANCE.4=Very Far
+
+option.CLOUD_SHADOWS=Cloud Shadows
+option.CLOUD_SHADOWS.comment=Adds transparent procedural shadows from volumetric cloud density onto terrain. Balanced by quality profiles.
+option.CLOUD_SHADOW_STRENGTH=Cloud Shadow Strength
+option.CLOUD_SHADOW_STRENGTH.comment=Controls how visible and dramatic transparent cloud shadows are.
+value.CLOUD_SHADOW_STRENGTH.1=Soft
+value.CLOUD_SHADOW_STRENGTH.2=Balanced
+value.CLOUD_SHADOW_STRENGTH.3=Dramatic
+
+option.GODRAYS=Godrays / Sun Shafts
+option.GODRAYS.comment=Adds physically-inspired volumetric single-scattering sun shafts with Beer-Lambert extinction, Mie phase and shadow-map occlusion.
+option.GODRAYS_QUALITY=Godrays Quality
+option.GODRAYS_QUALITY.comment=Controls the sample count and integration distance of physically-based volumetric godrays.
+value.GODRAYS_QUALITY.1=Fast
+value.GODRAYS_QUALITY.2=Balanced
+value.GODRAYS_QUALITY.3=High
+
+option.AURORA_MODE=Aurora Borealis
+option.AURORA_MODE.comment=Control the display of realistic flowing auroras on the night sky.
+
+value.AURORA_MODE.0=Disabled
+value.AURORA_MODE.1=Only in Cold Biomes
+value.AURORA_MODE.2=Always Enabled
+
+option.AURORA_SPEED=Aurora Speed
+option.AURORA_SPEED.comment=Control the waving and flowing speed of the northern lights.
+
+value.AURORA_SPEED.1=Slow
+value.AURORA_SPEED.2=Standard
+value.AURORA_SPEED.3=Fast
+
+option.AURORA_STRENGTH=Aurora Brightness
+option.AURORA_STRENGTH.comment=Control the overall glow brightness of the northern lights.
+
+value.AURORA_STRENGTH.1=Soft
+value.AURORA_STRENGTH.2=Standard
+value.AURORA_STRENGTH.3=Glowing
+
+option.NEBULA_BRIGHTNESS=Milky Way Brightness
+option.NEBULA_BRIGHTNESS.comment=Adjust the glow brightness of the diagonal brownish galactic nebula at night.
+
+value.NEBULA_BRIGHTNESS.1=Dim
+value.NEBULA_BRIGHTNESS.2=Standard
+value.NEBULA_BRIGHTNESS.3=Bright
+
+option.STARS_BRIGHTNESS=Stars Brightness
+option.STARS_BRIGHTNESS.comment=Control the brightness and sparkling glow of the stars at night.
+
+value.STARS_BRIGHTNESS.1=Faint
+value.STARS_BRIGHTNESS.2=Standard
+value.STARS_BRIGHTNESS.3=Brilliant
+
+option.STARS_AMOUNT=Stars Density
+option.STARS_AMOUNT.comment=Control the overall amount and density of the stars in the sky.
+
+value.STARS_AMOUNT.1=Few
+value.STARS_AMOUNT.2=Standard
+value.STARS_AMOUNT.3=Dense
+
+option.RAINBOW_STRENGTH=Rainbow Intensity
+option.RAINBOW_STRENGTH.comment=Configure the brightness and color saturation of the post-rain rainbow.
+
+value.RAINBOW_STRENGTH.1=Subtle
+value.RAINBOW_STRENGTH.2=Balanced
+value.RAINBOW_STRENGTH.3=Vivid
+
+option.COZY_LIGHTS=Torch Flickering
+option.COZY_LIGHTS.comment=Enable warm, cozy, real-time flickering animations for torches, campfires, and lanterns.
+
+option.WET_REFLECTIONS=Rain Wetness Reflections
+option.WET_REFLECTIONS.comment=When raining, solid blocks like ground, grass, and stone become wet, dark, and glossy under the sky.
+
+option.GROUND_MIST=Low Ground Mist (Y=62-66)
+option.GROUND_MIST.comment=Enable soft, golden-white morning/evening fog sheets that slide over water and ice at dawn and dusk.
+
+option.FOG_DENSITY_LEVEL=Fog Density
+option.FOG_DENSITY_LEVEL.comment=Control the strength of atmospheric horizon fog.
+
+value.FOG_DENSITY_LEVEL.1=Low
+value.FOG_DENSITY_LEVEL.2=Medium
+value.FOG_DENSITY_LEVEL.3=High
+
+option.EXPOSURE=Exposure Brightness
+option.EXPOSURE.comment=Control the overall brightness of the image.
+
+value.EXPOSURE.1=Muted
+value.EXPOSURE.2=Balanced
+value.EXPOSURE.3=Vibrant
+
+option.COLOR_SATURATION=Color Vibrancy
+option.COLOR_SATURATION.comment=Control the non-linear saturation of screen colors. Makes foliage look emerald and skies lush.
+
+value.COLOR_SATURATION.1=Muted
+value.COLOR_SATURATION.2=Balanced
+value.COLOR_SATURATION.3=Colorful
+value.COLOR_SATURATION.4=Vivid
+
+option.CONTRAST=Image Contrast
+option.CONTRAST.comment=Choose the tone mapping and contrast curve style.
+
+value.CONTRAST.1=Soft
+value.CONTRAST.2=Filmic (ACES)
+value.CONTRAST.3=Intense (High Contrast)
+
+option.TAA=Temporal Anti-Aliasing (TAA)
+option.TAA.comment=Temporal resolve with motion reprojection and neighborhood clipping. Reduces shimmering and jagged edges on high presets.
+option.TAA_STRENGTH=TAA Strength
+option.TAA_STRENGTH.comment=Controls history blending. Higher is more stable but can be softer during motion.
+value.TAA_STRENGTH.1=Light
+value.TAA_STRENGTH.2=Balanced
+value.TAA_STRENGTH.3=Stable
+
+option.VIGNETTE=Vignette Effect
+option.VIGNETTE.comment=Enable subtle darkening at screen edges for improved focus.
+
+option.WATER_RIFFLES=Water Ripple Strength
+option.WATER_RIFFLES.comment=Adjust the waviness and intensity of the fine normal map ripples on the water.
+
+value.WATER_RIFFLES.1=Calm
+value.WATER_RIFFLES.2=Standard
+value.WATER_RIFFLES.3=Choppy
+
+option.WATER_SPECULAR_STRENGTH=Water Specular Glow
+option.WATER_SPECULAR_STRENGTH.comment=Adjust the brightness of sun/moon reflections on the water ripples.
+
+value.WATER_SPECULAR_STRENGTH.1=Soft
+value.WATER_SPECULAR_STRENGTH.2=Standard
+value.WATER_SPECULAR_STRENGTH.3=Glinting
+
+option.SHADOW_SOFTNESS=Shadow Softness
+option.SHADOW_SOFTNESS.comment=Controls how soft and diffuse the shadow edges appear. Uses rotated Poisson disk filtering for smooth penumbra.
+
+value.SHADOW_SOFTNESS.1=Sharp
+value.SHADOW_SOFTNESS.2=Soft
+value.SHADOW_SOFTNESS.3=Ultra Soft
+
+# ==============================================================================
+# Sun & Moon Lighting (extended)
+# ==============================================================================
+screen.SUN_MOON=Sun & Moon
+screen.SUN_MOON.comment=Fine-tune sun & moon intensity, colour temperature, and atmospheric effects.
+
+option.SUN_INTENSITY=Sun Intensity
+option.SUN_INTENSITY.comment=Master brightness of direct sunlight. Higher = stronger daytime contrast.
+value.SUN_INTENSITY.1=Dim
+value.SUN_INTENSITY.2=Standard
+value.SUN_INTENSITY.3=Bright
+value.SUN_INTENSITY.4=Blazing
+
+option.MOON_INTENSITY=Moon Intensity
+option.MOON_INTENSITY.comment=Master brightness of moonlight. Higher = brighter, more visible nights.
+value.MOON_INTENSITY.1=Pitch Night
+value.MOON_INTENSITY.2=Standard
+value.MOON_INTENSITY.3=Bright Moon
+value.MOON_INTENSITY.4=Full Night
+
+option.SUN_TEMPERATURE=Sun Colour Temperature
+option.SUN_TEMPERATURE.comment=Shifts the sun's Kelvin curve. Realistic uses Tanner Helland blackbody; warm = golden; cool = neutral white.
+value.SUN_TEMPERATURE.1=Cool / Neutral
+value.SUN_TEMPERATURE.2=Realistic
+value.SUN_TEMPERATURE.3=Warm Golden
+
+option.MOON_TEMPERATURE=Moon Colour Temperature
+option.MOON_TEMPERATURE.comment=Tint of the moonlight. Icy = bluish cold; Silver = realistic 4100K; Warm = harvest-moon cream.
+value.MOON_TEMPERATURE.1=Icy Blue
+value.MOON_TEMPERATURE.2=Silver (Realistic)
+value.MOON_TEMPERATURE.3=Warm Cream
+
+option.SUN_HALO=Sun Halo (Mie Scatter)
+option.SUN_HALO.comment=Adds a soft warm glow on terrain when looking near the sun (Mie forward-scattering).
+
+option.SUNRISE_GLOW=Enhanced Sunrise/Sunset Glow
+option.SUNRISE_GLOW.comment=Enables stronger warm back-scatter that wraps around surfaces facing away from the low sun.
+
+# ==============================================================================
+# Extended shadow settings
+# ==============================================================================
+option.shadowDistance=Shadow Distance
+option.shadowDistance.comment=Maximum distance at which dynamic shadows are rendered. Higher values extend shadows to render distance; use Shadow LOD to maintain performance at extended ranges.
+value.shadowDistance.60.0=Near (60m)
+value.shadowDistance.80.0=Standard (80m)
+value.shadowDistance.120.0=Far (120m)
+value.shadowDistance.160.0=Ultra (160m)
+value.shadowDistance.256.0=Extended (256m)
+value.shadowDistance.384.0=Render Distance (384m)
+
+option.SHADOW_LOD=Shadow LOD
+option.SHADOW_LOD.comment=Controls shadow quality degradation with distance. With extended shadow distance (256-384m), LOD reduces sample count and increases filter radius at far range to maintain performance. Off = uniform quality (slowest). Balanced = reduction at 25-50% distance. Aggressive = maximum reduction at 15-60% distance. Shadows are fully skipped beyond 95% of render distance.
+value.SHADOW_LOD.0=Off (Uniform Quality)
+value.SHADOW_LOD.1=Balanced
+value.SHADOW_LOD.2=Aggressive
+option.SHADOW_PCSS_BLUR=PCSS Distance Blur
+option.SHADOW_PCSS_BLUR.comment=Enable PCSS penumbra softening that increases shadow blur at distance and during rain. Disable for fixed shadow softness (sharper distant shadows, less realistic).
+value.SHADOW_PCSS_BLUR.0=Off (Fixed Softness)
+value.SHADOW_PCSS_BLUR.1=On (PCSS Penumbra)
+
+
+option.AMBIENT_BRIGHTNESS=Shadow Lift / Ambient
+option.AMBIENT_BRIGHTNESS.comment=Controls how dark shadowed areas appear at night and in caves.
+value.AMBIENT_BRIGHTNESS.1=Dark
+value.AMBIENT_BRIGHTNESS.2=Standard
+value.AMBIENT_BRIGHTNESS.3=Lifted (Bright)
+
+option.SHADOW_TINT=Shadow Tint
+option.SHADOW_TINT.comment=Tints daytime shadows. Real-world shadows under a blue sky have a subtle cool tint.
+value.SHADOW_TINT.1=Neutral Gray
+value.SHADOW_TINT.2=Cool Blue (Realistic)
+value.SHADOW_TINT.3=Warm
+
+option.LIGHT_WRAP=Light Wrap
+option.LIGHT_WRAP.comment=Softens the terminator between lit and unlit surfaces. Realistic = physical Lambert; Soft = pleasant for screenshots.
+value.LIGHT_WRAP.1=Realistic (Lambert)
+value.LIGHT_WRAP.2=Soft Wrap
+value.LIGHT_WRAP.3=Stylized
+
+# v0.2.9 — new water/underwater option value labels
+value.WATER_WAVE_SCALE.1=Calm
+value.WATER_WAVE_SCALE.2=Standard
+value.WATER_WAVE_SCALE.3=Choppy
+value.WATER_WAVE_SCALE.4=Stormy
+value.WATER_WAVE_DETAIL.1=Coarse
+value.WATER_WAVE_DETAIL.2=Standard
+value.WATER_WAVE_DETAIL.3=Dense
+value.UNDERWATER_NIGHT_DARKNESS.1=Moonlit Pool
+value.UNDERWATER_NIGHT_DARKNESS.2=Dim
+value.UNDERWATER_NIGHT_DARKNESS.3=True Night
+value.UNDERWATER_NIGHT_DARKNESS.4=Pitch Dark
+# ==============================================================================
+# Experimental Tab & New Sky (v1.1.0)
+# ==============================================================================
+screen.EXPERIMENTAL=Experimental
+screen.EXPERIMENTAL.comment=Experimental
+
+option.SKY_MODE=New Sky (Atmospheric Scattering)
+option.SKY_STYLE=Sky Style
+option.SKY_STYLE.comment=Artistic direction for the physical sky. Realistic = true angular sizes & neutral colours (astronomy look). Semi-realistic = readable sun/moon (x2.8), richer colour, soft glow. Fantasy = grand sun/moon (x5.5), big corona, vivid teal/crimson/indigo palette.
+option.SKY_MODE.comment=EXPERIMENTAL — off in all profiles. Gradient (legacy, default) or Physical realtime scattering with true multiple scattering (Rayleigh+Mie+Ozone, 1st+2nd+3rd order). Enable manually in this tab.
+value.SKY_MODE.0=Gradient (Legacy)
+value.SKY_STYLE.0=Realistic
+value.SKY_STYLE.1=Semi-realistic
+value.SKY_STYLE.2=Fantasy
+value.SKY_MODE.1=Realtime Scattering
+
+option.SKY_QUALITY=Sky Scattering Quality
+option.SKY_QUALITY.comment=Sky Scattering Quality
+value.SKY_QUALITY.1=Fast
+value.SKY_QUALITY.2=Standard
+value.SKY_QUALITY.3=High
+
+# --- Auto-added missing keys (v1.1.0 sync, English source) ---
+option.FOLIAGE_SSS=Foliage SSS
+option.FOLIAGE_SSS.comment=Enables subsurface scattering (translucency) for leaves, grass, and plants when looking against the light.
+option.GODRAYS_STRENGTH=Godrays Intensity
+option.GODRAYS_STRENGTH.comment=Brightness of the volumetric light shafts. Subtle: gentle atmospheric haze. Balanced: clearly visible rays. Dramatic: bold cinematic beams.
+value.GODRAYS_STRENGTH.1=Subtle
+value.GODRAYS_STRENGTH.2=Balanced
+value.GODRAYS_STRENGTH.3=Dramatic
+option.SHOOTING_STARS=Meteors (Falling Stars)
+option.SHOOTING_STARS.comment=Physically-based meteors entering the mesosphere (~80-120 km). Renders true great-circle 3D arcs with ablation light curves, blackbody plasma color (3500-5500 K), Rayleigh extinction near the horizon, and persistent ionization trails on fireballs.
+option.SHOOTING_STARS_FREQUENCY=Meteor Activity (ZHR)
+option.SHOOTING_STARS_FREQUENCY.comment=Approximate Zenithal Hourly Rate. Sporadic = realistic background of ~10 per hour. Active = mild shower. Storm = peak density (~100/hr).
+value.SHOOTING_STARS_FREQUENCY.1=Sporadic (~10/hr)
+value.SHOOTING_STARS_FREQUENCY.2=Active Shower
+value.SHOOTING_STARS_FREQUENCY.3=Meteor Storm
+option.SHOOTING_STARS_BRIGHTNESS=Magnitude Scale
+option.SHOOTING_STARS_BRIGHTNESS.comment=Master multiplier on the meteor magnitude scale. Faint = realistic average; Bright = scales fireballs for cinematic visibility.
+value.SHOOTING_STARS_BRIGHTNESS.1=Faint (Realistic)
+value.SHOOTING_STARS_BRIGHTNESS.2=Standard
+value.SHOOTING_STARS_BRIGHTNESS.3=Bright Fireballs
+value.CONTRAST.4=Photographic (AgX-like)
+option.SPATIAL_AA_MODE=Spatial Anti-Aliasing
+option.SPATIAL_AA_MODE.comment=Select post-process anti-aliasing method. FXAA is fast and cheap. SMAA uses depth buffer for better quality on geometry edges. Can be combined with TAA.
+value.SPATIAL_AA_MODE.0=Off
+value.SPATIAL_AA_MODE.1=FXAA (Fast)
+value.SPATIAL_AA_MODE.2=SMAA (Quality)
+option.HEAT_SHIMMER=Heat Shimmer Above Lava
+option.HEAT_SHIMMER.comment=Enable a subtle screen-space heat distortion effect above lava surfaces.
+option.HEAT_SHIMMER_STRENGTH=Heat Shimmer Strength
+option.HEAT_SHIMMER_STRENGTH.comment=Controls the intensity of the heat distortion above lava.
+value.HEAT_SHIMMER_STRENGTH.1=Subtle
+value.HEAT_SHIMMER_STRENGTH.2=Balanced
+value.HEAT_SHIMMER_STRENGTH.3=Strong
+option.SSR=Screen-Space Reflections (SSR)
+option.SSR.comment=Adds real-time reflected environment on water, wet surfaces and metallic PBR blocks. Enabled from MED upward in v1.0.4.
+option.SSR_QUALITY=SSR Quality
+option.SSR_QUALITY.comment=Controls the precision and ray distance of screen-space reflections. Higher = sharper reflections but more GPU cost.
+value.SSR_QUALITY.1=Fast (12 steps)
+value.SSR_QUALITY.2=Balanced (24 steps)
+value.SSR_QUALITY.3=High (40 steps)
+option.SSR_STRENGTH=SSR Strength
+option.SSR_STRENGTH.comment=Controls how visible and prominent the reflected environment appears on reflective surfaces.
+option.WATER_WAVE_SCALE=Wave Amplitude
+option.WATER_WAVE_SCALE.comment=Controls the visible steepness of water surface waves. Calm = mirror-like, Stormy = strongly broken reflections.
+option.WATER_WAVE_DETAIL=Wave Detail
+option.WATER_WAVE_DETAIL.comment=Controls how many small waves appear per block. Coarse = a few big waves, Dense = many tiny ripples.
+option.UNDERWATER_NIGHT_DARKNESS=Underwater Night Darkness
+option.UNDERWATER_NIGHT_DARKNESS.comment=Controls how dark the underwater scene becomes at night. Moonlit Pool keeps brightness; Pitch Dark gives extreme survival-style darkness.
+value.SSR_STRENGTH.1=Subtle
+value.SSR_STRENGTH.2=Balanced
+value.SSR_STRENGTH.3=Strong
+option.PBR_DISTANCE=PBR Render Distance
+option.PBR_DISTANCE.comment=Maximum distance for PBR specular highlights. Saves GPU on far terrain. Near (16m) for LOW, Standard (48m) for MED, Far (128m) for HIGH/ULTRA, Unlimited for EXTREME.
+value.PBR_DISTANCE.1=Near (16m)
+value.PBR_DISTANCE.2=Standard (48m)
+value.PBR_DISTANCE.3=Far (128m)
+value.PBR_DISTANCE.4=Unlimited
+
+# v1.1.1 — shadow pipeline + POM option labels
+value.shadowMapResolution.512=512
+value.shadowMapResolution.1024=1024
+value.shadowMapResolution.2048=2048
+value.shadowMapResolution.4096=4096
+option.POM_DEPTH=POM Depth
+option.POM_DEPTH.comment=Controls the visible depth of parallax occlusion mapping when PBR POM is enabled.
+value.POM_DEPTH.1=Low
+value.POM_DEPTH.2=Standard
+value.POM_DEPTH.3=Deep
+option.POM_STEPS=POM Steps
+option.POM_STEPS.comment=Controls the raymarch step count for parallax occlusion mapping. Higher values improve quality but cost more GPU time.
+value.POM_STEPS.1=Fast
+value.POM_STEPS.2=Standard
+value.POM_STEPS.3=High
+value.POM_STEPS.4=Ultra
+
+screen.SHADOW_OPTIONS=Shadows
+screen.SHADOW_OPTIONS.comment=Dynamic shadow resolution, distance, softness and tint.
+screen.PBR_OPTIONS=PBR & Materials
+screen.PBR_OPTIONS.comment=PBR lighting, parallax relief, intensity and render distance.
+screen.AO_REFLECTIONS=AO & Reflections
+screen.AO_REFLECTIONS.comment=SSAO, screen-space reflections and rain wetness reflections.
+screen.CLOUD_SHAPE=Clouds
+screen.CLOUD_SHAPE.comment=Volumetric cloud shape, altitude, distance and cloud shadows.
+screen.LIGHT_SHAFTS=Godrays
+screen.LIGHT_SHAFTS.comment=Volumetric sun/moon shafts and their quality/strength.
+screen.NIGHT_SKY=Night Sky
+screen.NIGHT_SKY.comment=Aurora, stars, Milky Way and shooting stars.

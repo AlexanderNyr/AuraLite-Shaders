@@ -1,0 +1,399 @@
+# AuraLite Shaders v1.0.7 - Copyright (c) 2026 AlexanderNyr. Licensed under CC BY-NC-SA 4.0.
+# ==============================================================================
+# AuraLite Shader Pack - Arabic Language Translations
+# ==============================================================================
+# ملاحظة: هذه ترجمة بمساعدة الذكاء الاصطناعي. مراجعات المجتمع مرحب بها!
+# يرجى فتح طلب سحب (PR) على:
+# https://github.com/AlexanderNyr/AuraLite-Shaders
+# ==============================================================================
+
+# ==============================================================================
+# Quality Profiles
+# ==============================================================================
+profile.VERY_LOW=منخفض جدًا
+profile.VERY_LOW.comment=أقصى معدل FPS مطلق. جميع الميزات الإضافية معطلة: لا ظلال، لا سحب، لا PBR، لا SSR، لا أشعة الضوء. الحد الأدنى فقط من العرض.
+profile.LOW=منخفض
+profile.MED=متوسط
+profile.HIGH=عالٍ
+profile.ULTRA=ألترا
+profile.EXTREME=شديد
+profile.EXTREME.comment=الحد الأقصى السينمائي. كل شيء في الحد الأقصى: PBR مدى غير محدود، تدرج لوني تصويري (AgX)، SSAO عميق، عواصف شهابية.
+profile.CUSTOM=مخصص
+profile.CUSTOM.comment=إعدادات مخصصة معدّلة من قبل المستخدم.
+profile.HIGH.comment=جودة عالية للهواة. ظلال 2048، SSR متوازن، TAA، SSAO دقيق، أشعة متوازنة، SMAA.
+profile.LOW.comment=خفيف وقابل للعب. يحافظ على حركة الأشجار/الماء، نجوم أكثر إشراقًا، FXAA، تأثير vignette. بدون ظلال أو سحب أو PBR.
+profile.MED.comment=النقطة المثالية اليومية. ظلال 1024، سحب، PBR، SSR السريع، أشعة الضوء، SSS للأوراق، انعكاسات مبللة، ضباب، شهب.
+profile.ULTRA.comment=متطور. ظلال 4096، SSR عالي، SSAO متوازن، أشعة عالية، TAA مستقر، جميع التأثيرات مفعّلة.
+
+screen.TRANSLATION_NOTICE=⚠ قد تحتوي الترجمات على أخطاء
+screen.TRANSLATION_NOTICE.comment=قد تكون بعض نصوص الترجمة غير دقيقة. إذا بدا شيء غريبًا، قارنه بالنص الإنجليزي الأصلي.
+
+# Screens
+screen.LIGHTING=إعدادات الإضاءة
+screen.LIGHTING.comment=قم بتكوين الظلال وألوان الإضاءة والسطوع.
+screen.FOLIAGE=إعدادات النباتات
+screen.FOLIAGE.comment=قم بتكوين رسوم الاهتزاز المتحركة للعشب والأوراق.
+screen.WATER=إعدادات الماء
+screen.WATER.comment=قم بتكوين الأمواج والشفافية وتنسيق المياه.
+screen.CLOUDS_MENU=السماء والسحب
+screen.CLOUDS_MENU.comment=قم بتكوين الارتفاع الفعلي والسُمك ونمط السحب ثلاثية الأبعاد وتأثيرات السماء.
+screen.POST_PROCESS=المعالجة اللاحقة والضباب
+screen.POST_PROCESS.comment=قم بتكوين التعرض للضوء والضباب والتأثيرات السينمائية.
+
+# Options
+option.SHADOWS=ظلال ديناميكية
+option.SHADOWS.comment=تمكين أو تعطيل الظلال الديناميكية الناعمة من الشمس والقمر.
+option.shadowMapResolution=دقة الظل
+option.shadowMapResolution.comment=غيّر جودة خريطة الظل. قد تؤدي القيم الأعلى إلى تقليل الأداء.
+option.PBR_LIGHTING=إضاءة PBR (LabPBR)
+option.PBR_LIGHTING.comment=تمكين العرض القائم على الفيزياء للمعادن والخشونة وخرائط الانحدار ثلاثية الأبعاد (يتطلب حزمة موارد PBR).
+option.PBR_POM=نقش الكتلة ثلاثي الأبعاد (POM)
+option.PBR_POM.comment=تمكين رسم خرائط انسداد المنظور القائم على الفيزياء لأنسجة الكتل ثلاثية الأبعاد. يُنصح بالتعطيل على حزم الموارد غير المتوافقة.
+option.PBR_STRENGTH=شدة PBR
+option.PBR_STRENGTH.comment=تحكم في الانعكاسية واللمعان للأسطح المعدنية PBR.
+value.PBR_STRENGTH.1=خفيف
+value.PBR_STRENGTH.2=قياسي
+value.PBR_STRENGTH.3=مرآة
+option.LIGHTMAP_WARMTH=دفء الشعلة
+option.LIGHTMAP_WARMTH.comment=اضبط دفء ولون ضوء الكتلة/الشعلة.
+value.LIGHTMAP_WARMTH.1=دافئ ومريح
+value.LIGHTMAP_WARMTH.2=دافئ
+value.LIGHTMAP_WARMTH.3=شديد
+option.WAVING_LEAVES=تمايل الأوراق
+option.WAVING_LEAVES.comment=تمكين رسوم متحركة لطيفة لتمايل أوراق الأشجار.
+option.WAVING_GRASS=تمايل النباتات
+option.WAVING_GRASS.comment=تمكين الرسوم المتحركة المتمايلة للعشب والزهور والمحاصيل.
+option.WIND_SPEED=سرعة الرياح
+option.WIND_SPEED.comment=تحكم في سرعة تمايل الأوراق والنباتات وأمواج الماء.
+value.WIND_SPEED.1=نسيم خفيف
+value.WIND_SPEED.2=نسيم
+value.WIND_SPEED.3=عاصفة
+option.WATER_WAVES=أمواج الماء
+option.WATER_WAVES.comment=يفعّل أمواجاً هندسية ثلاثية الأبعاد على سطح الماء.
+option.WATER_TRANSPARENCY=كثافة الماء
+option.WATER_TRANSPARENCY.comment=يتحكم بشفافية وعتامة الماء.
+value.WATER_TRANSPARENCY.1=صافٍ
+value.WATER_TRANSPARENCY.2=متوازن
+value.WATER_TRANSPARENCY.3=عميق
+option.PROCEDURAL_CLOUDS=سحب ثلاثية الأبعاد حجمية
+option.PROCEDURAL_CLOUDS.comment=تمكين السحب ثلاثية الأبعاد القابلة للطيران فعليًا والتي يمكن الوصول إليها والطيران خلالها.
+option.CLOUD_HEIGHT=ارتفاع السحب
+option.CLOUD_HEIGHT.comment=حدد الارتفاع الفعلي (مستوى Y) لطبقة السحب في العالم (بالأمتار).
+value.CLOUD_HEIGHT.1=منخفض (~110م)
+value.CLOUD_HEIGHT.2=قياسي (~160م)
+value.CLOUD_HEIGHT.3=مرتفع (~240م)
+option.CLOUD_THICKNESS=سُمك السحب
+option.CLOUD_THICKNESS.comment=قم بتكوين السُمك الرأسي وحجم السحب.
+value.CLOUD_THICKNESS.1=رقيق (Cirrus)
+value.CLOUD_THICKNESS.2=قياسي (Cumulus)
+value.CLOUD_THICKNESS.3=كثيف (عاصف)
+option.AURORA_MODE=الشفق القطبي
+option.AURORA_MODE.comment=تحكم في عرض الشفق القطبي المتدفق الواقعي في سماء الليل.
+value.AURORA_MODE.0=معطل
+value.AURORA_MODE.1=فقط في المناطق الباردة
+value.AURORA_MODE.2=مفعّل دائمًا
+option.AURORA_SPEED=سرعة الشفق
+option.AURORA_SPEED.comment=تحكم في سرعة تمايل وتدفق الأضواء الشمالية.
+value.AURORA_SPEED.1=بطيء
+value.AURORA_SPEED.2=قياسي
+value.AURORA_SPEED.3=سريع
+option.AURORA_STRENGTH=سطوع الشفق
+option.AURORA_STRENGTH.comment=تحكم في السطوع العام لتوهج الأضواء الشمالية.
+value.AURORA_STRENGTH.1=ناعم
+value.AURORA_STRENGTH.2=قياسي
+value.AURORA_STRENGTH.3=متوهج
+option.NEBULA_BRIGHTNESS=سطوع درب التبانة
+option.NEBULA_BRIGHTNESS.comment=اضبط سطوع توهج السديم المجري البني القطري ليلاً.
+value.NEBULA_BRIGHTNESS.1=خافت
+value.NEBULA_BRIGHTNESS.2=قياسي
+value.NEBULA_BRIGHTNESS.3=ساطع
+option.STARS_BRIGHTNESS=سطوع النجوم
+option.STARS_BRIGHTNESS.comment=تحكم في سطوع وتألق توهج النجوم ليلاً.
+value.STARS_BRIGHTNESS.1=خافت
+value.STARS_BRIGHTNESS.2=قياسي
+value.STARS_BRIGHTNESS.3=لامع
+option.STARS_AMOUNT=كثافة النجوم
+option.STARS_AMOUNT.comment=تحكم في الكمية الإجمالية وكثافة النجوم في السماء.
+value.STARS_AMOUNT.1=قليل
+value.STARS_AMOUNT.2=قياسي
+value.STARS_AMOUNT.3=كثيف
+option.RAINBOW_STRENGTH=شدة قوس قزح
+option.RAINBOW_STRENGTH.comment=قم بتكوين سطوع وتشبع لون قوس قزح بعد المطر.
+value.RAINBOW_STRENGTH.1=خفيف
+value.RAINBOW_STRENGTH.2=متوازن
+value.RAINBOW_STRENGTH.3=زاهٍ
+option.COZY_LIGHTS=وميض الشعلة
+option.COZY_LIGHTS.comment=تمكين رسوم متحركة دافئة ومريحة في الوقت الفعلي للشعلات ونيران المخيمات والفوانيس.
+option.WET_REFLECTIONS=انعكاسات رطوبة المطر
+option.WET_REFLECTIONS.comment=عند هطول المطر، تصبح الكتل الصلبة مثل الأرض والعشب والحجر مبللة وداكنة ولامعة تحت السماء.
+option.GROUND_MIST=ضباب أرضي منخفض (Y=62-66)
+option.GROUND_MIST.comment=تمكين طبقات ضباب صباحية/مسائية ناعمة بيضاء ذهبية تنزلق فوق الماء والجليد عند الفجر والغسق.
+option.FOG_DENSITY_LEVEL=كثافة الضباب
+option.FOG_DENSITY_LEVEL.comment=تحكم في قوة ضباب الأفق الجوي.
+value.FOG_DENSITY_LEVEL.1=منخفض
+value.FOG_DENSITY_LEVEL.2=متوسط
+value.FOG_DENSITY_LEVEL.3=عالٍ
+option.EXPOSURE=سطوع التعرض
+option.EXPOSURE.comment=تحكم في السطوع العام للصورة.
+value.EXPOSURE.1=باهت
+value.EXPOSURE.2=متوازن
+value.EXPOSURE.3=نابض بالحياة
+option.COLOR_SATURATION=حيوية اللون
+option.COLOR_SATURATION.comment=تحكم في التشبع غير الخطي لألوان الشاشة. يجعل النباتات تبدو زمردية والسماء غنية.
+value.COLOR_SATURATION.1=باهت
+value.COLOR_SATURATION.2=متوازن
+value.COLOR_SATURATION.3=ملون
+value.COLOR_SATURATION.4=زاهٍ
+option.CONTRAST=تباين الصورة
+option.CONTRAST.comment=اختر أسلوب رسم النغمة ومنحنى التباين.
+value.CONTRAST.1=ناعم
+value.CONTRAST.2=سينمائي (ACES)
+value.CONTRAST.3=شديد (تباين عالٍ)
+
+option.TAA=مضاد التعرج الزمني (TAA)
+option.TAA.comment=حل زمني مع إعادة إسقاط الحركة وقص الجوار. يقلل من الوميض والحواف المسننة في الإعدادات المسبقة العالية.
+option.TAA_STRENGTH=قوة TAA
+option.TAA_STRENGTH.comment=يتحكم في مزج السجل. الأعلى أكثر استقرارًا ولكن يمكن أن يكون أكثر نعومة أثناء الحركة.
+value.TAA_STRENGTH.1=خفيف
+value.TAA_STRENGTH.2=متوازن
+value.TAA_STRENGTH.3=مستقر
+option.VIGNETTE=تأثير الفينيت
+option.VIGNETTE.comment=تمكين تعتيم خفيف عند حواف الشاشة لتحسين التركيز.
+option.WATER_RIFFLES=قوة تموجات الماء
+option.WATER_RIFFLES.comment=يضبط شدة التموجات الدقيقة لخريطة الأسطح على الماء.
+value.WATER_RIFFLES.1=هادئ
+value.WATER_RIFFLES.2=قياسي
+value.WATER_RIFFLES.3=مضطرب
+option.WATER_SPECULAR_STRENGTH=توهج الماء اللامع
+option.WATER_SPECULAR_STRENGTH.comment=يضبط سطوع انعكاسات الشمس/القمر على تموجات الماء.
+value.WATER_SPECULAR_STRENGTH.1=ناعم
+value.WATER_SPECULAR_STRENGTH.2=قياسي
+value.WATER_SPECULAR_STRENGTH.3=لامع
+option.SHADOW_SOFTNESS=نعومة الظل
+option.SHADOW_SOFTNESS.comment=يتحكم في مدى نعومة وانتشار حواف الظل. يستخدم تصفية قرص بواسون الدوارة لشبه ظل ناعم.
+value.SHADOW_SOFTNESS.1=حاد
+value.SHADOW_SOFTNESS.2=ناعم
+value.SHADOW_SOFTNESS.3=ناعم للغاية
+
+option.SSAO=إخفاء SSAO / SAO
+option.SSAO.comment=الملف المتطرف: حجب محيطي في فضاء الشاشة لظلال التلامس في الزوايا وتحت الكتل وعند تقاطعات الهندسة.
+option.SSAO_STRENGTH=شدة SSAO
+option.SSAO_STRENGTH.comment=يتحكم في عمق إخفاء الإضاءة المحيطة في مساحة الشاشة. نشط فقط عند تمكين SSAO.
+value.SSAO_STRENGTH.1=خفيف
+value.SSAO_STRENGTH.2=متوازن
+value.SSAO_STRENGTH.3=عميق
+
+option.CLOUD_DISTANCE=مسافة عرض السحب
+option.CLOUD_DISTANCE.comment=أقصى مسافة رسم للسحب الحجمية. تزيدها ملفات الجودة تلقائيًا.
+value.CLOUD_DISTANCE.1=قريب
+value.CLOUD_DISTANCE.2=قياسي
+value.CLOUD_DISTANCE.3=بعيد
+value.CLOUD_DISTANCE.4=بعيد جدًا
+
+option.CLOUD_SHADOWS=ظلال السحب
+option.CLOUD_SHADOWS.comment=يضيف ظلالاً إجرائية شفافة من كثافة السحب الحجمية على التضاريس. متوازن حسب ملفات الجودة.
+option.CLOUD_SHADOW_STRENGTH=شدة ظلال السحب
+option.CLOUD_SHADOW_STRENGTH.comment=يتحكم في مدى وضوح وإثارة ظلال السحب الشفافة.
+value.CLOUD_SHADOW_STRENGTH.1=ناعم
+value.CLOUD_SHADOW_STRENGTH.2=متوازن
+value.CLOUD_SHADOW_STRENGTH.3=مثير
+
+option.GODRAYS=أشعة الشمس (Godrays)
+option.GODRAYS.comment=Adds realistic screen-space sun shafts through sky gaps and behind geometry.
+option.GODRAYS_QUALITY=جودة Godrays
+option.GODRAYS_QUALITY.comment=Controls sample count and cost of godrays.
+value.GODRAYS_QUALITY.1=سريع
+value.GODRAYS_QUALITY.2=متوازن
+value.GODRAYS_QUALITY.3=عالٍ
+
+# ==============================================================================
+# الشمس والقمر (إضاءة موسعة)
+# ==============================================================================
+screen.SUN_MOON=الشمس والقمر
+screen.SUN_MOON.comment=اضبط بدقة شدة الشمس والقمر، ودرجة حرارة اللون، والتأثيرات الجوية.
+option.SUN_INTENSITY=شدة الشمس
+option.SUN_INTENSITY.comment=السطوع الرئيسي لضوء الشمس المباشر. الأعلى = تباين نهاري أقوى.
+value.SUN_INTENSITY.1=باهت
+value.SUN_INTENSITY.2=قياسي
+value.SUN_INTENSITY.3=عالٍ
+value.SUN_INTENSITY.4=مشتعل
+option.MOON_INTENSITY=شدة القمر
+option.MOON_INTENSITY.comment=السطوع الرئيسي لضوء القمر. الأعلى = ليالٍ أكثر سطوعًا ووضوحًا.
+value.MOON_INTENSITY.1=ليل حالك
+value.MOON_INTENSITY.2=قياسي
+value.MOON_INTENSITY.3=قمر ساطع
+value.MOON_INTENSITY.4=ليل كامل
+option.SUN_TEMPERATURE=درجة حرارة لون الشمس
+option.SUN_TEMPERATURE.comment=يحول منحنى كلفن للشمس. يستخدم الواقعي جسمًا أسود تانر هيلاند؛ دافئ = ذهبي؛ بارد = أبيض محايد.
+value.SUN_TEMPERATURE.1=بارد / محايد
+value.SUN_TEMPERATURE.2=واقعي
+value.SUN_TEMPERATURE.3=ذهبي دافئ
+option.MOON_TEMPERATURE=درجة حرارة لون القمر
+option.MOON_TEMPERATURE.comment=صبغة ضوء القمر. جليدي: بارد مزرق؛ فضي: واقعي 4100 كلفن؛ دافئ: كريمي قمر الحصاد.
+value.MOON_TEMPERATURE.1=أزرق جليدي
+value.MOON_TEMPERATURE.2=فضي (واقعي)
+value.MOON_TEMPERATURE.3=كريمي دافئ
+option.SUN_HALO=هالة الشمس (تشتت مي)
+option.SUN_HALO.comment=يضيف توهجًا دافئًا ناعمًا على التضاريس عند النظر بالقرب من الشمس (تشتت مي الأمامي).
+option.SUNRISE_GLOW=توهج شروق/غروب الشمس المحسّن
+option.SUNRISE_GLOW.comment=يمكّن تشتتًا خلفيًا دافئًا أقوى يلتف حول الأسطح البعيدة عن الشمس المنخفضة.
+
+# ==============================================================================
+# إعدادات الظلال الموسعة
+# ==============================================================================
+option.shadowDistance=مسافة الظل
+option.shadowDistance.comment=المسافة القصوى التي يتم عندها عرض الظلال الديناميكية. القيم الأعلى تمدد الظلال إلى مسافة العرض؛ استخدم Shadow LOD للحفاظ على الأداء في النطاقات الممتدة.
+value.shadowDistance.60.0=قريب (60م)
+value.shadowDistance.80.0=قياسي (80م)
+value.shadowDistance.120.0=بعيد (120م)
+value.shadowDistance.160.0=ألترا (160م)
+value.shadowDistance.256.0=موسعة (256 م)
+value.shadowDistance.384.0=مسافة العرض (384 م)
+
+option.SHADOW_LOD=مستوى تفاصيل الظلال
+option.SHADOW_LOD.comment=يتحكم في تدهور جودة الظلال مع المسافة. مع مسافة الظلال الممتدة (256-384 م)، يقلل LOD عدد العينات ويزيد نصف قطر الفلتر في المسافة للحفاظ على الأداء. إيقاف = جودة موحدة (بطيء). متوازن = تخفيض عند 25-50% من المسافة. عدواني = تخفيض أقصى عند 15-60% من المسافة. يتم تخطي الظلال تمامًا بعد 95% من مسافة العرض.
+value.SHADOW_LOD.0=إيقاف (جودة موحدة)
+value.SHADOW_LOD.1=متوازن
+value.SHADOW_LOD.2=عدواني
+option.SHADOW_PCSS_BLUR=ضبابية PCSS بالمسافة
+option.SHADOW_PCSS_BLUR.comment=يُمكّن تليين penumbra PCSS الذي يزيد من ضبابية الظلال مع المسافة وأثناء المطر. قم بإيقاف التشغيل للحصول على نعومة ثابتة (ظلال بعيدة أكثر حدة، أقل واقعية).
+value.SHADOW_PCSS_BLUR.0=إيقاف (نعومة ثابتة)
+value.SHADOW_PCSS_BLUR.1=تشغيل (penumbra PCSS)
+
+option.AMBIENT_BRIGHTNESS=رفع الظل / محيطي
+option.AMBIENT_BRIGHTNESS.comment=يتحكم في مدى ظلام المناطق المظللة ليلاً وفي الكهوف.
+value.AMBIENT_BRIGHTNESS.1=داكن
+value.AMBIENT_BRIGHTNESS.2=قياسي
+value.AMBIENT_BRIGHTNESS.3=مرفوع (ساطع)
+option.SHADOW_TINT=صبغة الظل
+option.SHADOW_TINT.comment=يصبغ ظلال النهار. الظلال في العالم الحقيقي تحت سماء زرقاء لها صبغة باردة خفيفة.
+value.SHADOW_TINT.1=رمادي محايد
+value.SHADOW_TINT.2=أزرق بارد (واقعي)
+value.SHADOW_TINT.3=دافئ
+option.LIGHT_WRAP=التفاف الضوء
+option.LIGHT_WRAP.comment=يعمل على تنعيم الخط الفاصل بين الأسطح المضاءة وغير المضاءة. واقعي = لامبرت الفيزيائي؛ ناعم = ممتع لقطات الشاشة.
+value.LIGHT_WRAP.1=واقعي (لامبرت)
+value.LIGHT_WRAP.2=التفاف ناعم
+value.LIGHT_WRAP.3=مصمم
+
+# v0.2.9 — water/underwater option value labels (English fallback)
+value.WATER_WAVE_SCALE.1=هادئ
+value.WATER_WAVE_SCALE.2=قياسي
+value.WATER_WAVE_SCALE.3=مضطرب
+value.WATER_WAVE_SCALE.4=عاصف
+value.WATER_WAVE_DETAIL.1=خشن
+value.WATER_WAVE_DETAIL.2=قياسي
+value.WATER_WAVE_DETAIL.3=كثيف
+value.UNDERWATER_NIGHT_DARKNESS.1=بركة مقمرة
+value.UNDERWATER_NIGHT_DARKNESS.2=خافت
+value.UNDERWATER_NIGHT_DARKNESS.3=ليل حقيقي
+value.UNDERWATER_NIGHT_DARKNESS.4=ظلام دامس
+# ==============================================================================
+# Experimental Tab & New Sky (v1.1.0)
+# ==============================================================================
+screen.EXPERIMENTAL=تجريبي
+screen.EXPERIMENTAL.comment=تجريبي
+
+option.SKY_MODE=سماء جديدة (التشتت الجوي)
+option.SKY_STYLE=نمط السماء
+option.SKY_STYLE.comment=Artistic direction for the physical sky. Realistic = true angular sizes & neutral colours (astronomy look). Semi-realistic = readable sun/moon (x2.8), richer colour, soft glow. Fantasy = grand sun/moon (x5.5), big corona, vivid teal/crimson/indigo palette.
+option.SKY_MODE.comment=EXPERIMENTAL — off in all profiles. Gradient (legacy, default) or Physical realtime scattering with true multiple scattering (Rayleigh+Mie+Ozone, 1st+2nd+3rd order). Enable manually in this tab.
+value.SKY_MODE.0=متدرج (قديم)
+value.SKY_STYLE.0=واقعي
+value.SKY_STYLE.1=شبه واقعي
+value.SKY_STYLE.2=خيالي
+value.SKY_MODE.1=Realtime Scattering
+
+option.SKY_QUALITY=جودة تشتت السماء
+option.SKY_QUALITY.comment=جودة تشتت السماء
+value.SKY_QUALITY.1=سريع
+value.SKY_QUALITY.2=قياسي
+value.SKY_QUALITY.3=عالي
+
+# --- Auto-added missing translations (v1.1.0 sync) ---
+option.FOLIAGE_SSS=SSS النباتات
+option.FOLIAGE_SSS.comment=يمكّن التشتت تحت السطحي (الشفافية) للأوراق والعشب والنباتات عند النظر باتجاه الضوء.
+option.GODRAYS_STRENGTH=شدة أشعة الشمس
+option.GODRAYS_STRENGTH.comment=سطوع أعمدة الضوء الحجمية. خفيف: ضباب جوي لطيف. متوازن: أشعة واضحة الرؤية. مثير: أشعة سينمائية جريئة.
+value.GODRAYS_STRENGTH.1=خفيف
+value.GODRAYS_STRENGTH.2=متوازن
+value.GODRAYS_STRENGTH.3=مثير
+option.SHOOTING_STARS=النيازك (النجوم الساقطة)
+option.SHOOTING_STARS.comment=نيازك واقعية تدخل الغلاف الجوي المتوسط (~80-120 كم). يعرض أقواسًا ثلاثية الأبعاد حقيقية للدائرة الكبرى مع منحنيات ضوء التآكل، ولون بلازما الجسم الأسود (3500-5500 كلفن)، وانقراض رايلي بالقرب من الأفق، ومسارات تأين مستمرة على الكرات النارية.
+option.SHOOTING_STARS_FREQUENCY=نشاط النيازك (ZHR)
+option.SHOOTING_STARS_FREQUENCY.comment=معدل الذروة الساعي التقريبي. متقطع: خلفية واقعية تبلغ ~10 في الساعة. نشط: زخة معتدلة. عاصفة: كثافة الذروة (~100/ساعة).
+value.SHOOTING_STARS_FREQUENCY.1=متقطع (~10/ساعة)
+value.SHOOTING_STARS_FREQUENCY.2=زخة نشطة
+value.SHOOTING_STARS_FREQUENCY.3=عاصفة نيزكية
+option.SHOOTING_STARS_BRIGHTNESS=مقياس القدر
+option.SHOOTING_STARS_BRIGHTNESS.comment=مضاعف رئيسي على مقياس قدر النيزك. خافت: متوسط واقعي؛ ساطع: يقيس الكرات النارية لرؤية سينمائية.
+value.SHOOTING_STARS_BRIGHTNESS.1=خافت (واقعي)
+value.SHOOTING_STARS_BRIGHTNESS.2=قياسي
+value.SHOOTING_STARS_BRIGHTNESS.3=كرات نارية ساطعة
+value.CONTRAST.4=فوتوغرافي (يشبه AgX)
+option.SPATIAL_AA_MODE=مضاد التعرج المكاني
+option.SPATIAL_AA_MODE.comment=حدد طريقة مضاد التعرج بعد المعالجة. FXAA سريع ورخيص. يستخدم SMAA مخزن العمق لجودة أفضل على حواف الهندسة. يمكن دمجه مع TAA.
+value.SPATIAL_AA_MODE.0=معطل
+value.SPATIAL_AA_MODE.1=FXAA (سريع)
+value.SPATIAL_AA_MODE.2=SMAA (جودة)
+option.HEAT_SHIMMER=وميض الحرارة فوق الحمم
+option.HEAT_SHIMMER.comment=تمكين تأثير تشويه حراري خفيف في مساحة الشاشة فوق أسطح الحمم.
+option.HEAT_SHIMMER_STRENGTH=شدة وميض الحرارة
+option.HEAT_SHIMMER_STRENGTH.comment=يتحكم في شدة التشوه الحراري فوق الحمم.
+value.HEAT_SHIMMER_STRENGTH.1=خفيف
+value.HEAT_SHIMMER_STRENGTH.2=متوازن
+value.HEAT_SHIMMER_STRENGTH.3=قوي
+option.SSR=انعكاسات مساحة الشاشة (SSR)
+option.SSR.comment=يضيف بيئة منعكسة في الوقت الفعلي على الماء والأسطح الرطبة والكتل المعدنية PBR. مفعّل من MED فما فوق في v1.0.4.
+option.SSR_QUALITY=جودة SSR
+option.SSR_QUALITY.comment=يتحكم في دقة ومسافة أشعة انعكاسات مساحة الشاشة. الأعلى = انعكاسات أوضح ولكن تكلفة GPU أكبر.
+value.SSR_QUALITY.1=سريع (12 خطوة)
+value.SSR_QUALITY.2=متوازن (24 خطوة)
+value.SSR_QUALITY.3=عالٍ (40 خطوة)
+option.SSR_STRENGTH=قوة SSR
+option.SSR_STRENGTH.comment=يتحكم في مدى وضوح وبروز البيئة المنعكسة على الأسطح العاكسة.
+option.WATER_WAVE_SCALE=سعة الموجة
+option.WATER_WAVE_SCALE.comment=يتحكم في انحدار أمواج سطح الماء المرئي. هادئ: يشبه المرآة، عاصف: انعكاسات مكسورة بشدة.
+option.WATER_WAVE_DETAIL=تفاصيل الموجة
+option.WATER_WAVE_DETAIL.comment=يتحكم في عدد الأمواج الصغيرة التي تظهر لكل كتلة. خشن: بضع أمواج كبيرة، كثيف: العديد من التموجات الصغيرة.
+option.UNDERWATER_NIGHT_DARKNESS=ظلام الليل تحت الماء
+option.UNDERWATER_NIGHT_DARKNESS.comment=يتحكم في مدى ظلام المشهد تحت الماء ليلاً. بركة مقمرة تحافظ على السطوع؛ ظلام دامس يعطي ظلامًا شديدًا بأسلوب البقاء.
+value.SSR_STRENGTH.1=خفيف
+value.SSR_STRENGTH.2=متوازن
+value.SSR_STRENGTH.3=قوي
+option.PBR_DISTANCE=مسافة عرض PBR
+option.PBR_DISTANCE.comment=أقصى مسافة لإبرازات PBR اللامعة. توفر GPU على التضاريس البعيدة. قريب (16 م) لـ LOW، قياسي (48 م) لـ MED، بعيد (128 م) لـ HIGH/ULTRA، غير محدود لـ EXTREME.
+value.PBR_DISTANCE.1=قريب (16م)
+value.PBR_DISTANCE.2=قياسي (48م)
+value.PBR_DISTANCE.3=بعيد (128م)
+value.PBR_DISTANCE.4=غير محدود
+
+# v1.1.1 — shadow pipeline + POM option labels
+value.shadowMapResolution.512=512
+value.shadowMapResolution.1024=1024
+value.shadowMapResolution.2048=2048
+value.shadowMapResolution.4096=4096
+option.POM_DEPTH=عمق POM
+option.POM_DEPTH.comment=يتحكم في العمق المرئي لرسم خرائط parallax عند تفعيل PBR POM.
+value.POM_DEPTH.1=منخفض
+value.POM_DEPTH.2=قياسي
+value.POM_DEPTH.3=عميق
+option.POM_STEPS=خطوات POM
+option.POM_STEPS.comment=يتحكم في عدد خطوات raymarch لرسم خرائط الإزاحة. القيم الأعلى تحسّن الجودة لكنها تستهلك وقت GPU أكثر.
+value.POM_STEPS.1=سريع
+value.POM_STEPS.2=قياسي
+value.POM_STEPS.3=عالي
+value.POM_STEPS.4=فائق
+
+screen.SHADOW_OPTIONS=الظلال
+screen.SHADOW_OPTIONS.comment=دقة ومسافة ونعومة وتدرج الظلال الديناميكية.
+screen.PBR_OPTIONS=PBR والمواد
+screen.PBR_OPTIONS.comment=إضاءة PBR، نقش الإزاحة، الكثافة ومسافة العرض.
+screen.AO_REFLECTIONS=AO والانعكاسات
+screen.AO_REFLECTIONS.comment=SSAO، انعكاسات الشاشة، وانعكاسات المطر.
+screen.CLOUD_SHAPE=الغيوم
+screen.CLOUD_SHAPE.comment=شكل وارتفاع ومسافة وظلال السحب الحجمية.
+screen.LIGHT_SHAFTS=أشعة الضوء
+screen.LIGHT_SHAFTS.comment=أشعة الشمس/القمر الحجمية وجودتها/شدتها.
+screen.NIGHT_SKY=سماء الليل
+screen.NIGHT_SKY.comment=الشفق والنجوم ومجرة درب التبانة والشهب.

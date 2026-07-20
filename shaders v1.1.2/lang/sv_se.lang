@@ -1,0 +1,399 @@
+# AuraLite Shaders v1.0.7 - Copyright (c) 2026 AlexanderNyr. Licensed under CC BY-NC-SA 4.0.
+# ==============================================================================
+# AuraLite Shader Pack - Swedish Language Translations
+# ==============================================================================
+# OBS: Detta är en AI-assisterad översättning. Community-korrekturer välkomnas!
+# Vänligen öppna en PR på:
+# https://github.com/AlexanderNyr/AuraLite-Shaders
+# ==============================================================================
+
+# ==============================================================================
+# Quality Profiles
+# ==============================================================================
+profile.VERY_LOW=Mycket Låg
+profile.VERY_LOW.comment=Absolut FPS-maximum. Alla extrafunktioner av: inga skuggor, moln, PBR, SSR, ljusstrålar. Endast minimal rendering.
+profile.LOW=Låg
+profile.MED=Medel
+profile.HIGH=Hög
+profile.ULTRA=Ultra
+profile.EXTREME=Extrem
+profile.EXTREME.comment=Kinematografiskt maximum. Allt på max: PBR Obegränsad räckvidd, fotografisk tonmappning (AgX), djupaste SSAO, meteorstormar.
+profile.CUSTOM=Anpassad
+profile.CUSTOM.comment=Anpassade, användarändrade inställningar.
+profile.HIGH.comment=Entusiastkvalitet. Skuggor 2048, SSR Balanserad, TAA, SSAO Subtil, ljusstrålar Balanserade, SMAA.
+profile.LOW.comment=Lättviktigt men spelbart. Behåller löv/vatten-animation, ljusare stjärnor, FXAA, vinjett. Inga skuggor, moln eller PBR.
+profile.MED.comment=Vardagens sweet spot. Skuggor 1024, moln, PBR, SSR Snabb, ljusstrålar, löv SSS, våta reflektioner, dimma, stjärnfall.
+profile.ULTRA.comment=High-end. Skuggor 4096, SSR Hög, SSAO Balanserad, ljusstrålar Höga, TAA Stabil, alla effekter på.
+
+screen.TRANSLATION_NOTICE=⚠ Översättningar kan innehålla fel
+screen.TRANSLATION_NOTICE.comment=Vissa översättningar kan vara felaktiga. Jämför med den engelska originaltexten om något ser konstigt ut.
+
+# Screens
+screen.LIGHTING=Ljusinställningar
+screen.LIGHTING.comment=Konfigurera skuggor, ljusfärger och ljusstyrka.
+screen.FOLIAGE=Vegetationsinställningar
+screen.FOLIAGE.comment=Konfigurera vajande animationer för gräs och löv.
+screen.WATER=Vatteninställningar
+screen.WATER.comment=Konfigurera vågor, genomskinlighet och vattenstil.
+screen.CLOUDS_MENU=Himmel och Moln
+screen.CLOUDS_MENU.comment=Konfigurera den fysiska höjden, tjockleken och stilen på 3D-moln och himmelseffekter.
+screen.POST_PROCESS=Efterbehandling och Dimma
+screen.POST_PROCESS.comment=Konfigurera exponering, dimma och filmiska effekter.
+
+# Options
+option.SHADOWS=Dynamiska Skuggor
+option.SHADOWS.comment=Aktivera eller inaktivera mjuka dynamiska skuggor från solen och månen.
+option.shadowMapResolution=Skuggupplösning
+option.shadowMapResolution.comment=Ändra kvaliteten på skuggkartan. Högre värden kan sänka prestandan.
+option.PBR_LIGHTING=PBR-belysning (LabPBR)
+option.PBR_LIGHTING.comment=Aktivera fysikbaserad rendering för metaller, skrovlighet och 3D-normalkartor (PBR-resurspaket krävs).
+option.PBR_POM=3D-blockrelief (POM)
+option.PBR_POM.comment=Aktivera fysikbaserad Parallax Occlusion Mapping för 3D-blocktexturer. Rekommenderas att inaktivera för inkompatibla resurspaket.
+option.PBR_STRENGTH=PBR-intensitet
+option.PBR_STRENGTH.comment=Styr reflektiviteten och glansen hos PBR-metallytor.
+value.PBR_STRENGTH.1=Subtil
+value.PBR_STRENGTH.2=Standard
+value.PBR_STRENGTH.3=Spegel
+option.LIGHTMAP_WARMTH=Fackelvärme
+option.LIGHTMAP_WARMTH.comment=Justera värmen och färgen på block-/facklljus.
+value.LIGHTMAP_WARMTH.1=Mysig
+value.LIGHTMAP_WARMTH.2=Varm
+value.LIGHTMAP_WARMTH.3=Intensiv
+option.WAVING_LEAVES=Vajande Löv
+option.WAVING_LEAVES.comment=Aktivera mjuka vajande animationer för trädlöv.
+option.WAVING_GRASS=Vajande Lövverk
+option.WAVING_GRASS.comment=Aktivera vajande animationer för gräs, blommor och grödor.
+option.WIND_SPEED=Vindhastighet
+option.WIND_SPEED.comment=Styr vajhastigheten för löv, växter och vattenvågor.
+value.WIND_SPEED.1=Mild
+value.WIND_SPEED.2=Bris
+value.WIND_SPEED.3=Storm
+option.WATER_WAVES=Vattenvågor
+option.WATER_WAVES.comment=Aktiverar 3D-geometriska vågor på vattenytan.
+option.WATER_TRANSPARENCY=Vattentäthet
+option.WATER_TRANSPARENCY.comment=Styr vattnets genomskinlighet och opacitet.
+value.WATER_TRANSPARENCY.1=Klar
+value.WATER_TRANSPARENCY.2=Balanserad
+value.WATER_TRANSPARENCY.3=Djup
+option.PROCEDURAL_CLOUDS=Volymetriska 3D-moln
+option.PROCEDURAL_CLOUDS.comment=Aktivera fysiskt genomflygbara 3D-moln som kan nås och flygas igenom.
+option.CLOUD_HEIGHT=Molnhöjd
+option.CLOUD_HEIGHT.comment=Ställ in den fysiska höjden (Y-nivå) för molnbanken i världen (i meter).
+value.CLOUD_HEIGHT.1=Låg (~110m)
+value.CLOUD_HEIGHT.2=Standard (~160m)
+value.CLOUD_HEIGHT.3=Hög (~240m)
+option.CLOUD_THICKNESS=Molntjocklek
+option.CLOUD_THICKNESS.comment=Konfigurera den vertikala tjockleken och volymen på molnen.
+value.CLOUD_THICKNESS.1=Tunn (Cirrus)
+value.CLOUD_THICKNESS.2=Standard (Cumulus)
+value.CLOUD_THICKNESS.3=Tät (Stormig)
+option.AURORA_MODE=Norrsken
+option.AURORA_MODE.comment=Styr visningen av realistiskt flödande norrsken på nattens himmel.
+value.AURORA_MODE.0=Inaktiverad
+value.AURORA_MODE.1=Endast i Kalla Biomer
+value.AURORA_MODE.2=Alltid Aktiverad
+option.AURORA_SPEED=Norrskenshastighet
+option.AURORA_SPEED.comment=Styr vaj- och flödeshastigheten för norrskenet.
+value.AURORA_SPEED.1=Långsam
+value.AURORA_SPEED.2=Standard
+value.AURORA_SPEED.3=Snabb
+option.AURORA_STRENGTH=Norrskensljusstyrka
+option.AURORA_STRENGTH.comment=Styr den övergripande glödljusstyrkan hos norrskenet.
+value.AURORA_STRENGTH.1=Mjuk
+value.AURORA_STRENGTH.2=Standard
+value.AURORA_STRENGTH.3=Glödande
+option.NEBULA_BRIGHTNESS=Vintergatans Ljusstyrka
+option.NEBULA_BRIGHTNESS.comment=Justera glödljusstyrkan hos den diagonala brunaktiga galaktiska nebulosan på natten.
+value.NEBULA_BRIGHTNESS.1=Dämpad
+value.NEBULA_BRIGHTNESS.2=Standard
+value.NEBULA_BRIGHTNESS.3=Ljus
+option.STARS_BRIGHTNESS=Stjärnors Ljusstyrka
+option.STARS_BRIGHTNESS.comment=Styr ljusstyrkan och den glittrande glöden hos stjärnorna på natten.
+value.STARS_BRIGHTNESS.1=Svag
+value.STARS_BRIGHTNESS.2=Standard
+value.STARS_BRIGHTNESS.3=Briljant
+option.STARS_AMOUNT=Stjärntäthet
+option.STARS_AMOUNT.comment=Styr det totala antalet och tätheten av stjärnor på himlen.
+value.STARS_AMOUNT.1=Få
+value.STARS_AMOUNT.2=Standard
+value.STARS_AMOUNT.3=Tät
+option.RAINBOW_STRENGTH=Regnbågsintensitet
+option.RAINBOW_STRENGTH.comment=Konfigurera ljusstyrkan och färgmättnaden för regnbågen efter regn.
+value.RAINBOW_STRENGTH.1=Subtil
+value.RAINBOW_STRENGTH.2=Balanserad
+value.RAINBOW_STRENGTH.3=Levande
+option.COZY_LIGHTS=Facklflimmer
+option.COZY_LIGHTS.comment=Aktivera varma, mysiga, realtidsflimrande animationer för facklor, lägereldar och lyktor.
+option.WET_REFLECTIONS=Regnvåta Reflektioner
+option.WET_REFLECTIONS.comment=Vid regn blir fasta block som mark, gräs och sten våta, mörka och glänsande under himlen.
+option.GROUND_MIST=Låg Marktäcke (Y=62-66)
+option.GROUND_MIST.comment=Aktivera mjuka, guldvita morgon-/kvällsdimmslager som glider över vatten och is vid gryning och skymning.
+option.FOG_DENSITY_LEVEL=Dimtäthet
+option.FOG_DENSITY_LEVEL.comment=Styr styrkan av atmosfärisk horisontdimma.
+value.FOG_DENSITY_LEVEL.1=Låg
+value.FOG_DENSITY_LEVEL.2=Medel
+value.FOG_DENSITY_LEVEL.3=Hög
+option.EXPOSURE=Exponeringsljusstyrka
+option.EXPOSURE.comment=Styr bildens övergripande ljusstyrka.
+value.EXPOSURE.1=Dämpad
+value.EXPOSURE.2=Balanserad
+value.EXPOSURE.3=Levande
+option.COLOR_SATURATION=Färglivfullhet
+option.COLOR_SATURATION.comment=Styr den icke-linjära mättnaden av skärmfärger. Gör lövverk smaragdgrönt och himlar frodiga.
+value.COLOR_SATURATION.1=Dämpad
+value.COLOR_SATURATION.2=Balanserad
+value.COLOR_SATURATION.3=Färgstark
+value.COLOR_SATURATION.4=Levande
+option.CONTRAST=Bildkontrast
+option.CONTRAST.comment=Välj tonmappnings- och kontrastkurvstil.
+value.CONTRAST.1=Mjuk
+value.CONTRAST.2=Filmisk (ACES)
+value.CONTRAST.3=Intensiv (Hög Kontrast)
+
+option.TAA=Temporal Kantutjämning (TAA)
+option.TAA.comment=Temporal upplösning med rörelseomprojicering och grannklippning. Minskar flimmer och taggiga kanter vid höga förinställningar.
+option.TAA_STRENGTH=TAA-styrka
+option.TAA_STRENGTH.comment=Styr historikblandning. Högre är stabilare men kan bli mjukare vid rörelse.
+value.TAA_STRENGTH.1=Lätt
+value.TAA_STRENGTH.2=Balanserad
+value.TAA_STRENGTH.3=Stabil
+option.VIGNETTE=Vinjetteffekt
+option.VIGNETTE.comment=Aktivera subtil mörkläggning vid skärmens kanter för förbättrat fokus.
+option.WATER_RIFFLES=Vattenkrusningsstyrka
+option.WATER_RIFFLES.comment=Justerar styrkan på fina normal map-krusningar på vattnet.
+value.WATER_RIFFLES.1=Lugn
+value.WATER_RIFFLES.2=Standard
+value.WATER_RIFFLES.3=Krabbig
+option.WATER_SPECULAR_STRENGTH=Vattnets Spekulärglöd
+option.WATER_SPECULAR_STRENGTH.comment=Justerar ljusstyrkan på sol-/månreflektioner på vattnets krusningar.
+value.WATER_SPECULAR_STRENGTH.1=Mjuk
+value.WATER_SPECULAR_STRENGTH.2=Standard
+value.WATER_SPECULAR_STRENGTH.3=Blänkande
+option.SHADOW_SOFTNESS=Skuggmjukhet
+option.SHADOW_SOFTNESS.comment=Styr hur mjuka och diffusa skuggkanterna framstår. Använder roterad Poisson disk-filtrering för mjuk halvskugga.
+value.SHADOW_SOFTNESS.1=Skarp
+value.SHADOW_SOFTNESS.2=Mjuk
+value.SHADOW_SOFTNESS.3=Ultramjuk
+
+option.SSAO=SSAO / SAO-ocklusion
+option.SSAO.comment=Extrem profil: screen-space ambient occlusion för kontaktskuggor i hörn, under block och runt geometriövergångar.
+option.SSAO_STRENGTH=SSAO-styrka
+option.SSAO_STRENGTH.comment=Styr djupet av screen-space ambient occlusion. Aktivt endast när SSAO är aktiverat.
+value.SSAO_STRENGTH.1=Subtil
+value.SSAO_STRENGTH.2=Balanserad
+value.SSAO_STRENGTH.3=Djup
+
+option.CLOUD_DISTANCE=Molnrenderingsavstånd
+option.CLOUD_DISTANCE.comment=Maximalt ritavstånd för volymetriska moln. Kvalitetsprofiler ökar det automatiskt.
+value.CLOUD_DISTANCE.1=Nära
+value.CLOUD_DISTANCE.2=Standard
+value.CLOUD_DISTANCE.3=Långt
+value.CLOUD_DISTANCE.4=Mycket Långt
+
+option.CLOUD_SHADOWS=Molnskuggor
+option.CLOUD_SHADOWS.comment=Lägger till genomskinliga procedurella skuggor från volymetrisk molntäthet på terrängen. Balanseras av kvalitetsprofiler.
+option.CLOUD_SHADOW_STRENGTH=Molnskuggstyrka
+option.CLOUD_SHADOW_STRENGTH.comment=Styr hur synliga och dramatiska de genomskinliga molnskuggorna är.
+value.CLOUD_SHADOW_STRENGTH.1=Mjuk
+value.CLOUD_SHADOW_STRENGTH.2=Balanserad
+value.CLOUD_SHADOW_STRENGTH.3=Dramatisk
+
+option.GODRAYS=Godrays / Solstrålar
+option.GODRAYS.comment=Adds realistic screen-space sun shafts through sky gaps and behind geometry.
+option.GODRAYS_QUALITY=Godrays-kvalitet
+option.GODRAYS_QUALITY.comment=Controls sample count and cost of godrays.
+value.GODRAYS_QUALITY.1=Snabb
+value.GODRAYS_QUALITY.2=Balanserad
+value.GODRAYS_QUALITY.3=Hög
+
+# ==============================================================================
+# Sol och Måne (utökad belysning)
+# ==============================================================================
+screen.SUN_MOON=Sol och Måne
+screen.SUN_MOON.comment=Finjustera sol- och månintensitet, färgtemperatur och atmosfäriska effekter.
+option.SUN_INTENSITY=Solintensitet
+option.SUN_INTENSITY.comment=Huvudljusstyrka för direkt solljus. Högre = starkare dagskontrast.
+value.SUN_INTENSITY.1=Dämpad
+value.SUN_INTENSITY.2=Standard
+value.SUN_INTENSITY.3=Ljus
+value.SUN_INTENSITY.4=Flammande
+option.MOON_INTENSITY=Månintensitet
+option.MOON_INTENSITY.comment=Huvudljusstyrka för månljus. Högre = ljusare, mer synliga nätter.
+value.MOON_INTENSITY.1=Becksvart Natt
+value.MOON_INTENSITY.2=Standard
+value.MOON_INTENSITY.3=Ljus Måne
+value.MOON_INTENSITY.4=Full Natt
+option.SUN_TEMPERATURE=Solens Färgtemperatur
+option.SUN_TEMPERATURE.comment=Skiftar solens Kelvin-kurva. Realistisk använder Tanner Helland svartkropp; varm = gyllene; sval = neutralt vit.
+value.SUN_TEMPERATURE.1=Sval / Neutral
+value.SUN_TEMPERATURE.2=Realistisk
+value.SUN_TEMPERATURE.3=Varmt Gyllene
+option.MOON_TEMPERATURE=Månens Färgtemperatur
+option.MOON_TEMPERATURE.comment=Ton på månljuset. Isig = blåaktigt kall; Silver = realistisk 4100K; Varm = skördemåne-kräm.
+value.MOON_TEMPERATURE.1=Isblå
+value.MOON_TEMPERATURE.2=Silver (Realistisk)
+value.MOON_TEMPERATURE.3=Varm Kräm
+option.SUN_HALO=Solhalo (Mie-spridning)
+option.SUN_HALO.comment=Lägger till en mjuk varm glöd på terrängen när man tittar nära solen (Mie framåtspridning).
+option.SUNRISE_GLOW=Förbättrad Soluppgångs-/Solnedgångsglöd
+option.SUNRISE_GLOW.comment=Aktiverar starkare varm bakåtspridning som omsluter ytor som är vända bort från den låga solen.
+
+# ==============================================================================
+# Utökade skugginställningar
+# ==============================================================================
+option.shadowDistance=Skuggavstånd
+option.shadowDistance.comment=Maximalt avstånd där dynamiska skuggor renderas. Högre värden utökar skuggor till renderingsavstånd; använd Shadow LOD för att bibehålla prestanda vid utökade intervall.
+value.shadowDistance.60.0=Nära (60m)
+value.shadowDistance.80.0=Standard (80 m)
+value.shadowDistance.120.0=Långt (120m)
+value.shadowDistance.160.0=Ultra (160 m)
+value.shadowDistance.256.0=Utökad (256 m)
+value.shadowDistance.384.0=Renderingsavstånd (384 m)
+
+option.SHADOW_LOD=Skugg-LOD
+option.SHADOW_LOD.comment=Styr skuggkvalitetsförsämring med avstånd. Med utökad skuggavstånd (256-384 m) minskar LOD antalet samplingar och ökar filterradien på avstånd för att bibehålla prestanda. Av = jämn kvalitet (långsam). Balanserad = minskning vid 25-50% avstånd. Aggressiv = maximal minskning vid 15-60% avstånd. Skuggor hoppas helt över efter 95% av renderingsavståndet.
+value.SHADOW_LOD.0=Av (jämn kvalitet)
+value.SHADOW_LOD.1=Balanserad
+value.SHADOW_LOD.2=Aggressiv
+option.SHADOW_PCSS_BLUR=PCSS avståndsoskärpa
+option.SHADOW_PCSS_BLUR.comment=Aktiverar PCSS-penumbra-mjukning som ökar skugg-oskärpa med avstånd och under regn. Inaktivera för fast mjukhet (skarpare avlägsna skuggor, mindre realistiskt).
+value.SHADOW_PCSS_BLUR.0=Av (fast mjukhet)
+value.SHADOW_PCSS_BLUR.1=På (PCSS-penumbra)
+
+option.AMBIENT_BRIGHTNESS=Skugghöjning / Omgivning
+option.AMBIENT_BRIGHTNESS.comment=Styr hur mörka skuggade områden framstår på natten och i grottor.
+value.AMBIENT_BRIGHTNESS.1=Mörk
+value.AMBIENT_BRIGHTNESS.2=Standard
+value.AMBIENT_BRIGHTNESS.3=Höjd (Ljus)
+option.SHADOW_TINT=Skuggton
+option.SHADOW_TINT.comment=Tonar dagsskuggor. Verkliga skuggor under en blå himmel har en subtil sval ton.
+value.SHADOW_TINT.1=Neutralt Grå
+value.SHADOW_TINT.2=Sval Blå (Realistisk)
+value.SHADOW_TINT.3=Varm
+option.LIGHT_WRAP=Ljusomslutning
+option.LIGHT_WRAP.comment=Mjukar upp terminatorn mellan upplysta och oupplysta ytor. Realistisk = fysisk Lambert; Mjuk = trevlig för skärmdumpar.
+value.LIGHT_WRAP.1=Realistisk (Lambert)
+value.LIGHT_WRAP.2=Mjuk Omslutning
+value.LIGHT_WRAP.3=Stiliserad
+
+# v0.2.9 — water/underwater option value labels (English fallback)
+value.WATER_WAVE_SCALE.1=Lugn
+value.WATER_WAVE_SCALE.2=Standard
+value.WATER_WAVE_SCALE.3=Krabbig
+value.WATER_WAVE_SCALE.4=Stormig
+value.WATER_WAVE_DETAIL.1=Grov
+value.WATER_WAVE_DETAIL.2=Standard
+value.WATER_WAVE_DETAIL.3=Tät
+value.UNDERWATER_NIGHT_DARKNESS.1=Månbelyst Damm
+value.UNDERWATER_NIGHT_DARKNESS.2=Dämpad
+value.UNDERWATER_NIGHT_DARKNESS.3=Riktig Natt
+value.UNDERWATER_NIGHT_DARKNESS.4=Becksvart
+# ==============================================================================
+# Experimental Tab & New Sky (v1.1.0)
+# ==============================================================================
+screen.EXPERIMENTAL=Experimentell
+screen.EXPERIMENTAL.comment=Experimentell
+
+option.SKY_MODE=Ny himmel (Atmosfärisk spridning)
+option.SKY_STYLE=Himmelstil
+option.SKY_STYLE.comment=Artistic direction for the physical sky. Realistic = true angular sizes & neutral colours (astronomy look). Semi-realistic = readable sun/moon (x2.8), richer colour, soft glow. Fantasy = grand sun/moon (x5.5), big corona, vivid teal/crimson/indigo palette.
+option.SKY_MODE.comment=EXPERIMENTAL — off in all profiles. Gradient (legacy, default) or Physical realtime scattering with true multiple scattering (Rayleigh+Mie+Ozone, 1st+2nd+3rd order). Enable manually in this tab.
+value.SKY_MODE.0=Gradient (Äldre)
+value.SKY_STYLE.0=Realistisk
+value.SKY_STYLE.1=Halvrealistisk
+value.SKY_STYLE.2=Fantasi
+value.SKY_MODE.1=Realtime Scattering
+
+option.SKY_QUALITY=Himlens spridningskvalitet
+option.SKY_QUALITY.comment=Himlens spridningskvalitet
+value.SKY_QUALITY.1=Snabb
+value.SKY_QUALITY.2=Standard
+value.SKY_QUALITY.3=Hög
+
+# --- Auto-added missing translations (v1.1.0 sync) ---
+option.FOLIAGE_SSS=Lövverk-SSS
+option.FOLIAGE_SSS.comment=Aktiverar subsurface scattering (genomskinlighet) för löv, gräs och växter i motljus.
+option.GODRAYS_STRENGTH=Godrays-intensitet
+option.GODRAYS_STRENGTH.comment=Ljusstyrkan hos de volymetriska ljusstrålarna. Subtil: mjuk atmosfärisk dis. Balanserad: tydligt synliga strålar. Dramatisk: djärva filmiska strålar.
+value.GODRAYS_STRENGTH.1=Subtil
+value.GODRAYS_STRENGTH.2=Balanserad
+value.GODRAYS_STRENGTH.3=Dramatisk
+option.SHOOTING_STARS=Meteorer (Stjärnfall)
+option.SHOOTING_STARS.comment=Fysikbaserade meteorer som kommer in i mesosfären (~80-120 km). Renderar äkta storcirkel-3D-bågar med ablationsljuskurvor, svartkroppsplasmafärg (3500-5500 K), Rayleigh-extinktion nära horisonten och bestående joniseringsspår på eldklot.
+option.SHOOTING_STARS_FREQUENCY=Meteoraktivitet (ZHR)
+option.SHOOTING_STARS_FREQUENCY.comment=Ungefärlig zenital timfrekvens. Sporadisk = realistisk bakgrund på ~10 per timme. Aktiv = mild skur. Storm = topptäthet (~100/tim).
+value.SHOOTING_STARS_FREQUENCY.1=Sporadisk (~10/tim)
+value.SHOOTING_STARS_FREQUENCY.2=Aktiv Skur
+value.SHOOTING_STARS_FREQUENCY.3=Meteorstorm
+option.SHOOTING_STARS_BRIGHTNESS=Magnitudskala
+option.SHOOTING_STARS_BRIGHTNESS.comment=Huvudmultiplikator på meteor-magnitudskalan. Svag = realistiskt genomsnitt; Ljus = skalar eldklot för filmisk synlighet.
+value.SHOOTING_STARS_BRIGHTNESS.1=Svag (Realistisk)
+value.SHOOTING_STARS_BRIGHTNESS.2=Standard
+value.SHOOTING_STARS_BRIGHTNESS.3=Ljusa Eldklot
+value.CONTRAST.4=Fotografisk (AgX-liknande)
+option.SPATIAL_AA_MODE=Spatial Kantutjämning
+option.SPATIAL_AA_MODE.comment=Välj metod för efterbehandlingskantutjämning. FXAA är snabb och billig. SMAA använder djupbuffert för bättre kvalitet på geometriska kanter. Kan kombineras med TAA.
+value.SPATIAL_AA_MODE.0=Av
+value.SPATIAL_AA_MODE.1=FXAA (Snabb)
+value.SPATIAL_AA_MODE.2=SMAA (Kvalitet)
+option.HEAT_SHIMMER=Värmedaller Ovanför Lava
+option.HEAT_SHIMMER.comment=Aktivera en subtil screen-space värmedistorsionseffekt ovanför lavaytor.
+option.HEAT_SHIMMER_STRENGTH=Värmedallerstyrka
+option.HEAT_SHIMMER_STRENGTH.comment=Styr intensiteten av värmedistorsionen ovanför lava.
+value.HEAT_SHIMMER_STRENGTH.1=Subtil
+value.HEAT_SHIMMER_STRENGTH.2=Balanserad
+value.HEAT_SHIMMER_STRENGTH.3=Stark
+option.SSR=Skärmutrymmesreflektioner (SSR)
+option.SSR.comment=Lägger till realtidsreflekterad miljö på vatten, våta ytor och metalliska PBR-block. Aktiverat från Medel och uppåt i v1.0.4.
+option.SSR_QUALITY=SSR-kvalitet
+option.SSR_QUALITY.comment=Styr precisionen och strålavståndet för skärmutrymmesreflektioner. Högre = skarpare reflektioner men mer GPU-kostnad.
+value.SSR_QUALITY.1=Snabb (12 steg)
+value.SSR_QUALITY.2=Balanserad (24 steg)
+value.SSR_QUALITY.3=Hög (40 steg)
+option.SSR_STRENGTH=SSR-styrka
+option.SSR_STRENGTH.comment=Styr hur synlig och framträdande den reflekterade miljön framstår på reflekterande ytor.
+option.WATER_WAVE_SCALE=Vågamplitud
+option.WATER_WAVE_SCALE.comment=Styr den synliga branthet av vattenytans vågor. Lugnt = spegelblankt, Stormigt = starkt brutna reflektioner.
+option.WATER_WAVE_DETAIL=Vågdetalj
+option.WATER_WAVE_DETAIL.comment=Styr hur många små vågor som visas per block. Grov = några stora vågor, Tät = många små krusningar.
+option.UNDERWATER_NIGHT_DARKNESS=Undervattensnattmörker
+option.UNDERWATER_NIGHT_DARKNESS.comment=Styr hur mörk undervattensscenen blir på natten. Månbelyst Damm behåller ljusstyrkan; Becksvart ger extrem survival-mörker.
+value.SSR_STRENGTH.1=Subtil
+value.SSR_STRENGTH.2=Balanserad
+value.SSR_STRENGTH.3=Stark
+option.PBR_DISTANCE=PBR-renderingsavstånd
+option.PBR_DISTANCE.comment=Maximalt avstånd för PBR-spekulärhöjdpunkter. Sparar GPU på avlägsen terräng. Nära (16m) för Låg, Standard (48m) för Medel, Långt (128m) för Hög/Ultra, Obegränsat för Extrem.
+value.PBR_DISTANCE.1=Nära (16m)
+value.PBR_DISTANCE.2=Standard (48m)
+value.PBR_DISTANCE.3=Långt (128m)
+value.PBR_DISTANCE.4=Obegränsad
+
+# v1.1.1 — shadow pipeline + POM option labels
+value.shadowMapResolution.512=512
+value.shadowMapResolution.1024=1024
+value.shadowMapResolution.2048=2048
+value.shadowMapResolution.4096=4096
+option.POM_DEPTH=POM-djup
+option.POM_DEPTH.comment=Styr det synliga djupet för parallaxmappning när PBR POM är aktiverat.
+value.POM_DEPTH.1=Låg
+value.POM_DEPTH.2=Standard
+value.POM_DEPTH.3=Djup
+option.POM_STEPS=POM-steg
+option.POM_STEPS.comment=Styr antalet raymarch-steg för parallaxmappning. Högre värden förbättrar kvaliteten men kostar mer GPU-tid.
+value.POM_STEPS.1=Snabb
+value.POM_STEPS.2=Standard
+value.POM_STEPS.3=Hög
+value.POM_STEPS.4=Ultra
+
+screen.SHADOW_OPTIONS=Skuggor
+screen.SHADOW_OPTIONS.comment=Upplösning, avstånd, mjukhet och ton för dynamiska skuggor.
+screen.PBR_OPTIONS=PBR och material
+screen.PBR_OPTIONS.comment=PBR-belysning, parallax-relief, intensitet och renderingsavstånd.
+screen.AO_REFLECTIONS=AO och reflektioner
+screen.AO_REFLECTIONS.comment=SSAO, skärmreflektioner och regnreflektioner.
+screen.CLOUD_SHAPE=Moln
+screen.CLOUD_SHAPE.comment=Form, höjd, avstånd och skuggor för volymetriska moln.
+screen.LIGHT_SHAFTS=Ljusstrålar
+screen.LIGHT_SHAFTS.comment=Volumetriska sol-/månstrålar och deras kvalitet/intensitet.
+screen.NIGHT_SKY=Stjärnhimmel
+screen.NIGHT_SKY.comment=Norrsken, stjärnor, Vintergatan och stjärnfall.

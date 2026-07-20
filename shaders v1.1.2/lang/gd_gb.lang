@@ -1,0 +1,480 @@
+# AuraLite Shaders v1.0.7 - Copyright (c) 2026 AlexanderNyr. Licensed under CC BY-NC-SA 4.0.
+# ==============================================================================
+# AuraLite Shader Pack - Scottish Gaelic Language Translations
+# ==============================================================================
+
+# ==============================================================================
+# Pròifilean càileachd — Ath-chothromachadh v1.0.5
+# ==============================================================================
+profile.VERY_LOW=Glè ìosal
+profile.VERY_LOW.comment=Àrd-FPS iomlan. Gach rud a bharrachd dheth: gun sgàilean, gun sgòthan, gun PBR, gun SSR, gun ghathan grèine. Reandaradh as lugha a-mhàin.
+profile.LOW=Ìosal
+profile.LOW.comment=Aotrom ach cluichteach. Cumail beòthachadh duilleach/uisge, reultan nas soilleire, FXAA, vignette. Gun sgàilean, sgòthan no PBR.
+profile.MED=Meadhanach
+profile.MED.comment=An t-àite milis làitheil. Sgàilean 1024, sgòthan, PBR, SSR Luath, gathan grèine, SSS duilleach, faileasan fliuch, ceò talmhainn, reultan a' tuiteam.
+profile.HIGH=Àrd
+profile.HIGH.comment=Càileachd dealasach. Sgàilean 2048, SSR Cothromaichte, TAA, SSAO Socair, gathan grèine Cothromaichte, SMAA.
+profile.ULTRA=Ultra
+profile.ULTRA.comment=Àrd-ìre. Sgàilean 4096, SSR Àrd, SSAO Cothromaichte, gathan grèine Àrd, TAA Seasmhach, gach buaidh air.
+profile.EXTREME=Anabarrach
+profile.EXTREME.comment=As àirde film. A h-uile càil aig an ìre as àirde: raon PBR Gun chrìoch, mapadh tòn Dealbh (AgX), SSAO as doimhne, stoirmean dreugan.
+profile.CUSTOM=Gnàthaichte
+profile.CUSTOM.comment=Roghainnean atharraichte leis a' chleachdaiche.
+
+screen.TRANSLATION_NOTICE=⚠ Faodaidh mearachdan a bhith anns na h-eadar-theangachaidhean
+screen.TRANSLATION_NOTICE.comment=Faodaidh cuid de na sreangan ionadaileachaidh a bhith mì-cheart. Ma tha rud a' coimhead neònach, dèan coimeas ris an tùs Bheurla.
+
+# Screens
+screen.LIGHTING=Roghainnean solais
+screen.LIGHTING.comment=Rèitich sgàilean, dathan solais agus soilleireachd.
+
+screen.FOLIAGE=Roghainnean duilleach
+screen.FOLIAGE.comment=Rèitich beòthachaidhean luasgaidh airson feur agus duilleagan.
+
+screen.WATER=Roghainnean uisge
+screen.WATER.comment=Rèitich tonnan, trìd-shoilleireachd agus stoidhle an uisge.
+
+screen.CLOUDS_MENU=Speur agus sgòthan
+screen.CLOUDS_MENU.comment=Rèitich an àirde fhiosaigeach, an tiughad agus stoidhle nan sgòthan 3D agus buaidhean an speur.
+
+screen.POST_PROCESS=Iar-ghiullachd agus ceò
+screen.POST_PROCESS.comment=Rèitich foillseachadh, ceò agus buaidhean film.
+
+# Options
+option.SHADOWS=Sgàilean fiùghantach
+option.SHADOWS.comment=Cuir an comas no à comas sgàilean fiùghantach bog bhon ghrèin agus bhon ghealaich.
+
+option.shadowMapResolution=Dùmhlachd-bhreith nan sgàilean
+option.shadowMapResolution.comment=Atharraich càileachd mapa nan sgàilean. Faodaidh luachan nas àirde dèanadas ìsleachadh.
+
+option.PBR_LIGHTING=Solas PBR (LabPBR)
+option.PBR_LIGHTING.comment=Cuir an comas reandaradh stèidhichte air fiosaigs airson meatailtean, garbhad agus mapaichean nàdarra 3D (feumar pacaid ghoireasan PBR).
+
+option.PBR_POM=Faochadh bloca 3D (POM)
+option.PBR_POM.comment=Cuir an comas Mapadh Bacaidh Paraláis stèidhichte air fiosaigs airson innich bloca 3D. Mholar a chur à comas air pacaidean goireasan neo-fhreagarrach.
+
+option.PBR_STRENGTH=Dèine PBR
+option.PBR_STRENGTH.comment=Smachdaich faileasachd agus deàlradh uachdaran meatailteach PBR.
+
+value.PBR_STRENGTH.1=Socair
+value.PBR_STRENGTH.2=Àbhaisteach
+value.PBR_STRENGTH.3=Sgàthan
+
+option.SSAO=Bacadh SSAO / SAO
+option.SSAO.comment=Bacadh àrainneachd àite-sgrìn airson sgàilean conaltraidh ann an oiseanan, fo bhlocaichean agus timcheall eadar-ghearraidhean geoimeatrach. An comas bho ÀRD suas.
+option.SSAO_STRENGTH=Neart SSAO
+option.SSAO_STRENGTH.comment=Smachdaichidh e doimhneachd a' bhacaidh àrainneachd àite-sgrìn. Gnìomhach a-mhàin nuair a tha SSAO an comas.
+value.SSAO_STRENGTH.1=Socair
+value.SSAO_STRENGTH.2=Cothromaichte
+value.SSAO_STRENGTH.3=Domhainn
+
+option.LIGHTMAP_WARMTH=Blàths leus
+option.LIGHTMAP_WARMTH.comment=Atharraich blàths agus dath solas bloca/leus.
+
+value.LIGHTMAP_WARMTH.1=Seasgair
+value.LIGHTMAP_WARMTH.2=Blàth
+value.LIGHTMAP_WARMTH.3=Dian
+
+option.WAVING_LEAVES=Duilleagan a' luasgadh
+option.WAVING_LEAVES.comment=Cuir an comas beòthachaidhean luasgaidh socair airson duilleagan chraobhan.
+
+option.WAVING_GRASS=Duilleach a' luasgadh
+option.WAVING_GRASS.comment=Cuir an comas beòthachaidhean luasgaidh airson feur, flùraichean agus bàrr.
+
+option.WIND_SPEED=Astar gaoithe
+option.WIND_SPEED.comment=Smachdaich astar luasgaidh dhuilleagan, lusan agus tonnan uisge.
+
+option.FOLIAGE_SSS=SSS duilleach
+option.FOLIAGE_SSS.comment=Cuiridh e an comas sgapadh fo-uachdar (trìd-shoilleireachd) airson duilleagan, feur agus lusan nuair a tha thu a' coimhead an aghaidh an t-solais.
+
+value.WIND_SPEED.1=Socair
+value.WIND_SPEED.2=Oiteag
+value.WIND_SPEED.3=Gèile
+
+option.WATER_WAVES=Tonnan uisge
+option.WATER_WAVES.comment=Cuir an comas tonnan geoimeatrach 3D air uachdar an uisge. Tha blocaichean deighe is glainne air an dùnadh a-mach à beòthachadh nan tonn.
+
+option.WATER_TRANSPARENCY=Dùmhlachd uisge
+option.WATER_TRANSPARENCY.comment=Smachdaich trìd-shoilleireachd agus dùmhlachd uisge, deigh àbhaisteach agus blocaichean glainne.
+
+value.WATER_TRANSPARENCY.1=Soilleir
+value.WATER_TRANSPARENCY.2=Cothromaichte
+value.WATER_TRANSPARENCY.3=Domhainn
+
+option.PROCEDURAL_CLOUDS=Sgòthan 3D tomhasach
+option.PROCEDURAL_CLOUDS.comment=Cuir an comas sgòthan 3D a ghabhas itealaich tromhpa agus ruigsinn orra.
+
+option.CLOUD_HEIGHT=Àirde nan sgòthan
+option.CLOUD_HEIGHT.comment=Suidhich àirde fhiosaigeach (ìre Y) deic nan sgòthan san t-saoghal (ann am meatairean).
+
+value.CLOUD_HEIGHT.1=Ìosal (~110m)
+value.CLOUD_HEIGHT.2=Àbhaisteach (~160m)
+value.CLOUD_HEIGHT.3=Àrd (~240m)
+
+option.CLOUD_THICKNESS=Tiughad nan sgòthan
+option.CLOUD_THICKNESS.comment=Rèitich tiughad inghearach agus tomhas-lìonaidh nan sgòthan.
+
+value.CLOUD_THICKNESS.1=Tana (Cirrus)
+value.CLOUD_THICKNESS.2=Àbhaisteach (Cumulus)
+value.CLOUD_THICKNESS.3=Dlùth (Stoirmeil)
+
+option.CLOUD_DISTANCE=Astar reandaraidh nan sgòthan
+option.CLOUD_DISTANCE.comment=Astar tarraing as àirde airson sgòthan tomhasach. Bidh pròifilean càileachd ag àrdachadh gu fèin-obrachail.
+value.CLOUD_DISTANCE.1=Faisg
+value.CLOUD_DISTANCE.2=Àbhaisteach
+value.CLOUD_DISTANCE.3=Fada
+value.CLOUD_DISTANCE.4=Glè fhada
+
+option.CLOUD_SHADOWS=Sgàilean sgòthan
+option.CLOUD_SHADOWS.comment=Cuiridh e sgàilean modhanail trìd-shoilleir bho dhùmhlachd nan sgòthan tomhasach air tìr-mòr. Cothromaichte le pròifilean càileachd.
+option.CLOUD_SHADOW_STRENGTH=Neart sgàilean sgòthan
+option.CLOUD_SHADOW_STRENGTH.comment=Smachdaichidh e cho faicsinneach is dràma 'sa tha na sgàilean sgòthan trìd-shoilleir.
+value.CLOUD_SHADOW_STRENGTH.1=Bog
+value.CLOUD_SHADOW_STRENGTH.2=Cothromaichte
+value.CLOUD_SHADOW_STRENGTH.3=Dràmadach
+
+option.GODRAYS=Gathan grèine / Sleaghan grèine
+option.GODRAYS.comment=Cuiridh e sleaghan grèine tomhasach aon-sgapaidh air am brosnachadh le fiosaigs, le crìonadh Beer-Lambert, ceum Mie agus bacadh mapa sgàile.
+option.GODRAYS_QUALITY=Càileachd nan gathan grèine
+option.GODRAYS_QUALITY.comment=Smachdaichidh e an àireamh shamhlaichean agus astar amalachaidh nan gathan grèine tomhasach stèidhichte air fiosaigs.
+value.GODRAYS_QUALITY.1=Luath
+value.GODRAYS_QUALITY.2=Cothromaichte
+value.GODRAYS_QUALITY.3=Àrd
+
+option.AURORA_MODE=Aurora Borealis
+option.AURORA_MODE.comment=Smachdaich taisbeanadh aurorae fìor-riochdail a' sruthadh air speur na h-oidhche.
+
+value.AURORA_MODE.0=À comas
+value.AURORA_MODE.1=Ann am bìomaichean fuar a-mhàin
+value.AURORA_MODE.2=An comas an-còmhnaidh
+
+option.AURORA_SPEED=Astar aurora
+option.AURORA_SPEED.comment=Smachdaich astar luasgaidh agus sruthaidh nan solas tuathach.
+
+value.AURORA_SPEED.1=Slaodach
+value.AURORA_SPEED.2=Àbhaisteach
+value.AURORA_SPEED.3=Luath
+
+option.AURORA_STRENGTH=Soilleireachd aurora
+option.AURORA_STRENGTH.comment=Smachdaich soilleireachd dheàlraidh iomlan nan solas tuathach.
+
+value.AURORA_STRENGTH.1=Bog
+value.AURORA_STRENGTH.2=Àbhaisteach
+value.AURORA_STRENGTH.3=A' deàlradh
+
+option.NEBULA_BRIGHTNESS=Soilleireachd na Slighe Bhàine
+option.NEBULA_BRIGHTNESS.comment=Atharraich soilleireachd deàlraidh na neoil reul-bhadach donn trastanach air an oidhche.
+
+value.NEBULA_BRIGHTNESS.1=Lapach
+value.NEBULA_BRIGHTNESS.2=Àbhaisteach
+value.NEBULA_BRIGHTNESS.3=Soilleir
+
+option.STARS_BRIGHTNESS=Soilleireachd reultan
+option.STARS_BRIGHTNESS.comment=Smachdaich soilleireachd agus deàrrsadh boillsgeach nan reultan air an oidhche.
+
+value.STARS_BRIGHTNESS.1=Lapach
+value.STARS_BRIGHTNESS.2=Àbhaisteach
+value.STARS_BRIGHTNESS.3=Sgoinneil
+
+option.STARS_AMOUNT=Dùmhlachd reultan
+option.STARS_AMOUNT.comment=Smachdaich an àireamh iomlan agus dùmhlachd nan reultan san speur.
+
+value.STARS_AMOUNT.1=Beagan
+value.STARS_AMOUNT.2=Àbhaisteach
+value.STARS_AMOUNT.3=Dlùth
+
+option.RAINBOW_STRENGTH=Dèine bogha-froise
+option.RAINBOW_STRENGTH.comment=Rèitich soilleireachd agus sàthachd dath a' bhogha-froise an dèidh uisge.
+
+value.RAINBOW_STRENGTH.1=Socair
+value.RAINBOW_STRENGTH.2=Cothromaichte
+value.RAINBOW_STRENGTH.3=Beothail
+
+option.SHOOTING_STARS=Dreugan (reultan a' tuiteam)
+option.SHOOTING_STARS.comment=Dreugan stèidhichte air fiosaigs a' dol a-steach don mhesosphere (~80-120 km). Reandaraidh e fìor bhoghachan 3D cearcaill mhòir le lùban solais ablàiseanaidh, dath plasma corp-dubh (3500-5500 K), crìonadh Rayleigh faisg air fàire, agus lorgan ianachaidh maireannach air baill-teine.
+
+option.SHOOTING_STARS_FREQUENCY=Gnìomhachd dreugan (ZHR)
+option.SHOOTING_STARS_FREQUENCY.comment=Ìre uarach zenithach tuairmseach. Air thuaiream = cùl-fhiosrachadh fìor-riochdail mu 10 san uair. Gnìomhach = fras aotrom. Stoirm = àrd-dhùmhlachd (~100/uair).
+
+value.SHOOTING_STARS_FREQUENCY.1=Air thuaiream (~10/uair)
+value.SHOOTING_STARS_FREQUENCY.2=Fras ghnìomhach
+value.SHOOTING_STARS_FREQUENCY.3=Stoirm dhreugan
+
+option.SHOOTING_STARS_BRIGHTNESS=Sgèile meudachd
+option.SHOOTING_STARS_BRIGHTNESS.comment=Prìomh iomadachadh air sgèile meudachd nan dreugan. Lapach = cuibheasach fìor-riochdail; Soilleir = sgèilich baill-teine airson faicsinneachd film.
+
+value.SHOOTING_STARS_BRIGHTNESS.1=Lapach (Fìor-riochdail)
+value.SHOOTING_STARS_BRIGHTNESS.2=Àbhaisteach
+value.SHOOTING_STARS_BRIGHTNESS.3=Baill-teine shoilleir
+
+option.COZY_LIGHTS=Boillsgeadh leus
+option.COZY_LIGHTS.comment=Cuir an comas beòthachaidhean boillsgidh blàth, seasgair, fìor-ùine airson leusan, teintean-campa agus lainnirean.
+
+option.WET_REFLECTIONS=Faileasan fliche bho uisge
+option.WET_REFLECTIONS.comment=Nuair a tha e ag uisge, fàsaidh blocaichean cruaidh mar thalamh, feur agus clach fliuch, dorcha agus deàlrach fon speur.
+
+option.GROUND_MIST=Ceò talmhainn ìosal (Y=62-66)
+option.GROUND_MIST.comment=Cuir an comas siotaichean ceò bog, òr-gheal madainn/feasgair a shleamhnaicheas thar uisge is deigh aig camhanaich is ciaradh.
+
+option.FOG_DENSITY_LEVEL=Dùmhlachd ceò
+option.FOG_DENSITY_LEVEL.comment=Smachdaich neart ceò àile na fàire.
+
+value.FOG_DENSITY_LEVEL.1=Ìosal
+value.FOG_DENSITY_LEVEL.2=Meadhanach
+value.FOG_DENSITY_LEVEL.3=Àrd
+
+option.EXPOSURE=Soilleireachd foillseachaidh
+option.EXPOSURE.comment=Smachdaich soilleireachd iomlan an ìomhaigh.
+
+value.EXPOSURE.1=Maothaichte
+value.EXPOSURE.2=Cothromaichte
+value.EXPOSURE.3=Beothail
+
+option.COLOR_SATURATION=Beothalachd dath
+option.COLOR_SATURATION.comment=Smachdaich sàthachd neo-loidhneach dathan na sgrìn. Nì e an duilleach mar smàrag agus na speuran pailt.
+
+value.COLOR_SATURATION.1=Maothaichte
+value.COLOR_SATURATION.2=Cothromaichte
+value.COLOR_SATURATION.3=Dathte
+value.COLOR_SATURATION.4=Beothail
+
+option.CONTRAST=Iomsgaradh ìomhaigh
+option.CONTRAST.comment=Tagh stoidhle lùb mapaidh tòn agus iomsgaraidh.
+
+value.CONTRAST.1=Bog
+value.CONTRAST.2=Film (ACES)
+value.CONTRAST.3=Dian (Àrd-iomsgaradh)
+value.CONTRAST.4=Dealbh (coltach ri AgX)
+
+option.TAA=Frith-shàthadh ùineil (TAA)
+option.TAA.comment=Fuasgladh ùineil le ath-thilgeil gluasaid agus bearradh nàbachd. Lùghdaichidh e boillsgeadh agus oirean fiaclach air ro-shuidheachaidhean àrd.
+option.TAA_STRENGTH=Neart TAA
+option.TAA_STRENGTH.comment=Smachdaichidh e measgachadh eachdraidh. Tha nas àirde nas seasmhaiche ach faodaidh e a bhith nas buige rè gluasaid.
+value.TAA_STRENGTH.1=Aotrom
+value.TAA_STRENGTH.2=Cothromaichte
+value.TAA_STRENGTH.3=Seasmhach
+
+
+
+option.VIGNETTE=Buaidh vignette
+option.VIGNETTE.comment=Cuir an comas dorchachadh socair aig oirean na sgrìn airson fòcas nas fheàrr.
+
+# ==============================================================================
+# Spatial Anti-Aliasing
+# ==============================================================================
+option.SPATIAL_AA_MODE=Frith-shàthadh spàsail
+option.SPATIAL_AA_MODE.comment=Tagh dòigh frith-shàthaidh iar-ghiullachd. Tha FXAA luath is saor. Cleachdaidh SMAA am bufair doimhneachd airson càileachd nas fheàrr air oirean geoimeatrach. Faodar a mheasgachadh le TAA.
+value.SPATIAL_AA_MODE.0=Dheth
+value.SPATIAL_AA_MODE.1=FXAA (Luath)
+value.SPATIAL_AA_MODE.2=SMAA (Càileachd)
+
+option.WATER_RIFFLES=Neart criomagan uisge
+option.WATER_RIFFLES.comment=Atharraich tonnachd agus dèine nan criomagan mìne mapa nàdarra air uisge. Cha bhi buaidh aige air deigh no glainne.
+
+value.WATER_RIFFLES.1=Ciùin
+value.WATER_RIFFLES.2=Àbhaisteach
+value.WATER_RIFFLES.3=Garbh
+
+option.WATER_SPECULAR_STRENGTH=Deàrrsadh speumail uisge
+option.WATER_SPECULAR_STRENGTH.comment=Atharraich soilleireachd faileasan grèine/gealaich air criomagan uisge.
+
+value.WATER_SPECULAR_STRENGTH.1=Bog
+value.WATER_SPECULAR_STRENGTH.2=Àbhaisteach
+value.WATER_SPECULAR_STRENGTH.3=A' priobadh
+
+option.SHADOW_SOFTNESS=Buige sgàilean
+option.SHADOW_SOFTNESS.comment=Smachdaichidh e cho bog is sgaoilte 'sa tha oirean nan sgàilean. Cleachdaidh e sìoltachadh diosg Poisson cuairtichte airson leth-sgàil rèidh.
+
+value.SHADOW_SOFTNESS.1=Geur
+value.SHADOW_SOFTNESS.2=Bog
+value.SHADOW_SOFTNESS.3=Fìor-bhog
+
+# ==============================================================================
+# Sun & Moon Lighting
+# ==============================================================================
+screen.SUN_MOON=Grian agus gealach
+screen.SUN_MOON.comment=Mion-ghleus dèine na grèine 's na gealaich, teòthachd dath agus buaidhean àile.
+
+option.SUN_INTENSITY=Dèine grèine
+option.SUN_INTENSITY.comment=Prìomh shoilleireachd solas dìreach na grèine. Nas àirde = iomsgaradh latha nas làidire.
+value.SUN_INTENSITY.1=Lapach
+value.SUN_INTENSITY.2=Àbhaisteach
+value.SUN_INTENSITY.3=Soilleir
+value.SUN_INTENSITY.4=Loisgeach
+
+option.MOON_INTENSITY=Dèine gealaich
+option.MOON_INTENSITY.comment=Prìomh shoilleireachd solas na gealaich. Nas àirde = oidhcheannan nas soilleire, nas fhaicsinniche.
+value.MOON_INTENSITY.1=Oidhche dhubh
+value.MOON_INTENSITY.2=Àbhaisteach
+value.MOON_INTENSITY.3=Gealach shoilleir
+value.MOON_INTENSITY.4=Oidhche làn
+
+option.SUN_TEMPERATURE=Teòthachd dath na grèine
+option.SUN_TEMPERATURE.comment=Gluaisidh e lùb Kelvin na grèine. Cleachdaidh fìor-riochdail corp-dubh Tanner Helland; blàth = òr; fionnar = geal neodrach.
+value.SUN_TEMPERATURE.1=Fionnar / Neodrach
+value.SUN_TEMPERATURE.2=Fìor-riochdail
+value.SUN_TEMPERATURE.3=Òr blàth
+
+option.MOON_TEMPERATURE=Teòthachd dath na gealaich
+option.MOON_TEMPERATURE.comment=Tuar solas na gealaich. Eigheil = gorm fuar; Airgead = fìor-riochdail 4100K; Blàth = uachdar gealach-fhoghair.
+value.MOON_TEMPERATURE.1=Gorm eigheil
+value.MOON_TEMPERATURE.2=Airgead (Fìor-riochdail)
+value.MOON_TEMPERATURE.3=Uachdar blàth
+
+option.SUN_HALO=Fàinne grèine (sgapadh Mie)
+option.SUN_HALO.comment=Cuiridh e deàrrsadh blàth bog air tìr-mòr nuair a tha thu a' coimhead faisg air a' ghrèin (sgapadh air adhart Mie).
+
+option.SUNRISE_GLOW=Deàrrsadh leasaichte èirigh/laighe na grèine
+option.SUNRISE_GLOW.comment=Cuiridh e an comas cùl-sgapadh blàth nas làidire a phaisgeas timcheall uachdaran a tha a' coimhead air falbh bhon ghrèin ìosal.
+
+# ==============================================================================
+# Extended shadow settings
+# ==============================================================================
+option.shadowDistance=Astar sgàilean
+option.shadowDistance.comment=Astair as àirde a thèid sgàil dinamach a rending. Leudaichidh luachan nas àirde sgàil gu astar rending; cleachd Shadow LOD gus coileanadh a chumail aig raointean leudaichte.
+value.shadowDistance.60.0=Faisg (60m)
+value.shadowDistance.80.0=Àbhaisteach (80m)
+value.shadowDistance.120.0=Fada (120m)
+value.shadowDistance.160.0=Ultra (160 m)
+value.shadowDistance.256.0=Leudaichte (256 m)
+value.shadowDistance.384.0=Astar rending (384 m)
+
+option.SHADOW_LOD=LOD sgàil
+option.SHADOW_LOD.comment=Stiùirichidh e crìonadh càileachd nan sgàil le astar. Le astar sgàil leudaichte (256-384 m), lùghdaichidh LOD àireamh nan sampallan agus meudaichidh e rèis an fhiltir air astar gus coileanadh a chumail. Dheth = càileachd aon-fhoirmeil (mall). Cothromachaidh = lùghdachadh aig 25-50% den astar. Ionnsaigheach = as-lùghdachadh aig 15-60% den astar. Thèid sgàil a sheachnadh gu tur nas fhaide na 95% den astar rending.
+value.SHADOW_LOD.0=Dheth (càileachd aon-fhoirmeil)
+value.SHADOW_LOD.1=Cothromachaidh
+value.SHADOW_LOD.2=Ionnsaigheach
+option.SHADOW_PCSS_BLUR=PCSS astar doilleireachd
+option.SHADOW_PCSS_BLUR.comment=A' comasachadh bogadh leth-sgàil PCSS a mheudaicheas doilleireachd sgàil le astar agus during uisge. Cuir dheth airson bogadh stèidhichte (sgàil nas fhaide nas gèire, nas lugha fìrinneach).
+value.SHADOW_PCSS_BLUR.0=Dheth (bogadh stèidhichte)
+value.SHADOW_PCSS_BLUR.1=Air (PCSS leth-sgàil)
+
+
+option.AMBIENT_BRIGHTNESS=Togail sgàile / Àrainneachd
+option.AMBIENT_BRIGHTNESS.comment=Smachdaichidh e cho dorcha 'sa nochdas raointean sgàilte air an oidhche agus ann an uamhan.
+value.AMBIENT_BRIGHTNESS.1=Dorcha
+value.AMBIENT_BRIGHTNESS.2=Àbhaisteach
+value.AMBIENT_BRIGHTNESS.3=Togte (Soilleir)
+
+option.SHADOW_TINT=Tuar sgàilean
+option.SHADOW_TINT.comment=Tuaraidh e sgàilean latha. Tha tuar fionnar socair air sgàilean an t-saoghail fhìor fo speur gorm.
+value.SHADOW_TINT.1=Liath neodrach
+value.SHADOW_TINT.2=Gorm fionnar (Fìor-riochdail)
+value.SHADOW_TINT.3=Blàth
+
+option.LIGHT_WRAP=Pasgadh solais
+option.LIGHT_WRAP.comment=Bogaichidh e an crìoch eadar uachdaran soillsichte agus neo-shoillsichte. Fìor-riochdail = Lambert fiosaigeach; Bog = tlachdmhor airson dealbhan-sgrìn.
+value.LIGHT_WRAP.1=Fìor-riochdail (Lambert)
+value.LIGHT_WRAP.2=Pasgadh bog
+value.LIGHT_WRAP.3=Stoidhlichte
+
+# ==============================================================================
+# Screen-Space Reflections (SSR)
+# ==============================================================================
+option.SSR=Faileasan àite-sgrìn (SSR)
+option.SSR.comment=Cuiridh e àrainneachd fhaileasach fìor-ùine air uisge, uachdaran fliuch agus blocaichean PBR meatailteach. An comas bho MHEADHANACH suas.
+
+option.SSR_QUALITY=Càileachd SSR
+option.SSR_QUALITY.comment=Smachdaichidh e mionaideachd agus astar gathan nam faileasan àite-sgrìn. Nas àirde = faileasan nas gèire ach barrachd cosgais GPU.
+value.SSR_QUALITY.1=Luath (12 ceum)
+value.SSR_QUALITY.2=Cothromaichte (24 ceum)
+value.SSR_QUALITY.3=Àrd (40 ceum)
+
+option.SSR_STRENGTH=Neart SSR
+option.SSR_STRENGTH.comment=Smachdaichidh e cho faicsinneach is follaiseach 'sa nochdas an àrainneachd fhaileasach air uachdaran faileasach.
+
+option.WATER_WAVE_SCALE=Àirde nan tonn
+option.WATER_WAVE_SCALE.comment=Smachdaichidh e cas-cheumachd fhaicsinneach tonnan uachdar an uisge. Ciùin = coltach ri sgàthan, Stoirmeil = faileasan air am briseadh gu mòr.
+option.WATER_WAVE_DETAIL=Mion-fhiosrachadh nan tonn
+option.WATER_WAVE_DETAIL.comment=Smachdaichidh e cia mheud tonn beag a nochdas gach bloca. Garbh = beagan thonnan mòra, Dlùth = mòran chriomagan beaga.
+option.UNDERWATER_NIGHT_DARKNESS=Dorchadas oidhche fon uisge
+option.UNDERWATER_NIGHT_DARKNESS.comment=Smachdaichidh e cho dorcha 'sa dh'fhàsas an sealladh fon uisge air an oidhche. Cumaidh Lòn fo sholas-gealaich soilleireachd; bheir Dubh-dorcha dorchadas anabarrach stoidhle-mairsinn.
+value.SSR_STRENGTH.1=Socair
+value.SSR_STRENGTH.2=Cothromaichte
+value.SSR_STRENGTH.3=Làidir
+
+# v0.2.9 — water/underwater value labels
+value.WATER_WAVE_SCALE.1=Ciùin
+value.WATER_WAVE_SCALE.2=Àbhaisteach
+value.WATER_WAVE_SCALE.3=Garbh
+value.WATER_WAVE_SCALE.4=Stoirmeil
+value.WATER_WAVE_DETAIL.1=Garbh
+value.WATER_WAVE_DETAIL.2=Àbhaisteach
+value.WATER_WAVE_DETAIL.3=Dlùth
+value.UNDERWATER_NIGHT_DARKNESS.1=Lòn fo sholas-gealaich
+value.UNDERWATER_NIGHT_DARKNESS.2=Lapach
+value.UNDERWATER_NIGHT_DARKNESS.3=Fìor oidhche
+value.UNDERWATER_NIGHT_DARKNESS.4=Dubh-dorcha
+
+# PBR Distance
+option.PBR_DISTANCE=Astar reandaraidh PBR
+option.PBR_DISTANCE.comment=An t-astar as àirde airson sgrùdaidhean speumail PBR. Sàbhalaidh e GPU air tìr-mòr fad às. Faisg (16m) airson ÌOSAL, Àbhaisteach (48m) airson MEADHANACH, Fada (128m) airson ÀRD/ULTRA, Gun chrìoch airson ANABARRACH.
+value.PBR_DISTANCE.1=Faisg (16m)
+value.PBR_DISTANCE.2=Àbhaisteach (48m)
+value.PBR_DISTANCE.3=Fada (128m)
+value.PBR_DISTANCE.4=Gun chrìoch
+# ==============================================================================
+# Experimental Tab & New Sky (v1.1.0)
+# ==============================================================================
+screen.EXPERIMENTAL=Deuchainneil
+screen.EXPERIMENTAL.comment=Deuchainneil
+
+option.SKY_MODE=Adhar Ùr (Sgapadh Àile)
+option.SKY_STYLE=Sky Style
+option.SKY_STYLE.comment=Artistic direction for the physical sky. Realistic = true angular sizes & neutral colours (astronomy look). Semi-realistic = readable sun/moon (x2.8), richer colour, soft glow. Fantasy = grand sun/moon (x5.5), big corona, vivid teal/crimson/indigo palette.
+option.SKY_MODE.comment=EXPERIMENTAL — off in all profiles. Gradient (legacy, default) or Physical realtime scattering with true multiple scattering (Rayleigh+Mie+Ozone, 1st+2nd+3rd order). Enable manually in this tab.
+value.SKY_MODE.0=Gradient (Legacy)
+value.SKY_STYLE.0=Realistic
+value.SKY_STYLE.1=Semi-realistic
+value.SKY_STYLE.2=Fantasy
+value.SKY_MODE.1=Realtime Scattering
+
+option.SKY_QUALITY=Càileachd Sgapaidh an Adhair
+option.SKY_QUALITY.comment=Càileachd Sgapaidh an Adhair
+value.SKY_QUALITY.1=Luath
+value.SKY_QUALITY.2=Àbhaisteach
+value.SKY_QUALITY.3=Àrd
+
+# --- Auto-added missing translations (v1.1.0 sync) ---
+option.GODRAYS_STRENGTH=Neart Godrays
+option.GODRAYS_STRENGTH.comment=Soilleireachd nan sadan solais tomhas-lìonaidh. Subtail: ceathach àile socair. Cothromach: gathan follaiseach. Dràmatach: gathan film-eòlach dàna.
+value.GODRAYS_STRENGTH.1=Subtail
+value.GODRAYS_STRENGTH.2=Cothromach
+value.GODRAYS_STRENGTH.3=Dràmatach
+option.HEAT_SHIMMER=Crith Teas Os Cionn Làbha
+option.HEAT_SHIMMER.comment=Cuir an comas air buaidh saobhaidh teas àite-sgrìn subtail os cionn uachdar làbha.
+option.HEAT_SHIMMER_STRENGTH=Neart a' Chrith Teas
+option.HEAT_SHIMMER_STRENGTH.comment=A' cumail smachd air dian a' chrith teas os cionn làbha.
+value.HEAT_SHIMMER_STRENGTH.1=Subtail
+value.HEAT_SHIMMER_STRENGTH.2=Cothromach
+value.HEAT_SHIMMER_STRENGTH.3=Làidir
+
+# v1.1.1 — shadow pipeline + POM option labels
+value.shadowMapResolution.512=512
+value.shadowMapResolution.1024=1024
+value.shadowMapResolution.2048=2048
+value.shadowMapResolution.4096=4096
+option.POM_DEPTH=Doimhneachd POM
+option.POM_DEPTH.comment=Stiùirichidh e doimhneachd faicsinneach a' mhapaidh parallax nuair a bhios PBR POM comasach.
+value.POM_DEPTH.1=Ìosal
+value.POM_DEPTH.2=Coitcheann
+value.POM_DEPTH.3=Domhainn
+option.POM_STEPS=Ceuman POM
+option.POM_STEPS.comment=Stiùirichidh e àireamh nan ceumannan raymarch airson mapaidh parallax. Leasaichidh luachan nas àirde càileachd ach cosgas ùine GPU nas motha.
+value.POM_STEPS.1=Lùth
+value.POM_STEPS.2=Coitcheann
+value.POM_STEPS.3=Àrd
+value.POM_STEPS.4=Ultra
+
+screen.SHADOW_OPTIONS=Sgàilean
+screen.SHADOW_OPTIONS.comment=Rùn, astar, mìlteachd is dath nan sgàil dinamach.
+screen.PBR_OPTIONS=PBR agus stuthan
+screen.PBR_OPTIONS.comment=Solais PBR, faochadh parallax, dian agus astar rending.
+screen.AO_REFLECTIONS=AO agus ath-sholas
+screen.AO_REFLECTIONS.comment=SSAO, ath-sholasan sgrìn agus ath-sholasan uisge.
+screen.CLOUD_SHAPE=Neòil
+screen.CLOUD_SHAPE.comment=Cruth, àirde, astar is sgàil nan neòil meudachail.
+screen.LIGHT_SHAFTS=Gathan solais
+screen.LIGHT_SHAFTS.comment=Gathan meudachaidh grèine/gealaich agus an càileachd/dian.
+screen.NIGHT_SKY=Adhar na h-oidhche
+screen.NIGHT_SKY.comment=Aurora, reultan, Slighe na Bainne agus reultan tuiteamach.
