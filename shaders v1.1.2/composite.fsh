@@ -41,10 +41,10 @@ const bool colortex7Clear = false;
 // [FIX v0.2.5] Sunset/twilight lighting stays red at /time set 12800 instead of turning neutral.
 
 #define SHADOWS             // [true false]
-const int shadowMapResolution = 2048; // [512 1024 2048 4096] - [v1.1.1] Real shadow map resolution directive
+const int shadowMapResolution = 2048; // [512 1024 2048 4096 8192] - [v1.1.2] Real shadow map resolution directive (8192 for EXTREME)
 #define SHADOW_SOFTNESS 2   // [1 2 3] - 1: Sharp, 2: Soft, 3: Ultra Soft
 #define SHADOW_LOD 1       // [0 1 2] - 0: Off (uniform quality), 1: Balanced, 2: Aggressive — reduces samples & increases filter radius at distance
-#define SHADOW_PCSS_BLUR 1 // [0 1] - 0: Disable distance/rain-based shadow blur (fixed softness). 1: Enable PCSS penumbra softening (default).
+#define SHADOW_PCSS_BLUR 1 // [0 1] - 0: Disable distance/rain-based shadow blur (fixed softness). 1: Enable PCSS penumbra softening (default, fixed bounds checking).
 #define LIGHTMAP_WARMTH 3   // [1 2 3]
 #define FOG_DENSITY_LEVEL 2 // [1 2 3]
 #define PBR_LIGHTING        // [true false]
@@ -705,27 +705,39 @@ float sampleShadow(vec3 shadowScreenPos, float distToCamera, float bias) {
     for (int i = 0; i < 16; ++i) {
         if (i >= blockerSearchSamples) break;
         vec2 offset = poissonDisk[i * 2] * searchRadius;
-        float sampleDepth = texture(shadowtex0, shadowScreenPos.xy + offset).r;
+        vec2 sampleUV = shadowScreenPos.xy + offset;
+        // [v1.1.2-fix] Bounds check: skip samples outside shadow map to prevent
+        // clamp-to-border artifacts (border returns 1.0 = unshadowed).
+        if (sampleUV.x < 0.0 || sampleUV.x > 1.0 || sampleUV.y < 0.0 || sampleUV.y > 1.0) continue;
+        float sampleDepth = texture(shadowtex0, sampleUV).r;
         if (sampleDepth < shadowScreenPos.z - bias) {
             avgBlockerDepth += sampleDepth;
             blockerCount += 1.0;
         }
     }
 
-    float weatherLightSizeMult = ((rainStrength) * (2.0) + (((rainStrength * thunderStrength) * (2.0) + (1.0))));
     float minSpreadFactor = mix(0.15, 0.65, rainStrength * (0.6 + 0.4 * thunderStrength));
 
     float actualSpread = spreadRadius;
     #if SHADOW_PCSS_BLUR == 1
     // [v1.1.2] PCSS penumbra softening: naturally increases blur at distance and
-    // during rain (weatherLightSizeMult). When SHADOW_PCSS_BLUR is disabled,
-    // shadows use fixed softness from SHADOW_SOFTNESS only.
+    // during rain. When SHADOW_PCSS_BLUR is disabled, shadows use fixed softness.
     if (blockerCount > 0.0) {
         avgBlockerDepth /= blockerCount;
+        // [v1.1.2-fix] Clamp avgBlockerDepth to prevent NaN from near-zero values
+        avgBlockerDepth = max(avgBlockerDepth, 1e-4);
+        // [v1.1.2-fix] Simplified penumbra estimation: proportional to distance
+        // from blocker to receiver, with conservative clamping to prevent artifacts.
         float penumbraSize = (shadowScreenPos.z - avgBlockerDepth) / max(1e-4, avgBlockerDepth);
-        float lightSize = 140.0 * weatherLightSizeMult;
+        // [v1.1.2-fix] Conservative clamp: penumbraSize rarely needs to exceed 2.0
+        // for visually correct soft shadows. Larger values cause light bleeding.
+        penumbraSize = clamp(penumbraSize, 0.0, 2.0);
+        // [v1.1.2-fix] Reduced lightSize from 140 to 40 to prevent extreme spread
+        float lightSize = 40.0;
         float minSpread = minSpreadFactor * spreadRadius;
-        float maxSpread = 24.0 * weatherLightSizeMult * spreadRadius;
+        float maxSpread = 8.0 * spreadRadius;
+        // [v1.1.2-fix] Use spreadRadius (not texelSize) so SHADOW_SOFTNESS still
+        // controls the base spread magnitude. This ensures softness setting works.
         float pcssSpread = clamp(penumbraSize * lightSize * spreadRadius, minSpread, maxSpread);
         float blockerWeight = blockerCount / float(blockerSearchSamples);
         actualSpread = mix(minSpread, pcssSpread, smoothstep(0.0, 1.0, blockerWeight));
@@ -737,13 +749,23 @@ float sampleShadow(vec3 shadowScreenPos, float distToCamera, float bias) {
     actualSpread = spreadRadius;
     #endif
 
+    // [v1.1.2-fix] Cap actualSpread to prevent sampling outside shadow map bounds
+    actualSpread = min(actualSpread, 16.0);
+
     // Adaptive PCF with LOD sample count — fewer samples at distance
     float shadow = 0.0;
     for (int i = 0; i < 32; ++i) {
         if (i >= sampleCount) break;
         vec2 offset = poissonDisk[i] * texelSize * actualSpread;
-        float depth = texture(shadowtex0, shadowScreenPos.xy + offset).r;
-        shadow += step(shadowScreenPos.z - bias, depth);
+        vec2 sampleUV = shadowScreenPos.xy + offset;
+        // [v1.1.2-fix] Out-of-bounds samples count as unshadowed (1.0)
+        // to maintain correct averaging without clamp-to-border artifacts.
+        if (sampleUV.x < 0.0 || sampleUV.x > 1.0 || sampleUV.y < 0.0 || sampleUV.y > 1.0) {
+            shadow += 1.0;
+        } else {
+            float depth = texture(shadowtex0, sampleUV).r;
+            shadow += step(shadowScreenPos.z - bias, depth);
+        }
     }
     shadow /= float(sampleCount);
 
