@@ -1,15 +1,54 @@
 #version 460 compatibility
+// [FIX] Dummy definitions to prevent C1503: undefined variable "RGBA16F" on strict GLSL validators
+// Iris/OptiFine will still parse the actual format directives even when they are outside comment
+// if format name is defined via #define (second clause of spec)
+#ifndef RGBA16F
+#define RGBA16F 0
+#endif
+#ifndef RGBA8
+#define RGBA8 0
+#endif
+#ifndef RGBA16
+#define RGBA16 0
+#endif
+#ifndef RGB16
+#define RGB16 0
+#endif
+#ifndef R11F_G11F_B10F
+#define R11F_G11F_B10F 0
+#endif
+#ifndef COLORTEX_CLEAR
+#define COLORTEX_CLEAR 0
+#endif
+
 /*
 [v1.1.1] Pipeline directives: keep HDR buffers and TAA history alive.
 These must be GLSL const-directives; shaders.properties keys are ignored by Iris/OptiFine.
+Per Iris spec (https://shaders.properties/current/reference/constants/buffer_format/):
+- Format names are NOT part of GLSL, so directive MUST be inside block comment OR
+  format name manually defined. We do manual definition above + active directives below
+  so both Iris parser and GLSL compiler are happy (no C1503).
+
+Can you make RGBA16F everywhere? YES — you can set any colortex0-15Format = RGBA16F.
+Currently used buffers are 0,1,2 (gbuffers) and 7 (TAA history). Buffers 3-6 are unused but
+we set them to RGBA16F anyway for full HDR pipeline, as requested.
+Cost: ~16 MB per 1080p buffer (RGBA16F = 64-bit per pixel = 2x RGBA8). 8 buffers = ~128 MB VRAM.
+Modern GPUs handle it; LOW/VERY_LOW profiles can keep RGBA8 to save memory, but we set all to HDR here.
 */
-/*
-const int colortex0Format = RGBA16F;
-const int colortex1Format = RGBA16F;
-const int colortex2Format = RGBA16F;
-const int colortex7Format = RGBA16F;
-const bool colortex7Clear = false;
-*/
+const int colortex0Format = RGBA16F;   // albedo + fully lit scene — main HDR buffer
+const int colortex1Format = RGBA16F;   // lightmap + roughness + metalness — needs 16-bit for smooth PBR
+const int colortex2Format = RGBA16F;   // packed normals + material tags (0.0/0.1/0.62/0.8/1.0) — RGBA16F prevents aliasing
+const int colortex3Format = RGBA16F;   // unused currently — set to HDR for future use / full HDR pipeline
+const int colortex4Format = RGBA16F;   // unused — HDR
+const int colortex5Format = RGBA16F;   // unused — HDR
+const int colortex6Format = RGBA16F;   // previously removed colortex6 — set to HDR anyway
+const int colortex7Format = RGBA16F;   // TAA history — must be HDR + persistent
+const bool colortex0Clear = false;     // optional: keep if you want history-like behavior, but default true is fine
+const bool colortex7Clear = false;     // TAA history must NOT clear
+
+// Optional HDR for shadow color (if you use colored shadows via shadowcolor0)
+const int shadowcolor0Format = RGBA16F;
+const int shadowcolor1Format = RGBA16F;
 // AuraLite Shaders v1.1.2 - Copyright (c) 2026 AlexanderNyr. Licensed under CC BY-NC-SA 4.0.
 
 // ==============================================================================
