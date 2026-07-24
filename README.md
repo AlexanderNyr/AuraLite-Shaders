@@ -4,7 +4,7 @@
 [![Shader Loader](https://img.shields.io/badge/Loader-Iris%20%2F%20Sodium-green)](https://modrinth.com/mod/iris)
 [![API Standard](https://img.shields.io/badge/API-OpenGL%204.6%20%2F%20GLSL%20460-orange)](https://khronos.org/)
 [![Materials Standard](https://img.shields.io/badge/PBR-LabPBR%201.3-cyan)](https://github.com/rre36/lab-pbr)
-[![Version](https://img.shields.io/badge/Release-v1.1.1-purple)](https://github.com/AlexanderNyr/AuraLite-Shaders)
+[![Version](https://img.shields.io/badge/Release-v1.1.2-purple)](https://github.com/AlexanderNyr/AuraLite-Shaders)
 [![License](https://img.shields.io/badge/License-CC%20BY--NC--SA%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by-nc-sa/4.0/)
 
 
@@ -12,9 +12,64 @@
 
 AuraLite delivers a breathtaking, realistic visual experience without overcomplicating the screen with bloated post-processing effects (such as aggressive motion blur or heavy bloom). A lightweight HDR bloom was added in v1.0.1 to softly glow emissive sources without smearing the scene. Optional FXAA/SMAA anti-aliasing, SSR, TAA, godrays, and SSAO are profile-scaled so AuraLite keeps **high FPS and smooth frametimes** on modern GPUs.
 
+> 🧪 **v1.1.2 note:** Adds **experimental, partial Distant Horizons support (WIP)** — LOD terrain/water now renders via `dh_terrain`/`dh_water`/`dh_shadow` with lighting/fog/shadow, but without claiming full compatibility yet. See changelog below for limitations.
+
 ---
 
 > ℹ️ **Historical note:** older changelog sections below are preserved as original release notes.
+
+## 🚀 What's New in v1.1.2 — *Render-Distance Shadows & Experimental Distant Horizons (Partial)*
+
+Version **1.1.2** extends shadow rendering to the actual render distance with an adaptive LOD system, fixes HDR/TAA pipeline strictness, cleans up deprecated GLSL, and introduces **partial, experimental Distant Horizons support (WIP)** — without claiming full compatibility yet. Work is ongoing.
+
+### 🌗 Extended Shadow Distance with Adaptive LOD
+
+* **Shadows now reach render distance.** `shadowDistance` was `60-160m` with a hard cutoff at `shadowDistance`. Now it scales with quality profiles: **60m (VERY_LOW/LOW, no shadows) → 120m (MED) → 256m (HIGH/ULTRA) → 384m (EXTREME)**. The cutoff is replaced by a soft fade `smoothstep(far*0.85, far*0.98)`.
+* **New `SHADOW_LOD` toggle — Off / Balanced / Aggressive.** Reduces sample count and expands filter radius at distance to keep performance stable:
+  * Balanced: `>25% far → 16 samples ×1.8 radius, >50% → 8 ×2.8`
+  * Aggressive: `>15% → 16×2.0, >35% → 8×3.5, >60% → 4×5.0`
+  * Beyond 95% `far` shadow sampling is skipped entirely.
+* **`shadowMapResolution` now includes `8192`.** EXTREME uses 8192 for maximum texel density at 384m. HIGH stays 2048, ULTRA 4096.
+* **New `SHADOW_PCSS_BLUR` toggle — fixed softness vs PCSS penumbra softening.** When enabled, penumbra grows with blocker distance and rain. When disabled, shadows use constant softness.
+* **PCSS correctness fixes in `composite.fsh:sampleShadow()`:** added UV bounds checks (prevents clamp-to-border artifacts), `avgBlockerDepth` clamped to `1e-4` to avoid NaN, `penumbraSize` clamped `0-2.0`, `lightSize` reduced `140→40` to prevent light bleeding, `actualSpread` capped to `16.0`, out-of-bounds samples counted as unshadowed (1.0) for correct averaging.
+* Shadow bias `distBias` now scales with `far` instead of `shadowDistance`, plus extra water receiver bias for tagged water pixels (`colortex2.a≈0.8`).
+
+### 🔧 HDR Pipeline Strictness Fix
+
+* **Dummy `#define RGBA16F 0` guards** added before the `const int colortex*Format = RGBA16F` directives. This satisfies strict GLSL validators (`C1503 undefined variable RGBA16F`) while Iris/OptiFine's parser still reads the format names (spec second clause). In v1.1.1 the directives were inside a `/* */` comment and were ignored by some loaders.
+* Now **all used buffers are explicitly `RGBA16F`**: `colortex0/1/2` (main HDR + PBR + material tags), `colortex3/4/5/6` (unused today but set to HDR for a full pipeline), `colortex7` (TAA history, `colortex7Clear=false`), and optional `shadowcolor0/1Format = RGBA16F`.
+* Cost noted: ~16MB per 1080p RGBA16F buffer → ~128MB VRAM for 8 buffers.
+
+### 🌍 Experimental — Partial Distant Horizons Support (WIP, not full support)
+
+> ⚠️ AuraLite does **NOT** yet claim full Distant Horizons compatibility. v1.1.2 only adds a **minimal, experimental code path** so LOD chunks are no longer invisible under Iris. It's functional enough for testing, but considered partial and work-in-progress.
+
+* **Why it was needed:** Without `dh_terrain.vsh/.fsh`, `dh_water.vsh/.fsh`, `dh_shadow.vsh/.fsh`, Iris marks the pack as incompatible with DH and simply doesn't draw DH's simplified LOD chunks at all — symptom "shader works but DH chunks invisible". Presence of these files is enough for Iris/DH auto-detection (`dhShadow.enabled` defaults true).
+* **What v1.1.2 does:**
+  * `dh_terrain`/`dh_water` write the same `colortex0/1/2` layout as vanilla passes, so existing lighting/fog/shadow/cloud/godray code in `composite.fsh` applies to LOD geometry without other changes.
+  * Depth reconciliation in `composite.fsh`: detects `depthtex0>=1.0 && dhDepthTex0<1.0` → `isDHTerrain`, reconstructs viewPos via `dhProjectionInverse` (not `gbufferProjectionInverse` — different far planes) and computes `isSkyPixel`. Fixes DH terrain being treated as sky (flat/washed-out).
+  * Fog rescale: `effectiveDensity *= far/dhRenderDistance` prevents exponential fog from saturating to white before DH draw distance.
+  * Emissive fast-path uses `!isSkyPixel` instead of `depth<1.0` so distant `DH_BLOCK_ILLUMINATED` (glowstone/lanterns) is still emissive.
+  * `final.fsh` heat shimmer now checks `dhDepthTex0` via `isRealGeometry` so distant lava lakes also shimmer.
+  * Overdraw prevention: `if(dist < far+16.0) discard` in DH passes — DH renders entire world including area already covered by vanilla chunks; without discard both fight over same G-buffer pixel causing Z-fighting / missing water/ice.
+* **Current limitations (why it's partial):**
+  * `gl_MultiTexCoord2` is not guaranteed to carry valid lightmap data for DH programs — v1.1.2 hardcodes `lmcoord = vec2(0.0,1.0)` (open sky, no torch). Correct for exterior DH, but not interior-perfect.
+  * No LabPBR `normals`/`specular` maps for DH — roughness/metalness approximated per `dhMaterialId` (STONE/WOOD/METAL/SNOW/LEAVES/LAVA...). No POM on DH.
+  * Water uses flat vertex normal, not procedurally displaced like near water.
+  * Fog/sky/cloud code paths are shared but DH has coarser geometry.
+* **Ongoing work:** proper skylight baking if DH ever exposes it, LabPBR fallback, smoother transition seam, performance tuning. Full support will be announced separately.
+
+### 🛠️ Pipeline Cleanup & Fixes
+
+* **Menu split fix — `[v1.1.1-ui-hotfix]`:** Oversized option screens were split into `[SHADOW_OPTIONS]`, `[PBR_OPTIONS]`, `[AO_REFLECTIONS]`, `[CLOUD_SHAPE]`, `[LIGHT_SHAFTS]`, `[NIGHT_SKY]` because some Iris/OptiFine UI builds silently hide buttons when a screen has too many entries.
+* **Deprecated `ftransform()` removed** from `composite.vsh`, `final.vsh`, `gbuffers_clouds.vsh`, `composite1.vsh`, `composite2.vsh`, `gbuffers_weather.vsh` — replaced with explicit `gl_ProjectionMatrix * gl_ModelViewMatrix * gl_Vertex` for broader driver compat (same fix applied to `shadow.vsh` in v1.1.0).
+* **Final pass cleanup:** Removed two duplicate copy-pasted post-gamma dither blocks that contradicted the comment about linear-space dither (triangle `±1/255` before tonemap). The single pre-tonemap dither remains — more effective in darks, silent in brights.
+* **Bias & stale comment fixes:** Corrected stale `colortex6` hand-off comment (removed in v1.0.3), now notes that `final.fsh` reads normal from `colortex2` and roughness from `colortex1.z`.
+* **Rebalanced profiles** to reflect new distances and LOD:
+  * VERY_LOW/LOW 60m (no shadows), MED 120m Balanced, HIGH 256m Balanced, ULTRA 256m Aggressive, EXTREME 384m Aggressive + 8192 res.
+* **Localization:** Bumped `lang/*.lang` headers `v1.0.7 → v1.1.2`, translated previously-English `profile.*.comment` placeholders into native languages (ur_pk, vi_vn, zh_cn, zh_hk, zh_tw and others).
+
+---
 
 ## 🛠️ What's New in v1.1.1 — *Pipeline Correctness Fix*
 
@@ -522,9 +577,11 @@ AuraLite includes localized in-game configuration files for **69 language codes*
 ### `[Lighting Settings]`
 
 *   **Dynamic Shadows** — Toggle sun/moon shadows.
-*   **Shadow Resolution** — `1024 / 2048 / 4096`
+*   **Shadow Resolution** — `512 / 1024 / 2048 / 4096 / 8192` — real Iris `shadowMapResolution` const (8192 for EXTREME).
 *   **Shadow Softness** _(v0.2.2)_ — `Sharp / Soft / Ultra Soft` — rotated Poisson disk filtering.
-*   **Shadow Distance** _(v0.2.2)_ — `Near (60m) / Standard (80m) / Far (120m) / Ultra (160m)`.
+*   **Shadow Distance** _(v0.2.2, extended in v1.1.2)_ — `Near (60m) / Standard (80-120m) / Far (120-256m) / Ultra (256-384m)` — now fades to `far` instead of hard-cutting, with `SHADOW_LOD`.
+*   **Shadow LOD** _(v1.1.2)_ — `Off / Balanced / Aggressive` — reduces samples (32→16→8→4) and expands filter radius at distance.
+*   **Shadow PCSS Blur** _(v1.1.2)_ — `Disabled (fixed softness) / Enabled (distance/rain-based penumbra)`.
 *   **Shadow Tint** _(v0.2.2)_ — `Neutral Gray / Cool Blue (Realistic) / Warm`.
 *   **Shadow Lift / Ambient** _(v0.2.2)_ — `Dark / Standard / Lifted (Bright)`.
 *   **Light Wrap (Terminator)** _(v0.2.2)_ — `Realistic (Lambert) / Soft / Stylized`.
@@ -601,18 +658,19 @@ AuraLite includes localized in-game configuration files for **69 language codes*
 *   **Vignette** — Toggle cinematic corner darkening.
 *   (Hidden) **Rain Wetness Reflections (`WET_REFLECTIONS`)** — Wet glossy ground during rain (enabled by default in MED+ profiles).
 
-### 🎚️ Quality Profiles _(rebalanced in v1.0.4, unchanged in v1.0.6)_
+### 🎚️ Quality Profiles _(rebalanced in v1.1.2 — shadows 60-384m with LOD)_
 
 | Profile  |Target       |Shadows |Clouds  |Cloud Shadows |Godrays |TAA |SSR |PBR |PBR Dist |AA   |SSAO       |Heat Shimmer |Heavy Extras                          |
 | -------- |------------ |------- |------- |------------- |------- |--- |--- |--- |-------- |---- |---------- |------------ |------------------------------------- |
-| <strong>VERY_LOW</strong> |Maximum FPS  |❌       |❌       |❌             |❌       |❌   |❌   |❌   |16m      |Off  |❌          |❌            |Most extras off                       |
-| <strong>LOW</strong> |Weak GPUs    |❌       |❌       |❌             |❌       |❌   |❌   |❌   |16m      |FXAA |❌          |❌            |Water/foliage motion, stars, vignette |
-| <strong>MED</strong> |Balanced     |✅ 1024  |✅ Std   |✅ Soft        |✅ Fast  |❌   |✅ F |✅   |48m      |FXAA |❌          |✅ Subtle     |Wet refl + ground mist + SSS          |
-| <strong>HIGH</strong> |High quality |✅ 2048  |✅ Far   |✅ Balanced    |✅ Bal   |✅   |✅ B |✅   |128m     |SMAA |✅ Subtle   |✅ Balanced   |Full atmosphere + SSR + TAA           |
-| <strong>ULTRA</strong> |Very high    |✅ 4096  |✅ VFar  |✅ Balanced    |✅ High  |✅   |✅ H |✅   |128m     |SMAA |✅ Balanced |✅ Balanced   |High-end visuals                      |
-| <strong>EXTREME</strong> |Max quality  |✅ 4096  |✅ Dense |✅ Dramatic    |✅ High  |✅   |✅ H |✅   |∞        |SMAA |✅ Deep     |✅ Strong     |Heaviest cinematic                    |
+| <strong>VERY_LOW</strong> |Maximum FPS  |❌ 512/60m |❌       |❌             |❌       |❌   |❌   |❌   |16m      |Off  |❌          |❌            |Most extras off                       |
+| <strong>LOW</strong> |Weak GPUs    |❌ 512/60m |❌       |❌             |❌       |❌   |❌   |❌   |16m      |FXAA |❌          |❌            |Water/foliage motion, stars, vignette |
+| <strong>MED</strong> |Balanced     |✅ 1024/120m |✅ Std   |✅ Soft        |✅ Fast  |❌   |✅ F |✅   |48m      |FXAA |❌          |✅ Subtle     |Wet refl + ground mist + SSS          |
+| <strong>HIGH</strong> |High quality |✅ 2048/256m |✅ Far   |✅ Balanced    |✅ Bal   |✅   |✅ B |✅   |128m     |SMAA |✅ Subtle   |✅ Balanced   |Full atmosphere + SSR + TAA           |
+| <strong>ULTRA</strong> |Very high    |✅ 4096/256m Aggr LOD |✅ VFar  |✅ Balanced    |✅ High  |✅   |✅ H |✅   |128m     |SMAA |✅ Balanced |✅ Balanced   |High-end visuals                      |
+| <strong>EXTREME</strong> |Max quality  |✅ 8192/384m Aggr LOD |✅ Dense |✅ Dramatic    |✅ High  |✅   |✅ H |✅   |∞        |SMAA |✅ Deep     |✅ Strong     |Heaviest cinematic                    |
 
 > 💫 **Shooting stars** are disabled on **VERY\_LOW / LOW** and enabled from **MED** upward. 🌿 **Foliage SSS** is enabled from **MED** upward (disabled on VERY\_LOW/LOW for maximum FPS). 🔥 **Heat shimmer** is disabled on **VERY\_LOW / LOW** and enabled from **MED** upward.
+> 🗺️ **Distant Horizons:** v1.1.2 adds **experimental, partial** DH support (dh_terrain/water/shadow). LOD chunks now render and respect lighting/fog/shadow, but without full PBR maps and with hardcoded skylight. Consider it WIP, not full compatibility yet.
 
 ***
 
@@ -620,8 +678,9 @@ AuraLite includes localized in-game configuration files for **69 language codes*
 
 *   **AuraLite** is licensed under the [Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License](LICENSE) (CC BY-NC-SA 4.0).
 *   **Copyright (c) 2026 AlexanderNyr.**
-*   **Officially Supported Platform:** Minecraft **1.16.5 – 26.1.2** with **Sodium + Iris** or **OptiFine** loader.
+*   **Officially Supported Platform:** Minecraft **1.16.5 – 26.2** with **Sodium + Iris** or **OptiFine** loader.
 *   _Note: Verified to work flawlessly on Minecraft 1.16.5, 1.20.1, 1.21.1, and 26.1.2._
+*   **Distant Horizons:** v1.1.2 includes **experimental, partial** DH support (WIP) — `dh_terrain`, `dh_water`, `dh_shadow` minimal passes to prevent Iris from hiding LOD chunks. Provides fog rescaling, depth reconciliation, overdraw culling, emissive/heat-shimmer for distant lava. Still **NOT** full support: no LabPBR maps for DH, hardcoded full skylight, no POM — full compatibility will be announced separately when ready.
 
 ### ⚖️ Rules & Permissions (FAQ)
 
