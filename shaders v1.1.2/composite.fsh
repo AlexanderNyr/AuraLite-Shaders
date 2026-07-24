@@ -186,6 +186,17 @@ uniform float isNetherBiome;
 uniform float isEndBiome;
 uniform float far; // [v1.1.2] Render distance — used for shadow LOD fade
 
+// [FIX v1.1.2] Distant Horizons support. DISTANT_HORIZONS is auto-defined by
+// Iris on every program (including composite.fsh) when DH is active, and
+// dhRenderDistance/dhDepthTex0/dhProjectionInverse are always valid in that case.
+#ifdef DISTANT_HORIZONS
+uniform int dhRenderDistance;
+// dhDepthTex0 behaves like depthtex0 (includes DH water) but only contains DH
+// LOD geometry rendered with dhProjection instead of gbufferProjection.
+uniform sampler2D dhDepthTex0;
+uniform mat4 dhProjectionInverse;
+#endif
+
 in vec2 texcoord;
 
 // Declare explicit output for modern GLSL 460 compatibility
@@ -1149,8 +1160,10 @@ float computeSSAO(vec2 uv, vec3 centerViewPos, vec3 centerNormal) {
 #endif
 
 // SSR is now performed in final.fsh where colortex0 contains the fully lit scene.
-// The traceSSR function has been moved there. composite.fsh writes normals +
-// reflectivity into colortex6 for final.fsh to consume.
+// The traceSSR function lives there. [FIX v1.1.2] Corrected stale comment: no
+// colortex6 hand-off exists anymore (removed in v1.0.3, see note above at the
+// colortex2/colortex1 uniform declarations). final.fsh reads the surface normal
+// directly from colortex2 and roughness from colortex1.z instead.
 
 // Realistic low-valley / waterline mist density.
 // Softer vertical profile than the original: dense around water level, feathered upward.
@@ -1251,6 +1264,22 @@ float computeRealisticFogFactor(float dist, float density, vec3 worldDir, float 
         effectiveDensity *= 1.05;
     }
 
+    // [FIX v1.1.2] Distant Horizons fog rescale. This exponential density was
+    // tuned against the vanilla render distance (`far`, e.g. 80-256m). Distant
+    // Horizons LOD terrain can extend hundreds to thousands of blocks past
+    // `far`, but without this correction the SAME density keeps accumulating
+    // over that whole extra distance, so fog saturates to ~90-100% opacity long
+    // before DH's own draw distance — every distant LOD chunk gets buried under
+    // a flat white/grey wall instead of fading in gradually. Rescale density so
+    // the same relative falloff that used to fully resolve at `far` now resolves
+    // at dhRenderDistance instead, giving real atmospheric-perspective depth
+    // across the whole extended DH view instead of an early whiteout.
+    #ifdef DISTANT_HORIZONS
+    if (isOverworld && dhRenderDistance > far) {
+        effectiveDensity *= clamp(far / float(dhRenderDistance), 0.05, 1.0);
+    }
+    #endif
+
     float fogFactor = 1.0 - exp(-dist * effectiveDensity);
     return clamp(fogFactor, 0.0, 0.985);
 }
@@ -1258,6 +1287,31 @@ float computeRealisticFogFactor(float dist, float density, vec3 worldDir, float 
 void main() {
     float depth = texture(depthtex0, texcoord).r;
     vec4 albedoData = texture(colortex0, texcoord);
+
+    // ==============================================================================
+    // [FIX v1.1.2] DISTANT HORIZONS DEPTH RECONCILIATION
+    // ------------------------------------------------------------------------------
+    // DH renders its LOD geometry into SEPARATE depth textures (dhDepthTex0/1) using
+    // its own far-reaching dhProjection, while colortex0/1/2 (albedo/PBR/normal) are
+    // shared attachments also written by dh_terrain.fsh/dh_water.fsh. Without this
+    // block, every pixel where ONLY DH geometry exists still reads depth==1.0 from
+    // the normal depthtex0 (nothing vanilla was drawn there), so the code below
+    // treated all distant DH terrain as empty SKY: it skipped sun/moon lighting,
+    // shadows and ground fog entirely and only composited clouds/godrays over it.
+    // That is the real cause of DH chunks looking flat/washed-out/foggy rather
+    // than lit like normal terrain (this is a separate, deeper issue than fog
+    // density alone). We detect that case here and reconstruct the DH pixel's
+    // view-space position with dhProjectionInverse so every distance-based effect
+    // below (lighting, shadows, fog, PBR fade, clouds) treats it exactly like
+    // regular terrain instead of sky.
+    // ==============================================================================
+    bool isDHTerrain = false;
+    float dhDepthSample = 1.0;
+    #ifdef DISTANT_HORIZONS
+    dhDepthSample = texture(dhDepthTex0, texcoord).r;
+    isDHTerrain = (depth >= 1.0) && (dhDepthSample < 1.0);
+    #endif
+    bool isSkyPixel = (depth >= 1.0) && !isDHTerrain;
 
     // Bulletproof Dimension Detection using Minecraft's native 'dimension' uniform (-1: Nether, 0: Overworld, 1: End)
     // with reliable biome/color fallbacks if needed.
@@ -1295,8 +1349,23 @@ void main() {
     vec3 L = normalize(shadowLightPosition);
 
     // [FIX v0.2.5] Compute view-space position ONCE instead of twice (was redundant)
-    vec3 NDCPos = vec3(texcoord.xy, depth) * 2.0 - 1.0;
-    vec3 viewPos = projectAndDivide(gbufferProjectionInverse, NDCPos);
+    // [FIX v1.1.2] DH pixels must be unprojected with dhProjectionInverse (DH's own
+    // near/far planes), not gbufferProjectionInverse — using the vanilla inverse
+    // projection on a depth value written by DH's projection would reconstruct a
+    // wildly wrong view-space position (and therefore wrong terrainDist/worldDir),
+    // since the two projections have different far planes.
+    float reconstructionDepth = depth;
+    #ifdef DISTANT_HORIZONS
+    if (isDHTerrain) reconstructionDepth = dhDepthSample;
+    #endif
+    vec3 NDCPos = vec3(texcoord.xy, reconstructionDepth) * 2.0 - 1.0;
+    vec3 viewPos;
+    #ifdef DISTANT_HORIZONS
+    viewPos = isDHTerrain ? projectAndDivide(dhProjectionInverse, NDCPos)
+                          : projectAndDivide(gbufferProjectionInverse, NDCPos);
+    #else
+    viewPos = projectAndDivide(gbufferProjectionInverse, NDCPos);
+    #endif
     float terrainDist = length(viewPos);
     vec3 viewDir = normalize(viewPos);
 
@@ -1399,8 +1468,11 @@ void main() {
     // [FIX v0.2.5] Prevents composite from re-lighting emissive surfaces
     // ==============================================================================
     // Sky pixels do not write colortex2, so alpha may contain stale data there.
-    // Only treat a pixel as emissive if it is real geometry (depth < 1.0).
-    if (depth < 1.0 && isEmissive > 0.5) {
+    // Only treat a pixel as emissive if it is real geometry (not sky).
+    // [FIX v1.1.2] Use !isSkyPixel instead of depth < 1.0: for DH-only pixels the
+    // vanilla depth stays at 1.0 even though dh_terrain.fsh wrote real emissive
+    // geometry (e.g. distant glowstone/illuminated blocks) into colortex0-2.
+    if (!isSkyPixel && isEmissive > 0.5) {
         vec3 finalColor = albedoData.rgb;
 
         // Apply fog to emissive surfaces too (they exist in the world)
@@ -1621,7 +1693,7 @@ void main() {
         // Procedural transparent cloud shadows. Only direct sunlight is dimmed;
         // ambient/torch light remains readable, so the result stays realistic and playable.
         #ifdef CLOUD_SHADOWS
-        if (depth < 1.0 && skyLight > 0.03 && dayFactor > 0.02) {
+        if (!isSkyPixel && skyLight > 0.03 && dayFactor > 0.02) {
             vec3 worldPosForCloudShadow = cameraPosition + worldDir * terrainDist;
             float cloudShadow = computeCloudShadow(worldPosForCloudShadow, worldL, dayFactor, frameTimeCounter * 0.05);
             directLighting *= mix(1.0, cloudShadow, skyLight);
@@ -1695,7 +1767,12 @@ void main() {
     // ==============================================================================
     // SKY PASS
     // ==============================================================================
-    if (depth >= 1.0) {
+    // [FIX v1.1.2] Use isSkyPixel instead of raw depth >= 1.0: DH-only pixels also
+    // read depth == 1.0 from the vanilla depth buffer, but they are real distant
+    // terrain (dh_terrain.fsh/dh_water.fsh already wrote albedo/normal/PBR data
+    // for them) and must fall through to the TERRAIN LIGHTING path below instead
+    // of being treated as empty sky with no sun/moon lighting or shadows.
+    if (isSkyPixel) {
         vec3 finalColor = albedoData.rgb;
         #ifdef PROCEDURAL_CLOUDS
         if (isOverworld) {

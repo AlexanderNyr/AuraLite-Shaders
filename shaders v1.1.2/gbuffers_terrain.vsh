@@ -1,5 +1,5 @@
 #version 460 compatibility
-// AuraLite Shaders v1.1.1 - Copyright (c) 2026 AlexanderNyr. Licensed under CC BY-NC-SA 4.0.
+// AuraLite Shaders v1.1.2 - Copyright (c) 2026 AlexanderNyr. Licensed under CC BY-NC-SA 4.0.
 
 // ==============================================================================
 // AuraLite Shader Pack - Terrain Vertex Shader (GLSL 460 - Storm Waving Foliage)

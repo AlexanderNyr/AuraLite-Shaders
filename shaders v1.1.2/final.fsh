@@ -1,5 +1,5 @@
 #version 460 compatibility
-// AuraLite Shaders v1.1.1 - Copyright (c) 2026 AlexanderNyr. Licensed under CC BY-NC-SA 4.0.
+// AuraLite Shaders v1.1.2 - Copyright (c) 2026 AlexanderNyr. Licensed under CC BY-NC-SA 4.0.
 
 // ==============================================================================
 // AuraLite Shader Pack - Final Post-Processing Pass Fragment Shader (GLSL 460)
@@ -49,6 +49,13 @@ uniform sampler2D colortex1; // lightmap.xy, roughness.z, metalness.w
 uniform sampler2D colortex2; // view-space normal.xyz, emissive flag.a
 uniform sampler2D depthtex0; // depth WITH translucent (water, glass, ice)
 uniform sampler2D depthtex1; // depth WITHOUT translucent (terrain only)
+// [FIX v1.1.2] Distant Horizons: LOD terrain/water is drawn into a separate
+// depth attachment (dhDepthTex0), so any depthtex0>=1.0 check must also test
+// dhDepthTex0 or it will treat visible distant lava/geometry as "empty sky"
+// (e.g. heat shimmer above distant DH lava lakes silently not working).
+#ifdef DISTANT_HORIZONS
+uniform sampler2D dhDepthTex0;
+#endif
 uniform mat4 gbufferProjection;
 uniform mat4 gbufferProjectionInverse;
 uniform mat4 gbufferModelView;
@@ -407,6 +414,16 @@ void main() {
     vec4 ndPre   = texture(colortex2, texcoord);
     bool isWaterSurface = (depthS - depth) > 1e-5 && abs(ndPre.a - 0.8) < 0.05;
 
+    // [FIX v1.1.2] True "is this pixel real geometry" test that also accounts for
+    // Distant Horizons LOD terrain/water, which lives in dhDepthTex0 instead of
+    // depthtex0. Used below by heat shimmer so distant DH lava also shimmers.
+    bool isRealGeometry = depth < 0.99999;
+    #ifdef DISTANT_HORIZONS
+    if (!isRealGeometry) {
+        isRealGeometry = texture(dhDepthTex0, texcoord).r < 0.99999;
+    }
+    #endif
+
     vec3 color;
     // [v1.0.7] Clean screen-space ripple view distortion applied post-lighting when underwater
     if (isEyeInWater == 1 && depth < 0.99999) {
@@ -621,7 +638,10 @@ void main() {
     vec2 px = 1.0 / vec2(max(viewWidth, 1.0), max(viewHeight, 1.0));
     vec4 nd = texture(colortex2, texcoord);
 
-    if (depth < 0.99999) {
+    // [FIX v1.1.2] Use isRealGeometry (checks dhDepthTex0 too) instead of raw
+    // depth < 0.99999 so distant Distant Horizons lava lakes also get shimmer
+    // instead of being silently skipped as "sky".
+    if (isRealGeometry) {
         if (abs(nd.a - 0.1) < 0.05) {
             // Pixel is lava itself
             shimmerMask = 1.0;
@@ -774,21 +794,10 @@ void main() {
     // REMOVED. Banding is now handled by the LINEAR-space dither applied BEFORE
     // tone mapping above, which is far more effective in dark regions (the only
     // place banding was visible) and silent in bright regions.
-
-        {
-        vec2 dp = gl_FragCoord.xy;
-        float n1 = fract(sin(dot(dp, vec2(12.9898, 78.233))) * 43758.5453);
-        float n2 = fract(sin(dot(dp + 17.0, vec2(12.9898, 78.233))) * 43758.5453);
-        color += vec3((n1 + n2 - 1.0) * (1.0 / 255.0));
-    }
-
-    // --- [Dither] ---
-    {
-        vec2 dp = gl_FragCoord.xy;
-        float n1 = fract(sin(dot(dp, vec2(12.9898, 78.233))) * 43758.5453);
-        float n2 = fract(sin(dot(dp + 17.0, vec2(12.9898, 78.233))) * 43758.5453);
-        color += vec3((n1 + n2 - 1.0) * (1.0 / 255.0));
-    }
+    // [FIX v1.1.2] Removed two duplicate copy-pasted post-gamma dither blocks that
+    // were left over from a refactor (they re-added the same noise term two more
+    // times right below this comment, contradicting it and wasting ALU per pixel
+    // for no visual benefit — the single pre-tonemap dither above is sufficient).
 
     fragColor = vec4(clamp(color, 0.0, 1.0), 1.0);
 }
