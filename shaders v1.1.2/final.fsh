@@ -775,5 +775,20 @@ void main() {
     // tone mapping above, which is far more effective in dark regions (the only
     // place banding was visible) and silent in bright regions.
 
+        {
+        vec2 dp = gl_FragCoord.xy;
+        float n1 = fract(sin(dot(dp, vec2(12.9898, 78.233))) * 43758.5453);
+        float n2 = fract(sin(dot(dp + 17.0, vec2(12.9898, 78.233))) * 43758.5453);
+        color += vec3((n1 + n2 - 1.0) * (1.0 / 255.0));
+    }
+
+    // --- [Dither] ---
+    {
+        vec2 dp = gl_FragCoord.xy;
+        float n1 = fract(sin(dot(dp, vec2(12.9898, 78.233))) * 43758.5453);
+        float n2 = fract(sin(dot(dp + 17.0, vec2(12.9898, 78.233))) * 43758.5453);
+        color += vec3((n1 + n2 - 1.0) * (1.0 / 255.0));
+    }
+
     fragColor = vec4(clamp(color, 0.0, 1.0), 1.0);
 }
