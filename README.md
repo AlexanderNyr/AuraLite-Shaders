@@ -213,42 +213,6 @@ The following fully-translated `.lang` files were added (every option name, valu
 
 ***
 
-## 🆕 What's New in v1.0.4 — _Profile Rebalance, Translucent Blocks & Glass Rendering_
-
-Version **1.0.4** delivers a full quality-profile rebalance for smoother progression, introduces proper translucent block rendering for ice and glass, adds a dedicated Iris/Oculus translucent terrain pass, and fixes a cross-vendor GLSL compatibility issue.
-
-### 🔄 Full Profile Rebalance
-
-All six quality profiles (VERY\_LOW → EXTREME) have been rebalanced for a smoother, more logical feature progression:
-
-| Profile  |Key Changes in v1.0.4                                                                                                                                           |
-| -------- |--------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| <strong>VERY_LOW</strong> |Sun intensity lowered to <em>Dim</em> (1), underwater night set to <em>Moonlit Pool</em> for visibility.                                                        |
-| <strong>LOW</strong> |Ambient brightness lowered, cozy lights disabled, Filmic tone mapping (ACES), underwater night set to <em>Dim</em>. Stars upgraded to <em>Standard</em>.        |
-| <strong>MED</strong> |Godrays now <strong>enabled</strong> (Fast quality) — this was the biggest missing piece in the sweet-spot preset. PBR strength raised to <em>Standard</em>. Meteor frequency normalized. |
-| <strong>HIGH</strong> |SSAO now <strong>enabled</strong> (Subtle) — contact shadows appear at this tier. Godrays bumped to <em>Balanced</em>. Moon intensity lowered to <em>Standard</em>. |
-| <strong>ULTRA</strong> |Godrays raised to <em>High</em>. TAA strength at <em>Balanced</em>.                                                                                             |
-| <strong>EXTREME</strong> |Water wave scale pushed to <em>Stormy</em>. Underwater night set to <em>Pitch Dark</em> for maximum survival realism. Photographic (AgX) tone mapping.          |
-
-### 🧊 Split Ice & Glass Block Rendering
-
-*   **Regular ice** (`minecraft:ice`, block ID 10005) now renders with its actual texture and semi-transparency instead of being fully opaque. Transparency scales with the `WATER_TRANSPARENCY` setting (Clear / Balanced / Deep).
-*   **Packed ice, blue ice, and frosted ice** (block ID 10007) are now rendered **opaque with texture** — distinct from regular ice so the visual difference is clear.
-*   **All glass blocks and panes** (block ID 10008), including every stained-glass variant and tinted glass, now render with their actual texture and proper transparency. Glass opacity scales with `WATER_TRANSPARENCY`. This eliminates the old "invisible glass" problem where glass blocks disappeared against bright skies.
-*   Both ice types and glass are handled by the new `gbuffers_terrain_translucent` pass, ensuring correct rendering on Iris/Oculus split-translucent pipelines.
-
-### 🪟 New Translucent Terrain Pass (`gbuffers_terrain_translucent`)
-
-*   A new **`gbuffers_terrain_translucent.fsh` / `.vsh`** shader pair was added. This pass handles water, ice, glass, and nether-portal blocks in a single Iris/Oculus-compatible translucent terrain path.
-*   Mirrors the existing `gbuffers_water.fsh` logic so translucent blocks render identically regardless of whether the loader uses a unified or split translucent G-buffer path.
-*   Nether portal plasma, ice Fresnel, glass opacity, and water Fresnel/ripples all route through this pass.
-
-### 🛠️ GLSL Compatibility Fix
-
-*   **Replaced all `fma()` calls with direct multiply-add expressions** across every shader file. The `fma()` intrinsic, while correct on most modern GPUs, caused compilation failures on certain drivers (particularly older Intel iGPUs and some Mesa versions). The replacement `a * b + c` expressions are mathematically equivalent and compile universally.
-
-***
-
 ## 🆕 What's New in v1.0.3 — _Anti-Aliasing & PBR Performance_
 
 Version **1.0.3** adds configurable spatial anti-aliasing (FXAA / SMAA) and a PBR render distance control that skips expensive Cook-Torrance specular calculations on distant terrain.
@@ -298,26 +262,6 @@ Version **1.0.2** adds realistic subsurface scattering for vegetation, making le
 
 ***
 
-## 🆕 What's New in v1.0.1 — _Stability, HDR Bloom & Photographic Tone Mapping_
-
-Version **1.0.1** is a focused hotfix on top of v1.0.0 that addresses five edge-case rendering issues and introduces a new cinematic tone-mapping curve with lightweight HDR bloom.
-
-### 🛠️ Bug Fixes
-
-*   **TAA history acceptance threshold.** Added `historySample.a < 0.99` guard in `composite1.fsh` so uninitialised or stale history buffers (e.g. right after shader reload or resolution change) are rejected instead of causing ghosting.
-*   **Vibrancy math.** `applyVibrancy` in `final.fsh` now correctly handles negative saturation values — oversaturation works as intended rather than relying on undefined GLSL `mix` extrapolation followed by hard clamping.
-*   **SSR normal NaN guard.** Added `length(N) > 0.5` check before `traceSSR()` so invalid normals from edge pixels are silently skipped instead of producing black reflections.
-*   **SSR near-field trace precision.** Minimum raymarch step lowered from `1.0` to `0.3` view-space units, dramatically improving hit rate on close surfaces (ripples, shallow pools, wet stone).
-*   **Meteor moon-brightness curve.** `gbuffers_skybasic.fsh` now uses `cos²(phase × π/8)` — identical to `getMoonPhaseBrightness()` in `composite.fsh` — so moon washout is physically consistent.
-
-### 🎨 Visual Enhancements
-
-*   **HDR Bloom _(v1.0.1)_.** Cheap single-pass 3×3 neighbour blur for overbright pixels (luminance threshold 0.75). Naturally affects sun/moon disks, lava, portals, bright specular highlights, and torches — without smearing the entire scene or requiring extra render targets.
-*   **Photographic (AgX-like) Tone Mapping _(v1.0.1)_.** A new `CONTRAST = 4` option in `final.fsh` provides a sigmoidal tone curve with natural highlight chromatic attenuation, soft toe, and lifted blacks — giving a cinematic, non-clipped look that keeps foliage saturation under control while handling extreme brightness gracefully.
-*   **EXTREME profile updated.** Now uses `CONTRAST=4` (Photographic/AgX-like) instead of `CONTRAST=3` for cinematic highlight handling.
-
-***
-
 ## 🆕 What's New in v1.0.0 — _Meteor Showers & Finalized Reflection Pipeline_
 
 Version **1.0.0** builds on the volumetric aurora work from v0.3.0 and introduces the first **v1.0.0** source snapshot in this repository. The update adds a physically-inspired meteor system to the night sky, finalizes the modern SSR path for reliable Iris compatibility, and refreshes the documentation so the project now correctly points to the `shaders v1.0.0/` folder.
@@ -343,62 +287,6 @@ Version **1.0.0** builds on the volumetric aurora work from v0.3.0 and introduce
 *   New configurable options: **`SHOOTING_STARS`**, **`SHOOTING_STARS_FREQUENCY`**, and **`SHOOTING_STARS_BRIGHTNESS`**.
 *   Shooting stars are disabled on the lightest presets and enabled from **MED** upward through the normal profile system.
 *   English and Russian UI text was expanded for the new night-sky controls, while other language files continue to fall back safely.
-
-***
-
-## 🆕 What's New in v0.3.0 — _Volumetric Aurora Realism Update_
-
-Version **0.3.0** focuses on the night sky and replaces the older flat aurora overlay with a more photographic, volumetric aurora renderer. The rest of the rendering pipeline remains based on the stable v0.2.9 SSR/water foundation.
-
-### 🌌 Realistic Volumetric Aurora Borealis
-
-*   **Raymarched aurora curtains.** Aurora rendering now samples a vertical volume above the horizon instead of drawing a simple 2D noise layer, giving the effect visible depth and height.
-*   **Distinct vertical pillars and rays.** Fine high-frequency striations create the characteristic upward beams seen in real aurora photography.
-*   **Sharper lower edge, softer upper fade.** The aurora now has a defined luminous base and gradually dissolves into the upper night sky.
-*   **More vivid photographic colours.** The palette was rebalanced toward saturated cyan-green, magenta/purple, and subtle deep-blue upper blending.
-*   **Better motion pacing.** Animation speed was reduced and smoothed so curtains drift naturally instead of sliding too quickly across the sky.
-*   **Preserved biome/weather logic.** Existing `AURORA_MODE`, cold-biome detection, rain attenuation, speed, and brightness settings continue to work.
-
-***
-
-## 🆕 What's New in v0.2.9 — _Working SSR, Realistic Waves & True Night Underwater_
-
-Version **0.2.9** is a focused water-quality update that finally delivers the long-requested **screen-space reflections** that work on every loader (including the tricky Iris 1.20+ pipeline), introduces **physically-coherent procedural waves** that don't tear reflections, and gives underwater scenes **true nocturnal darkness**.
-
-### 🪞 Screen-Space Reflections (SSR) — Now Actually Working
-
-*   **Loader-agnostic SSR pipeline.** Previous SSR implementations relied on multi-render-target writes via `DRAWBUFFERS:06` + `layout(location = 1) out`. This combination silently failed on Iris 1.20 — the second attachment was never bound to the FBO, so reflection data was lost between the composite and final passes. v0.2.9 reads the surface normal directly from `colortex2` and roughness from `colortex1.z` (the same buffers PBR specular highlights already use), bypassing the broken MRT path entirely.
-    
-*   **Bulletproof water detector.** Water surfaces are now identified by comparing `depthtex0` (depth _with_ translucents) and `depthtex1` (depth _without_ translucents). When they differ, the pixel is a water/glass/ice surface — no false positives on lapis lazuli, blue wool, packed ice, or terrain seen through water. Works regardless of whether `gbuffers_water` correctly writes its G-buffer attachments.
-    
-*   **dFdx-stabilized normal reconstruction.** For pixels where `gbufferModelView` is identity in the final pass (a known Iris quirk), the water normal is rebuilt from depth-buffer derivatives using a 4-tap central-difference kernel. The result is the _true geometric normal_ of the visible water surface, independent of any matrix uniforms.
-    
-*   **Schlick-correct Fresnel.** Reflections now follow the physical F0 = 0.02 dielectric water curve: weak when looking straight down, near-mirror at grazing angles.
-    
-*   **Adaptive view-space raymarcher with binary refinement.** Textbook real-time SSR: the reflected ray is marched in view space with a step length that scales with the current depth gap (long jumps in empty space, short jumps near the surface), then refined with 4–7 binary-search iterations once a crossing is detected. Distance-aware tolerance prevents Z-fighting on far samples. 14 / 24 / 40 march steps depending on `SSR_QUALITY`.
-    
-
-### 🌊 Coherent Procedural Wave System
-
-*   **4-octave fBm height-field** with C2-continuous quintic smoothing. Each octave is rotated ~33° to break grid alignment.
-*   **Analytic gradients** (4-sample central differences in world space) produce _coherent_ wave slopes — reflections smoothly track wave geometry instead of jittering as random noise offsets did in earlier prototypes.
-*   New **`WATER_WAVE_SCALE`** menu setting: _Calm / Standard / Choppy / Stormy_ — controls wave amplitude from mirror to broken horizon.
-*   New **`WATER_WAVE_DETAIL`** menu setting: _Coarse / Standard / Dense_ — controls wave frequency from a few large swells to many fine ripples.
-
-### 🌑 True Underwater Night Darkness
-
-*   The old underwater scattering formula had three baked-in brightness floors (`+0.25` on `dayFactor`, `+0.3` on `skyLight`, plus a constant deep-water blue tint), so even pitch-black midnight underwater looked like a moonlit pool. v0.2.9 rebuilds the formula to honour the actual day/night cycle.
-*   New **`UNDERWATER_NIGHT_DARKNESS`** menu setting:
-    *   **Moonlit Pool** — original 0.2.8 brightness (compat mode)
-    *   **Dim** — clearly night, still visible
-    *   **True Night** — realistic darkness (default)
-    *   **Pitch Dark** — extreme survival realism
-
-### 🛠️ Smaller fixes
-
-*   Removed the unused `colortex6Out` MRT write from `composite.fsh` along with its `colortex6Format` declaration — fewer attachments, simpler pipeline, less to break.
-*   Centralized SSR/wave/underwater toggles into the regular profile system, so all six presets (VERY\_LOW → EXTREME) carry sensible defaults.
-*   Added English and Russian translations for all new options, plus value-label localization (`Calm`/`Choppy`/`True Night` etc.) — other languages fall back to English labels.
 
 ***
 
