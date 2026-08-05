@@ -4,19 +4,101 @@
 [![Shader Loader](https://img.shields.io/badge/Loader-Iris%20%2F%20Sodium-green)](https://modrinth.com/mod/iris)
 [![API Standard](https://img.shields.io/badge/API-OpenGL%204.6%20%2F%20GLSL%20460-orange)](https://khronos.org/)
 [![Materials Standard](https://img.shields.io/badge/PBR-LabPBR%201.3-cyan)](https://github.com/rre36/lab-pbr)
-[![Version](https://img.shields.io/badge/Release-v1.1.2-purple)](https://github.com/AlexanderNyr/AuraLite-Shaders)
+[![Version](https://img.shields.io/badge/Release-v1.1.3-purple)](https://github.com/AlexanderNyr/AuraLite-Shaders)
 [![License](https://img.shields.io/badge/License-CC%20BY--NC--SA%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by-nc-sa/4.0/)
 
 
 **AuraLite** is a modern, lightweight, and highly optimized shader pack built on top of the **OpenGL 4.6 / GLSL 460** standard. It is specifically designed and **tested for Minecraft 1.16 – 26.2 with Sodium + Iris** (and compatible with **OptiFine**, **Oculus**).
 
-AuraLite delivers a breathtaking, realistic visual experience without overcomplicating the screen with bloated post-processing effects (such as aggressive motion blur or heavy bloom). A lightweight HDR bloom was added in v1.0.1 to softly glow emissive sources without smearing the scene. Optional FXAA/SMAA anti-aliasing, SSR, TAA, godrays, and SSAO are profile-scaled so AuraLite keeps **high FPS and smooth frametimes** on modern GPUs.
+AuraLite delivers a breathtaking, realistic visual experience without overcomplicating the screen with bloated post-processing effects (such as aggressive motion blur or heavy bloom). A lightweight HDR bloom (rebuilt in v1.1.3 as a multi-octave gaussian pyramid) softly glows emissive sources without smearing the scene. Optional FXAA/SMAA anti-aliasing, SSR, TAA, godrays, and SSAO are profile-scaled so AuraLite keeps **high FPS and smooth frametimes** on modern GPUs.
 
-> 🧪 **v1.1.2 note:** Adds **experimental, partial Distant Horizons support (WIP)** — LOD terrain/water now renders via `dh_terrain`/`dh_water`/`dh_shadow` with lighting/fog/shadow, but without claiming full compatibility yet. See changelog below for limitations.
+> 🧪 **v1.1.3 note:** Adds **true TAA** (Halton sub-pixel camera jitter + YCoCg variance clipping), a **multi-octave HDR bloom pyramid** (`composite3`–`composite7`), the **black-water regression fix** (MRT-proof water detection with analytic sky reflections), procedural raindrop rings, biome-aware swamp water, underwater plant sway, post-TAA sharpening, VRAM savings, and a soft Distant Horizons seam (carried over from the experimental v1.1.2 work). **TAA is on by default in HIGH/ULTRA/EXTREME; the camera jitter is OFF by default** — the new `TAA_JITTER` option (Off/Subtle/Standard/Strong) controls it. See changelog below.
 
 ---
 
 > ℹ️ **Historical note:** older changelog sections below are preserved as original release notes.
+
+## 🚀 What's New in v1.1.3 — *True TAA, HDR Bloom Pyramid & Black-Water Regression Fix*
+
+Version **1.1.3** completes the TAA pipeline (Halton sub-pixel camera jitter + YCoCg variance clipping), replaces the old single-pass bloom with a true multi-octave HDR gaussian pyramid, and fixes the long-standing **black-water regression** with MRT-proof water detection. It also adds procedural raindrop rings, biome-aware murky swamp water, underwater plant sway, post-TAA sharpening, and a ~48 MB VRAM cleanup.
+
+### 🎯 True Temporal Anti-Aliasing (Halton Jitter + YCoCg Clipping)
+
+* **Halton(2,3) sub-pixel camera jitter** — every gbuffer vertex shader can offset `gl_Position` by a rotating 8-frame Halton pattern (±0.5 px). Previously TAA only blended history without jittering the sample point, so it could only blur noise instead of reconstructing sub-pixel detail.
+* **`TAA_JITTER` option — Off / Subtle / Standard / Strong** (new in v1.1.3). The jitter is **OFF by default in all profiles** for a rock-steady image; Subtle (±0.25 px), Standard (±0.5 px) and Strong (±0.75 px) scale the amplitude for users who want the full sub-pixel reconstruction (removes high-frequency shimmer at the cost of a slight temporal wobble). Requires TAA enabled.
+* **Previous-frame jitter compensation** in `composite1.fsh` — the old frame's offset is re-added to the reprojection (with the same strength scale), so static images converge instead of smearing ~0.5 px. Only active while jitter is on.
+* **YCoCg variance clipping (μ ± γσ)** replaces the axis-aligned 3×3 min/max box — the old box caused ghost trails on saturated high-contrast edges (fences, wires, hot specular) while being too tight on flat gradients. Clip width scales with `TAA_STRENGTH`: 1.50 Light / 1.25 Balanced / 1.10 Stable.
+* **Frame-rotated IGN dithers now resolve cleanly** — godrays and volumetric clouds rotate their interleaved-gradient-noise patterns per frame; with the temporal resolve they integrate into smooth gradients instead of shimmering.
+* **TAA is on by default in HIGH / ULTRA / EXTREME profiles** (off on VERY_LOW / LOW / MED for maximum FPS); it can be toggled in the Post-Processing menu, and `TAA_STRENGTH` presets the variance-clip tightness.
+
+### ✨ HDR Gaussian-Pyramid Bloom (composite3 – composite7)
+
+* Replaces the v1.0.1 single-pass 3×3 neighbour glow, whose ~1.5 px radius could only produce a tight halo.
+* New 5-pass chain: threshold **brightpass** (0.75 luma soft-knee, exposure-aware) → tight separable gaussian (9-tap, σ≈2.0) → wide separable gaussian (4× stride). Successive blurs compose to an effective **σ ≈ 8.2 px** — a soft cinematic falloff around the sun/moon disks, lava, portals and hot specular, without a mip chain.
+* Runs **after the TAA resolve**, so the bloom energy is temporally stable.
+* New **`HDR_BLOOM`** option (Subtle 0.06 / Balanced 0.12 / Strong 0.22 amplitude) wired into every quality profile.
+
+### 💧 Black-Water Regression Fix — MRT-Proof Water Detection
+
+* **Root cause:** on some Iris builds the translucent pass drops the `colortex1`/`colortex2` MRT writes entirely — water then arrives with a zeroed normal + alpha + lightmap. The emissive fast-path (alpha < 0.5) swallowed it and every tag/lightmap-based system died with it.
+* **Detection ladder:** primary = `colortex2.a = 0.8` tag; **rescue** = the depth difference (`depthtex1` solid-only vs `depthtex0`) proves a translucent surface on top, then a **hue-fingerprint classifier** on the albedo rejects portals (violet, green-starved) and lava (blue-starved) while accepting water (blue/blue-green, never pale). Water, ice and glass classify; torch flames, portal sparkles, squid ink, pale ice and clear glass do not.
+* **Synthesized flat water normal** when the decoded normal is untrustworthy (MRT loss or clear value), so Fresnel/reflections still have sane inputs.
+* **Analytic sky reflection (`waterSkyRefl`)** — zenith/horizon gradient + warm sun-side glow, dimension-aware (Overworld palette, Nether biome sheen, End violet sheen), applied via Schlick Fresnel with a **0.20 floor** (pure F0≈0.02 at steep look-down angles was exactly what let shadowed water crush to black), multiplied by skyLight so cave water stays dark. This is the actual black-water fix and works with SSR disabled.
+* **Diffuse ambient floor** for rescued pixels whose lightmap may read zero.
+* **Navy-tint floor** in `gbuffers_water`/`gbuffers_terrain_translucent` — frozen-ocean biome tints (e.g. 0x3938C9) can no longer crush R/G to black after the gamma pipeline.
+* **`WATER_DEBUG`** diagnostics overlay (Off / Classify / Lightmap / Raw tag alpha) — green = healthy tag, red = depth-rescued, yellow = rescued from the emissive path, magenta = lava/portal-guarded.
+
+### 🪟 SSR & Refraction Fixes (final.fsh)
+
+* **Procedural sky fallback** for reflection rays that leave the screen or hit the sky — previously black (the reason the `waterMirrorBoost` hack existed); now a day/night/sunset/storm-aware gradient with moon-phase brightness, Schlick-Fresnel weighting and edge fade.
+* SSR march start moved **1.0 → 0.5** view units off the surface so the water plane at the player's feet still reflects near-field geometry.
+* MRT-proof water detection reused for SSR/refraction (same hue guards as `composite.fsh`).
+* **Procedural raindrop rings** on wet up-facing surfaces — two layers of expanding, world-stable circular waves perturb the SSR normal so rain reads as thousands of tiny ripples instead of one flat mirror.
+
+### 🔍 Post-TAA Sharpening (POST_SHARPEN)
+
+* Gentle 5-tap unsharp mask (0.18 amplitude, clamped ≥ 0) applied to the resolved image **before** refraction/SSR/bloom work, recovering texture detail softened by TAA's history blending. On in MED+ profiles.
+
+### ☁️ Volumetric Clouds — Quality Scaling & Dithered Ray Start
+
+* New **`CLOUD_QUALITY`** option: 8 / 12 / 16 raymarch steps (was hardcoded 12) — Cheap / Standard / High.
+* **Dithered ray start** (frame-rotated IGN) on geometry pixels when TAA is enabled: the frame-rotating pattern is temporally resolved into a smooth volumetric integral, killing the 12-step ribbing on thick cumulus without the v0.2.5-era "swimming". Sky pixels keep the stable centred start.
+
+### 🌿 Underwater Plants Sway
+
+* New block class **10010** (`seagrass`, `tall_seagrass`, `kelp`, `kelp_plant`, `sea_pickle`) — fronds sway in a current, phase-shifted by height so the tips lag the base, storm-agitated along with the surface foliage path. Displacement is mirrored in `shadow.vsh` so shadows follow the visible fronds.
+
+### 🌊 Biome-Aware Murky Water
+
+* Smoothed swamp/mangrove detector (`isSwampBiome`) — swamp water absorbs more red and reads **greener and murkier** (`absorption (0.23, 0.038, 0.10)`, deep colour pushed to dark green) instead of open-ocean blue.
+
+### 🧪 Physical Sky — Warm Ground Bounce
+
+* The experimental `SKY_MODE=1` atmosphere now includes a **warm ground-bounce term**: terrain's ~15–20% mean albedo re-scatters in the lower atmosphere (strongest at the horizon and with a high sun), removing the "sterile" blue-bias horizon band.
+
+### 🌇 Lighting & Ambience
+
+* **Rayleigh-tinted day ambient** — the day hemisphere ambient now follows the actual sun extinction: golden-hour light is warm and blue-depleted instead of static grey-blue.
+* **Held-light temperature** — strong held sources (sea lantern, glowstone, shroomlight, lava bucket) read slightly cooler than candle-strength light.
+
+### 🌍 Distant Horizons — Soft Seam
+
+* The v1.1.2 hard `discard` at `far + 16` is replaced by a **screen-door dithered transition band**: DH LOD fragments stochastically blend into vanilla chunks over 16 m, so crossing the boundary or changing render distance no longer shows a hard cut. The pattern is static per frame (DH-only pixels are excluded from TAA history).
+
+### 🛠️ Pipeline & VRAM Cleanup
+
+* **Removed `colortex5`/`colortex6` format directives** — never read or written, but each forced Iris/OptiFine to allocate a full RGBA16F screen buffer: **~32 MB saved @1080p, ~128 MB @4K**.
+* **`shadowcolor0Format` RGBA16F → RGBA8** (it only carries LDR `tex * glcolor`): another ~16 MB @1080p / ~64 MB @4K.
+* **`shadowcolor1Format` removed** (nothing ever wrote to it).
+* **`colortex0Clear = true`** — no stale garbage on the first frame or after a window resize.
+* `colortex3`/`colortex4` are now actually used by the bloom pyramid; the full 8-buffer HDR pipeline is engaged.
+
+### 🌍 Localization & Packaging
+
+* All 69 language files updated to v1.1.3 with the new options (`CLOUD_QUALITY`, `HDR_BLOOM`, `POST_SHARPEN`, `WATER_DEBUG`); remaining English fallbacks translated into every language (66 languages fully localized, only `en_au`/`en_gb` intentionally keep English variants).
+* Final-pack polish: in-code changelog markers consolidated to `v1.1.3`, and all code comments are in English.
+
+---
 
 ## 🚀 What's New in v1.1.2 — *Render-Distance Shadows & Experimental Distant Horizons (Partial)*
 
@@ -510,6 +592,7 @@ AuraLite includes localized in-game configuration files for **69 language codes*
 *   🆕 **Water Wave Scale (`WATER_WAVE_SCALE`)** _(v0.2.9)_ — `Calm / Standard / Choppy / Stormy` — procedural wave amplitude used by SSR.
 *   🆕 **Water Wave Detail (`WATER_WAVE_DETAIL`)** _(v0.2.9)_ — `Coarse / Standard / Dense` — procedural wave frequency/detail.
 *   🆕 **Underwater Night Darkness** _(v0.2.9)_ — `Moonlit Pool / Dim / True Night / Pitch Dark` — controls how dark underwater scenes become at night.
+*   🆕 **Water Diagnostics (`WATER_DEBUG`)** _(v1.1.3)_ — developer overlay (Off / Classify / Lightmap / Raw tag alpha) for diagnosing water classification on Iris builds that drop translucent MRT writes. Keep **Off** in normal play.
 
 ### `[Sky & Clouds]`
 
@@ -517,6 +600,7 @@ AuraLite includes localized in-game configuration files for **69 language codes*
 *   **Cloud Altitude** — `Low (~110m) / Standard (~160m) / High (~240m)`
 *   **Cloud Thickness** — `Thin (Cirrus) / Standard (Cumulus) / Dense (Stormy)`
 *   🆕 **Cloud Render Distance** _(v0.2.5)_ — `Near / Standard / Far / Very Far` — Maximum draw distance for volumetric clouds.
+*   🆕 **Cloud Quality (`CLOUD_QUALITY`)** _(v1.1.3)_ — `Cheap (8 steps) / Standard (12 steps) / High (16 steps)` — raymarch step budget for volumetric clouds.
 *   🆕 **Cloud Shadows** _(v0.2.7)_ — transparent procedural shadows from cloud density.
 *   🆕 **Cloud Shadow Strength** _(v0.2.7)_ — `Soft / Balanced / Dramatic`.
 *   🆕 **Godrays / Sun Shafts** _(v0.2.7)_ — physically-inspired volumetric single-scattering light shafts.
@@ -539,14 +623,16 @@ AuraLite includes localized in-game configuration files for **69 language codes*
 *   **Exposure Brightness** — `Muted / Balanced / Vibrant`
 *   **Color Vibrancy (`COLOR_SATURATION`)** — `Muted / Balanced / Colorful / Vivid`
 *   **Image Contrast (`CONTRAST`)** — `Soft / Filmic (ACES) / Intense (High Contrast) / Photographic (AgX-like)` — Choose the tone mapping curve.
-*   🆕 **HDR Bloom** _(v1.0.1)_ — cheap single-pass neighbour blur for overbright emissive sources.
-*   🆕 **Temporal Anti-Aliasing (`TAA`)** _(v0.2.7)_ — motion-reprojected temporal resolve for high presets.
-*   🆕 **TAA Strength** _(v0.2.7)_ — `Light / Balanced / Stable`.
+*   🆕 **HDR Bloom (`HDR_BLOOM`)** _(v1.0.1, rebuilt in v1.1.3)_ — gaussian-pyramid bloom (composite3–7): threshold brightpass + tight & wide separable gaussian octaves, effective σ≈8.2 px soft cinematic glow around the sun/moon, lava, portals and hot specular. `Subtle / Balanced / Strong`.
+*   🆕 **Temporal Anti-Aliasing (`TAA`)** _(v0.2.7, completed in v1.1.3)_ — Halton sub-pixel camera jitter + motion reprojection + YCoCg variance clipping. **On by default in HIGH/ULTRA/EXTREME** since v1.1.3, off on lighter profiles.
+*   🆕 **TAA Strength** _(v0.2.7)_ — `Light / Balanced / Stable` — presets the variance-clip tightness (1.50 / 1.25 / 1.10 γ).
+*   🆕 **TAA Camera Jitter (`TAA_JITTER`)** _(v1.1.3)_ — `Off / Subtle / Standard / Strong` — sub-pixel Halton camera jitter amplitude (±0.25 / ±0.5 / ±0.75 px) for full sub-pixel reconstruction. **Off by default** for a steady image; enable it to eliminate high-frequency shimmer. Requires TAA.
+*   🆕 **Post-Sharpen (`POST_SHARPEN`)** _(v1.1.3)_ — gentle unsharp mask that recovers texture detail softened by TAA history blending (on in MED+ profiles).
 *   🆕 **Spatial Anti-Aliasing (`SPATIAL_AA_MODE`)** _(v1.0.3)_ — `Off / FXAA / SMAA` — post-process edge smoothing. FXAA uses Sobel gradient-directed blending; SMAA adds depth discontinuity detection for geometry edges. Freely combinable with TAA.
 *   **Vignette** — Toggle cinematic corner darkening.
 *   (Hidden) **Rain Wetness Reflections (`WET_REFLECTIONS`)** — Wet glossy ground during rain (enabled by default in MED+ profiles).
 
-### 🎚️ Quality Profiles _(rebalanced in v1.1.2 — shadows 60-384m with LOD)_
+### 🎚️ Quality Profiles _(rebalanced in v1.1.2 — shadows 60-384m with LOD; TAA on in HIGH+ since v1.1.3, camera jitter off by default everywhere)_
 
 | Profile  |Target       |Shadows |Clouds  |Cloud Shadows |Godrays |TAA |SSR |PBR |PBR Dist |AA   |SSAO       |Heat Shimmer |Heavy Extras                          |
 | -------- |------------ |------- |------- |------------- |------- |--- |--- |--- |-------- |---- |---------- |------------ |------------------------------------- |
@@ -554,11 +640,12 @@ AuraLite includes localized in-game configuration files for **69 language codes*
 | <strong>LOW</strong> |Weak GPUs    |❌ 512/60m |❌       |❌             |❌       |❌   |❌   |❌   |16m      |FXAA |❌          |❌            |Water/foliage motion, stars, vignette |
 | <strong>MED</strong> |Balanced     |✅ 1024/120m |✅ Std   |✅ Soft        |✅ Fast  |❌   |✅ F |✅   |48m      |FXAA |❌          |✅ Subtle     |Wet refl + ground mist + SSS          |
 | <strong>HIGH</strong> |High quality |✅ 2048/256m |✅ Far   |✅ Balanced    |✅ Bal   |✅   |✅ B |✅   |128m     |SMAA |✅ Subtle   |✅ Balanced   |Full atmosphere + SSR + TAA           |
-| <strong>ULTRA</strong> |Very high    |✅ 4096/256m Aggr LOD |✅ VFar  |✅ Balanced    |✅ High  |✅   |✅ H |✅   |128m     |SMAA |✅ Balanced |✅ Balanced   |High-end visuals                      |
-| <strong>EXTREME</strong> |Max quality  |✅ 8192/384m Aggr LOD |✅ Dense |✅ Dramatic    |✅ High  |✅   |✅ H |✅   |∞        |SMAA |✅ Deep     |✅ Strong     |Heaviest cinematic                    |
+| <strong>ULTRA</strong> |Very high    |✅ 4096/256m Aggr LOD |✅ VFar  |✅ Balanced    |✅ High  |✅   |✅ H |✅   |128m     |SMAA |✅ Balanced |✅ Balanced   |High-end visuals + TAA                |
+| <strong>EXTREME</strong> |Max quality  |✅ 8192/384m Aggr LOD |✅ Dense |✅ Dramatic    |✅ High  |✅   |✅ H |✅   |∞        |SMAA |✅ Deep     |✅ Strong     |Heaviest cinematic + TAA              |
 
 > 💫 **Shooting stars** are disabled on **VERY\_LOW / LOW** and enabled from **MED** upward. 🌿 **Foliage SSS** is enabled from **MED** upward (disabled on VERY\_LOW/LOW for maximum FPS). 🔥 **Heat shimmer** is disabled on **VERY\_LOW / LOW** and enabled from **MED** upward.
-> 🗺️ **Distant Horizons:** v1.1.2 adds **experimental, partial** DH support (dh_terrain/water/shadow). LOD chunks now render and respect lighting/fog/shadow, but without full PBR maps and with hardcoded skylight. Consider it WIP, not full compatibility yet.
+> 🎯 **TAA** is on by default in **HIGH / ULTRA / EXTREME** and off on lighter profiles (since v1.1.3). The **camera jitter is off by default everywhere** — enable `TAA_JITTER` (Off/Subtle/Standard/Strong) in `[Post-Processing & Fog]` for full sub-pixel reconstruction; `TAA_STRENGTH` presets the variance-clip tightness.
+> 🗺️ **Distant Horizons:** experimental, **partial** DH support (dh_terrain/water/shadow, introduced in v1.1.2; v1.1.3 adds a soft screen-door seam at the vanilla↔DH boundary). LOD chunks now render and respect lighting/fog/shadow, but without full PBR maps and with hardcoded skylight. Consider it WIP, not full compatibility yet.
 
 ***
 
@@ -568,7 +655,7 @@ AuraLite includes localized in-game configuration files for **69 language codes*
 *   **Copyright (c) 2026 AlexanderNyr.**
 *   **Officially Supported Platform:** Minecraft **1.16.5 – 26.2** with **Sodium + Iris** or **OptiFine** loader.
 *   _Note: Verified to work flawlessly on Minecraft 1.16.5, 1.20.1, 1.21.1, and 26.1.2._
-*   **Distant Horizons:** v1.1.2 includes **experimental, partial** DH support (WIP) — `dh_terrain`, `dh_water`, `dh_shadow` minimal passes to prevent Iris from hiding LOD chunks. Provides fog rescaling, depth reconciliation, overdraw culling, emissive/heat-shimmer for distant lava. Still **NOT** full support: no LabPBR maps for DH, hardcoded full skylight, no POM — full compatibility will be announced separately when ready.
+*   **Distant Horizons:** v1.1.3 continues **experimental, partial** DH support (WIP, introduced in v1.1.2) — `dh_terrain`, `dh_water`, `dh_shadow` minimal passes to prevent Iris from hiding LOD chunks, now with a soft screen-door seam at the vanilla↔DH boundary. Provides fog rescaling, depth reconciliation, overdraw culling, emissive/heat-shimmer for distant lava. Still **NOT** full support: no LabPBR maps for DH, hardcoded full skylight, no POM — full compatibility will be announced separately when ready.
 
 ### ⚖️ Rules & Permissions (FAQ)
 
