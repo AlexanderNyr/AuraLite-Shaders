@@ -1499,12 +1499,35 @@ void main() {
     // [FIX v1.1.3] Rescued water must NOT be eaten by the emissive fast path
     // (its cleared alpha reads 0.0 on broken-MRT setups). Real emissives
     // (portals) stay emissive via the portal-albedo guard above.
-    float isEmissive = (normalData.a < 0.5 && !rescuedWater) ? 1.0 : 0.0; // [FIX v0.2.5] alpha < 0.5 = emissive (portals)
+    // [FIX v1.1.3] Lost-MRT safety: when the translucent G-buffer writes are
+    // dropped, every surface reads alpha 0.0 and the old test would send
+    // water/ice/glass into the emissive fast path (flat, unlit albedo). Require
+    // the albedo to actually look self-lit (portal violet / lava orange) before
+    // taking that path — everything else translucent falls through to normal
+    // lighting with the daylight floor above.
+    bool emissiveLikeAlbedo = portalAlbedoGuess || lavaAlbedoGuess;
+    float isEmissive = (normalData.a < 0.5 && !rescuedWater && emissiveLikeAlbedo) ? 1.0 : 0.0; // [FIX v0.2.5] alpha < 0.5 = emissive (portals)
     bool isFoliage = abs(normalData.a - 0.62) < 0.01;
 
     vec4 lmData = texture(colortex1, texcoord);
     float blockLight = lmData.r;
     float skyLight = lmData.g;
+
+    // [FIX v1.1.3] MRT-LOSS DAYLIGHT FLOOR — fixes black ice & striped dark water.
+    // On Iris builds that drop the translucent pass's colortex1/colortex2 MRT
+    // writes, the lightmap reads 0 for every translucent surface. Because the
+    // entire lighting pipeline (direct sun, day ambient, halos, fog) scales by
+    // skyLight, water/ice/glass then collapse to near-black — and the rescue
+    // path only re-lights water, leaving ice black and water lit by a dim
+    // Fresnel-modulated reflection that reads as dark diagonal stripes.
+    // The depth test cannot lie: depthSaysTranslucent is true wherever a
+    // translucent surface sits in front of solid geometry. Give those pixels a
+    // daylight floor (scaled by dayFactor so nights stay dark and caves are
+    // merely dimmer, not pitch black). When the tag works, skyLight is already
+    // correct and this floor never triggers.
+    if (depthSaysTranslucent && !isSkyPixel && skyLight < 0.25) {
+        skyLight = max(skyLight, 0.75 * dayFactor);
+    }
 
     // [DIAG v1.1.3] WATER_DEBUG — water pixel classification overlay
     // (shader options → Water). Point debug screenshots help diagnose
@@ -1924,8 +1947,9 @@ void main() {
 
         // [FIX v1.1.3] Diffuse ambient floor for rescued (broken-MRT) water:
         // day hemisphere ambient mirrored from the palette above, night floor,
-        // dimmed by storms — enough to read as water, far from glowing.
-        waterAmbientFloor = mix(vec3(0.004, 0.005, 0.010), vec3(0.30, 0.40, 0.55), dayFactor);
+        // dimmed by storms — brightened vs v1.1.3 so the wave-Fresnel banding
+        // of the sky reflection can no longer read as black stripes.
+        waterAmbientFloor = mix(vec3(0.004, 0.005, 0.010), vec3(0.42, 0.55, 0.70), dayFactor);
         waterAmbientFloor *= mix(1.0, 0.60, rainStrength);
 
     } else if (isNether) {
@@ -2138,13 +2162,16 @@ void main() {
 
     // [FIX v1.1.3] Analytic sky reflection for water — the actual black-water
     // fix. Ambient specular: works with SSR disabled (VERY_LOW/LOW profiles),
-    // in sun shadow, and under twilight. The Schlick Fresnel keeps a 0.20
+    // in sun shadow, and under twilight. The Schlick Fresnel keeps a 0.28
     // floor because pure F0≈0.02 at steep look-down angles was exactly what
     // let shadowed water crush to black since v1.0.7. Multiplied by skyLight
     // so cave water stays naturally dark. Fog below still attenuates it.
     // [FIX v1.1.3] Rescued (broken-MRT) pixels additionally get an effective
     // skyLight floor (their lightmap may read 0) plus a diffuse ambient floor,
     // since both colortex1 and colortex2 are untrustworthy on those setups.
+    // [FIX v1.1.3] Floor raised 0.20 -> 0.28 so the wave-modulated Fresnel
+    // banding keeps a visible sky reflection everywhere (no black stripes on
+    // ice-adjacent water when the MRT lightmap is lost).
     if (waterLike && isEyeInWater != 1) {
         float wNoV = clamp(dot(waterNormalView, -viewDir), 0.0, 1.0);
         float wFres = 0.02 + 0.98 * pow(1.0 - wNoV, 5.0);
@@ -2152,7 +2179,7 @@ void main() {
         // [TUNE v1.1.3] User feedback: the sun-side sky mirror read ~25% too
         // hot at grazing angles — global amplitude trim of THIS ambient term
         // only. Diffuse ambient floor and SSR hits in final.fsh are untouched.
-        shadedTerrain += waterSkyRefl * max(wFres, 0.20) * wSkyFactor * 0.75;
+        shadedTerrain += waterSkyRefl * max(wFres, 0.28) * wSkyFactor * 0.75;
         if (!tagIsWater) shadedTerrain += albedo * waterAmbientFloor * wSkyFactor;
     }
 
