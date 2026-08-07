@@ -93,11 +93,6 @@ Version **1.1.3** completes the TAA pipeline (Halton sub-pixel camera jitter + Y
 * **`colortex0Clear = true`** — no stale garbage on the first frame or after a window resize.
 * `colortex3`/`colortex4` are now actually used by the bloom pyramid; the full 8-buffer HDR pipeline is engaged.
 
-### 🌍 Localization & Packaging
-
-* All 69 language files updated to v1.1.3 with the new options (`CLOUD_QUALITY`, `HDR_BLOOM`, `POST_SHARPEN`, `WATER_DEBUG`); remaining English fallbacks translated into every language (66 languages fully localized, only `en_au`/`en_gb` intentionally keep English variants).
-* Final-pack polish: in-code changelog markers consolidated to `v1.1.3`, and all code comments are in English.
-
 ---
 
 ## 🚀 What's New in v1.1.2 — *Render-Distance Shadows & Experimental Distant Horizons (Partial)*
