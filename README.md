@@ -218,24 +218,6 @@ Version **1.1.2** extends shadow rendering to the actual render distance with an
 
 ---
 
-## 🛠️ What's New in v1.1.1 — *Pipeline Correctness Fix*
-
-Version **1.1.1** is a focused bug-fix release for the v1.1.0 codebase. It keeps the visual design intact while fixing configuration and runtime issues found in the shader pipeline:
-
-* Moved HDR/TAA buffer directives to GLSL const directives so `colortex0/1/2/7` formats and persistent TAA history are actually applied by Iris/OptiFine.
-* Replaced the custom `SHADOW_RES`/`SHADOW_DISTANCE` menu controls with real `shadowMapResolution` and `shadowDistance` pipeline constants.
-* Fixed Nether/End dimension fallback detection so a default `dimension=0` cannot override biome/fog-based Nether/End detection.
-* Retuned shadow bias to a balanced value with extra water receiver bias: fixes low-sun Peter Panning while cleaning remaining Shadow Acne on water/ice surfaces.
-* Made underwater caustics and ground-mist sheets world-stable by using `cameraPosition`-corrected world coordinates.
-* Added performance-neutral height-aware pseudo-3D cloud noise: same ray steps/noise calls, but cloud density now changes through Y instead of looking like flat 2D sheets.
-* Added `WET_REFLECTIONS` to the menu and wired it into final-pass SSR wetness.
-* Added profile-scaled `SKY_QUALITY`, removed physical-sky hash-noise by switching to centred higher-sample raymarching, fixed `SKY_STYLE` grading so it affects only the base sky, restored readable sun/moon sizes in gradient sky, and corrected moonbow direction.
-* Fixed emissive-surface cloud lighting, added a safe fallback for unknown tagged translucent blocks, removed the empty translation submenu, made TAA default-off as a standard user toggle, and synced waving vegetation displacement in the shadow pass.
-* Forced vanilla Minecraft clouds off via `clouds=false` and added `gbuffers_clouds` discard shaders as a fallback, so AuraLite's procedural clouds do not overlap with default clouds.
-* Added `gbuffers_weather` to make vanilla rain/snow streaks less dense and more transparent by default.
-* Added explicit opaque entity/hand passes to prevent players, mobs and held items from appearing semi-transparent.
-
----
 
 ## 🆕 What's New in v1.1.0 — *True Volumetric Godrays, HDR Pipeline & Experimental Physical Sky*
 
@@ -276,43 +258,6 @@ A brand-new **`[EXPERIMENTAL]`** menu tab exposes an alternate sky renderer in `
 * Updated localization strings for `GODRAYS`, `GODRAYS_QUALITY`, and the new `GODRAYS_STRENGTH` / `SKY_MODE` / `SKY_STYLE` / `SKY_QUALITY` options and the new Experimental tab.
 
 ---
-
-## 🆕 What's New in v1.0.7 — _Comprehensive Bug Fix, Stability & Aurora Refinement Update_
-
-Version **1.0.7** conducts a deep code audit across the entire GLSL 460 pipeline to resolve rendering anomalies, feedback loops, and multi-pass inconsistencies introduced in earlier releases, and additionally refines the Aurora Borealis to remove high-frequency visual noise while softening its overall luminance.
-
-### 🐞 Bug Fixes & Architectural Polish
-
-*   **Massive Volumetric Cloud, Godray & Aurora FPS Bottleneck Resolved**
-*   **Underwater Screen-Space Ripple Distortion Feedback Loop Fixed** — Removed legacy underwater ripple screen distortion from `composite.fsh` (where it erroneously sampled raw unlit G-buffer albedo `colortex0` and mixed unshaded texels into the lit scene). Moved clean underwater screen-space view perturbation directly into `final.fsh`, sampling the fully lit, composited, and TAA-resolved scene.
-*   **Glass & Ice Water Refraction / Reflection Distortion Fixed** — Solved a multi-target G-buffer collision where stained glass windows and ice blocks triggered the depth-comparison detector `(depthS - depth) > 1e-5` in `final.fsh`. Added a dedicated material alpha tag `colortex2.a = 0.8` for water in `gbuffers_water` and `gbuffers_terrain_translucent`, ensuring glass windows (`1.0`) and ice blocks (`1.0`) never receive underwater refraction ripples or wavy water SSR reflections.
-*   **Procedural Lava POM Coordinate Discard Fixed** — Standardized the 4-step Parallax Occlusion Mapping loop in `gbuffers_water.fsh` and `gbuffers_terrain_translucent.fsh` to match `gbuffers_terrain.fsh`. Displaced UV coordinates `p = currentTexCoords` are now properly retained across the entire shader block for crack height calculations, temperature gradients, hotspots, and rising bubbles.
-*   **Unnormalized Lava Normal Output Fixed** — Normalized the G-buffer normal output `normalize(normal)` in `gbuffers_terrain.fsh` before encoding into `colortex2`, preventing interpolated vector length drift across triangle interiors.
-*   **Camera-Inside Volumetric Fog, Ground Mist & Valley Sheets Fixed** — In `getInsideGroundMistVeil()`, `applyInsideCloudVeil()`, and distant ground mist sheet rendering, fixed the exponential absorption rate (lowered from `0.014`/`0.0105` to `0.0018`/`0.0035`) and removed hardcoded blanket opacity ceilings (`0.30`/`0.34`). Wired the user's `FOG_DENSITY_LEVEL` setting directly into volume optical thickness. Added a smooth attenuation factor `(1.0 - camMistHere * 0.95)` to distant 2D sheets when standing inside the ground mist layer, preventing double-accumulation with the screen-space volumetric veil.
-*   **PCSS Blocker Search Self-Shadow Acne Fixed** — Updated the blocker depth comparison threshold in `composite.fsh` from a static `1e-4` epsilon to the dynamic surface slope bias (`bias`). Sloped terrain no longer detects itself as a false shadow occluder.
-*   **POM Division-By-Zero NaN Fixed** — In `getParallaxCoords()`, changed the ray hit weight denominator from `(afterDepth - beforeDepth + 0.0001)` to `min(afterDepth - beforeDepth, -1e-5)`. Since `afterDepth - beforeDepth` is strictly negative, adding `+0.0001` mathematically cancelled out the denominator to zero on subtle step transitions, causing black dot NaN artifacts.
-*   **POM Optical View Angle Cotangent Scaling & Limiting Added** — Scaled tangent-space UV step offsets by `V_tang.xy / max(abs(V_tang.z), 0.15)` across all POM passes. Parallax crack depth now physically stretches when viewed at grazing angles instead of flattening out.
-*   **Procedural Lava Sub-Step POM Linear Interpolation Added** — Replaced the discrete sub-step endpoint `p = currentTexCoords` in the lava POM loop with exact linear interpolation `mix(currentTexCoords, prevTexCoords, weight)`. Internal crack walls no longer suffer from 4-step banding/stepping artifacts.
-*   **Block Mapping Extended** — Added `minecraft:magma_block` to block ID `10009` in `block.properties`, granting overworld and nether magma blocks dynamic procedural glowing Voronoi cracks.
-
-### 🌌 Aurora Borealis Refinement — Smoother & Softer
-
-The volumetric Aurora in `gbuffers_skybasic.fsh` was producing subtle high-frequency "static" patterns and reading slightly oversaturated on bright presets. The shader pass has been retuned in this release:
-
-*   **Dither offset re-centered and weakened** — Replaced the `0..1` per-pixel ray start offset with a centered `-0.5..+0.5` range scaled down to `0.6 × dt`. Adjacent pixels now sample closer ray distances, eliminating the flickering pattern that read as visual noise.
-*   **Vertical ray frequency lowered (32.0 → 14.0)** — The single very-high-frequency `sin(uv.x × 32)` that powered the striations aliased into thin static-like lines. Two slightly offset waves (`14.0` + `9.0`) are now blended together with `mix(0.5)` to break the periodic aliasing while preserving the characteristic vertical pillar look.
-*   **Ray sharpness softened (3.0 → 1.8) and amplitude reduced (2.0 → 1.3)** — Pillars no longer have harsh, sharp edges; they blend smoothly into the curtain ribbon.
-*   **Curtain ribbon exponent softened (5.0 → 3.5)** and weight lowered from `0.5` to `0.45` — Lighter, more atmospheric curtains without the blocky stripe artifacts the high power was producing.
-*   **Spatial color variation slowed down** — `sin(worldDir.x × 3.5 + worldDir.z × 2.8) × 0.2` → `sin(worldDir.x × 2.2 + worldDir.z × 1.7) × 0.18`. Color shifts across the sky are now gradual instead of rapid.
-*   **Photographic palette toned down (~30% dimmer)**:
-    *   Cyan-Green: `(0.0, 0.80, 0.50)` → `(0.0, 0.55, 0.32)`
-    *   Magenta/Purple: `(0.60, 0.10, 0.70)` → `(0.42, 0.08, 0.50)`
-    *   Deep Blue (upper edge): `(0.05, 0.10, 0.50)` → `(0.04, 0.08, 0.35)`
-*   **Optical depth scaling lowered (0.35 → 0.26)** and final intensity multiplier `× 0.78` — Overall accumulation is roughly **35–40% softer** than the v1.0.7 original. The `AURORA_STRENGTH` profile setting still controls user-level intensity on top.
-
-The aurora now reads as a soft, glowing, photographic northern light rather than an over-saturated neon stripe pattern. No menu changes; no new options; no profile changes. All existing `AURORA_MODE`, `AURORA_SPEED`, and `AURORA_STRENGTH` settings behave as before.
-
-***
 
 ## 🆕 What's New in v1.0.0 — _Meteor Showers & Finalized Reflection Pipeline_
 
