@@ -14,11 +14,10 @@ AuraLite delivers a breathtaking, realistic visual experience without overcompli
 
 ## 🚀 What's New in v1.2.0 — _Physical Clouds_
 
-Version **1.2.0** is the first release of the physical cloud line, and the first build since 1.1.4 that
-contains no measuring equipment. The cloud deck stops being four painted sheets and becomes a medium with
+Version **1.2.0** is the first release of the physical cloud line.
+The cloud deck stops being four painted sheets and becomes a medium with
 a droplet spectrum; the atmosphere coefficients are re-derived from measured column depths; godrays
-integrate a filtered transmittance with a fixed step count; the colour stage becomes twelve sliders; and
-every debug stripe, gauge bar, class map and bypass switch from the development branch is removed.
+integrate a filtered transmittance with a fixed step count; the colour stage becomes twelve sliders;
 
 ### ☁️ Volumetric Cloud Engine — _Microphysics, Not Constants_
 
