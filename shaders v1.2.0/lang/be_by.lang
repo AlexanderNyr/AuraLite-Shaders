@@ -1,0 +1,635 @@
+shaderDescription=AuraLite v1.2.0 — фізічныя аблокі, неба і вада, карэкцыя колеру паўзункамі
+# AuraLite Shaders v1.2.0 - Copyright (c) 2026 AlexanderNyr. Licensed under CC BY-NC-SA 4.0.
+# ==============================================================================
+# AuraLite Shader Pack - Belarusian Language Translations
+# ==============================================================================
+
+# ==============================================================================
+# Quality Profiles
+# ==============================================================================
+profile.VERY_LOW=Вельмі нізкі
+profile.VERY_LOW.comment=Абсалютны максімум FPS. Усе дадаткі адключаны: без ценяў, аблокаў, PBR, SSR, божага святла. Толькі мінімальны рэндэрынг.
+profile.LOW=Нізкі
+profile.LOW.comment=Лёгкі, але гульнявы. Захоўвае анімацыю лісця/вады, больш яркія зоркі, FXAA, віньетак. Без ценяў, аблокаў і PBR.
+profile.MED=Сярэдні
+profile.MED.comment=Штодзённы баланс. Цені 1024, аблокі, PBR, SSR Хуткі, божае святло, SSS лісця, мокрыя адлюстраванні, туман, метэоры.
+profile.HIGH=Высокі
+profile.HIGH.comment=Якасць для энтузіястаў. Цені 2048, SSR Збалансаваны, TAA, SSAO Тонкі, божае святло Збалансаваны, SMAA.
+profile.ULTRA=Ультра
+profile.ULTRA.comment=High-end. Цені 4096, SSR Высокі, SSAO Збалансаваны, божае святло Высокі, TAA Стабільны, усе эфекты ўключаны.
+profile.EXTREME=Экстрэмальны
+profile.EXTREME.comment=Кінематаграфічны максімум. Усё на максімуме: PBR Бязмежны дыяпазон, фота-танальнае адлюстраванне (AgX), самы глыбокі SSAO, метэорныя штормы.
+profile.CUSTOM=Карыстальніцкі
+profile.CUSTOM.comment=Уласныя налады, зменыя карыстальнікам.
+
+screen.TRANSLATION_NOTICE=⚠ Пераклады могуць утрымліваць памылкі
+screen.TRANSLATION_NOTICE.comment=Некаторыя радкі перакладу могуць быць недакладнымі. Калі нешта выглядае дзіўна, параўнайце з англійскім арыгіналам.
+
+# Screens
+screen.LIGHTING=Налады асвятлення
+screen.LIGHTING.comment=Наладзьце цені, колеры святла і яркасць.
+
+screen.FOLIAGE=Налады расліннасці
+screen.FOLIAGE.comment=Наладзьце анімацыю калыхання травы і лісця.
+
+screen.WATER=Налады вады
+screen.WATER.comment=Наладзьце хвалі, празрыстасць і стыль вады.
+
+screen.CLOUDS_MENU=Неба і воблакі
+screen.CLOUDS_MENU.comment=Наладзьце фізічную вышыню, таўшчыню і стыль 3D-аблокаў і эфектаў неба.
+
+screen.POST_PROCESS=Пост-апрацоўка і туман
+screen.POST_PROCESS.comment=Наладзьце экспазіцыю, туман і кінематаграфічныя эфекты.
+screen.POST_FOG=Fog & Image
+screen.POST_FOG.comment=Fog density, ground mist, heat shimmer and dithering.
+
+# Options
+option.SHADOWS=Дынамічныя цені
+option.SHADOWS.comment=Уключыце або адключыце мяккія дынамічныя цені ад сонца і месяца.
+
+option.shadowMapResolution=Раздзяленне ценяў
+option.shadowMapResolution.comment=Змяніце якасць карты ценяў. Больш высокія значэнні могуць зніжаць прадукцыйнасць.
+
+option.PBR_LIGHTING=Асвятленне PBR (LabPBR)
+option.PBR_LIGHTING.comment=Уключыце фізічна карэктны рэндэрынг для металаў, шурпатасці і 3D-карт нармалей (патрабуецца пакет рэсурсаў PBR).
+
+option.PBR_POM=3D-рэльеф блокаў (POM)
+option.PBR_POM.comment=Уключыце фізічна карэктны Parallax Occlusion Mapping для 3D-тэкстур блокаў. Рэкамендуецца адключаць на несумяшчальных пакетах рэсурсаў.
+
+option.PBR_STRENGTH=Інтэнсіўнасць PBR
+option.PBR_STRENGTH.comment=Кіруйце адбівальнай здольнасцю і бляскам металічных паверхняў PBR.
+
+value.PBR_STRENGTH.1=Слабы
+value.PBR_STRENGTH.2=Стандартны
+value.PBR_STRENGTH.3=Люстра
+
+option.SSAO=SSAO / SAO аклюзія
+option.SSAO.comment=Extreme profile: screen-space ambient occlusion for contact shadows in corners, under blocks, and around geometry intersections.
+option.SSAO_STRENGTH=Сіла SSAO
+option.SSAO_STRENGTH.comment=Кіруе глыбінёй асяроддзевай аклюзіі ў прасторы экрана. Актыўна толькі калі ўключаны SSAO.
+value.SSAO_STRENGTH.1=Слабы
+value.SSAO_STRENGTH.2=Збалансаваны
+value.SSAO_STRENGTH.3=Глыбокі
+
+option.LIGHTMAP_WARMTH=Цеплыня факела
+option.LIGHTMAP_WARMTH.comment=Адрэгулюйце цеплыню і колер святла блока/факела.
+
+value.LIGHTMAP_WARMTH.1=Утульны
+value.LIGHTMAP_WARMTH.2=Цёплы
+value.LIGHTMAP_WARMTH.3=Інтэнсіўны
+
+option.WAVING_LEAVES=Хістанне лісця
+option.WAVING_LEAVES.comment=Уключыце мяккую анімацыю хістання лісця дрэў.
+
+option.WAVING_GRASS=Хістанне расліннасці
+option.WAVING_GRASS.comment=Уключыце анімацыю хістання для травы, кветак і сельгаскультур.
+
+option.WIND_SPEED=Хуткасць ветру
+option.WIND_SPEED.comment=Кіруйце хуткасцю хістання лісця, раслін і хваль вады.
+
+value.WIND_SPEED.1=Лагода
+value.WIND_SPEED.2=Брыз
+value.WIND_SPEED.3=Шторм
+
+option.WATER_WAVES=Хвалі вады
+option.WATER_WAVES.comment=Enable 3D geometric waves on the water surface.
+
+option.WATER_TRANSPARENCY=Шчыльнасць вады
+option.WATER_TRANSPARENCY.comment=Control the transparency and opacity of the water.
+
+value.WATER_TRANSPARENCY.1=Празрысты
+value.WATER_TRANSPARENCY.2=Збалансаваны
+value.WATER_TRANSPARENCY.3=Глыбокі
+
+option.PROCEDURAL_CLOUDS=Аб'ёмныя 3D-аблокі
+option.PROCEDURAL_CLOUDS.comment=Уключыце фізічна пралётныя 3D-аблокі, скрозь якія можна праляцець.
+
+option.CLOUD_HEIGHT=Вышыня аблокаў
+option.CLOUD_HEIGHT.comment=Задайце фізічную вышыню (Y-узровень) слоя аблокаў у свеце (у метрах).
+
+
+option.CLOUD_THICKNESS=Таўшчыня аблокаў
+option.CLOUD_THICKNESS.comment=Наладзьце вертыкальную таўшчыню і аб'ём аблокаў.
+
+
+option.CLOUD_DISTANCE=Дальнасць рэндэрынгу аблокаў
+option.CLOUD_DISTANCE.comment=Максімальная дальнасць адлюстравання аб'ёмных аблокаў. Профілі якасці аўтаматычна павялічваюць яе.
+
+option.CLOUD_SHADOWS=Цені аблокаў
+option.CLOUD_SHADOWS.comment=Дадае празрыстыя працэдурныя цені ад шчыльнасці аб'ёмных аблокаў на рэльеф. Збалансавана профілямі якасці.
+option.CLOUD_SHADOW_STRENGTH=Сіла ценяў аблокаў
+option.CLOUD_SHADOW_STRENGTH.comment=Кіруе тым, наколькі бачныя і драматычныя празрыстыя цені аблокаў.
+value.CLOUD_SHADOW_STRENGTH.1=Мяккі
+value.CLOUD_SHADOW_STRENGTH.2=Збалансаваны
+value.CLOUD_SHADOW_STRENGTH.3=Драматычны
+
+option.GODRAYS=Промні сонца (Godrays)
+option.GODRAYS.comment=Adds physically-inspired volumetric single-scattering sun shafts with Beer-Lambert extinction, Mie phase and shadow-map occlusion.
+option.GODRAYS_QUALITY=Якасць Godrays
+option.GODRAYS_QUALITY.comment=Controls the sample count and integration distance of physically-based volumetric godrays.
+value.GODRAYS_QUALITY.1=Хуткі
+value.GODRAYS_QUALITY.2=Збалансаваны
+value.GODRAYS_QUALITY.3=Высокі
+
+option.AURORA_MODE=Паўночнае ззянне
+option.AURORA_MODE.comment=Кіруйце паказам рэалістычнага плыннага паўночнага ззяння на начным небе.
+
+value.AURORA_MODE.0=Адключана
+value.AURORA_MODE.1=Толькі ў халодных біёмах
+value.AURORA_MODE.2=Заўсёды ўключана
+
+option.AURORA_SPEED=Хуткасць ззяння
+option.AURORA_SPEED.comment=Кіруйце хуткасцю хвалявання і плыні паўночнага ззяння.
+
+value.AURORA_SPEED.1=Павольны
+value.AURORA_SPEED.2=Стандартны
+value.AURORA_SPEED.3=Хуткі
+
+option.AURORA_STRENGTH=Яркасць ззяння
+option.AURORA_STRENGTH.comment=Кіруйце агульнай яркасцю ззяння паўночнага ззяння.
+
+value.AURORA_STRENGTH.1=Мяккі
+value.AURORA_STRENGTH.2=Стандартны
+value.AURORA_STRENGTH.3=Ззяючы
+
+option.AURORA_QUALITY=Aurora Quality
+option.AURORA_QUALITY.comment=Raymarch steps for Aurora Borealis. Higher settings smooth curtain volume and reduce visible layering; the new centered sampling removes per-pixel grain.
+value.AURORA_QUALITY.1=Soft (8 steps)
+value.AURORA_QUALITY.2=Balanced (12 steps)
+value.AURORA_QUALITY.3=Silky (18 steps)
+option.NEBULA_BRIGHTNESS=Яркасць Млечнага Шляху
+option.NEBULA_BRIGHTNESS.comment=Адрэгулюйце яркасць ззяння дыяганальнай карычневатай галактычнай туманнасці ноччу.
+
+value.NEBULA_BRIGHTNESS.1=Прыглушаны
+value.NEBULA_BRIGHTNESS.2=Стандартны
+value.NEBULA_BRIGHTNESS.3=Яркі
+
+option.STARS_BRIGHTNESS=Яркасць зорак
+option.STARS_BRIGHTNESS.comment=Кіруйце яркасцю і іскрыстым ззяннем зорак ноччу.
+
+value.STARS_BRIGHTNESS.1=Слабы
+value.STARS_BRIGHTNESS.2=Стандартны
+value.STARS_BRIGHTNESS.3=Бліскучы
+
+option.STARS_AMOUNT=Шчыльнасць зорак
+option.STARS_AMOUNT.comment=Кіруйце агульнай колькасцю і шчыльнасцю зорак у небе.
+
+value.STARS_AMOUNT.1=Мала
+value.STARS_AMOUNT.2=Стандартны
+value.STARS_AMOUNT.3=Густа
+
+option.RAINBOW_STRENGTH=Інтэнсіўнасць вясёлкі
+option.RAINBOW_STRENGTH.comment=Наладзьце яркасць і насычанасць колеру вясёлкі пасля дажджу.
+
+value.RAINBOW_STRENGTH.1=Слабы
+value.RAINBOW_STRENGTH.2=Збалансаваны
+value.RAINBOW_STRENGTH.3=Яркі
+
+option.COZY_LIGHTS=Мігаценне факела
+option.COZY_LIGHTS.comment=Уключыце цёплую, утульную анімацыю мігацення ў рэальным часе для факелаў, вогнішчаў і ліхтароў.
+
+option.WET_REFLECTIONS=Адбіткі вільготнасці ад дажджу
+option.WET_REFLECTIONS.comment=Пры дажджы цвёрдыя блокі, такія як зямля, трава і камень, становяцца мокрымі, цёмнымі і бліскучымі пад небам.
+
+option.GROUND_MIST=Нізкі прыземны туман (Y=62-66)
+option.GROUND_MIST.comment=Уключыце мяккія залаціста-белыя раніцовыя/вячэрнія слаі туману, якія слізгаюць над вадой і лёдам на світанку і змярканні.
+
+option.FOG_DENSITY_LEVEL=Шчыльнасць туману
+option.FOG_DENSITY_LEVEL.comment=Кіруйце сілай атмасфернага туману на гарызонце.
+
+value.FOG_DENSITY_LEVEL.1=Нізкая
+value.FOG_DENSITY_LEVEL.2=Сярэдняя
+value.FOG_DENSITY_LEVEL.3=Высокі
+
+
+
+
+
+
+
+option.TAA=Часавае згладжванне (TAA)
+option.TAA.comment=Часавае вырашэнне з рэпраекцыяй руху і абразаннем суседства. Зніжае мільгаценне і зубчастыя краі на высокіх прэсетах.
+option.TAA_STRENGTH=Сіла TAA
+option.TAA_STRENGTH.comment=Кіруе змешваннем гісторыі. Больш высокае значэнне больш стабільна, але можа быць больш мяккім падчас руху.
+value.TAA_STRENGTH.1=Лёгкі
+value.TAA_STRENGTH.2=Збалансаваны
+value.TAA_STRENGTH.3=Стабільны
+
+option.TAA_JITTER=Дрыгаценне камеры (TAA)
+option.TAA_JITTER.comment=Субпіксельнае дрыгаценне камеры (Halton), якое дазваляе TAA аднаўляць субпіксельныя дэталі. Выключана па змаўчанні для цалкам стабільнай выявы; Далікатная і вышэй прыбірае высокачастотнае мігаценне коштам лёгкага часовага хістання. Патрабуе ўключанага TAA.
+value.TAA_JITTER.0=Выключана
+value.TAA_JITTER.1=Далікатная
+value.TAA_JITTER.2=Стандартная
+value.TAA_JITTER.3=Моцная
+
+
+option.WATER_RIFFLES=Сіла хваль вады
+option.WATER_RIFFLES.comment=Adjust the waviness and intensity of the fine normal map ripples on the water.
+
+value.WATER_RIFFLES.1=Спакойна
+value.WATER_RIFFLES.2=Стандартны
+value.WATER_RIFFLES.3=Хвалісты
+
+option.WATER_SPECULAR_STRENGTH=Люстраны бляск вады
+option.WATER_SPECULAR_STRENGTH.comment=Adjust the brightness of sun/moon reflections on the water ripples.
+
+value.WATER_SPECULAR_STRENGTH.1=Мяккі
+value.WATER_SPECULAR_STRENGTH.2=Стандартны
+value.WATER_SPECULAR_STRENGTH.3=Бліскучы
+
+option.SHADOW_SOFTNESS=Мяккасць ценяў
+option.SHADOW_SOFTNESS.comment=Кіруе тым, наколькі мяккімі і рассеянымі выглядаюць краі ценю. Выкарыстоўвае паварочаны фільтр дыска Пуасона для гладкай паўцені.
+
+value.SHADOW_SOFTNESS.1=Востры
+value.SHADOW_SOFTNESS.2=Мяккі
+value.SHADOW_SOFTNESS.3=Вельмі мяккі
+
+# ==============================================================================
+# Sun & Moon Lighting (extended)
+# ==============================================================================
+screen.SUN_MOON=Сонца і Месяц
+screen.SUN_MOON.comment=Дакладна наладзьце інтэнсіўнасць сонца і месяца, каляровую тэмпературу і атмасферныя эфекты.
+
+option.SUN_INTENSITY=Інтэнсіўнасць сонца
+option.SUN_INTENSITY.comment=Асноўная яркасць прамога сонечнага святла. Вышэй = мацнейшы дзённы кантраст.
+value.SUN_INTENSITY.1=Прыглушаны
+value.SUN_INTENSITY.2=Стандартны
+value.SUN_INTENSITY.3=Высокі
+value.SUN_INTENSITY.4=Палымяны
+
+option.MOON_INTENSITY=Інтэнсіўнасць месяца
+option.MOON_INTENSITY.comment=Асноўная яркасць месячнага святла. Вышэй = больш яркія, больш бачныя ночы.
+value.MOON_INTENSITY.1=Цёмная ноч
+value.MOON_INTENSITY.2=Стандартны
+value.MOON_INTENSITY.3=Яркі месяц
+value.MOON_INTENSITY.4=Поўная ноч
+
+option.SUN_TEMPERATURE=Каляровая тэмпература сонца
+option.SUN_TEMPERATURE.comment=Зрушвае крывую Кельвіна сонца. Рэалістычна выкарыстоўвае чорнае цела Танэра Хэланда; цёплы = залаты; халодны = нейтральны белы.
+value.SUN_TEMPERATURE.1=Халодны / Нейтральны
+value.SUN_TEMPERATURE.2=Рэалістычна
+value.SUN_TEMPERATURE.3=Цёплае золата
+
+option.MOON_TEMPERATURE=Каляровая тэмпература месяца
+option.MOON_TEMPERATURE.comment=Адценне месячнага святла. Ледзяны: бледна-блакітны халодны; Сярэбраны: рэалістычны 4100K; Цёплы: крэмавы, як месяц ураджаю.
+value.MOON_TEMPERATURE.1=Ледзяны блакіт
+value.MOON_TEMPERATURE.2=Сярэбраны (Рэалістычны)
+value.MOON_TEMPERATURE.3=Цёплы крэм
+
+option.SUN_HALO=Гала сонца (рассейванне Мі)
+option.SUN_HALO.comment=Дадае мяккае цёплае ззянне на рэльеф пры позірку каля сонца (пярэдняе рассейванне Мі).
+
+option.SUNRISE_GLOW=Узмоцненае ззянне ўсходу/захаду сонца
+option.SUNRISE_GLOW.comment=Уключае мацнейшае цёплае зваротнае рассейванне, якое ахутвае паверхні, адвернутыя ад нізкага сонца.
+
+# ==============================================================================
+# Extended shadow settings
+# ==============================================================================
+option.shadowDistance=Дальнасць ценяў
+option.shadowDistance.comment=Максімальная адлегласць, на якой рэндэруцца дынамічныя цені. Больш высокія значэнні пашыраюць цені да адлегласці рэндэрынгу; выкарыстоўвайце Shadow LOD для падтрымання прадукцыйнасці на пашыраных дыяпазонах.
+value.shadowDistance.60.0=Блізка (60м)
+value.shadowDistance.80.0=Стандарт (80м)
+value.shadowDistance.120.0=Далёка (120м)
+value.shadowDistance.160.0=Ультра (160м)
+value.shadowDistance.256.0=Пашыраная (256 м)
+value.shadowDistance.384.0=Адлегласць рэндэрынгу (384 м)
+value.shadowDistance.192.0=DH Seam (192m)
+value.shadowDistance.512.0=DH Extended (512m)
+value.shadowDistance.768.0=DH Far (768m)
+
+option.SHADOW_LOD=LOD ценяў
+option.SHADOW_LOD.comment=Кіруе пагаршэннем якасці ценяў з адлегласцю. Пры пашыранай адлегласці ценяў (256-384 м) LOD памяншае колькасць узораў і павялічвае радыус фільтра на далёкай адлегласці для падтрымання прадукцыйнасці. Выкл = раўнамерная якасць (павольна). Збалансаваны = зніжэнне на 25-50% адлегласці. Агрэсіўны = максімальнае зніжэнне на 15-60% адлегласці. Цені цалкам прапускаюцца за межамі 95% адлегласці рэндэрынгу.
+value.SHADOW_LOD.0=Выкл (раўнамерная якасць)
+value.SHADOW_LOD.1=Збалансаваны
+value.SHADOW_LOD.2=Агрэсіўны
+option.DH_SHADOW_RANGE=Distant Horizons Shadow Range
+option.DH_SHADOW_RANGE.comment=Maximum range where Distant Horizons LOD terrain and water can receive samples from the shared DH shadow map. Seam keeps shadows close to vanilla chunks; Far extends coverage but can cost more GPU time. No effect without Distant Horizons.
+value.DH_SHADOW_RANGE.1=Seam (1.25x)
+value.DH_SHADOW_RANGE.2=Extended (2x)
+value.DH_SHADOW_RANGE.3=Far (4x)
+option.SHADOW_PCSS_BLUR=PCSS размыццё па адлегласці
+option.SHADOW_PCSS_BLUR.comment=Уключае PCSS змякчэнне паўцені, якое павялічвае размыццё ценяў з адлегласцю і падчас дажджу. Адключыце для фіксаванай мяккасці (больш выразныя далёкія цені, менш рэалістычна).
+value.SHADOW_PCSS_BLUR.0=Выкл (фіксаваная мяккасць)
+value.SHADOW_PCSS_BLUR.1=Укл (PCSS паўцень)
+
+
+option.AMBIENT_BRIGHTNESS=Узняцце ценяў / асяроддзе
+option.AMBIENT_BRIGHTNESS.comment=Кіруе тым, наколькі цёмнымі выглядаюць зацененыя вобласці ноччу і ў пячорах.
+value.AMBIENT_BRIGHTNESS.1=Цёмны
+value.AMBIENT_BRIGHTNESS.2=Стандартны
+value.AMBIENT_BRIGHTNESS.3=Узняты (Яркі)
+
+option.SHADOW_TINT=Адценне ценю
+option.SHADOW_TINT.comment=Афарбоўвае дзённыя цені. Сапраўдныя цені пад блакітным небам маюць лёгкае халаднаватае адценне.
+value.SHADOW_TINT.1=Нейтральны шэры
+value.SHADOW_TINT.2=Халодны блакіт (рэалістычны)
+value.SHADOW_TINT.3=Цёплы
+
+option.LIGHT_WRAP=Абгортка святлом
+option.LIGHT_WRAP.comment=Змякчае мяжу паміж асветленымі і неасветленымі паверхнямі. Рэалістычна = фізічны Ламберт; Мякка = прыемна для скрыншотаў.
+value.LIGHT_WRAP.1=Рэалістычна (Ламберт)
+value.LIGHT_WRAP.2=Мяккая абгортка
+value.LIGHT_WRAP.3=Стылізаваны
+
+# v0.2.9 — water/underwater option value labels (English fallback)
+value.WATER_WAVE_SCALE.1=Спакойна
+value.WATER_WAVE_SCALE.2=Стандартны
+value.WATER_WAVE_SCALE.3=Хвалісты
+value.WATER_WAVE_SCALE.4=Штармавы
+value.WATER_WAVE_DETAIL.1=Грубы
+value.WATER_WAVE_DETAIL.2=Стандартны
+value.WATER_WAVE_DETAIL.3=Шчыльны
+value.UNDERWATER_NIGHT_DARKNESS.1=Асветлены месяцам басейн
+value.UNDERWATER_NIGHT_DARKNESS.2=Прыглушаны
+value.UNDERWATER_NIGHT_DARKNESS.3=Сапраўдная ноч
+value.UNDERWATER_NIGHT_DARKNESS.4=Цёмна, як у мяшку
+# ==============================================================================
+# Experimental Tab & New Sky (v1.1.0)
+# ==============================================================================
+screen.EXPERIMENTAL=Эксперыментальнае
+screen.EXPERIMENTAL.comment=Эксперыментальнае
+
+screen.ATMOSPHERE_OPTIONS=Atmosphere
+screen.ATMOSPHERE_OPTIONS.comment=Physical-sky scattering, altitude and temporal resolve controls.
+option.ATMOSPHERE_TURBIDITY=Atmospheric Turbidity
+option.ATMOSPHERE_TURBIDITY.comment=Controls aerosol haze in Physical Sky. Crisp gives a deep blue sky; Hazy gives a brighter, softer horizon and stronger forward scatter.
+value.ATMOSPHERE_TURBIDITY.1=Crisp
+value.ATMOSPHERE_TURBIDITY.2=Balanced
+value.ATMOSPHERE_TURBIDITY.3=Hazy
+option.ATMOSPHERE_SCALE=Atmosphere Scale
+option.ATMOSPHERE_SCALE.comment=Converts Minecraft altitude into atmosphere height for Physical Sky. Compact makes mountains affect the sky less; Cinematic preserves the original large-scale altitude effect.
+value.ATMOSPHERE_SCALE.1=Compact (25m/block)
+value.ATMOSPHERE_SCALE.2=Balanced (50m/block)
+value.ATMOSPHERE_SCALE.3=Cinematic (100m/block)
+option.GROUND_BOUNCE_MODE=Ground Bounce Albedo
+option.GROUND_BOUNCE_MODE.comment=Controls the lower-atmosphere ground-bounce colour in Physical Sky. Auto adapts to cold and swamp biome signals.
+value.GROUND_BOUNCE_MODE.0=Auto (Biome-aware)
+value.GROUND_BOUNCE_MODE.1=Neutral Soil
+value.GROUND_BOUNCE_MODE.2=Vegetation
+value.GROUND_BOUNCE_MODE.3=Snow
+value.GROUND_BOUNCE_MODE.4=Desert
+option.SKY_TEMPORAL=Physical Sky Temporal Resolve
+option.SKY_TEMPORAL.comment=Uses rotation-only history blending for Physical Sky to smooth low-sample scattering and horizon gradients. Disable if animated cloud/aurora ghosting is noticeable.
+option.SKY_MODE=Новае неба (Атмасфернае рассейванне)
+option.SKY_STYLE=Стыль неба
+option.SKY_STYLE.comment=Мастацкі кірунак фізічнага неба. Рэалістычны = сапраўдныя вуглавыя памеры і нейтральныя колеры (астранамічны выгляд). Паўрэалістычны = чытальныя сонца/месяц (×2,8), багацейшыя колеры, мяккае ззянне. Фэнтэзі = вялікія сонца/месяц (×5,5), вялікая карона, яркая палітра цёмна-бірузовы/пунсовы/індыга.
+option.SKY_MODE.comment=EXPERIMENTAL — off in all profiles. Gradient (legacy, default) or Physical realtime scattering with true multiple scattering (Rayleigh+Mie+Ozone, 1st+2nd+3rd order). Enable manually in this tab.
+value.SKY_MODE.0=Градыент (Стары)
+value.SKY_STYLE.0=Рэалістычна
+value.SKY_STYLE.1=Паўрэалістычна
+value.SKY_STYLE.2=Фэнтэзі
+value.SKY_MODE.1=Realtime Scattering
+
+option.SKY_QUALITY=Якасць рассейвання неба
+option.SKY_QUALITY.comment=Якасць рассейвання неба
+value.SKY_QUALITY.1=Хуткае
+value.SKY_QUALITY.2=Стандартнае
+value.SKY_QUALITY.3=Высокае
+
+# --- Auto-added missing translations (v1.1.0 sync) ---
+option.FOLIAGE_SSS=SSS расліннасці
+option.FOLIAGE_SSS.comment=Уключае падпаверхневае рассейванне (празрыстасць) для лісця, травы і раслін пры позірку супраць святла.
+option.GODRAYS_STRENGTH=Сіла Godrays
+option.GODRAYS_STRENGTH.comment=Яркасць аб'ёмных светлавых прамянёў. Слаба: лёгкая атмасферная смуга. Збалансавана: выразна бачныя прамяні. Драматычна: смелыя кінематаграфічныя прамяні.
+value.GODRAYS_STRENGTH.1=Слабы
+value.GODRAYS_STRENGTH.2=Збалансаваны
+value.GODRAYS_STRENGTH.3=Драматычны
+option.SHOOTING_STARS=Метэоры (падаючыя зоркі)
+option.SHOOTING_STARS.comment=Фізічна рэалістычныя метэоры, якія ўваходзяць у мезасферу (~80-120 км). Адлюстроўвае сапраўдныя 3D-дугі вялікага кола з крывымі абляцыйнага святла, колерам плазмы чорнага цела (3500-5500 K), рэлеевым выміраннем каля гарызонту і трывалымі іянізацыйнымі слядамі на агнявых шарах.
+option.SHOOTING_STARS_FREQUENCY=Актыўнасць метэораў (ZHR)
+option.SHOOTING_STARS_FREQUENCY.comment=Прыблізная зенітная гадзінная норма. Спарадычна: рэалістычны фон ~10 у гадзіну. Актыўна: умераны паток. Шторм: пікавая шчыльнасць (~100/гадз).
+value.SHOOTING_STARS_FREQUENCY.1=Спарадычна (~10/гадз)
+value.SHOOTING_STARS_FREQUENCY.2=Актыўны паток
+value.SHOOTING_STARS_FREQUENCY.3=Метэорны шторм
+option.SHOOTING_STARS_BRIGHTNESS=Шкала велічыні
+option.SHOOTING_STARS_BRIGHTNESS.comment=Асноўны множнік па шкале велічыні метэора. Слабая: рэалістычнае сярэдняе; Яркая: маштабуе агнявыя шары для кінематаграфічнай бачнасці.
+value.SHOOTING_STARS_BRIGHTNESS.1=Слабы (Рэалістычны)
+value.SHOOTING_STARS_BRIGHTNESS.2=Стандартны
+value.SHOOTING_STARS_BRIGHTNESS.3=Яркія агнявыя шары
+option.SPATIAL_AA_MODE=Прасторавае згладжванне
+option.SPATIAL_AA_MODE.comment=Выберыце метад постапрацоўкі згладжвання. FXAA хуткі і танны. SMAA выкарыстоўвае буфер глыбіні для лепшай якасці на краях геаметрыі. Можна спалучаць з TAA.
+value.SPATIAL_AA_MODE.0=Выключана
+value.SPATIAL_AA_MODE.1=FXAA (Хуткі)
+value.SPATIAL_AA_MODE.2=SMAA (Якасць)
+option.HEAT_SHIMMER=Мігаценне спякоты над лавай
+option.HEAT_SHIMMER.comment=Уключыце лёгкі эфект тэрмічнага скажэння ў прасторы экрана над паверхнямі лавы.
+option.HEAT_SHIMMER_STRENGTH=Сіла мігацення спякоты
+option.HEAT_SHIMMER_STRENGTH.comment=Кіруе інтэнсіўнасцю тэрмічнага скажэння над лавай.
+value.HEAT_SHIMMER_STRENGTH.1=Слабы
+value.HEAT_SHIMMER_STRENGTH.2=Збалансаваны
+value.HEAT_SHIMMER_STRENGTH.3=Моцны
+option.SSR=Адлюстраванні прасторы экрана (SSR)
+option.SSR.comment=Дадае адлюстраванае асяроддзе ў рэальным часе на вадзе, вільготных паверхнях і металічных PBR-блоках. Уключана ад MED і вышэй у v1.0.4.
+option.SSR_QUALITY=Якасць SSR
+option.SSR_QUALITY.comment=Кіруе дакладнасцю і дальнасцю прамянёў адлюстраванняў прасторы экрана. Вышэй = больш выразныя адлюстраванні, але большая нагрузка на GPU.
+value.SSR_QUALITY.1=Хутка (12 крокаў)
+value.SSR_QUALITY.2=Збалансавана (24 крокі)
+value.SSR_QUALITY.3=Высока (40 крокаў)
+option.SSR_STRENGTH=Сіла SSR
+option.SSR_STRENGTH.comment=Кіруе тым, наколькі бачным і выразным выглядае адлюстраванае асяроддзе на адлюстроўваючых паверхнях.
+option.WATER_WAVE_SCALE=Амплітуда хваль
+option.WATER_WAVE_SCALE.comment=Кіруе бачнай крутасцю хваль паверхні вады. Спакойна: люстэркавае, Штармова: моцна разбітыя адлюстраванні.
+option.WATER_WAVE_DETAIL=Дэталь хваль
+option.WATER_WAVE_DETAIL.comment=Кіруе колькасцю маленькіх хваль на блок. Грубая: некалькі вялікіх хваль, Шчыльная: шмат маленькіх хваляў.
+option.UNDERWATER_NIGHT_DARKNESS=Начная цемра пад вадой
+option.UNDERWATER_NIGHT_DARKNESS.comment=Кіруе тым, наколькі цёмнай становіцца падводная сцэна ноччу. Асветлены месяцам басейн захоўвае яркасць; Цёмна, як у мяшку, дае экстрэмальную цемру ў стылі выжывання.
+value.SSR_STRENGTH.1=Слабы
+value.SSR_STRENGTH.2=Збалансаваны
+value.SSR_STRENGTH.3=Моцны
+option.PBR_DISTANCE=Дальнасць рэндэрынгу PBR
+option.PBR_DISTANCE.comment=Максімальная адлегласць для люстраных водбліскаў PBR. Эканоміць GPU на далёкім рэльефе. Блізка (16 м) для LOW, Стандарт (48 м) для MED, Далёка (128 м) для HIGH/ULTRA, Неабмежавана для EXTREME.
+value.PBR_DISTANCE.1=Блізка (16м)
+value.PBR_DISTANCE.2=Стандарт (48м)
+value.PBR_DISTANCE.3=Далёка (128м)
+value.PBR_DISTANCE.4=Неабмежавана
+
+# v1.1.1 — shadow pipeline + POM option labels
+value.shadowMapResolution.512=512
+value.shadowMapResolution.1024=1024
+value.shadowMapResolution.2048=2048
+value.shadowMapResolution.4096=4096
+value.shadowMapResolution.8192=8192
+option.POM_DEPTH=Глыбіня POM
+option.POM_DEPTH.comment=Кіруе бачнай глыбінёй паралакс-мапінгу пры ўключаным PBR POM.
+value.POM_DEPTH.1=Нізкая
+value.POM_DEPTH.2=Стандартная
+value.POM_DEPTH.3=Глыбокая
+option.POM_STEPS=Крокі POM
+option.POM_STEPS.comment=Кіруе колькасцю крокаў raymarch для паралакс-мапінгу. Больш высокія значэнні паляпшаюць якасць, але патрабуюць больш часу GPU.
+value.POM_STEPS.1=Хуткі
+value.POM_STEPS.2=Стандартная
+value.POM_STEPS.3=Высокі
+value.POM_STEPS.4=Ультра
+
+screen.SHADOW_OPTIONS=Цені
+screen.SHADOW_OPTIONS.comment=Раздзяляльная здольнасць, адлегласць, мяккасць і адценне дынамічных ценяў.
+screen.PBR_OPTIONS=PBR і матэрыялы
+screen.PBR_OPTIONS.comment=PBR асвятленне, паралакс-рэльеф, інтэнсіўнасць і адлегласць рэндэрынгу.
+screen.AO_REFLECTIONS=AO і адлюстраванні
+screen.AO_REFLECTIONS.comment=SSAO, экранныя адлюстраванні і адлюстраванні дажджу.
+screen.CLOUD_SHAPE=Аблокі
+screen.CLOUD_SHAPE.comment=Форма, вышыня, адлегласць і цені аб'ёмных аблокаў.
+screen.CLOUD_BODY=Cloud Body
+screen.CLOUD_BODY.comment=Altitude, thickness, distance, and the two settings that vary from cloud to cloud: base level and updraft.
+screen.CLOUD_PERF=Cloud Quality
+screen.CLOUD_PERF.comment=Everything that trades picture for frame time. Resolution (steps) and detail (octaves) are independent: you can keep crisp cloud tops and still lower the step count.
+screen.LIGHT_SHAFTS=Святловыя прамяні
+screen.LIGHT_SHAFTS.comment=Аб'ёмныя сонечныя/месяцовыя прамяні і іх якасць/інтэнсіўнасць.
+screen.NIGHT_SKY=Начное неба
+screen.NIGHT_SKY.comment=Паўночнае ззянне, зоркі, Млечны Шлях і падаючыя зоркі.
+
+# [v1.1.3]
+option.CLOUD_QUALITY=Якасць ray-marching аблокаў
+option.CLOUD_QUALITY.comment=Raymarch resolution: how many samples the cloud volume gets along the ray (14/24/36/56 steps). Lower it for FPS -- it costs shape detail only in combination with CLOUD_DETAIL below.
+option.BLOOM=HDR Bloom
+option.BLOOM.comment=Enable or disable the HDR bloom pass. When disabled, AuraLite skips all five bloom composite passes for lower GPU load.
+option.HDR_BLOOM=HDR ззянне
+option.HDR_BLOOM.comment=Сіла шырокага гаўсавага ззяння вакол перасветленых крыніц: дыск сонца/месяца, лава, парталы, гарачыя блікі. Выкарыстоўвае новыя праходы bloom-піраміды.
+value.HDR_BLOOM.1=Далікатная
+value.HDR_BLOOM.2=Ураўнаважаная
+value.HDR_BLOOM.3=Моцная
+option.POST_SHARPEN=Рэзкасць (CAS)
+option.POST_SHARPEN.comment=Далікатная маска невыразнасці пасля TAA, якая вяртае дэталі тэкстур, змякчаныя часавым назапашваннем. Выключыце для больш мяккай, кінематаграфічнай выявы.
+
+# [v1.1.3]
+
+# ==============================================================================
+# Only the three channel sliders carry a colour code, because there the colour
+# IS the information: red gain is red, green is green, blue is blue. Everything
+# else stays default white — a menu does not need a palette to be readable.
+# ==============================================================================
+screen.COLOR=Colour Grading
+screen.COLOR.comment=Exposure, per-channel gain, brightness, contrast, saturation, gamma and vignette — all as sliders.
+screen.COLOR_TONE=Tone
+screen.COLOR_TONE.comment=Exposure, brightness, contrast, saturation and output gamma.
+screen.COLOR_RGB=Channels
+screen.COLOR_RGB.comment=Per-channel red/green/blue gain plus warm-cool and green-magenta balance.
+screen.COLOR_LOOK=Look
+screen.COLOR_LOOK.comment=Selective vibrance, vignette strength and the tone-mapping curve.
+
+option.COLOR_EXPOSURE=Exposure
+option.COLOR_EXPOSURE.comment=Linear exposure, applied before tone mapping. Above 1.00 the scene brightens and highlights roll off instead of clipping.
+option.COLOR_BRIGHTNESS=Brightness
+option.COLOR_BRIGHTNESS.comment=Midtone lift applied after tone mapping. Because it is a curve and not a multiply, blacks stay black and highlights cannot clip.
+option.COLOR_CONTRAST=Contrast
+option.COLOR_CONTRAST.comment=Contrast around middle grey (0.5) — the classic brightness/contrast operation.
+option.COLOR_SATURATION=Saturation
+option.COLOR_SATURATION.comment=0.00 is greyscale, 1.00 is untouched, above 1.00 is oversaturated.
+option.COLOR_GAMMA=Output Gamma
+option.COLOR_GAMMA.comment=Output encode exponent. 2.20 is the pack default. Lower values lift shadows, higher values crush them.
+option.COLOR_TONEMAP=Tone Curve
+option.COLOR_TONEMAP.comment=Which filmic curve maps HDR to the screen. ACES is the pack default.
+value.COLOR_TONEMAP.1=ACES (default)
+value.COLOR_TONEMAP.2=ACES soft
+value.COLOR_TONEMAP.3=ACES punchy
+value.COLOR_TONEMAP.4=Photographic (AgX-like)
+
+option.COLOR_RED=§cRed Gain§r
+option.COLOR_RED.comment=Multiplies scene-linear red before tone mapping.
+option.COLOR_GREEN=§aGreen Gain§r
+option.COLOR_GREEN.comment=Multiplies scene-linear green before tone mapping.
+option.COLOR_BLUE=§9Blue Gain§r
+option.COLOR_BLUE.comment=Multiplies scene-linear blue before tone mapping.
+option.COLOR_LUMA_PROTECT=Keep Brightness (luma protect)
+option.COLOR_LUMA_PROTECT.comment=On: the RGB / warmth / tint sliders shift colour but leave average brightness alone. Off: raw channel multipliers, which also brighten or darken the frame.
+option.COLOR_WARMTH=Warmth
+option.COLOR_WARMTH.comment=Moves the red/blue balance without touching green. Positive is warmer (sunset), negative is cooler (overcast, moonlight).
+option.COLOR_TINT=Tint
+option.COLOR_TINT.comment=Moves the green/magenta balance. Positive is greener, negative is magenta.
+
+option.COLOR_VIBRANCE=Selective Vibrance
+option.COLOR_VIBRANCE.comment=Saturation that treats colours differently: muted ones move more than already-saturated ones. 0.00 reproduces the pack's built-in look exactly.
+option.COLOR_VIGNETTE=Vignette Strength
+option.COLOR_VIGNETTE.comment=Corner darkening. 0.00 disables it without switching VIGNETTE off; 2.00 doubles it.
+option.VIGNETTE=Vignette
+option.VIGNETTE.comment=Master switch for corner darkening. Use Vignette Strength to dial the amount.
+
+option.CLOUD_MODE=Cloud Renderer
+option.CLOUD_MODE.comment=Volumetric: the ray marches through a 3D density field and every sample shadows itself toward the sun (self-shadowing, silver lining, real depth). Layered sheets: the v1.1.4 look, cheaper.
+value.CLOUD_MODE.0=Layered sheets (v1.1.4)
+value.CLOUD_MODE.1=Volumetric
+option.CLOUD_COVERAGE=Cloud Coverage
+option.CLOUD_COVERAGE.comment=How much of the sky the clouds fill. This changes cloud fraction, not brightness: it moves the threshold the density noise has to cross.
+value.CLOUD_COVERAGE.1=Clear
+value.CLOUD_COVERAGE.2=Scattered
+value.CLOUD_COVERAGE.3=Broken
+value.CLOUD_COVERAGE.4=Broken to overcast
+value.CLOUD_COVERAGE.5=Overcast
+option.CLOUD_DENSITY=Cloud Density
+option.CLOUD_DENSITY.comment=Extinction coefficient of the cloud medium, in 1/m. Real water clouds sit between 0.005 and 0.1; 0.030 is a typical cumulus. Higher makes clouds darker and more opaque inside.
+value.CLOUD_QUALITY.1=Cheap (14 steps)
+value.CLOUD_QUALITY.2=Standard (24 steps)
+value.CLOUD_QUALITY.3=High (36 steps)
+value.CLOUD_QUALITY.4=Extreme (56 steps)
+option.CLOUD_DETAIL=Cloud Shape Detail
+option.CLOUD_DETAIL.comment=How small a feature the cloud shape can carry: 1080 m at 1, 540 m at 2, 270 m at 3, 135 m at 4. Independent of the raymarch resolution above, so you can keep crisp cloud tops and still lower the step count for FPS. Raising both together is the expensive combination.
+value.CLOUD_DETAIL.1=Low (2 octaves, 1080 m)
+value.CLOUD_DETAIL.2=Medium (3 octaves, 540 m)
+value.CLOUD_DETAIL.3=High (4 octaves, 270 m)
+value.CLOUD_DETAIL.4=Extreme (5 octaves, 135 m)
+
+option.VEGETATION_CANOPY=Vegetation Canopy
+option.VEGETATION_CANOPY.comment=Shade foliage as a canopy (light reaching the inside of the crown) instead of flat vertical cards.
+option.GROUND_MIST_DENSITY=Ground Mist Density
+option.GROUND_MIST_DENSITY.comment=How much mist pools in the low ground at dawn.
+value.GROUND_MIST_DENSITY.1=Light
+value.GROUND_MIST_DENSITY.2=Standard
+value.GROUND_MIST_DENSITY.3=Heavy
+option.UNDERWATER_WAVES=Underwater Waves
+option.UNDERWATER_WAVES.comment=Distortion and caustics seen from below the surface. Caustics stay off by default: they are a stylistic choice, not a physical necessity.
+value.UNDERWATER_WAVES.0=Off (calm)
+value.UNDERWATER_WAVES.1=Subtle
+value.UNDERWATER_WAVES.2=Light caustics
+value.UNDERWATER_WAVES.3=Strong
+
+option.CLOUD_CIRRUS=Cirrus Veil
+option.CLOUD_CIRRUS.comment=High, thin ice cloud above the cumulus. It is raymarched like the rest, just thin and cheap. Off leaves the cumulus deck alone in the sky.
+option.DITHER_STRENGTH=Output Dither
+option.DITHER_STRENGTH.comment=Sub-pixel noise added before tone mapping to break up 8-bit banding in smooth sky gradients. It is a trade: less banding, a little grain. Light is half of what v1.1.4 used.
+value.DITHER_STRENGTH.1=Off
+value.DITHER_STRENGTH.2=Light (half of v1.1.4)
+value.DITHER_STRENGTH.3=Medium
+value.DITHER_STRENGTH.4=v1.1.4
+
+option.CLOUD_HEIGHT.comment=Base altitude of the cloud deck in metres. 1200 m is a typical fair-weather cumulus base; Minecraft's own clouds sit at 192 and look like a low ceiling for that reason.
+value.CLOUD_HEIGHT.1=Low (400 m)
+value.CLOUD_HEIGHT.2=Cumulus base (1200 m)
+value.CLOUD_HEIGHT.3=High (2400 m)
+value.CLOUD_HEIGHT.4=Very high (3600 m)
+option.CLOUD_THICKNESS.comment=Deck depth as a fraction of the base altitude: half, equal, or one and a half times. Fair-weather cumulus is 500-1500 m deep.
+value.CLOUD_THICKNESS.1=Thin (0.5x)
+value.CLOUD_THICKNESS.2=Normal (1.0x)
+value.CLOUD_THICKNESS.3=Deep (1.5x)
+option.CLOUD_DISTANCE.comment=How far the deck is drawn. Cloud colour is washed toward the sky with distance (aerial perspective), so the far end fades out instead of ending on an edge.
+value.CLOUD_DISTANCE.1=6 km
+value.CLOUD_DISTANCE.2=12 km
+value.CLOUD_DISTANCE.3=20 km
+value.CLOUD_DISTANCE.4=32 km
+
+option.CLOUD_MICRO=Droplet Spectrum
+option.CLOUD_MICRO.comment=Controls droplet size, which sets how much a given water content scatters and how strongly forward-scattering the phase function is. Continental air has many small droplets (brighter, more diffuse); maritime air has fewer, larger ones (darker, sharper silver lining).
+value.CLOUD_MICRO.1=Continental (6 um, g=0.82)
+value.CLOUD_MICRO.2=Typical (8 um, g=0.85)
+value.CLOUD_MICRO.3=Maritime (12 um, g=0.87)
+option.CLOUD_SCALE=Cloud Size
+option.CLOUD_SCALE.comment=Width of one cloud cell relative to the depth of the deck. Real cumulus are about as wide as they are thick: compact cumulus roughly match their depth, congestus reach three depths across. Larger cells mean fewer, broader clouds in view; smaller cells mean a busier sky.
+value.CLOUD_SCALE.1=Compact (1.2x depth)
+value.CLOUD_SCALE.2=Typical (1.8x depth)
+value.CLOUD_SCALE.3=Broad (3.0x depth)
+option.CLOUD_BASE_VARIATION=Condensation Level Spread
+option.CLOUD_BASE_VARIATION.comment=How much the cloud base height varies between clouds. Real cumulus share a nearly level base because every thermal condenses at the same height, but over tens of kilometres surface temperature and moisture drift, so the level is ragged rather than one shelf. Smaller values give the clean shelf of a calm afternoon; larger values give a broken, stormy sky where each cell has its own base.
+value.CLOUD_BASE_VARIATION.1=Even (±40 m)
+value.CLOUD_BASE_VARIATION.2=Natural (±120 m)
+value.CLOUD_BASE_VARIATION.3=Ragged (±250 m)
+option.CLOUD_UPDRAFT=Updraft Speed
+option.CLOUD_UPDRAFT.comment=How fast the cloud body streams upward. Real cumulus are conveyor belts: air rises through them at 1-3 m/s in fair weather and 20-30 m/s in a storm core, so the shape keeps being replaced from below and the tops appear to boil. The deck itself stays at the same altitude; only the structure inside moves. Storms multiply this.
+value.CLOUD_UPDRAFT.1=Drifting (1.5 m/s)
+value.CLOUD_UPDRAFT.2=Natural (2.5 m/s)
+value.CLOUD_UPDRAFT.3=Vigorous (4.0 m/s)
+option.CLOUD_DENSITY.comment=Liquid water content of the cloud core, in g/m3. Extinction is derived from it and from droplet size, not set directly.
+option.CLOUD_MID_LAYER=Сярэдні ярус аблокаў
+option.CLOUD_MID_LAYER.comment=Дадатковы пласт на сярэдняй вышыні, які развіваецца; можа знізіць FPS.
+
+value.CLOUD_DENSITY.1=Thin (0.075 g/m3)
+value.CLOUD_DENSITY.2=Typical (0.15 g/m3)
+value.CLOUD_DENSITY.3=Dense (0.30 g/m3)

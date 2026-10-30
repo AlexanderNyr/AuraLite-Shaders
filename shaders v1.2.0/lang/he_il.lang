@@ -1,0 +1,575 @@
+shaderDescription=AuraLite v1.2.0 — עננים, שמיים ומים פיזיקליים עם תיקון צבע
+# AuraLite Shaders v1.2.0 - Copyright (c) 2026 AlexanderNyr. Licensed under CC BY-NC-SA 4.0.
+# ==============================================================================
+# AuraLite Shader Pack - Hebrew Language Translations
+# ==============================================================================
+# NOTE: This is an AI-assisted translation. Community corrections are welcome!
+# Please open a PR at:
+# https://github.com/AlexanderNyr/AuraLite-Shaders
+# ==============================================================================
+
+# ==============================================================================
+# Quality Profiles
+# ==============================================================================
+profile.VERY_LOW=נמוך מאוד
+profile.VERY_LOW.comment=FPS מקסימלי מוחלט. כל התוספות כבויות: ללא צללים, עננים, PBR, SSR, קרני אור. רק עיבוד מינימלי.
+profile.LOW=נמוך
+profile.MED=בינוני
+profile.HIGH=גבוה
+profile.ULTRA=אולטרה
+profile.EXTREME=קיצוני
+profile.EXTREME.comment=קולנועי מקסימלי. הכל במקסימום: PBR טווח בלתי מוגבל, מיפוי גוונים צילומי (AgX), SSAO העמוק ביותר, סופות מטאורים.
+profile.CUSTOM=מותאם אישית
+profile.CUSTOM.comment=הגדרות מותאמות אישית ששונו על ידי המשתמש.
+profile.HIGH.comment=איכות לחובבים. צללים 2048, SSR מאוזן, TAA, SSAO עדין, קרניים מאוזנות, SMAA.
+profile.LOW.comment=קל אך שמיש. שומר על אנימציית עלווה/מים, כוכבים בהירים יותר, FXAA, וינייט. ללא צללים, עננים או PBR.
+profile.MED.comment=נקודת המתיקות היומיומית. צללים 1024, עננים, PBR, SSR מהיר, קרני אור, SSS עלווה, השתקפויות רטובות, ערפל, כוכבים נופלים.
+profile.ULTRA.comment=High-end. צללים 4096, SSR גבוה, SSAO מאוזן, קרניים גבוהות, TAA יציב, כל האפקטים פועלים.
+
+screen.TRANSLATION_NOTICE=⚠ התרגומים עשויים להכיל שגיאות
+screen.TRANSLATION_NOTICE.comment=מחרוזות תרגום מסוימות עשויות להיות לא מדויקות. אם משהו נראה מוזר, השווה למקור באנגלית.
+
+# Screens
+screen.LIGHTING=הגדרות תאורה
+screen.LIGHTING.comment=הגדר צללים, צבעי אור ובהירות.
+screen.FOLIAGE=הגדרות צמחייה
+screen.FOLIAGE.comment=הגדר אנימציות נדנוד לעשב ולעלים.
+screen.WATER=הגדרות מים
+screen.WATER.comment=הגדר גלים, שקיפות וסגנון מים.
+screen.CLOUDS_MENU=שמיים ועננים
+screen.CLOUDS_MENU.comment=הגדר את הגובה הפיזי, העובי והסגנון של עננים תלת-ממדיים ואפקטי שמיים.
+screen.POST_PROCESS=עיבוד אחר וערפל
+screen.POST_PROCESS.comment=הגדר חשיפה, ערפל ואפקטים קולנועיים.
+screen.POST_FOG=Fog & Image
+screen.POST_FOG.comment=Fog density, ground mist, heat shimmer and dithering.
+
+# Options
+option.SHADOWS=צללים דינמיים
+option.SHADOWS.comment=אפשר או בטל צללים דינמיים רכים מהשמש והירח.
+option.shadowMapResolution=רזולוציית צל
+option.shadowMapResolution.comment=שנה את איכות מפת הצל. ערכים גבוהים יותר עלולים להוריד את הביצועים.
+option.PBR_LIGHTING=תאורת PBR (LabPBR)
+option.PBR_LIGHTING.comment=אפשר עיבוד מבוסס פיזיקה עבור מתכות, חספוס ומפות נורמל תלת-ממדיות (נדרשת חבילת משאבי PBR).
+option.PBR_POM=תבליט בלוק תלת-ממדי (POM)
+option.PBR_POM.comment=אפשר מיפוי חסימת פרלקס מבוסס פיזיקה עבור טקסטורות בלוק תלת-ממדיות. מומלץ לבטל בחבילות משאבים לא תואמות.
+option.PBR_STRENGTH=עוצמת PBR
+option.PBR_STRENGTH.comment=שלוט ברפלקטיביות ובברק של משטחים מתכתיים PBR.
+value.PBR_STRENGTH.1=עדין
+value.PBR_STRENGTH.2=סטנדרטי
+value.PBR_STRENGTH.3=מראה
+option.LIGHTMAP_WARMTH=חום הלפיד
+option.LIGHTMAP_WARMTH.comment=התאם את החום והצבע של אור בלוק/לפיד.
+value.LIGHTMAP_WARMTH.1=נעים
+value.LIGHTMAP_WARMTH.2=חם
+value.LIGHTMAP_WARMTH.3=אינטנסיבי
+option.WAVING_LEAVES=עלים מתנדנדים
+option.WAVING_LEAVES.comment=אפשר אנימציות נדנוד עדינות לעלי עצים.
+option.WAVING_GRASS=צמחייה מתנדנדת
+option.WAVING_GRASS.comment=אפשר אנימציות נדנוד לעשב, פרחים ויבולים.
+option.WIND_SPEED=מהירות רוח
+option.WIND_SPEED.comment=שלוט במהירות הנדנוד של עלים, צמחים וגלי מים.
+value.WIND_SPEED.1=עדין
+value.WIND_SPEED.2=משב
+value.WIND_SPEED.3=סערה
+option.WATER_WAVES=גלי מים
+option.WATER_WAVES.comment=מפעיל גלים גיאומטריים תלת-ממדיים על פני המים.
+option.WATER_TRANSPARENCY=צפיפות מים
+option.WATER_TRANSPARENCY.comment=שולט בשקיפות ובאטימות של המים.
+value.WATER_TRANSPARENCY.1=צלול
+value.WATER_TRANSPARENCY.2=מאוזן
+value.WATER_TRANSPARENCY.3=עמוק
+option.PROCEDURAL_CLOUDS=עננים תלת-ממדיים ווליומטריים
+option.PROCEDURAL_CLOUDS.comment=אפשר עננים תלת-ממדיים בני טיסה פיזית שניתן להגיע אליהם ולטוס דרכם.
+option.CLOUD_HEIGHT=גובה ענן
+option.CLOUD_HEIGHT.comment=הגדר את הגובה הפיזי (רמת Y) של שכבת העננים בעולם (במטרים).
+option.CLOUD_THICKNESS=עובי ענן
+option.CLOUD_THICKNESS.comment=הגדר את העובי האנכי והנפח של העננים.
+option.AURORA_MODE=זוהר צפוני
+option.AURORA_MODE.comment=שלוט בתצוגה של זוהר צפוני זורם ריאליסטי בשמי הלילה.
+value.AURORA_MODE.0=מושבת
+value.AURORA_MODE.1=רק בביומות קרים
+value.AURORA_MODE.2=תמיד מופעל
+option.AURORA_SPEED=מהירות זוהר
+option.AURORA_SPEED.comment=שלוט במהירות הנדנוד והזרימה של האורות הצפוניים.
+value.AURORA_SPEED.1=איטי
+value.AURORA_SPEED.2=סטנדרטי
+value.AURORA_SPEED.3=מהיר
+option.AURORA_STRENGTH=בהירות זוהר
+option.AURORA_STRENGTH.comment=שלוט בבהירות הזוהר הכוללת של האורות הצפוניים.
+value.AURORA_STRENGTH.1=רך
+value.AURORA_STRENGTH.2=סטנדרטי
+value.AURORA_STRENGTH.3=זוהר
+option.AURORA_QUALITY=Aurora Quality
+option.AURORA_QUALITY.comment=Raymarch steps for Aurora Borealis. Higher settings smooth curtain volume and reduce visible layering; the new centered sampling removes per-pixel grain.
+value.AURORA_QUALITY.1=Soft (8 steps)
+value.AURORA_QUALITY.2=Balanced (12 steps)
+value.AURORA_QUALITY.3=Silky (18 steps)
+option.NEBULA_BRIGHTNESS=בהירות שביל החלב
+option.NEBULA_BRIGHTNESS.comment=התאם את בהירות הזוהר של הערפילית הגלקטית האלכסונית החומה בלילה.
+value.NEBULA_BRIGHTNESS.1=עמום
+value.NEBULA_BRIGHTNESS.2=סטנדרטי
+value.NEBULA_BRIGHTNESS.3=בהיר
+option.STARS_BRIGHTNESS=בהירות כוכבים
+option.STARS_BRIGHTNESS.comment=שלוט בבהירות ובברק הנוצץ של הכוכבים בלילה.
+value.STARS_BRIGHTNESS.1=חלש
+value.STARS_BRIGHTNESS.2=סטנדרטי
+value.STARS_BRIGHTNESS.3=מבריק
+option.STARS_AMOUNT=צפיפות כוכבים
+option.STARS_AMOUNT.comment=שלוט בכמות הכוללת ובצפיפות הכוכבים בשמיים.
+value.STARS_AMOUNT.1=מעט
+value.STARS_AMOUNT.2=סטנדרטי
+value.STARS_AMOUNT.3=צפוף
+option.RAINBOW_STRENGTH=עוצמת קשת
+option.RAINBOW_STRENGTH.comment=הגדר את הבהירות ורוויית הצבע של הקשת שלאחר הגשם.
+value.RAINBOW_STRENGTH.1=עדין
+value.RAINBOW_STRENGTH.2=מאוזן
+value.RAINBOW_STRENGTH.3=עז
+option.COZY_LIGHTS=הבהוב לפיד
+option.COZY_LIGHTS.comment=אפשר אנימציות הבהוב חמות ונעימות בזמן אמת ללפידים, מדורות ופנסים.
+option.WET_REFLECTIONS=השתקפויות רטיבות גשם
+option.WET_REFLECTIONS.comment=כשיורד גשם, בלוקים מוצקים כמו קרקע, עשב ואבן הופכים רטובים, כהים ומבריקים תחת השמיים.
+option.GROUND_MIST=ערפל קרקע נמוך (Y=62-66)
+option.GROUND_MIST.comment=אפשר שכבות ערפל בוקר/ערב רכות בגוון זהב-לבן המחליקות מעל מים וקרח בשחר ובדמדומים.
+option.FOG_DENSITY_LEVEL=צפיפות ערפל
+option.FOG_DENSITY_LEVEL.comment=שלוט בעוצמת ערפל האופק האטמוספרי.
+value.FOG_DENSITY_LEVEL.1=נמוך
+value.FOG_DENSITY_LEVEL.2=בינוני
+value.FOG_DENSITY_LEVEL.3=גבוה
+
+option.TAA=החלקת קצוות זמנית (TAA)
+option.TAA.comment=פתרון זמני עם הקרנה מחדש של תנועה וחיתוך שכונתי. מפחית ריצוד וקצוות משוננים בהגדרות מוקדמות גבוהות.
+option.TAA_STRENGTH=עוצמת TAA
+option.TAA_STRENGTH.comment=שולט במיזוג ההיסטוריה. גבוה יותר יציב יותר אך יכול להיות רך יותר במהלך תנועה.
+value.TAA_STRENGTH.1=קליל
+value.TAA_STRENGTH.2=מאוזן
+value.TAA_STRENGTH.3=יציב
+
+option.TAA_JITTER=רעידת מצלמה (TAA)
+option.TAA_JITTER.comment=רעידת מצלמה תת-פיקסלית (Halton) המאפשרת ל-TAA לשחזר פרטים תת-פיקסליים. כבוי כברירת מחדל לתמונה יציבה לחלוטין; עדין ומעלה מסיר הבהוב בתדר גבוה במחיר תנודה זמנית קלה. דורש TAA מופעל.
+value.TAA_JITTER.0=כבוי
+value.TAA_JITTER.1=עדין
+value.TAA_JITTER.2=רגיל
+value.TAA_JITTER.3=חזק
+option.WATER_RIFFLES=עוצמת אדוות מים
+option.WATER_RIFFLES.comment=מתאים את עוצמת האדוות העדינות של מפת הנורמלים על המים.
+value.WATER_RIFFLES.1=רגוע
+value.WATER_RIFFLES.2=סטנדרטי
+value.WATER_RIFFLES.3=סוער
+option.WATER_SPECULAR_STRENGTH=זוהר ספקולרי של מים
+option.WATER_SPECULAR_STRENGTH.comment=מתאים את הבהירות של השתקפויות השמש/הירח על אדוות המים.
+value.WATER_SPECULAR_STRENGTH.1=רך
+value.WATER_SPECULAR_STRENGTH.2=סטנדרטי
+value.WATER_SPECULAR_STRENGTH.3=נוצץ
+option.SHADOW_SOFTNESS=רכות צל
+option.SHADOW_SOFTNESS.comment=שולט עד כמה רכים ומפוזרים נראים קצוות הצל. משתמש בסינון דיסק פואסון מסובב לחצי-צל חלק.
+value.SHADOW_SOFTNESS.1=חד
+value.SHADOW_SOFTNESS.2=רך
+value.SHADOW_SOFTNESS.3=רך במיוחד
+
+option.SSAO=חסימת SSAO / SAO
+option.SSAO.comment=פרופיל קיצוני: חסימה היקפית במרחב המסך לצללי מגע בפינות, מתחת לקוביות ובמפגשי גאומטריה.
+option.SSAO_STRENGTH=עוצמת SSAO
+option.SSAO_STRENGTH.comment=שולט בעומק חסימת הסביבה במרחב המסך. פעיל רק כאשר SSAO מופעל.
+value.SSAO_STRENGTH.1=עדין
+value.SSAO_STRENGTH.2=מאוזן
+value.SSAO_STRENGTH.3=עמוק
+
+option.CLOUD_DISTANCE=מרחק עיבוד עננים
+option.CLOUD_DISTANCE.comment=מרחק ציור מרבי לעננים ווליומטריים. פרופילי איכות מגדילים אותו אוטומטית.
+
+option.CLOUD_SHADOWS=צללי עננים
+option.CLOUD_SHADOWS.comment=מוסיף צללים פרוצדורליים שקופים מצפיפות עננים ווליומטריים על השטח. מאוזן על ידי פרופילי איכות.
+option.CLOUD_SHADOW_STRENGTH=עוצמת צל עננים
+option.CLOUD_SHADOW_STRENGTH.comment=שולט עד כמה נראים ודרמטיים צללי העננים השקופים.
+value.CLOUD_SHADOW_STRENGTH.1=רך
+value.CLOUD_SHADOW_STRENGTH.2=מאוזן
+value.CLOUD_SHADOW_STRENGTH.3=דרמטי
+
+option.GODRAYS=קרני שמש (Godrays)
+option.GODRAYS.comment=Adds realistic screen-space sun shafts through sky gaps and behind geometry.
+option.GODRAYS_QUALITY=איכות Godrays
+option.GODRAYS_QUALITY.comment=Controls sample count and cost of godrays.
+value.GODRAYS_QUALITY.1=מהיר
+value.GODRAYS_QUALITY.2=מאוזן
+value.GODRAYS_QUALITY.3=גבוה
+
+# ==============================================================================
+# Sun and Moon (extended lighting)
+# ==============================================================================
+screen.SUN_MOON=שמש וירח
+screen.SUN_MOON.comment=כוונן במדויק את עוצמת השמש והירח, טמפרטורת הצבע והאפקטים האטמוספריים.
+option.SUN_INTENSITY=עוצמת שמש
+option.SUN_INTENSITY.comment=בהירות ראשית של אור שמש ישיר. גבוה יותר = ניגודיות יום חזקה יותר.
+value.SUN_INTENSITY.1=עמום
+value.SUN_INTENSITY.2=סטנדרטי
+value.SUN_INTENSITY.3=גבוה
+value.SUN_INTENSITY.4=לוהט
+option.MOON_INTENSITY=עוצמת ירח
+option.MOON_INTENSITY.comment=בהירות ראשית של אור הירח. גבוה יותר = לילות בהירים וגלויים יותר.
+value.MOON_INTENSITY.1=לילה שחור
+value.MOON_INTENSITY.2=סטנדרטי
+value.MOON_INTENSITY.3=ירח בהיר
+value.MOON_INTENSITY.4=לילה מלא
+option.SUN_TEMPERATURE=טמפרטורת צבע השמש
+option.SUN_TEMPERATURE.comment=מזיז את עקומת קלווין של השמש. ריאליסטי משתמש בגוף שחור של טאנר הלנד; חם = זהוב; קריר = לבן ניטרלי.
+value.SUN_TEMPERATURE.1=קריר / ניטרלי
+value.SUN_TEMPERATURE.2=ריאליסטי
+value.SUN_TEMPERATURE.3=זהב חם
+option.MOON_TEMPERATURE=טמפרטורת צבע הירח
+option.MOON_TEMPERATURE.comment=גוון אור הירח. קפוא = כחלחל קר; כסוף = ריאליסטי 4100K; חם = קרם ירח קציר.
+value.MOON_TEMPERATURE.1=כחול קפוא
+value.MOON_TEMPERATURE.2=כסוף (ריאליסטי)
+value.MOON_TEMPERATURE.3=קרם חם
+option.SUN_HALO=הילת שמש (פיזור מי)
+option.SUN_HALO.comment=מוסיף זוהר חמים ורך על השטח כאשר מסתכלים ליד השמש (פיזור מי קדימה).
+option.SUNRISE_GLOW=זוהר זריחה/שקיעה משופר
+option.SUNRISE_GLOW.comment=מאפשר פיזור אחורי חם וחזק יותר העוטף משטחים הפונים הרחק מהשמש הנמוכה.
+
+# ==============================================================================
+# Extended shadow settings
+# ==============================================================================
+option.shadowDistance=מרחק צל
+option.shadowDistance.comment=המרחק המקסימלי שבו צללים דינמיים מעובדים. ערכים גבוהים יותר מרחיבים את הצללים למרחק העיבוד; השתמש ב-Shadow LOD כדי לשמור על ביצועים בטווחים מורחבים.
+value.shadowDistance.60.0=קרוב (60מ')
+value.shadowDistance.80.0=סטנדרטי (80מ')
+value.shadowDistance.120.0=רחוק (120מ')
+value.shadowDistance.160.0=אולטרה (160מ')
+value.shadowDistance.256.0=מורחב (256 מ')
+value.shadowDistance.384.0=מרחק עיבוד (384 מ')
+value.shadowDistance.192.0=DH Seam (192m)
+value.shadowDistance.512.0=DH Extended (512m)
+value.shadowDistance.768.0=DH Far (768m)
+
+option.SHADOW_LOD=LOD צללים
+option.SHADOW_LOD.comment=שולט בהידרדרות איכות הצללים עם המרחק. עם מרחק צל מורחב (256-384 מ'), LOD מקטין את מספר הדגימות ומגדיל את רדיוס המסנן במרחק כדי לשמור על ביצועים. כבוי = איכות אחידה (איטי). מאוזן = הפחתה ב-25-50% מהמרחק. אגרסיבי = הפחתה מקסימלית ב-15-60% מהמרחק. צללים מודלגים לחלוטין מעבר ל-95% ממרחק העיבוד.
+value.SHADOW_LOD.0=כבוי (איכות אחידה)
+value.SHADOW_LOD.1=מאוזן
+value.SHADOW_LOD.2=אגרסיבי
+option.DH_SHADOW_RANGE=Distant Horizons Shadow Range
+option.DH_SHADOW_RANGE.comment=Maximum range where Distant Horizons LOD terrain and water can receive samples from the shared DH shadow map. Seam keeps shadows close to vanilla chunks; Far extends coverage but can cost more GPU time. No effect without Distant Horizons.
+value.DH_SHADOW_RANGE.1=Seam (1.25x)
+value.DH_SHADOW_RANGE.2=Extended (2x)
+value.DH_SHADOW_RANGE.3=Far (4x)
+option.SHADOW_PCSS_BLUR=טשטוש PCSS לפי מרחק
+option.SHADOW_PCSS_BLUR.comment=מאפשר ריכוך PCSS penumbra שמגביר את טשטוש הצללים עם המרחק ובגשם. כבה לרכות קבועה (צללים רחוקים חדים יותר, פחות ריאליסטיים).
+value.SHADOW_PCSS_BLUR.0=כבוי (רכות קבועה)
+value.SHADOW_PCSS_BLUR.1=מופעל (PCSS penumbra)
+
+option.AMBIENT_BRIGHTNESS=הרמת צל / סביבתי
+option.AMBIENT_BRIGHTNESS.comment=שולט עד כמה כהים נראים אזורים מוצללים בלילה ובמערות.
+value.AMBIENT_BRIGHTNESS.1=כהה
+value.AMBIENT_BRIGHTNESS.2=סטנדרטי
+value.AMBIENT_BRIGHTNESS.3=מורם (בהיר)
+option.SHADOW_TINT=גוון צל
+option.SHADOW_TINT.comment=מגוון צללי יום. צללים בעולם האמיתי תחת שמיים כחולים בעלי גוון קריר עדין.
+value.SHADOW_TINT.1=אפור ניטרלי
+value.SHADOW_TINT.2=כחול קר (ריאליסטי)
+value.SHADOW_TINT.3=חם
+option.LIGHT_WRAP=עטיפת אור
+option.LIGHT_WRAP.comment=מרכך את הטרמינטור בין משטחים מוארים ולא מוארים. ריאליסטי = למברט פיזי; רך = נעים לצילומי מסך.
+value.LIGHT_WRAP.1=ריאליסטי (למברט)
+value.LIGHT_WRAP.2=עטיפה רכה
+value.LIGHT_WRAP.3=מסוגנן
+
+# v0.2.9 — water/underwater option value labels (English fallback)
+value.WATER_WAVE_SCALE.1=רגוע
+value.WATER_WAVE_SCALE.2=סטנדרטי
+value.WATER_WAVE_SCALE.3=סוער
+value.WATER_WAVE_SCALE.4=סוער מאוד
+value.WATER_WAVE_DETAIL.1=גס
+value.WATER_WAVE_DETAIL.2=סטנדרטי
+value.WATER_WAVE_DETAIL.3=צפוף
+value.UNDERWATER_NIGHT_DARKNESS.1=בריכה מוארת ירח
+value.UNDERWATER_NIGHT_DARKNESS.2=עמום
+value.UNDERWATER_NIGHT_DARKNESS.3=לילה אמיתי
+value.UNDERWATER_NIGHT_DARKNESS.4=חשכה מוחלטת
+# ==============================================================================
+# Experimental Tab & New Sky (v1.1.0)
+# ==============================================================================
+screen.EXPERIMENTAL=ניסיוני
+screen.EXPERIMENTAL.comment=ניסיוני
+
+screen.ATMOSPHERE_OPTIONS=Atmosphere
+screen.ATMOSPHERE_OPTIONS.comment=Physical-sky scattering, altitude and temporal resolve controls.
+option.ATMOSPHERE_TURBIDITY=Atmospheric Turbidity
+option.ATMOSPHERE_TURBIDITY.comment=Controls aerosol haze in Physical Sky. Crisp gives a deep blue sky; Hazy gives a brighter, softer horizon and stronger forward scatter.
+value.ATMOSPHERE_TURBIDITY.1=Crisp
+value.ATMOSPHERE_TURBIDITY.2=Balanced
+value.ATMOSPHERE_TURBIDITY.3=Hazy
+option.ATMOSPHERE_SCALE=Atmosphere Scale
+option.ATMOSPHERE_SCALE.comment=Converts Minecraft altitude into atmosphere height for Physical Sky. Compact makes mountains affect the sky less; Cinematic preserves the original large-scale altitude effect.
+value.ATMOSPHERE_SCALE.1=Compact (25m/block)
+value.ATMOSPHERE_SCALE.2=Balanced (50m/block)
+value.ATMOSPHERE_SCALE.3=Cinematic (100m/block)
+option.GROUND_BOUNCE_MODE=Ground Bounce Albedo
+option.GROUND_BOUNCE_MODE.comment=Controls the lower-atmosphere ground-bounce colour in Physical Sky. Auto adapts to cold and swamp biome signals.
+value.GROUND_BOUNCE_MODE.0=Auto (Biome-aware)
+value.GROUND_BOUNCE_MODE.1=Neutral Soil
+value.GROUND_BOUNCE_MODE.2=Vegetation
+value.GROUND_BOUNCE_MODE.3=Snow
+value.GROUND_BOUNCE_MODE.4=Desert
+option.SKY_TEMPORAL=Physical Sky Temporal Resolve
+option.SKY_TEMPORAL.comment=Uses rotation-only history blending for Physical Sky to smooth low-sample scattering and horizon gradients. Disable if animated cloud/aurora ghosting is noticeable.
+option.SKY_MODE=שמיים חדשים (פיזור אטמוספרי)
+option.SKY_STYLE=סגנון שמיים
+option.SKY_STYLE.comment=הכיוון האמנותי של השמיים הפיזיקליים. ריאליסטי = גדלים זוויתיים אמיתיים וצבעים נייטרליים (מראה אסטרונומי). חצי ריאליסטי = שמש/ירח קריאים (×2,8), צבע עשיר יותר, זוהר רך. פנטזיה = שמש/ירח גדולים (×5,5), עטרה גדולה, פלטה חיה טורקיז/ארגמן/אינדיגו.
+option.SKY_MODE.comment=EXPERIMENTAL — off in all profiles. Gradient (legacy, default) or Physical realtime scattering with true multiple scattering (Rayleigh+Mie+Ozone, 1st+2nd+3rd order). Enable manually in this tab.
+value.SKY_MODE.0=מעבר גוונים (ישן)
+value.SKY_STYLE.0=ריאליסטי
+value.SKY_STYLE.1=חצי ריאליסטי
+value.SKY_STYLE.2=פנטזיה
+value.SKY_MODE.1=Realtime Scattering
+
+option.SKY_QUALITY=איכות פיזור שמיים
+option.SKY_QUALITY.comment=איכות פיזור שמיים
+value.SKY_QUALITY.1=מהיר
+value.SKY_QUALITY.2=רגיל
+value.SKY_QUALITY.3=גבוה
+
+# --- Auto-added missing translations (v1.1.0 sync) ---
+option.FOLIAGE_SSS=SSS צמחייה
+option.FOLIAGE_SSS.comment=מאפשר פיזור תת-משטחי (שקיפות) לעלים, עשב וצמחים כאשר מסתכלים כנגד האור.
+option.GODRAYS_STRENGTH=עוצמת Godrays
+option.GODRAYS_STRENGTH.comment=בהירות קרני האור הווליומטריות. עדין: ערפל אטמוספרי עדין. מאוזן: קרניים גלויות בבירור. דרמטי: קרניים קולנועיות נועזות.
+value.GODRAYS_STRENGTH.1=עדין
+value.GODRAYS_STRENGTH.2=מאוזן
+value.GODRAYS_STRENGTH.3=דרמטי
+option.SHOOTING_STARS=מטאורים (כוכבים נופלים)
+option.SHOOTING_STARS.comment=מטאורים מבוססי פיזיקה הנכנסים למזוספרה (~80-120 ק"מ). מעבד קשתות תלת-ממדיות אמיתיות של מעגל גדול עם עקומות אור אבלציה, צבע פלזמה של גוף שחור (3500-5500 K), הכחדת ריילי ליד האופק, ושבילי יינון מתמשכים על כדורי אש.
+option.SHOOTING_STARS_FREQUENCY=פעילות מטאורים (ZHR)
+option.SHOOTING_STARS_FREQUENCY.comment=קצב שעתי זניתי משוער. ספורדי = רקע ריאליסטי של כ-10 לשעה. פעיל = ממטר קל. סופה = צפיפות שיא (כ-100/שעה).
+value.SHOOTING_STARS_FREQUENCY.1=ספורדי (כ-10/שעה)
+value.SHOOTING_STARS_FREQUENCY.2=ממטר פעיל
+value.SHOOTING_STARS_FREQUENCY.3=סופת מטאורים
+option.SHOOTING_STARS_BRIGHTNESS=סולם גודל
+option.SHOOTING_STARS_BRIGHTNESS.comment=מכפיל ראשי בסולם גודל המטאור. חלש = ממוצע ריאליסטי; בהיר = מגדיל את כדורי האש לראייה קולנועית.
+value.SHOOTING_STARS_BRIGHTNESS.1=חלש (ריאליסטי)
+value.SHOOTING_STARS_BRIGHTNESS.2=סטנדרטי
+value.SHOOTING_STARS_BRIGHTNESS.3=כדורי אש בהירים
+option.SPATIAL_AA_MODE=החלקת קצוות מרחבית
+option.SPATIAL_AA_MODE.comment=בחר שיטת החלקת קצוות לאחר עיבוד. FXAA מהיר וזול. SMAA משתמש בבאפר עומק לאיכות טובה יותר בקצוות גיאומטריה. ניתן לשלב עם TAA.
+value.SPATIAL_AA_MODE.0=כבוי
+value.SPATIAL_AA_MODE.1=FXAA (מהיר)
+value.SPATIAL_AA_MODE.2=SMAA (איכות)
+option.HEAT_SHIMMER=נצנוץ חום מעל לבה
+option.HEAT_SHIMMER.comment=אפשר אפקט עיוות חום עדין במרחב המסך מעל משטחי לבה.
+option.HEAT_SHIMMER_STRENGTH=עוצמת נצנוץ חום
+option.HEAT_SHIMMER_STRENGTH.comment=שולט בעוצמת עיוות החום מעל הלבה.
+value.HEAT_SHIMMER_STRENGTH.1=עדין
+value.HEAT_SHIMMER_STRENGTH.2=מאוזן
+value.HEAT_SHIMMER_STRENGTH.3=חזק
+option.SSR=השתקפויות מרחב מסך (SSR)
+option.SSR.comment=מוסיף סביבה משתקפת בזמן אמת על מים, משטחים רטובים ובלוקים מתכתיים PBR. מופעל מ-MED ומעלה ב-v1.0.4.
+option.SSR_QUALITY=איכות SSR
+option.SSR_QUALITY.comment=שולט בדיוק ובמרחק הקרן של השתקפויות מרחב המסך. גבוה יותר = השתקפויות חדות יותר אך עלות GPU גבוהה יותר.
+value.SSR_QUALITY.1=מהיר (12 צעדים)
+value.SSR_QUALITY.2=מאוזן (24 צעדים)
+value.SSR_QUALITY.3=גבוה (40 צעדים)
+option.SSR_STRENGTH=עוצמת SSR
+option.SSR_STRENGTH.comment=שולט עד כמה נראית ובולטת הסביבה המשתקפת על משטחים מחזירי אור.
+option.WATER_WAVE_SCALE=משרעת גל
+option.WATER_WAVE_SCALE.comment=שולט בתלילות הנראית של גלי פני המים. רגוע = כמו מראה, סוער = השתקפויות שבורות מאוד.
+option.WATER_WAVE_DETAIL=פרטי גל
+option.WATER_WAVE_DETAIL.comment=שולט בכמה גלים קטנים מופיעים לכל בלוק. גס = כמה גלים גדולים, צפוף = הרבה אדוות קטנות.
+option.UNDERWATER_NIGHT_DARKNESS=חושך תת-מימי בלילה
+option.UNDERWATER_NIGHT_DARKNESS.comment=שולט עד כמה חשוכה הופכת הסצנה התת-מימית בלילה. בריכה מוארת ירח שומרת על בהירות; חשכה מוחלטת נותנת חושך קיצוני בסגנון הישרדות.
+value.SSR_STRENGTH.1=עדין
+value.SSR_STRENGTH.2=מאוזן
+value.SSR_STRENGTH.3=חזק
+option.PBR_DISTANCE=מרחק עיבוד PBR
+option.PBR_DISTANCE.comment=מרחק מרבי להבהקים ספקולריים של PBR. חוסך GPU בשטח רחוק. קרוב (16 מ') ל-LOW, סטנדרטי (48 מ') ל-MED, רחוק (128 מ') ל-HIGH/ULTRA, ללא הגבלה ל-EXTREME.
+value.PBR_DISTANCE.1=קרוב (16מ')
+value.PBR_DISTANCE.2=סטנדרטי (48מ')
+value.PBR_DISTANCE.3=רחוק (128מ')
+value.PBR_DISTANCE.4=ללא הגבלה
+
+# v1.1.1 — shadow pipeline + POM option labels
+value.shadowMapResolution.512=512
+value.shadowMapResolution.1024=1024
+value.shadowMapResolution.2048=2048
+value.shadowMapResolution.4096=4096
+value.shadowMapResolution.8192=8192
+option.POM_DEPTH=עומק POM
+option.POM_DEPTH.comment=שולט בעומק הנראה של מיפוי parallax כאשר PBR POM מופעל.
+value.POM_DEPTH.1=נמוך
+value.POM_DEPTH.2=סטנדרטי
+value.POM_DEPTH.3=עמוק
+option.POM_STEPS=צעדי POM
+option.POM_STEPS.comment=שולט במספר צעדי raymarch למיפוי parallax. ערכים גבוהים יותר משפרים את האיכות אך דורשים יותר זמן GPU.
+value.POM_STEPS.1=מהיר
+value.POM_STEPS.2=סטנדרטי
+value.POM_STEPS.3=גבוה
+value.POM_STEPS.4=אולטרה
+
+screen.SHADOW_OPTIONS=צללים
+screen.SHADOW_OPTIONS.comment=רזולוציה, מרחק, רכות וגוון של צללים דינמיים.
+screen.PBR_OPTIONS=PBR וחומרים
+screen.PBR_OPTIONS.comment=תאורת PBR, תבליט parallax, עוצמה ומרחק עיבוד.
+screen.AO_REFLECTIONS=AO והשתקפויות
+screen.AO_REFLECTIONS.comment=SSAO, השתקפויות מסך, והשתקפויות גשם.
+screen.CLOUD_SHAPE=עננים
+screen.CLOUD_SHAPE.comment=צורה, גובה, מרחק וצללים של עננים נפחיים.
+screen.CLOUD_BODY=Cloud Body
+screen.CLOUD_BODY.comment=Altitude, thickness, distance, and the two settings that vary from cloud to cloud: base level and updraft.
+screen.CLOUD_PERF=Cloud Quality
+screen.CLOUD_PERF.comment=Everything that trades picture for frame time. Resolution (steps) and detail (octaves) are independent: you can keep crisp cloud tops and still lower the step count.
+screen.LIGHT_SHAFTS=קרני אור
+screen.LIGHT_SHAFTS.comment=קרני שמש/ירח נפחיים והאיכות/עוצמה שלהם.
+screen.NIGHT_SKY=שמי הלילה
+screen.NIGHT_SKY.comment=זוהר, כוכבים, שביל החלב וכוכבים נופלים.
+
+# [v1.1.3]
+option.CLOUD_QUALITY=איכות ray-marching עננים
+option.CLOUD_QUALITY.comment=Raymarch resolution: how many samples the cloud volume gets along the ray (14/24/36/56 steps). Lower it for FPS -- it costs shape detail only in combination with CLOUD_DETAIL below.
+option.BLOOM=HDR Bloom
+option.BLOOM.comment=Enable or disable the HDR bloom pass. When disabled, AuraLite skips all five bloom composite passes for lower GPU load.
+option.HDR_BLOOM=זוהר HDR
+option.HDR_BLOOM.comment=עוצמת הזוהר הגאוסיאני הרחב סביב מקורות בהירים יתר על המידה: דיסקת שמש/ירח, לבה, פורטלים, ברק חם. משתמש במעברי פירמידת ה-bloom החדשים.
+value.HDR_BLOOM.1=עדין
+value.HDR_BLOOM.2=מאוזן
+value.HDR_BLOOM.3=חזק
+option.POST_SHARPEN=חידוד (CAS)
+option.POST_SHARPEN.comment=מסכת אי-חדות עדינה לאחר TAA שמחזירה פרטי מרקם שרוככו על ידי הצטברות זמנית. השבת לתמונה רכה וקולנועית יותר.
+
+# [v1.1.3]
+
+# ==============================================================================
+# Only the three channel sliders carry a colour code, because there the colour
+# IS the information: red gain is red, green is green, blue is blue. Everything
+# else stays default white — a menu does not need a palette to be readable.
+# ==============================================================================
+screen.COLOR=Colour Grading
+screen.COLOR.comment=Exposure, per-channel gain, brightness, contrast, saturation, gamma and vignette — all as sliders.
+screen.COLOR_TONE=Tone
+screen.COLOR_TONE.comment=Exposure, brightness, contrast, saturation and output gamma.
+screen.COLOR_RGB=Channels
+screen.COLOR_RGB.comment=Per-channel red/green/blue gain plus warm-cool and green-magenta balance.
+screen.COLOR_LOOK=Look
+screen.COLOR_LOOK.comment=Selective vibrance, vignette strength and the tone-mapping curve.
+
+option.COLOR_EXPOSURE=Exposure
+option.COLOR_EXPOSURE.comment=Linear exposure, applied before tone mapping. Above 1.00 the scene brightens and highlights roll off instead of clipping.
+option.COLOR_BRIGHTNESS=Brightness
+option.COLOR_BRIGHTNESS.comment=Midtone lift applied after tone mapping. Because it is a curve and not a multiply, blacks stay black and highlights cannot clip.
+option.COLOR_CONTRAST=Contrast
+option.COLOR_CONTRAST.comment=Contrast around middle grey (0.5) — the classic brightness/contrast operation.
+option.COLOR_SATURATION=Saturation
+option.COLOR_SATURATION.comment=0.00 is greyscale, 1.00 is untouched, above 1.00 is oversaturated.
+option.COLOR_GAMMA=Output Gamma
+option.COLOR_GAMMA.comment=Output encode exponent. 2.20 is the pack default. Lower values lift shadows, higher values crush them.
+option.COLOR_TONEMAP=Tone Curve
+option.COLOR_TONEMAP.comment=Which filmic curve maps HDR to the screen. ACES is the pack default.
+value.COLOR_TONEMAP.1=ACES (default)
+value.COLOR_TONEMAP.2=ACES soft
+value.COLOR_TONEMAP.3=ACES punchy
+value.COLOR_TONEMAP.4=Photographic (AgX-like)
+
+option.COLOR_RED=§cRed Gain§r
+option.COLOR_RED.comment=Multiplies scene-linear red before tone mapping.
+option.COLOR_GREEN=§aGreen Gain§r
+option.COLOR_GREEN.comment=Multiplies scene-linear green before tone mapping.
+option.COLOR_BLUE=§9Blue Gain§r
+option.COLOR_BLUE.comment=Multiplies scene-linear blue before tone mapping.
+option.COLOR_LUMA_PROTECT=Keep Brightness (luma protect)
+option.COLOR_LUMA_PROTECT.comment=On: the RGB / warmth / tint sliders shift colour but leave average brightness alone. Off: raw channel multipliers, which also brighten or darken the frame.
+option.COLOR_WARMTH=Warmth
+option.COLOR_WARMTH.comment=Moves the red/blue balance without touching green. Positive is warmer (sunset), negative is cooler (overcast, moonlight).
+option.COLOR_TINT=Tint
+option.COLOR_TINT.comment=Moves the green/magenta balance. Positive is greener, negative is magenta.
+
+option.COLOR_VIBRANCE=Selective Vibrance
+option.COLOR_VIBRANCE.comment=Saturation that treats colours differently: muted ones move more than already-saturated ones. 0.00 reproduces the pack's built-in look exactly.
+option.COLOR_VIGNETTE=Vignette Strength
+option.COLOR_VIGNETTE.comment=Corner darkening. 0.00 disables it without switching VIGNETTE off; 2.00 doubles it.
+option.VIGNETTE=Vignette
+option.VIGNETTE.comment=Master switch for corner darkening. Use Vignette Strength to dial the amount.
+
+option.CLOUD_MODE=Cloud Renderer
+option.CLOUD_MODE.comment=Volumetric: the ray marches through a 3D density field and every sample shadows itself toward the sun (self-shadowing, silver lining, real depth). Layered sheets: the v1.1.4 look, cheaper.
+value.CLOUD_MODE.0=Layered sheets (v1.1.4)
+value.CLOUD_MODE.1=Volumetric
+option.CLOUD_COVERAGE=Cloud Coverage
+option.CLOUD_COVERAGE.comment=How much of the sky the clouds fill. This changes cloud fraction, not brightness: it moves the threshold the density noise has to cross.
+value.CLOUD_COVERAGE.1=Clear
+value.CLOUD_COVERAGE.2=Scattered
+value.CLOUD_COVERAGE.3=Broken
+value.CLOUD_COVERAGE.4=Broken to overcast
+value.CLOUD_COVERAGE.5=Overcast
+option.CLOUD_DENSITY=Cloud Density
+option.CLOUD_DENSITY.comment=Extinction coefficient of the cloud medium, in 1/m. Real water clouds sit between 0.005 and 0.1; 0.030 is a typical cumulus. Higher makes clouds darker and more opaque inside.
+value.CLOUD_QUALITY.1=Cheap (14 steps)
+value.CLOUD_QUALITY.2=Standard (24 steps)
+value.CLOUD_QUALITY.3=High (36 steps)
+value.CLOUD_QUALITY.4=Extreme (56 steps)
+option.CLOUD_DETAIL=Cloud Shape Detail
+option.CLOUD_DETAIL.comment=How small a feature the cloud shape can carry: 1080 m at 1, 540 m at 2, 270 m at 3, 135 m at 4. Independent of the raymarch resolution above, so you can keep crisp cloud tops and still lower the step count for FPS. Raising both together is the expensive combination.
+value.CLOUD_DETAIL.1=Low (2 octaves, 1080 m)
+value.CLOUD_DETAIL.2=Medium (3 octaves, 540 m)
+value.CLOUD_DETAIL.3=High (4 octaves, 270 m)
+value.CLOUD_DETAIL.4=Extreme (5 octaves, 135 m)
+
+option.VEGETATION_CANOPY=Vegetation Canopy
+option.VEGETATION_CANOPY.comment=Shade foliage as a canopy (light reaching the inside of the crown) instead of flat vertical cards.
+option.GROUND_MIST_DENSITY=Ground Mist Density
+option.GROUND_MIST_DENSITY.comment=How much mist pools in the low ground at dawn.
+value.GROUND_MIST_DENSITY.1=Light
+value.GROUND_MIST_DENSITY.2=Standard
+value.GROUND_MIST_DENSITY.3=Heavy
+option.UNDERWATER_WAVES=Underwater Waves
+option.UNDERWATER_WAVES.comment=Distortion and caustics seen from below the surface. Caustics stay off by default: they are a stylistic choice, not a physical necessity.
+value.UNDERWATER_WAVES.0=Off (calm)
+value.UNDERWATER_WAVES.1=Subtle
+value.UNDERWATER_WAVES.2=Light caustics
+value.UNDERWATER_WAVES.3=Strong
+
+option.CLOUD_CIRRUS=Cirrus Veil
+option.CLOUD_CIRRUS.comment=High, thin ice cloud above the cumulus. It is raymarched like the rest, just thin and cheap. Off leaves the cumulus deck alone in the sky.
+option.DITHER_STRENGTH=Output Dither
+option.DITHER_STRENGTH.comment=Sub-pixel noise added before tone mapping to break up 8-bit banding in smooth sky gradients. It is a trade: less banding, a little grain. Light is half of what v1.1.4 used.
+value.DITHER_STRENGTH.1=Off
+value.DITHER_STRENGTH.2=Light (half of v1.1.4)
+value.DITHER_STRENGTH.3=Medium
+value.DITHER_STRENGTH.4=v1.1.4
+
+option.CLOUD_HEIGHT.comment=Base altitude of the cloud deck in metres. 1200 m is a typical fair-weather cumulus base; Minecraft's own clouds sit at 192 and look like a low ceiling for that reason.
+value.CLOUD_HEIGHT.1=Low (400 m)
+value.CLOUD_HEIGHT.2=Cumulus base (1200 m)
+value.CLOUD_HEIGHT.3=High (2400 m)
+value.CLOUD_HEIGHT.4=Very high (3600 m)
+option.CLOUD_THICKNESS.comment=Deck depth as a fraction of the base altitude: half, equal, or one and a half times. Fair-weather cumulus is 500-1500 m deep.
+value.CLOUD_THICKNESS.1=Thin (0.5x)
+value.CLOUD_THICKNESS.2=Normal (1.0x)
+value.CLOUD_THICKNESS.3=Deep (1.5x)
+option.CLOUD_DISTANCE.comment=How far the deck is drawn. Cloud colour is washed toward the sky with distance (aerial perspective), so the far end fades out instead of ending on an edge.
+value.CLOUD_DISTANCE.1=6 km
+value.CLOUD_DISTANCE.2=12 km
+value.CLOUD_DISTANCE.3=20 km
+value.CLOUD_DISTANCE.4=32 km
+
+option.CLOUD_MICRO=Droplet Spectrum
+option.CLOUD_MICRO.comment=Controls droplet size, which sets how much a given water content scatters and how strongly forward-scattering the phase function is. Continental air has many small droplets (brighter, more diffuse); maritime air has fewer, larger ones (darker, sharper silver lining).
+value.CLOUD_MICRO.1=Continental (6 um, g=0.82)
+value.CLOUD_MICRO.2=Typical (8 um, g=0.85)
+value.CLOUD_MICRO.3=Maritime (12 um, g=0.87)
+option.CLOUD_SCALE=Cloud Size
+option.CLOUD_SCALE.comment=Width of one cloud cell relative to the depth of the deck. Real cumulus are about as wide as they are thick: compact cumulus roughly match their depth, congestus reach three depths across. Larger cells mean fewer, broader clouds in view; smaller cells mean a busier sky.
+value.CLOUD_SCALE.1=Compact (1.2x depth)
+value.CLOUD_SCALE.2=Typical (1.8x depth)
+value.CLOUD_SCALE.3=Broad (3.0x depth)
+option.CLOUD_BASE_VARIATION=Condensation Level Spread
+option.CLOUD_BASE_VARIATION.comment=How much the cloud base height varies between clouds. Real cumulus share a nearly level base because every thermal condenses at the same height, but over tens of kilometres surface temperature and moisture drift, so the level is ragged rather than one shelf. Smaller values give the clean shelf of a calm afternoon; larger values give a broken, stormy sky where each cell has its own base.
+value.CLOUD_BASE_VARIATION.1=Even (±40 m)
+value.CLOUD_BASE_VARIATION.2=Natural (±120 m)
+value.CLOUD_BASE_VARIATION.3=Ragged (±250 m)
+option.CLOUD_UPDRAFT=Updraft Speed
+option.CLOUD_UPDRAFT.comment=How fast the cloud body streams upward. Real cumulus are conveyor belts: air rises through them at 1-3 m/s in fair weather and 20-30 m/s in a storm core, so the shape keeps being replaced from below and the tops appear to boil. The deck itself stays at the same altitude; only the structure inside moves. Storms multiply this.
+value.CLOUD_UPDRAFT.1=Drifting (1.5 m/s)
+value.CLOUD_UPDRAFT.2=Natural (2.5 m/s)
+value.CLOUD_UPDRAFT.3=Vigorous (4.0 m/s)
+option.CLOUD_DENSITY.comment=Liquid water content of the cloud core, in g/m3. Extinction is derived from it and from droplet size, not set directly.
+option.CLOUD_MID_LAYER=שכבת עננים בגובה בינוני
+option.CLOUD_MID_LAYER.comment=שכבה נוספת שמתפתחת בגובה בינוני; עשויה להפחית את ה-FPS.
+
+value.CLOUD_DENSITY.1=Thin (0.075 g/m3)
+value.CLOUD_DENSITY.2=Typical (0.15 g/m3)
+value.CLOUD_DENSITY.3=Dense (0.30 g/m3)

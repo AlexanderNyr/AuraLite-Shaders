@@ -1,0 +1,635 @@
+shaderDescription=AuraLite v1.2.0 — физикалық бұлттар, аспан және су, түсті реттеу
+# AuraLite Shaders v1.2.0 - Copyright (c) 2026 AlexanderNyr. Licensed under CC BY-NC-SA 4.0.
+# ==============================================================================
+# AuraLite Shader Pack - Kazakh Language Translations
+# ==============================================================================
+
+# ==============================================================================
+# Quality Profiles
+# ==============================================================================
+profile.VERY_LOW=Өте төмен
+profile.VERY_LOW.comment=Абсолютті FPS максимумы. Барлық қосымшалар өшірулі: көлеңкесіз, бұлтсыз, PBR-сіз, SSR-сіз, жарық сәулелерсіз. Тек минималды рендерлеу.
+profile.LOW=Төмен
+profile.LOW.comment=Жеңіл, бірақ ойнауға болады. Жапырақтар/су анимациясын, ашығырақ жұлдыздарды, FXAA, виньетканы сақтайды. Көлеңкесіз, бұлтсыз, PBR-сіз.
+profile.MED=Орташа
+profile.MED.comment=Күнделікті тәтті нүкте. Көлеңкелер 1024, бұлттар, PBR, SSR Жылдам, жарық сәулелері, жапырақтар SSS, ылғалды шағылысулар, тұман, метеорлар.
+profile.HIGH=Жоғары
+profile.HIGH.comment=Энтузиаст сапасы. Көлеңкелер 2048, SSR Теңгерілген, TAA, SSAO Нәзік, жарық сәулелері Теңгерілген, SMAA.
+profile.ULTRA=Ультра
+profile.ULTRA.comment=High-end. Көлеңкелер 4096, SSR Жоғары, SSAO Теңгерілген, жарық сәулелері Жоғары, TAA Тұрақты, барлық эффект қосулы.
+profile.EXTREME=Экстремалды
+profile.EXTREME.comment=Кинематографиялық максимум. Барлығы максимумда: PBR Шексіз диапазон, фотографиялық (AgX) тон картасы, ең терең SSAO, метеор дауылдары.
+profile.CUSTOM=Жеке
+profile.CUSTOM.comment=Пайдаланушы өзгерткен реттелетін параметрлер.
+
+screen.TRANSLATION_NOTICE=⚠ Аудармаларда қателер болуы мүмкін
+screen.TRANSLATION_NOTICE.comment=Кейбір локализация жолдары дәл болмауы мүмкін. Егер бір нәрсе біртүрлі көрінсе, ағылшын түпнұсқасымен салыстырыңыз.
+
+# Screens
+screen.LIGHTING=Жарық баптаулары
+screen.LIGHTING.comment=Көлеңкелерді, жарық түстерін және жарықтылықты теңшеңіз.
+
+screen.FOLIAGE=Өсімдік баптаулары
+screen.FOLIAGE.comment=Шөп пен жапырақтардың толқындану анимациясын теңшеңіз.
+
+screen.WATER=Су баптаулары
+screen.WATER.comment=Толқындарды, мөлдірлікті және су стилін теңшеңіз.
+
+screen.CLOUDS_MENU=Аспан және бұлттар
+screen.CLOUDS_MENU.comment=3D бұлттар мен аспан әсерлерінің физикалық биіктігін, қалыңдығын және стилін теңшеңіз.
+
+screen.POST_PROCESS=Пост-өңдеу және тұман
+screen.POST_PROCESS.comment=Экспозицияны, тұманды және кинематографиялық әсерлерді теңшеңіз.
+screen.POST_FOG=Fog & Image
+screen.POST_FOG.comment=Fog density, ground mist, heat shimmer and dithering.
+
+# Options
+option.SHADOWS=Динамикалық көлеңкелер
+option.SHADOWS.comment=Күн мен айдан жұмсақ динамикалық көлеңкелерді қосыңыз немесе өшіріңіз.
+
+option.shadowMapResolution=Көлеңке ажыратымдылығы
+option.shadowMapResolution.comment=Көлеңке картасының сапасын өзгертіңіз. Жоғары мәндер өнімділікті төмендетуі мүмкін.
+
+option.PBR_LIGHTING=PBR жарықтандыру (LabPBR)
+option.PBR_LIGHTING.comment=Металдар, кедір-бұдырлық және 3D қалыпты карталар үшін физикалық негізделген рендерингті қосыңыз (PBR ресурс пакеті қажет).
+
+option.PBR_POM=3D блок релефі (POM)
+option.PBR_POM.comment=3D блок текстуралары үшін физикалық негізделген Parallax Occlusion Mapping қосыңыз. Үйлесімсіз ресурс пакеттерінде өшіру ұсынылады.
+
+option.PBR_STRENGTH=PBR қарқындылығы
+option.PBR_STRENGTH.comment=PBR металл беттерінің шағылысуы мен жылтырлығын басқарыңыз.
+
+value.PBR_STRENGTH.1=Жеңіл
+value.PBR_STRENGTH.2=Стандартты
+value.PBR_STRENGTH.3=Айна
+
+option.SSAO=SSAO / SAO окклюзиясы
+option.SSAO.comment=Extreme profile: screen-space ambient occlusion for contact shadows in corners, under blocks, and around geometry intersections.
+option.SSAO_STRENGTH=SSAO күші
+option.SSAO_STRENGTH.comment=Экран кеңістігіндегі қоршаған орта окклюзиясының тереңдігін басқарады. Тек SSAO қосылған кезде белсенді.
+value.SSAO_STRENGTH.1=Жеңіл
+value.SSAO_STRENGTH.2=Теңгерілген
+value.SSAO_STRENGTH.3=Терең
+
+option.LIGHTMAP_WARMTH=Алау жылуы
+option.LIGHTMAP_WARMTH.comment=Блок/алау жарығының жылуы мен түсін реттеңіз.
+
+value.LIGHTMAP_WARMTH.1=Жайлы
+value.LIGHTMAP_WARMTH.2=Жылы
+value.LIGHTMAP_WARMTH.3=Қарқынды
+
+option.WAVING_LEAVES=Жапырақтардың толқындануы
+option.WAVING_LEAVES.comment=Ағаш жапырақтарының жұмсақ толқындану анимациясын қосыңыз.
+
+option.WAVING_GRASS=Өсімдіктердің толқындануы
+option.WAVING_GRASS.comment=Шөп, гүлдер мен дақылдардың толқындану анимациясын қосыңыз.
+
+option.WIND_SPEED=Жел жылдамдығы
+option.WIND_SPEED.comment=Жапырақтар, өсімдіктер мен су толқындарының толқындану жылдамдығын басқарыңыз.
+
+value.WIND_SPEED.1=Жұмсақ
+value.WIND_SPEED.2=Самал
+value.WIND_SPEED.3=Дауыл
+
+option.WATER_WAVES=Су толқындары
+option.WATER_WAVES.comment=Enable 3D geometric waves on the water surface.
+
+option.WATER_TRANSPARENCY=Су тығыздығы
+option.WATER_TRANSPARENCY.comment=Control the transparency and opacity of the water.
+
+value.WATER_TRANSPARENCY.1=Мөлдір
+value.WATER_TRANSPARENCY.2=Теңгерілген
+value.WATER_TRANSPARENCY.3=Терең
+
+option.PROCEDURAL_CLOUDS=Көлемдік 3D бұлттар
+option.PROCEDURAL_CLOUDS.comment=Жетуге және ұшып өтуге болатын физикалық ұшуға жарамды 3D бұлттарды қосыңыз.
+
+option.CLOUD_HEIGHT=Бұлт биіктігі
+option.CLOUD_HEIGHT.comment=Әлемдегі бұлт қабатының физикалық биіктігін (Y-деңгейі) орнатыңыз (метрмен).
+
+
+option.CLOUD_THICKNESS=Бұлт қалыңдығы
+option.CLOUD_THICKNESS.comment=Бұлттардың тік қалыңдығы мен көлемін теңшеңіз.
+
+
+option.CLOUD_DISTANCE=Бұлт рендерингінің қашықтығы
+option.CLOUD_DISTANCE.comment=Көлемдік бұлттар үшін максималды сурет салу қашықтығы. Сапа профильдері оны автоматты түрде арттырады.
+
+option.CLOUD_SHADOWS=Бұлт көлеңкелері
+option.CLOUD_SHADOWS.comment=Көлемдік бұлт тығыздығынан жерге мөлдір процедуралық көлеңкелер қосады. Сапа профильдерімен теңгеріледі.
+option.CLOUD_SHADOW_STRENGTH=Бұлт көлеңкесінің күші
+option.CLOUD_SHADOW_STRENGTH.comment=Мөлдір бұлт көлеңкелерінің қаншалықты көрінетінін және әсерлі екенін басқарады.
+value.CLOUD_SHADOW_STRENGTH.1=Жұмсақ
+value.CLOUD_SHADOW_STRENGTH.2=Теңгерілген
+value.CLOUD_SHADOW_STRENGTH.3=Драмалық
+
+option.GODRAYS=Күн сәулелері (Godrays)
+option.GODRAYS.comment=Adds physically-inspired volumetric single-scattering sun shafts with Beer-Lambert extinction, Mie phase and shadow-map occlusion.
+option.GODRAYS_QUALITY=Godrays сапасы
+option.GODRAYS_QUALITY.comment=Controls the sample count and integration distance of physically-based volumetric godrays.
+value.GODRAYS_QUALITY.1=Жылдам
+value.GODRAYS_QUALITY.2=Теңгерілген
+value.GODRAYS_QUALITY.3=Жоғары
+
+option.AURORA_MODE=Полярлық жарық
+option.AURORA_MODE.comment=Түнгі аспандағы шынайы ағып жатқан полярлық жарықтың көрсетілуін басқарыңыз.
+
+value.AURORA_MODE.0=Өшірілген
+value.AURORA_MODE.1=Тек суық биомдарда
+value.AURORA_MODE.2=Әрқашан қосулы
+
+option.AURORA_SPEED=Жарық жылдамдығы
+option.AURORA_SPEED.comment=Солтүстік жарықтың толқындану және ағу жылдамдығын басқарыңыз.
+
+value.AURORA_SPEED.1=Баяу
+value.AURORA_SPEED.2=Стандартты
+value.AURORA_SPEED.3=Жылдам
+
+option.AURORA_STRENGTH=Жарықтың жарықтығы
+option.AURORA_STRENGTH.comment=Солтүстік жарықтың жалпы жарқырау жарықтығын басқарыңыз.
+
+value.AURORA_STRENGTH.1=Жұмсақ
+value.AURORA_STRENGTH.2=Стандартты
+value.AURORA_STRENGTH.3=Жарқыраған
+
+option.AURORA_QUALITY=Aurora Quality
+option.AURORA_QUALITY.comment=Raymarch steps for Aurora Borealis. Higher settings smooth curtain volume and reduce visible layering; the new centered sampling removes per-pixel grain.
+value.AURORA_QUALITY.1=Soft (8 steps)
+value.AURORA_QUALITY.2=Balanced (12 steps)
+value.AURORA_QUALITY.3=Silky (18 steps)
+option.NEBULA_BRIGHTNESS=Құс жолының жарықтығы
+option.NEBULA_BRIGHTNESS.comment=Түнде диагональды қоңырлау галактикалық тұмандықтың жарқырау жарықтығын реттеңіз.
+
+value.NEBULA_BRIGHTNESS.1=Күңгірт
+value.NEBULA_BRIGHTNESS.2=Стандартты
+value.NEBULA_BRIGHTNESS.3=Жарқын
+
+option.STARS_BRIGHTNESS=Жұлдыздар жарықтығы
+option.STARS_BRIGHTNESS.comment=Түнде жұлдыздардың жарықтығы мен жарқыраған жарқырауын басқарыңыз.
+
+value.STARS_BRIGHTNESS.1=Күңгірт
+value.STARS_BRIGHTNESS.2=Стандартты
+value.STARS_BRIGHTNESS.3=Жарқыраған
+
+option.STARS_AMOUNT=Жұлдыздар тығыздығы
+option.STARS_AMOUNT.comment=Аспандағы жұлдыздардың жалпы санын және тығыздығын басқарыңыз.
+
+value.STARS_AMOUNT.1=Аз
+value.STARS_AMOUNT.2=Стандартты
+value.STARS_AMOUNT.3=Тығыз
+
+option.RAINBOW_STRENGTH=Кемпірқосақ қарқындылығы
+option.RAINBOW_STRENGTH.comment=Жаңбырдан кейінгі кемпірқосақтың жарықтығы мен түс қанықтығын теңшеңіз.
+
+value.RAINBOW_STRENGTH.1=Жеңіл
+value.RAINBOW_STRENGTH.2=Теңгерілген
+value.RAINBOW_STRENGTH.3=Жарқын
+
+option.COZY_LIGHTS=Алаудың жыпылықтауы
+option.COZY_LIGHTS.comment=Алаулар, лагерь оттары мен шамдар үшін жылы, жайлы, нақты уақыттағы жыпылықтау анимациясын қосыңыз.
+
+option.WET_REFLECTIONS=Жаңбыр ылғалдылығының шағылысуы
+option.WET_REFLECTIONS.comment=Жаңбыр жауғанда жер, шөп және тас сияқты қатты блоктар аспан астында дымқыл, күңгірт және жылтыр болады.
+
+option.GROUND_MIST=Төмен жер тұманы (Y=62-66)
+option.GROUND_MIST.comment=Таң мен ымыртта су мен мұздың үстінен сырғанайтын жұмсақ, алтын-ақ таңғы/кешкі тұман қабаттарын қосыңыз.
+
+option.FOG_DENSITY_LEVEL=Тұман тығыздығы
+option.FOG_DENSITY_LEVEL.comment=Атмосфералық көкжиек тұманының күшін басқарыңыз.
+
+value.FOG_DENSITY_LEVEL.1=Төмен
+value.FOG_DENSITY_LEVEL.2=Орташа
+value.FOG_DENSITY_LEVEL.3=Жоғары
+
+
+
+
+
+
+
+option.TAA=Уақыттық тегістеу (TAA)
+option.TAA.comment=Қозғалысты қайта проекциялау және көршілес кесу арқылы уақыттық шешім. Жоғары дайын параметрлерде жыпылықтауды және тісті жиектерді азайтады.
+option.TAA_STRENGTH=TAA күші
+option.TAA_STRENGTH.comment=Тарихты араластыруды басқарады. Жоғарырақ тұрақтырақ, бірақ қозғалыс кезінде жұмсақ болуы мүмкін.
+value.TAA_STRENGTH.1=Жеңіл
+value.TAA_STRENGTH.2=Теңгерілген
+value.TAA_STRENGTH.3=Тұрақты
+
+option.TAA_JITTER=Камера дірілі (TAA)
+option.TAA_JITTER.comment=TAA-ға субпиксельдік бөлшектерді қалпына келтіруге мүмкіндік беретін субпиксельдік Halton камера дірілі. Мүлдем тұрақты сурет үшін әдепкіде өшірулі; Нәзік және одан жоғары жоғары жиілікті жыпылықтауды жеңіл уақыттық тербеліс есебінен жояды. TAA қосулы болуын талап етеді.
+value.TAA_JITTER.0=Өшірулі
+value.TAA_JITTER.1=Нәзік
+value.TAA_JITTER.2=Стандартты
+value.TAA_JITTER.3=Күшті
+
+
+option.WATER_RIFFLES=Су толқындарының күші
+option.WATER_RIFFLES.comment=Adjust the waviness and intensity of the fine normal map ripples on the water.
+
+value.WATER_RIFFLES.1=Тыныш
+value.WATER_RIFFLES.2=Стандартты
+value.WATER_RIFFLES.3=Толқынды
+
+option.WATER_SPECULAR_STRENGTH=Судың айналық жарқырауы
+option.WATER_SPECULAR_STRENGTH.comment=Adjust the brightness of sun/moon reflections on the water ripples.
+
+value.WATER_SPECULAR_STRENGTH.1=Жұмсақ
+value.WATER_SPECULAR_STRENGTH.2=Стандартты
+value.WATER_SPECULAR_STRENGTH.3=Жылтыр
+
+option.SHADOW_SOFTNESS=Көлеңке жұмсақтығы
+option.SHADOW_SOFTNESS.comment=Көлеңке шеттерінің қаншалықты жұмсақ және шашыраңқы көрінетінін басқарады. Тегіс жартылай көлеңке үшін айналдырылған Пуассон дискінің сүзгісін пайдаланады.
+
+value.SHADOW_SOFTNESS.1=Өткір
+value.SHADOW_SOFTNESS.2=Жұмсақ
+value.SHADOW_SOFTNESS.3=Аса жұмсақ
+
+# ==============================================================================
+# Sun & Moon Lighting (extended)
+# ==============================================================================
+screen.SUN_MOON=Күн және Ай
+screen.SUN_MOON.comment=Күн мен айдың қарқындылығын, түс температурасын және атмосфералық әсерлерді дәл теңшеңіз.
+
+option.SUN_INTENSITY=Күн қарқындылығы
+option.SUN_INTENSITY.comment=Тікелей күн сәулесінің негізгі жарықтығы. Жоғарырақ = күндізгі контраст күштірек.
+value.SUN_INTENSITY.1=Күңгірт
+value.SUN_INTENSITY.2=Стандартты
+value.SUN_INTENSITY.3=Жоғары
+value.SUN_INTENSITY.4=Жалындаған
+
+option.MOON_INTENSITY=Ай қарқындылығы
+option.MOON_INTENSITY.comment=Ай сәулесінің негізгі жарықтығы. Жоғарырақ = жарқынырақ, көрінетін түндер.
+value.MOON_INTENSITY.1=Қап-қара түн
+value.MOON_INTENSITY.2=Стандартты
+value.MOON_INTENSITY.3=Жарқын ай
+value.MOON_INTENSITY.4=Толық түн
+
+option.SUN_TEMPERATURE=Күн түсінің температурасы
+option.SUN_TEMPERATURE.comment=Күннің Кельвин қисығын жылжытады. Шынайы Таннер Хелланд қара денесін пайдаланады; жылы = алтын түсті; салқын = бейтарап ақ.
+value.SUN_TEMPERATURE.1=Салқын / Бейтарап
+value.SUN_TEMPERATURE.2=Шынайы
+value.SUN_TEMPERATURE.3=Жылы алтын түсті
+
+option.MOON_TEMPERATURE=Ай түсінің температурасы
+option.MOON_TEMPERATURE.comment=Ай сәулесінің реңі. Мұзды: көгілдір суық; Күмісті: шынайы 4100K; Жылы: егін жинау айының кремі.
+value.MOON_TEMPERATURE.1=Мұзды көк
+value.MOON_TEMPERATURE.2=Күмісті (Шынайы)
+value.MOON_TEMPERATURE.3=Жылы кремді
+
+option.SUN_HALO=Күн ореолы (Ми шашырауы)
+option.SUN_HALO.comment=Күнге жақын қарағанда жерге жұмсақ жылы жарқырауды қосады (Ми алдыңғы шашырауы).
+
+option.SUNRISE_GLOW=Жақсартылған күн шығу/бату жарқырауы
+option.SUNRISE_GLOW.comment=Төмен күннен алшақ бетті беттерді орайтын күштірек жылы кері шашырауды қосады.
+
+# ==============================================================================
+# Extended shadow settings
+# ==============================================================================
+option.shadowDistance=Көлеңке қашықтығы
+option.shadowDistance.comment=Динамикалық көлеңкелер көрсетілетін максималды қашықтық. Жоғары мәндер көлеңкелерді рендер қашықтығына дейін кеңейтеді; кеңейтілген диапазондарда өнімділікті сақтау үшін Shadow LOD қолданыңыз.
+value.shadowDistance.60.0=Жақын (60м)
+value.shadowDistance.80.0=Стандартты (80м)
+value.shadowDistance.120.0=Алыс (120м)
+value.shadowDistance.160.0=Ультра (160м)
+value.shadowDistance.256.0=Кеңейтілген (256 м)
+value.shadowDistance.384.0=Рендер қашықтығы (384 м)
+value.shadowDistance.192.0=DH Seam (192m)
+value.shadowDistance.512.0=DH Extended (512m)
+value.shadowDistance.768.0=DH Far (768m)
+
+option.SHADOW_LOD=Көлеңкелер LOD
+option.SHADOW_LOD.comment=Көлеңкелер сапасының қашықтыққа қарай нашарлауын басқарады. Кеңейтілген көлеңке қашықтығында (256-384 м) LOD үлгілер санын азайтады және өнімділікті сақтау үшін қашықтағы сүзгі радиусын ұлғайтады. Өшірулі = біркелкі сапа (баяу). Теңгерілген = 25-50% қашықтықта азайту. Агрессивті = 15-60% қашықтықта максималды азайту. Көлеңкелер 95% рендер қашықтығынан асқанда толық өткізіліп жіберіледі.
+value.SHADOW_LOD.0=Өшірулі (біркелкі сапа)
+value.SHADOW_LOD.1=Теңгерілген
+value.SHADOW_LOD.2=Агрессивті
+option.DH_SHADOW_RANGE=Distant Horizons Shadow Range
+option.DH_SHADOW_RANGE.comment=Maximum range where Distant Horizons LOD terrain and water can receive samples from the shared DH shadow map. Seam keeps shadows close to vanilla chunks; Far extends coverage but can cost more GPU time. No effect without Distant Horizons.
+value.DH_SHADOW_RANGE.1=Seam (1.25x)
+value.DH_SHADOW_RANGE.2=Extended (2x)
+value.DH_SHADOW_RANGE.3=Far (4x)
+option.SHADOW_PCSS_BLUR=PCMS қашықтық бұлыңғырлау
+option.SHADOW_PCSS_BLUR.comment=PCSS жартылай көлеңке жұмсартуды қосады, ол көлеңкелердің бұлыңғырлығын қашықтыққа және жаңбырға қарай арттырады. Тұрақты жұмсақтық үшін өшіріңіз (алыстағы көлеңкелер айқынырақ, аз шынайы).
+value.SHADOW_PCSS_BLUR.0=Өшірулі (тұрақты жұмсақтық)
+value.SHADOW_PCSS_BLUR.1=Қосулы (PCSS жартылай көлеңке)
+
+
+option.AMBIENT_BRIGHTNESS=Көлеңкені көтеру / қоршаған орта
+option.AMBIENT_BRIGHTNESS.comment=Түнде және үңгірлерде көлеңкелі жерлердің қаншалықты қараңғы көрінетінін басқарады.
+value.AMBIENT_BRIGHTNESS.1=Күңгірт
+value.AMBIENT_BRIGHTNESS.2=Стандартты
+value.AMBIENT_BRIGHTNESS.3=Көтерілген (Жарық)
+
+option.SHADOW_TINT=Көлеңке реңі
+option.SHADOW_TINT.comment=Күндізгі көлеңкелерді бояйды. Көк аспан астындағы нақты көлеңкелердің жеңіл салқын реңі бар.
+value.SHADOW_TINT.1=Бейтарап сұр
+value.SHADOW_TINT.2=Салқын көк (реалистік)
+value.SHADOW_TINT.3=Жылы
+
+option.LIGHT_WRAP=Жарықты орау
+option.LIGHT_WRAP.comment=Жарықтандырылған және жарықтандырылмаған беттер арасындағы терминаторды жұмсартады. Шынайы = физикалық Ламберт; Жұмсақ = скриншоттар үшін ұнамды.
+value.LIGHT_WRAP.1=Шынайы (Ламберт)
+value.LIGHT_WRAP.2=Жұмсақ орау
+value.LIGHT_WRAP.3=Стильденген
+
+# v0.2.9 — water/underwater option value labels (English fallback)
+value.WATER_WAVE_SCALE.1=Тыныш
+value.WATER_WAVE_SCALE.2=Стандартты
+value.WATER_WAVE_SCALE.3=Толқынды
+value.WATER_WAVE_SCALE.4=Дауылды
+value.WATER_WAVE_DETAIL.1=Ірі
+value.WATER_WAVE_DETAIL.2=Стандартты
+value.WATER_WAVE_DETAIL.3=Тығыз
+value.UNDERWATER_NIGHT_DARKNESS.1=Ай сәулесімен жарықтандырылған бассейн
+value.UNDERWATER_NIGHT_DARKNESS.2=Күңгірт
+value.UNDERWATER_NIGHT_DARKNESS.3=Шынайы түн
+value.UNDERWATER_NIGHT_DARKNESS.4=Түн қараңғысы
+# ==============================================================================
+# Experimental Tab & New Sky (v1.1.0)
+# ==============================================================================
+screen.EXPERIMENTAL=Эксперименттік
+screen.EXPERIMENTAL.comment=Эксперименттік
+
+screen.ATMOSPHERE_OPTIONS=Atmosphere
+screen.ATMOSPHERE_OPTIONS.comment=Physical-sky scattering, altitude and temporal resolve controls.
+option.ATMOSPHERE_TURBIDITY=Atmospheric Turbidity
+option.ATMOSPHERE_TURBIDITY.comment=Controls aerosol haze in Physical Sky. Crisp gives a deep blue sky; Hazy gives a brighter, softer horizon and stronger forward scatter.
+value.ATMOSPHERE_TURBIDITY.1=Crisp
+value.ATMOSPHERE_TURBIDITY.2=Balanced
+value.ATMOSPHERE_TURBIDITY.3=Hazy
+option.ATMOSPHERE_SCALE=Atmosphere Scale
+option.ATMOSPHERE_SCALE.comment=Converts Minecraft altitude into atmosphere height for Physical Sky. Compact makes mountains affect the sky less; Cinematic preserves the original large-scale altitude effect.
+value.ATMOSPHERE_SCALE.1=Compact (25m/block)
+value.ATMOSPHERE_SCALE.2=Balanced (50m/block)
+value.ATMOSPHERE_SCALE.3=Cinematic (100m/block)
+option.GROUND_BOUNCE_MODE=Ground Bounce Albedo
+option.GROUND_BOUNCE_MODE.comment=Controls the lower-atmosphere ground-bounce colour in Physical Sky. Auto adapts to cold and swamp biome signals.
+value.GROUND_BOUNCE_MODE.0=Auto (Biome-aware)
+value.GROUND_BOUNCE_MODE.1=Neutral Soil
+value.GROUND_BOUNCE_MODE.2=Vegetation
+value.GROUND_BOUNCE_MODE.3=Snow
+value.GROUND_BOUNCE_MODE.4=Desert
+option.SKY_TEMPORAL=Physical Sky Temporal Resolve
+option.SKY_TEMPORAL.comment=Uses rotation-only history blending for Physical Sky to smooth low-sample scattering and horizon gradients. Disable if animated cloud/aurora ghosting is noticeable.
+option.SKY_MODE=Жаңа аспан (Атмосфералық шашырау)
+option.SKY_STYLE=Аспан стилі
+option.SKY_STYLE.comment=Физикалық аспанның көркемдік бағыты. Реалистік = нақты бұрыштық өлшемдер және бейтарап түстер (астрономиялық көрініс). Жартылай реалистік = оқылатын күн/ай (×2,8), бай түс, жұмсақ жарқыл. Фэнтези = үлкен күн/ай (×5,5), үлкен тәж, ашық көгілдір/алқызыл/индиго палитрасы.
+option.SKY_MODE.comment=EXPERIMENTAL — off in all profiles. Gradient (legacy, default) or Physical realtime scattering with true multiple scattering (Rayleigh+Mie+Ozone, 1st+2nd+3rd order). Enable manually in this tab.
+value.SKY_MODE.0=Градиент (Ескі)
+value.SKY_STYLE.0=Шынайы
+value.SKY_STYLE.1=Жартылай шынайы
+value.SKY_STYLE.2=Фэнтези
+value.SKY_MODE.1=Realtime Scattering
+
+option.SKY_QUALITY=Аспан шашырау сапасы
+option.SKY_QUALITY.comment=Аспан шашырау сапасы
+value.SKY_QUALITY.1=Жылдам
+value.SKY_QUALITY.2=Стандартты
+value.SKY_QUALITY.3=Жоғары
+
+# --- Auto-added missing translations (v1.1.0 sync) ---
+option.FOLIAGE_SSS=Өсімдіктердің SSS
+option.FOLIAGE_SSS.comment=Жарыққа қарсы қарағанда жапырақтар, шөп және өсімдіктер үшін беткейасты шашырауды (жартылай мөлдірлікті) қосады.
+option.GODRAYS_STRENGTH=Godrays қарқындылығы
+option.GODRAYS_STRENGTH.comment=Көлемдік жарық сәулелерінің жарықтығы. Жеңіл: жұмсақ атмосфералық тұман. Теңгерілген: анық көрінетін сәулелер. Драмалық: батыл кинематографиялық сәулелер.
+value.GODRAYS_STRENGTH.1=Жеңіл
+value.GODRAYS_STRENGTH.2=Теңгерілген
+value.GODRAYS_STRENGTH.3=Драмалық
+option.SHOOTING_STARS=Метеорлар (Атылған жұлдыздар)
+option.SHOOTING_STARS.comment=Мезосфераға кіретін физикалық негізделген метеорлар (~80-120 км). Абляциялық жарық қисықтары, қара дене плазмасының түсі (3500-5500 K), көкжиекке жақын Рэлей сөнуі және от шарларындағы тұрақты иондану іздерімен нағыз үлкен шеңберлі 3D доғаларды көрсетеді.
+option.SHOOTING_STARS_FREQUENCY=Метеор белсенділігі (ZHR)
+option.SHOOTING_STARS_FREQUENCY.comment=Шамамен зенит сағаттық көрсеткіші. Спорадиялық = сағатына ~10 шынайы фон. Белсенді = жеңіл нөсер. Дауыл = шыңдық тығыздық (~100/сағ).
+value.SHOOTING_STARS_FREQUENCY.1=Спорадиялық (~10/сағ)
+value.SHOOTING_STARS_FREQUENCY.2=Белсенді нөсер
+value.SHOOTING_STARS_FREQUENCY.3=Метеор дауылы
+option.SHOOTING_STARS_BRIGHTNESS=Шама шкаласы
+option.SHOOTING_STARS_BRIGHTNESS.comment=Метеор шамасының шкаласындағы негізгі көбейткіш. Күңгірт = шынайы орташа; Жарқын = кинематографиялық көрінуі үшін от шарларын үлкейтеді.
+value.SHOOTING_STARS_BRIGHTNESS.1=Күңгірт (Шынайы)
+value.SHOOTING_STARS_BRIGHTNESS.2=Стандартты
+value.SHOOTING_STARS_BRIGHTNESS.3=Жарқын от шарлары
+option.SPATIAL_AA_MODE=Кеңістіктік тегістеу
+option.SPATIAL_AA_MODE.comment=Пост-өңдеу тегістеу әдісін таңдаңыз. FXAA жылдам және арзан. SMAA геометрия шеттерінде жақсырақ сапа үшін тереңдік буферін пайдаланады. TAA-мен біріктіруге болады.
+value.SPATIAL_AA_MODE.0=Өшірулі
+value.SPATIAL_AA_MODE.1=FXAA (Жылдам)
+value.SPATIAL_AA_MODE.2=SMAA (Сапа)
+option.HEAT_SHIMMER=Лаваның үстіндегі жылу жылтылы
+option.HEAT_SHIMMER.comment=Лава беттерінің үстінде экран кеңістігінің жеңіл жылу бұрмалану эффектісін қосыңыз.
+option.HEAT_SHIMMER_STRENGTH=Жылу жылтылының күші
+option.HEAT_SHIMMER_STRENGTH.comment=Лаваның үстіндегі жылу бұрмалануының қарқындылығын басқарады.
+value.HEAT_SHIMMER_STRENGTH.1=Жеңіл
+value.HEAT_SHIMMER_STRENGTH.2=Теңгерілген
+value.HEAT_SHIMMER_STRENGTH.3=Күшті
+option.SSR=Экран кеңістігінің шағылысулары (SSR)
+option.SSR.comment=Суда, дымқыл беттерде және металл PBR блоктарында нақты уақыттағы шағылысқан ортаны қосады. v1.0.4-те MED-тен жоғары қосылған.
+option.SSR_QUALITY=SSR сапасы
+option.SSR_QUALITY.comment=Экран кеңістігі шағылысуларының дәлдігі мен сәуле қашықтығын басқарады. Жоғарырақ = айқынырақ шағылысулар, бірақ GPU шығыны көбірек.
+value.SSR_QUALITY.1=Жылдам (12 қадам)
+value.SSR_QUALITY.2=Теңгерілген (24 қадам)
+value.SSR_QUALITY.3=Жоғары (40 қадам)
+option.SSR_STRENGTH=SSR күші
+option.SSR_STRENGTH.comment=Шағылысатын беттерде шағылысқан ортаның қаншалықты көрінетінін және айқын екенін басқарады.
+option.WATER_WAVE_SCALE=Толқын амплитудасы
+option.WATER_WAVE_SCALE.comment=Су бетінің толқындарының көрінетін тіктігін басқарады. Тыныш = айна тәрізді, Дауылды = қатты бұзылған шағылысулар.
+option.WATER_WAVE_DETAIL=Толқын мәліметтері
+option.WATER_WAVE_DETAIL.comment=Блокта қанша кішкентай толқын пайда болатынын басқарады. Ірі = бірнеше үлкен толқын, Тығыз = көптеген кішкентай толқын.
+option.UNDERWATER_NIGHT_DARKNESS=Су астындағы түн қараңғылығы
+option.UNDERWATER_NIGHT_DARKNESS.comment=Түнде су асты сахнасының қаншалықты қараңғы болатынын басқарады. Ай сәулесімен жарықтандырылған бассейн жарықтықты сақтайды; Түн қараңғысы шыңдалған тірі қалу стиліндегі қараңғылықты береді.
+value.SSR_STRENGTH.1=Жеңіл
+value.SSR_STRENGTH.2=Теңгерілген
+value.SSR_STRENGTH.3=Күшті
+option.PBR_DISTANCE=PBR рендерингінің қашықтығы
+option.PBR_DISTANCE.comment=PBR айналық жарқырауының максималды қашықтығы. Алыс жердегі GPU-ды үнемдейді. LOW үшін жақын (16м), MED үшін стандартты (48м), HIGH/ULTRA үшін алыс (128м), EXTREME үшін шексіз.
+value.PBR_DISTANCE.1=Жақын (16м)
+value.PBR_DISTANCE.2=Стандартты (48м)
+value.PBR_DISTANCE.3=Алыс (128м)
+value.PBR_DISTANCE.4=Шексіз
+
+# v1.1.1 — shadow pipeline + POM option labels
+value.shadowMapResolution.512=512
+value.shadowMapResolution.1024=1024
+value.shadowMapResolution.2048=2048
+value.shadowMapResolution.4096=4096
+value.shadowMapResolution.8192=8192
+option.POM_DEPTH=POM тереңдігі
+option.POM_DEPTH.comment=PBR POM қосылғанда параллакс-карталаудың көрінетін тереңдігін басқарады.
+value.POM_DEPTH.1=Төмен
+value.POM_DEPTH.2=Стандартты
+value.POM_DEPTH.3=Терең
+option.POM_STEPS=POM қадамдары
+option.POM_STEPS.comment=Параллакс-карталау үшін raymarch қадамдарының санын басқарады. Жоғары мәндер сапаны жақсартады, бірақ көбірек GPU уақытын талап етеді.
+value.POM_STEPS.1=Жылдам
+value.POM_STEPS.2=Стандартты
+value.POM_STEPS.3=Жоғары
+value.POM_STEPS.4=Ультра
+
+screen.SHADOW_OPTIONS=Көлеңкелер
+screen.SHADOW_OPTIONS.comment=Динамикалық көлеңкелердің ажыратымдылығы, қашықтығы, жұмсақтығы және реңкі.
+screen.PBR_OPTIONS=PBR және материалдар
+screen.PBR_OPTIONS.comment=PBR жарықтандыру, параллакс рельефі, қарқындылық және рендер қашықтығы.
+screen.AO_REFLECTIONS=AO және шағылысулар
+screen.AO_REFLECTIONS.comment=SSAO, экран шағылысулары және жаңбыр шағылысулары.
+screen.CLOUD_SHAPE=Бұлттар
+screen.CLOUD_SHAPE.comment=Көлемдік бұлттардың пішіні, биіктігі, қашықтығы және көлеңкелері.
+screen.CLOUD_BODY=Cloud Body
+screen.CLOUD_BODY.comment=Altitude, thickness, distance, and the two settings that vary from cloud to cloud: base level and updraft.
+screen.CLOUD_PERF=Cloud Quality
+screen.CLOUD_PERF.comment=Everything that trades picture for frame time. Resolution (steps) and detail (octaves) are independent: you can keep crisp cloud tops and still lower the step count.
+screen.LIGHT_SHAFTS=Жарық сәулелері
+screen.LIGHT_SHAFTS.comment=Көлемдік күн/ай сәулелері және олардың сапасы/қарқындылығы.
+screen.NIGHT_SKY=Түнгі аспан
+screen.NIGHT_SKY.comment=Аврора, жұлдыздар, Құс жолы және құлдилаған жұлдыздар.
+
+# [v1.1.3]
+option.CLOUD_QUALITY=Бұлттардың ray-marching сапасы
+option.CLOUD_QUALITY.comment=Raymarch resolution: how many samples the cloud volume gets along the ray (14/24/36/56 steps). Lower it for FPS -- it costs shape detail only in combination with CLOUD_DETAIL below.
+option.BLOOM=HDR Bloom
+option.BLOOM.comment=Enable or disable the HDR bloom pass. When disabled, AuraLite skips all five bloom composite passes for lower GPU load.
+option.HDR_BLOOM=HDR жарқырауы
+option.HDR_BLOOM.comment=Аса жарық көздердің айналасындағы кең Гаусс жарқырауының күші: күн/ай дискі, лава, порталдар, ыстық жылтырлар. Жаңа bloom пирамидасы өткелдерін пайдаланады.
+value.HDR_BLOOM.1=Нәзік
+value.HDR_BLOOM.2=Теңгерімді
+value.HDR_BLOOM.3=Күшті
+option.POST_SHARPEN=Айқындық (CAS)
+option.POST_SHARPEN.comment=TAA-дан кейінгі жұмсақ анық емес маска уақыттық жинақтаумен жұмсартылған текстура бөлшектерін қайтарады. Жұмсақ, киноға ұқсас сурет үшін өшіріңіз.
+
+# [v1.1.3]
+
+# ==============================================================================
+# Only the three channel sliders carry a colour code, because there the colour
+# IS the information: red gain is red, green is green, blue is blue. Everything
+# else stays default white — a menu does not need a palette to be readable.
+# ==============================================================================
+screen.COLOR=Colour Grading
+screen.COLOR.comment=Exposure, per-channel gain, brightness, contrast, saturation, gamma and vignette — all as sliders.
+screen.COLOR_TONE=Tone
+screen.COLOR_TONE.comment=Exposure, brightness, contrast, saturation and output gamma.
+screen.COLOR_RGB=Channels
+screen.COLOR_RGB.comment=Per-channel red/green/blue gain plus warm-cool and green-magenta balance.
+screen.COLOR_LOOK=Look
+screen.COLOR_LOOK.comment=Selective vibrance, vignette strength and the tone-mapping curve.
+
+option.COLOR_EXPOSURE=Exposure
+option.COLOR_EXPOSURE.comment=Linear exposure, applied before tone mapping. Above 1.00 the scene brightens and highlights roll off instead of clipping.
+option.COLOR_BRIGHTNESS=Brightness
+option.COLOR_BRIGHTNESS.comment=Midtone lift applied after tone mapping. Because it is a curve and not a multiply, blacks stay black and highlights cannot clip.
+option.COLOR_CONTRAST=Contrast
+option.COLOR_CONTRAST.comment=Contrast around middle grey (0.5) — the classic brightness/contrast operation.
+option.COLOR_SATURATION=Saturation
+option.COLOR_SATURATION.comment=0.00 is greyscale, 1.00 is untouched, above 1.00 is oversaturated.
+option.COLOR_GAMMA=Output Gamma
+option.COLOR_GAMMA.comment=Output encode exponent. 2.20 is the pack default. Lower values lift shadows, higher values crush them.
+option.COLOR_TONEMAP=Tone Curve
+option.COLOR_TONEMAP.comment=Which filmic curve maps HDR to the screen. ACES is the pack default.
+value.COLOR_TONEMAP.1=ACES (default)
+value.COLOR_TONEMAP.2=ACES soft
+value.COLOR_TONEMAP.3=ACES punchy
+value.COLOR_TONEMAP.4=Photographic (AgX-like)
+
+option.COLOR_RED=§cRed Gain§r
+option.COLOR_RED.comment=Multiplies scene-linear red before tone mapping.
+option.COLOR_GREEN=§aGreen Gain§r
+option.COLOR_GREEN.comment=Multiplies scene-linear green before tone mapping.
+option.COLOR_BLUE=§9Blue Gain§r
+option.COLOR_BLUE.comment=Multiplies scene-linear blue before tone mapping.
+option.COLOR_LUMA_PROTECT=Keep Brightness (luma protect)
+option.COLOR_LUMA_PROTECT.comment=On: the RGB / warmth / tint sliders shift colour but leave average brightness alone. Off: raw channel multipliers, which also brighten or darken the frame.
+option.COLOR_WARMTH=Warmth
+option.COLOR_WARMTH.comment=Moves the red/blue balance without touching green. Positive is warmer (sunset), negative is cooler (overcast, moonlight).
+option.COLOR_TINT=Tint
+option.COLOR_TINT.comment=Moves the green/magenta balance. Positive is greener, negative is magenta.
+
+option.COLOR_VIBRANCE=Selective Vibrance
+option.COLOR_VIBRANCE.comment=Saturation that treats colours differently: muted ones move more than already-saturated ones. 0.00 reproduces the pack's built-in look exactly.
+option.COLOR_VIGNETTE=Vignette Strength
+option.COLOR_VIGNETTE.comment=Corner darkening. 0.00 disables it without switching VIGNETTE off; 2.00 doubles it.
+option.VIGNETTE=Vignette
+option.VIGNETTE.comment=Master switch for corner darkening. Use Vignette Strength to dial the amount.
+
+option.CLOUD_MODE=Cloud Renderer
+option.CLOUD_MODE.comment=Volumetric: the ray marches through a 3D density field and every sample shadows itself toward the sun (self-shadowing, silver lining, real depth). Layered sheets: the v1.1.4 look, cheaper.
+value.CLOUD_MODE.0=Layered sheets (v1.1.4)
+value.CLOUD_MODE.1=Volumetric
+option.CLOUD_COVERAGE=Cloud Coverage
+option.CLOUD_COVERAGE.comment=How much of the sky the clouds fill. This changes cloud fraction, not brightness: it moves the threshold the density noise has to cross.
+value.CLOUD_COVERAGE.1=Clear
+value.CLOUD_COVERAGE.2=Scattered
+value.CLOUD_COVERAGE.3=Broken
+value.CLOUD_COVERAGE.4=Broken to overcast
+value.CLOUD_COVERAGE.5=Overcast
+option.CLOUD_DENSITY=Cloud Density
+option.CLOUD_DENSITY.comment=Extinction coefficient of the cloud medium, in 1/m. Real water clouds sit between 0.005 and 0.1; 0.030 is a typical cumulus. Higher makes clouds darker and more opaque inside.
+value.CLOUD_QUALITY.1=Cheap (14 steps)
+value.CLOUD_QUALITY.2=Standard (24 steps)
+value.CLOUD_QUALITY.3=High (36 steps)
+value.CLOUD_QUALITY.4=Extreme (56 steps)
+option.CLOUD_DETAIL=Cloud Shape Detail
+option.CLOUD_DETAIL.comment=How small a feature the cloud shape can carry: 1080 m at 1, 540 m at 2, 270 m at 3, 135 m at 4. Independent of the raymarch resolution above, so you can keep crisp cloud tops and still lower the step count for FPS. Raising both together is the expensive combination.
+value.CLOUD_DETAIL.1=Low (2 octaves, 1080 m)
+value.CLOUD_DETAIL.2=Medium (3 octaves, 540 m)
+value.CLOUD_DETAIL.3=High (4 octaves, 270 m)
+value.CLOUD_DETAIL.4=Extreme (5 octaves, 135 m)
+
+option.VEGETATION_CANOPY=Vegetation Canopy
+option.VEGETATION_CANOPY.comment=Shade foliage as a canopy (light reaching the inside of the crown) instead of flat vertical cards.
+option.GROUND_MIST_DENSITY=Ground Mist Density
+option.GROUND_MIST_DENSITY.comment=How much mist pools in the low ground at dawn.
+value.GROUND_MIST_DENSITY.1=Light
+value.GROUND_MIST_DENSITY.2=Standard
+value.GROUND_MIST_DENSITY.3=Heavy
+option.UNDERWATER_WAVES=Underwater Waves
+option.UNDERWATER_WAVES.comment=Distortion and caustics seen from below the surface. Caustics stay off by default: they are a stylistic choice, not a physical necessity.
+value.UNDERWATER_WAVES.0=Off (calm)
+value.UNDERWATER_WAVES.1=Subtle
+value.UNDERWATER_WAVES.2=Light caustics
+value.UNDERWATER_WAVES.3=Strong
+
+option.CLOUD_CIRRUS=Cirrus Veil
+option.CLOUD_CIRRUS.comment=High, thin ice cloud above the cumulus. It is raymarched like the rest, just thin and cheap. Off leaves the cumulus deck alone in the sky.
+option.DITHER_STRENGTH=Output Dither
+option.DITHER_STRENGTH.comment=Sub-pixel noise added before tone mapping to break up 8-bit banding in smooth sky gradients. It is a trade: less banding, a little grain. Light is half of what v1.1.4 used.
+value.DITHER_STRENGTH.1=Off
+value.DITHER_STRENGTH.2=Light (half of v1.1.4)
+value.DITHER_STRENGTH.3=Medium
+value.DITHER_STRENGTH.4=v1.1.4
+
+option.CLOUD_HEIGHT.comment=Base altitude of the cloud deck in metres. 1200 m is a typical fair-weather cumulus base; Minecraft's own clouds sit at 192 and look like a low ceiling for that reason.
+value.CLOUD_HEIGHT.1=Low (400 m)
+value.CLOUD_HEIGHT.2=Cumulus base (1200 m)
+value.CLOUD_HEIGHT.3=High (2400 m)
+value.CLOUD_HEIGHT.4=Very high (3600 m)
+option.CLOUD_THICKNESS.comment=Deck depth as a fraction of the base altitude: half, equal, or one and a half times. Fair-weather cumulus is 500-1500 m deep.
+value.CLOUD_THICKNESS.1=Thin (0.5x)
+value.CLOUD_THICKNESS.2=Normal (1.0x)
+value.CLOUD_THICKNESS.3=Deep (1.5x)
+option.CLOUD_DISTANCE.comment=How far the deck is drawn. Cloud colour is washed toward the sky with distance (aerial perspective), so the far end fades out instead of ending on an edge.
+value.CLOUD_DISTANCE.1=6 km
+value.CLOUD_DISTANCE.2=12 km
+value.CLOUD_DISTANCE.3=20 km
+value.CLOUD_DISTANCE.4=32 km
+
+option.CLOUD_MICRO=Droplet Spectrum
+option.CLOUD_MICRO.comment=Controls droplet size, which sets how much a given water content scatters and how strongly forward-scattering the phase function is. Continental air has many small droplets (brighter, more diffuse); maritime air has fewer, larger ones (darker, sharper silver lining).
+value.CLOUD_MICRO.1=Continental (6 um, g=0.82)
+value.CLOUD_MICRO.2=Typical (8 um, g=0.85)
+value.CLOUD_MICRO.3=Maritime (12 um, g=0.87)
+option.CLOUD_SCALE=Cloud Size
+option.CLOUD_SCALE.comment=Width of one cloud cell relative to the depth of the deck. Real cumulus are about as wide as they are thick: compact cumulus roughly match their depth, congestus reach three depths across. Larger cells mean fewer, broader clouds in view; smaller cells mean a busier sky.
+value.CLOUD_SCALE.1=Compact (1.2x depth)
+value.CLOUD_SCALE.2=Typical (1.8x depth)
+value.CLOUD_SCALE.3=Broad (3.0x depth)
+option.CLOUD_BASE_VARIATION=Condensation Level Spread
+option.CLOUD_BASE_VARIATION.comment=How much the cloud base height varies between clouds. Real cumulus share a nearly level base because every thermal condenses at the same height, but over tens of kilometres surface temperature and moisture drift, so the level is ragged rather than one shelf. Smaller values give the clean shelf of a calm afternoon; larger values give a broken, stormy sky where each cell has its own base.
+value.CLOUD_BASE_VARIATION.1=Even (±40 m)
+value.CLOUD_BASE_VARIATION.2=Natural (±120 m)
+value.CLOUD_BASE_VARIATION.3=Ragged (±250 m)
+option.CLOUD_UPDRAFT=Updraft Speed
+option.CLOUD_UPDRAFT.comment=How fast the cloud body streams upward. Real cumulus are conveyor belts: air rises through them at 1-3 m/s in fair weather and 20-30 m/s in a storm core, so the shape keeps being replaced from below and the tops appear to boil. The deck itself stays at the same altitude; only the structure inside moves. Storms multiply this.
+value.CLOUD_UPDRAFT.1=Drifting (1.5 m/s)
+value.CLOUD_UPDRAFT.2=Natural (2.5 m/s)
+value.CLOUD_UPDRAFT.3=Vigorous (4.0 m/s)
+option.CLOUD_DENSITY.comment=Liquid water content of the cloud core, in g/m3. Extinction is derived from it and from droplet size, not set directly.
+option.CLOUD_MID_LAYER=Орта деңгейдегі бұлт қабаты
+option.CLOUD_MID_LAYER.comment=Орташа биіктіктегі қосымша дамып келе жатқан қабат; FPS-ті төмендетуі мүмкін.
+
+value.CLOUD_DENSITY.1=Thin (0.075 g/m3)
+value.CLOUD_DENSITY.2=Typical (0.15 g/m3)
+value.CLOUD_DENSITY.3=Dense (0.30 g/m3)

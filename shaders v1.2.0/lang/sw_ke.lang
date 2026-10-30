@@ -1,0 +1,656 @@
+shaderDescription=AuraLite v1.2.0 — mawingu, anga na maji halisi, urekebishaji wa rangi
+# AuraLite Shaders v1.2.0 - Copyright (c) 2026 AlexanderNyr. Licensed under CC BY-NC-SA 4.0.
+# ==============================================================================
+# AuraLite Shader Pack - Swahili Language Translations
+# ==============================================================================
+
+# ==============================================================================
+# Quality Profiles — Rebalanced v1.0.5
+# ==============================================================================
+profile.VERY_LOW=Chini sana
+profile.VERY_LOW.comment=FPS ya juu kabisa. Vipengele vyote vimezimwa: hakuna vivuli, hakuna mawingu, hakuna PBR, hakuna SSR, hakuna miale ya jua. Uchoraji wa chini tu.
+profile.LOW=Chini
+profile.LOW.comment=Nyepesi lakini inachezeka. Inahifadhi mwendo wa mimea/maji, nyota angavu zaidi, FXAA, vignette. Hakuna vivuli, mawingu au PBR.
+profile.MED=Wastani
+profile.MED.comment=Sehemu nzuri ya kila siku. Vivuli 1024, mawingu, PBR, SSR Haraka, miale ya jua, SSS ya majani, mng'ao wa unyevu, ukungu wa ardhi, nyota zinazoanguka.
+profile.HIGH=Juu
+profile.HIGH.comment=Ubora wa mpenzi. Vivuli 2048, SSR Iliyolinganishwa, TAA, SSAO Hafifu, miale ya jua Iliyolinganishwa, SMAA.
+profile.ULTRA=Ultra
+profile.ULTRA.comment=Kiwango cha juu. Vivuli 4096, SSR Juu, SSAO Iliyolinganishwa, miale ya jua Juu, TAA Imara, athari zote zimewashwa.
+profile.EXTREME=Kupita kiasi
+profile.EXTREME.comment=Upeo wa sinema. Kila kitu kimepandishwa: masafa ya PBR Yasiyo na Kikomo, uchoraji wa toni wa Picha (AgX), SSAO ya kina zaidi, dhoruba za vimondo.
+profile.CUSTOM=Maalum
+profile.CUSTOM.comment=Mipangilio iliyobadilishwa na mtumiaji.
+
+screen.TRANSLATION_NOTICE=⚠ Tafsiri zinaweza kuwa na makosa
+screen.TRANSLATION_NOTICE.comment=Baadhi ya mistari ya tafsiri inaweza kuwa si sahihi. Kama kitu kinaonekana cha ajabu, linganisha na asili ya Kiingereza.
+
+# Screens
+screen.LIGHTING=Mipangilio ya mwanga
+screen.LIGHTING.comment=Sanidi vivuli, rangi za mwanga, na mwangaza.
+
+screen.FOLIAGE=Mipangilio ya mimea
+screen.FOLIAGE.comment=Sanidi michoro ya kuyumba kwa nyasi na majani.
+
+screen.WATER=Mipangilio ya maji
+screen.WATER.comment=Sanidi mawimbi, uwazi, na mtindo wa maji.
+
+screen.CLOUDS_MENU=Anga na mawingu
+screen.CLOUDS_MENU.comment=Sanidi urefu halisi, unene, na mtindo wa mawingu ya 3D na athari za anga.
+
+screen.POST_PROCESS=Uchakataji wa baadaye na ukungu
+screen.POST_PROCESS.comment=Sanidi mwangaza, ukungu, na athari za kisinema.
+screen.POST_FOG=Fog & Image
+screen.POST_FOG.comment=Fog density, ground mist, heat shimmer and dithering.
+
+# Options
+option.SHADOWS=Vivuli vinavyobadilika
+option.SHADOWS.comment=Washa au zima vivuli laini vinavyobadilika kutoka kwa jua na mwezi.
+
+option.shadowMapResolution=Azimio la vivuli
+option.shadowMapResolution.comment=Badilisha ubora wa ramani ya vivuli. Thamani za juu zinaweza kupunguza utendaji.
+
+option.PBR_LIGHTING=Mwanga wa PBR (LabPBR)
+option.PBR_LIGHTING.comment=Washa uchoraji unaotegemea fizikia kwa metali, ukali, na ramani za kawaida za 3D (inahitaji pakiti ya rasilimali ya PBR).
+
+option.PBR_POM=Nakshi ya kizuizi cha 3D (POM)
+option.PBR_POM.comment=Washa Uchoraji wa Kufunika kwa Parallax unaotegemea fizikia kwa muundo wa vizuizi vya 3D. Inashauriwa kuzima kwenye pakiti za rasilimali zisizoendana.
+
+option.PBR_STRENGTH=Nguvu ya PBR
+option.PBR_STRENGTH.comment=Dhibiti uakisi na ung'avu wa nyuso za metali za PBR.
+
+value.PBR_STRENGTH.1=Hafifu
+value.PBR_STRENGTH.2=Kawaida
+value.PBR_STRENGTH.3=Kioo
+
+option.SSAO=Kuzuia SSAO / SAO
+option.SSAO.comment=Kuzuia mazingira ya nafasi ya skrini kwa vivuli vya kugusana kwenye pembe, chini ya vizuizi, na kuzunguka makutano ya jiometri. Imewashwa kuanzia JUU kwenda juu.
+option.SSAO_STRENGTH=Nguvu ya SSAO
+option.SSAO_STRENGTH.comment=Hudhibiti kina cha kuzuia mazingira ya nafasi ya skrini. Inafanya kazi tu wakati SSAO imewashwa.
+value.SSAO_STRENGTH.1=Hafifu
+value.SSAO_STRENGTH.2=Iliyolinganishwa
+value.SSAO_STRENGTH.3=Ya kina
+
+option.LIGHTMAP_WARMTH=Joto la mwenge
+option.LIGHTMAP_WARMTH.comment=Rekebisha joto na rangi ya mwanga wa kizuizi/mwenge.
+
+value.LIGHTMAP_WARMTH.1=Faraja
+value.LIGHTMAP_WARMTH.2=Joto
+value.LIGHTMAP_WARMTH.3=Kali
+
+option.WAVING_LEAVES=Majani yanayoyumba
+option.WAVING_LEAVES.comment=Washa michoro laini ya kuyumba kwa majani ya miti.
+
+option.WAVING_GRASS=Mimea inayoyumba
+option.WAVING_GRASS.comment=Washa michoro ya kuyumba kwa nyasi, maua, na mazao.
+
+option.WIND_SPEED=Kasi ya upepo
+option.WIND_SPEED.comment=Dhibiti kasi ya kuyumba kwa majani, mimea, na mawimbi ya maji.
+
+option.FOLIAGE_SSS=SSS ya mimea
+option.FOLIAGE_SSS.comment=Huwasha utawanyiko wa chini ya uso (uwazi) kwa majani, nyasi, na mimea unapotazama dhidi ya mwanga.
+
+value.WIND_SPEED.1=Laini
+value.WIND_SPEED.2=Upepo mwanana
+value.WIND_SPEED.3=Dhoruba
+
+option.WATER_WAVES=Mawimbi ya maji
+option.WATER_WAVES.comment=Washa mawimbi ya kijiometri ya 3D juu ya uso wa maji. Vizuizi vya barafu na glasi vimeondolewa kwenye mchoro wa mawimbi.
+
+option.WATER_TRANSPARENCY=Msongamano wa maji
+option.WATER_TRANSPARENCY.comment=Dhibiti uwazi na ufinyu wa maji, barafu ya kawaida, na vizuizi vya glasi.
+
+value.WATER_TRANSPARENCY.1=Wazi
+value.WATER_TRANSPARENCY.2=Iliyolinganishwa
+value.WATER_TRANSPARENCY.3=Ya kina
+
+option.PROCEDURAL_CLOUDS=Mawingu ya 3D ya kiasi
+option.PROCEDURAL_CLOUDS.comment=Washa mawingu ya 3D yanayoweza kurukwa ambayo yanaweza kufikiwa na kurukwa ndani yake.
+
+option.CLOUD_HEIGHT=Urefu wa mawingu
+option.CLOUD_HEIGHT.comment=Weka urefu halisi (kiwango cha Y) cha safu ya mawingu duniani (kwa mita).
+
+
+option.CLOUD_THICKNESS=Unene wa mawingu
+option.CLOUD_THICKNESS.comment=Sanidi unene wima na kiasi cha mawingu.
+
+
+option.CLOUD_DISTANCE=Umbali wa uchoraji wa mawingu
+option.CLOUD_DISTANCE.comment=Umbali wa juu wa kuchora kwa mawingu ya kiasi. Wasifu wa ubora huongeza kiotomatiki.
+
+option.CLOUD_SHADOWS=Vivuli vya mawingu
+option.CLOUD_SHADOWS.comment=Huongeza vivuli vya uwazi vya kiutaratibu kutoka kwa msongamano wa mawingu ya kiasi juu ya ardhi. Vimelinganishwa na wasifu wa ubora.
+option.CLOUD_SHADOW_STRENGTH=Nguvu ya vivuli vya mawingu
+option.CLOUD_SHADOW_STRENGTH.comment=Hudhibiti jinsi vivuli vya mawingu vya uwazi vinavyoonekana na vya kushangaza.
+value.CLOUD_SHADOW_STRENGTH.1=Laini
+value.CLOUD_SHADOW_STRENGTH.2=Iliyolinganishwa
+value.CLOUD_SHADOW_STRENGTH.3=Ya kushangaza
+
+option.GODRAYS=Miale ya jua / Mishale ya jua
+option.GODRAYS.comment=Huongeza mishale ya jua ya kiasi ya utawanyiko mmoja iliyohamasishwa na fizikia na kuzimika kwa Beer-Lambert, awamu ya Mie, na kuzuia ramani ya vivuli.
+option.GODRAYS_QUALITY=Ubora wa miale ya jua
+option.GODRAYS_QUALITY.comment=Hudhibiti idadi ya sampuli na umbali wa kuunganisha wa miale ya jua ya kiasi inayotegemea fizikia.
+value.GODRAYS_QUALITY.1=Haraka
+value.GODRAYS_QUALITY.2=Iliyolinganishwa
+value.GODRAYS_QUALITY.3=Juu
+
+option.AURORA_MODE=Mwanga wa kaskazini (Aurora Borealis)
+option.AURORA_MODE.comment=Dhibiti uonyeshaji wa aurora halisi zinazotiririka kwenye anga la usiku.
+
+value.AURORA_MODE.0=Imezimwa
+value.AURORA_MODE.1=Katika biomu za baridi tu
+value.AURORA_MODE.2=Imewashwa kila wakati
+
+option.AURORA_SPEED=Kasi ya aurora
+option.AURORA_SPEED.comment=Dhibiti kasi ya kuyumba na kutiririka kwa mwanga wa kaskazini.
+
+value.AURORA_SPEED.1=Polepole
+value.AURORA_SPEED.2=Kawaida
+value.AURORA_SPEED.3=Haraka
+
+option.AURORA_STRENGTH=Mng'ao wa aurora
+option.AURORA_STRENGTH.comment=Dhibiti mng'ao wa jumla wa mwanga wa kaskazini.
+
+value.AURORA_STRENGTH.1=Laini
+value.AURORA_STRENGTH.2=Kawaida
+value.AURORA_STRENGTH.3=Ung'aao
+
+option.AURORA_QUALITY=Aurora Quality
+option.AURORA_QUALITY.comment=Raymarch steps for Aurora Borealis. Higher settings smooth curtain volume and reduce visible layering; the new centered sampling removes per-pixel grain.
+value.AURORA_QUALITY.1=Soft (8 steps)
+value.AURORA_QUALITY.2=Balanced (12 steps)
+value.AURORA_QUALITY.3=Silky (18 steps)
+option.NEBULA_BRIGHTNESS=Mng'ao wa Njia ya Maziwa
+option.NEBULA_BRIGHTNESS.comment=Rekebisha mng'ao wa nebula ya galaksia ya kahawia ya ulalo usiku.
+
+value.NEBULA_BRIGHTNESS.1=Hafifu
+value.NEBULA_BRIGHTNESS.2=Kawaida
+value.NEBULA_BRIGHTNESS.3=Angavu
+
+option.STARS_BRIGHTNESS=Mng'ao wa nyota
+option.STARS_BRIGHTNESS.comment=Dhibiti mng'ao na ung'aao wa kumeta wa nyota usiku.
+
+value.STARS_BRIGHTNESS.1=Hafifu
+value.STARS_BRIGHTNESS.2=Kawaida
+value.STARS_BRIGHTNESS.3=Angavu sana
+
+option.STARS_AMOUNT=Msongamano wa nyota
+option.STARS_AMOUNT.comment=Dhibiti idadi ya jumla na msongamano wa nyota angani.
+
+value.STARS_AMOUNT.1=Chache
+value.STARS_AMOUNT.2=Kawaida
+value.STARS_AMOUNT.3=Nyingi
+
+option.RAINBOW_STRENGTH=Nguvu ya upinde wa mvua
+option.RAINBOW_STRENGTH.comment=Sanidi mng'ao na ujaaji wa rangi wa upinde wa mvua baada ya mvua.
+
+value.RAINBOW_STRENGTH.1=Hafifu
+value.RAINBOW_STRENGTH.2=Iliyolinganishwa
+value.RAINBOW_STRENGTH.3=Angavu
+
+option.SHOOTING_STARS=Vimondo (nyota zinazoanguka)
+option.SHOOTING_STARS.comment=Vimondo vinavyotegemea fizikia vinavyoingia mesosfia (~80-120 km). Huchora matao halisi ya 3D ya duara kubwa yenye mikondo ya mwanga ya kufyonzwa, rangi ya plasma ya mwili mweusi (3500-5500 K), kuzimika kwa Rayleigh karibu na upeo wa macho, na alama za kudumu za ioni kwenye mipira ya moto.
+
+option.SHOOTING_STARS_FREQUENCY=Shughuli za vimondo (ZHR)
+option.SHOOTING_STARS_FREQUENCY.comment=Kiwango cha takriban cha saa cha zenithi. Mara chache = mandhari halisi ya takriban 10 kwa saa. Kazi = mvua hafifu. Dhoruba = msongamano wa kilele (~100/saa).
+
+value.SHOOTING_STARS_FREQUENCY.1=Mara chache (~10/saa)
+value.SHOOTING_STARS_FREQUENCY.2=Mvua hai
+value.SHOOTING_STARS_FREQUENCY.3=Dhoruba ya vimondo
+
+option.SHOOTING_STARS_BRIGHTNESS=Mizani ya ukubwa
+option.SHOOTING_STARS_BRIGHTNESS.comment=Kizidishi kikuu kwenye mizani ya ukubwa wa vimondo. Hafifu = wastani halisi; Angavu = hupima mipira ya moto kwa mwonekano wa kisinema.
+
+value.SHOOTING_STARS_BRIGHTNESS.1=Hafifu (Halisi)
+value.SHOOTING_STARS_BRIGHTNESS.2=Kawaida
+value.SHOOTING_STARS_BRIGHTNESS.3=Mipira ya moto angavu
+
+option.COZY_LIGHTS=Kumeta kwa mwenge
+option.COZY_LIGHTS.comment=Washa michoro ya joto, ya faraja, ya kumeta ya wakati halisi kwa mienge, mioto ya kambi, na taa.
+
+option.WET_REFLECTIONS=Mng'ao wa unyevu wa mvua
+option.WET_REFLECTIONS.comment=Mvua inaponyesha, vizuizi imara kama ardhi, nyasi, na jiwe huwa na unyevu, giza, na ung'avu chini ya anga.
+
+option.GROUND_MIST=Ukungu wa chini wa ardhi (Y=62-66)
+option.GROUND_MIST.comment=Washa matabaka laini ya ukungu wa dhahabu-nyeupe wa asubuhi/jioni yanayoteleza juu ya maji na barafu wakati wa alfajiri na machweo.
+
+option.FOG_DENSITY_LEVEL=Msongamano wa ukungu
+option.FOG_DENSITY_LEVEL.comment=Dhibiti nguvu ya ukungu wa anga wa upeo wa macho.
+
+value.FOG_DENSITY_LEVEL.1=Chini
+value.FOG_DENSITY_LEVEL.2=Wastani
+value.FOG_DENSITY_LEVEL.3=Juu
+
+
+
+
+
+
+
+option.TAA=Kuzuia upinde wa muda (TAA)
+option.TAA.comment=Utatuzi wa muda kwa kuelekeza tena mwendo na kukata jirani. Hupunguza kumetameta na kingo zenye meno kwenye mipangilio ya juu.
+option.TAA_STRENGTH=Nguvu ya TAA
+option.TAA_STRENGTH.comment=Hudhibiti uchanganyaji wa historia. Juu zaidi ni imara zaidi lakini inaweza kuwa laini wakati wa mwendo.
+value.TAA_STRENGTH.1=Nyepesi
+value.TAA_STRENGTH.2=Iliyolinganishwa
+value.TAA_STRENGTH.3=Imara
+
+option.TAA_JITTER=Mtikisiko wa kamera (TAA)
+option.TAA_JITTER.comment=Mtikisiko wa subpixel wa kamera (Halton) unaoruhusu TAA kujenga upya maelezo ya subpixel. Imezimwa kwa chaguo-msingi kwa picha tulivu kabisa; Nyepesi na kuendelea huondoa mwembe wa masafa ya juu kwa gharama ya mabadiliko mepesi ya muda. Inahitaji TAA imewashwa.
+value.TAA_JITTER.0=Zima
+value.TAA_JITTER.1=Nyepesi
+value.TAA_JITTER.2=Kawaida
+value.TAA_JITTER.3=Kali
+
+
+
+
+# ==============================================================================
+# Spatial Anti-Aliasing
+# ==============================================================================
+option.SPATIAL_AA_MODE=Kuzuia upinde wa nafasi
+option.SPATIAL_AA_MODE.comment=Chagua njia ya kuzuia upinde wa uchakataji wa baadaye. FXAA ni haraka na rahisi. SMAA hutumia bafa ya kina kwa ubora bora kwenye kingo za jiometri. Inaweza kuunganishwa na TAA.
+value.SPATIAL_AA_MODE.0=Imezimwa
+value.SPATIAL_AA_MODE.1=FXAA (Haraka)
+value.SPATIAL_AA_MODE.2=SMAA (Ubora)
+
+option.WATER_RIFFLES=Nguvu ya mawimbi madogo ya maji
+option.WATER_RIFFLES.comment=Rekebisha kuyumba na nguvu ya mawimbi madogo ya ramani ya kawaida juu ya maji. Haiathiri barafu au glasi.
+
+value.WATER_RIFFLES.1=Tulivu
+value.WATER_RIFFLES.2=Kawaida
+value.WATER_RIFFLES.3=Yenye msukosuko
+
+option.WATER_SPECULAR_STRENGTH=Mng'ao maalum wa maji
+option.WATER_SPECULAR_STRENGTH.comment=Rekebisha mng'ao wa mng'ao wa jua/mwezi kwenye mawimbi madogo ya maji.
+
+value.WATER_SPECULAR_STRENGTH.1=Laini
+value.WATER_SPECULAR_STRENGTH.2=Kawaida
+value.WATER_SPECULAR_STRENGTH.3=Ung'aao
+
+option.SHADOW_SOFTNESS=Ulaini wa vivuli
+option.SHADOW_SOFTNESS.comment=Hudhibiti jinsi kingo za vivuli zinavyoonekana laini na zilizosambaa. Hutumia uchujaji wa diski ya Poisson iliyozungushwa kwa kivuli laini.
+
+value.SHADOW_SOFTNESS.1=Kali
+value.SHADOW_SOFTNESS.2=Laini
+value.SHADOW_SOFTNESS.3=Laini sana
+
+# ==============================================================================
+# Sun & Moon Lighting
+# ==============================================================================
+screen.SUN_MOON=Jua na mwezi
+screen.SUN_MOON.comment=Rekebisha kwa usahihi nguvu ya jua na mwezi, joto la rangi, na athari za anga.
+
+option.SUN_INTENSITY=Nguvu ya jua
+option.SUN_INTENSITY.comment=Mng'ao mkuu wa mwanga wa jua wa moja kwa moja. Juu zaidi = tofauti kali zaidi ya mchana.
+value.SUN_INTENSITY.1=Hafifu
+value.SUN_INTENSITY.2=Kawaida
+value.SUN_INTENSITY.3=Angavu
+value.SUN_INTENSITY.4=Linalowaka
+
+option.MOON_INTENSITY=Nguvu ya mwezi
+option.MOON_INTENSITY.comment=Mng'ao mkuu wa mwanga wa mwezi. Juu zaidi = usiku angavu zaidi, unaoonekana zaidi.
+value.MOON_INTENSITY.1=Usiku wa giza
+value.MOON_INTENSITY.2=Kawaida
+value.MOON_INTENSITY.3=Mwezi angavu
+value.MOON_INTENSITY.4=Usiku kamili
+
+option.SUN_TEMPERATURE=Joto la rangi ya jua
+option.SUN_TEMPERATURE.comment=Huhamisha mkondo wa Kelvin wa jua. Halisi hutumia mwili mweusi wa Tanner Helland; joto = dhahabu; baridi = nyeupe ya kati.
+value.SUN_TEMPERATURE.1=Baridi / Kati
+value.SUN_TEMPERATURE.2=Halisi
+value.SUN_TEMPERATURE.3=Dhahabu ya joto
+
+option.MOON_TEMPERATURE=Joto la rangi ya mwezi
+option.MOON_TEMPERATURE.comment=Rangi ya mwanga wa mwezi. Barafu = bluu baridi; Fedha = halisi 4100K; Joto = krimu ya mwezi wa mavuno.
+value.MOON_TEMPERATURE.1=Bluu ya barafu
+value.MOON_TEMPERATURE.2=Fedha (Halisi)
+value.MOON_TEMPERATURE.3=Krimu ya joto
+
+option.SUN_HALO=Halo ya jua (utawanyiko wa Mie)
+option.SUN_HALO.comment=Huongeza mng'ao laini wa joto juu ya ardhi unapotazama karibu na jua (utawanyiko wa mbele wa Mie).
+
+option.SUNRISE_GLOW=Mng'ao ulioboreshwa wa macheo/machweo
+option.SUNRISE_GLOW.comment=Huwasha utawanyiko wa nyuma wa joto wenye nguvu zaidi unaozunguka nyuso zinazoangalia mbali na jua la chini.
+
+# ==============================================================================
+# Extended shadow settings
+# ==============================================================================
+option.shadowDistance=Umbali wa vivuli
+option.shadowDistance.comment=Umbali wa juu ambapo vivuli hai vinaonyeshwa. Thamani za juu zinaeneza vivuli hadi umbali wa uchoraji; tumia Shadow LOD kudumisha utendaji katika masafa yaliyopanuliwa.
+value.shadowDistance.60.0=Karibu (60m)
+value.shadowDistance.80.0=Kawaida (80m)
+value.shadowDistance.120.0=Mbali (120m)
+value.shadowDistance.160.0=Ultra (160 m)
+value.shadowDistance.256.0=Iliyopanuliwa (256 m)
+value.shadowDistance.384.0=Umbali wa uchoraji (384 m)
+value.shadowDistance.192.0=DH Seam (192m)
+value.shadowDistance.512.0=DH Extended (512m)
+value.shadowDistance.768.0=DH Far (768m)
+
+option.SHADOW_LOD=LOD ya vivuli
+option.SHADOW_LOD.comment=Inadhibiti kudorora kwa ubora wa vivuli kwa umbali. Kwa umbali wa vivuli uliopanuliwa (256-384 m), LOD inapunguza idadi ya sampuli na kuongeza nusu-kipenyo cha kichujio kwa umbali ili kudumisha utendaji. Zima = ubora sare (pole pole). Imesawazishwa = kupunguza kwa 25-50% umbali. Mkali = kupunguza kwa kiwango cha juu kwa 15-60% umbali. Vivuli vinapuuzwa kabisa zaidi ya 95% ya umbali wa uchora.
+value.SHADOW_LOD.0=Zima (ubora sare)
+value.SHADOW_LOD.1=Imesawazishwa
+value.SHADOW_LOD.2=Mkali
+option.DH_SHADOW_RANGE=Distant Horizons Shadow Range
+option.DH_SHADOW_RANGE.comment=Maximum range where Distant Horizons LOD terrain and water can receive samples from the shared DH shadow map. Seam keeps shadows close to vanilla chunks; Far extends coverage but can cost more GPU time. No effect without Distant Horizons.
+value.DH_SHADOW_RANGE.1=Seam (1.25x)
+value.DH_SHADOW_RANGE.2=Extended (2x)
+value.DH_SHADOW_RANGE.3=Far (4x)
+option.SHADOW_PCSS_BLUR=PCSS umbali kuchafuka
+option.SHADOW_PCSS_BLUR.comment=Inawezesha PCSS penumbra kufifisha ambayo inaongeza kuchafuka kwa vivuli kwa umbali na wakati wa mvua. Zima kwa upole uliowekwa (vivuli vya mbali vikali zaidi, chini ya uhalisia).
+value.SHADOW_PCSS_BLUR.0=Zima (upole uliowekwa)
+value.SHADOW_PCSS_BLUR.1=Washa (PCSS penumbra)
+
+
+option.AMBIENT_BRIGHTNESS=Kuinua kivuli / Mazingira
+option.AMBIENT_BRIGHTNESS.comment=Hudhibiti jinsi maeneo yenye kivuli yanavyoonekana giza usiku na kwenye mapango.
+value.AMBIENT_BRIGHTNESS.1=Giza
+value.AMBIENT_BRIGHTNESS.2=Kawaida
+value.AMBIENT_BRIGHTNESS.3=Imeinuliwa (Angavu)
+
+option.SHADOW_TINT=Rangi ya vivuli
+option.SHADOW_TINT.comment=Hupaka rangi vivuli vya mchana. Vivuli vya ulimwengu halisi chini ya anga la bluu vina rangi laini ya baridi.
+value.SHADOW_TINT.1=Kijivu cha kati
+value.SHADOW_TINT.2=Bluu baridi (Halisi)
+value.SHADOW_TINT.3=Joto
+
+option.LIGHT_WRAP=Kufunika mwanga
+option.LIGHT_WRAP.comment=Hulainisha mpaka kati ya nyuso zenye mwanga na zisizo na mwanga. Halisi = Lambert ya kifizikia; Laini = nzuri kwa picha za skrini.
+value.LIGHT_WRAP.1=Halisi (Lambert)
+value.LIGHT_WRAP.2=Kufunika laini
+value.LIGHT_WRAP.3=Iliyopambwa
+
+# ==============================================================================
+# Screen-Space Reflections (SSR)
+# ==============================================================================
+option.SSR=Mng'ao wa nafasi ya skrini (SSR)
+option.SSR.comment=Huongeza mazingira yaliyoakisiwa ya wakati halisi juu ya maji, nyuso zenye unyevu, na vizuizi vya PBR vya metali. Imewashwa kuanzia WASTANI kwenda juu.
+
+option.SSR_QUALITY=Ubora wa SSR
+option.SSR_QUALITY.comment=Hudhibiti usahihi na umbali wa miale ya mng'ao wa nafasi ya skrini. Juu zaidi = mng'ao mkali zaidi lakini gharama zaidi ya GPU.
+value.SSR_QUALITY.1=Haraka (hatua 12)
+value.SSR_QUALITY.2=Iliyolinganishwa (hatua 24)
+value.SSR_QUALITY.3=Juu (hatua 40)
+
+option.SSR_STRENGTH=Nguvu ya SSR
+option.SSR_STRENGTH.comment=Hudhibiti jinsi mazingira yaliyoakisiwa yanavyoonekana na kujitokeza juu ya nyuso zenye kuakisi.
+
+option.WATER_WAVE_SCALE=Upana wa wimbi
+option.WATER_WAVE_SCALE.comment=Hudhibiti mwinuko unaoonekana wa mawimbi ya uso wa maji. Tulivu = kama kioo, Dhoruba = mng'ao uliovunjika sana.
+option.WATER_WAVE_DETAIL=Maelezo ya wimbi
+option.WATER_WAVE_DETAIL.comment=Hudhibiti ni mawimbi madogo mangapi yanaonekana kwa kila kizuizi. Mbaya = mawimbi machache makubwa, Mengi = mawimbi madogo mengi.
+option.UNDERWATER_NIGHT_DARKNESS=Giza la usiku chini ya maji
+option.UNDERWATER_NIGHT_DARKNESS.comment=Hudhibiti jinsi mandhari ya chini ya maji yanavyokuwa giza usiku. Bwawa lenye mwanga wa mwezi huhifadhi mng'ao; Giza totoro hutoa giza la kupita kiasi la mtindo wa kuishi.
+value.SSR_STRENGTH.1=Hafifu
+value.SSR_STRENGTH.2=Iliyolinganishwa
+value.SSR_STRENGTH.3=Nguvu
+
+# v0.2.9 — water/underwater value labels
+value.WATER_WAVE_SCALE.1=Tulivu
+value.WATER_WAVE_SCALE.2=Kawaida
+value.WATER_WAVE_SCALE.3=Yenye msukosuko
+value.WATER_WAVE_SCALE.4=Dhoruba
+value.WATER_WAVE_DETAIL.1=Mbaya
+value.WATER_WAVE_DETAIL.2=Kawaida
+value.WATER_WAVE_DETAIL.3=Mengi
+value.UNDERWATER_NIGHT_DARKNESS.1=Bwawa lenye mwanga wa mwezi
+value.UNDERWATER_NIGHT_DARKNESS.2=Hafifu
+value.UNDERWATER_NIGHT_DARKNESS.3=Usiku halisi
+value.UNDERWATER_NIGHT_DARKNESS.4=Giza totoro
+
+# PBR Distance
+option.PBR_DISTANCE=Umbali wa uchoraji wa PBR
+option.PBR_DISTANCE.comment=Umbali wa juu wa mng'ao maalum wa PBR. Huokoa GPU kwenye ardhi ya mbali. Karibu (16m) kwa CHINI, Kawaida (48m) kwa WASTANI, Mbali (128m) kwa JUU/ULTRA, Bila kikomo kwa KUPITA KIASI.
+value.PBR_DISTANCE.1=Karibu (16m)
+value.PBR_DISTANCE.2=Kawaida (48m)
+value.PBR_DISTANCE.3=Mbali (128m)
+value.PBR_DISTANCE.4=Bila kikomo
+# ==============================================================================
+# Experimental Tab & New Sky (v1.1.0)
+# ==============================================================================
+screen.EXPERIMENTAL=Majaribio
+screen.EXPERIMENTAL.comment=Majaribio
+
+screen.ATMOSPHERE_OPTIONS=Atmosphere
+screen.ATMOSPHERE_OPTIONS.comment=Physical-sky scattering, altitude and temporal resolve controls.
+option.ATMOSPHERE_TURBIDITY=Atmospheric Turbidity
+option.ATMOSPHERE_TURBIDITY.comment=Controls aerosol haze in Physical Sky. Crisp gives a deep blue sky; Hazy gives a brighter, softer horizon and stronger forward scatter.
+value.ATMOSPHERE_TURBIDITY.1=Crisp
+value.ATMOSPHERE_TURBIDITY.2=Balanced
+value.ATMOSPHERE_TURBIDITY.3=Hazy
+option.ATMOSPHERE_SCALE=Atmosphere Scale
+option.ATMOSPHERE_SCALE.comment=Converts Minecraft altitude into atmosphere height for Physical Sky. Compact makes mountains affect the sky less; Cinematic preserves the original large-scale altitude effect.
+value.ATMOSPHERE_SCALE.1=Compact (25m/block)
+value.ATMOSPHERE_SCALE.2=Balanced (50m/block)
+value.ATMOSPHERE_SCALE.3=Cinematic (100m/block)
+option.GROUND_BOUNCE_MODE=Ground Bounce Albedo
+option.GROUND_BOUNCE_MODE.comment=Controls the lower-atmosphere ground-bounce colour in Physical Sky. Auto adapts to cold and swamp biome signals.
+value.GROUND_BOUNCE_MODE.0=Auto (Biome-aware)
+value.GROUND_BOUNCE_MODE.1=Neutral Soil
+value.GROUND_BOUNCE_MODE.2=Vegetation
+value.GROUND_BOUNCE_MODE.3=Snow
+value.GROUND_BOUNCE_MODE.4=Desert
+option.SKY_TEMPORAL=Physical Sky Temporal Resolve
+option.SKY_TEMPORAL.comment=Uses rotation-only history blending for Physical Sky to smooth low-sample scattering and horizon gradients. Disable if animated cloud/aurora ghosting is noticeable.
+option.SKY_MODE=Anga Mpya (Utawanyiko wa Angahewa)
+option.SKY_STYLE=Mtindo wa anga
+option.SKY_STYLE.comment=Mwelekeo wa kisanii wa anga halisi. Halisi = saizi halisi za pembe na rangi zisizoegemea (muonekano wa nyota). Nusu halisi = jua/mwezi unaosomeka (×2.8), rangi tajiri, mwanga laini. Fantasia = jua/mwezi mkubwa (×5.5), taji kubwa, paleti hai ya kijani-bluu/nyekundu/indigo.
+option.SKY_MODE.comment=EXPERIMENTAL — off in all profiles. Gradient (legacy, default) or Physical realtime scattering with true multiple scattering (Rayleigh+Mie+Ozone, 1st+2nd+3rd order). Enable manually in this tab.
+value.SKY_MODE.0=Gradienti (ya zamani)
+value.SKY_STYLE.0=Halisi
+value.SKY_STYLE.1=Nusu halisi
+value.SKY_STYLE.2=Fantasia
+value.SKY_MODE.1=Realtime Scattering
+
+option.SKY_QUALITY=Ubora wa Utawanyiko wa Anga
+option.SKY_QUALITY.comment=Ubora wa Utawanyiko wa Anga
+value.SKY_QUALITY.1=Haraka
+value.SKY_QUALITY.2=Kawaida
+value.SKY_QUALITY.3=Juu
+
+# --- Auto-added missing translations (v1.1.0 sync) ---
+option.GODRAYS_STRENGTH=Ukali wa Godrays
+option.GODRAYS_STRENGTH.comment=Mwangaza wa miale ya nuru ya ujazo. Hafifu: ukungu mwepesi wa anga. Sawa: miale inayoonekana wazi. Kubwa: miale ya kisinema yenye nguvu.
+value.GODRAYS_STRENGTH.1=Hafifu
+value.GODRAYS_STRENGTH.2=Sawa
+value.GODRAYS_STRENGTH.3=Kubwa
+option.HEAT_SHIMMER=Mwako wa Joto Juu ya Lava
+option.HEAT_SHIMMER.comment=Wezesha athari ndogo ya upotoshaji wa joto wa nafasi ya skrini juu ya nyuso za lava.
+option.HEAT_SHIMMER_STRENGTH=Nguvu ya Mwako wa Joto
+option.HEAT_SHIMMER_STRENGTH.comment=Inadhibiti ukubwa wa upotoshaji wa joto juu ya lava.
+value.HEAT_SHIMMER_STRENGTH.1=Hafifu
+value.HEAT_SHIMMER_STRENGTH.2=Sawa
+value.HEAT_SHIMMER_STRENGTH.3=Nguvu
+
+# v1.1.1 — shadow pipeline + POM option labels
+value.shadowMapResolution.512=512
+value.shadowMapResolution.1024=1024
+value.shadowMapResolution.2048=2048
+value.shadowMapResolution.4096=4096
+value.shadowMapResolution.8192=8192
+option.POM_DEPTH=Kina cha POM
+option.POM_DEPTH.comment=Inadhibiti kina inayoonekana ya ramani ya parallax wakati PBR POM imewashwa.
+value.POM_DEPTH.1=Chini
+value.POM_DEPTH.2=Kawaida
+value.POM_DEPTH.3=Kirefu
+option.POM_STEPS=Hatua za POM
+option.POM_STEPS.comment=Inadhibiti idadi ya hatua za raymarch kwa ramani ya parallax. Thamani za juu zinaboresha ubora lakini zinahitaji muda zaidi wa GPU.
+value.POM_STEPS.1=Haraka
+value.POM_STEPS.2=Kawaida
+value.POM_STEPS.3=Juu
+value.POM_STEPS.4=Ultra
+
+screen.SHADOW_OPTIONS=Vivuli
+screen.SHADOW_OPTIONS.comment=Uamuzi, umbali, upole na rangi ya vivuli hai.
+screen.PBR_OPTIONS=PBR na vifaa
+screen.PBR_OPTIONS.comment=Taa ya PBR, ukingo wa parallax, nguvu na umbali wa uchora.
+screen.AO_REFLECTIONS=AO na miongo
+screen.AO_REFLECTIONS.comment=SSAO, miongo ya skrini, na miongo ya mvua.
+screen.CLOUD_SHAPE=Mawingu
+screen.CLOUD_SHAPE.comment=Umbo, urefu, umbali na vivuli vya mawingu ya kiasi.
+screen.CLOUD_BODY=Cloud Body
+screen.CLOUD_BODY.comment=Altitude, thickness, distance, and the two settings that vary from cloud to cloud: base level and updraft.
+screen.CLOUD_PERF=Cloud Quality
+screen.CLOUD_PERF.comment=Everything that trades picture for frame time. Resolution (steps) and detail (octaves) are independent: you can keep crisp cloud tops and still lower the step count.
+screen.LIGHT_SHAFTS=Miongo ya mwanga
+screen.LIGHT_SHAFTS.comment=Miongo ya jua/mwezi ya kiasi na ubora/wakali wao.
+screen.NIGHT_SKY=Anga ya usiku
+screen.NIGHT_SKY.comment=Aurora, nyota, Njia ya Maziwa na nyota zinazoshuka.
+
+# [v1.1.3]
+option.CLOUD_QUALITY=Ubora wa ray-marching wa mawingu
+option.CLOUD_QUALITY.comment=Raymarch resolution: how many samples the cloud volume gets along the ray (14/24/36/56 steps). Lower it for FPS -- it costs shape detail only in combination with CLOUD_DETAIL below.
+option.BLOOM=HDR Bloom
+option.BLOOM.comment=Enable or disable the HDR bloom pass. When disabled, AuraLite skips all five bloom composite passes for lower GPU load.
+option.HDR_BLOOM=Mwanga wa HDR
+option.HDR_BLOOM.comment=Nguvu ya mwanga mpana wa Gaussian kuzunguka vyanzo vingi vya mwanga: diski ya jua/mwezi, lava, milango, miale moto. Inatumia njia mpya za piramidi ya bloom.
+value.HDR_BLOOM.1=Nyepesi
+value.HDR_BLOOM.2=Sawa
+value.HDR_BLOOM.3=Kali
+option.POST_SHARPEN=Ukali (CAS)
+option.POST_SHARPEN.comment=Mask laini ya unsharp baada ya TAA inayorejesha maelezo ya maandishi yaliyolainishwa na mkusanyiko wa muda. Zima kwa picha laini zaidi, ya kisanaa.
+
+# [v1.1.3]
+
+# ==============================================================================
+# Only the three channel sliders carry a colour code, because there the colour
+# IS the information: red gain is red, green is green, blue is blue. Everything
+# else stays default white — a menu does not need a palette to be readable.
+# ==============================================================================
+screen.COLOR=Colour Grading
+screen.COLOR.comment=Exposure, per-channel gain, brightness, contrast, saturation, gamma and vignette — all as sliders.
+screen.COLOR_TONE=Tone
+screen.COLOR_TONE.comment=Exposure, brightness, contrast, saturation and output gamma.
+screen.COLOR_RGB=Channels
+screen.COLOR_RGB.comment=Per-channel red/green/blue gain plus warm-cool and green-magenta balance.
+screen.COLOR_LOOK=Look
+screen.COLOR_LOOK.comment=Selective vibrance, vignette strength and the tone-mapping curve.
+
+option.COLOR_EXPOSURE=Exposure
+option.COLOR_EXPOSURE.comment=Linear exposure, applied before tone mapping. Above 1.00 the scene brightens and highlights roll off instead of clipping.
+option.COLOR_BRIGHTNESS=Brightness
+option.COLOR_BRIGHTNESS.comment=Midtone lift applied after tone mapping. Because it is a curve and not a multiply, blacks stay black and highlights cannot clip.
+option.COLOR_CONTRAST=Contrast
+option.COLOR_CONTRAST.comment=Contrast around middle grey (0.5) — the classic brightness/contrast operation.
+option.COLOR_SATURATION=Saturation
+option.COLOR_SATURATION.comment=0.00 is greyscale, 1.00 is untouched, above 1.00 is oversaturated.
+option.COLOR_GAMMA=Output Gamma
+option.COLOR_GAMMA.comment=Output encode exponent. 2.20 is the pack default. Lower values lift shadows, higher values crush them.
+option.COLOR_TONEMAP=Tone Curve
+option.COLOR_TONEMAP.comment=Which filmic curve maps HDR to the screen. ACES is the pack default.
+value.COLOR_TONEMAP.1=ACES (default)
+value.COLOR_TONEMAP.2=ACES soft
+value.COLOR_TONEMAP.3=ACES punchy
+value.COLOR_TONEMAP.4=Photographic (AgX-like)
+
+option.COLOR_RED=§cRed Gain§r
+option.COLOR_RED.comment=Multiplies scene-linear red before tone mapping.
+option.COLOR_GREEN=§aGreen Gain§r
+option.COLOR_GREEN.comment=Multiplies scene-linear green before tone mapping.
+option.COLOR_BLUE=§9Blue Gain§r
+option.COLOR_BLUE.comment=Multiplies scene-linear blue before tone mapping.
+option.COLOR_LUMA_PROTECT=Keep Brightness (luma protect)
+option.COLOR_LUMA_PROTECT.comment=On: the RGB / warmth / tint sliders shift colour but leave average brightness alone. Off: raw channel multipliers, which also brighten or darken the frame.
+option.COLOR_WARMTH=Warmth
+option.COLOR_WARMTH.comment=Moves the red/blue balance without touching green. Positive is warmer (sunset), negative is cooler (overcast, moonlight).
+option.COLOR_TINT=Tint
+option.COLOR_TINT.comment=Moves the green/magenta balance. Positive is greener, negative is magenta.
+
+option.COLOR_VIBRANCE=Selective Vibrance
+option.COLOR_VIBRANCE.comment=Saturation that treats colours differently: muted ones move more than already-saturated ones. 0.00 reproduces the pack's built-in look exactly.
+option.COLOR_VIGNETTE=Vignette Strength
+option.COLOR_VIGNETTE.comment=Corner darkening. 0.00 disables it without switching VIGNETTE off; 2.00 doubles it.
+option.VIGNETTE=Vignette
+option.VIGNETTE.comment=Master switch for corner darkening. Use Vignette Strength to dial the amount.
+
+option.CLOUD_MODE=Cloud Renderer
+option.CLOUD_MODE.comment=Volumetric: the ray marches through a 3D density field and every sample shadows itself toward the sun (self-shadowing, silver lining, real depth). Layered sheets: the v1.1.4 look, cheaper.
+value.CLOUD_MODE.0=Layered sheets (v1.1.4)
+value.CLOUD_MODE.1=Volumetric
+option.CLOUD_COVERAGE=Cloud Coverage
+option.CLOUD_COVERAGE.comment=How much of the sky the clouds fill. This changes cloud fraction, not brightness: it moves the threshold the density noise has to cross.
+value.CLOUD_COVERAGE.1=Clear
+value.CLOUD_COVERAGE.2=Scattered
+value.CLOUD_COVERAGE.3=Broken
+value.CLOUD_COVERAGE.4=Broken to overcast
+value.CLOUD_COVERAGE.5=Overcast
+option.CLOUD_DENSITY=Cloud Density
+option.CLOUD_DENSITY.comment=Extinction coefficient of the cloud medium, in 1/m. Real water clouds sit between 0.005 and 0.1; 0.030 is a typical cumulus. Higher makes clouds darker and more opaque inside.
+value.CLOUD_QUALITY.1=Cheap (14 steps)
+value.CLOUD_QUALITY.2=Standard (24 steps)
+value.CLOUD_QUALITY.3=High (36 steps)
+value.CLOUD_QUALITY.4=Extreme (56 steps)
+option.CLOUD_DETAIL=Cloud Shape Detail
+option.CLOUD_DETAIL.comment=How small a feature the cloud shape can carry: 1080 m at 1, 540 m at 2, 270 m at 3, 135 m at 4. Independent of the raymarch resolution above, so you can keep crisp cloud tops and still lower the step count for FPS. Raising both together is the expensive combination.
+value.CLOUD_DETAIL.1=Low (2 octaves, 1080 m)
+value.CLOUD_DETAIL.2=Medium (3 octaves, 540 m)
+value.CLOUD_DETAIL.3=High (4 octaves, 270 m)
+value.CLOUD_DETAIL.4=Extreme (5 octaves, 135 m)
+
+option.VEGETATION_CANOPY=Vegetation Canopy
+option.VEGETATION_CANOPY.comment=Shade foliage as a canopy (light reaching the inside of the crown) instead of flat vertical cards.
+option.GROUND_MIST_DENSITY=Ground Mist Density
+option.GROUND_MIST_DENSITY.comment=How much mist pools in the low ground at dawn.
+value.GROUND_MIST_DENSITY.1=Light
+value.GROUND_MIST_DENSITY.2=Standard
+value.GROUND_MIST_DENSITY.3=Heavy
+option.UNDERWATER_WAVES=Underwater Waves
+option.UNDERWATER_WAVES.comment=Distortion and caustics seen from below the surface. Caustics stay off by default: they are a stylistic choice, not a physical necessity.
+value.UNDERWATER_WAVES.0=Off (calm)
+value.UNDERWATER_WAVES.1=Subtle
+value.UNDERWATER_WAVES.2=Light caustics
+value.UNDERWATER_WAVES.3=Strong
+
+option.CLOUD_CIRRUS=Cirrus Veil
+option.CLOUD_CIRRUS.comment=High, thin ice cloud above the cumulus. It is raymarched like the rest, just thin and cheap. Off leaves the cumulus deck alone in the sky.
+option.DITHER_STRENGTH=Output Dither
+option.DITHER_STRENGTH.comment=Sub-pixel noise added before tone mapping to break up 8-bit banding in smooth sky gradients. It is a trade: less banding, a little grain. Light is half of what v1.1.4 used.
+value.DITHER_STRENGTH.1=Off
+value.DITHER_STRENGTH.2=Light (half of v1.1.4)
+value.DITHER_STRENGTH.3=Medium
+value.DITHER_STRENGTH.4=v1.1.4
+
+option.CLOUD_HEIGHT.comment=Base altitude of the cloud deck in metres. 1200 m is a typical fair-weather cumulus base; Minecraft's own clouds sit at 192 and look like a low ceiling for that reason.
+value.CLOUD_HEIGHT.1=Low (400 m)
+value.CLOUD_HEIGHT.2=Cumulus base (1200 m)
+value.CLOUD_HEIGHT.3=High (2400 m)
+value.CLOUD_HEIGHT.4=Very high (3600 m)
+option.CLOUD_THICKNESS.comment=Deck depth as a fraction of the base altitude: half, equal, or one and a half times. Fair-weather cumulus is 500-1500 m deep.
+value.CLOUD_THICKNESS.1=Thin (0.5x)
+value.CLOUD_THICKNESS.2=Normal (1.0x)
+value.CLOUD_THICKNESS.3=Deep (1.5x)
+option.CLOUD_DISTANCE.comment=How far the deck is drawn. Cloud colour is washed toward the sky with distance (aerial perspective), so the far end fades out instead of ending on an edge.
+value.CLOUD_DISTANCE.1=6 km
+value.CLOUD_DISTANCE.2=12 km
+value.CLOUD_DISTANCE.3=20 km
+value.CLOUD_DISTANCE.4=32 km
+
+option.CLOUD_MICRO=Droplet Spectrum
+option.CLOUD_MICRO.comment=Controls droplet size, which sets how much a given water content scatters and how strongly forward-scattering the phase function is. Continental air has many small droplets (brighter, more diffuse); maritime air has fewer, larger ones (darker, sharper silver lining).
+value.CLOUD_MICRO.1=Continental (6 um, g=0.82)
+value.CLOUD_MICRO.2=Typical (8 um, g=0.85)
+value.CLOUD_MICRO.3=Maritime (12 um, g=0.87)
+option.CLOUD_SCALE=Cloud Size
+option.CLOUD_SCALE.comment=Width of one cloud cell relative to the depth of the deck. Real cumulus are about as wide as they are thick: compact cumulus roughly match their depth, congestus reach three depths across. Larger cells mean fewer, broader clouds in view; smaller cells mean a busier sky.
+value.CLOUD_SCALE.1=Compact (1.2x depth)
+value.CLOUD_SCALE.2=Typical (1.8x depth)
+value.CLOUD_SCALE.3=Broad (3.0x depth)
+option.CLOUD_BASE_VARIATION=Condensation Level Spread
+option.CLOUD_BASE_VARIATION.comment=How much the cloud base height varies between clouds. Real cumulus share a nearly level base because every thermal condenses at the same height, but over tens of kilometres surface temperature and moisture drift, so the level is ragged rather than one shelf. Smaller values give the clean shelf of a calm afternoon; larger values give a broken, stormy sky where each cell has its own base.
+value.CLOUD_BASE_VARIATION.1=Even (±40 m)
+value.CLOUD_BASE_VARIATION.2=Natural (±120 m)
+value.CLOUD_BASE_VARIATION.3=Ragged (±250 m)
+option.CLOUD_UPDRAFT=Updraft Speed
+option.CLOUD_UPDRAFT.comment=How fast the cloud body streams upward. Real cumulus are conveyor belts: air rises through them at 1-3 m/s in fair weather and 20-30 m/s in a storm core, so the shape keeps being replaced from below and the tops appear to boil. The deck itself stays at the same altitude; only the structure inside moves. Storms multiply this.
+value.CLOUD_UPDRAFT.1=Drifting (1.5 m/s)
+value.CLOUD_UPDRAFT.2=Natural (2.5 m/s)
+value.CLOUD_UPDRAFT.3=Vigorous (4.0 m/s)
+option.CLOUD_DENSITY.comment=Liquid water content of the cloud core, in g/m3. Extinction is derived from it and from droplet size, not set directly.
+option.CLOUD_MID_LAYER=Tabaka la mawingu la urefu wa kati
+option.CLOUD_MID_LAYER.comment=Tabaka la ziada linaloendelea kwa urefu wa kati; linaweza kupunguza FPS.
+
+value.CLOUD_DENSITY.1=Thin (0.075 g/m3)
+value.CLOUD_DENSITY.2=Typical (0.15 g/m3)
+value.CLOUD_DENSITY.3=Dense (0.30 g/m3)

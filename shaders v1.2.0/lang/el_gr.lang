@@ -1,0 +1,635 @@
+shaderDescription=AuraLite v1.2.0 — φυσικά σύννεφα, ουρανός και νερό με διόρθωση χρώματος
+# AuraLite Shaders v1.2.0 - Copyright (c) 2026 AlexanderNyr. Licensed under CC BY-NC-SA 4.0.
+# ==============================================================================
+# AuraLite Shader Pack - Greek Language Translations
+# ==============================================================================
+
+# ==============================================================================
+# Quality Profiles
+# ==============================================================================
+profile.VERY_LOW=Πολύ Χαμηλό
+profile.VERY_LOW.comment=Απόλυτο μέγιστο FPS. Όλα τα extras απενεργοποιημένα: χωρίς σκιές, σύννεφα, PBR, SSR, ακτίνες. Μόνο ελάχιστη απόδοση.
+profile.LOW=Χαμηλό
+profile.LOW.comment=Ελαφρύ αλλά playable. Διατηρεί animation φυλλώματος/νερού, πιο φωτεινά αστέρια, FXAA, βινιέτα. Χωρίς σκιές, σύννεφα ή PBR.
+profile.MED=Μεσαίο
+profile.MED.comment=Το καθημερινό γλυκό σημείο. Σκιές 1024, σύννεφα, PBR, SSR Γρήγορο, ακτίνες, SSS φυλλώματος, υγρές αντανακλάσεις, ομίχλη, μετέωρα.
+profile.HIGH=Υψηλό
+profile.HIGH.comment=Ποιότητα για λάτρεις. Σκιές 2048, SSR Ισορροπημένο, TAA, SSAO Λεπτό, ακτίνες Ισορροπημένες, SMAA.
+profile.ULTRA=Ultra
+profile.ULTRA.comment=Υψηλής ποιότητας. Σκιές 4096, SSR Υψηλό, SSAO Ισορροπημένο, ακτίνες Υψηλές, TAA Σταθερό, όλα τα εφέ ενεργά.
+profile.EXTREME=Ακραίο
+profile.EXTREME.comment=Κινηματογραφικό μέγιστο. Όλα στο μέγιστο: PBR Απεριόριστη εμβέλεια, φωτογραφική χαρτογράφηση τόνων (AgX), βαθύτερο SSAO, καταιγίδες μετεωριτών.
+profile.CUSTOM=Προσαρμοσμένο
+profile.CUSTOM.comment=Προσαρμοσμένες ρυθμίσεις τροποποιημένες από τον χρήστη.
+
+screen.TRANSLATION_NOTICE=⚠ Οι μεταφράσεις μπορεί να περιέχουν σφάλματα
+screen.TRANSLATION_NOTICE.comment=Ορισμένες συμβολοσειρές τοπικοποίησης ενδέχεται να είναι ανακριβείς. Αν κάτι φαίνεται περίεργο, συγκρίνετέ το με το αγγλικό πρωτότυπο.
+
+# Screens
+screen.LIGHTING=Ρυθμίσεις φωτισμού
+screen.LIGHTING.comment=Διαμορφώστε τις σκιές, τα χρώματα φωτισμού και τη φωτεινότητα.
+
+screen.FOLIAGE=Ρυθμίσεις βλάστησης
+screen.FOLIAGE.comment=Διαμορφώστε τα κινούμενα σχέδια κυματισμού για γρασίδι και φύλλα.
+
+screen.WATER=Ρυθμίσεις νερού
+screen.WATER.comment=Διαμορφώστε τα κύματα, τη διαφάνεια και το στυλ του νερού.
+
+screen.CLOUDS_MENU=Ουρανός και σύννεφα
+screen.CLOUDS_MENU.comment=Διαμορφώστε το φυσικό υψόμετρο, το πάχος και το στυλ των τρισδιάστατων νεφών και των εφέ ουρανού.
+
+screen.POST_PROCESS=Post-processing και ομίχλη
+screen.POST_PROCESS.comment=Διαμορφώστε την έκθεση, την ομίχλη και τα κινηματογραφικά εφέ.
+screen.POST_FOG=Fog & Image
+screen.POST_FOG.comment=Fog density, ground mist, heat shimmer and dithering.
+
+# Options
+option.SHADOWS=Δυναμικές Σκιές
+option.SHADOWS.comment=Ενεργοποιήστε ή απενεργοποιήστε τις απαλές δυναμικές σκιές από τον ήλιο και τη σελήνη.
+
+option.shadowMapResolution=Ανάλυση Σκιάς
+option.shadowMapResolution.comment=Αλλάξτε την ποιότητα του χάρτη σκιάς. Οι υψηλότερες τιμές ενδέχεται να μειώσουν την απόδοση.
+
+option.PBR_LIGHTING=Φωτισμός PBR (LabPBR)
+option.PBR_LIGHTING.comment=Ενεργοποιήστε τη φυσικά βασισμένη απόδοση για μέταλλα, τραχύτητα και τρισδιάστατους κανονικούς χάρτες (απαιτείται πακέτο πόρων PBR).
+
+option.PBR_POM=Ανάγλυφο Μπλοκ 3D (POM)
+option.PBR_POM.comment=Ενεργοποιήστε τη φυσικά βασισμένη χαρτογράφηση απόκρυψης παράλλαξης για υφές μπλοκ 3D. Συνιστάται η απενεργοποίηση σε ασύμβατα πακέτα πόρων.
+
+option.PBR_STRENGTH=Ένταση PBR
+option.PBR_STRENGTH.comment=Ελέγξτε την ανακλαστικότητα και τη γυαλάδα των μεταλλικών επιφανειών PBR.
+
+value.PBR_STRENGTH.1=Λεπτό
+value.PBR_STRENGTH.2=Τυπικό
+value.PBR_STRENGTH.3=Καθρέφτης
+
+option.SSAO=Απόκρυψη SSAO / SAO
+option.SSAO.comment=Extreme profile: screen-space ambient occlusion for contact shadows in corners, under blocks, and around geometry intersections.
+option.SSAO_STRENGTH=Ένταση SSAO
+option.SSAO_STRENGTH.comment=Ελέγχει το βάθος της περιβαλλοντικής απόκρυψης στο χώρο της οθόνης. Ενεργό μόνο όταν είναι ενεργοποιημένο το SSAO.
+value.SSAO_STRENGTH.1=Λεπτό
+value.SSAO_STRENGTH.2=Ισορροπημένο
+value.SSAO_STRENGTH.3=Βαθύ
+
+option.LIGHTMAP_WARMTH=Θερμότητα Πυρσού
+option.LIGHTMAP_WARMTH.comment=Ρυθμίστε τη θερμότητα και το χρώμα του φωτός μπλοκ/πυρσού.
+
+value.LIGHTMAP_WARMTH.1=Άνετο
+value.LIGHTMAP_WARMTH.2=Ζεστό
+value.LIGHTMAP_WARMTH.3=Έντονο
+
+option.WAVING_LEAVES=Κυματισμός Φύλλων
+option.WAVING_LEAVES.comment=Ενεργοποιήστε απαλά κινούμενα σχέδια κυματισμού για τα φύλλα των δέντρων.
+
+option.WAVING_GRASS=Κυματισμός Βλάστησης
+option.WAVING_GRASS.comment=Ενεργοποιήστε τα κινούμενα σχέδια κυματισμού για γρασίδι, λουλούδια και καλλιέργειες.
+
+option.WIND_SPEED=Ταχύτητα Ανέμου
+option.WIND_SPEED.comment=Ελέγξτε την ταχύτητα κυματισμού φύλλων, φυτών και κυμάτων νερού.
+
+value.WIND_SPEED.1=Ήπιο
+value.WIND_SPEED.2=Αύρα
+value.WIND_SPEED.3=Θύελλα
+
+option.WATER_WAVES=Κύματα Νερού
+option.WATER_WAVES.comment=Enable 3D geometric waves on the water surface.
+
+option.WATER_TRANSPARENCY=Πυκνότητα Νερού
+option.WATER_TRANSPARENCY.comment=Control the transparency and opacity of the water.
+
+value.WATER_TRANSPARENCY.1=Καθαρό
+value.WATER_TRANSPARENCY.2=Ισορροπημένο
+value.WATER_TRANSPARENCY.3=Βαθύ
+
+option.PROCEDURAL_CLOUDS=Ογκομετρικά Νέφη 3D
+option.PROCEDURAL_CLOUDS.comment=Ενεργοποιήστε φυσικά πτητικά τρισδιάστατα νέφη που μπορούν να προσεγγιστούν και να διασχιστούν με πτήση.
+
+option.CLOUD_HEIGHT=Υψόμετρο Νεφών
+option.CLOUD_HEIGHT.comment=Ορίστε το φυσικό υψόμετρο (επίπεδο Y) του καταστρώματος νεφών στον κόσμο (σε μέτρα).
+
+
+option.CLOUD_THICKNESS=Πάχος Νεφών
+option.CLOUD_THICKNESS.comment=Διαμορφώστε το κάθετο πάχος και τον όγκο των νεφών.
+
+
+option.CLOUD_DISTANCE=Απόσταση Απόδοσης Νεφών
+option.CLOUD_DISTANCE.comment=Μέγιστη απόσταση σχεδίασης για ογκομετρικά νέφη. Τα προφίλ ποιότητας το αυξάνουν αυτόματα.
+
+option.CLOUD_SHADOWS=Σκιές Νεφών
+option.CLOUD_SHADOWS.comment=Προσθέτει διαφανείς διαδικαστικές σκιές από την πυκνότητα των ογκομετρικών νεφών στο έδαφος. Εξισορροπείται από τα προφίλ ποιότητας.
+option.CLOUD_SHADOW_STRENGTH=Ένταση Σκιάς Νεφών
+option.CLOUD_SHADOW_STRENGTH.comment=Ελέγχει πόσο ορατές και εντυπωσιακές είναι οι διάφανες σκιές νεφών.
+value.CLOUD_SHADOW_STRENGTH.1=Απαλό
+value.CLOUD_SHADOW_STRENGTH.2=Ισορροπημένο
+value.CLOUD_SHADOW_STRENGTH.3=Εντυπωσιακό
+
+option.GODRAYS=Ακτίνες Ήλιου (Godrays)
+option.GODRAYS.comment=Adds physically-inspired volumetric single-scattering sun shafts with Beer-Lambert extinction, Mie phase and shadow-map occlusion.
+option.GODRAYS_QUALITY=Ποιότητα Godrays
+option.GODRAYS_QUALITY.comment=Controls the sample count and integration distance of physically-based volumetric godrays.
+value.GODRAYS_QUALITY.1=Γρήγορο
+value.GODRAYS_QUALITY.2=Ισορροπημένο
+value.GODRAYS_QUALITY.3=Υψηλό
+
+option.AURORA_MODE=Βόρειο Σέλας
+option.AURORA_MODE.comment=Ελέγξτε την εμφάνιση ρεαλιστικών ρεόντων βόρειων σέλας στον νυχτερινό ουρανό.
+
+value.AURORA_MODE.0=Απενεργοποιημένο
+value.AURORA_MODE.1=Μόνο σε Ψυχρά Βιότοπα
+value.AURORA_MODE.2=Πάντα Ενεργοποιημένο
+
+option.AURORA_SPEED=Ταχύτητα Σέλας
+option.AURORA_SPEED.comment=Ελέγξτε την ταχύτητα κυματισμού και ροής των βόρειων φώτων.
+
+value.AURORA_SPEED.1=Αργό
+value.AURORA_SPEED.2=Τυπικό
+value.AURORA_SPEED.3=Γρήγορο
+
+option.AURORA_STRENGTH=Φωτεινότητα Σέλας
+option.AURORA_STRENGTH.comment=Ελέγξτε τη συνολική φωτεινότητα λάμψης των βόρειων φώτων.
+
+value.AURORA_STRENGTH.1=Απαλό
+value.AURORA_STRENGTH.2=Τυπικό
+value.AURORA_STRENGTH.3=Λαμπερό
+
+option.AURORA_QUALITY=Aurora Quality
+option.AURORA_QUALITY.comment=Raymarch steps for Aurora Borealis. Higher settings smooth curtain volume and reduce visible layering; the new centered sampling removes per-pixel grain.
+value.AURORA_QUALITY.1=Soft (8 steps)
+value.AURORA_QUALITY.2=Balanced (12 steps)
+value.AURORA_QUALITY.3=Silky (18 steps)
+option.NEBULA_BRIGHTNESS=Φωτεινότητα Γαλαξία
+option.NEBULA_BRIGHTNESS.comment=Ρυθμίστε τη φωτεινότητα λάμψης του διαγώνιου καφετί γαλαξιακού νεφελώματος τη νύχτα.
+
+value.NEBULA_BRIGHTNESS.1=Αμυδρό
+value.NEBULA_BRIGHTNESS.2=Τυπικό
+value.NEBULA_BRIGHTNESS.3=Φωτεινό
+
+option.STARS_BRIGHTNESS=Φωτεινότητα Αστεριών
+option.STARS_BRIGHTNESS.comment=Ελέγξτε τη φωτεινότητα και τη λάμψη των αστεριών τη νύχτα.
+
+value.STARS_BRIGHTNESS.1=Αμυδρό
+value.STARS_BRIGHTNESS.2=Τυπικό
+value.STARS_BRIGHTNESS.3=Λαμπερό
+
+option.STARS_AMOUNT=Πυκνότητα Αστεριών
+option.STARS_AMOUNT.comment=Ελέγξτε τη συνολική ποσότητα και πυκνότητα των αστεριών στον ουρανό.
+
+value.STARS_AMOUNT.1=Λίγα
+value.STARS_AMOUNT.2=Τυπικό
+value.STARS_AMOUNT.3=Πυκνά
+
+option.RAINBOW_STRENGTH=Ένταση Ουράνιου Τόξου
+option.RAINBOW_STRENGTH.comment=Διαμορφώστε τη φωτεινότητα και τον κορεσμό χρώματος του ουράνιου τόξου μετά τη βροχή.
+
+value.RAINBOW_STRENGTH.1=Λεπτό
+value.RAINBOW_STRENGTH.2=Ισορροπημένο
+value.RAINBOW_STRENGTH.3=Έντονο
+
+option.COZY_LIGHTS=Τρεμόπαιγμα Πυρσού
+option.COZY_LIGHTS.comment=Ενεργοποιήστε ζεστά, άνετα κινούμενα σχέδια τρεμοπαίγματος σε πραγματικό χρόνο για πυρσούς, φωτιές camping και φανάρια.
+
+option.WET_REFLECTIONS=Αντανακλάσεις Υγρασίας Βροχής
+option.WET_REFLECTIONS.comment=Όταν βρέχει, τα στερεά μπλοκ όπως το έδαφος, το γρασίδι και η πέτρα γίνονται υγρά, σκούρα και γυαλιστερά κάτω από τον ουρανό.
+
+option.GROUND_MIST=Χαμηλή Ομίχλη Εδάφους (Y=62-66)
+option.GROUND_MIST.comment=Ενεργοποιήστε απαλά, χρυσόλευκα φύλλα πρωινής/βραδινής ομίχλης που γλιστρούν πάνω από νερό και πάγο την αυγή και το σούρουπο.
+
+option.FOG_DENSITY_LEVEL=Πυκνότητα Ομίχλης
+option.FOG_DENSITY_LEVEL.comment=Ελέγξτε την ισχύ της ατμοσφαιρικής ομίχλης του ορίζοντα.
+
+value.FOG_DENSITY_LEVEL.1=Χαμηλή
+value.FOG_DENSITY_LEVEL.2=Μεσαία
+value.FOG_DENSITY_LEVEL.3=Υψηλό
+
+
+
+
+
+
+
+option.TAA=Χρονική Εξομάλυνση Ακμών (TAA)
+option.TAA.comment=Χρονική επίλυση με επανα-προβολή κίνησης και περικοπή γειτονιάς. Μειώνει το τρεμόπαιγμα και τις οδοντωτές ακμές σε υψηλές προεπιλογές.
+option.TAA_STRENGTH=Ένταση TAA
+option.TAA_STRENGTH.comment=Ελέγχει την ανάμειξη ιστορικού. Το υψηλότερο είναι πιο σταθερό αλλά μπορεί να είναι πιο μαλακό κατά τη διάρκεια της κίνησης.
+value.TAA_STRENGTH.1=Ελαφρύ
+value.TAA_STRENGTH.2=Ισορροπημένο
+value.TAA_STRENGTH.3=Σταθερό
+
+option.TAA_JITTER=Κραδασμός κάμερας (TAA)
+option.TAA_JITTER.comment=Υποπίξελ κραδασμός κάμερας (Halton) που επιτρέπει στο TAA να ανακατασκευάζει υποπίξελ λεπτομέρειες. Απενεργοποιημένο από προεπιλογή για απόλυτα σταθερή εικόνα· Λεπτό και πάνω αφαιρεί το υψίσυχνο τρεμόπαιγμα με κόστος ένα ελαφρύ χρονικό ταλάντευμα. Απαιτεί ενεργό TAA.
+value.TAA_JITTER.0=Απενεργοποιημένο
+value.TAA_JITTER.1=Λεπτό
+value.TAA_JITTER.2=Τυπικό
+value.TAA_JITTER.3=Δυνατό
+
+
+option.WATER_RIFFLES=Ένταση Κυματισμού Νερού
+option.WATER_RIFFLES.comment=Adjust the waviness and intensity of the fine normal map ripples on the water.
+
+value.WATER_RIFFLES.1=Ήρεμο
+value.WATER_RIFFLES.2=Τυπικό
+value.WATER_RIFFLES.3=Ταραγμένο
+
+option.WATER_SPECULAR_STRENGTH=Λάμψη Κατοπτρισμού Νερού
+option.WATER_SPECULAR_STRENGTH.comment=Adjust the brightness of sun/moon reflections on the water ripples.
+
+value.WATER_SPECULAR_STRENGTH.1=Απαλό
+value.WATER_SPECULAR_STRENGTH.2=Τυπικό
+value.WATER_SPECULAR_STRENGTH.3=Λαμπερό
+
+option.SHADOW_SOFTNESS=Απαλότητα Σκιάς
+option.SHADOW_SOFTNESS.comment=Ελέγχει πόσο απαλές και διάχυτες εμφανίζονται οι άκρες της σκιάς. Χρησιμοποιεί περιστρεφόμενο φιλτράρισμα δίσκου Poisson για ομαλή ημισκιά.
+
+value.SHADOW_SOFTNESS.1=Έντονο
+value.SHADOW_SOFTNESS.2=Απαλό
+value.SHADOW_SOFTNESS.3=Πολύ Απαλό
+
+# ==============================================================================
+# Sun & Moon Lighting (extended)
+# ==============================================================================
+screen.SUN_MOON=Ήλιος και Σελήνη
+screen.SUN_MOON.comment=Ρυθμίστε με ακρίβεια την ένταση ήλιου και σελήνης, τη θερμοκρασία χρώματος και τα ατμοσφαιρικά εφέ.
+
+option.SUN_INTENSITY=Ένταση Ήλιου
+option.SUN_INTENSITY.comment=Κύρια φωτεινότητα άμεσου ηλιακού φωτός. Υψηλότερη = ισχυρότερη ημερήσια αντίθεση.
+value.SUN_INTENSITY.1=Απαλό
+value.SUN_INTENSITY.2=Τυπικό
+value.SUN_INTENSITY.3=Υψηλό
+value.SUN_INTENSITY.4=Φλεγόμενο
+
+option.MOON_INTENSITY=Ένταση Σελήνης
+option.MOON_INTENSITY.comment=Κύρια φωτεινότητα σεληνόφωτος. Υψηλότερη = πιο φωτεινές, πιο ορατές νύχτες.
+value.MOON_INTENSITY.1=Απόλυτο Σκότος
+value.MOON_INTENSITY.2=Τυπικό
+value.MOON_INTENSITY.3=Φωτεινή Σελήνη
+value.MOON_INTENSITY.4=Πλήρης Νύχτα
+
+option.SUN_TEMPERATURE=Θερμοκρασία Χρώματος Ήλιου
+option.SUN_TEMPERATURE.comment=Μετατοπίζει την καμπύλη Kelvin του ήλιου. Το ρεαλιστικό χρησιμοποιεί μέλαν σώμα Tanner Helland· ζεστό = χρυσό· δροσερό = ουδέτερο λευκό.
+value.SUN_TEMPERATURE.1=Δροσερό / Ουδέτερο
+value.SUN_TEMPERATURE.2=Ρεαλιστικό
+value.SUN_TEMPERATURE.3=Ζεστό Χρυσό
+
+option.MOON_TEMPERATURE=Θερμοκρασία Χρώματος Σελήνης
+option.MOON_TEMPERATURE.comment=Απόχρωση σεληνόφωτος. Παγερό = γαλαζωπό ψυχρό· Ασημί = ρεαλιστικό 4100K· Ζεστό = κρεμ φεγγαριού συγκομιδής.
+value.MOON_TEMPERATURE.1=Παγωμένο Μπλε
+value.MOON_TEMPERATURE.2=Ασημί (Ρεαλιστικό)
+value.MOON_TEMPERATURE.3=Ζεστή Κρέμα
+
+option.SUN_HALO=Φωτοστέφανο Ήλιου (Σκέδαση Mie)
+option.SUN_HALO.comment=Προσθέτει μια απαλή ζεστή λάμψη στο έδαφος όταν κοιτάζετε κοντά στον ήλιο (σκέδαση Mie προς τα εμπρός).
+
+option.SUNRISE_GLOW=Βελτιωμένη Λάμψη Ανατολής/Δύσης
+option.SUNRISE_GLOW.comment=Ενεργοποιεί ισχυρότερη θερμή οπισθοσκέδαση που τυλίγεται γύρω από επιφάνειες που κοιτάζουν μακριά από τον χαμηλό ήλιο.
+
+# ==============================================================================
+# Extended shadow settings
+# ==============================================================================
+option.shadowDistance=Απόσταση Σκιάς
+option.shadowDistance.comment=Μέγιστη απόσταση στην οποία αποδίδονται δυναμικές σκιές. Υψηλότερες τιμές επεκτείνουν τις σκιές στην απόσταση απόδοσης. Χρησιμοποιήστε το Shadow LOD για να διατηρήσετε την απόδοση σε εκτεταμένα εύρη.
+value.shadowDistance.60.0=Κοντά (60μ)
+value.shadowDistance.80.0=Τυπικό (80μ)
+value.shadowDistance.120.0=Μακριά (120μ)
+value.shadowDistance.160.0=Ultra (160μ)
+value.shadowDistance.256.0=Εκτεταμένη (256 m)
+value.shadowDistance.384.0=Απόσταση απόδοσης (384 m)
+value.shadowDistance.192.0=DH Seam (192m)
+value.shadowDistance.512.0=DH Extended (512m)
+value.shadowDistance.768.0=DH Far (768m)
+
+option.SHADOW_LOD=LOD σκιών
+option.SHADOW_LOD.comment=Ελέγχει την υποβάθμιση της ποιότητας των σκιών με την απόσταση. Με εκτεταμένη απόσταση σκιών (256-384 m), το LOD μειώνει τον αριθμό των δειγμάτων και αυξάνει την ακτίνα φίλτρου σε απόσταση για να διατηρηθεί η απόδοση. Ανενεργό = ομοιόμορφη ποιότητα (αργό). Ισορροπημένο = μείωση στο 25-50% της απόστασης. Επιθετικό = μέγιστη μείωση στο 15-60% της απόστασης. Οι σκιές παραλείπονται εντελώς πέρα από το 95% της απόστασης απόδοσης.
+value.SHADOW_LOD.0=Ανενεργό (ομοιόμορφη ποιότητα)
+value.SHADOW_LOD.1=Ισορροπημένο
+value.SHADOW_LOD.2=Επιθετικό
+option.DH_SHADOW_RANGE=Distant Horizons Shadow Range
+option.DH_SHADOW_RANGE.comment=Maximum range where Distant Horizons LOD terrain and water can receive samples from the shared DH shadow map. Seam keeps shadows close to vanilla chunks; Far extends coverage but can cost more GPU time. No effect without Distant Horizons.
+value.DH_SHADOW_RANGE.1=Seam (1.25x)
+value.DH_SHADOW_RANGE.2=Extended (2x)
+value.DH_SHADOW_RANGE.3=Far (4x)
+option.SHADOW_PCSS_BLUR=Θόλωμα PCSS ανά απόσταση
+option.SHADOW_PCSS_BLUR.comment=Ενεργοποιεί το μαλάκωμα PCSS penumbra που αυξάνει τη θόλωση των σκιών με την απόσταση και κατά τη διάρκεια βροχής. Απενεργοποιήστε για σταθερή απαλότητα (πιο ευκρινείς μακρινές σκιές, λιγότερο ρεαλιστικό).
+value.SHADOW_PCSS_BLUR.0=Ανενεργό (σταθερή απαλότητα)
+value.SHADOW_PCSS_BLUR.1=Ενεργό (PCSS penumbra)
+
+
+option.AMBIENT_BRIGHTNESS=Ανύψωση Σκιάς / Περιβάλλον
+option.AMBIENT_BRIGHTNESS.comment=Ελέγχει πόσο σκοτεινές εμφανίζονται οι σκιασμένες περιοχές τη νύχτα και στις σπηλιές.
+value.AMBIENT_BRIGHTNESS.1=Σκοτεινό
+value.AMBIENT_BRIGHTNESS.2=Τυπικό
+value.AMBIENT_BRIGHTNESS.3=Ανυψωμένο (Φωτεινό)
+
+option.SHADOW_TINT=Απόχρωση Σκιάς
+option.SHADOW_TINT.comment=Χρωματίζει τις ημερήσιες σκιές. Οι πραγματικές σκιές κάτω από γαλάζιο ουρανό έχουν μια διακριτική δροσερή απόχρωση.
+value.SHADOW_TINT.1=Ουδέτερο γκρι
+value.SHADOW_TINT.2=Ψυχρό μπλε (ρεαλιστικό)
+value.SHADOW_TINT.3=Ζεστό
+
+option.LIGHT_WRAP=Περιτύλιξη Φωτός
+option.LIGHT_WRAP.comment=Απαλύνει τον τερματιστή μεταξύ φωτισμένων και μη φωτισμένων επιφανειών. Ρεαλιστικό = φυσικό Lambert· Απαλό = ευχάριστο για στιγμιότυπα οθόνης.
+value.LIGHT_WRAP.1=Ρεαλιστικό (Lambert)
+value.LIGHT_WRAP.2=Απαλή Περιτύλιξη
+value.LIGHT_WRAP.3=Στυλιζαρισμένο
+
+# v0.2.9 — water/underwater option value labels (English fallback)
+value.WATER_WAVE_SCALE.1=Ήρεμο
+value.WATER_WAVE_SCALE.2=Τυπικό
+value.WATER_WAVE_SCALE.3=Ταραγμένο
+value.WATER_WAVE_SCALE.4=Θυελλώδες
+value.WATER_WAVE_DETAIL.1=Αδρό
+value.WATER_WAVE_DETAIL.2=Τυπικό
+value.WATER_WAVE_DETAIL.3=Πυκνό
+value.UNDERWATER_NIGHT_DARKNESS.1=Λιμνούλα με Σεληνόφως
+value.UNDERWATER_NIGHT_DARKNESS.2=Αμυδρό
+value.UNDERWATER_NIGHT_DARKNESS.3=Αληθινή Νύχτα
+value.UNDERWATER_NIGHT_DARKNESS.4=Απόλυτο Σκοτάδι
+# ==============================================================================
+# Experimental Tab & New Sky (v1.1.0)
+# ==============================================================================
+screen.EXPERIMENTAL=Πειραματικό
+screen.EXPERIMENTAL.comment=Πειραματικό
+
+screen.ATMOSPHERE_OPTIONS=Atmosphere
+screen.ATMOSPHERE_OPTIONS.comment=Physical-sky scattering, altitude and temporal resolve controls.
+option.ATMOSPHERE_TURBIDITY=Atmospheric Turbidity
+option.ATMOSPHERE_TURBIDITY.comment=Controls aerosol haze in Physical Sky. Crisp gives a deep blue sky; Hazy gives a brighter, softer horizon and stronger forward scatter.
+value.ATMOSPHERE_TURBIDITY.1=Crisp
+value.ATMOSPHERE_TURBIDITY.2=Balanced
+value.ATMOSPHERE_TURBIDITY.3=Hazy
+option.ATMOSPHERE_SCALE=Atmosphere Scale
+option.ATMOSPHERE_SCALE.comment=Converts Minecraft altitude into atmosphere height for Physical Sky. Compact makes mountains affect the sky less; Cinematic preserves the original large-scale altitude effect.
+value.ATMOSPHERE_SCALE.1=Compact (25m/block)
+value.ATMOSPHERE_SCALE.2=Balanced (50m/block)
+value.ATMOSPHERE_SCALE.3=Cinematic (100m/block)
+option.GROUND_BOUNCE_MODE=Ground Bounce Albedo
+option.GROUND_BOUNCE_MODE.comment=Controls the lower-atmosphere ground-bounce colour in Physical Sky. Auto adapts to cold and swamp biome signals.
+value.GROUND_BOUNCE_MODE.0=Auto (Biome-aware)
+value.GROUND_BOUNCE_MODE.1=Neutral Soil
+value.GROUND_BOUNCE_MODE.2=Vegetation
+value.GROUND_BOUNCE_MODE.3=Snow
+value.GROUND_BOUNCE_MODE.4=Desert
+option.SKY_TEMPORAL=Physical Sky Temporal Resolve
+option.SKY_TEMPORAL.comment=Uses rotation-only history blending for Physical Sky to smooth low-sample scattering and horizon gradients. Disable if animated cloud/aurora ghosting is noticeable.
+option.SKY_MODE=Νέος ουρανός (Ατμοσφαιρική σκέδαση)
+option.SKY_STYLE=Στυλ Ουρανού
+option.SKY_STYLE.comment=Καλλιτεχνική κατεύθυνση του φυσικού ουρανού. Ρεαλιστικό = πραγματικά γωνιακά μεγέθη και ουδέτερα χρώματα (αστρονομική εμφάνιση). Ημιρεαλιστικό = ευανάγνωστος ήλιος/σελήνη (×2,8), πλουσιότερο χρώμα, απαλή λάμψη. Φαντασίας = μεγάλος ήλιος/σελήνη (×5,5), μεγάλη κορώνα, ζωντανή παλέτα βαθύ κυανό/κατακόκκινο/ινδικό.
+option.SKY_MODE.comment=EXPERIMENTAL — off in all profiles. Gradient (legacy, default) or Physical realtime scattering with true multiple scattering (Rayleigh+Mie+Ozone, 1st+2nd+3rd order). Enable manually in this tab.
+value.SKY_MODE.0=Διαβάθμιση (Παλιό)
+value.SKY_STYLE.0=Ρεαλιστικό
+value.SKY_STYLE.1=Ημι-ρεαλιστικό
+value.SKY_STYLE.2=Φαντασία
+value.SKY_MODE.1=Realtime Scattering
+
+option.SKY_QUALITY=Ποιότητα σκέδασης ουρανού
+option.SKY_QUALITY.comment=Ποιότητα σκέδασης ουρανού
+value.SKY_QUALITY.1=Γρήγορη
+value.SKY_QUALITY.2=Τυπική
+value.SKY_QUALITY.3=Υψηλή
+
+# --- Auto-added missing translations (v1.1.0 sync) ---
+option.FOLIAGE_SSS=SSS Φυλλώματος
+option.FOLIAGE_SSS.comment=Ενεργοποιεί τη σκέδαση υποεπιφάνειας (διαφάνεια) για φύλλα, γρασίδι και φυτά όταν κοιτάτε προς το φως.
+option.GODRAYS_STRENGTH=Ένταση Godrays
+option.GODRAYS_STRENGTH.comment=Φωτεινότητα των ογκομετρικών δεσμών φωτός. Λεπτό: ήπια ατμοσφαιρική ομίχλη. Ισορροπημένο: ξεκάθαρα ορατές ακτίνες. Εντυπωσιακό: τολμηρές κινηματογραφικές δέσμες.
+value.GODRAYS_STRENGTH.1=Λεπτό
+value.GODRAYS_STRENGTH.2=Ισορροπημένο
+value.GODRAYS_STRENGTH.3=Εντυπωσιακό
+option.SHOOTING_STARS=Μετεωρίτες (Πεφταστέρια)
+option.SHOOTING_STARS.comment=Φυσικά ρεαλιστικοί μετεωρίτες που εισέρχονται στη μεσόσφαιρα (~80-120 km). Αποδίδει πραγματικά τόξα 3D μεγάλου κύκλου με καμπύλες φωτός απόσπασης, χρώμα πλάσματος μέλανος σώματος (3500-5500 K), εξαφάνιση Rayleigh κοντά στον ορίζοντα και επίμονα ίχνη ιονισμού σε πύρινες σφαίρες.
+option.SHOOTING_STARS_FREQUENCY=Δραστηριότητα Μετεωριτών (ZHR)
+option.SHOOTING_STARS_FREQUENCY.comment=Κατά προσέγγιση Ωριαία Τιμή Ζενίθ. Σποραδικό = ρεαλιστικό υπόβαθρο ~10 ανά ώρα. Ενεργό = ήπια βροχή. Καταιγίδα = μέγιστη πυκνότητα (~100/ώρα).
+value.SHOOTING_STARS_FREQUENCY.1=Σποραδικό (~10/ώρα)
+value.SHOOTING_STARS_FREQUENCY.2=Ενεργή Βροχή
+value.SHOOTING_STARS_FREQUENCY.3=Καταιγίδα Μετεωριτών
+option.SHOOTING_STARS_BRIGHTNESS=Κλίμακα Μεγέθους
+option.SHOOTING_STARS_BRIGHTNESS.comment=Κύριος πολλαπλασιαστής στην κλίμακα μεγέθους μετεωρίτη. Αμυδρό = ρεαλιστικός μέσος όρος· Φωτεινό = κλιμακώνει τις πύρινες σφαίρες για κινηματογραφική ορατότητα.
+value.SHOOTING_STARS_BRIGHTNESS.1=Αμυδρό (Ρεαλιστικό)
+value.SHOOTING_STARS_BRIGHTNESS.2=Τυπικό
+value.SHOOTING_STARS_BRIGHTNESS.3=Φωτεινές Πύρινες Σφαίρες
+option.SPATIAL_AA_MODE=Χωρική Εξομάλυνση Ακμών
+option.SPATIAL_AA_MODE.comment=Επιλέξτε μέθοδο εξομάλυνσης μετά την επεξεργασία. Το FXAA είναι γρήγορο και φθηνό. Το SMAA χρησιμοποιεί buffer βάθους για καλύτερη ποιότητα στις ακμές γεωμετρίας. Μπορεί να συνδυαστεί με TAA.
+value.SPATIAL_AA_MODE.0=Ανενεργό
+value.SPATIAL_AA_MODE.1=FXAA (Γρήγορο)
+value.SPATIAL_AA_MODE.2=SMAA (Ποιότητα)
+option.HEAT_SHIMMER=Θερμικό Τρεμόπαιγμα Πάνω από τη Λάβα
+option.HEAT_SHIMMER.comment=Ενεργοποιήστε ένα διακριτικό εφέ θερμικής παραμόρφωσης χώρου οθόνης πάνω από επιφάνειες λάβας.
+option.HEAT_SHIMMER_STRENGTH=Ένταση Θερμικού Τρεμοπαίγματος
+option.HEAT_SHIMMER_STRENGTH.comment=Ελέγχει την ένταση της θερμικής παραμόρφωσης πάνω από τη λάβα.
+value.HEAT_SHIMMER_STRENGTH.1=Λεπτό
+value.HEAT_SHIMMER_STRENGTH.2=Ισορροπημένο
+value.HEAT_SHIMMER_STRENGTH.3=Ισχυρό
+option.SSR=Αντανακλάσεις Χώρου Οθόνης (SSR)
+option.SSR.comment=Προσθέτει αντανακλώμενο περιβάλλον σε πραγματικό χρόνο σε νερό, υγρές επιφάνειες και μεταλλικά μπλοκ PBR. Ενεργοποιημένο από το MED και πάνω στην v1.0.4.
+option.SSR_QUALITY=Ποιότητα SSR
+option.SSR_QUALITY.comment=Ελέγχει την ακρίβεια και την απόσταση ακτίνας των αντανακλάσεων χώρου οθόνης. Υψηλότερο = πιο ευκρινείς αντανακλάσεις αλλά περισσότερο κόστος GPU.
+value.SSR_QUALITY.1=Γρήγορο (12 βήματα)
+value.SSR_QUALITY.2=Ισορροπημένο (24 βήματα)
+value.SSR_QUALITY.3=Υψηλό (40 βήματα)
+option.SSR_STRENGTH=Ένταση SSR
+option.SSR_STRENGTH.comment=Ελέγχει πόσο ορατό και εμφανές είναι το αντανακλώμενο περιβάλλον σε ανακλαστικές επιφάνειες.
+option.WATER_WAVE_SCALE=Πλάτος Κύματος
+option.WATER_WAVE_SCALE.comment=Ελέγχει την ορατή απότομη κλίση των κυμάτων της επιφάνειας του νερού. Ήρεμο = σαν καθρέφτης, Θυελλώδες = έντονα σπασμένες αντανακλάσεις.
+option.WATER_WAVE_DETAIL=Λεπτομέρεια Κύματος
+option.WATER_WAVE_DETAIL.comment=Ελέγχει πόσα μικρά κύματα εμφανίζονται ανά μπλοκ. Αδρό = λίγα μεγάλα κύματα, Πυκνό = πολλά μικρά κυματάκια.
+option.UNDERWATER_NIGHT_DARKNESS=Νυχτερινό Σκότος Υποβρύχιο
+option.UNDERWATER_NIGHT_DARKNESS.comment=Ελέγχει πόσο σκοτεινή γίνεται η υποβρύχια σκηνή τη νύχτα. Η Λιμνούλα με Σεληνόφως διατηρεί τη φωτεινότητα· το Απόλυτο Σκοτάδι δίνει ακραίο σκοτάδι στυλ επιβίωσης.
+value.SSR_STRENGTH.1=Λεπτό
+value.SSR_STRENGTH.2=Ισορροπημένο
+value.SSR_STRENGTH.3=Ισχυρό
+option.PBR_DISTANCE=Απόσταση Απόδοσης PBR
+option.PBR_DISTANCE.comment=Μέγιστη απόσταση για κατοπτρικές λάμψεις PBR. Εξοικονομεί GPU σε μακρινό έδαφος. Κοντά (16μ) για LOW, Τυπικό (48μ) για MED, Μακριά (128μ) για HIGH/ULTRA, Απεριόριστο για EXTREME.
+value.PBR_DISTANCE.1=Κοντά (16μ)
+value.PBR_DISTANCE.2=Τυπικό (48μ)
+value.PBR_DISTANCE.3=Μακριά (128μ)
+value.PBR_DISTANCE.4=Απεριόριστο
+
+# v1.1.1 — shadow pipeline + POM option labels
+value.shadowMapResolution.512=512
+value.shadowMapResolution.1024=1024
+value.shadowMapResolution.2048=2048
+value.shadowMapResolution.4096=4096
+value.shadowMapResolution.8192=8192
+option.POM_DEPTH=Βάθος POM
+option.POM_DEPTH.comment=Ελέγχει το ορατό βάθος της χαρτογράφησης parallax όταν είναι ενεργοποιημένο το PBR POM.
+value.POM_DEPTH.1=Χαμηλό
+value.POM_DEPTH.2=Κανονικό
+value.POM_DEPTH.3=Βαθύ
+option.POM_STEPS=Βήματα POM
+option.POM_STEPS.comment=Ελέγχει τον αριθμό των βημάτων raymarch για χαρτογράφηση parallax. Υψηλότερες τιμές βελτιώνουν την ποιότητα αλλά κοστίζουν περισσότερο χρόνο GPU.
+value.POM_STEPS.1=Γρήγορο
+value.POM_STEPS.2=Κανονικό
+value.POM_STEPS.3=Υψηλό
+value.POM_STEPS.4=Ultra
+
+screen.SHADOW_OPTIONS=Σκιές
+screen.SHADOW_OPTIONS.comment=Ανάλυση, απόσταση, απαλότητα και απόχρωση δυναμικών σκιών.
+screen.PBR_OPTIONS=PBR και υλικά
+screen.PBR_OPTIONS.comment=Φωτισμός PBR, ανάγλυφο parallax, ένταση και απόσταση απόδοσης.
+screen.AO_REFLECTIONS=AO και αντανακλάσεις
+screen.AO_REFLECTIONS.comment=SSAO, αντανακλάσεις οθόνης και αντανακλάσεις βροχής.
+screen.CLOUD_SHAPE=Σύννεφα
+screen.CLOUD_SHAPE.comment=Σχήμα, ύψος, απόσταση και σκιές ογκομετρικών σύννεφων.
+screen.CLOUD_BODY=Cloud Body
+screen.CLOUD_BODY.comment=Altitude, thickness, distance, and the two settings that vary from cloud to cloud: base level and updraft.
+screen.CLOUD_PERF=Cloud Quality
+screen.CLOUD_PERF.comment=Everything that trades picture for frame time. Resolution (steps) and detail (octaves) are independent: you can keep crisp cloud tops and still lower the step count.
+screen.LIGHT_SHAFTS=Ακτίνες φωτός
+screen.LIGHT_SHAFTS.comment=Ογκομετρικές ακτίνες ήλιου/σελήνης και η ποιότητα/έντασή τους.
+screen.NIGHT_SKY=Νυχτερινός ουρανός
+screen.NIGHT_SKY.comment=Σέλας, αστέρια, Γαλαξίας και πεφταστέρια.
+
+# [v1.1.3]
+option.CLOUD_QUALITY=Ποιότητα raymarching νεφών
+option.CLOUD_QUALITY.comment=Raymarch resolution: how many samples the cloud volume gets along the ray (14/24/36/56 steps). Lower it for FPS -- it costs shape detail only in combination with CLOUD_DETAIL below.
+option.BLOOM=HDR Bloom
+option.BLOOM.comment=Enable or disable the HDR bloom pass. When disabled, AuraLite skips all five bloom composite passes for lower GPU load.
+option.HDR_BLOOM=Λάμψη HDR
+option.HDR_BLOOM.comment=Ένταση της ευρείας γκαουσιανής λάμψης γύρω από υπερφωτισμένες πηγές: δίσκος ήλιου/σελήνης, λάβα, πύλες, καυτές αντανακλάσεις. Χρησιμοποιεί τα νέα περάσματα της πυραμίδας bloom.
+value.HDR_BLOOM.1=Λεπτό
+value.HDR_BLOOM.2=Ισορροπημένο
+value.HDR_BLOOM.3=Δυνατό
+option.POST_SHARPEN=Ευκρίνεια (CAS)
+option.POST_SHARPEN.comment=Απαλή μάσκα θολώματος μετά TAA που επαναφέρει λεπτομέρειες υφής απαλυμένες από τη χρονική συσσώρευση. Απενεργοποιήστε για πιο απαλή, πιο κινηματογραφική εικόνα.
+
+# [v1.1.3]
+
+# ==============================================================================
+# Only the three channel sliders carry a colour code, because there the colour
+# IS the information: red gain is red, green is green, blue is blue. Everything
+# else stays default white — a menu does not need a palette to be readable.
+# ==============================================================================
+screen.COLOR=Colour Grading
+screen.COLOR.comment=Exposure, per-channel gain, brightness, contrast, saturation, gamma and vignette — all as sliders.
+screen.COLOR_TONE=Tone
+screen.COLOR_TONE.comment=Exposure, brightness, contrast, saturation and output gamma.
+screen.COLOR_RGB=Channels
+screen.COLOR_RGB.comment=Per-channel red/green/blue gain plus warm-cool and green-magenta balance.
+screen.COLOR_LOOK=Look
+screen.COLOR_LOOK.comment=Selective vibrance, vignette strength and the tone-mapping curve.
+
+option.COLOR_EXPOSURE=Exposure
+option.COLOR_EXPOSURE.comment=Linear exposure, applied before tone mapping. Above 1.00 the scene brightens and highlights roll off instead of clipping.
+option.COLOR_BRIGHTNESS=Brightness
+option.COLOR_BRIGHTNESS.comment=Midtone lift applied after tone mapping. Because it is a curve and not a multiply, blacks stay black and highlights cannot clip.
+option.COLOR_CONTRAST=Contrast
+option.COLOR_CONTRAST.comment=Contrast around middle grey (0.5) — the classic brightness/contrast operation.
+option.COLOR_SATURATION=Saturation
+option.COLOR_SATURATION.comment=0.00 is greyscale, 1.00 is untouched, above 1.00 is oversaturated.
+option.COLOR_GAMMA=Output Gamma
+option.COLOR_GAMMA.comment=Output encode exponent. 2.20 is the pack default. Lower values lift shadows, higher values crush them.
+option.COLOR_TONEMAP=Tone Curve
+option.COLOR_TONEMAP.comment=Which filmic curve maps HDR to the screen. ACES is the pack default.
+value.COLOR_TONEMAP.1=ACES (default)
+value.COLOR_TONEMAP.2=ACES soft
+value.COLOR_TONEMAP.3=ACES punchy
+value.COLOR_TONEMAP.4=Photographic (AgX-like)
+
+option.COLOR_RED=§cRed Gain§r
+option.COLOR_RED.comment=Multiplies scene-linear red before tone mapping.
+option.COLOR_GREEN=§aGreen Gain§r
+option.COLOR_GREEN.comment=Multiplies scene-linear green before tone mapping.
+option.COLOR_BLUE=§9Blue Gain§r
+option.COLOR_BLUE.comment=Multiplies scene-linear blue before tone mapping.
+option.COLOR_LUMA_PROTECT=Keep Brightness (luma protect)
+option.COLOR_LUMA_PROTECT.comment=On: the RGB / warmth / tint sliders shift colour but leave average brightness alone. Off: raw channel multipliers, which also brighten or darken the frame.
+option.COLOR_WARMTH=Warmth
+option.COLOR_WARMTH.comment=Moves the red/blue balance without touching green. Positive is warmer (sunset), negative is cooler (overcast, moonlight).
+option.COLOR_TINT=Tint
+option.COLOR_TINT.comment=Moves the green/magenta balance. Positive is greener, negative is magenta.
+
+option.COLOR_VIBRANCE=Selective Vibrance
+option.COLOR_VIBRANCE.comment=Saturation that treats colours differently: muted ones move more than already-saturated ones. 0.00 reproduces the pack's built-in look exactly.
+option.COLOR_VIGNETTE=Vignette Strength
+option.COLOR_VIGNETTE.comment=Corner darkening. 0.00 disables it without switching VIGNETTE off; 2.00 doubles it.
+option.VIGNETTE=Vignette
+option.VIGNETTE.comment=Master switch for corner darkening. Use Vignette Strength to dial the amount.
+
+option.CLOUD_MODE=Cloud Renderer
+option.CLOUD_MODE.comment=Volumetric: the ray marches through a 3D density field and every sample shadows itself toward the sun (self-shadowing, silver lining, real depth). Layered sheets: the v1.1.4 look, cheaper.
+value.CLOUD_MODE.0=Layered sheets (v1.1.4)
+value.CLOUD_MODE.1=Volumetric
+option.CLOUD_COVERAGE=Cloud Coverage
+option.CLOUD_COVERAGE.comment=How much of the sky the clouds fill. This changes cloud fraction, not brightness: it moves the threshold the density noise has to cross.
+value.CLOUD_COVERAGE.1=Clear
+value.CLOUD_COVERAGE.2=Scattered
+value.CLOUD_COVERAGE.3=Broken
+value.CLOUD_COVERAGE.4=Broken to overcast
+value.CLOUD_COVERAGE.5=Overcast
+option.CLOUD_DENSITY=Cloud Density
+option.CLOUD_DENSITY.comment=Extinction coefficient of the cloud medium, in 1/m. Real water clouds sit between 0.005 and 0.1; 0.030 is a typical cumulus. Higher makes clouds darker and more opaque inside.
+value.CLOUD_QUALITY.1=Cheap (14 steps)
+value.CLOUD_QUALITY.2=Standard (24 steps)
+value.CLOUD_QUALITY.3=High (36 steps)
+value.CLOUD_QUALITY.4=Extreme (56 steps)
+option.CLOUD_DETAIL=Cloud Shape Detail
+option.CLOUD_DETAIL.comment=How small a feature the cloud shape can carry: 1080 m at 1, 540 m at 2, 270 m at 3, 135 m at 4. Independent of the raymarch resolution above, so you can keep crisp cloud tops and still lower the step count for FPS. Raising both together is the expensive combination.
+value.CLOUD_DETAIL.1=Low (2 octaves, 1080 m)
+value.CLOUD_DETAIL.2=Medium (3 octaves, 540 m)
+value.CLOUD_DETAIL.3=High (4 octaves, 270 m)
+value.CLOUD_DETAIL.4=Extreme (5 octaves, 135 m)
+
+option.VEGETATION_CANOPY=Vegetation Canopy
+option.VEGETATION_CANOPY.comment=Shade foliage as a canopy (light reaching the inside of the crown) instead of flat vertical cards.
+option.GROUND_MIST_DENSITY=Ground Mist Density
+option.GROUND_MIST_DENSITY.comment=How much mist pools in the low ground at dawn.
+value.GROUND_MIST_DENSITY.1=Light
+value.GROUND_MIST_DENSITY.2=Standard
+value.GROUND_MIST_DENSITY.3=Heavy
+option.UNDERWATER_WAVES=Underwater Waves
+option.UNDERWATER_WAVES.comment=Distortion and caustics seen from below the surface. Caustics stay off by default: they are a stylistic choice, not a physical necessity.
+value.UNDERWATER_WAVES.0=Off (calm)
+value.UNDERWATER_WAVES.1=Subtle
+value.UNDERWATER_WAVES.2=Light caustics
+value.UNDERWATER_WAVES.3=Strong
+
+option.CLOUD_CIRRUS=Cirrus Veil
+option.CLOUD_CIRRUS.comment=High, thin ice cloud above the cumulus. It is raymarched like the rest, just thin and cheap. Off leaves the cumulus deck alone in the sky.
+option.DITHER_STRENGTH=Output Dither
+option.DITHER_STRENGTH.comment=Sub-pixel noise added before tone mapping to break up 8-bit banding in smooth sky gradients. It is a trade: less banding, a little grain. Light is half of what v1.1.4 used.
+value.DITHER_STRENGTH.1=Off
+value.DITHER_STRENGTH.2=Light (half of v1.1.4)
+value.DITHER_STRENGTH.3=Medium
+value.DITHER_STRENGTH.4=v1.1.4
+
+option.CLOUD_HEIGHT.comment=Base altitude of the cloud deck in metres. 1200 m is a typical fair-weather cumulus base; Minecraft's own clouds sit at 192 and look like a low ceiling for that reason.
+value.CLOUD_HEIGHT.1=Low (400 m)
+value.CLOUD_HEIGHT.2=Cumulus base (1200 m)
+value.CLOUD_HEIGHT.3=High (2400 m)
+value.CLOUD_HEIGHT.4=Very high (3600 m)
+option.CLOUD_THICKNESS.comment=Deck depth as a fraction of the base altitude: half, equal, or one and a half times. Fair-weather cumulus is 500-1500 m deep.
+value.CLOUD_THICKNESS.1=Thin (0.5x)
+value.CLOUD_THICKNESS.2=Normal (1.0x)
+value.CLOUD_THICKNESS.3=Deep (1.5x)
+option.CLOUD_DISTANCE.comment=How far the deck is drawn. Cloud colour is washed toward the sky with distance (aerial perspective), so the far end fades out instead of ending on an edge.
+value.CLOUD_DISTANCE.1=6 km
+value.CLOUD_DISTANCE.2=12 km
+value.CLOUD_DISTANCE.3=20 km
+value.CLOUD_DISTANCE.4=32 km
+
+option.CLOUD_MICRO=Droplet Spectrum
+option.CLOUD_MICRO.comment=Controls droplet size, which sets how much a given water content scatters and how strongly forward-scattering the phase function is. Continental air has many small droplets (brighter, more diffuse); maritime air has fewer, larger ones (darker, sharper silver lining).
+value.CLOUD_MICRO.1=Continental (6 um, g=0.82)
+value.CLOUD_MICRO.2=Typical (8 um, g=0.85)
+value.CLOUD_MICRO.3=Maritime (12 um, g=0.87)
+option.CLOUD_SCALE=Cloud Size
+option.CLOUD_SCALE.comment=Width of one cloud cell relative to the depth of the deck. Real cumulus are about as wide as they are thick: compact cumulus roughly match their depth, congestus reach three depths across. Larger cells mean fewer, broader clouds in view; smaller cells mean a busier sky.
+value.CLOUD_SCALE.1=Compact (1.2x depth)
+value.CLOUD_SCALE.2=Typical (1.8x depth)
+value.CLOUD_SCALE.3=Broad (3.0x depth)
+option.CLOUD_BASE_VARIATION=Condensation Level Spread
+option.CLOUD_BASE_VARIATION.comment=How much the cloud base height varies between clouds. Real cumulus share a nearly level base because every thermal condenses at the same height, but over tens of kilometres surface temperature and moisture drift, so the level is ragged rather than one shelf. Smaller values give the clean shelf of a calm afternoon; larger values give a broken, stormy sky where each cell has its own base.
+value.CLOUD_BASE_VARIATION.1=Even (±40 m)
+value.CLOUD_BASE_VARIATION.2=Natural (±120 m)
+value.CLOUD_BASE_VARIATION.3=Ragged (±250 m)
+option.CLOUD_UPDRAFT=Updraft Speed
+option.CLOUD_UPDRAFT.comment=How fast the cloud body streams upward. Real cumulus are conveyor belts: air rises through them at 1-3 m/s in fair weather and 20-30 m/s in a storm core, so the shape keeps being replaced from below and the tops appear to boil. The deck itself stays at the same altitude; only the structure inside moves. Storms multiply this.
+value.CLOUD_UPDRAFT.1=Drifting (1.5 m/s)
+value.CLOUD_UPDRAFT.2=Natural (2.5 m/s)
+value.CLOUD_UPDRAFT.3=Vigorous (4.0 m/s)
+option.CLOUD_DENSITY.comment=Liquid water content of the cloud core, in g/m3. Extinction is derived from it and from droplet size, not set directly.
+option.CLOUD_MID_LAYER=Στρώμα νεφών μέσου ύψους
+option.CLOUD_MID_LAYER.comment=Πρόσθετο στρώμα που εξελίσσεται σε μέσο ύψος· μπορεί να μειώσει τα FPS.
+
+value.CLOUD_DENSITY.1=Thin (0.075 g/m3)
+value.CLOUD_DENSITY.2=Typical (0.15 g/m3)
+value.CLOUD_DENSITY.3=Dense (0.30 g/m3)

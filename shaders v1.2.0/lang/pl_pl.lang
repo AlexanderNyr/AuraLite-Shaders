@@ -1,0 +1,575 @@
+shaderDescription=AuraLite v1.2.0 — fizyczne chmury, niebo i woda z korekcją kolorów suwakami
+# AuraLite Shaders v1.2.0 - Copyright (c) 2026 AlexanderNyr. Licensed under CC BY-NC-SA 4.0.
+# ==============================================================================
+# AuraLite Shader Pack - Polish Language Translations
+# ==============================================================================
+# NOTE: This is an AI-assisted translation. Community corrections are
+# welcome! Open a PR at:
+# https://github.com/AlexanderNyr/AuraLite-Shaders
+# ==============================================================================
+
+# ==============================================================================
+# Quality Profiles
+# ==============================================================================
+profile.VERY_LOW=Bardzo Niski
+profile.VERY_LOW.comment=Absolutne maksimum FPS. Wszystkie dodatki wyłączone: bez cieni, chmur, PBR, SSR, promieni. Tylko minimalne renderowanie.
+profile.LOW=Niski
+profile.MED=Średni
+profile.HIGH=Wysoki
+profile.ULTRA=Ultra
+profile.EXTREME=Ekstremalny
+profile.EXTREME.comment=Kinematograficzne maksimum. Wszystko na max: PBR Nieskończony zasięg, fotograficzny mapowanie tonów (AgX), najgłębszy SSAO, burze meteorów.
+profile.CUSTOM=Własny
+profile.CUSTOM.comment=Niestandardowe ustawienia zmodyfikowane przez użytkownika.
+profile.HIGH.comment=Jakość dla entuzjastów. Cienie 2048, SSR Zbalansowane, TAA, SSAO Subtelne, promienie Zbalansowane, SMAA.
+profile.LOW.comment=Lekki, ale grywalny. Zachowuje animację liści/wody, jaśniejsze gwiazdy, FXAA, winietę. Bez cieni, chmur i PBR.
+profile.MED.comment=Codzienny sweet spot. Cienie 1024, chmury, PBR, SSR Szybki, promienie, SSS liści, mokre odbicia, mgła, meteoryty.
+profile.ULTRA.comment=High-end. Cienie 4096, SSR Wysokie, SSAO Zbalansowane, promienie Wysokie, TAA Stabilne, wszystkie efekty włączone.
+
+screen.TRANSLATION_NOTICE=⚠ Tłumaczenia mogą zawierać błędy
+screen.TRANSLATION_NOTICE.comment=Niektóre tłumaczenia mogą być niedokładne. Jeśli coś wygląda dziwnie, porównaj z oryginałem w języku angielskim.
+
+# Screens
+screen.LIGHTING=Ustawienia Oświetlenia
+screen.LIGHTING.comment=Skonfiguruj cienie, kolory światła i jasność.
+screen.FOLIAGE=Ustawienia Roślinności
+screen.FOLIAGE.comment=Skonfiguruj animacje kołysania trawy i liści.
+screen.WATER=Ustawienia Wody
+screen.WATER.comment=Skonfiguruj fale, przezroczystość i styl wody.
+screen.CLOUDS_MENU=Niebo i Chmury
+screen.CLOUDS_MENU.comment=Skonfiguruj fizyczną wysokość, grubość i styl chmur 3D oraz efektów nieba.
+screen.POST_PROCESS=Postprocessing i Mgła
+screen.POST_PROCESS.comment=Skonfiguruj ekspozycję, mgłę i efekty kinowe.
+screen.POST_FOG=Fog & Image
+screen.POST_FOG.comment=Fog density, ground mist, heat shimmer and dithering.
+
+# Options
+option.SHADOWS=Dynamiczne Cienie
+option.SHADOWS.comment=Włącz lub wyłącz miękkie dynamiczne cienie od słońca i księżyca.
+option.shadowMapResolution=Rozdzielczość Cieni
+option.shadowMapResolution.comment=Zmień jakość mapy cieni. Wyższe wartości mogą obniżyć wydajność.
+option.PBR_LIGHTING=Oświetlenie PBR (LabPBR)
+option.PBR_LIGHTING.comment=Włącz renderowanie oparte na fizyce dla metali, chropowatości i map normalnych 3D (wymagany pakiet zasobów PBR).
+option.PBR_POM=Rzeźba Bloków 3D (POM)
+option.PBR_POM.comment=Włącz oparte na fizyce mapowanie okluzji paralaksy dla tekstur bloków 3D. Zalecane wyłączenie przy niekompatybilnych paczkach zasobów.
+option.PBR_STRENGTH=Intensywność PBR
+option.PBR_STRENGTH.comment=Kontroluj refleksyjność i połysk metalicznych powierzchni PBR.
+value.PBR_STRENGTH.1=Subtelna
+value.PBR_STRENGTH.2=Standardowa
+value.PBR_STRENGTH.3=Lustrzana
+option.LIGHTMAP_WARMTH=Ciepło Pochodni
+option.LIGHTMAP_WARMTH.comment=Dostosuj ciepło i kolor światła bloków/pochodni.
+value.LIGHTMAP_WARMTH.1=Przytulna
+value.LIGHTMAP_WARMTH.2=Ciepły
+value.LIGHTMAP_WARMTH.3=Intensywna
+option.WAVING_LEAVES=Kołyszące się Liście
+option.WAVING_LEAVES.comment=Włącz delikatne animacje kołysania liści drzew.
+option.WAVING_GRASS=Kołysząca się Roślinność
+option.WAVING_GRASS.comment=Włącz animacje kołysania trawy, kwiatów i upraw.
+option.WIND_SPEED=Prędkość Wiatru
+option.WIND_SPEED.comment=Kontroluj prędkość kołysania liści, roślin i fal wody.
+value.WIND_SPEED.1=Łagodny
+value.WIND_SPEED.2=Bryza
+value.WIND_SPEED.3=Wichura
+option.WATER_WAVES=Fale Wody
+option.WATER_WAVES.comment=Włącza geometryczne fale 3D na powierzchni wody.
+option.WATER_TRANSPARENCY=Gęstość Wody
+option.WATER_TRANSPARENCY.comment=Kontroluje przezroczystość i nieprzezroczystość wody.
+value.WATER_TRANSPARENCY.1=Przejrzysta
+value.WATER_TRANSPARENCY.2=Zrównoważona
+value.WATER_TRANSPARENCY.3=Głęboka
+option.PROCEDURAL_CLOUDS=Wolumetryczne Chmury 3D
+option.PROCEDURAL_CLOUDS.comment=Włącz fizyczne, przelotowe chmury 3D, przez które można przelecieć.
+option.CLOUD_HEIGHT=Wysokość Chmur
+option.CLOUD_HEIGHT.comment=Ustaw fizyczną wysokość (poziom Y) warstwy chmur w świecie (w metrach).
+option.CLOUD_THICKNESS=Grubość Chmur
+option.CLOUD_THICKNESS.comment=Skonfiguruj pionową grubość i objętość chmur.
+option.AURORA_MODE=Zorza Polarna
+option.AURORA_MODE.comment=Kontroluj wyświetlanie realistycznej, płynącej zorzy polarnej na nocnym niebie.
+value.AURORA_MODE.0=Wyłączona
+value.AURORA_MODE.1=Tylko w Zimnych Biomach
+value.AURORA_MODE.2=Zawsze Włączona
+option.AURORA_SPEED=Prędkość Zorzy
+option.AURORA_SPEED.comment=Kontroluj prędkość falowania i przepływu zorzy polarnej.
+value.AURORA_SPEED.1=Wolna
+value.AURORA_SPEED.2=Standardowa
+value.AURORA_SPEED.3=Szybka
+option.AURORA_STRENGTH=Jasność Zorzy
+option.AURORA_STRENGTH.comment=Kontroluj ogólną jasność blasku zorzy polarnej.
+value.AURORA_STRENGTH.1=Miękka
+value.AURORA_STRENGTH.2=Standardowa
+value.AURORA_STRENGTH.3=Świecąca
+option.AURORA_QUALITY=Aurora Quality
+option.AURORA_QUALITY.comment=Raymarch steps for Aurora Borealis. Higher settings smooth curtain volume and reduce visible layering; the new centered sampling removes per-pixel grain.
+value.AURORA_QUALITY.1=Soft (8 steps)
+value.AURORA_QUALITY.2=Balanced (12 steps)
+value.AURORA_QUALITY.3=Silky (18 steps)
+option.NEBULA_BRIGHTNESS=Jasność Drogi Mlecznej
+option.NEBULA_BRIGHTNESS.comment=Dostosuj jasność blasku ukośnej, brązowawej mgławicy galaktycznej w nocy.
+value.NEBULA_BRIGHTNESS.1=Przygaszona
+value.NEBULA_BRIGHTNESS.2=Standardowa
+value.NEBULA_BRIGHTNESS.3=Jasna
+option.STARS_BRIGHTNESS=Jasność Gwiazd
+option.STARS_BRIGHTNESS.comment=Kontroluj jasność i mieniący się blask gwiazd w nocy.
+value.STARS_BRIGHTNESS.1=Słaba
+value.STARS_BRIGHTNESS.2=Standardowa
+value.STARS_BRIGHTNESS.3=Olśniewająca
+option.STARS_AMOUNT=Gęstość Gwiazd
+option.STARS_AMOUNT.comment=Kontroluj ogólną liczbę i gęstość gwiazd na niebie.
+value.STARS_AMOUNT.1=Nieliczne
+value.STARS_AMOUNT.2=Standardowa
+value.STARS_AMOUNT.3=Gęsta
+option.RAINBOW_STRENGTH=Intensywność Tęczy
+option.RAINBOW_STRENGTH.comment=Skonfiguruj jasność i nasycenie kolorów tęczy po deszczu.
+value.RAINBOW_STRENGTH.1=Subtelna
+value.RAINBOW_STRENGTH.2=Zrównoważona
+value.RAINBOW_STRENGTH.3=Żywa
+option.COZY_LIGHTS=Migotanie Pochodni
+option.COZY_LIGHTS.comment=Włącz ciepłe, przytulne animacje migotania w czasie rzeczywistym dla pochodni, ognisk i latarni.
+option.WET_REFLECTIONS=Odbicia Mokrej Nawierzchni
+option.WET_REFLECTIONS.comment=Podczas deszczu bloki takie jak ziemia, trawa i kamień stają się mokre, ciemne i błyszczące pod niebem.
+option.GROUND_MIST=Niska Mgła Gruntowa (Y=62-66)
+option.GROUND_MIST.comment=Włącz miękkie, złocisto-białe warstwy porannej/wieczornej mgły przesuwające się nad wodą i lodem o świcie i zmierzchu.
+option.FOG_DENSITY_LEVEL=Gęstość Mgły
+option.FOG_DENSITY_LEVEL.comment=Kontroluj siłę atmosferycznej mgły horyzontu.
+value.FOG_DENSITY_LEVEL.1=Niska
+value.FOG_DENSITY_LEVEL.2=Średnia
+value.FOG_DENSITY_LEVEL.3=Wysoka
+
+option.TAA=Czasowe Wygładzanie Krawędzi (TAA)
+option.TAA.comment=Rozwiązanie czasowe z reprojekcją ruchu i przycinaniem sąsiedztwa. Zmniejsza migotanie i postrzępione krawędzie przy wysokich profilach.
+option.TAA_STRENGTH=Siła TAA
+option.TAA_STRENGTH.comment=Kontroluje mieszanie historii. Wyższe wartości są stabilniejsze, ale mogą być bardziej rozmyte podczas ruchu.
+value.TAA_STRENGTH.1=Lekka
+value.TAA_STRENGTH.2=Zrównoważona
+value.TAA_STRENGTH.3=Stabilna
+
+option.TAA_JITTER=Drganie kamery (TAA)
+option.TAA_JITTER.comment=Subpikselowe drganie kamery (Halton), które pozwala TAA odtwarzać subpikselowe detale. Domyślnie wyłączone dla idealnie stabilnego obrazu; Subtilne i wyższe usuwa wysokoczęstotliwościowe migotanie kosztem lekkiego czasowego kołysania. Wymaga włączonego TAA.
+value.TAA_JITTER.0=Wyłączone
+value.TAA_JITTER.1=Subtilne
+value.TAA_JITTER.2=Standardowe
+value.TAA_JITTER.3=Mocne
+option.WATER_RIFFLES=Siła Zmarszczek Wody
+option.WATER_RIFFLES.comment=Dostosowuje intensywność delikatnych zmarszczek mapy normalnych na wodzie.
+value.WATER_RIFFLES.1=Spokojna
+value.WATER_RIFFLES.2=Standardowa
+value.WATER_RIFFLES.3=Wzburzona
+option.WATER_SPECULAR_STRENGTH=Blask Odbić Wody
+option.WATER_SPECULAR_STRENGTH.comment=Dostosowuje jasność odbić słońca/księżyca na zmarszczkach wody.
+value.WATER_SPECULAR_STRENGTH.1=Miękka
+value.WATER_SPECULAR_STRENGTH.2=Standardowa
+value.WATER_SPECULAR_STRENGTH.3=Migocząca
+option.SHADOW_SOFTNESS=Miękkość Cieni
+option.SHADOW_SOFTNESS.comment=Kontroluje, jak miękkie i rozproszone są krawędzie cieni. Wykorzystuje obrócone filtrowanie dyskiem Poissona dla gładkiej półcienia.
+value.SHADOW_SOFTNESS.1=Ostra
+value.SHADOW_SOFTNESS.2=Miękka
+value.SHADOW_SOFTNESS.3=Ultra Miękka
+
+option.SSAO=Okluzja SSAO / SAO
+option.SSAO.comment=Profil Ekstremalny: screen-space ambient occlusion dla cieni kontaktowych w rogach, pod blokami i wokół przecięć geometrii.
+option.SSAO_STRENGTH=Siła SSAO
+option.SSAO_STRENGTH.comment=Kontroluje głębię okluzji otoczenia w przestrzeni ekranu. Aktywne tylko przy włączonym SSAO.
+value.SSAO_STRENGTH.1=Subtelna
+value.SSAO_STRENGTH.2=Zrównoważona
+value.SSAO_STRENGTH.3=Głęboka
+
+option.CLOUD_DISTANCE=Zasięg Renderowania Chmur
+option.CLOUD_DISTANCE.comment=Maksymalny zasięg rysowania dla chmur wolumetrycznych. Profile jakości zwiększają go automatycznie.
+
+option.CLOUD_SHADOWS=Cienie Chmur
+option.CLOUD_SHADOWS.comment=Dodaje przezroczyste, proceduralne cienie z gęstości chmur wolumetrycznych na teren. Zrównoważone przez profile jakości.
+option.CLOUD_SHADOW_STRENGTH=Siła Cieni Chmur
+option.CLOUD_SHADOW_STRENGTH.comment=Kontroluje, jak widoczne i dramatyczne są przezroczyste cienie chmur.
+value.CLOUD_SHADOW_STRENGTH.1=Miękka
+value.CLOUD_SHADOW_STRENGTH.2=Zrównoważona
+value.CLOUD_SHADOW_STRENGTH.3=Dramatyczna
+
+option.GODRAYS=Godrays / Promienie Słońca
+option.GODRAYS.comment=Adds realistic screen-space sun shafts through sky gaps and behind geometry.
+option.GODRAYS_QUALITY=Jakość Godrays
+option.GODRAYS_QUALITY.comment=Controls sample count and cost of godrays.
+value.GODRAYS_QUALITY.1=Szybka
+value.GODRAYS_QUALITY.2=Zrównoważona
+value.GODRAYS_QUALITY.3=Wysoka
+
+# ==============================================================================
+# Sun and Moon lighting (extended)
+# ==============================================================================
+screen.SUN_MOON=Słońce i Księżyc
+screen.SUN_MOON.comment=Precyzyjnie dostosuj intensywność słońca i księżyca, temperaturę barwową oraz efekty atmosferyczne.
+option.SUN_INTENSITY=Intensywność Słońca
+option.SUN_INTENSITY.comment=Główna jasność bezpośredniego światła słonecznego. Wyższa = silniejszy kontrast w ciągu dnia.
+value.SUN_INTENSITY.1=Przygaszona
+value.SUN_INTENSITY.2=Standardowa
+value.SUN_INTENSITY.3=Jasna
+value.SUN_INTENSITY.4=Płonąca
+option.MOON_INTENSITY=Intensywność Księżyca
+option.MOON_INTENSITY.comment=Główna jasność światła księżyca. Wyższa = jaśniejsze, bardziej widoczne noce.
+value.MOON_INTENSITY.1=Nieprzenikniona Noc
+value.MOON_INTENSITY.2=Standardowa
+value.MOON_INTENSITY.3=Jasny Księżyc
+value.MOON_INTENSITY.4=Pełna Noc
+option.SUN_TEMPERATURE=Temperatura Barwowa Słońca
+option.SUN_TEMPERATURE.comment=Przesuwa krzywą Kelvina słońca. Realistyczna używa ciała doskonale czarnego Tannera Hellanda; ciepła = złota; chłodna = neutralna biel.
+value.SUN_TEMPERATURE.1=Chłodna / Neutralna
+value.SUN_TEMPERATURE.2=Realistyczna
+value.SUN_TEMPERATURE.3=Ciepłe Złoto
+option.MOON_TEMPERATURE=Temperatura Barwowa Księżyca
+option.MOON_TEMPERATURE.comment=Odcień światła księżyca. Lodowaty = niebieskawy chłód; Srebrny = realistyczne 4100K; Ciepły = kremowy księżyc żniwny.
+value.MOON_TEMPERATURE.1=Lodowaty Błękit
+value.MOON_TEMPERATURE.2=Srebrny (Realistyczny)
+value.MOON_TEMPERATURE.3=Ciepły Kremowy
+option.SUN_HALO=Halo Słoneczne (Rozpraszanie Miego)
+option.SUN_HALO.comment=Dodaje miękki, ciepły blask na terenie podczas patrzenia w pobliżu słońca (rozpraszanie Miego do przodu).
+option.SUNRISE_GLOW=Wzmocniona Poświata Wschodu/Zachodu Słońca
+option.SUNRISE_GLOW.comment=Włącza silniejsze, ciepłe rozpraszanie wsteczne, które oplata powierzchnie odwrócone od nisko położonego słońca.
+
+# ==============================================================================
+# Rozszerzone ustawienia cieni
+# ==============================================================================
+option.shadowDistance=Zasięg Cieni
+option.shadowDistance.comment=Maksymalna odległość renderowania dynamicznych cieni. Wyższe wartości rozszerzają cienie do odległości renderowania; użyj Shadow LOD, aby utrzymać wydajność przy rozszerzonych zakresach.
+value.shadowDistance.60.0=Blisko (60m)
+value.shadowDistance.80.0=Standardowa (80m)
+value.shadowDistance.120.0=Daleko (120m)
+value.shadowDistance.160.0=Ultra (160 m)
+value.shadowDistance.256.0=Rozszerzona (256 m)
+value.shadowDistance.384.0=Odległość renderowania (384 m)
+value.shadowDistance.192.0=DH Seam (192m)
+value.shadowDistance.512.0=DH Extended (512m)
+value.shadowDistance.768.0=DH Far (768m)
+
+option.SHADOW_LOD=Poziom szczegółowości cieni
+option.SHADOW_LOD.comment=Kontroluje degradację jakości cieni wraz z odległością. Przy rozszerzonej odległości cieni (256-384 m), LOD zmniejsza liczbę próbek i zwiększa promień filtra w oddali, aby utrzymać wydajność. Wyłączone = jednolita jakość (wolno). Zbalansowane = redukcja przy 25-50% odległości. Agresywne = maksymalna redukcja przy 15-60% odległości. Cienie są całkowicie pomijane powyżej 95% odległości renderowania.
+value.SHADOW_LOD.0=Wyłączone (jednolita jakość)
+value.SHADOW_LOD.1=Zbalansowane
+value.SHADOW_LOD.2=Agresywne
+option.DH_SHADOW_RANGE=Distant Horizons Shadow Range
+option.DH_SHADOW_RANGE.comment=Maximum range where Distant Horizons LOD terrain and water can receive samples from the shared DH shadow map. Seam keeps shadows close to vanilla chunks; Far extends coverage but can cost more GPU time. No effect without Distant Horizons.
+value.DH_SHADOW_RANGE.1=Seam (1.25x)
+value.DH_SHADOW_RANGE.2=Extended (2x)
+value.DH_SHADOW_RANGE.3=Far (4x)
+option.SHADOW_PCSS_BLUR=Rozmycie PCSS na odległość
+option.SHADOW_PCSS_BLUR.comment=Włącza zmiękczanie penumbry PCSS, które zwiększa rozmycie cieni wraz z odległością i podczas deszczu. Wyłącz dla stałej miękkości (bardziej ostre odległe cienie, mniej realistyczne).
+value.SHADOW_PCSS_BLUR.0=Wyłączone (stała miękkość)
+value.SHADOW_PCSS_BLUR.1=Włączone (penumbra PCSS)
+
+option.AMBIENT_BRIGHTNESS=Rozjaśnienie Cieni / Otoczenie
+option.AMBIENT_BRIGHTNESS.comment=Kontroluje, jak ciemne wyglądają zacienione obszary w nocy i w jaskiniach.
+value.AMBIENT_BRIGHTNESS.1=Ciemna
+value.AMBIENT_BRIGHTNESS.2=Standardowa
+value.AMBIENT_BRIGHTNESS.3=Rozjaśniona (Jasna)
+option.SHADOW_TINT=Odcień Cienia
+option.SHADOW_TINT.comment=Zabarwia cienie w ciągu dnia. Rzeczywiste cienie pod błękitnym niebem mają subtelny chłodny odcień.
+value.SHADOW_TINT.1=Neutralna Szarość
+value.SHADOW_TINT.2=Chłodny Błękit (Realistyczny)
+value.SHADOW_TINT.3=Ciepły
+option.LIGHT_WRAP=Owinięcie Światła
+option.LIGHT_WRAP.comment=Zmiękcza terminator między powierzchniami oświetlonymi i nieoświetlonymi. Realistyczny = fizyczny Lambert; Miękki = przyjemny do zrzutów ekranu.
+value.LIGHT_WRAP.1=Realistyczne (Lambert)
+value.LIGHT_WRAP.2=Miękkie Owinięcie
+value.LIGHT_WRAP.3=Stylizowane
+
+# v0.2.9 — water/underwater option value labels (English fallback)
+value.WATER_WAVE_SCALE.1=Spokojna
+value.WATER_WAVE_SCALE.2=Standardowa
+value.WATER_WAVE_SCALE.3=Wzburzona
+value.WATER_WAVE_SCALE.4=Sztormowa
+value.WATER_WAVE_DETAIL.1=Zgrubna
+value.WATER_WAVE_DETAIL.2=Standardowa
+value.WATER_WAVE_DETAIL.3=Gęsta
+value.UNDERWATER_NIGHT_DARKNESS.1=Staw w Blasku Księżyca
+value.UNDERWATER_NIGHT_DARKNESS.2=Przyćmiona
+value.UNDERWATER_NIGHT_DARKNESS.3=Prawdziwa Noc
+value.UNDERWATER_NIGHT_DARKNESS.4=Nieprzenikniona Ciemność
+# ==============================================================================
+# Experimental Tab & New Sky (v1.1.0)
+# ==============================================================================
+screen.EXPERIMENTAL=Eksperymentalne
+screen.EXPERIMENTAL.comment=Eksperymentalne
+
+screen.ATMOSPHERE_OPTIONS=Atmosphere
+screen.ATMOSPHERE_OPTIONS.comment=Physical-sky scattering, altitude and temporal resolve controls.
+option.ATMOSPHERE_TURBIDITY=Atmospheric Turbidity
+option.ATMOSPHERE_TURBIDITY.comment=Controls aerosol haze in Physical Sky. Crisp gives a deep blue sky; Hazy gives a brighter, softer horizon and stronger forward scatter.
+value.ATMOSPHERE_TURBIDITY.1=Crisp
+value.ATMOSPHERE_TURBIDITY.2=Balanced
+value.ATMOSPHERE_TURBIDITY.3=Hazy
+option.ATMOSPHERE_SCALE=Atmosphere Scale
+option.ATMOSPHERE_SCALE.comment=Converts Minecraft altitude into atmosphere height for Physical Sky. Compact makes mountains affect the sky less; Cinematic preserves the original large-scale altitude effect.
+value.ATMOSPHERE_SCALE.1=Compact (25m/block)
+value.ATMOSPHERE_SCALE.2=Balanced (50m/block)
+value.ATMOSPHERE_SCALE.3=Cinematic (100m/block)
+option.GROUND_BOUNCE_MODE=Ground Bounce Albedo
+option.GROUND_BOUNCE_MODE.comment=Controls the lower-atmosphere ground-bounce colour in Physical Sky. Auto adapts to cold and swamp biome signals.
+value.GROUND_BOUNCE_MODE.0=Auto (Biome-aware)
+value.GROUND_BOUNCE_MODE.1=Neutral Soil
+value.GROUND_BOUNCE_MODE.2=Vegetation
+value.GROUND_BOUNCE_MODE.3=Snow
+value.GROUND_BOUNCE_MODE.4=Desert
+option.SKY_TEMPORAL=Physical Sky Temporal Resolve
+option.SKY_TEMPORAL.comment=Uses rotation-only history blending for Physical Sky to smooth low-sample scattering and horizon gradients. Disable if animated cloud/aurora ghosting is noticeable.
+option.SKY_MODE=Nowe niebo (Rozpraszanie atmosferyczne)
+option.SKY_STYLE=Styl Nieba
+option.SKY_STYLE.comment=Kierunek artystyczny fizycznego nieba. Realistyczny = prawdziwe rozmiary kątowe i neutralne kolory (astronomiczny wygląd). Półrealistyczny = czytelne słońce/księżyc (×2,8), bogatsze kolory, miękka poświata. Fantasy = duże słońce/księżyc (×5,5), duża korona, żywa paleta morski/karmazyn/indygo.
+option.SKY_MODE.comment=EXPERIMENTAL — off in all profiles. Gradient (legacy, default) or Physical realtime scattering with true multiple scattering (Rayleigh+Mie+Ozone, 1st+2nd+3rd order). Enable manually in this tab.
+value.SKY_MODE.0=Gradient (Starszy)
+value.SKY_STYLE.0=Realistyczna
+value.SKY_STYLE.1=Półrealistyczna
+value.SKY_STYLE.2=Fantazja
+value.SKY_MODE.1=Realtime Scattering
+
+option.SKY_QUALITY=Jakość rozpraszania nieba
+option.SKY_QUALITY.comment=Jakość rozpraszania nieba
+value.SKY_QUALITY.1=Szybka
+value.SKY_QUALITY.2=Standardowa
+value.SKY_QUALITY.3=Wysoka
+
+# --- Auto-added missing translations (v1.1.0 sync) ---
+option.FOLIAGE_SSS=SSS Roślinności
+option.FOLIAGE_SSS.comment=Włącza rozpraszanie podpowierzchniowe (półprzezroczystość) dla liści, trawy i roślin pod światło.
+option.GODRAYS_STRENGTH=Intensywność Godrays
+option.GODRAYS_STRENGTH.comment=Jasność wolumetrycznych snopów światła. Subtelnie: delikatna mgiełka atmosferyczna. Zrównoważone: wyraźnie widoczne promienie. Dramatycznie: śmiałe, kinowe promienie.
+value.GODRAYS_STRENGTH.1=Subtelna
+value.GODRAYS_STRENGTH.2=Zrównoważona
+value.GODRAYS_STRENGTH.3=Dramatyczna
+option.SHOOTING_STARS=Meteory (Spadające Gwiazdy)
+option.SHOOTING_STARS.comment=Fizycznie realistyczne meteory wchodzące w mezosferę (~80-120 km). Renderuje prawdziwe łuki 3D wielkiego koła z krzywymi światła ablacyjnego, kolorem plazmy ciała doskonale czarnego (3500-5500 K), ekstynkcją Rayleigha blisko horyzontu oraz trwałymi śladami jonizacji na bolidach.
+option.SHOOTING_STARS_FREQUENCY=Aktywność Meteorów (ZHR)
+option.SHOOTING_STARS_FREQUENCY.comment=Przybliżona zenitalna liczba godzinowa. Sporadyczne = realistyczne tło ~10 na godzinę. Aktywne = łagodny rój. Burza = szczytowa gęstość (~100/godz).
+value.SHOOTING_STARS_FREQUENCY.1=Sporadyczne (~10/godz)
+value.SHOOTING_STARS_FREQUENCY.2=Aktywny Rój
+value.SHOOTING_STARS_FREQUENCY.3=Burza Meteorów
+option.SHOOTING_STARS_BRIGHTNESS=Skala Wielkości
+option.SHOOTING_STARS_BRIGHTNESS.comment=Główny mnożnik skali wielkości meteoru. Słabo = realistyczna średnia; Jasno = skaluje bolidy dla kinowej widoczności.
+value.SHOOTING_STARS_BRIGHTNESS.1=Słabe (Realistyczne)
+value.SHOOTING_STARS_BRIGHTNESS.2=Standardowa
+value.SHOOTING_STARS_BRIGHTNESS.3=Jasne Bolidy
+option.SPATIAL_AA_MODE=Przestrzenne Wygładzanie Krawędzi
+option.SPATIAL_AA_MODE.comment=Wybierz metodę wygładzania krawędzi w postprocessingu. FXAA jest szybkie i tanie. SMAA używa bufora głębi dla lepszej jakości na krawędziach geometrii. Można łączyć z TAA.
+value.SPATIAL_AA_MODE.0=Wyłączone
+value.SPATIAL_AA_MODE.1=FXAA (Szybkie)
+value.SPATIAL_AA_MODE.2=SMAA (Jakość)
+option.HEAT_SHIMMER=Fala Upałów nad Lawą
+option.HEAT_SHIMMER.comment=Włącz subtelny efekt zniekształcenia termicznego w przestrzeni ekranu nad powierzchniami lawy.
+option.HEAT_SHIMMER_STRENGTH=Siła Fali Upałów
+option.HEAT_SHIMMER_STRENGTH.comment=Kontroluje intensywność zniekształcenia termicznego nad lawą.
+value.HEAT_SHIMMER_STRENGTH.1=Subtelna
+value.HEAT_SHIMMER_STRENGTH.2=Zrównoważona
+value.HEAT_SHIMMER_STRENGTH.3=Silna
+option.SSR=Odbicia w Przestrzeni Ekranu (SSR)
+option.SSR.comment=Dodaje odbicia otoczenia w czasie rzeczywistym na wodzie, mokrych powierzchniach i metalicznych blokach PBR. Włączone od profilu Średni w v1.0.4.
+option.SSR_QUALITY=Jakość SSR
+option.SSR_QUALITY.comment=Kontroluje precyzję i odległość promienia odbić w przestrzeni ekranu. Wyższa = ostrzejsze odbicia, ale większy koszt GPU.
+value.SSR_QUALITY.1=Szybka (12 kroków)
+value.SSR_QUALITY.2=Zrównoważona (24 kroki)
+value.SSR_QUALITY.3=Wysoka (40 kroków)
+option.SSR_STRENGTH=Siła SSR
+option.SSR_STRENGTH.comment=Kontroluje, jak widoczne i wyraziste jest odbite otoczenie na powierzchniach odblaskowych.
+option.WATER_WAVE_SCALE=Amplituda Fal
+option.WATER_WAVE_SCALE.comment=Kontroluje widoczną stromiznę fal na powierzchni wody. Spokojna = lustrzana, Sztormowa = mocno rozbite odbicia.
+option.WATER_WAVE_DETAIL=Detal Fal
+option.WATER_WAVE_DETAIL.comment=Kontroluje, ile małych fal pojawia się na blok. Zgrubna = kilka dużych fal, Gęsta = wiele drobnych zmarszczek.
+option.UNDERWATER_NIGHT_DARKNESS=Ciemność Podwodna Nocą
+option.UNDERWATER_NIGHT_DARKNESS.comment=Kontroluje, jak ciemna staje się scena podwodna w nocy. Staw w Blasku Księżyca zachowuje jasność; Nieprzenikniona Ciemność daje ekstremalną ciemność w stylu survivalowym.
+value.SSR_STRENGTH.1=Subtelna
+value.SSR_STRENGTH.2=Zrównoważona
+value.SSR_STRENGTH.3=Silna
+option.PBR_DISTANCE=Zasięg Renderowania PBR
+option.PBR_DISTANCE.comment=Maksymalna odległość dla odblasków spekularnych PBR. Oszczędza GPU na dalekim terenie. Blisko (16m) dla Niskiego, Standard (48m) dla Średniego, Daleko (128m) dla Wysokiego/Ultra, Nieograniczone dla Ekstremalnego.
+value.PBR_DISTANCE.1=Blisko (16m)
+value.PBR_DISTANCE.2=Standardowa (48m)
+value.PBR_DISTANCE.3=Daleko (128m)
+value.PBR_DISTANCE.4=Nieograniczony
+
+# v1.1.1 — shadow pipeline + POM option labels
+value.shadowMapResolution.512=512
+value.shadowMapResolution.1024=1024
+value.shadowMapResolution.2048=2048
+value.shadowMapResolution.4096=4096
+value.shadowMapResolution.8192=8192
+option.POM_DEPTH=Głębokość POM
+option.POM_DEPTH.comment=Kontroluje widoczną głębokość mapowania paralaksy przy włączonym PBR POM.
+value.POM_DEPTH.1=Niska
+value.POM_DEPTH.2=Standardowa
+value.POM_DEPTH.3=Głęboka
+option.POM_STEPS=Kroki POM
+option.POM_STEPS.comment=Kontroluje liczbę kroków raymarch dla mapowania paralaksy. Wyższe wartości poprawiają jakość, ale kosztują więcej czasu GPU.
+value.POM_STEPS.1=Szybki
+value.POM_STEPS.2=Standardowa
+value.POM_STEPS.3=Wysoki
+value.POM_STEPS.4=Ultra
+
+screen.SHADOW_OPTIONS=Cienie
+screen.SHADOW_OPTIONS.comment=Rozdzielczość, odległość, miękkość i odcień dynamicznych cieni.
+screen.PBR_OPTIONS=PBR i materiały
+screen.PBR_OPTIONS.comment=Oświetlenie PBR, relief paralaksy, intensywność i odległość renderowania.
+screen.AO_REFLECTIONS=AO i odbicia
+screen.AO_REFLECTIONS.comment=SSAO, odbicia ekranowe i odbicia deszczu.
+screen.CLOUD_SHAPE=Chmury
+screen.CLOUD_SHAPE.comment=Kształt, wysokość, odległość i cienie chmur wolumetrycznych.
+screen.CLOUD_BODY=Cloud Body
+screen.CLOUD_BODY.comment=Altitude, thickness, distance, and the two settings that vary from cloud to cloud: base level and updraft.
+screen.CLOUD_PERF=Cloud Quality
+screen.CLOUD_PERF.comment=Everything that trades picture for frame time. Resolution (steps) and detail (octaves) are independent: you can keep crisp cloud tops and still lower the step count.
+screen.LIGHT_SHAFTS=Promienie światła
+screen.LIGHT_SHAFTS.comment=Wolumetryczne promienie słońca/księżyca i ich jakość/intensywność.
+screen.NIGHT_SKY=Nocne niebo
+screen.NIGHT_SKY.comment=Zorza, gwiazdy, Droga Mleczna i spadające gwiazdy.
+
+# [v1.1.3]
+option.CLOUD_QUALITY=Jakość ray-marchingu chmur
+option.CLOUD_QUALITY.comment=Raymarch resolution: how many samples the cloud volume gets along the ray (14/24/36/56 steps). Lower it for FPS -- it costs shape detail only in combination with CLOUD_DETAIL below.
+option.BLOOM=HDR Bloom
+option.BLOOM.comment=Enable or disable the HDR bloom pass. When disabled, AuraLite skips all five bloom composite passes for lower GPU load.
+option.HDR_BLOOM=Rozświetlenie HDR
+option.HDR_BLOOM.comment=Siła szerokiej gaussowskiej poświaty wokół prześwietlonych źródeł: tarcza słońca/księżyca, lawa, portale, gorące refleksy. Wykorzystuje nowe przejścia piramidy bloom.
+value.HDR_BLOOM.1=Subtilne
+value.HDR_BLOOM.2=Zrównoważone
+value.HDR_BLOOM.3=Mocne
+option.POST_SHARPEN=Wyostrzanie (CAS)
+option.POST_SHARPEN.comment=Delikatna maska nieostrości po TAA, która przywraca detale tekstur zmiękczone przez akumulację czasową. Wyłącz dla bardziej miękkiego, filmowego obrazu.
+
+# [v1.1.3]
+
+# ==============================================================================
+# Only the three channel sliders carry a colour code, because there the colour
+# IS the information: red gain is red, green is green, blue is blue. Everything
+# else stays default white — a menu does not need a palette to be readable.
+# ==============================================================================
+screen.COLOR=Colour Grading
+screen.COLOR.comment=Exposure, per-channel gain, brightness, contrast, saturation, gamma and vignette — all as sliders.
+screen.COLOR_TONE=Tone
+screen.COLOR_TONE.comment=Exposure, brightness, contrast, saturation and output gamma.
+screen.COLOR_RGB=Channels
+screen.COLOR_RGB.comment=Per-channel red/green/blue gain plus warm-cool and green-magenta balance.
+screen.COLOR_LOOK=Look
+screen.COLOR_LOOK.comment=Selective vibrance, vignette strength and the tone-mapping curve.
+
+option.COLOR_EXPOSURE=Exposure
+option.COLOR_EXPOSURE.comment=Linear exposure, applied before tone mapping. Above 1.00 the scene brightens and highlights roll off instead of clipping.
+option.COLOR_BRIGHTNESS=Brightness
+option.COLOR_BRIGHTNESS.comment=Midtone lift applied after tone mapping. Because it is a curve and not a multiply, blacks stay black and highlights cannot clip.
+option.COLOR_CONTRAST=Contrast
+option.COLOR_CONTRAST.comment=Contrast around middle grey (0.5) — the classic brightness/contrast operation.
+option.COLOR_SATURATION=Saturation
+option.COLOR_SATURATION.comment=0.00 is greyscale, 1.00 is untouched, above 1.00 is oversaturated.
+option.COLOR_GAMMA=Output Gamma
+option.COLOR_GAMMA.comment=Output encode exponent. 2.20 is the pack default. Lower values lift shadows, higher values crush them.
+option.COLOR_TONEMAP=Tone Curve
+option.COLOR_TONEMAP.comment=Which filmic curve maps HDR to the screen. ACES is the pack default.
+value.COLOR_TONEMAP.1=ACES (default)
+value.COLOR_TONEMAP.2=ACES soft
+value.COLOR_TONEMAP.3=ACES punchy
+value.COLOR_TONEMAP.4=Photographic (AgX-like)
+
+option.COLOR_RED=§cRed Gain§r
+option.COLOR_RED.comment=Multiplies scene-linear red before tone mapping.
+option.COLOR_GREEN=§aGreen Gain§r
+option.COLOR_GREEN.comment=Multiplies scene-linear green before tone mapping.
+option.COLOR_BLUE=§9Blue Gain§r
+option.COLOR_BLUE.comment=Multiplies scene-linear blue before tone mapping.
+option.COLOR_LUMA_PROTECT=Keep Brightness (luma protect)
+option.COLOR_LUMA_PROTECT.comment=On: the RGB / warmth / tint sliders shift colour but leave average brightness alone. Off: raw channel multipliers, which also brighten or darken the frame.
+option.COLOR_WARMTH=Warmth
+option.COLOR_WARMTH.comment=Moves the red/blue balance without touching green. Positive is warmer (sunset), negative is cooler (overcast, moonlight).
+option.COLOR_TINT=Tint
+option.COLOR_TINT.comment=Moves the green/magenta balance. Positive is greener, negative is magenta.
+
+option.COLOR_VIBRANCE=Selective Vibrance
+option.COLOR_VIBRANCE.comment=Saturation that treats colours differently: muted ones move more than already-saturated ones. 0.00 reproduces the pack's built-in look exactly.
+option.COLOR_VIGNETTE=Vignette Strength
+option.COLOR_VIGNETTE.comment=Corner darkening. 0.00 disables it without switching VIGNETTE off; 2.00 doubles it.
+option.VIGNETTE=Vignette
+option.VIGNETTE.comment=Master switch for corner darkening. Use Vignette Strength to dial the amount.
+
+option.CLOUD_MODE=Cloud Renderer
+option.CLOUD_MODE.comment=Volumetric: the ray marches through a 3D density field and every sample shadows itself toward the sun (self-shadowing, silver lining, real depth). Layered sheets: the v1.1.4 look, cheaper.
+value.CLOUD_MODE.0=Layered sheets (v1.1.4)
+value.CLOUD_MODE.1=Volumetric
+option.CLOUD_COVERAGE=Cloud Coverage
+option.CLOUD_COVERAGE.comment=How much of the sky the clouds fill. This changes cloud fraction, not brightness: it moves the threshold the density noise has to cross.
+value.CLOUD_COVERAGE.1=Clear
+value.CLOUD_COVERAGE.2=Scattered
+value.CLOUD_COVERAGE.3=Broken
+value.CLOUD_COVERAGE.4=Broken to overcast
+value.CLOUD_COVERAGE.5=Overcast
+option.CLOUD_DENSITY=Cloud Density
+option.CLOUD_DENSITY.comment=Extinction coefficient of the cloud medium, in 1/m. Real water clouds sit between 0.005 and 0.1; 0.030 is a typical cumulus. Higher makes clouds darker and more opaque inside.
+value.CLOUD_QUALITY.1=Cheap (14 steps)
+value.CLOUD_QUALITY.2=Standard (24 steps)
+value.CLOUD_QUALITY.3=High (36 steps)
+value.CLOUD_QUALITY.4=Extreme (56 steps)
+option.CLOUD_DETAIL=Cloud Shape Detail
+option.CLOUD_DETAIL.comment=How small a feature the cloud shape can carry: 1080 m at 1, 540 m at 2, 270 m at 3, 135 m at 4. Independent of the raymarch resolution above, so you can keep crisp cloud tops and still lower the step count for FPS. Raising both together is the expensive combination.
+value.CLOUD_DETAIL.1=Low (2 octaves, 1080 m)
+value.CLOUD_DETAIL.2=Medium (3 octaves, 540 m)
+value.CLOUD_DETAIL.3=High (4 octaves, 270 m)
+value.CLOUD_DETAIL.4=Extreme (5 octaves, 135 m)
+
+option.VEGETATION_CANOPY=Vegetation Canopy
+option.VEGETATION_CANOPY.comment=Shade foliage as a canopy (light reaching the inside of the crown) instead of flat vertical cards.
+option.GROUND_MIST_DENSITY=Ground Mist Density
+option.GROUND_MIST_DENSITY.comment=How much mist pools in the low ground at dawn.
+value.GROUND_MIST_DENSITY.1=Light
+value.GROUND_MIST_DENSITY.2=Standard
+value.GROUND_MIST_DENSITY.3=Heavy
+option.UNDERWATER_WAVES=Underwater Waves
+option.UNDERWATER_WAVES.comment=Distortion and caustics seen from below the surface. Caustics stay off by default: they are a stylistic choice, not a physical necessity.
+value.UNDERWATER_WAVES.0=Off (calm)
+value.UNDERWATER_WAVES.1=Subtle
+value.UNDERWATER_WAVES.2=Light caustics
+value.UNDERWATER_WAVES.3=Strong
+
+option.CLOUD_CIRRUS=Cirrus Veil
+option.CLOUD_CIRRUS.comment=High, thin ice cloud above the cumulus. It is raymarched like the rest, just thin and cheap. Off leaves the cumulus deck alone in the sky.
+option.DITHER_STRENGTH=Output Dither
+option.DITHER_STRENGTH.comment=Sub-pixel noise added before tone mapping to break up 8-bit banding in smooth sky gradients. It is a trade: less banding, a little grain. Light is half of what v1.1.4 used.
+value.DITHER_STRENGTH.1=Off
+value.DITHER_STRENGTH.2=Light (half of v1.1.4)
+value.DITHER_STRENGTH.3=Medium
+value.DITHER_STRENGTH.4=v1.1.4
+
+option.CLOUD_HEIGHT.comment=Base altitude of the cloud deck in metres. 1200 m is a typical fair-weather cumulus base; Minecraft's own clouds sit at 192 and look like a low ceiling for that reason.
+value.CLOUD_HEIGHT.1=Low (400 m)
+value.CLOUD_HEIGHT.2=Cumulus base (1200 m)
+value.CLOUD_HEIGHT.3=High (2400 m)
+value.CLOUD_HEIGHT.4=Very high (3600 m)
+option.CLOUD_THICKNESS.comment=Deck depth as a fraction of the base altitude: half, equal, or one and a half times. Fair-weather cumulus is 500-1500 m deep.
+value.CLOUD_THICKNESS.1=Thin (0.5x)
+value.CLOUD_THICKNESS.2=Normal (1.0x)
+value.CLOUD_THICKNESS.3=Deep (1.5x)
+option.CLOUD_DISTANCE.comment=How far the deck is drawn. Cloud colour is washed toward the sky with distance (aerial perspective), so the far end fades out instead of ending on an edge.
+value.CLOUD_DISTANCE.1=6 km
+value.CLOUD_DISTANCE.2=12 km
+value.CLOUD_DISTANCE.3=20 km
+value.CLOUD_DISTANCE.4=32 km
+
+option.CLOUD_MICRO=Droplet Spectrum
+option.CLOUD_MICRO.comment=Controls droplet size, which sets how much a given water content scatters and how strongly forward-scattering the phase function is. Continental air has many small droplets (brighter, more diffuse); maritime air has fewer, larger ones (darker, sharper silver lining).
+value.CLOUD_MICRO.1=Continental (6 um, g=0.82)
+value.CLOUD_MICRO.2=Typical (8 um, g=0.85)
+value.CLOUD_MICRO.3=Maritime (12 um, g=0.87)
+option.CLOUD_SCALE=Cloud Size
+option.CLOUD_SCALE.comment=Width of one cloud cell relative to the depth of the deck. Real cumulus are about as wide as they are thick: compact cumulus roughly match their depth, congestus reach three depths across. Larger cells mean fewer, broader clouds in view; smaller cells mean a busier sky.
+value.CLOUD_SCALE.1=Compact (1.2x depth)
+value.CLOUD_SCALE.2=Typical (1.8x depth)
+value.CLOUD_SCALE.3=Broad (3.0x depth)
+option.CLOUD_BASE_VARIATION=Condensation Level Spread
+option.CLOUD_BASE_VARIATION.comment=How much the cloud base height varies between clouds. Real cumulus share a nearly level base because every thermal condenses at the same height, but over tens of kilometres surface temperature and moisture drift, so the level is ragged rather than one shelf. Smaller values give the clean shelf of a calm afternoon; larger values give a broken, stormy sky where each cell has its own base.
+value.CLOUD_BASE_VARIATION.1=Even (±40 m)
+value.CLOUD_BASE_VARIATION.2=Natural (±120 m)
+value.CLOUD_BASE_VARIATION.3=Ragged (±250 m)
+option.CLOUD_UPDRAFT=Updraft Speed
+option.CLOUD_UPDRAFT.comment=How fast the cloud body streams upward. Real cumulus are conveyor belts: air rises through them at 1-3 m/s in fair weather and 20-30 m/s in a storm core, so the shape keeps being replaced from below and the tops appear to boil. The deck itself stays at the same altitude; only the structure inside moves. Storms multiply this.
+value.CLOUD_UPDRAFT.1=Drifting (1.5 m/s)
+value.CLOUD_UPDRAFT.2=Natural (2.5 m/s)
+value.CLOUD_UPDRAFT.3=Vigorous (4.0 m/s)
+option.CLOUD_DENSITY.comment=Liquid water content of the cloud core, in g/m3. Extinction is derived from it and from droplet size, not set directly.
+option.CLOUD_MID_LAYER=Warstwa chmur średnich
+option.CLOUD_MID_LAYER.comment=Dodatkowa rozwijająca się warstwa na średniej wysokości; może obniżyć FPS.
+
+value.CLOUD_DENSITY.1=Thin (0.075 g/m3)
+value.CLOUD_DENSITY.2=Typical (0.15 g/m3)
+value.CLOUD_DENSITY.3=Dense (0.30 g/m3)

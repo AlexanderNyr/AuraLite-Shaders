@@ -1,0 +1,635 @@
+shaderDescription=AuraLite v1.2.0 — nori, cer și apă fizice cu corecție de culoare
+# AuraLite Shaders v1.2.0 - Copyright (c) 2026 AlexanderNyr. Licensed under CC BY-NC-SA 4.0.
+# ==============================================================================
+# AuraLite Shader Pack - Romanian Language Translations
+# ==============================================================================
+
+# ==============================================================================
+# Quality Profiles
+# ==============================================================================
+profile.VERY_LOW=Foarte scăzut
+profile.VERY_LOW.comment=FPS maxim absolut. Toate extra-urile dezactivate: fără umbre, nori, PBR, SSR, raze. Doar randare minimă.
+profile.LOW=Scăzut
+profile.LOW.comment=Ușor, dar jucabil. Păstrează animația frunzișului/apei, stele mai strălucitoare, FXAA, vignetă. Fără umbre, nori sau PBR.
+profile.MED=Mediu
+profile.MED.comment=Punctul dulce zilnic. Umbre 1024, nori, PBR, SSR Rapid, raze, SSS frunziș, reflexii ude, ceață, meteori.
+profile.HIGH=Ridicat
+profile.HIGH.comment=Calitate pentru entuziaști. Umbre 2048, SSR Echilibrat, TAA, SSAO Subtil, raze Echilibrate, SMAA.
+profile.ULTRA=Ultra
+profile.ULTRA.comment=High-end. Umbre 4096, SSR Ridicat, SSAO Echilibrat, raze Ridicate, TAA Stabil, toate efectele activate.
+profile.EXTREME=Extrem
+profile.EXTREME.comment=Maxim cinematografic. Totul la maxim: PBR Rază nelimitată, mapare tonuri fotografică (AgX), SSAO cel mai profund, furtuni de meteori.
+profile.CUSTOM=Personalizat
+profile.CUSTOM.comment=Setări personalizate modificate de utilizator.
+
+screen.TRANSLATION_NOTICE=⚠ Traducerile pot conține erori
+screen.TRANSLATION_NOTICE.comment=Unele șiruri de localizare pot fi inexacte. Dacă ceva pare ciudat, comparați cu originalul în engleză.
+
+# Screens
+screen.LIGHTING=Setări iluminare
+screen.LIGHTING.comment=Configurați umbrele, culorile luminii și luminozitatea.
+
+screen.FOLIAGE=Setări vegetație
+screen.FOLIAGE.comment=Configurați animațiile de legănare pentru iarbă și frunze.
+
+screen.WATER=Setări apă
+screen.WATER.comment=Configurați valurile, transparența și stilul apei.
+
+screen.CLOUDS_MENU=Cer și nori
+screen.CLOUDS_MENU.comment=Configurați altitudinea fizică, grosimea și stilul norilor 3D și al efectelor cerului.
+
+screen.POST_PROCESS=Post-procesare și ceață
+screen.POST_PROCESS.comment=Configurați expunerea, ceața și efectele cinematografice.
+screen.POST_FOG=Fog & Image
+screen.POST_FOG.comment=Fog density, ground mist, heat shimmer and dithering.
+
+# Options
+option.SHADOWS=Umbre dinamice
+option.SHADOWS.comment=Activați sau dezactivați umbrele dinamice moi de la soare și lună.
+
+option.shadowMapResolution=Rezoluția umbrelor
+option.shadowMapResolution.comment=Modificați calitatea hărții de umbre. Valorile mai mari pot reduce performanța.
+
+option.PBR_LIGHTING=Iluminare PBR (LabPBR)
+option.PBR_LIGHTING.comment=Activați randarea bazată fizic pentru metale, rugozitate și hărți normale 3D (necesită pachet de resurse PBR).
+
+option.PBR_POM=Relief 3D al blocurilor (POM)
+option.PBR_POM.comment=Activați Parallax Occlusion Mapping bazat fizic pentru texturile 3D ale blocurilor. Se recomandă dezactivarea pe pachetele de resurse incompatibile.
+
+option.PBR_STRENGTH=Intensitate PBR
+option.PBR_STRENGTH.comment=Controlați reflectivitatea și luciul suprafețelor metalice PBR.
+
+value.PBR_STRENGTH.1=Subtil
+value.PBR_STRENGTH.2=Standard
+value.PBR_STRENGTH.3=Oglindă
+
+option.SSAO=Ocluzie SSAO / SAO
+option.SSAO.comment=Extreme profile: screen-space ambient occlusion for contact shadows in corners, under blocks, and around geometry intersections.
+option.SSAO_STRENGTH=Intensitate SSAO
+option.SSAO_STRENGTH.comment=Controlează adâncimea ocluziei ambientale în spațiul ecranului. Activ doar când SSAO este activat.
+value.SSAO_STRENGTH.1=Subtil
+value.SSAO_STRENGTH.2=Echilibrat
+value.SSAO_STRENGTH.3=Profund
+
+option.LIGHTMAP_WARMTH=Căldura torței
+option.LIGHTMAP_WARMTH.comment=Ajustați căldura și culoarea luminii blocurilor/torțelor.
+
+value.LIGHTMAP_WARMTH.1=Confortabil
+value.LIGHTMAP_WARMTH.2=Cald
+value.LIGHTMAP_WARMTH.3=Intens
+
+option.WAVING_LEAVES=Legănarea frunzelor
+option.WAVING_LEAVES.comment=Activați animații ușoare de legănare pentru frunzele copacilor.
+
+option.WAVING_GRASS=Legănarea vegetației
+option.WAVING_GRASS.comment=Activați animații de legănare pentru iarbă, flori și culturi.
+
+option.WIND_SPEED=Viteza vântului
+option.WIND_SPEED.comment=Controlați viteza de legănare a frunzelor, plantelor și valurilor de apă.
+
+value.WIND_SPEED.1=Ușor
+value.WIND_SPEED.2=Briză
+value.WIND_SPEED.3=Vijelie
+
+option.WATER_WAVES=Valuri de apă
+option.WATER_WAVES.comment=Enable 3D geometric waves on the water surface.
+
+option.WATER_TRANSPARENCY=Densitatea apei
+option.WATER_TRANSPARENCY.comment=Control the transparency and opacity of the water.
+
+value.WATER_TRANSPARENCY.1=Limpede
+value.WATER_TRANSPARENCY.2=Echilibrat
+value.WATER_TRANSPARENCY.3=Adâncă
+
+option.PROCEDURAL_CLOUDS=Nori 3D volumetrici
+option.PROCEDURAL_CLOUDS.comment=Activați norii 3D zburabili fizic, care pot fi atinși și traversați în zbor.
+
+option.CLOUD_HEIGHT=Altitudinea norilor
+option.CLOUD_HEIGHT.comment=Setați altitudinea fizică (nivelul Y) a stratului de nori din lume (în metri).
+
+
+option.CLOUD_THICKNESS=Grosimea norilor
+option.CLOUD_THICKNESS.comment=Configurați grosimea verticală și volumul norilor.
+
+
+option.CLOUD_DISTANCE=Distanța de randare a norilor
+option.CLOUD_DISTANCE.comment=Distanța maximă de desenare pentru norii volumetrici. Profilurile de calitate o măresc automat.
+
+option.CLOUD_SHADOWS=Umbre de nori
+option.CLOUD_SHADOWS.comment=Adaugă umbre procedurale transparente din densitatea norilor volumetrici pe teren. Echilibrat de profilurile de calitate.
+option.CLOUD_SHADOW_STRENGTH=Intensitatea umbrelor de nori
+option.CLOUD_SHADOW_STRENGTH.comment=Controlează cât de vizibile și dramatice sunt umbrele transparente ale norilor.
+value.CLOUD_SHADOW_STRENGTH.1=Moale
+value.CLOUD_SHADOW_STRENGTH.2=Echilibrat
+value.CLOUD_SHADOW_STRENGTH.3=Dramatic
+
+option.GODRAYS=Raze de soare (Godrays)
+option.GODRAYS.comment=Adds physically-inspired volumetric single-scattering sun shafts with Beer-Lambert extinction, Mie phase and shadow-map occlusion.
+option.GODRAYS_QUALITY=Calitate Godrays
+option.GODRAYS_QUALITY.comment=Controls the sample count and integration distance of physically-based volumetric godrays.
+value.GODRAYS_QUALITY.1=Rapid
+value.GODRAYS_QUALITY.2=Echilibrat
+value.GODRAYS_QUALITY.3=Înalt
+
+option.AURORA_MODE=Aurora Boreală
+option.AURORA_MODE.comment=Controlați afișarea aurorelor realiste care curg pe cerul nopții.
+
+value.AURORA_MODE.0=Dezactivat
+value.AURORA_MODE.1=Doar în biomuri reci
+value.AURORA_MODE.2=Întotdeauna activat
+
+option.AURORA_SPEED=Viteza aurorei
+option.AURORA_SPEED.comment=Controlați viteza de legănare și curgere a aurorei boreale.
+
+value.AURORA_SPEED.1=Lent
+value.AURORA_SPEED.2=Standard
+value.AURORA_SPEED.3=Rapid
+
+option.AURORA_STRENGTH=Luminozitatea aurorei
+option.AURORA_STRENGTH.comment=Controlați luminozitatea generală a strălucirii aurorei boreale.
+
+value.AURORA_STRENGTH.1=Moale
+value.AURORA_STRENGTH.2=Standard
+value.AURORA_STRENGTH.3=Strălucitor
+
+option.AURORA_QUALITY=Aurora Quality
+option.AURORA_QUALITY.comment=Raymarch steps for Aurora Borealis. Higher settings smooth curtain volume and reduce visible layering; the new centered sampling removes per-pixel grain.
+value.AURORA_QUALITY.1=Soft (8 steps)
+value.AURORA_QUALITY.2=Balanced (12 steps)
+value.AURORA_QUALITY.3=Silky (18 steps)
+option.NEBULA_BRIGHTNESS=Luminozitatea Căii Lactee
+option.NEBULA_BRIGHTNESS.comment=Ajustați luminozitatea strălucirii nebuloasei galactice maronii diagonale pe timp de noapte.
+
+value.NEBULA_BRIGHTNESS.1=Slab
+value.NEBULA_BRIGHTNESS.2=Standard
+value.NEBULA_BRIGHTNESS.3=Strălucitor
+
+option.STARS_BRIGHTNESS=Luminozitatea stelelor
+option.STARS_BRIGHTNESS.comment=Controlați luminozitatea și strălucirea sclipitoare a stelelor noaptea.
+
+value.STARS_BRIGHTNESS.1=Slab
+value.STARS_BRIGHTNESS.2=Standard
+value.STARS_BRIGHTNESS.3=Strălucitor
+
+option.STARS_AMOUNT=Densitatea stelelor
+option.STARS_AMOUNT.comment=Controlați cantitatea și densitatea generală a stelelor de pe cer.
+
+value.STARS_AMOUNT.1=Puține
+value.STARS_AMOUNT.2=Standard
+value.STARS_AMOUNT.3=Dens
+
+option.RAINBOW_STRENGTH=Intensitatea curcubeului
+option.RAINBOW_STRENGTH.comment=Configurați luminozitatea și saturația culorii curcubeului post-ploaie.
+
+value.RAINBOW_STRENGTH.1=Subtil
+value.RAINBOW_STRENGTH.2=Echilibrat
+value.RAINBOW_STRENGTH.3=Viu
+
+option.COZY_LIGHTS=Pâlpâirea torțelor
+option.COZY_LIGHTS.comment=Activați animații calde, confortabile, de pâlpâire în timp real pentru torțe, focuri de tabără și felinare.
+
+option.WET_REFLECTIONS=Reflexii de umezeală din ploaie
+option.WET_REFLECTIONS.comment=Când plouă, blocurile solide precum solul, iarba și piatra devin ude, întunecate și lucioase sub cer.
+
+option.GROUND_MIST=Ceață joasă la sol (Y=62-66)
+option.GROUND_MIST.comment=Activați straturi moi de ceață alb-aurii de dimineață/seară care alunecă peste apă și gheață la răsărit și apus.
+
+option.FOG_DENSITY_LEVEL=Densitatea ceții
+option.FOG_DENSITY_LEVEL.comment=Controlați intensitatea ceții atmosferice de la orizont.
+
+value.FOG_DENSITY_LEVEL.1=Scăzută
+value.FOG_DENSITY_LEVEL.2=Medie
+value.FOG_DENSITY_LEVEL.3=Înalt
+
+
+
+
+
+
+
+option.TAA=Anti-aliasing temporal (TAA)
+option.TAA.comment=Rezolvare temporală cu reproiecție a mișcării și decupare de vecinătate. Reduce sclipirea și marginile zimțate la presetările înalte.
+option.TAA_STRENGTH=Intensitate TAA
+option.TAA_STRENGTH.comment=Controlează amestecarea istoricului. O valoare mai mare este mai stabilă, dar poate fi mai moale în timpul mișcării.
+value.TAA_STRENGTH.1=Ușor
+value.TAA_STRENGTH.2=Echilibrat
+value.TAA_STRENGTH.3=Stabil
+
+option.TAA_JITTER=Tremur al camerei (TAA)
+option.TAA_JITTER.comment=Tremur subpixel al camerei (Halton) care permite TAA să reconstruiască detalii subpixel. Dezactivat implicit pentru o imagine perfect stabilă; Subtile și mai mult elimină pâlpâirea de înaltă frecvență cu prețul unui ușor balans temporal. Necesită TAA activat.
+value.TAA_JITTER.0=Dezactivat
+value.TAA_JITTER.1=Subtile
+value.TAA_JITTER.2=Standard
+value.TAA_JITTER.3=Puternic
+
+
+option.WATER_RIFFLES=Intensitatea ridurilor de apă
+option.WATER_RIFFLES.comment=Adjust the waviness and intensity of the fine normal map ripples on the water.
+
+value.WATER_RIFFLES.1=Calm
+value.WATER_RIFFLES.2=Standard
+value.WATER_RIFFLES.3=Agitat
+
+option.WATER_SPECULAR_STRENGTH=Strălucirea speculară a apei
+option.WATER_SPECULAR_STRENGTH.comment=Adjust the brightness of sun/moon reflections on the water ripples.
+
+value.WATER_SPECULAR_STRENGTH.1=Moale
+value.WATER_SPECULAR_STRENGTH.2=Standard
+value.WATER_SPECULAR_STRENGTH.3=Sclipitor
+
+option.SHADOW_SOFTNESS=Moliciunea umbrelor
+option.SHADOW_SOFTNESS.comment=Controlează cât de moi și difuze apar marginile umbrelor. Folosește filtrarea rotativă cu disc Poisson pentru penumbră netedă.
+
+value.SHADOW_SOFTNESS.1=Ascuțit
+value.SHADOW_SOFTNESS.2=Moale
+value.SHADOW_SOFTNESS.3=Ultra moale
+
+# ==============================================================================
+# Sun & Moon Lighting (extended)
+# ==============================================================================
+screen.SUN_MOON=Soare și Lună
+screen.SUN_MOON.comment=Reglați fin intensitatea soarelui și lunii, temperatura culorii și efectele atmosferice.
+
+option.SUN_INTENSITY=Intensitatea soarelui
+option.SUN_INTENSITY.comment=Luminozitatea principală a luminii solare directe. Mai mare = contrast diurn mai puternic.
+value.SUN_INTENSITY.1=Estompat
+value.SUN_INTENSITY.2=Standard
+value.SUN_INTENSITY.3=Strălucitor
+value.SUN_INTENSITY.4=Arzător
+
+option.MOON_INTENSITY=Intensitatea lunii
+option.MOON_INTENSITY.comment=Luminozitatea principală a luminii lunii. Mai mare = nopți mai luminoase, mai vizibile.
+value.MOON_INTENSITY.1=Noapte beznă
+value.MOON_INTENSITY.2=Standard
+value.MOON_INTENSITY.3=Lună strălucitoare
+value.MOON_INTENSITY.4=Noapte completă
+
+option.SUN_TEMPERATURE=Temperatura culorii soarelui
+option.SUN_TEMPERATURE.comment=Deplasează curba Kelvin a soarelui. Realist folosește corpul negru Tanner Helland; cald = auriu; rece = alb neutru.
+value.SUN_TEMPERATURE.1=Rece / Neutru
+value.SUN_TEMPERATURE.2=Realist
+value.SUN_TEMPERATURE.3=Auriu cald
+
+option.MOON_TEMPERATURE=Temperatura culorii lunii
+option.MOON_TEMPERATURE.comment=Nuanța luminii lunii. Înghețat = albăstrui rece; Argintiu = realist 4100K; Cald = cremos ca luna secerișului.
+value.MOON_TEMPERATURE.1=Albastru înghețat
+value.MOON_TEMPERATURE.2=Argintiu (Realist)
+value.MOON_TEMPERATURE.3=Crem cald
+
+option.SUN_HALO=Halo solar (Împrăștiere Mie)
+option.SUN_HALO.comment=Adaugă o strălucire caldă și moale pe teren când se privește aproape de soare (împrăștiere Mie înainte).
+
+option.SUNRISE_GLOW=Strălucire îmbunătățită la răsărit/apus
+option.SUNRISE_GLOW.comment=Activează o retroîmprăștiere caldă mai puternică ce înfășoară suprafețele orientate departe de soarele jos.
+
+# ==============================================================================
+# Extended shadow settings
+# ==============================================================================
+option.shadowDistance=Distanța umbrelor
+option.shadowDistance.comment=Distanța maximă la care sunt randate umbrele dinamice. Valorile mai mari extind umbrele la distanța de randare; utilizați Shadow LOD pentru a menține performanța la intervale extinse.
+value.shadowDistance.60.0=Aproape (60m)
+value.shadowDistance.80.0=Standard (80 m)
+value.shadowDistance.120.0=Departe (120m)
+value.shadowDistance.160.0=Ultra (160 m)
+value.shadowDistance.256.0=Extinsă (256 m)
+value.shadowDistance.384.0=Distanța de randare (384 m)
+value.shadowDistance.192.0=DH Seam (192m)
+value.shadowDistance.512.0=DH Extended (512m)
+value.shadowDistance.768.0=DH Far (768m)
+
+option.SHADOW_LOD=LOD umbre
+option.SHADOW_LOD.comment=Controlează degradarea calității umbrelor cu distanța. Cu distanța extinsă a umbrelor (256-384 m), LOD reduce numărul de eșantioane și crește raza filtrului la distanță pentru a menține performanța. Oprit = calitate uniformă (lent). Echilibrat = reducere la 25-50% distanță. Agresiv = reducere maximă la 15-60% distanță. Umbrele sunt complet omise peste 95% din distanța de randare.
+value.SHADOW_LOD.0=Oprit (calitate uniformă)
+value.SHADOW_LOD.1=Echilibrat
+value.SHADOW_LOD.2=Agresiv
+option.DH_SHADOW_RANGE=Distant Horizons Shadow Range
+option.DH_SHADOW_RANGE.comment=Maximum range where Distant Horizons LOD terrain and water can receive samples from the shared DH shadow map. Seam keeps shadows close to vanilla chunks; Far extends coverage but can cost more GPU time. No effect without Distant Horizons.
+value.DH_SHADOW_RANGE.1=Seam (1.25x)
+value.DH_SHADOW_RANGE.2=Extended (2x)
+value.DH_SHADOW_RANGE.3=Far (4x)
+option.SHADOW_PCSS_BLUR=Blur PCSS la distanță
+option.SHADOW_PCSS_BLUR.comment=Activează înmuierea penumbrei PCSS care crește neclaritatea umbrelor cu distanța și în timpul ploii. Dezactivați pentru moliciune fixă (umbre îndepărtate mai clare, mai puțin realiste).
+value.SHADOW_PCSS_BLUR.0=Oprit (moliciune fixă)
+value.SHADOW_PCSS_BLUR.1=Pornit (penumbră PCSS)
+
+
+option.AMBIENT_BRIGHTNESS=Ridicare umbre / ambiental
+option.AMBIENT_BRIGHTNESS.comment=Controlează cât de întunecate apar zonele umbrite noaptea și în peșteri.
+value.AMBIENT_BRIGHTNESS.1=Întunecat
+value.AMBIENT_BRIGHTNESS.2=Standard
+value.AMBIENT_BRIGHTNESS.3=Ridicat (Luminos)
+
+option.SHADOW_TINT=Nuanța umbrelor
+option.SHADOW_TINT.comment=Colorează umbrele de zi. Umbrele din lumea reală sub un cer albastru au o nuanță rece subtilă.
+value.SHADOW_TINT.1=Gri neutru
+value.SHADOW_TINT.2=Albastru rece (Realist)
+value.SHADOW_TINT.3=Cald
+
+option.LIGHT_WRAP=Înfășurare luminoasă
+option.LIGHT_WRAP.comment=Înmoaie terminatorul dintre suprafețele luminate și cele neluminate. Realist = Lambert fizic; Moale = plăcut pentru capturi de ecran.
+value.LIGHT_WRAP.1=Realist (Lambert)
+value.LIGHT_WRAP.2=Înfășurare moale
+value.LIGHT_WRAP.3=Stilizat
+
+# v0.2.9 — water/underwater option value labels (English fallback)
+value.WATER_WAVE_SCALE.1=Calm
+value.WATER_WAVE_SCALE.2=Standard
+value.WATER_WAVE_SCALE.3=Agitat
+value.WATER_WAVE_SCALE.4=Furtunos
+value.WATER_WAVE_DETAIL.1=Grosier
+value.WATER_WAVE_DETAIL.2=Standard
+value.WATER_WAVE_DETAIL.3=Dens
+value.UNDERWATER_NIGHT_DARKNESS.1=Bazin luminat de lună
+value.UNDERWATER_NIGHT_DARKNESS.2=Slab
+value.UNDERWATER_NIGHT_DARKNESS.3=Noapte adevărată
+value.UNDERWATER_NIGHT_DARKNESS.4=Întuneric beznă
+# ==============================================================================
+# Experimental Tab & New Sky (v1.1.0)
+# ==============================================================================
+screen.EXPERIMENTAL=Experimental
+screen.EXPERIMENTAL.comment=Experimental
+
+screen.ATMOSPHERE_OPTIONS=Atmosphere
+screen.ATMOSPHERE_OPTIONS.comment=Physical-sky scattering, altitude and temporal resolve controls.
+option.ATMOSPHERE_TURBIDITY=Atmospheric Turbidity
+option.ATMOSPHERE_TURBIDITY.comment=Controls aerosol haze in Physical Sky. Crisp gives a deep blue sky; Hazy gives a brighter, softer horizon and stronger forward scatter.
+value.ATMOSPHERE_TURBIDITY.1=Crisp
+value.ATMOSPHERE_TURBIDITY.2=Balanced
+value.ATMOSPHERE_TURBIDITY.3=Hazy
+option.ATMOSPHERE_SCALE=Atmosphere Scale
+option.ATMOSPHERE_SCALE.comment=Converts Minecraft altitude into atmosphere height for Physical Sky. Compact makes mountains affect the sky less; Cinematic preserves the original large-scale altitude effect.
+value.ATMOSPHERE_SCALE.1=Compact (25m/block)
+value.ATMOSPHERE_SCALE.2=Balanced (50m/block)
+value.ATMOSPHERE_SCALE.3=Cinematic (100m/block)
+option.GROUND_BOUNCE_MODE=Ground Bounce Albedo
+option.GROUND_BOUNCE_MODE.comment=Controls the lower-atmosphere ground-bounce colour in Physical Sky. Auto adapts to cold and swamp biome signals.
+value.GROUND_BOUNCE_MODE.0=Auto (Biome-aware)
+value.GROUND_BOUNCE_MODE.1=Neutral Soil
+value.GROUND_BOUNCE_MODE.2=Vegetation
+value.GROUND_BOUNCE_MODE.3=Snow
+value.GROUND_BOUNCE_MODE.4=Desert
+option.SKY_TEMPORAL=Physical Sky Temporal Resolve
+option.SKY_TEMPORAL.comment=Uses rotation-only history blending for Physical Sky to smooth low-sample scattering and horizon gradients. Disable if animated cloud/aurora ghosting is noticeable.
+option.SKY_MODE=Cer nou (Dispersie atmosferică)
+option.SKY_STYLE=Stil cer
+option.SKY_STYLE.comment=Direcția artistică a cerului fizic. Realist = dimensiuni unghiulare reale și culori neutre (aspect astronomic). Semirealist = soare/lună lizibile (×2,8), culoare mai bogată, strălucire moale. Fantastic = soare/lună mari (×5,5), coroană mare, paletă viu verde-albăstrui/carmin/indigo.
+option.SKY_MODE.comment=EXPERIMENTAL — off in all profiles. Gradient (legacy, default) or Physical realtime scattering with true multiple scattering (Rayleigh+Mie+Ozone, 1st+2nd+3rd order). Enable manually in this tab.
+value.SKY_MODE.0=Gradient (Vechi)
+value.SKY_STYLE.0=Realist
+value.SKY_STYLE.1=Semi-realist
+value.SKY_STYLE.2=Fantezie
+value.SKY_MODE.1=Realtime Scattering
+
+option.SKY_QUALITY=Calitatea dispersiei cerului
+option.SKY_QUALITY.comment=Calitatea dispersiei cerului
+value.SKY_QUALITY.1=Rapid
+value.SKY_QUALITY.2=Standard
+value.SKY_QUALITY.3=Înalt
+
+# --- Auto-added missing translations (v1.1.0 sync) ---
+option.FOLIAGE_SSS=SSS pentru vegetație
+option.FOLIAGE_SSS.comment=Activează dispersia subterană (translucența) pentru frunze, iarbă și plante când se privește spre lumină.
+option.GODRAYS_STRENGTH=Intensitate Godrays
+option.GODRAYS_STRENGTH.comment=Luminozitatea razelor de lumină volumetrice. Subtil: ceață atmosferică ușoară. Echilibrat: raze clar vizibile. Dramatic: fascicule cinematografice îndrăznețe.
+value.GODRAYS_STRENGTH.1=Subtil
+value.GODRAYS_STRENGTH.2=Echilibrat
+value.GODRAYS_STRENGTH.3=Dramatic
+option.SHOOTING_STARS=Meteori (Stele căzătoare)
+option.SHOOTING_STARS.comment=Meteori bazați fizic care intră în mezosferă (~80-120 km). Randează arcuri 3D adevărate de cerc mare cu curbe de lumină de ablație, culoare plasmă de corp negru (3500-5500 K), extincție Rayleigh aproape de orizont și urme de ionizare persistente pe bolizi.
+option.SHOOTING_STARS_FREQUENCY=Activitate meteorică (ZHR)
+option.SHOOTING_STARS_FREQUENCY.comment=Rata orară zenitală aproximativă. Sporadic = fundal realist de ~10 pe oră. Activ = ploaie ușoară. Furtună = densitate maximă (~100/h).
+value.SHOOTING_STARS_FREQUENCY.1=Sporadic (~10/h)
+value.SHOOTING_STARS_FREQUENCY.2=Ploaie activă
+value.SHOOTING_STARS_FREQUENCY.3=Furtună de meteori
+option.SHOOTING_STARS_BRIGHTNESS=Scara magnitudinii
+option.SHOOTING_STARS_BRIGHTNESS.comment=Multiplicator principal pe scara magnitudinii meteorului. Slab = medie realistă; Strălucitor = scalează bolizii pentru vizibilitate cinematografică.
+value.SHOOTING_STARS_BRIGHTNESS.1=Slab (Realist)
+value.SHOOTING_STARS_BRIGHTNESS.2=Standard
+value.SHOOTING_STARS_BRIGHTNESS.3=Bolizi strălucitori
+option.SPATIAL_AA_MODE=Anti-aliasing spațial
+option.SPATIAL_AA_MODE.comment=Selectați metoda de anti-aliasing post-procesare. FXAA este rapidă și ieftină. SMAA folosește bufferul de adâncime pentru o calitate mai bună pe marginile geometriei. Poate fi combinat cu TAA.
+value.SPATIAL_AA_MODE.0=Dezactivat
+value.SPATIAL_AA_MODE.1=FXAA (Rapid)
+value.SPATIAL_AA_MODE.2=SMAA (Calitate)
+option.HEAT_SHIMMER=Pâlpâire termică deasupra lavei
+option.HEAT_SHIMMER.comment=Activați un efect subtil de distorsiune termică în spațiul ecranului deasupra suprafețelor de lavă.
+option.HEAT_SHIMMER_STRENGTH=Intensitatea pâlpâirii termice
+option.HEAT_SHIMMER_STRENGTH.comment=Controlează intensitatea distorsiunii termice deasupra lavei.
+value.HEAT_SHIMMER_STRENGTH.1=Subtil
+value.HEAT_SHIMMER_STRENGTH.2=Echilibrat
+value.HEAT_SHIMMER_STRENGTH.3=Puternic
+option.SSR=Reflexii în spațiul ecranului (SSR)
+option.SSR.comment=Adaugă mediu reflectat în timp real pe apă, suprafețe umede și blocuri metalice PBR. Activat de la profilul Mediu în sus în v1.0.4.
+option.SSR_QUALITY=Calitate SSR
+option.SSR_QUALITY.comment=Controlează precizia și distanța razelor reflexiilor în spațiul ecranului. Mai mare = reflexii mai clare dar cost GPU mai mare.
+value.SSR_QUALITY.1=Rapid (12 pași)
+value.SSR_QUALITY.2=Echilibrat (24 pași)
+value.SSR_QUALITY.3=Înalt (40 pași)
+option.SSR_STRENGTH=Intensitate SSR
+option.SSR_STRENGTH.comment=Controlează cât de vizibil și proeminent apare mediul reflectat pe suprafețele reflectorizante.
+option.WATER_WAVE_SCALE=Amplitudinea valurilor
+option.WATER_WAVE_SCALE.comment=Controlează abruptul vizibil al valurilor de la suprafața apei. Calm = ca oglinda, Furtunos = reflexii puternic întrerupte.
+option.WATER_WAVE_DETAIL=Detaliu valuri
+option.WATER_WAVE_DETAIL.comment=Controlează câte valuri mici apar per bloc. Grosier = câteva valuri mari, Dens = multe riduri mici.
+option.UNDERWATER_NIGHT_DARKNESS=Întuneric subacvatic nocturn
+option.UNDERWATER_NIGHT_DARKNESS.comment=Controlează cât de întunecată devine scena subacvatică noaptea. Bazinul luminat de lună păstrează luminozitatea; Întuneric beznă oferă întuneric extrem stil supraviețuire.
+value.SSR_STRENGTH.1=Subtil
+value.SSR_STRENGTH.2=Echilibrat
+value.SSR_STRENGTH.3=Puternic
+option.PBR_DISTANCE=Distanța de randare PBR
+option.PBR_DISTANCE.comment=Distanța maximă pentru reflexiile speculare PBR. Economisește GPU pe teren îndepărtat. Aproape (16m) pentru Scăzut, Standard (48m) pentru Mediu, Departe (128m) pentru Înalt/Ultra, Nelimitat pentru Extrem.
+value.PBR_DISTANCE.1=Aproape (16m)
+value.PBR_DISTANCE.2=Standard (48 m)
+value.PBR_DISTANCE.3=Departe (128m)
+value.PBR_DISTANCE.4=Nelimitat
+
+# v1.1.1 — shadow pipeline + POM option labels
+value.shadowMapResolution.512=512
+value.shadowMapResolution.1024=1024
+value.shadowMapResolution.2048=2048
+value.shadowMapResolution.4096=4096
+value.shadowMapResolution.8192=8192
+option.POM_DEPTH=Adâncime POM
+option.POM_DEPTH.comment=Controlează adâncimea vizibilă a mapării parallax când PBR POM este activat.
+value.POM_DEPTH.1=Mică
+value.POM_DEPTH.2=Standard
+value.POM_DEPTH.3=Adâncă
+option.POM_STEPS=Pași POM
+option.POM_STEPS.comment=Controlează numărul de pași raymarch pentru maparea parallax. Valorile mai mari îmbunătățesc calitatea, dar costă mai mult timp GPU.
+value.POM_STEPS.1=Rapid
+value.POM_STEPS.2=Standard
+value.POM_STEPS.3=Ridicat
+value.POM_STEPS.4=Ultra
+
+screen.SHADOW_OPTIONS=Umbre
+screen.SHADOW_OPTIONS.comment=Rezoluția, distanța, moliciunea și nuanța umbrelor dinamice.
+screen.PBR_OPTIONS=PBR și materiale
+screen.PBR_OPTIONS.comment=Iluminare PBR, relief parallax, intensitate și distanță de randare.
+screen.AO_REFLECTIONS=AO și reflexii
+screen.AO_REFLECTIONS.comment=SSAO, reflecții pe ecran și reflecții de ploaie.
+screen.CLOUD_SHAPE=Norii
+screen.CLOUD_SHAPE.comment=Forma, altitudinea, distanța și umbrele norilor volumetrici.
+screen.CLOUD_BODY=Cloud Body
+screen.CLOUD_BODY.comment=Altitude, thickness, distance, and the two settings that vary from cloud to cloud: base level and updraft.
+screen.CLOUD_PERF=Cloud Quality
+screen.CLOUD_PERF.comment=Everything that trades picture for frame time. Resolution (steps) and detail (octaves) are independent: you can keep crisp cloud tops and still lower the step count.
+screen.LIGHT_SHAFTS=Raze de lumină
+screen.LIGHT_SHAFTS.comment=Raze volumetrice soare/lună și calitatea/intensitatea lor.
+screen.NIGHT_SKY=Cer nocturn
+screen.NIGHT_SKY.comment=Aurora, stele, Calea Lactee și stele căzătoare.
+
+# [v1.1.3]
+option.CLOUD_QUALITY=Calitatea raymarching-ului norilor
+option.CLOUD_QUALITY.comment=Raymarch resolution: how many samples the cloud volume gets along the ray (14/24/36/56 steps). Lower it for FPS -- it costs shape detail only in combination with CLOUD_DETAIL below.
+option.BLOOM=HDR Bloom
+option.BLOOM.comment=Enable or disable the HDR bloom pass. When disabled, AuraLite skips all five bloom composite passes for lower GPU load.
+option.HDR_BLOOM=Bloom HDR
+option.HDR_BLOOM.comment=Forța strălucirii gaussiene largi în jurul surselor suprailuminate: discurile soarelui/lunii, lava, portalurile, reflexii fierbinți. Folosește noile treceri ale piramidei de bloom.
+value.HDR_BLOOM.1=Subtile
+value.HDR_BLOOM.2=Echilibrat
+value.HDR_BLOOM.3=Puternic
+option.POST_SHARPEN=Ascuțire (CAS)
+option.POST_SHARPEN.comment=Mască neclară blândă post-TAA care recuperează detaliile texturii înmuiate de acumularea temporală. Dezactivați pentru o imagine mai moale, mai cinematografică.
+
+# [v1.1.3]
+
+# ==============================================================================
+# Only the three channel sliders carry a colour code, because there the colour
+# IS the information: red gain is red, green is green, blue is blue. Everything
+# else stays default white — a menu does not need a palette to be readable.
+# ==============================================================================
+screen.COLOR=Colour Grading
+screen.COLOR.comment=Exposure, per-channel gain, brightness, contrast, saturation, gamma and vignette — all as sliders.
+screen.COLOR_TONE=Tone
+screen.COLOR_TONE.comment=Exposure, brightness, contrast, saturation and output gamma.
+screen.COLOR_RGB=Channels
+screen.COLOR_RGB.comment=Per-channel red/green/blue gain plus warm-cool and green-magenta balance.
+screen.COLOR_LOOK=Look
+screen.COLOR_LOOK.comment=Selective vibrance, vignette strength and the tone-mapping curve.
+
+option.COLOR_EXPOSURE=Exposure
+option.COLOR_EXPOSURE.comment=Linear exposure, applied before tone mapping. Above 1.00 the scene brightens and highlights roll off instead of clipping.
+option.COLOR_BRIGHTNESS=Brightness
+option.COLOR_BRIGHTNESS.comment=Midtone lift applied after tone mapping. Because it is a curve and not a multiply, blacks stay black and highlights cannot clip.
+option.COLOR_CONTRAST=Contrast
+option.COLOR_CONTRAST.comment=Contrast around middle grey (0.5) — the classic brightness/contrast operation.
+option.COLOR_SATURATION=Saturation
+option.COLOR_SATURATION.comment=0.00 is greyscale, 1.00 is untouched, above 1.00 is oversaturated.
+option.COLOR_GAMMA=Output Gamma
+option.COLOR_GAMMA.comment=Output encode exponent. 2.20 is the pack default. Lower values lift shadows, higher values crush them.
+option.COLOR_TONEMAP=Tone Curve
+option.COLOR_TONEMAP.comment=Which filmic curve maps HDR to the screen. ACES is the pack default.
+value.COLOR_TONEMAP.1=ACES (default)
+value.COLOR_TONEMAP.2=ACES soft
+value.COLOR_TONEMAP.3=ACES punchy
+value.COLOR_TONEMAP.4=Photographic (AgX-like)
+
+option.COLOR_RED=§cRed Gain§r
+option.COLOR_RED.comment=Multiplies scene-linear red before tone mapping.
+option.COLOR_GREEN=§aGreen Gain§r
+option.COLOR_GREEN.comment=Multiplies scene-linear green before tone mapping.
+option.COLOR_BLUE=§9Blue Gain§r
+option.COLOR_BLUE.comment=Multiplies scene-linear blue before tone mapping.
+option.COLOR_LUMA_PROTECT=Keep Brightness (luma protect)
+option.COLOR_LUMA_PROTECT.comment=On: the RGB / warmth / tint sliders shift colour but leave average brightness alone. Off: raw channel multipliers, which also brighten or darken the frame.
+option.COLOR_WARMTH=Warmth
+option.COLOR_WARMTH.comment=Moves the red/blue balance without touching green. Positive is warmer (sunset), negative is cooler (overcast, moonlight).
+option.COLOR_TINT=Tint
+option.COLOR_TINT.comment=Moves the green/magenta balance. Positive is greener, negative is magenta.
+
+option.COLOR_VIBRANCE=Selective Vibrance
+option.COLOR_VIBRANCE.comment=Saturation that treats colours differently: muted ones move more than already-saturated ones. 0.00 reproduces the pack's built-in look exactly.
+option.COLOR_VIGNETTE=Vignette Strength
+option.COLOR_VIGNETTE.comment=Corner darkening. 0.00 disables it without switching VIGNETTE off; 2.00 doubles it.
+option.VIGNETTE=Vignette
+option.VIGNETTE.comment=Master switch for corner darkening. Use Vignette Strength to dial the amount.
+
+option.CLOUD_MODE=Cloud Renderer
+option.CLOUD_MODE.comment=Volumetric: the ray marches through a 3D density field and every sample shadows itself toward the sun (self-shadowing, silver lining, real depth). Layered sheets: the v1.1.4 look, cheaper.
+value.CLOUD_MODE.0=Layered sheets (v1.1.4)
+value.CLOUD_MODE.1=Volumetric
+option.CLOUD_COVERAGE=Cloud Coverage
+option.CLOUD_COVERAGE.comment=How much of the sky the clouds fill. This changes cloud fraction, not brightness: it moves the threshold the density noise has to cross.
+value.CLOUD_COVERAGE.1=Clear
+value.CLOUD_COVERAGE.2=Scattered
+value.CLOUD_COVERAGE.3=Broken
+value.CLOUD_COVERAGE.4=Broken to overcast
+value.CLOUD_COVERAGE.5=Overcast
+option.CLOUD_DENSITY=Cloud Density
+option.CLOUD_DENSITY.comment=Extinction coefficient of the cloud medium, in 1/m. Real water clouds sit between 0.005 and 0.1; 0.030 is a typical cumulus. Higher makes clouds darker and more opaque inside.
+value.CLOUD_QUALITY.1=Cheap (14 steps)
+value.CLOUD_QUALITY.2=Standard (24 steps)
+value.CLOUD_QUALITY.3=High (36 steps)
+value.CLOUD_QUALITY.4=Extreme (56 steps)
+option.CLOUD_DETAIL=Cloud Shape Detail
+option.CLOUD_DETAIL.comment=How small a feature the cloud shape can carry: 1080 m at 1, 540 m at 2, 270 m at 3, 135 m at 4. Independent of the raymarch resolution above, so you can keep crisp cloud tops and still lower the step count for FPS. Raising both together is the expensive combination.
+value.CLOUD_DETAIL.1=Low (2 octaves, 1080 m)
+value.CLOUD_DETAIL.2=Medium (3 octaves, 540 m)
+value.CLOUD_DETAIL.3=High (4 octaves, 270 m)
+value.CLOUD_DETAIL.4=Extreme (5 octaves, 135 m)
+
+option.VEGETATION_CANOPY=Vegetation Canopy
+option.VEGETATION_CANOPY.comment=Shade foliage as a canopy (light reaching the inside of the crown) instead of flat vertical cards.
+option.GROUND_MIST_DENSITY=Ground Mist Density
+option.GROUND_MIST_DENSITY.comment=How much mist pools in the low ground at dawn.
+value.GROUND_MIST_DENSITY.1=Light
+value.GROUND_MIST_DENSITY.2=Standard
+value.GROUND_MIST_DENSITY.3=Heavy
+option.UNDERWATER_WAVES=Underwater Waves
+option.UNDERWATER_WAVES.comment=Distortion and caustics seen from below the surface. Caustics stay off by default: they are a stylistic choice, not a physical necessity.
+value.UNDERWATER_WAVES.0=Off (calm)
+value.UNDERWATER_WAVES.1=Subtle
+value.UNDERWATER_WAVES.2=Light caustics
+value.UNDERWATER_WAVES.3=Strong
+
+option.CLOUD_CIRRUS=Cirrus Veil
+option.CLOUD_CIRRUS.comment=High, thin ice cloud above the cumulus. It is raymarched like the rest, just thin and cheap. Off leaves the cumulus deck alone in the sky.
+option.DITHER_STRENGTH=Output Dither
+option.DITHER_STRENGTH.comment=Sub-pixel noise added before tone mapping to break up 8-bit banding in smooth sky gradients. It is a trade: less banding, a little grain. Light is half of what v1.1.4 used.
+value.DITHER_STRENGTH.1=Off
+value.DITHER_STRENGTH.2=Light (half of v1.1.4)
+value.DITHER_STRENGTH.3=Medium
+value.DITHER_STRENGTH.4=v1.1.4
+
+option.CLOUD_HEIGHT.comment=Base altitude of the cloud deck in metres. 1200 m is a typical fair-weather cumulus base; Minecraft's own clouds sit at 192 and look like a low ceiling for that reason.
+value.CLOUD_HEIGHT.1=Low (400 m)
+value.CLOUD_HEIGHT.2=Cumulus base (1200 m)
+value.CLOUD_HEIGHT.3=High (2400 m)
+value.CLOUD_HEIGHT.4=Very high (3600 m)
+option.CLOUD_THICKNESS.comment=Deck depth as a fraction of the base altitude: half, equal, or one and a half times. Fair-weather cumulus is 500-1500 m deep.
+value.CLOUD_THICKNESS.1=Thin (0.5x)
+value.CLOUD_THICKNESS.2=Normal (1.0x)
+value.CLOUD_THICKNESS.3=Deep (1.5x)
+option.CLOUD_DISTANCE.comment=How far the deck is drawn. Cloud colour is washed toward the sky with distance (aerial perspective), so the far end fades out instead of ending on an edge.
+value.CLOUD_DISTANCE.1=6 km
+value.CLOUD_DISTANCE.2=12 km
+value.CLOUD_DISTANCE.3=20 km
+value.CLOUD_DISTANCE.4=32 km
+
+option.CLOUD_MICRO=Droplet Spectrum
+option.CLOUD_MICRO.comment=Controls droplet size, which sets how much a given water content scatters and how strongly forward-scattering the phase function is. Continental air has many small droplets (brighter, more diffuse); maritime air has fewer, larger ones (darker, sharper silver lining).
+value.CLOUD_MICRO.1=Continental (6 um, g=0.82)
+value.CLOUD_MICRO.2=Typical (8 um, g=0.85)
+value.CLOUD_MICRO.3=Maritime (12 um, g=0.87)
+option.CLOUD_SCALE=Cloud Size
+option.CLOUD_SCALE.comment=Width of one cloud cell relative to the depth of the deck. Real cumulus are about as wide as they are thick: compact cumulus roughly match their depth, congestus reach three depths across. Larger cells mean fewer, broader clouds in view; smaller cells mean a busier sky.
+value.CLOUD_SCALE.1=Compact (1.2x depth)
+value.CLOUD_SCALE.2=Typical (1.8x depth)
+value.CLOUD_SCALE.3=Broad (3.0x depth)
+option.CLOUD_BASE_VARIATION=Condensation Level Spread
+option.CLOUD_BASE_VARIATION.comment=How much the cloud base height varies between clouds. Real cumulus share a nearly level base because every thermal condenses at the same height, but over tens of kilometres surface temperature and moisture drift, so the level is ragged rather than one shelf. Smaller values give the clean shelf of a calm afternoon; larger values give a broken, stormy sky where each cell has its own base.
+value.CLOUD_BASE_VARIATION.1=Even (±40 m)
+value.CLOUD_BASE_VARIATION.2=Natural (±120 m)
+value.CLOUD_BASE_VARIATION.3=Ragged (±250 m)
+option.CLOUD_UPDRAFT=Updraft Speed
+option.CLOUD_UPDRAFT.comment=How fast the cloud body streams upward. Real cumulus are conveyor belts: air rises through them at 1-3 m/s in fair weather and 20-30 m/s in a storm core, so the shape keeps being replaced from below and the tops appear to boil. The deck itself stays at the same altitude; only the structure inside moves. Storms multiply this.
+value.CLOUD_UPDRAFT.1=Drifting (1.5 m/s)
+value.CLOUD_UPDRAFT.2=Natural (2.5 m/s)
+value.CLOUD_UPDRAFT.3=Vigorous (4.0 m/s)
+option.CLOUD_DENSITY.comment=Liquid water content of the cloud core, in g/m3. Extinction is derived from it and from droplet size, not set directly.
+option.CLOUD_MID_LAYER=Strat de nori de altitudine medie
+option.CLOUD_MID_LAYER.comment=Strat suplimentar în evoluție la altitudine medie; poate reduce FPS-ul.
+
+value.CLOUD_DENSITY.1=Thin (0.075 g/m3)
+value.CLOUD_DENSITY.2=Typical (0.15 g/m3)
+value.CLOUD_DENSITY.3=Dense (0.30 g/m3)

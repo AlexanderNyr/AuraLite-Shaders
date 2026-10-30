@@ -1,0 +1,635 @@
+shaderDescription=AuraLite v1.2.0 — awan, langit dan air fizikal dengan pembetulan warna
+# AuraLite Shaders v1.2.0 - Copyright (c) 2026 AlexanderNyr. Licensed under CC BY-NC-SA 4.0.
+# ==============================================================================
+# AuraLite Shader Pack - Malay Language Translations
+# ==============================================================================
+
+# ==============================================================================
+# Quality Profiles
+# ==============================================================================
+profile.VERY_LOW=Sangat Rendah
+profile.VERY_LOW.comment=FPS maksimum mutlak. Semua tambahan dimatikan: tiada bayang-bayang, awan, PBR, SSR, cahaya. Hanya rendering minimum.
+profile.LOW=Rendah
+profile.LOW.comment=Ringan tetapi boleh dimainkan. Mengekalkan animasi dedaunan/air, bintang lebih terang, FXAA, vignette. Tiada bayang-bayang, awan atau PBR.
+profile.MED=Sederhana
+profile.MED.comment=Titik manis harian. Bayang-bayang 1024, awan, PBR, SSR Pantas, cahaya, SSS dedaunan, pantulan basah, kabus, meteor.
+profile.HIGH=Tinggi
+profile.HIGH.comment=Kualiti peminat. Bayang-bayang 2048, SSR Seimbang, TAA, SSAO Halus, cahaya Seimbang, SMAA.
+profile.ULTRA=Ultra
+profile.ULTRA.comment=High-end. Bayang-bayang 4096, SSR Tinggi, SSAO Seimbang, cahaya Tinggi, TAA Stabil, semua kesan dihidupkan.
+profile.EXTREME=Ekstrem
+profile.EXTREME.comment=Maksimum sinematik. Semua dimaksimumkan: PBR Julat tanpa had, pemetaan ton fotografi (AgX), SSAO paling dalam, ribut meteor.
+profile.CUSTOM=Tersuai
+profile.CUSTOM.comment=Tetapan tersuai yang diubah suai pengguna.
+
+screen.TRANSLATION_NOTICE=⚠ Terjemahan mungkin mengandungi ralat
+screen.TRANSLATION_NOTICE.comment=Sesetengah rentetan penyetempatan mungkin tidak tepat. Jika sesuatu kelihatan pelik, bandingkan dengan bahasa Inggeris asal.
+
+# Screens
+screen.LIGHTING=Tetapan Pencahayaan
+screen.LIGHTING.comment=Konfigurasikan bayang-bayang, warna cahaya, dan kecerahan.
+
+screen.FOLIAGE=Tetapan Tumbuhan
+screen.FOLIAGE.comment=Konfigurasikan animasi bergoyang untuk rumput dan daun.
+
+screen.WATER=Tetapan Air
+screen.WATER.comment=Konfigurasikan ombak, ketelusan, dan gaya air.
+
+screen.CLOUDS_MENU=Langit & Awan
+screen.CLOUDS_MENU.comment=Konfigurasikan ketinggian fizikal, ketebalan, dan gaya awan 3D dan kesan langit.
+
+screen.POST_PROCESS=Pasca-pemprosesan & Kabus
+screen.POST_PROCESS.comment=Konfigurasikan pendedahan, kabus, dan kesan sinematik.
+screen.POST_FOG=Fog & Image
+screen.POST_FOG.comment=Fog density, ground mist, heat shimmer and dithering.
+
+# Options
+option.SHADOWS=Bayang-bayang Dinamik
+option.SHADOWS.comment=Dayakan atau lumpuhkan bayang-bayang dinamik lembut daripada matahari dan bulan.
+
+option.shadowMapResolution=Resolusi Bayang-bayang
+option.shadowMapResolution.comment=Tukar kualiti peta bayang-bayang. Nilai lebih tinggi mungkin menurunkan prestasi.
+
+option.PBR_LIGHTING=Pencahayaan PBR (LabPBR)
+option.PBR_LIGHTING.comment=Dayakan rendering berasaskan fizik untuk logam, kekasaran, dan peta normal 3D (pek sumber PBR diperlukan).
+
+option.PBR_POM=Relief Blok 3D (POM)
+option.PBR_POM.comment=Dayakan Pemetaan Oklusi Paralaks berasaskan fizik untuk tekstur blok 3D. Disyorkan untuk dilumpuhkan pada pek sumber yang tidak serasi.
+
+option.PBR_STRENGTH=Keamatan PBR
+option.PBR_STRENGTH.comment=Kawal kepantulan dan kilauan permukaan logam PBR.
+
+value.PBR_STRENGTH.1=Halus
+value.PBR_STRENGTH.2=Piawai
+value.PBR_STRENGTH.3=Cermin
+
+option.SSAO=Oklusi SSAO / SAO
+option.SSAO.comment=Extreme profile: screen-space ambient occlusion for contact shadows in corners, under blocks, and around geometry intersections.
+option.SSAO_STRENGTH=Kekuatan SSAO
+option.SSAO_STRENGTH.comment=Mengawal kedalaman oklusi ambien ruang skrin. Hanya aktif apabila SSAO didayakan.
+value.SSAO_STRENGTH.1=Halus
+value.SSAO_STRENGTH.2=Seimbang
+value.SSAO_STRENGTH.3=Dalam
+
+option.LIGHTMAP_WARMTH=Kehangatan Obor
+option.LIGHTMAP_WARMTH.comment=Laraskan kehangatan dan warna cahaya blok/obor.
+
+value.LIGHTMAP_WARMTH.1=Selesa
+value.LIGHTMAP_WARMTH.2=Hangat
+value.LIGHTMAP_WARMTH.3=Sengit
+
+option.WAVING_LEAVES=Daun Bergoyang
+option.WAVING_LEAVES.comment=Dayakan animasi bergoyang lembut untuk daun pokok.
+
+option.WAVING_GRASS=Tumbuhan Bergoyang
+option.WAVING_GRASS.comment=Dayakan animasi bergoyang untuk rumput, bunga, dan tanaman.
+
+option.WIND_SPEED=Kelajuan Angin
+option.WIND_SPEED.comment=Kawal kelajuan bergoyang daun, tumbuhan, dan ombak air.
+
+value.WIND_SPEED.1=Lembut
+value.WIND_SPEED.2=Bayu
+value.WIND_SPEED.3=Ribut
+
+option.WATER_WAVES=Ombak Air
+option.WATER_WAVES.comment=Enable 3D geometric waves on the water surface.
+
+option.WATER_TRANSPARENCY=Ketumpatan Air
+option.WATER_TRANSPARENCY.comment=Control the transparency and opacity of the water.
+
+value.WATER_TRANSPARENCY.1=Jernih
+value.WATER_TRANSPARENCY.2=Seimbang
+value.WATER_TRANSPARENCY.3=Dalam
+
+option.PROCEDURAL_CLOUDS=Awan 3D Volumetrik
+option.PROCEDURAL_CLOUDS.comment=Dayakan awan 3D boleh terbang secara fizikal yang boleh dicapai dan diterbangi.
+
+option.CLOUD_HEIGHT=Ketinggian Awan
+option.CLOUD_HEIGHT.comment=Tetapkan ketinggian fizikal (paras-Y) dek awan di dunia (dalam meter).
+
+
+option.CLOUD_THICKNESS=Ketebalan Awan
+option.CLOUD_THICKNESS.comment=Konfigurasikan ketebalan menegak dan isipadu awan.
+
+
+option.CLOUD_DISTANCE=Jarak Rendering Awan
+option.CLOUD_DISTANCE.comment=Jarak lukisan maksimum untuk awan volumetrik. Profil kualiti meningkatkannya secara automatik.
+
+option.CLOUD_SHADOWS=Bayang-bayang Awan
+option.CLOUD_SHADOWS.comment=Menambah bayang-bayang prosedur telus daripada ketumpatan awan volumetrik pada rupa bumi. Diseimbangkan oleh profil kualiti.
+option.CLOUD_SHADOW_STRENGTH=Kekuatan Bayang-bayang Awan
+option.CLOUD_SHADOW_STRENGTH.comment=Mengawal betapa jelas dan dramatik bayang-bayang awan lut sinar.
+value.CLOUD_SHADOW_STRENGTH.1=Lembut
+value.CLOUD_SHADOW_STRENGTH.2=Seimbang
+value.CLOUD_SHADOW_STRENGTH.3=Dramatik
+
+option.GODRAYS=Sinar Matahari (Godrays)
+option.GODRAYS.comment=Adds physically-inspired volumetric single-scattering sun shafts with Beer-Lambert extinction, Mie phase and shadow-map occlusion.
+option.GODRAYS_QUALITY=Kualiti Godrays
+option.GODRAYS_QUALITY.comment=Controls the sample count and integration distance of physically-based volumetric godrays.
+value.GODRAYS_QUALITY.1=Pantas
+value.GODRAYS_QUALITY.2=Seimbang
+value.GODRAYS_QUALITY.3=Tinggi
+
+option.AURORA_MODE=Cahaya utara (Aurora Borealis)
+option.AURORA_MODE.comment=Kawal paparan aurora mengalir realistik pada langit malam.
+
+value.AURORA_MODE.0=Dilumpuhkan
+value.AURORA_MODE.1=Hanya dalam Biom Sejuk
+value.AURORA_MODE.2=Sentiasa Didayakan
+
+option.AURORA_SPEED=Kelajuan Aurora
+option.AURORA_SPEED.comment=Kawal kelajuan bergoyang dan mengalir cahaya utara.
+
+value.AURORA_SPEED.1=Perlahan
+value.AURORA_SPEED.2=Piawai
+value.AURORA_SPEED.3=Pantas
+
+option.AURORA_STRENGTH=Kecerahan Aurora
+option.AURORA_STRENGTH.comment=Kawal kecerahan pancaran keseluruhan cahaya utara.
+
+value.AURORA_STRENGTH.1=Lembut
+value.AURORA_STRENGTH.2=Piawai
+value.AURORA_STRENGTH.3=Bercahaya
+
+option.AURORA_QUALITY=Aurora Quality
+option.AURORA_QUALITY.comment=Raymarch steps for Aurora Borealis. Higher settings smooth curtain volume and reduce visible layering; the new centered sampling removes per-pixel grain.
+value.AURORA_QUALITY.1=Soft (8 steps)
+value.AURORA_QUALITY.2=Balanced (12 steps)
+value.AURORA_QUALITY.3=Silky (18 steps)
+option.NEBULA_BRIGHTNESS=Kecerahan Bima Sakti
+option.NEBULA_BRIGHTNESS.comment=Laraskan kecerahan pancaran nebula galaksi kecoklatan pepenjuru pada waktu malam.
+
+value.NEBULA_BRIGHTNESS.1=Pudar
+value.NEBULA_BRIGHTNESS.2=Piawai
+value.NEBULA_BRIGHTNESS.3=Cerah
+
+option.STARS_BRIGHTNESS=Kecerahan Bintang
+option.STARS_BRIGHTNESS.comment=Kawal kecerahan dan pancaran berkilauan bintang pada waktu malam.
+
+value.STARS_BRIGHTNESS.1=Pudar
+value.STARS_BRIGHTNESS.2=Piawai
+value.STARS_BRIGHTNESS.3=Bersinar
+
+option.STARS_AMOUNT=Ketumpatan Bintang
+option.STARS_AMOUNT.comment=Kawal jumlah dan ketumpatan keseluruhan bintang di langit.
+
+value.STARS_AMOUNT.1=Sedikit
+value.STARS_AMOUNT.2=Piawai
+value.STARS_AMOUNT.3=Padat
+
+option.RAINBOW_STRENGTH=Keamatan Pelangi
+option.RAINBOW_STRENGTH.comment=Konfigurasikan kecerahan dan ketepuan warna pelangi selepas hujan.
+
+value.RAINBOW_STRENGTH.1=Halus
+value.RAINBOW_STRENGTH.2=Seimbang
+value.RAINBOW_STRENGTH.3=Meriah
+
+option.COZY_LIGHTS=Kelipan Obor
+option.COZY_LIGHTS.comment=Dayakan animasi kelipan masa nyata yang hangat dan selesa untuk obor, unggun api, dan lampu tanglung.
+
+option.WET_REFLECTIONS=Pantulan Kebasahan Hujan
+option.WET_REFLECTIONS.comment=Apabila hujan, blok pepejal seperti tanah, rumput, dan batu menjadi basah, gelap, dan berkilat di bawah langit.
+
+option.GROUND_MIST=Kabus Tanah Rendah (Y=62-66)
+option.GROUND_MIST.comment=Dayakan lapisan kabus pagi/petang lembut, putih keemasan yang meluncur di atas air dan ais pada waktu subuh dan senja.
+
+option.FOG_DENSITY_LEVEL=Ketumpatan Kabus
+option.FOG_DENSITY_LEVEL.comment=Kawal kekuatan kabus ufuk atmosfera.
+
+value.FOG_DENSITY_LEVEL.1=Rendah
+value.FOG_DENSITY_LEVEL.2=Sederhana
+value.FOG_DENSITY_LEVEL.3=Tinggi
+
+
+
+
+
+
+
+option.TAA=Anti-Aliasing Sementara (TAA)
+option.TAA.comment=Resolusi sementara dengan reprojeksi gerakan dan pemotongan kejiranan. Mengurangkan kelipan dan tepi bergerigi pada praset tinggi.
+option.TAA_STRENGTH=Kekuatan TAA
+option.TAA_STRENGTH.comment=Mengawal penggabungan sejarah. Lebih tinggi lebih stabil tetapi boleh menjadi lebih lembut semasa pergerakan.
+value.TAA_STRENGTH.1=Ringan
+value.TAA_STRENGTH.2=Seimbang
+value.TAA_STRENGTH.3=Stabil
+
+option.TAA_JITTER=Gegaran kamera (TAA)
+option.TAA_JITTER.comment=Gegaran kamera subpiksel (Halton) yang membolehkan TAA membina semula butiran subpiksel. Dimatikan secara lalai untuk imej yang sangat stabil; Halus ke atas menghilangkan kelipan frekuensi tinggi dengan sedikit goyangan temporal. Memerlukan TAA dihidupkan.
+value.TAA_JITTER.0=Mati
+value.TAA_JITTER.1=Halus
+value.TAA_JITTER.2=Standard
+value.TAA_JITTER.3=Kuat
+
+
+option.WATER_RIFFLES=Kekuatan Riak Air
+option.WATER_RIFFLES.comment=Adjust the waviness and intensity of the fine normal map ripples on the water.
+
+value.WATER_RIFFLES.1=Tenang
+value.WATER_RIFFLES.2=Piawai
+value.WATER_RIFFLES.3=Bergelora
+
+option.WATER_SPECULAR_STRENGTH=Kilauan Specular Air
+option.WATER_SPECULAR_STRENGTH.comment=Adjust the brightness of sun/moon reflections on the water ripples.
+
+value.WATER_SPECULAR_STRENGTH.1=Lembut
+value.WATER_SPECULAR_STRENGTH.2=Piawai
+value.WATER_SPECULAR_STRENGTH.3=Berkilauan
+
+option.SHADOW_SOFTNESS=Kelembutan Bayang-bayang
+option.SHADOW_SOFTNESS.comment=Mengawal betapa lembut dan meresap tepi bayang-bayang kelihatan. Menggunakan penapisan cakera Poisson berputar untuk penumbra licin.
+
+value.SHADOW_SOFTNESS.1=Tajam
+value.SHADOW_SOFTNESS.2=Lembut
+value.SHADOW_SOFTNESS.3=Ultra Lembut
+
+# ==============================================================================
+# Sun & Moon Lighting (extended)
+# ==============================================================================
+screen.SUN_MOON=Matahari & Bulan
+screen.SUN_MOON.comment=Perhalusi keamatan matahari & bulan, suhu warna, dan kesan atmosfera.
+
+option.SUN_INTENSITY=Keamatan Matahari
+option.SUN_INTENSITY.comment=Kecerahan induk cahaya matahari langsung. Lebih tinggi = kontras siang lebih kuat.
+value.SUN_INTENSITY.1=Malap
+value.SUN_INTENSITY.2=Piawai
+value.SUN_INTENSITY.3=Tinggi
+value.SUN_INTENSITY.4=Berkobar
+
+option.MOON_INTENSITY=Keamatan Bulan
+option.MOON_INTENSITY.comment=Kecerahan induk cahaya bulan. Lebih tinggi = malam lebih cerah, lebih kelihatan.
+value.MOON_INTENSITY.1=Malam Gelap Legam
+value.MOON_INTENSITY.2=Piawai
+value.MOON_INTENSITY.3=Bulan Terang
+value.MOON_INTENSITY.4=Malam Penuh
+
+option.SUN_TEMPERATURE=Suhu Warna Matahari
+option.SUN_TEMPERATURE.comment=Menganjakkan lengkung Kelvin matahari. Realistik menggunakan jasad hitam Tanner Helland; hangat = keemasan; sejuk = putih neutral.
+value.SUN_TEMPERATURE.1=Sejuk / Neutral
+value.SUN_TEMPERATURE.2=Realistik
+value.SUN_TEMPERATURE.3=Keemasan Hangat
+
+option.MOON_TEMPERATURE=Suhu Warna Bulan
+option.MOON_TEMPERATURE.comment=Warna cahaya bulan. Ais = kebiruan sejuk; Perak = realistik 4100K; Hangat = krim bulan-tuaian.
+value.MOON_TEMPERATURE.1=Biru Ais
+value.MOON_TEMPERATURE.2=Perak (Realistik)
+value.MOON_TEMPERATURE.3=Krim Hangat
+
+option.SUN_HALO=Halo Matahari (Serakan Mie)
+option.SUN_HALO.comment=Menambah pancaran hangat lembut pada rupa bumi apabila melihat berhampiran matahari (serakan hadapan Mie).
+
+option.SUNRISE_GLOW=Pancaran Matahari Terbit/Terbenam Dipertingkatkan
+option.SUNRISE_GLOW.comment=Mendayakan serakan belakang hangat yang lebih kuat yang membalut permukaan menghadap jauh dari matahari rendah.
+
+# ==============================================================================
+# Extended shadow settings
+# ==============================================================================
+option.shadowDistance=Jarak Bayang-bayang
+option.shadowDistance.comment=Jarak maksimum di mana bayang-bayang dinamik di-render. Nilai yang lebih tinggi mengembangkan bayang-bayang ke jarak render; guna Shadow LOD untuk mengekalkan prestasi pada julat yang dilanjutkan.
+value.shadowDistance.60.0=Dekat (60m)
+value.shadowDistance.80.0=Piawai (80m)
+value.shadowDistance.120.0=Jauh (120m)
+value.shadowDistance.160.0=Ultra (160 m)
+value.shadowDistance.256.0=Dilanjutkan (256 m)
+value.shadowDistance.384.0=Jarak render (384 m)
+value.shadowDistance.192.0=DH Seam (192m)
+value.shadowDistance.512.0=DH Extended (512m)
+value.shadowDistance.768.0=DH Far (768m)
+
+option.SHADOW_LOD=LOD bayang
+option.SHADOW_LOD.comment=Mengawal kemerosotan kualiti bayang-bayang dengan jarak. Dengan jarak bayang-bayang yang dilanjutkan (256-384 m), LOD mengurangkan bilangan sampel dan meningkatkan jejari penapis pada jarak untuk mengekalkan prestasi. Mati = kualiti seragam (lambat). Seimbang = pengurangan pada 25-50% jarak. Agresif = pengurangan maksimum pada 15-60% jarak. Bayang-bayang dilangkau sepenuhnya melepasi 95% jarak render.
+value.SHADOW_LOD.0=Mati (kualiti seragam)
+value.SHADOW_LOD.1=Seimbang
+value.SHADOW_LOD.2=Agresif
+option.DH_SHADOW_RANGE=Distant Horizons Shadow Range
+option.DH_SHADOW_RANGE.comment=Maximum range where Distant Horizons LOD terrain and water can receive samples from the shared DH shadow map. Seam keeps shadows close to vanilla chunks; Far extends coverage but can cost more GPU time. No effect without Distant Horizons.
+value.DH_SHADOW_RANGE.1=Seam (1.25x)
+value.DH_SHADOW_RANGE.2=Extended (2x)
+value.DH_SHADOW_RANGE.3=Far (4x)
+option.SHADOW_PCSS_BLUR=Pengaburan jarak PCSS
+option.SHADOW_PCSS_BLUR.comment=Mendayakan pelembutan penumbra PCSS yang meningkatkan kekaburan bayang-bayang dengan jarak dan semasa hujan. Lumpuhkan untuk kelembutan tetap (bayang-bayang jauh lebih tajam, kurang realistik).
+value.SHADOW_PCSS_BLUR.0=Mati (kelembutan tetap)
+value.SHADOW_PCSS_BLUR.1=Aktif (penumbra PCSS)
+
+
+option.AMBIENT_BRIGHTNESS=Angkat Bayang-bayang / Ambien
+option.AMBIENT_BRIGHTNESS.comment=Mengawal betapa gelap kawasan berbayang kelihatan pada waktu malam dan di dalam gua.
+value.AMBIENT_BRIGHTNESS.1=Gelap
+value.AMBIENT_BRIGHTNESS.2=Piawai
+value.AMBIENT_BRIGHTNESS.3=Diangkat (Cerah)
+
+option.SHADOW_TINT=Warna Bayang-bayang
+option.SHADOW_TINT.comment=Mewarnai bayang-bayang siang hari. Bayang-bayang dunia sebenar di bawah langit biru mempunyai warna sejuk yang halus.
+value.SHADOW_TINT.1=Kelabu neutral
+value.SHADOW_TINT.2=Biru sejuk (realistik)
+value.SHADOW_TINT.3=Hangat
+
+option.LIGHT_WRAP=Bungkusan Cahaya
+option.LIGHT_WRAP.comment=Melembutkan terminator antara permukaan bercahaya dan tidak bercahaya. Realistik = Lambert fizikal; Lembut = menyenangkan untuk tangkapan skrin.
+value.LIGHT_WRAP.1=Realistik (Lambert)
+value.LIGHT_WRAP.2=Bungkusan Lembut
+value.LIGHT_WRAP.3=Bergaya
+
+# v0.2.9 — water/underwater option value labels (English fallback)
+value.WATER_WAVE_SCALE.1=Tenang
+value.WATER_WAVE_SCALE.2=Piawai
+value.WATER_WAVE_SCALE.3=Bergelora
+value.WATER_WAVE_SCALE.4=Ribut
+value.WATER_WAVE_DETAIL.1=Kasar
+value.WATER_WAVE_DETAIL.2=Piawai
+value.WATER_WAVE_DETAIL.3=Padat
+value.UNDERWATER_NIGHT_DARKNESS.1=Kolam Diterangi Bulan
+value.UNDERWATER_NIGHT_DARKNESS.2=Pudar
+value.UNDERWATER_NIGHT_DARKNESS.3=Malam Sebenar
+value.UNDERWATER_NIGHT_DARKNESS.4=Gelap Legam
+# ==============================================================================
+# Experimental Tab & New Sky (v1.1.0)
+# ==============================================================================
+screen.EXPERIMENTAL=Eksperimental
+screen.EXPERIMENTAL.comment=Eksperimental
+
+screen.ATMOSPHERE_OPTIONS=Atmosphere
+screen.ATMOSPHERE_OPTIONS.comment=Physical-sky scattering, altitude and temporal resolve controls.
+option.ATMOSPHERE_TURBIDITY=Atmospheric Turbidity
+option.ATMOSPHERE_TURBIDITY.comment=Controls aerosol haze in Physical Sky. Crisp gives a deep blue sky; Hazy gives a brighter, softer horizon and stronger forward scatter.
+value.ATMOSPHERE_TURBIDITY.1=Crisp
+value.ATMOSPHERE_TURBIDITY.2=Balanced
+value.ATMOSPHERE_TURBIDITY.3=Hazy
+option.ATMOSPHERE_SCALE=Atmosphere Scale
+option.ATMOSPHERE_SCALE.comment=Converts Minecraft altitude into atmosphere height for Physical Sky. Compact makes mountains affect the sky less; Cinematic preserves the original large-scale altitude effect.
+value.ATMOSPHERE_SCALE.1=Compact (25m/block)
+value.ATMOSPHERE_SCALE.2=Balanced (50m/block)
+value.ATMOSPHERE_SCALE.3=Cinematic (100m/block)
+option.GROUND_BOUNCE_MODE=Ground Bounce Albedo
+option.GROUND_BOUNCE_MODE.comment=Controls the lower-atmosphere ground-bounce colour in Physical Sky. Auto adapts to cold and swamp biome signals.
+value.GROUND_BOUNCE_MODE.0=Auto (Biome-aware)
+value.GROUND_BOUNCE_MODE.1=Neutral Soil
+value.GROUND_BOUNCE_MODE.2=Vegetation
+value.GROUND_BOUNCE_MODE.3=Snow
+value.GROUND_BOUNCE_MODE.4=Desert
+option.SKY_TEMPORAL=Physical Sky Temporal Resolve
+option.SKY_TEMPORAL.comment=Uses rotation-only history blending for Physical Sky to smooth low-sample scattering and horizon gradients. Disable if animated cloud/aurora ghosting is noticeable.
+option.SKY_MODE=Langit Baharu (Serakan Atmosfera)
+option.SKY_STYLE=Gaya Langit
+option.SKY_STYLE.comment=Arah artistik langit fizikal. Realistik = saiz sudut sebenar dan warna neutral (rupa astronomi). Separuh realistik = matahari/bulan mudah dibaca (×2,8), warna lebih kaya, cahaya lembut. Fantasi = matahari/bulan besar (×5,5), korona besar, palet hijau-biru/merah tua/nila terang.
+option.SKY_MODE.comment=EXPERIMENTAL — off in all profiles. Gradient (legacy, default) or Physical realtime scattering with true multiple scattering (Rayleigh+Mie+Ozone, 1st+2nd+3rd order). Enable manually in this tab.
+value.SKY_MODE.0=Kecerunan (Lama)
+value.SKY_STYLE.0=Realistik
+value.SKY_STYLE.1=Separa realistik
+value.SKY_STYLE.2=Fantasi
+value.SKY_MODE.1=Realtime Scattering
+
+option.SKY_QUALITY=Kualiti Serakan Langit
+option.SKY_QUALITY.comment=Kualiti Serakan Langit
+value.SKY_QUALITY.1=Pantas
+value.SKY_QUALITY.2=Standard
+value.SKY_QUALITY.3=Tinggi
+
+# --- Auto-added missing translations (v1.1.0 sync) ---
+option.FOLIAGE_SSS=SSS Dedaunan
+option.FOLIAGE_SSS.comment=Mendayakan serakan subpermukaan (kelutsinaran) untuk daun, rumput, dan tumbuhan apabila melihat bertentangan cahaya.
+option.GODRAYS_STRENGTH=Keamatan Godrays
+option.GODRAYS_STRENGTH.comment=Kecerahan pancaran cahaya volumetrik. Halus: kabus atmosfera lembut. Seimbang: sinar jelas kelihatan. Dramatik: pancaran sinematik berani.
+value.GODRAYS_STRENGTH.1=Halus
+value.GODRAYS_STRENGTH.2=Seimbang
+value.GODRAYS_STRENGTH.3=Dramatik
+option.SHOOTING_STARS=Meteor (Bintang Jatuh)
+option.SHOOTING_STARS.comment=Meteor berasaskan fizik yang memasuki mesosfera (~80-120 km). Merender lengkung 3D bulatan besar sebenar dengan lengkung cahaya ablasi, warna plasma jasad hitam (3500-5500 K), kepupusan Rayleigh berhampiran ufuk, dan jejak pengionan berterusan pada bola api.
+option.SHOOTING_STARS_FREQUENCY=Aktiviti Meteor (ZHR)
+option.SHOOTING_STARS_FREQUENCY.comment=Kadar Sejam Zenit anggaran. Sporadik = latar belakang realistik ~10 sejam. Aktif = hujan ringan. Ribut = ketumpatan puncak (~100/jam).
+value.SHOOTING_STARS_FREQUENCY.1=Sporadik (~10/jam)
+value.SHOOTING_STARS_FREQUENCY.2=Hujan Aktif
+value.SHOOTING_STARS_FREQUENCY.3=Ribut Meteor
+option.SHOOTING_STARS_BRIGHTNESS=Skala Magnitud
+option.SHOOTING_STARS_BRIGHTNESS.comment=Pengganda induk pada skala magnitud meteor. Pudar = purata realistik; Terang = menskalakan bola api untuk keterlihatan sinematik.
+value.SHOOTING_STARS_BRIGHTNESS.1=Pudar (Realistik)
+value.SHOOTING_STARS_BRIGHTNESS.2=Piawai
+value.SHOOTING_STARS_BRIGHTNESS.3=Bola Api Terang
+option.SPATIAL_AA_MODE=Anti-Aliasing Ruang
+option.SPATIAL_AA_MODE.comment=Pilih kaedah anti-aliasing pasca-proses. FXAA pantas dan murah. SMAA menggunakan penimbal kedalaman untuk kualiti lebih baik pada tepi geometri. Boleh digabungkan dengan TAA.
+value.SPATIAL_AA_MODE.0=Mati
+value.SPATIAL_AA_MODE.1=FXAA (Pantas)
+value.SPATIAL_AA_MODE.2=SMAA (Kualiti)
+option.HEAT_SHIMMER=Kilauan Haba Atas Lava
+option.HEAT_SHIMMER.comment=Dayakan kesan herotan haba ruang skrin yang halus di atas permukaan lava.
+option.HEAT_SHIMMER_STRENGTH=Kekuatan Kilauan Haba
+option.HEAT_SHIMMER_STRENGTH.comment=Mengawal keamatan herotan haba di atas lava.
+value.HEAT_SHIMMER_STRENGTH.1=Halus
+value.HEAT_SHIMMER_STRENGTH.2=Seimbang
+value.HEAT_SHIMMER_STRENGTH.3=Kuat
+option.SSR=Pantulan Ruang Skrin (SSR)
+option.SSR.comment=Menambah persekitaran terpantul masa nyata pada air, permukaan basah dan blok logam PBR. Didayakan dari MED ke atas dalam v1.0.4.
+option.SSR_QUALITY=Kualiti SSR
+option.SSR_QUALITY.comment=Mengawal ketepatan dan jarak sinar pantulan ruang skrin. Lebih tinggi = pantulan lebih tajam tetapi lebih banyak kos GPU.
+value.SSR_QUALITY.1=Pantas (12 langkah)
+value.SSR_QUALITY.2=Seimbang (24 langkah)
+value.SSR_QUALITY.3=Tinggi (40 langkah)
+option.SSR_STRENGTH=Kekuatan SSR
+option.SSR_STRENGTH.comment=Mengawal betapa jelas dan menonjol persekitaran terpantul kelihatan pada permukaan reflektif.
+option.WATER_WAVE_SCALE=Amplitud Ombak
+option.WATER_WAVE_SCALE.comment=Mengawal kecuraman kelihatan gelombang permukaan air. Tenang = seperti cermin, Ribut = pantulan pecah kuat.
+option.WATER_WAVE_DETAIL=Perincian Ombak
+option.WATER_WAVE_DETAIL.comment=Mengawal berapa banyak ombak kecil muncul setiap blok. Kasar = beberapa ombak besar, Padat = banyak riak kecil.
+option.UNDERWATER_NIGHT_DARKNESS=Kegelapan Malam Bawah Air
+option.UNDERWATER_NIGHT_DARKNESS.comment=Mengawal betapa gelap adegan bawah air pada waktu malam. Kolam Diterangi Bulan mengekalkan kecerahan; Gelap Legam memberikan kegelapan gaya survival yang ekstrem.
+value.SSR_STRENGTH.1=Halus
+value.SSR_STRENGTH.2=Seimbang
+value.SSR_STRENGTH.3=Kuat
+option.PBR_DISTANCE=Jarak Rendering PBR
+option.PBR_DISTANCE.comment=Jarak maksimum untuk sorotan specular PBR. Menjimatkan GPU pada rupa bumi jauh. Dekat (16m) untuk LOW, Standard (48m) untuk MED, Jauh (128m) untuk HIGH/ULTRA, Tanpa Had untuk EXTREME.
+value.PBR_DISTANCE.1=Dekat (16m)
+value.PBR_DISTANCE.2=Piawai (48m)
+value.PBR_DISTANCE.3=Jauh (128m)
+value.PBR_DISTANCE.4=Tanpa Had
+
+# v1.1.1 — shadow pipeline + POM option labels
+value.shadowMapResolution.512=512
+value.shadowMapResolution.1024=1024
+value.shadowMapResolution.2048=2048
+value.shadowMapResolution.4096=4096
+value.shadowMapResolution.8192=8192
+option.POM_DEPTH=Kedalaman POM
+option.POM_DEPTH.comment=Mengawal kedalaman pemetaan paralaks yang kelihatan apabila PBR POM diaktifkan.
+value.POM_DEPTH.1=Rendah
+value.POM_DEPTH.2=Piawai
+value.POM_DEPTH.3=Dalam
+option.POM_STEPS=Langkah POM
+option.POM_STEPS.comment=Mengawal bilangan langkah raymarch untuk pemetaan paralaks. Nilai yang lebih tinggi meningkatkan kualiti tetapi memerlukan lebih banyak masa GPU.
+value.POM_STEPS.1=Pantas
+value.POM_STEPS.2=Piawai
+value.POM_STEPS.3=Tinggi
+value.POM_STEPS.4=Ultra
+
+screen.SHADOW_OPTIONS=Bayang-bayang
+screen.SHADOW_OPTIONS.comment=Resolusi, jarak, kelembutan, dan tona bayang-bayang dinamik.
+screen.PBR_OPTIONS=PBR dan bahan
+screen.PBR_OPTIONS.comment=Pencahayaan PBR, relief paralaks, keamatan dan jarak render.
+screen.AO_REFLECTIONS=AO dan pantulan
+screen.AO_REFLECTIONS.comment=SSAO, pantulan skrin dan pantulan hujan.
+screen.CLOUD_SHAPE=Awan
+screen.CLOUD_SHAPE.comment=Bentuk, ketinggian, jarak, dan bayang-bayang awan isipadu.
+screen.CLOUD_BODY=Cloud Body
+screen.CLOUD_BODY.comment=Altitude, thickness, distance, and the two settings that vary from cloud to cloud: base level and updraft.
+screen.CLOUD_PERF=Cloud Quality
+screen.CLOUD_PERF.comment=Everything that trades picture for frame time. Resolution (steps) and detail (octaves) are independent: you can keep crisp cloud tops and still lower the step count.
+screen.LIGHT_SHAFTS=Sinar cahaya
+screen.LIGHT_SHAFTS.comment=Sinar matahari/bulan isipadu dan kualiti/keamatannya.
+screen.NIGHT_SKY=Langit malam
+screen.NIGHT_SKY.comment=Aurora, bintang, Bima Sakti dan bintang jatuh.
+
+# [v1.1.3]
+option.CLOUD_QUALITY=Kualiti ray-marching awan
+option.CLOUD_QUALITY.comment=Raymarch resolution: how many samples the cloud volume gets along the ray (14/24/36/56 steps). Lower it for FPS -- it costs shape detail only in combination with CLOUD_DETAIL below.
+option.BLOOM=HDR Bloom
+option.BLOOM.comment=Enable or disable the HDR bloom pass. When disabled, AuraLite skips all five bloom composite passes for lower GPU load.
+option.HDR_BLOOM=Cahaya HDR
+option.HDR_BLOOM.comment=Kekuatan cahaya gaussian lebar di sekitar sumber terlalu terang: cakera matahari/bulan, lava, portal, kilau panas. Menggunakan laluan piramid bloom baharu.
+value.HDR_BLOOM.1=Halus
+value.HDR_BLOOM.2=Seimbang
+value.HDR_BLOOM.3=Kuat
+option.POST_SHARPEN=Ketajaman (CAS)
+option.POST_SHARPEN.comment=Topeng unsharp lembut pasca-TAA yang memulihkan butiran tekstur dilembutkan oleh pengumpulan temporal. Matikan untuk imej lebih lembut dan sinematik.
+
+# [v1.1.3]
+
+# ==============================================================================
+# Only the three channel sliders carry a colour code, because there the colour
+# IS the information: red gain is red, green is green, blue is blue. Everything
+# else stays default white — a menu does not need a palette to be readable.
+# ==============================================================================
+screen.COLOR=Colour Grading
+screen.COLOR.comment=Exposure, per-channel gain, brightness, contrast, saturation, gamma and vignette — all as sliders.
+screen.COLOR_TONE=Tone
+screen.COLOR_TONE.comment=Exposure, brightness, contrast, saturation and output gamma.
+screen.COLOR_RGB=Channels
+screen.COLOR_RGB.comment=Per-channel red/green/blue gain plus warm-cool and green-magenta balance.
+screen.COLOR_LOOK=Look
+screen.COLOR_LOOK.comment=Selective vibrance, vignette strength and the tone-mapping curve.
+
+option.COLOR_EXPOSURE=Exposure
+option.COLOR_EXPOSURE.comment=Linear exposure, applied before tone mapping. Above 1.00 the scene brightens and highlights roll off instead of clipping.
+option.COLOR_BRIGHTNESS=Brightness
+option.COLOR_BRIGHTNESS.comment=Midtone lift applied after tone mapping. Because it is a curve and not a multiply, blacks stay black and highlights cannot clip.
+option.COLOR_CONTRAST=Contrast
+option.COLOR_CONTRAST.comment=Contrast around middle grey (0.5) — the classic brightness/contrast operation.
+option.COLOR_SATURATION=Saturation
+option.COLOR_SATURATION.comment=0.00 is greyscale, 1.00 is untouched, above 1.00 is oversaturated.
+option.COLOR_GAMMA=Output Gamma
+option.COLOR_GAMMA.comment=Output encode exponent. 2.20 is the pack default. Lower values lift shadows, higher values crush them.
+option.COLOR_TONEMAP=Tone Curve
+option.COLOR_TONEMAP.comment=Which filmic curve maps HDR to the screen. ACES is the pack default.
+value.COLOR_TONEMAP.1=ACES (default)
+value.COLOR_TONEMAP.2=ACES soft
+value.COLOR_TONEMAP.3=ACES punchy
+value.COLOR_TONEMAP.4=Photographic (AgX-like)
+
+option.COLOR_RED=§cRed Gain§r
+option.COLOR_RED.comment=Multiplies scene-linear red before tone mapping.
+option.COLOR_GREEN=§aGreen Gain§r
+option.COLOR_GREEN.comment=Multiplies scene-linear green before tone mapping.
+option.COLOR_BLUE=§9Blue Gain§r
+option.COLOR_BLUE.comment=Multiplies scene-linear blue before tone mapping.
+option.COLOR_LUMA_PROTECT=Keep Brightness (luma protect)
+option.COLOR_LUMA_PROTECT.comment=On: the RGB / warmth / tint sliders shift colour but leave average brightness alone. Off: raw channel multipliers, which also brighten or darken the frame.
+option.COLOR_WARMTH=Warmth
+option.COLOR_WARMTH.comment=Moves the red/blue balance without touching green. Positive is warmer (sunset), negative is cooler (overcast, moonlight).
+option.COLOR_TINT=Tint
+option.COLOR_TINT.comment=Moves the green/magenta balance. Positive is greener, negative is magenta.
+
+option.COLOR_VIBRANCE=Selective Vibrance
+option.COLOR_VIBRANCE.comment=Saturation that treats colours differently: muted ones move more than already-saturated ones. 0.00 reproduces the pack's built-in look exactly.
+option.COLOR_VIGNETTE=Vignette Strength
+option.COLOR_VIGNETTE.comment=Corner darkening. 0.00 disables it without switching VIGNETTE off; 2.00 doubles it.
+option.VIGNETTE=Vignette
+option.VIGNETTE.comment=Master switch for corner darkening. Use Vignette Strength to dial the amount.
+
+option.CLOUD_MODE=Cloud Renderer
+option.CLOUD_MODE.comment=Volumetric: the ray marches through a 3D density field and every sample shadows itself toward the sun (self-shadowing, silver lining, real depth). Layered sheets: the v1.1.4 look, cheaper.
+value.CLOUD_MODE.0=Layered sheets (v1.1.4)
+value.CLOUD_MODE.1=Volumetric
+option.CLOUD_COVERAGE=Cloud Coverage
+option.CLOUD_COVERAGE.comment=How much of the sky the clouds fill. This changes cloud fraction, not brightness: it moves the threshold the density noise has to cross.
+value.CLOUD_COVERAGE.1=Clear
+value.CLOUD_COVERAGE.2=Scattered
+value.CLOUD_COVERAGE.3=Broken
+value.CLOUD_COVERAGE.4=Broken to overcast
+value.CLOUD_COVERAGE.5=Overcast
+option.CLOUD_DENSITY=Cloud Density
+option.CLOUD_DENSITY.comment=Extinction coefficient of the cloud medium, in 1/m. Real water clouds sit between 0.005 and 0.1; 0.030 is a typical cumulus. Higher makes clouds darker and more opaque inside.
+value.CLOUD_QUALITY.1=Cheap (14 steps)
+value.CLOUD_QUALITY.2=Standard (24 steps)
+value.CLOUD_QUALITY.3=High (36 steps)
+value.CLOUD_QUALITY.4=Extreme (56 steps)
+option.CLOUD_DETAIL=Cloud Shape Detail
+option.CLOUD_DETAIL.comment=How small a feature the cloud shape can carry: 1080 m at 1, 540 m at 2, 270 m at 3, 135 m at 4. Independent of the raymarch resolution above, so you can keep crisp cloud tops and still lower the step count for FPS. Raising both together is the expensive combination.
+value.CLOUD_DETAIL.1=Low (2 octaves, 1080 m)
+value.CLOUD_DETAIL.2=Medium (3 octaves, 540 m)
+value.CLOUD_DETAIL.3=High (4 octaves, 270 m)
+value.CLOUD_DETAIL.4=Extreme (5 octaves, 135 m)
+
+option.VEGETATION_CANOPY=Vegetation Canopy
+option.VEGETATION_CANOPY.comment=Shade foliage as a canopy (light reaching the inside of the crown) instead of flat vertical cards.
+option.GROUND_MIST_DENSITY=Ground Mist Density
+option.GROUND_MIST_DENSITY.comment=How much mist pools in the low ground at dawn.
+value.GROUND_MIST_DENSITY.1=Light
+value.GROUND_MIST_DENSITY.2=Standard
+value.GROUND_MIST_DENSITY.3=Heavy
+option.UNDERWATER_WAVES=Underwater Waves
+option.UNDERWATER_WAVES.comment=Distortion and caustics seen from below the surface. Caustics stay off by default: they are a stylistic choice, not a physical necessity.
+value.UNDERWATER_WAVES.0=Off (calm)
+value.UNDERWATER_WAVES.1=Subtle
+value.UNDERWATER_WAVES.2=Light caustics
+value.UNDERWATER_WAVES.3=Strong
+
+option.CLOUD_CIRRUS=Cirrus Veil
+option.CLOUD_CIRRUS.comment=High, thin ice cloud above the cumulus. It is raymarched like the rest, just thin and cheap. Off leaves the cumulus deck alone in the sky.
+option.DITHER_STRENGTH=Output Dither
+option.DITHER_STRENGTH.comment=Sub-pixel noise added before tone mapping to break up 8-bit banding in smooth sky gradients. It is a trade: less banding, a little grain. Light is half of what v1.1.4 used.
+value.DITHER_STRENGTH.1=Off
+value.DITHER_STRENGTH.2=Light (half of v1.1.4)
+value.DITHER_STRENGTH.3=Medium
+value.DITHER_STRENGTH.4=v1.1.4
+
+option.CLOUD_HEIGHT.comment=Base altitude of the cloud deck in metres. 1200 m is a typical fair-weather cumulus base; Minecraft's own clouds sit at 192 and look like a low ceiling for that reason.
+value.CLOUD_HEIGHT.1=Low (400 m)
+value.CLOUD_HEIGHT.2=Cumulus base (1200 m)
+value.CLOUD_HEIGHT.3=High (2400 m)
+value.CLOUD_HEIGHT.4=Very high (3600 m)
+option.CLOUD_THICKNESS.comment=Deck depth as a fraction of the base altitude: half, equal, or one and a half times. Fair-weather cumulus is 500-1500 m deep.
+value.CLOUD_THICKNESS.1=Thin (0.5x)
+value.CLOUD_THICKNESS.2=Normal (1.0x)
+value.CLOUD_THICKNESS.3=Deep (1.5x)
+option.CLOUD_DISTANCE.comment=How far the deck is drawn. Cloud colour is washed toward the sky with distance (aerial perspective), so the far end fades out instead of ending on an edge.
+value.CLOUD_DISTANCE.1=6 km
+value.CLOUD_DISTANCE.2=12 km
+value.CLOUD_DISTANCE.3=20 km
+value.CLOUD_DISTANCE.4=32 km
+
+option.CLOUD_MICRO=Droplet Spectrum
+option.CLOUD_MICRO.comment=Controls droplet size, which sets how much a given water content scatters and how strongly forward-scattering the phase function is. Continental air has many small droplets (brighter, more diffuse); maritime air has fewer, larger ones (darker, sharper silver lining).
+value.CLOUD_MICRO.1=Continental (6 um, g=0.82)
+value.CLOUD_MICRO.2=Typical (8 um, g=0.85)
+value.CLOUD_MICRO.3=Maritime (12 um, g=0.87)
+option.CLOUD_SCALE=Cloud Size
+option.CLOUD_SCALE.comment=Width of one cloud cell relative to the depth of the deck. Real cumulus are about as wide as they are thick: compact cumulus roughly match their depth, congestus reach three depths across. Larger cells mean fewer, broader clouds in view; smaller cells mean a busier sky.
+value.CLOUD_SCALE.1=Compact (1.2x depth)
+value.CLOUD_SCALE.2=Typical (1.8x depth)
+value.CLOUD_SCALE.3=Broad (3.0x depth)
+option.CLOUD_BASE_VARIATION=Condensation Level Spread
+option.CLOUD_BASE_VARIATION.comment=How much the cloud base height varies between clouds. Real cumulus share a nearly level base because every thermal condenses at the same height, but over tens of kilometres surface temperature and moisture drift, so the level is ragged rather than one shelf. Smaller values give the clean shelf of a calm afternoon; larger values give a broken, stormy sky where each cell has its own base.
+value.CLOUD_BASE_VARIATION.1=Even (±40 m)
+value.CLOUD_BASE_VARIATION.2=Natural (±120 m)
+value.CLOUD_BASE_VARIATION.3=Ragged (±250 m)
+option.CLOUD_UPDRAFT=Updraft Speed
+option.CLOUD_UPDRAFT.comment=How fast the cloud body streams upward. Real cumulus are conveyor belts: air rises through them at 1-3 m/s in fair weather and 20-30 m/s in a storm core, so the shape keeps being replaced from below and the tops appear to boil. The deck itself stays at the same altitude; only the structure inside moves. Storms multiply this.
+value.CLOUD_UPDRAFT.1=Drifting (1.5 m/s)
+value.CLOUD_UPDRAFT.2=Natural (2.5 m/s)
+value.CLOUD_UPDRAFT.3=Vigorous (4.0 m/s)
+option.CLOUD_DENSITY.comment=Liquid water content of the cloud core, in g/m3. Extinction is derived from it and from droplet size, not set directly.
+option.CLOUD_MID_LAYER=Lapisan awan altitud sederhana
+option.CLOUD_MID_LAYER.comment=Lapisan tambahan yang berkembang pada altitud sederhana; boleh menurunkan FPS.
+
+value.CLOUD_DENSITY.1=Thin (0.075 g/m3)
+value.CLOUD_DENSITY.2=Typical (0.15 g/m3)
+value.CLOUD_DENSITY.3=Dense (0.30 g/m3)
