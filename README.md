@@ -20,11 +20,6 @@ a droplet spectrum; the atmosphere coefficients are re-derived from measured col
 integrate a filtered transmittance with a fixed step count; the colour stage becomes twelve sliders; and
 every debug stripe, gauge bar, class map and bypass switch from the development branch is removed.
 
-> ⚠️ **This is a new minor version, not a patch.** The default look changes on purpose: cloud altitude is
-> now in metres (a 1.2 km base instead of 160 blocks), coverage and density are separate controls, and the
-> colour pipeline gained a complete slider set. Read `RELEASE_NOTES.md` inside the pack for the full,
-> file-by-file account.
-
 ### ☁️ Volumetric Cloud Engine — _Microphysics, Not Constants_
 
 *   **The deck is a medium.** `CLOUD_DENSITY` selects a **liquid water content** (0.075 / 0.15 / 0.30 g/m³) and `CLOUD_MICRO` a **droplet spectrum** (_Continental 6 µm / Typical 8 µm / Maritime 12 µm_); extinction is derived from them (`σ = 3·LWC·Q_ext / 4ρ·r_eff`), so "dense" is a physical quantity rather than a number that was tuned by eye.
