@@ -1,5 +1,7 @@
 # 🌌 AuraLite Shaders (Minecraft 1.16 – 26.3)
 
+> ⭐ **65,000+ downloads** across CurseForge & Modrinth — thank you!
+
 ![Minecraft Version](<https://img.shields.io/badge/Minecraft-1.16.5 -- 26.3-blue?logo=minecraft&logoColor=white>) [![Shader Loader](<https://img.shields.io/badge/Loader-Iris / Sodium-green>)](https://modrinth.com/mod/iris) [![API Standard](<https://img.shields.io/badge/API-OpenGL 4.6 / GLSL 460-orange>)](https://khronos.org/) [![Materials Standard](<https://img.shields.io/badge/PBR-LabPBR 1.3-cyan>)](https://github.com/rre36/lab-pbr) [![Version](https://img.shields.io/badge/Release-v1.2.0-purple)](https://github.com/AlexanderNyr/AuraLite-Shaders) [![License](<https://img.shields.io/badge/License-CC BY--NC--SA 4.0-lightgrey.svg>)](https://creativecommons.org/licenses/by-nc-sa/4.0/)
 
 **AuraLite** is a modern, lightweight, and highly optimized shader pack built on top of the **OpenGL 4.6 / GLSL 460** standard. It is specifically designed and **tested for Minecraft 1.16 – 26.3 with Sodium + Iris** (and compatible with **OptiFine**, **Oculus**). Since **v1.2.0** the cloud deck is a physically parameterised volumetric medium rather than a stack of painted layers, and every development instrument has been removed from the shipped code.
@@ -14,10 +16,7 @@ AuraLite delivers a breathtaking, realistic visual experience without overcompli
 
 ## 🚀 What's New in v1.2.0 — _Physical Clouds_
 
-Version **1.2.0** is the first release of the physical cloud line.
-The cloud deck stops being four painted sheets and becomes a medium with
-a droplet spectrum; the atmosphere coefficients are re-derived from measured column depths; godrays
-integrate a filtered transmittance with a fixed step count; the colour stage becomes twelve sliders;
+Version **1.2.0** is the first release of the physical cloud line. The cloud deck stops being four painted sheets and becomes a medium with a droplet spectrum; the atmosphere coefficients are re-derived from measured column depths; godrays integrate a filtered transmittance with a fixed step count; the colour stage becomes twelve sliders;
 
 ### ☁️ Volumetric Cloud Engine — _Microphysics, Not Constants_
 
@@ -53,23 +52,22 @@ integrate a filtered transmittance with a fixed step count; the colour stage bec
 
 *   **Water has an ID.** `minecraft:water` / `flowing_water` map to block ID `10020`, so water classification no longer guesses from colour and depth — and the whole rescue ladder that existed for that guess is now a fallback, not the primary path.
 *   **One wind-wave spectrum.** Eight components with deep-water dispersion (`ω = √(gk)`) and wavelength-derived amplitude, evaluated in **world space**. The three longest displace the mesh (26 / 15.5 / 9.5 blocks — no aliasing on Minecraft's one-vertex-per-block grid), the rest live in the normal. The v1.1.4 surface was driven by three unrelated sine fields, one of them in view space.
-*   **Water no longer writes into the shadow map.** A flat receiver standing in its own shadow map with centimetre waves produced self-shadow stripes whose period was constant in *pixels*; the vertex shader now pushes water out of the shadow pass entirely.
+*   **Water no longer writes into the shadow map.** A flat receiver standing in its own shadow map with centimetre waves produced self-shadow stripes whose period was constant in _pixels_; the vertex shader now pushes water out of the shadow pass entirely.
 *   **Vegetation is three classes**, not one: tall plants bend from the base, short grass flutters, flower heads nod — and the wave phase is taken from **world** coordinates, so grass stops "speeding up" when you walk across chunk borders. Mirrored in `shadow.vsh`.
 *   **Dither is a fixed 4×4 ordered pattern**, not two `fract(sin(...))` hashes of `gl_FragCoord`: the hash was uncorrelated between pixels and unstable in float, so it read as grain over the whole frame and shimmered even when the camera was still. The **cloud ray start is deterministic** as well — every pixel aims at the middle of its shell, and the slicing that the jitter used to dissolve is now handled by `CLOUD_QUALITY`.
 
 ### 🎚️ Profile Rebalance (v1.2.0)
 
-| Profile        |Shadows                   |Clouds                        |TAA |Bloom |Notes                              |
-| -------------- |------------------------- |----------------------------- |--- |----- |---------------------------------- |
-| VERY_LOW       |❌ 512 / 60 m              |❌                             |❌   |❌    |Gradient sky, minimal path         |
-| LOW            |❌ 512 / 60 m              |❌                             |❌   |❌    |Water/foliage motion, stars        |
-| MED            |✅ 1024 / <strong>192 m</strong>|✅ Volumetric 24 steps / 3 oct |❌   |✅     |The sweet spot                     |
-| HIGH           |✅ 2048 / <strong>512 m</strong>|✅ Volumetric 36 steps / 3 oct |✅   |✅     |Full atmosphere + SSR              |
-| ULTRA          |✅ 4096 / <strong>512 m</strong> Aggr|✅ Volumetric 36 steps / 3 oct |✅   |✅     |Higher SSAO / SSR / aurora         |
-| EXTREME        |✅ 8192 / <strong>768 m</strong> Aggr|✅ Volumetric 56 steps / 4 oct |✅   |✅     |Cinematic                          |
+| Profile  |Shadows             |Clouds                        |TAA |Bloom |Notes                       |
+| -------- |------------------- |----------------------------- |--- |----- |--------------------------- |
+| VERY_LOW |❌ 512 / 60 m        |❌                             |❌   |❌     |Gradient sky, minimal path  |
+| LOW      |❌ 512 / 60 m        |❌                             |❌   |❌     |Water/foliage motion, stars |
+| MED      |✅ 1024 / <strong>192 m</strong> |✅ Volumetric 24 steps / 3 oct |❌   |✅     |The sweet spot              |
+| HIGH     |✅ 2048 / <strong>512 m</strong> |✅ Volumetric 36 steps / 3 oct |✅   |✅     |Full atmosphere + SSR       |
+| ULTRA    |✅ 4096 / <strong>512 m</strong> Aggr |✅ Volumetric 36 steps / 3 oct |✅   |✅     |Higher SSAO / SSR / aurora  |
+| EXTREME  |✅ 8192 / <strong>768 m</strong> Aggr |✅ Volumetric 56 steps / 4 oct |✅   |✅     |Cinematic                   |
 
 Camera jitter remains **off by default in every profile**.
-
 
 ## 🚀 What's New in v1.1.4 — _Atmosphere LUTs, Distant Horizons Seam Fix & Half-Res Bloom_
 
@@ -378,7 +376,7 @@ AuraLite is built from the ground up for maximum FPS using OpenGL 4.6 native har
 *   **Fixed-cost integration** _(v1.2.0)_: the godray march uses a constant tap count and a bounded path, so frame time and image do not change when the sun crosses a threshold; rays terminate early once transmittance falls below 2 %.
 *   **Scheduled passes:** `composite1`–`composite7` are gated by their master switches (`TAA`, `BLOOM`), so profiles that do not want the resolve or the bloom chain do not pay for the dispatch at all.
 *   **Ordered dither instead of hashes** _(v1.2.0)_: a 4×4 Bayer matrix replaces two `fract(sin(...))` hashes per pixel — no transcendental functions, and a pattern that does not crawl between frames.
-*   **Profile-Based Scaling:** Every feature (POM, Auroras, SSAO, Cozy Lights, Wet Reflections, Ground Mist, Shadow Distance, Cloud Distance, Sun Halo, etc.) is intelligently distributed across the **VERY_LOW / LOW / MED / HIGH / ULTRA / EXTREME** profiles so low-end systems don't pay for effects they can't afford.
+*   **Profile-Based Scaling:** Every feature (POM, Auroras, SSAO, Cozy Lights, Wet Reflections, Ground Mist, Shadow Distance, Cloud Distance, Sun Halo, etc.) is intelligently distributed across the **VERY\_LOW / LOW / MED / HIGH / ULTRA / EXTREME** profiles so low-end systems don't pay for effects they can't afford.
 *   **No Hand Transparency Glitches:** Handheld items, particles, and mobs are rendered in a separate stable path without tangent matrix overhead, eliminating "translucent hand" bugs.
 *   **Dead Code Elimination** _(v0.2.3–v0.2.5)_: Removed unused noise/fbm functions, dead cloud raymarching code from `gbuffers_skybasic`, and redundant render calls to reduce GPU compilation time.
 *   **Profile-Based Scaling:** Every feature (POM, Auroras, SSAO, Cozy Lights, Wet Reflections, Ground Mist, Shadow Distance, Cloud Distance, Sun Halo, etc.) is intelligently distributed across the **LOW / MED / HIGH / ULTRA / EXTREME** profiles so low-end systems don't pay for effects they can't afford.
@@ -505,14 +503,14 @@ AuraLite includes localized in-game configuration files for **69 language codes*
 
 ### 🎚️ Quality Profiles _(rebalanced in v1.2.0 — shadows 60–768 m with LOD + DH range; TAA on in HIGH+ and now actually compiled, camera jitter off by default everywhere)_
 
-| Profile  |Target       |Shadows              |Clouds                  |Cloud Shadows |Godrays |TAA |SSR |PBR |PBR Dist |AA   |SSAO       |Heat Shimmer |Heavy Extras                          |
-| -------- |------------ |-------------------- |----------------------- |------------- |------- |--- |--- |--- |-------- |---- |---------- |------------ |------------------------------------- |
-| <strong>VERY_LOW</strong> |Maximum FPS  |❌ 512/60m            |❌                       |❌             |❌       |❌   |❌   |❌   |16m      |Off  |❌          |❌            |Most extras off, bloom off            |
-| <strong>LOW</strong> |Weak GPUs    |❌ 512/60m            |❌                       |❌             |❌       |❌   |❌   |❌   |16m      |FXAA |❌          |❌            |Water/foliage motion, stars, vignette |
-| <strong>MED</strong> |Balanced     |✅ 1024/<strong>192m</strong> |✅ 24 steps / 3 oct      |✅ Soft        |✅ Fast  |❌   |✅ F |✅   |48m      |FXAA |❌          |✅ Subtle     |Wet refl + ground mist + SSS + bloom  |
-| <strong>HIGH</strong> |High quality |✅ 2048/<strong>512m</strong> |✅ 36 steps / 3 oct      |✅ Balanced    |✅ Bal   |✅   |✅ B |✅   |128m     |SMAA |✅ Subtle   |✅ Balanced   |Full atmosphere + SSR + TAA           |
-| <strong>ULTRA</strong> |Very high    |✅ 4096/<strong>512m</strong> Aggr LOD |✅ 36 steps / 3 oct      |✅ Balanced    |✅ High  |✅   |✅ H |✅   |128m     |SMAA |✅ Balanced |✅ Balanced   |High-end visuals + TAA                |
-| <strong>EXTREME</strong> |Max quality  |✅ 8192/<strong>768m</strong> Aggr LOD |✅ 56 steps / 4 oct      |✅ Dramatic    |✅ High  |✅   |✅ H |✅   |∞        |SMAA |✅ Deep     |✅ Strong     |Heaviest cinematic + TAA              |
+| Profile  |Target       |Shadows              |Clouds             |Cloud Shadows |Godrays |TAA |SSR |PBR |PBR Dist |AA   |SSAO       |Heat Shimmer |Heavy Extras                          |
+| -------- |------------ |-------------------- |------------------ |------------- |------- |--- |--- |--- |-------- |---- |---------- |------------ |------------------------------------- |
+| <strong>VERY_LOW</strong> |Maximum FPS  |❌ 512/60m            |❌                  |❌             |❌       |❌   |❌   |❌   |16m      |Off  |❌          |❌            |Most extras off, bloom off            |
+| <strong>LOW</strong> |Weak GPUs    |❌ 512/60m            |❌                  |❌             |❌       |❌   |❌   |❌   |16m      |FXAA |❌          |❌            |Water/foliage motion, stars, vignette |
+| <strong>MED</strong> |Balanced     |✅ 1024/<strong>192m</strong> |✅ 24 steps / 3 oct |✅ Soft        |✅ Fast  |❌   |✅ F |✅   |48m      |FXAA |❌          |✅ Subtle     |Wet refl + ground mist + SSS + bloom  |
+| <strong>HIGH</strong> |High quality |✅ 2048/<strong>512m</strong> |✅ 36 steps / 3 oct |✅ Balanced    |✅ Bal   |✅   |✅ B |✅   |128m     |SMAA |✅ Subtle   |✅ Balanced   |Full atmosphere + SSR + TAA           |
+| <strong>ULTRA</strong> |Very high    |✅ 4096/<strong>512m</strong> Aggr LOD |✅ 36 steps / 3 oct |✅ Balanced    |✅ High  |✅   |✅ H |✅   |128m     |SMAA |✅ Balanced |✅ Balanced   |High-end visuals + TAA                |
+| <strong>EXTREME</strong> |Max quality  |✅ 8192/<strong>768m</strong> Aggr LOD |✅ 56 steps / 4 oct |✅ Dramatic    |✅ High  |✅   |✅ H |✅   |∞        |SMAA |✅ Deep     |✅ Strong     |Heaviest cinematic + TAA              |
 
 > 💫 **Shooting stars** are disabled on **VERY\_LOW / LOW** and enabled from **MED** upward. 🌿 **Foliage SSS** is enabled from **MED** upward. 🔥 **Heat shimmer** is disabled on **VERY\_LOW / LOW** and enabled from **MED** upward. ✨ **HDR bloom** is skipped entirely on **VERY\_LOW / LOW**. 🎯 **TAA** is on in **HIGH / ULTRA / EXTREME** and is now a real compiled option — in v1.1.x the menu could switch the resolve pass while the shader still compiled its passthrough. The **camera jitter is off by default everywhere** — enable `TAA_JITTER` (Off/Subtle/Standard/Strong) for full sub-pixel reconstruction; `TAA_STRENGTH` presets the variance-clip tightness. **`SKY_TEMPORAL`** is on in HIGH+. 🗺️ **Distant Horizons:** experimental, **partial** DH support — the seam is a hard deterministic hand-off at `far`, DH pixels get TAA jitter/reprojection and a dedicated illuminated material tag (`0.24`), and `DH_SHADOW_RANGE` keeps LOD receivers sampling the shared shadow map. The DH-specific shadow pass is **off by default** on Iris 1.7.6 + DH 3.2. Still WIP, not full compatibility.
 
@@ -523,7 +521,7 @@ AuraLite includes localized in-game configuration files for **69 language codes*
 *   **AuraLite** is licensed under the [Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License](LICENSE) (CC BY-NC-SA 4.0).
 *   **Copyright (c) 2026 AlexanderNyr.**
 *   **Officially Supported Platform:** Minecraft **1.16.5 – 26.2** with **Sodium + Iris** or **OptiFine** loader.
-*   _Note: Verified to work flawlessly on Minecraft 1.16.5, 1.20.1, 1.21.1, and 26.1.2._
+*   _Note: Verified to work flawlessly on Minecraft 1.16.5, 1.20.1, 1.21.1, 26.1.2, 26.2, and 2.3_
 *   **Distant Horizons:** v1.2.0 continues **experimental, partial** DH support (WIP, introduced in v1.1.2) — `dh_terrain`, `dh_water`, `dh_shadow` minimal passes so Iris keeps drawing LOD chunks, with a **hard deterministic seam** at `far` (v1.1.4 replaced the v1.1.3 screen-door dither, which punched white holes on DH 3.2). Provides fog rescaling, depth reconciliation, overdraw culling, emissive/heat-shimmer for distant lava, DH-aware TAA jitter and reprojection, and the `DH_BLOCK_ILLUMINATED` tag. Still **NOT** full support: no LabPBR maps for DH, hardcoded full skylight, flat water normal, no POM — full compatibility will be announced separately when ready.
 
 ### ⚖️ Rules & Permissions (FAQ)
